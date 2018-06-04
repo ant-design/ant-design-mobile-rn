@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports":true,
+    "target": "es6",
+    "noImplicitAny": true,
+    "types": [
+      "classnames",
+      "react",
+      "react-dom",
+      "react-native"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "es"
+  ],
+  "compileOnSave": false
+}

@@ -1,0 +1,45 @@
+sudo: false
+
+git:
+  submodules: false
+
+language: node_js
+
+notifications:
+  email:
+  - hust2012jiangkai@gmail.com
+  - hualei5280@gmail.com
+  - zhang740@qq.com
+  - rjmuqiang@gmail.com
+
+node_js:
+  - "8"
+
+env:
+  matrix:
+    - TEST_TYPE=lint
+    - TEST_TYPE=dist
+    - TEST_TYPE=compile
+    - TEST_TYPE=test:web
+    - TEST_TYPE=test:rn
+
+script:
+  - |
+    if [ "$TEST_TYPE" = lint ]; then
+      npm run lint
+    elif [ "$TEST_TYPE" = dist ]; then
+      npm run dist && \
+      LIB_DIR=dist npm run test:web -- -w 2
+    elif [ "$TEST_TYPE" = compile ]; then
+      npm run compile && \
+      LIB_DIR=lib npm run test:web -- -w 2 && \
+      LIB_DIR=lib npm run test:rn -- -w 2 && \
+      LIB_DIR=es npm run test:web -- -w 2
+      LIB_DIR=es npm run test:rn -- -w 2
+    elif [ "$TEST_TYPE" = test:web ]; then
+      npm run test:web -- -w 2 --coverage && \
+      bash <(curl -s https://codecov.io/bash) -cF web
+    elif [ "$TEST_TYPE" = test:rn ]; then
+      npm run test:rn -- -w 2 --coverage && \
+      bash <(curl -s https://codecov.io/bash) -cF rn
+    fi
