@@ -1,6 +1,6 @@
-import { Carousel } from 'antd-mobile-rn';
 import React from 'react';
 import { StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native';
+import { Carousel } from 'antd-mobile-rn';
 
 export default class BasicCarouselExample extends React.Component<any, any> {
   onselectedIndexChange(index: number) {

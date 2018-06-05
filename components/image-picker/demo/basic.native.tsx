@@ -1,6 +1,6 @@
-import { ImagePicker, WhiteSpace } from 'antd-mobile-rn';
 import React from 'react';
 import { View } from 'react-native';
+import { ImagePicker, WhiteSpace } from 'antd-mobile-rn';
 
 export default class ImagePickerExample extends React.Component<any, any> {
   constructor(props: any) {

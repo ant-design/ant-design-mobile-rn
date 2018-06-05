@@ -1,8 +1,8 @@
 /* tslint:disable:jsx-no-multiline-js */
 // tslint:disable:no-empty
-import { List } from 'antd-mobile-rn';
 import React from 'react';
 import { Image, ScrollView, View } from 'react-native';
+import { List } from 'antd-mobile-rn';
 
 const Item = List.Item;
 const Brief = Item.Brief;

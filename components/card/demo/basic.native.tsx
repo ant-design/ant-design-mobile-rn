@@ -1,6 +1,6 @@
-import { Card, WhiteSpace, WingBlank } from 'antd-mobile-rn';
 import React from 'react';
 import { Text, View } from 'react-native';
+import { Card, WhiteSpace, WingBlank } from 'antd-mobile-rn';
 
 export default class BasicCardExample extends React.Component<any, any> {
   render() {

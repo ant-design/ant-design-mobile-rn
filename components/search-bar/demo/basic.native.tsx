@@ -1,6 +1,6 @@
-import { SearchBar } from 'antd-mobile-rn';
 import React from 'react';
 import { Alert, View } from 'react-native';
+import { SearchBar } from 'antd-mobile-rn';
 
 export default class SearchBarDemo extends React.Component<any, any> {
   state = {

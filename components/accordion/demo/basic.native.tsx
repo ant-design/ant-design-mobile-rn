@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
-import { Accordion, List } from 'antd-mobile-rn';
 import React from 'react';
 import { View } from 'react-native';
+import { Accordion, List } from 'antd-mobile-rn';
 
 export default class AccordionExmple extends React.Component<any, any> {
   onChange = (key: string) => {

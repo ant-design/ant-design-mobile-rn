@@ -1,7 +1,7 @@
 // tslint:disable:jsx-no-multiline-js
-import { WhiteSpace } from 'antd-mobile-rn';
 import React from 'react';
 import { Text, View } from 'react-native';
+import { WhiteSpace } from 'antd-mobile-rn';
 
 const PlaceHolder = (props: any) => (
   <View

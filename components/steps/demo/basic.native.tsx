@@ -1,9 +1,8 @@
 /* tslint:disable:jsx-no-multiline-js */
-import { Icon, WingBlank } from 'antd-mobile-rn';
-import Steps from '../index.native';
-const Step = Steps.Step;
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
+import { Icon, WingBlank, Steps } from 'antd-mobile-rn';
+const Step = Steps.Step;
 
 export default class BasicTimelineExample extends React.Component<any, any> {
   constructor(props: any) {

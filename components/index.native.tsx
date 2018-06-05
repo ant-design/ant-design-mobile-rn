@@ -1,3 +1,4 @@
+export { default as Accordion } from './accordion/index.native';
 export { default as ActionSheet } from './action-sheet/index.native';
 export { default as ActivityIndicator } from './activity-indicator/index.native';
 export { default as Badge } from './badge/index.native';
@@ -10,6 +11,7 @@ export { default as DatePickerView } from './date-picker-view/index.native';
 export { default as Drawer } from './drawer/index.native';
 export { default as Flex } from './flex/index.native';
 export { default as Grid } from './grid/index.native';
+export { default as Icon } from './icon/index.native';
 export { default as ImagePicker } from './image-picker/index.native';
 export { default as InputItem } from './input-item/index.native';
 export { default as List } from './list/index.native';

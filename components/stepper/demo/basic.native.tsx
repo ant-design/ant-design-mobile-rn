@@ -1,8 +1,8 @@
 // tslint:disable:jsx-no-multiline-js
 /* tslint:disable:no-console */
-import { List, Stepper } from 'antd-mobile-rn';
 import React from 'react';
 import { View } from 'react-native';
+import { List, Stepper } from 'antd-mobile-rn';
 
 function onChange(value: any) {
   console.log('changed', value);

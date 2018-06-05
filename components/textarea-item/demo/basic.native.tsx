@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
-import { List, TextareaItem } from 'antd-mobile-rn';
 import React from 'react';
 import { ScrollView } from 'react-native';
+import { List, TextareaItem } from 'antd-mobile-rn';
 
 export default class BasicTextAreaItemExample extends React.Component<
   any,

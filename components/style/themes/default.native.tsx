@@ -1,12 +1,6 @@
 const brandPrimary = '#108ee9';
 const brandPrimaryTap = '#1284d6';
 
-if (typeof console !== 'undefined' && console.warn) {
-  // tslint:disable-next-line:no-console
-  console.warn('Note: In antd-mobile-rn@2.2.0, React Native components will be' +
-    ' transferred to the separate `antd-mobile-rn-rn` package.');
-}
-
 export default {
   // 支付宝钱包默认主题
   // https://github.com/ant-design/ant-design-mobile/wiki/设计变量表及命名规范

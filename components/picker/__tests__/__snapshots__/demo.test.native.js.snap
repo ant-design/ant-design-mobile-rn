@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders ./components/picker/demo/popup.native.tsx correctly 1`] = `
+exports[`renders ./components/picker/demo/basic.native.tsx correctly 1`] = `
 <View
   style={
     Object {

@@ -1,3 +1,5 @@
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import {
   ActivityIndicator,
   Button,
@@ -5,13 +7,8 @@ import {
   WhiteSpace,
   WingBlank,
 } from 'antd-mobile-rn';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default class ActivityIndicatorExample extends React.Component<
-  any,
-  any
-> {
+export default class ActivityIndicatorExample extends React.Component<any, any> {
   closeTimer: any;
   constructor(props: any) {
     super(props);

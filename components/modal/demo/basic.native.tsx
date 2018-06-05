@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
-import { Button, Modal, WhiteSpace, WingBlank } from 'antd-mobile-rn';
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
+import { Button, Modal, WhiteSpace, WingBlank } from 'antd-mobile-rn';
 
 export default class BasicModalExample extends React.Component<any, any> {
   constructor(props: any) {
