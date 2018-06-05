@@ -7,7 +7,7 @@ node = 6+
 npm = 3+
 ```
 
-## Code convention for antd-mobile
+## Code convention for antd-mobile-rn
 
 TypeScript
 
@@ -21,7 +21,6 @@ $ npm run lint
 ├── CHANGELOG.xxx.md        changelog document
 ├── LICENSE                 license
 ├── README.md               readme document
-├── ant-design-analysis     package analysis
 ├── components              components source code
 ├── development.xxx.md      development document
 ├── docs                    other docs
@@ -47,49 +46,10 @@ component name separate with `-`, such as `date-picker`，and file Extensions sh
 ### Components Implementation
 
 - prefer to use [react-component](https://github.com/react-component/), you can PR to react-component if you find any problem.
-- prefer to use well-known and open-source component.
 - complicated component should abstract it's basic logic into [react-component](https://github.com/react-component/)
 - any problem you do not sure, open a issue and discuss.
 
-### Web Components specification
-
-- `components/button/index.tsx`
-
-```js
-import React from 'react';
-
-class Button extends React.Component {
-  static propTypes = {};
-  static defaultProps = {};
-  onClick = () => {};
-  render() {
-    return <a onClick={this.onClick}>;
-  }
-}
-
-export default Button;
-```
-
-- `components/button/style/index.tsx`
-
-```js
-import '../../style/';
-import './index.less';
-```
-
-- `components/button/style/index.less`
-
-```less
-@import '../../../style/variables';
-@import '../../../style/mixins';
-@buttonPrefixClass: am-button
-
-@{buttonPrefixClass} {
-  .button();
-}
-```
-
-### React-Native Components specification
+### Samples
 
 general we do not distinguish Android and Ios, so no suffix.
 
@@ -124,7 +84,7 @@ export default Button;
 - `components/button/demo/basic.native.tsx`
 
 ```jsx
-import { Button } from 'antd-mobile';
+import { Button } from 'antd-mobile-rn';
 import * as React from 'react';
 import { Text, View } from 'react-native';
 
@@ -143,25 +103,7 @@ exports.demo = BasicButtonExample;
 
 ```bash
 $ npm install
-```
 
-### Development(Web)
-
-```bash
-$ npm start
-```
-
-want to test a single Component? use `COMPONENT_STYLE`, eg:
-
-```bash
-$ COMPONENT_STYLE=button npm start
-```
-
-open at browser：http://localhost:8001/
-
-### Development(react-native)
-
-```bash
 # In one terminal tab
 $ npm run rn-start
 
@@ -170,7 +112,7 @@ $ npm run rn-start
 $ npm run ios / android
 ```
 
-The code of demo app: https://github.com/ant-design/ant-design-mobile/tree/master/rn-kitchen-sink
+The code of demo app: https://github.com/ant-design/ant-design-mobile-rn/tree/master/rn-kitchen-sink
 
 If you need to add a new component, then modify `rn-kitchen-sink/demoList.js` and `./index.js`.
 
@@ -206,38 +148,17 @@ $ git pull
 Run all test:
 
 ```bash
-$ npm test
-```
-
-Run web component tests：
-
-```bash
-$ npm run test:web
-```
-
-Run RN component tests：
-
-```bash
-$ npm run test:rn
+$ npm run test:all
 ```
 
 Update snapshot：
 
 ```bash
-$ npm run test:web -- -u # Update web component's snapshots
-$ npm run test:rn -- -u # Update RN component's snapshots
+$ npm run test -- -u
 ```
 
 Run specific test:
 
 ```bash
-$ npm run test:web -- components/button/__tests__/index.test.web.js -t 'pressIn'
+$ npm run test -- components/button/__tests__/index.test.js -t 'pressIn'
 ```
-
-Debug test:
-
-1. `npm install -g node-inspector` require node 6；
-1. Add `debugger` to your code;
-1. Run `node --debug-brk ./node_modules/.bin/jest -i -c .jest.json -i components/button/__tests/index.test.js` (.jest.web.json for web component);
-1. Run `node-inspector`；
-1. Open `http://127.0.0.1:8080/?port=5858`, a breakpoint will be set at the first line of the Jest CLI script. Click the button that looks like a "play" button in the upper right hand side of the screen to continue execution. When Jest executes the test that contains the debugger statement, execution will pause and you can examine the current scope and call stack.

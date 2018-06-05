@@ -21,7 +21,6 @@ $ npm run lint
 ├── CHANGELOG.xxx.md        变更记录文档
 ├── LICENSE                 许可证
 ├── README.md               自述文档
-├── ant-design-analysis     包分析
 ├── components              组件代码
 ├── development.xxx.md      开发说明文档
 ├── docs                    其他文档
@@ -47,49 +46,10 @@ $ npm run lint
 ### 组件实现
 
 - 尽量使用 react-component/xx 的组件, 有问题 pr 到 react-component/xx
-- 尽量使用知名开源组件
 - 复杂组件拆分到 react-component/xx 单独维护
 - 不符合以上情况发帖讨论
 
-### web 组件规范
-
-- `components/button/index.tsx`
-
-```js
-import * as React from 'react';
-
-class Button extends React.Component {
-  static propTypes = {};
-  static defaultProps = {};
-  onClick = () => {};
-  render() {
-    return <a onClick={this.onClick}>;
-  }
-}
-
-export default Button;
-```
-
-- `components/button/style/index.tsx`
-
-```js
-import '../../style/';
-import './index.less';
-```
-
-- `components/button/style/index.less`
-
-```less
-@import '../../../style/variables';
-@import '../../../style/mixins';
-@buttonPrefixClass: am-button
-
-@{buttonPrefixClass} {
-  .button();
-}
-```
-
-### react-native 组件规范
+### 示例
 
 无特殊情况（iOS Android 代码完全一致）不用带后缀.
 
@@ -124,7 +84,7 @@ export default Button;
 - `components/button/demo/basic.native.tsx`
 
 ```jsx
-import { Button } from 'antd-mobile';
+import { Button } from 'antd-mobile-rn';
 import React from 'react';
 import { Text, View } from 'react-native';
 
@@ -143,25 +103,7 @@ exports.demo = BasicButtonExample;
 
 ```bash
 $ npm install
-```
 
-### web 流程
-
-```bash
-$ npm start
-```
-
-测试单个组件使用 COMPONENT_STYLE 环境变量, 例如
-
-```bash
-$ COMPONENT_STYLE=button npm start
-```
-
-访问：http://localhost:8001/
-
-### react-native 流程
-
-```bash
 # In one terminal tab
 $ npm run rn-start
 
@@ -170,7 +112,7 @@ $ npm run rn-start
 $ npm run ios / android
 ```
 
-demo app 代码地址：https://github.com/ant-design/ant-design-mobile/tree/master/rn-kitchen-sink
+demo app 代码地址：https://github.com/ant-design/ant-design-mobile-rn/tree/master/rn-kitchen-sink
 
 If you need to add a new component, then modify `rn-kitchen-sink/demoList.js` and `./index.js`.
 
@@ -206,38 +148,17 @@ $ git pull
 运行所有测试：
 
 ```bash
-$ npm test
-```
-
-运行 web 组件测试：
-
-```bash
-$ npm run test:web
-```
-
-运行 RN 组件测试：
-
-```bash
-$ npm run test:rn
+$ npm run test:all
 ```
 
 更新 snapshot：
 
 ```bash
-$ npm run test:web -- -u # 更新 web 组件的
-$ npm run test:rn -- -u # 更新 RN 组件的
+$ npm run test -- -u
 ```
 
 只运行某文件的某个测试：
 
 ```bash
-$ npm run test:web -- components/button/__tests__/index.test.web.js -t 'pressIn'
+$ npm run test -- components/button/__tests__/index.test.js -t 'pressIn'
 ```
-
-调试测试
-
-1. `npm install -g node-inspector` 需要 node 6；
-1. 在要调试的代码上加上 `debugger` 断点；
-1. 运行测试 `node --debug-brk ./node_modules/.bin/jest -i -c .jest.json -i components/button/__tests/index.test.js` (web 组件用 .jest.web.json);
-1. 运行 `node-inspector`；
-1. 打开 `http://127.0.0.1:8080/?port=5858`，第一次会断点到 jest 的代码里，点继续运行，等一会后会到我们断点的地方。
