@@ -1,11 +1,10 @@
 ---
 order: 2
 title: 更新日志
-timeline: true
 toc: false
 ---
 
-`antd-mobile` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
+`antd-mobile-rn` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
 #### 发布周期
 
@@ -15,8 +14,16 @@ toc: false
 
 ---
 
-### 2.1.11 及以前
+### 2.2.0
 
-[antd-mobile 更新日志](https://github.com/ant-design/ant-design-mobile/blob/master/CHANGELOG.en-US.md#2111)
+`2018-06-19`
+
+- 拆分 antd-mobile react native 代码到 `antd-mobile-rn` 包.
+
+### 2.1.11
+
+`2018-05-31`
+
+- [antd-mobile@2.1.11 及以前更新日志](https://github.com/ant-design/ant-design-mobile/blob/master/CHANGELOG.en-US.md#2111)
 
 

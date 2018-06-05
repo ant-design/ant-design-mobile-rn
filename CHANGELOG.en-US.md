@@ -1,11 +1,10 @@
 ---
 order: 2
 title: Change Log
-timeline: true
 toc: false
 ---
 
-`antd-mobile` strictly follows [Semantic Versioning 2.0.0](http://semver.org/).
+`antd-mobile-rn` strictly follows [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### Release Schedule
 
@@ -15,6 +14,14 @@ toc: false
 
 ---
 
-### 2.1.11 and before
+### 2.2.0
 
-[antd-mobile change log](https://github.com/ant-design/ant-design-mobile/blob/master/CHANGELOG.en-US.md#2111)
+`2018-06-19`
+
+- split the antd-mobile react native code to `antd-mobile-rn` package.
+
+### 2.1.11
+
+`2018-05-31`
+
+[antd-mobile@2.1.11 and before change log](https://github.com/ant-design/ant-design-mobile/blob/master/CHANGELOG.en-US.md#2111)
