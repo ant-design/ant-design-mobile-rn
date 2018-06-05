@@ -4,7 +4,7 @@ import { Link } from 'bisheng/router';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { Select, Menu, Row, Col, Icon, Button, AutoComplete, Input, Popover } from 'antd';
-import { version as antdVersion } from 'antd-mobile/package.json';
+import { version as antdVersion } from 'antd-mobile-rn/package.json';
 import * as utils from '../../../../utils';
 
 const { Option } = AutoComplete;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 import { FormattedMessage } from 'react-intl';
@@ -119,10 +118,6 @@ export default class ComponentDoc extends React.Component {
     const {
       title, subtitle, chinese, english,
     } = meta;
-    const hash = `#${path}-demo-${currentIndex}`;
-    const mainPath = isLocalMode ? 'components' : 'kitchen-sink/components';
-    const search = this.context.intl.locale === 'zh-CN' ? '?lang=zh-CN' : '?lang=en-US';
-    const iframeUrl = `${protocol}//${host}/${mainPath}/${path}${search}${hash}`;
 
     const codeContainerCls = classnames('clearfix demo-code-container', {
       'demo-code-container-mutli': this.state.inMultiDemoMode,
@@ -151,51 +146,12 @@ export default class ComponentDoc extends React.Component {
             </section>
           </section>
 
-          <StickyContainer>
-            <div id="demo-code" className={codeContainerCls} style={{ minHeight: 620 }}>
-              <div style={{ width: '100%', float: 'left' }}>
-                {leftChildren}
-              </div>
-              <Sticky>
-                {
-                  ({ style }) => (
-                    <div style={{ ...style, pointerEvents: 'none' }}>
-                      <div className="mobile-wrapper" style={{ pointerEvents: 'auto' }}>
-                        <div id="aside-demo" className="aside-demo">
-                          <div style={{ width: '377Px', height: '620Px' }}>
-                            <div className="demo-preview-wrapper">
-                              <div className="demo-preview-header">
-                                <div className="demo-preview-statbar">
-                                  <img width="350Px" alt="presentation" style={{ margin: '0 2Px' }} src="https://os.alipayobjects.com/rmsportal/VfVHYcSUxreetec.png" />
-                                </div>
-                                <div style={{ height: '40Px' }}>
-                                  <div className="url-box">{iframeUrl}</div>
-                                </div>
-                              </div>
-                              <section className="code-box-demo code-box-demo-preview">
-                                <iframe id="demoFrame"
-                                  name="demoFrame"
-                                  title="antd-mobile"
-                                  style={{
-                                    width: '377Px',
-                                    height: '548Px',
-                                    border: '1Px solid #F7F7F7',
-                                    borderTop: 'none',
-                                    boxShadow: '0 2Px 4Px #ebebeb',
-                                  }}
-                                  src={iframeUrl}
-                                />
-                              </section>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                }
-              </Sticky>
+          <div id="demo-code" className={codeContainerCls}>
+            <div style={{ width: '100%', float: 'left' }}>
+              {leftChildren}
             </div>
-          </StickyContainer>
+          </div>
+
           {
             props.utils.toReactComponent(['section', {
               id: 'api',

@@ -65,8 +65,8 @@ module.exports = {
     config.plugins.push(new CSSSplitWebpackPlugin({ size: 4000 }));
 
     config.resolve.alias = {
-      'antd-mobile/lib': path.join(process.cwd(), 'components'),
-      'antd-mobile': process.cwd(),
+      'antd-mobile-rn/lib': path.join(process.cwd(), 'components'),
+      'antd-mobile-rn': process.cwd(),
       site: path.join(process.cwd(), 'site'),
     };
     if (!useReact) {
@@ -92,14 +92,11 @@ module.exports = {
   htmlTemplateExtraData: {
     isDev,
     useReact,
-    useHD: process.env.HD_ENV === 'hd',
+    // useHD: process.env.HD_ENV === 'hd',
   },
   themeConfig: {
-    siteTitle: 'Ant Design Mobile',
-    siteSubTitle: '支付宝移动端组件库',
-    indexDemos: ['drawer'], // for kitchen 这些组件每个 demo 都需要全屏展示，首页直接放其各个 demo 链接
-    subListDemos: ['list-view', 'pull-to-refresh', 'tab-bar'], // for kitchen 这些组件每个 demo 都需要全屏展示，首页直接放其各个 demo 链接
-    hashSpliter: '-demo-', // for kitchen URL 中记录到 hash 里的特殊标记
+    siteTitle: 'Ant Design Mobile RN',
+    siteSubTitle: '支付宝移动端 React Native 组件库',
     categoryOrder: [
       'Layout',
       'Navigation',
