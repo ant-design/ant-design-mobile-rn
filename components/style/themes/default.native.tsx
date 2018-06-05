@@ -3,8 +3,8 @@ const brandPrimaryTap = '#1284d6';
 
 if (typeof console !== 'undefined' && console.warn) {
   // tslint:disable-next-line:no-console
-  console.warn('Note: In antd-mobile@2.2.0, React Native components will be' +
-    ' transferred to the separate `antd-mobile-rn` package.');
+  console.warn('Note: In antd-mobile-rn@2.2.0, React Native components will be' +
+    ' transferred to the separate `antd-mobile-rn-rn` package.');
 }
 
 export default {

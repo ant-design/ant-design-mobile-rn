@@ -1,6 +1,6 @@
 // tslint:disable:jsx-no-multiline-js
 /* tslint:disable:no-console */
-import { NoticeBar, WhiteSpace } from 'antd-mobile';
+import { NoticeBar, WhiteSpace } from 'antd-mobile-rn';
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 

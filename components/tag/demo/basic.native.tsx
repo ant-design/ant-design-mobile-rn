@@ -1,6 +1,6 @@
 // tslint:disable:jsx-no-multiline-js
 /* tslint:disable:no-console */
-import { Tag, WhiteSpace } from 'antd-mobile';
+import { Tag, WhiteSpace } from 'antd-mobile-rn';
 import React from 'react';
 import { View } from 'react-native';
 

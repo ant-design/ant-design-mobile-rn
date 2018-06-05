@@ -144,9 +144,6 @@
       "npm run lint-staged:es"
     ]
   },
-  "config": {
-    "port": 8003
-  },
   "typings": "lib/index.native.d.ts",
   "pre-commit": [
     "lint-staged"

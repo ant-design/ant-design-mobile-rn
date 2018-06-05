@@ -8,7 +8,7 @@
         [
           "import",
           {
-            "libraryName": "antd-mobile",
+            "libraryName": "antd-mobile-rn",
             "libraryDirectory": "components"
           }
         ]
@@ -22,7 +22,7 @@
         [
           "import",
           {
-            "libraryName": "antd-mobile",
+            "libraryName": "antd-mobile-rn",
             "libraryDirectory": "components"
           }
         ]
@@ -36,7 +36,7 @@
         [
           "import",
           {
-            "libraryName": "antd-mobile",
+            "libraryName": "antd-mobile-rn",
             "libraryDirectory": "components"
           }
         ]

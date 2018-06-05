@@ -1,4 +1,4 @@
-import { Grid, Icon } from 'antd-mobile';
+import { Grid, Icon } from 'antd-mobile-rn';
 import React from 'react';
 
 const list = [

@@ -1,4 +1,4 @@
-import { Grid } from 'antd-mobile';
+import { Grid } from 'antd-mobile-rn';
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 

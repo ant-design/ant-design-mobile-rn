@@ -1,4 +1,4 @@
-import { Slider } from 'antd-mobile';
+import { Slider } from 'antd-mobile-rn';
 import React from 'react';
 import { Text, View } from 'react-native';
 

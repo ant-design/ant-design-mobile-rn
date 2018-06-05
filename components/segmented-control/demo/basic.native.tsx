@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import { SegmentedControl, WhiteSpace } from 'antd-mobile';
+import { SegmentedControl, WhiteSpace } from 'antd-mobile-rn';
 import React from 'react';
 import { Text, View } from 'react-native';
 

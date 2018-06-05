@@ -1,5 +1,5 @@
 // tslint:disable:jsx-no-multiline-js
-import { Result } from 'antd-mobile';
+import { Result } from 'antd-mobile-rn';
 import React from 'react';
 import { Image, ScrollView, Text } from 'react-native';
 

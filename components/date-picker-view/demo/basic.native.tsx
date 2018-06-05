@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import { DatePickerView } from 'antd-mobile';
+import { DatePickerView } from 'antd-mobile-rn';
 import React from 'react';
 import { Text, View } from 'react-native';
 

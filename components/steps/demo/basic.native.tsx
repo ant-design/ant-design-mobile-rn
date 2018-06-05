@@ -1,5 +1,5 @@
 /* tslint:disable:jsx-no-multiline-js */
-import { Icon, WingBlank } from 'antd-mobile';
+import { Icon, WingBlank } from 'antd-mobile-rn';
 import Steps from '../index.native';
 const Step = Steps.Step;
 import React from 'react';

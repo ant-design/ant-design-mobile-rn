@@ -11,7 +11,7 @@ import {
   ActivityIndicator,
   StatusBar,
 } from 'react-native';
-import { List } from 'antd-mobile';
+import { List } from 'antd-mobile-rn';
 import codePush from 'react-native-code-push';
 import AppInfo from './appInfo.js';
 

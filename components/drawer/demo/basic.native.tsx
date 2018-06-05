@@ -1,5 +1,5 @@
 // tslint:disable:jsx-no-multiline-js
-import { Button, Drawer, List, WhiteSpace } from 'antd-mobile';
+import { Button, Drawer, List, WhiteSpace } from 'antd-mobile-rn';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 

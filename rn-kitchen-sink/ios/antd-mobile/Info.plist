@@ -38,7 +38,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>antd-mobile wants to access your photo album</string>
+	<string>antd-mobile-rn wants to access your photo album</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>iconfont.ttf</string>

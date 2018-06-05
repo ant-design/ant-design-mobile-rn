@@ -1,6 +1,6 @@
 //
 //  ResultViewController.m
-//  antd-mobile
+//  antd-mobile-rn
 //
 //  Created by silentcloud on 7/4/16.
 //  Copyright © 2016 Facebook. All rights reserved.
@@ -44,7 +44,7 @@
 - (void)loadReactNativeView
 {
   NSURL *jsCodeLocation = [NSURL URLWithString:self.bundleURL];
-  
+
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:self.moduleName
                                                initialProperties:nil
@@ -60,10 +60,10 @@
   [webView setUserInteractionEnabled:YES];
   webView.delegate = self;
   [self.view addSubview:webView];
-  
+
   NSURL *url = [NSURL URLWithString:self.bundleURL];
   [webView loadRequest:[NSURLRequest requestWithURL:url]];
-  
+
   _activityIndicatorView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
   [_activityIndicatorView setCenter:self.view.center];
   [_activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
@@ -86,9 +86,9 @@
                               alertControllerWithTitle:nil
                               message:[NSString stringWithFormat:@"webView 加载失败, code: %ld, description: %@", error.code, error.localizedDescription]
                               preferredStyle:UIAlertControllerStyleAlert];
-  
+
   UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-  
+
   [alert addAction:defaultAction];
 }
 @end

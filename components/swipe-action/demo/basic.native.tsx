@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import { List, SwipeAction } from 'antd-mobile';
+import { List, SwipeAction } from 'antd-mobile-rn';
 import React from 'react';
 import { View } from 'react-native';
 

@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import { Accordion, List } from 'antd-mobile';
+import { Accordion, List } from 'antd-mobile-rn';
 import React from 'react';
 import { View } from 'react-native';
 

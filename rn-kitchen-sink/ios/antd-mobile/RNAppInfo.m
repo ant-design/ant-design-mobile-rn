@@ -1,6 +1,6 @@
 //
 //  RNAppInfo.m
-//  antd-mobile
+//  antd-mobile-rn
 //
 //  Created by silentcloud on 2016/11/8.
 //  Copyright © 2016年 Facebook. All rights reserved.
@@ -17,10 +17,10 @@ RCT_EXPORT_MODULE();
   NSString *displayName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
   if(displayName == nil)
     displayName = @"";
-  
+
   NSString *iosVersion = [[UIDevice currentDevice] systemVersion];
   NSString *infoDeviceName = [[UIDevice currentDevice] name];
-  
+
   return @{
            @"version": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"],
            @"shortVersion": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
@@ -29,7 +29,7 @@ RCT_EXPORT_MODULE();
            @"displayName": displayName,
            @"getInfoiOS":iosVersion,
            @"getInfoDeviceName":infoDeviceName,
-           
+
            };
 }
 

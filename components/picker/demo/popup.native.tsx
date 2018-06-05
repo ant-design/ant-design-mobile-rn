@@ -1,4 +1,4 @@
-import { List, Picker } from 'antd-mobile';
+import { List, Picker } from 'antd-mobile-rn';
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 

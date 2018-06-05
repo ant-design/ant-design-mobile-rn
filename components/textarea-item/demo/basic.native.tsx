@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import { List, TextareaItem } from 'antd-mobile';
+import { List, TextareaItem } from 'antd-mobile-rn';
 import React from 'react';
 import { ScrollView } from 'react-native';
 

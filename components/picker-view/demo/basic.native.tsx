@@ -1,4 +1,4 @@
-import { PickerView } from 'antd-mobile';
+import { PickerView } from 'antd-mobile-rn';
 import React from 'react';
 
 const seasons = [

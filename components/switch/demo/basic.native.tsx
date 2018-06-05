@@ -1,5 +1,5 @@
 // tslint:disable:jsx-no-multiline-js
-import { List, Switch } from 'antd-mobile';
+import { List, Switch } from 'antd-mobile-rn';
 import React from 'react';
 
 export default class SwitchExample extends React.Component<any, any> {

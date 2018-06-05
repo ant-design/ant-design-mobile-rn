@@ -1,4 +1,4 @@
-import { Carousel } from 'antd-mobile';
+import { Carousel } from 'antd-mobile-rn';
 import React from 'react';
 import { StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native';
 

@@ -1,4 +1,4 @@
-import { Popover } from 'antd-mobile';
+import { Popover } from 'antd-mobile-rn';
 import React from 'react';
 import { Platform, StyleSheet, Text, View, ViewStyle } from 'react-native';
 

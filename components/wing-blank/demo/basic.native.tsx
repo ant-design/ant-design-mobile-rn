@@ -1,6 +1,6 @@
 // tslint:disable:jsx-no-multiline-js
 
-import { WhiteSpace, WingBlank } from 'antd-mobile';
+import { WhiteSpace, WingBlank } from 'antd-mobile-rn';
 import React from 'react';
 import { Text, View } from 'react-native';
 
