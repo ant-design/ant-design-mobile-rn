@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import CardBody from './CardBody';
-import CardFooter from './CardFooter';
-import CardHeader from './CardHeader';
+import CardBody from './CardBody.native';
+import CardFooter from './CardFooter.native';
+import CardHeader from './CardHeader.native';
 import { CardPropsType } from './PropsType';
 import CardStyle, { ICardStyle } from './style/index.native';
 

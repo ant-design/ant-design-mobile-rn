@@ -8,7 +8,7 @@ import {
   View,
   TextStyle,
 } from 'react-native';
-import Modal from './Modal';
+import Modal from './Modal.native';
 import { CallbackOrActions } from './PropsType';
 import promptStyle, { IPromptStyle } from './style/prompt.native';
 

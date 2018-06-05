@@ -12,7 +12,7 @@ import {
 import Carousel from '../carousel/index.native';
 import Flex from '../flex/index.native';
 import { DataItem, GridPropsType } from './PropsType';
-import GridStyle from './style';
+import GridStyle from './style/index.native';
 
 export interface GridProps extends GridPropsType {
   styles?: any;
