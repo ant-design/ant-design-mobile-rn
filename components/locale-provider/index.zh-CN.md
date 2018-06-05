@@ -13,18 +13,18 @@ LocaleProvider 使用 React 的 [context](https://facebook.github.io/react/docs/
 
 
 ```jsx
-import enUS from 'antd-mobile/lib/locale-provider/en_US';
+import enUS from 'antd-mobile-rn/lib/locale-provider/en_US';
 
 ...
 
 return <LocaleProvider locale={enUS}><App /></LocaleProvider>;
 ```
 
-我们暂时只提供英语，中文两种语言支持（`默认语言是中文`），所有语言包可以在 [这里](https://github.com/ant-design/ant-design-mobile/blob/master/components/locale-provider/) 找到。
+我们暂时只提供英语，中文两种语言支持（`默认语言是中文`），所有语言包可以在 [这里](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/locale-provider/) 找到。
 
 ### 增加语言包
 
-如果你找不到你需要的语言包，欢迎你在 [英文语言包](https://github.com/ant-design/ant-design-mobile/blob/master/components/locale-provider/en_US.tsx) 的基础上创建一个新的语言包，并给我们 Pull Request。
+如果你找不到你需要的语言包，欢迎你在 [英文语言包](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/locale-provider/en_US.tsx) 的基础上创建一个新的语言包，并给我们 Pull Request。
 
 ### 其他国际化需求
 
@@ -34,4 +34,4 @@ return <LocaleProvider locale={enUS}><App /></LocaleProvider>;
 
 | 参数    | 说明           | 类型              | 默认值        |
 |--------|----------------|------------------|--------------|
-| locale | 语言包配置，语言包可到 `antd-mobile/lib/locale-provider/` 目录下寻找 | object | - |
+| locale | 语言包配置，语言包可到 `antd-mobile-rn/lib/locale-provider/` 目录下寻找 | object | - |

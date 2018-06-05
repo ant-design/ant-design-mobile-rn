@@ -4,18 +4,13 @@ type: Feedback
 title: Toast
 ---
 
-
 A lightweight feedback or tips, used to display content that does not interrupt user operations. Suitable for page transitions, data interaction and other scenes.
-
 
 ### Rules
 - Only one Toast is allowed at a time.
 - Toast with Icon, 4-6 words is recommended.; Toast without Icon, the number of words should not exceed 14.
 
-
 ## API
-
-Support WEB, React-Native.
 
 - `Toast.success(content, duration, onClose, mask)`
 - `Toast.fail(content, duration, onClose, mask)`

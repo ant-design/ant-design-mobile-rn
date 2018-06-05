@@ -5,7 +5,6 @@ title: Card
 subtitle: 卡片
 ---
 
-
 用于组织信息和操作，通常也作为详细信息的入口。
 
 ### 规则
@@ -13,8 +12,6 @@ subtitle: 卡片
 - 可包含多种类型的元素，eg：图片、文字、按钮等。
 
 ## API
-
-适用平台：WEB、React-Native
 
 ### Card
 
