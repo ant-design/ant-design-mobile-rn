@@ -4,7 +4,7 @@ import DocumentTitle from 'react-document-title';
 import { Link } from 'bisheng/router';
 import GitHubButton from 'react-github-button';
 import { injectIntl } from 'react-intl';
-import { Popover, Button, Row, Col } from 'antd';
+import { /* Popover, */ Button, Row, Col } from 'antd';
 import * as utils from '../../../../utils';
 
 function getStyle() {
@@ -49,7 +49,7 @@ class Home extends React.Component {
           <section className="home-s1">
             <div className="banner-wrapper">
               <div className="banner-text-wrapper">
-                <h2 key="h2">Ant Design Mobile</h2>
+                <h2 key="h2">Ant Design Mobile RN</h2>
                 <p>{this.props.intl.formatMessage({ id: 'app.home.epitomize' })}</p>
                 <div key="button1" className="start-button">
                   <Link to={`/docs/react/introduce${isZhCN ? '-cn' : ''}`}>
@@ -57,7 +57,7 @@ class Home extends React.Component {
                       {this.props.intl.formatMessage({ id: 'app.home.centerStart' })}
                     </Button>
                   </Link>
-                  <Popover
+                  {/* <Popover
                     placement="bottom"
                     trigger="click"
                     content={
@@ -67,12 +67,12 @@ class Home extends React.Component {
                     <Button type="primary" ghost>
                       {this.props.intl.formatMessage({ id: 'app.home.qrtip' })}
                     </Button>
-                  </Popover>
+                  </Popover> */}
                   <GitHubButton
                     key="github-button"
                     type="stargazers"
                     namespace="ant-design"
-                    repo="ant-design-mobile"
+                    repo="ant-design-mobile-rn"
                   />
                 </div>
               </div>

@@ -10,6 +10,9 @@ const Footer = () => (
           <div className="footer-center">
             <h2>Ant Design</h2>
             <div>
+              <a target="_blank " rel="noopener noreferrer" href="https://github.com/ant-design/ant-design-mobile-rn">Ant Design Mobile RN GitHub</a>
+            </div>
+            <div>
               <a target="_blank " rel="noopener noreferrer" href="https://github.com/ant-design/ant-design-mobile">Ant Design Mobile GitHub</a>
             </div>
             <div>

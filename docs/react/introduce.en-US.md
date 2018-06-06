@@ -118,15 +118,6 @@ The following two ways used to load the **only components you used**, select one
 - Stable: [![npm package](http://img.shields.io/npm/v/antd-mobile-rn.svg?style=flat-square)](http://npmjs.com/package/antd-mobile-rn)
 - Next: [![npm package](https://img.shields.io/npm/v/antd-mobile-rn/next.svg)](http://npmjs.com/package/antd-mobile-rn)
 
-## Size
-
-- Components are loaded on demand, in other words, components that are not imported are not packed.
-
-## Environment Support
-
-- `iOS`
-- `Android 4.0+`
-
 ## Links
 
 - [Home Page](https://rn.mobile.ant.design/)

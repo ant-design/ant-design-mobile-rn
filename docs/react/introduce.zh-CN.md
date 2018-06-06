@@ -118,15 +118,6 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 - 稳定版：[![npm package](http://img.shields.io/npm/v/antd-mobile-rn.svg?style=flat-square)](http://npmjs.com/package/antd-mobile-rn)
 - 开发版：[![npm package](https://img.shields.io/npm/v/antd-mobile-rn/next.svg)](http://npmjs.com/package/antd-mobile-rn)
 
-## 体积
-
-- 按需加载：只需引入业务中需要的组件即可，未 import 进来的组件不会打包进来。
-
-## 浏览器支持
-
-- `iOS`
-- `Android 4.0+`
-
 ## 链接
 
 - [首页](https://rn.mobile.ant.design/)
