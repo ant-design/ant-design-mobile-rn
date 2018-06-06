@@ -129,7 +129,7 @@ The following two ways used to load the **only components you used**, select one
 
 ## Links
 
-- [Home Page](https://mobile-rn.ant.design/)
+- [Home Page](https://rn.mobile.ant.design/)
 - [Developer Instruction](http://github.com/ant-design/ant-design-mobile-rn/blob/master/development.en-US.md)
 - [React components](http://github.com/react-component)
 

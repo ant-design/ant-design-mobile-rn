@@ -1,7 +1,7 @@
 [English](./README.md) | 简体中文
 
 <p align="center">
-  <a href="http://mobile-rn.ant.design">
+  <a href="http://rn.mobile.ant.design">
     <img width="320" src="https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png">
   </a>
 </p>
@@ -36,7 +36,7 @@ Ant Design 移动端设计规范。`antd-mobile-rn` 是 Ant Design 的移动规�
 
 ## 链接
 
-- [首页](http://mobile-rn.ant.design)
+- [首页](http://rn.mobile.ant.design)
 - [开发文档](development.zh-CN.md)
 - [底层 React 模块](http://github.com/react-component)
 - [官方 Demo 集合](https://github.com/ant-design/antd-mobile-samples)

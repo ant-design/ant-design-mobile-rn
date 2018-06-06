@@ -1,7 +1,7 @@
 English | [简体中文](./README.zh-CN.md)
 
 <p align="center">
-  <a href="http://mobile-rn.ant.design">
+  <a href="http://rn.mobile.ant.design">
     <img width="320" src="https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png">
   </a>
 </p>
@@ -36,7 +36,7 @@ install expo app: https://expo.io/tools
 
 ## Links
 
-- [Home Page](http://mobile-rn.ant.design)
+- [Home Page](http://rn.mobile.ant.design)
 - [Developer Instruction](development.en-US.md)
 - [React components](http://github.com/react-component/)
 - [Demos](https://github.com/ant-design/antd-mobile-samples)
