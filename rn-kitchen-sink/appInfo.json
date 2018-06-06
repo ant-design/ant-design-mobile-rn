@@ -1,10 +1,10 @@
 {
   "android": {
     "appversion": "2.0.0",
-    "appurl": "https://mobile.ant.design/rn-kitchen-sink/antd-mobile.apk"
+    "appurl": "https://rn.mobile.ant.design/rn-kitchen-sink/antd-mobile-rn.apk"
   },
   "ios": {
     "appversion": "2.0.0",
-    "appurl": "https://mobile.ant.design/rn-kitchen-sink/qrcode.html"
+    "appurl": "https://rn.mobile.ant.design/rn-kitchen-sink/qrcode.html"
   }
 }

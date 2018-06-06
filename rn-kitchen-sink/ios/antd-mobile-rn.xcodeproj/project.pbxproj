@@ -226,16 +226,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13B07F961A680F5B00A75B9A /* antd-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "antd-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "antd-mobile/AppDelegate.h"; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "antd-mobile/AppDelegate.m"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* antd-mobile-rn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "antd-mobile-rn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "antd-mobile-rn/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "antd-mobile-rn/AppDelegate.m"; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "antd-mobile/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "antd-mobile/Info.plist"; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "antd-mobile/main.m"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "antd-mobile-rn/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "antd-mobile-rn/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "antd-mobile-rn/main.m"; sourceTree = "<group>"; };
 		932268B41DEEC0B10095E0B5 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		932268BD1DEEC0BC0095E0B5 /* CodePush.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
-		932268C41DEEC0FC0095E0B5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = "antd-mobile/HomeViewController.m"; sourceTree = "<group>"; };
+		932268C41DEEC0FC0095E0B5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = "antd-mobile-rn/HomeViewController.m"; sourceTree = "<group>"; };
 		932268DE1DEEC3470095E0B5 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		9356BACB1DEEBBC800E00E20 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		9356BAD41DEEBBDA00E00E20 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
@@ -247,16 +247,16 @@
 		9356BB041DEEBC1C00E00E20 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		9356BB0A1DEEBC3F00E00E20 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
 		9356BB131DEEBC4900E00E20 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
-		9356BB531DEEBD5E00E00E20 /* RNAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNAppInfo.h; path = "antd-mobile/RNAppInfo.h"; sourceTree = "<group>"; };
-		9356BB541DEEBD5E00E00E20 /* RNAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNAppInfo.m; path = "antd-mobile/RNAppInfo.m"; sourceTree = "<group>"; };
-		9356BB561DEEBD6500E00E20 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = "antd-mobile/HomeViewController.h"; sourceTree = "<group>"; };
-		9356BB571DEEBD6500E00E20 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultViewController.h; path = "antd-mobile/ResultViewController.h"; sourceTree = "<group>"; };
-		9356BB581DEEBD6500E00E20 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultViewController.m; path = "antd-mobile/ResultViewController.m"; sourceTree = "<group>"; };
-		9356BB591DEEBD6500E00E20 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanViewController.h; path = "antd-mobile/ScanViewController.h"; sourceTree = "<group>"; };
-		9356BB5A1DEEBD6500E00E20 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanViewController.m; path = "antd-mobile/ScanViewController.m"; sourceTree = "<group>"; };
+		9356BB531DEEBD5E00E00E20 /* RNAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNAppInfo.h; path = "antd-mobile-rn/RNAppInfo.h"; sourceTree = "<group>"; };
+		9356BB541DEEBD5E00E00E20 /* RNAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNAppInfo.m; path = "antd-mobile-rn/RNAppInfo.m"; sourceTree = "<group>"; };
+		9356BB561DEEBD6500E00E20 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = "antd-mobile-rn/HomeViewController.h"; sourceTree = "<group>"; };
+		9356BB571DEEBD6500E00E20 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultViewController.h; path = "antd-mobile-rn/ResultViewController.h"; sourceTree = "<group>"; };
+		9356BB581DEEBD6500E00E20 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultViewController.m; path = "antd-mobile-rn/ResultViewController.m"; sourceTree = "<group>"; };
+		9356BB591DEEBD6500E00E20 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanViewController.h; path = "antd-mobile-rn/ScanViewController.h"; sourceTree = "<group>"; };
+		9356BB5A1DEEBD6500E00E20 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanViewController.m; path = "antd-mobile-rn/ScanViewController.m"; sourceTree = "<group>"; };
 		9356BB691DEEBE1500E00E20 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9356BB6B1DEEBE1D00E00E20 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		93A3E9DE1E559595008622D3 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = iconfont.ttf; path = "antd-mobile/iconfont.ttf"; sourceTree = "<group>"; };
+		93A3E9DE1E559595008622D3 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = iconfont.ttf; path = "antd-mobile-rn/iconfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +285,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B07FAE1A68108700A75B9A /* antd-mobile */ = {
+		13B07FAE1A68108700A75B9A /* antd-mobile-rn */ = {
 			isa = PBXGroup;
 			children = (
 				932268C41DEEC0FC0095E0B5 /* HomeViewController.m */,
@@ -301,7 +301,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = "antd-mobile";
+			name = "antd-mobile-rn";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -330,7 +330,7 @@
 				93A3E9DE1E559595008622D3 /* iconfont.ttf */,
 				9356BB531DEEBD5E00E00E20 /* RNAppInfo.h */,
 				9356BB541DEEBD5E00E00E20 /* RNAppInfo.m */,
-				13B07FAE1A68108700A75B9A /* antd-mobile */,
+				13B07FAE1A68108700A75B9A /* antd-mobile-rn */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				9356BB681DEEBE1500E00E20 /* Frameworks */,
@@ -342,7 +342,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* antd-mobile.app */,
+				13B07F961A680F5B00A75B9A /* antd-mobile-rn.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -477,9 +477,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* antd-mobile */ = {
+		13B07F861A680F5B00A75B9A /* antd-mobile-rn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "antd-mobile" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "antd-mobile-rn" */;
 			buildPhases = (
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -489,9 +489,9 @@
 			);
 			dependencies = (
 			);
-			name = "antd-mobile";
+			name = "antd-mobile-rn";
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* antd-mobile.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* antd-mobile-rn.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -508,7 +508,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "antd-mobile" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "antd-mobile-rn" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -575,7 +575,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* antd-mobile */,
+				13B07F861A680F5B00A75B9A /* antd-mobile-rn */,
 			);
 		};
 /* End PBXProject section */
@@ -808,7 +808,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = "antd-mobile";
+			path = "antd-mobile-rn";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -828,7 +828,7 @@
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../node_modules/react-native-code-push/**",
 				);
-				INFOPLIST_FILE = "antd-mobile/Info.plist";
+				INFOPLIST_FILE = "antd-mobile-rn/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -836,7 +836,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mybank.ios.phone.test;
-				PRODUCT_NAME = "antd-mobile";
+				PRODUCT_NAME = "antd-mobile-rn";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -854,7 +854,7 @@
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../node_modules/react-native-code-push/**",
 				);
-				INFOPLIST_FILE = "antd-mobile/Info.plist";
+				INFOPLIST_FILE = "antd-mobile-rn/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -862,7 +862,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mybank.ios.phone.test;
-				PRODUCT_NAME = "antd-mobile";
+				PRODUCT_NAME = "antd-mobile-rn";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -948,7 +948,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "antd-mobile" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "antd-mobile-rn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -957,7 +957,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "antd-mobile" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "antd-mobile-rn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
