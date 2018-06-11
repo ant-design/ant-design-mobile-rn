@@ -40,4 +40,4 @@ Display shareable action sheet.
   - failureCallback(error): callback is called if share failed;
   - successCallback(completed, method): callback is called if share successed;
 
-#### static close() - (web、android only) programmatically close.
+#### static close() - (android only) programmatically close.

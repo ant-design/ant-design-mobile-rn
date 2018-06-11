@@ -22,5 +22,5 @@ Properties | Descrition | Type | Default
 | disabled    |  Boolean     | false    | If true, the slider will not be interactable. |
 | onChange    |  Function     | Noop    | Callback function that is called when the user changes the slider's value. |
 | onAfterChange    |  Function     | Noop    | Fired when `ontouchend` is fired. |
-| maximumTrackTintColor (`iOS`)   |  String     | `#108ee9`    | The color used for the track to the right of the button. Overrides the default blue gradient image on iOS. ( Also can custom theme to define color in web) |
-| minimumTrackTintColor (iOS)   |  String     | `#ddd`    | The color used for the track to the left of the button. Overrides the default blue gradient image on iOS. ( Also can custom theme to define color in web) |
+| maximumTrackTintColor (`iOS`)   |  String     | `#108ee9`    | The color used for the track to the right of the button. Overrides the default blue gradient image on iOS. |
+| minimumTrackTintColor (iOS)   |  String     | `#ddd`    | The color used for the track to the left of the button. Overrides the default blue gradient image on iOS. |

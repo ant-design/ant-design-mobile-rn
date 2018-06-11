@@ -20,10 +20,4 @@ export interface TabBarItemProps {
   icon?: TabIcon;
   selectedIcon?: TabIcon;
   title: string;
-  /*web only*/
-  dot?: boolean;
-  /*web only*/
-  prefixCls?: string;
-  /*web only*/
-  style?: React.CSSProperties;
 }

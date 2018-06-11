@@ -23,8 +23,6 @@ Properties | Descrition | Type | Default
 | name  | menu name, used for manual control   | String |  -   |
 | openMenu / closeMenu / toggleMenu | Set the menu's open/close status, the parameter is menu name.  | Function(name) |  -   |
 
-more available API can be found at [rmc-tooltip](https://github.com/react-component/m-tooltip#api) (`web only`)
-
 ### Popover.Item
 
 Properties | Descrition | Type | Default

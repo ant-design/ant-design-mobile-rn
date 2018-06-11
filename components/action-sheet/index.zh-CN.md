@@ -41,4 +41,4 @@ subtitle: 动作面板
   - failureCallback(error): 分享失败调用；
   - successCallback(completed, method)：分享成功调用;
 
-#### static close() - (web, android only) programmatically close.
+#### static close() - (android only) programmatically close.

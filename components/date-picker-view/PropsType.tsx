@@ -6,10 +6,4 @@ export interface DatePickerProps extends DatePickerPropsType {
   triggerTypes?: string;
   /** rn only */
   styles?: any;
-  /** web only */
-  prefixCls?: string;
-  /** web only */
-  className?: string;
-  /** web only */
-  pickerPrefixCls?: string;
 }
