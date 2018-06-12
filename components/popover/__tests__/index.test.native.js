@@ -5,7 +5,9 @@
 
 // // No need to render Snapshot again, because of `./demo.test.native.js`
 
-// describe('Popover', () => {
-//   it('renders correctly', () => {
-//   });
-// });
+describe('Popover', () => {
+  it('trigger event correctly', () => {
+    // todos: write test!
+    expect(true).toBe(true);
+  });
+});

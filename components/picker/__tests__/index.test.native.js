@@ -7,7 +7,9 @@
 
 // // No need to render Snapshot again, because of `./demo.test.native.js`
 
-// describe('Picker', () => {
-//   it('renders correctly', () => {
-//   });
-// });
+describe('Picker', () => {
+  it('trigger event correctly', () => {
+    // todos: write test!
+    expect(true).toBe(true);
+  });
+});

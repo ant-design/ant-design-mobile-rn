@@ -4,7 +4,9 @@
 
 // No need to render Snapshot again, because of `./demo.test.native.js`
 
-// describe('Badge', () => {
-//   it('renders correctly', () => {
-//   });
-// });
+describe('Badge', () => {
+  it('trigger event correctly', () => {
+    // todos: write test!
+    expect(true).toBe(true);
+  });
+});

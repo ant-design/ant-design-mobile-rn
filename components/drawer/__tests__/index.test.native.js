@@ -4,7 +4,9 @@
 
 // // No need to render Snapshot again, because of `./demo.test.native.js`
 
-// describe('Drawer', () => {
-//   it('renders correctly', () => {
-//   });
-// });
+describe('Drawer', () => {
+  it('trigger correctly', () => {
+    // todos: write test!
+    expect(true).toBe(true);
+  });
+});
