@@ -1,10 +1,9 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import SegmentedControl from '../index';
+// import React from 'react';
+// import SegmentedControl from '../index';
 
-describe('SegmentedControl', () => {
-  it('renders correctly', () => {
-    const tree = renderer.create(<SegmentedControl values={['切换一', '切换二']} />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+// // No need to render Snapshot again, because of `./demo.test.native.js`
+
+// describe('SegmentedControl', () => {
+//   it('renders correctly', () => {
+//   });
+// });

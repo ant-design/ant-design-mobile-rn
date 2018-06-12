@@ -1,14 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import SearchBar from '../index';
 
-describe('SearchBar', () => {
-  it('renders correctly', () => {
-    const wrapper = renderer.create(<SearchBar placeholder="搜索" />);
-    expect(wrapper.toJSON()).toMatchSnapshot();
-  });
+// No need to render Snapshot again, because of `./demo.test.native.js`
 
+describe('SearchBar', () => {
   describe('test some events', () => {
     let handler;
     let wrapper;

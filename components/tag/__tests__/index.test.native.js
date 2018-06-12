@@ -1,15 +1,11 @@
 import React from 'react';
 import { Text } from 'react-native';
-import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import Tag from '../index';
 
-describe('Tag', () => {
-  it('renders correctly', () => {
-    const tree = renderer.create(<Tag>Basic</Tag>).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+// No need to render Snapshot again, because of `./demo.test.native.js`
 
+describe('Tag', () => {
   it('small size does not have closeDom', () => {
     const wrapper = shallow(<Tag small closable>Basic</Tag>);
     expect(wrapper.find('TouchableWithoutFeedback')).toHaveLength(1);

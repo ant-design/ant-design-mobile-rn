@@ -1,20 +1,10 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-// import { shallow } from 'enzyme';
+// import React from 'react';
+// // import { shallow } from 'enzyme';
+// import Drawer from '../index';
 
-import { Text } from 'react-native';
-import Drawer from '../index';
+// // No need to render Snapshot again, because of `./demo.test.native.js`
 
-describe('Drawer', () => {
-  it('renders correctly', () => {
-    const wrapper = renderer.create(
-      <Drawer
-        sidebar={<Text>Text</Text>}
-        position="left"
-      >
-        <Text>Main</Text>
-      </Drawer>,
-    );
-    expect(wrapper.toJSON()).toMatchSnapshot();
-  });
-});
+// describe('Drawer', () => {
+//   it('renders correctly', () => {
+//   });
+// });

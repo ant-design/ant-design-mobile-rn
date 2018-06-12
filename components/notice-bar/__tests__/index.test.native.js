@@ -1,15 +1,11 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
 import NoticeBar from '../index';
 
-describe('NoticeBar', () => {
-  it('renders correctly', () => {
-    const wrapper = renderer.create(<NoticeBar>foo</NoticeBar>);
-    expect(wrapper.toJSON()).toMatchSnapshot();
-  });
+// No need to render Snapshot again, because of `./demo.test.native.js`
 
+describe('NoticeBar', () => {
   describe('onClick', () => {
     let handleClick;
     let wrapper;

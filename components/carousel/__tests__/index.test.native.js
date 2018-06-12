@@ -1,15 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import Carousel from '../index';
 
-describe('Carousel.RN', () => {
-  it('renders correctly', () => {
-    const tree = renderer.create(<Carousel><View>abc</View></Carousel>).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+// No need to render Snapshot again, because of `./demo.test.native.js`
 
+describe('Carousel.RN', () => {
   it('has no dots', () => {
     const wrapper = shallow(
       <Carousel dots={false}>

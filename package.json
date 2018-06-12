@@ -100,7 +100,6 @@
     "react-native-code-push": "^5.1.1-beta",
     "react-native-mocker": "^0.0.12",
     "react-navigation": "1.0.0-beta.12",
-    "react-test-renderer": "^16.0.0",
     "typescript": "~2.4.0"
   },
   "scripts": {

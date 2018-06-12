@@ -1,8 +1,9 @@
 // import React from 'react';
-// import renderer from 'react-test-renderer';
 // import { shallow } from 'enzyme';
 
 import ActionSheet from '../index';
+
+// No need to render Snapshot again, because of `./demo.test.native.js`
 
 describe('ActionSheet', () => {
   it('showActionSheetWithOptions correctly', () => {
