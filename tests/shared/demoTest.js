@@ -14,9 +14,9 @@ export default function rnDemoTest(component, options = {}) {
     testMethod(`renders ${file} correctly`, () => {
       // https://github.com/boblauer/MockDate#api
       MockDate.set('11/22/2016', -60); // Set an arbitrary time zone
-      let demo = require(`../.${file}`); // eslint-disable-line global-require, import/no-dynamic-require
-      demo = demo.default || demo;
-      const wrapper = renderer.create(<demo />).toJSON();
+      let Demo = require(`../.${file}`); // eslint-disable-line global-require, import/no-dynamic-require
+      Demo = Demo.default || Demo;
+      const wrapper = renderer.create(<Demo />).toJSON();
       expect(wrapper).toMatchSnapshot();
       MockDate.reset();
     });
