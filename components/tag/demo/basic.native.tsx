@@ -33,6 +33,14 @@ export default class BasicTagExample extends React.Component<any, any> {
         </Tag>
         <WhiteSpace />
         <Tag small>Small and Readonly</Tag>
+        <WhiteSpace />
+        <Tag
+          onLongPress={() => {
+            console.log('onLongPress');
+          }}
+        >
+          LongPress
+        </Tag>
       </View>
     );
   }

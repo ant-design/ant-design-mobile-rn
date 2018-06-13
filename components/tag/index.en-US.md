@@ -21,3 +21,4 @@ Properties | Descrition | Type | Default
 | onChange   | The callback function that is triggered when the selected state changes. | (selected: bool): void |   -  |
 | onClose   | The callback function that is triggered when the tag is closed. | (): void |   -  |
 | afterClose   | The callback function that is triggered after close. | (): void |   -  |
+| onLongPress   | The callback function that is triggered when the tag is long pressed. | (): void |   -  |

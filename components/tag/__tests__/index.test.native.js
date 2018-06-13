@@ -33,4 +33,11 @@ describe('Tag', () => {
     expect(afterClose).toHaveBeenCalled();
     expect(wrapper.find('TouchableWithoutFeedback')).toHaveLength(0);
   });
+
+  it('onLongPress then callback', () => {
+    const onLongPress = jest.fn();
+    const wrapper = shallow(<Tag onLongPress={onLongPress}>Basic</Tag>);
+    wrapper.find('TouchableWithoutFeedback').at(0).simulate('longPress');
+    expect(onLongPress).toHaveBeenCalledWith();
+  });
 });
