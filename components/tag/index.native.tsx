@@ -28,6 +28,7 @@ export default class Tag extends React.Component<TagNativeProps, any> {
     onClose() {},
     afterClose() {},
     onChange() {},
+    onLongPress() {},
     styles: TagStyles,
   };
 
@@ -66,6 +67,16 @@ export default class Tag extends React.Component<TagNativeProps, any> {
         }
       },
     );
+  }
+
+  handleLongPress = () => {
+    const { disabled, onLongPress } = this.props;
+    if (disabled) {
+      return;
+    }
+    if (onLongPress) {
+      onLongPress();
+    }
   }
 
   onTagClose = () => {
@@ -158,7 +169,7 @@ export default class Tag extends React.Component<TagNativeProps, any> {
 
     return !this.state.closed ? (
       <View style={[styles.tag, style]}>
-        <TouchableWithoutFeedback onPress={this.onClick}>
+        <TouchableWithoutFeedback onPress={this.onClick} onLongPress={this.handleLongPress}>
           <View style={[styles.wrap, sizeWrapStyle, wrapStyle]}>
             <Text style={[styles.text, sizeTextStyle, textStyle]}>
               {children}{' '}

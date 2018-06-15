@@ -6,4 +6,5 @@ export interface TagPropsType {
   onChange?: (selected: boolean) => void;
   onClose?: () => void;
   afterClose?: () => void;
+  onLongPress?: () => void;
 }
