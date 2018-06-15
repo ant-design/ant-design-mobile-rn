@@ -6,7 +6,7 @@
   </a>
 </p>
 
-# Ant Design Mobile
+# Ant Design Mobile RN
 [![](https://img.shields.io/travis/ant-design/ant-design-mobile-rn.svg?style=flat-square)](https://travis-ci.org/ant-design/ant-design-mobile-rn)
 [![Codecov](https://img.shields.io/codecov/c/github/ant-design/ant-design-mobile-rn.svg?style=flat-square)](https://codecov.io/gh/ant-design/ant-design-mobile-rn)
 [![npm package](https://img.shields.io/npm/v/antd-mobile-rn.svg?style=flat-square)](https://www.npmjs.org/package/antd-mobile-rn)

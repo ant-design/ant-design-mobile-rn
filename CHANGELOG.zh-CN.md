@@ -16,9 +16,10 @@ toc: false
 
 ### 2.2.0
 
-`2018-06-19`
+`2018-06-15`
 
-- 拆分 antd-mobile react native 代码到 `antd-mobile-rn` 包.
+- 拆分 antd-mobile react native 代码到 `antd-mobile-rn` 包。
+- 特性: 使 `Tag` 组件支持长按。([#20](https://github.com/ant-design/ant-design-mobile-rn/issues/20))
 
 ### 2.1.11
 

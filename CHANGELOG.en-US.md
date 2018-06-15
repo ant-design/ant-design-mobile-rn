@@ -16,9 +16,10 @@ toc: false
 
 ### 2.2.0
 
-`2018-06-19`
+`2018-06-15`
 
 - split the antd-mobile react native code to `antd-mobile-rn` package.
+- Feature: Make `Tag` support long press. ([#20](https://github.com/ant-design/ant-design-mobile-rn/issues/20))
 
 ### 2.1.11
 
