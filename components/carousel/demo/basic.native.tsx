@@ -95,7 +95,7 @@ const styles = StyleSheet.create<{
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    height: 300,
+    height: 150,
   },
   text: {
     color: '#fff',
