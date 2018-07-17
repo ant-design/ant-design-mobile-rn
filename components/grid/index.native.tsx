@@ -34,7 +34,7 @@ export default class Grid extends React.Component<GridProps, any> {
 
   getFlexItemStyle() {
     return {
-      height: Dimensions.get('window').width / 4,
+      height: Dimensions.get('window').width / this.props.columnNum,
       borderRightWidth: this.props.hasLine ? 1 : 0,
     };
   }
