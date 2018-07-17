@@ -11,6 +11,8 @@ declare module 'react-native-menu';
 declare module 'react-native/Libraries/StyleSheet/normalizeColor';
 declare module 'react-native/Libraries/StyleSheet/setNormalizedColorAlpha';
 
+declare module 'normalize-css-color';
+
 declare var process: {
   env: {
     NODE_ENV: string;

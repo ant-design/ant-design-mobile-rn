@@ -1058,6 +1058,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
     </View>
     <View
       onLayout={[Function]}
+      style={Object {}}
     >
       <RCTScrollView
         automaticallyAdjustContentInsets={false}
@@ -1122,6 +1123,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
       >
         <View>
           <View
+            onLayout={[Function]}
             style={
               Object {
                 "width": 0,
@@ -1154,8 +1156,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         "borderColor": "#dddddd",
                       },
                       Object {
-                        "borderBottomWidth": 1,
-                        "borderTopWidth": 1,
+                        "borderBottomWidth": 0.5,
+                        "borderTopWidth": 0.5,
                       },
                     ],
                   ]
@@ -1186,11 +1188,11 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
-                          "borderLeftWidth": 1,
+                          "borderLeftWidth": 0.5,
                         },
                         Object {},
                       ],
@@ -1283,8 +1285,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
                           "borderLeftWidth": 0,
@@ -1380,8 +1382,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
                           "borderLeftWidth": 0,
@@ -1467,7 +1469,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         "borderColor": "#dddddd",
                       },
                       Object {
-                        "borderBottomWidth": 1,
+                        "borderBottomWidth": 0.5,
                         "borderTopWidth": 0,
                       },
                     ],
@@ -1499,11 +1501,11 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
-                          "borderLeftWidth": 1,
+                          "borderLeftWidth": 0.5,
                         },
                         Object {},
                       ],
@@ -1596,8 +1598,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
                           "borderLeftWidth": 0,
@@ -1693,8 +1695,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
                           "borderLeftWidth": 0,
@@ -1769,6 +1771,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            onLayout={[Function]}
             style={
               Object {
                 "width": 0,
@@ -1782,7 +1785,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                     "borderColor": "#dddddd",
                   },
                   Object {
-                    "borderTopWidth": 1,
+                    "borderTopWidth": 0.5,
                   },
                 ]
               }
@@ -1801,7 +1804,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         "borderColor": "#dddddd",
                       },
                       Object {
-                        "borderBottomWidth": 1,
+                        "borderBottomWidth": 0.5,
                         "borderTopWidth": 0,
                       },
                     ],
@@ -1833,11 +1836,11 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
-                          "borderLeftWidth": 1,
+                          "borderLeftWidth": 0.5,
                         },
                         Object {},
                       ],
@@ -1930,8 +1933,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
                           "borderLeftWidth": 0,
@@ -2027,8 +2030,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                         Object {
                           "borderLeftWidth": 0,
@@ -2114,7 +2117,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         "borderColor": "#dddddd",
                       },
                       Object {
-                        "borderBottomWidth": 1,
+                        "borderBottomWidth": 0.5,
                       },
                     ],
                   ]
@@ -2131,8 +2134,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                       ],
                     ]
@@ -2149,8 +2152,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                       ],
                     ]
@@ -2167,8 +2170,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                           "borderColor": "#dddddd",
                         },
                         Object {
-                          "borderRightWidth": 1,
-                          "height": 187.5,
+                          "borderRightWidth": 0.5,
+                          "height": 250,
                         },
                       ],
                     ]
@@ -2289,8 +2292,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 "borderColor": "#dddddd",
               },
               Object {
-                "borderBottomWidth": 1,
-                "borderTopWidth": 1,
+                "borderBottomWidth": 0.5,
+                "borderTopWidth": 0.5,
               },
             ],
           ]
@@ -2321,11 +2324,11 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
-                  "borderLeftWidth": 1,
+                  "borderLeftWidth": 0.5,
                 },
                 Object {
                   "backgroundColor": "#ffff00",
@@ -2421,8 +2424,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
                   "borderLeftWidth": 0,
@@ -2521,8 +2524,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
                   "borderLeftWidth": 0,
@@ -2611,7 +2614,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 "borderColor": "#dddddd",
               },
               Object {
-                "borderBottomWidth": 1,
+                "borderBottomWidth": 0.5,
                 "borderTopWidth": 0,
               },
             ],
@@ -2643,11 +2646,11 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
-                  "borderLeftWidth": 1,
+                  "borderLeftWidth": 0.5,
                 },
                 Object {
                   "backgroundColor": "#ffff00",
@@ -2743,8 +2746,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
                   "borderLeftWidth": 0,
@@ -2843,8 +2846,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
                   "borderLeftWidth": 0,
@@ -2933,7 +2936,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 "borderColor": "#dddddd",
               },
               Object {
-                "borderBottomWidth": 1,
+                "borderBottomWidth": 0.5,
                 "borderTopWidth": 0,
               },
             ],
@@ -2965,11 +2968,11 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
-                  "borderLeftWidth": 1,
+                  "borderLeftWidth": 0.5,
                 },
                 Object {
                   "backgroundColor": "#ffff00",
@@ -3065,8 +3068,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
                   "borderLeftWidth": 0,
@@ -3165,8 +3168,8 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 Object {
-                  "borderRightWidth": 1,
-                  "height": 187.5,
+                  "borderRightWidth": 0.5,
+                  "height": 250,
                 },
                 Object {
                   "borderLeftWidth": 0,
