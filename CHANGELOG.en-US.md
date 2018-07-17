@@ -14,6 +14,13 @@ toc: false
 
 ---
 
+### 2.2.1
+
+`2018-07-17`
+
+- Calculate `Grid` item height via `column` property. ([#61](https://github.com/ant-design/ant-design-mobile-rn/pull/61))
+- Replace with normalize-css-color. ([#57](https://github.com/ant-design/ant-design-mobile-rn/pull/57))
+
 ### 2.2.0
 
 `2018-06-15`

@@ -14,6 +14,13 @@ toc: false
 
 ---
 
+### 2.2.1
+
+`2018-07-17`
+
+- Grid 组件单个项高度通过 column 来做计算. ([#61](https://github.com/ant-design/ant-design-mobile-rn/pull/61))
+- 利用 normalize-css-color 替换 react-native 自带模块，修复 >= 0.56 下的报错. ([#57](https://github.com/ant-design/ant-design-mobile-rn/pull/57))
+
 ### 2.2.0
 
 `2018-06-15`
@@ -26,5 +33,3 @@ toc: false
 `2018-05-31`
 
 - [antd-mobile@2.1.11 及以前更新日志](https://github.com/ant-design/ant-design-mobile/blob/master/CHANGELOG.en-US.md#2111)
-
-
