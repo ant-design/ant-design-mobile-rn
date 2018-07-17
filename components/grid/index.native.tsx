@@ -32,10 +32,10 @@ export default class Grid extends React.Component<GridProps, any> {
     itemStyle: {},
   };
 
-  getFlexItemStyle() {
+  getFlexItemStyle(columnNum: number) {
     return {
-      height: Dimensions.get('window').width / 4,
-      borderRightWidth: this.props.hasLine ? 1 : 0,
+      height: Dimensions.get('window').width / columnNum,
+      borderRightWidth: this.props.hasLine ? StyleSheet.hairlineWidth : 0,
     };
   }
 
@@ -74,7 +74,7 @@ export default class Grid extends React.Component<GridProps, any> {
         </Flex>
       ));
 
-    const flexItemStyle = this.getFlexItemStyle();
+    const flexItemStyle = this.getFlexItemStyle(columnNum);
     const rowsArr: any[] = [];
 
     for (let i = 0; i < rowCount; i++) {
@@ -89,7 +89,7 @@ export default class Grid extends React.Component<GridProps, any> {
               style={[
                 styles.grayBorderBox,
                 flexItemStyle,
-                { borderLeftWidth: hasLine && j === 0 ? 1 : 0 },
+                { borderLeftWidth: hasLine && j === 0 ? StyleSheet.hairlineWidth : 0 },
                 customItemStyle,
               ]}
               onPress={() => onClick(el, dataIndex)}
@@ -104,8 +104,8 @@ export default class Grid extends React.Component<GridProps, any> {
         }
       }
       const boxBorderStyle = {
-        borderTopWidth: hasLine && i === 0 ? 1 : 0,
-        borderBottomWidth: hasLine ? 1 : 0,
+        borderTopWidth: hasLine && i === 0 ? StyleSheet.hairlineWidth : 0,
+        borderBottomWidth: hasLine ? StyleSheet.hairlineWidth : 0,
       };
       rowsArr.push(
         <Flex key={i} style={[styles.grayBorderBox, boxBorderStyle]}>
@@ -138,7 +138,7 @@ export default class Grid extends React.Component<GridProps, any> {
                 key={rowIndex}
                 style={[
                   styles.grayBorderBox,
-                  { borderBottomWidth: hasLine ? 1 : 0 },
+                  { borderBottomWidth: hasLine ? StyleSheet.hairlineWidth : 0 },
                 ]}
               >
                 {res}
@@ -151,7 +151,7 @@ export default class Grid extends React.Component<GridProps, any> {
             key={pageIndex}
             style={[
               styles.grayBorderBox,
-              { borderTopWidth: hasLine && pageIndex !== 0 ? 1 : 0 },
+              { borderTopWidth: hasLine && pageIndex !== 0 ? StyleSheet.hairlineWidth : 0 },
             ]}
           >
             {pageRows}
