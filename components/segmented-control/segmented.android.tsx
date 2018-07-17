@@ -7,7 +7,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import normalizeColor from 'react-native/Libraries/StyleSheet/normalizeColor';
+import normalizeColor from 'normalize-css-color';
 import setNormalizedColorAlpha from 'react-native/Libraries/StyleSheet/setNormalizedColorAlpha';
 import { SegmentedControlPropsType } from './PropsType';
 import AndroidStyle, { ISegmentControlStyle } from './style/index.native';
