@@ -26,6 +26,9 @@ export default {
     fontSize: variables.input_font_size,
     color: variables.color_text_base,
   },
+  inputDisabledColor: {
+    color: variables.color_text_disabled,
+  },
   inputErrorColor: {
     color: '#f50',
   },
