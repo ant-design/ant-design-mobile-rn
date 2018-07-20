@@ -122,7 +122,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
   render() {
     const {
       type,
-      editable,
+      disabled,
       clear,
       children,
       error,
@@ -134,7 +134,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
       styles,
       ...restProps,
     } = this.props;
-    const { value, defaultValue, style } = restProps;
+    const { value, defaultValue, style, editable } = restProps;
 
     let valueProps;
     if ('value' in this.props) {
@@ -204,7 +204,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
           ref={el => (this.inputRef = el)}
           {...restProps}
           {...valueProps}
-          style={[styles.input, error ? styles.inputErrorColor : null]}
+          style={[styles.input, disabled ? styles.inputDisabledColor : null, error ? styles.inputErrorColor : null]}
           keyboardType={keyboardType}
           onChange={event => this.onChange(event.nativeEvent.text)}
           secureTextEntry={type === 'password'}
