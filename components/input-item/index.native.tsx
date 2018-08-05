@@ -132,7 +132,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
       onExtraClick,
       onErrorClick,
       styles,
-      ...restProps,
+      ...restProps
     } = this.props;
     const { value, defaultValue, style } = restProps;
 
@@ -199,6 +199,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
           )
         ) : null}
         <Input
+          editable={editable}
           clearButtonMode={clear ? 'while-editing' : 'never'}
           underlineColorAndroid="transparent"
           ref={el => (this.inputRef = el)}
