@@ -7,6 +7,8 @@ import {
   TouchableHighlight,
   TouchableHighlightProperties,
   View,
+  ViewStyle,
+  StyleProp,
 } from 'react-native';
 import { ButtonPropsType } from './PropsType';
 import buttonStyle from './style/index.native';
@@ -15,7 +17,7 @@ export interface ButtonProps
   extends ButtonPropsType,
     TouchableHighlightProperties {
   styles?: typeof buttonStyle;
-  activeStyle?: boolean;
+  activeStyle?: StyleProp<ViewStyle>;
   onClick?: (_?: any) => void;
 }
 
