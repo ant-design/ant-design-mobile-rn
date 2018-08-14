@@ -13,7 +13,7 @@ Each icon has its own semantic naming，the naming rules are as follows:
 
 ## How to Use
 
-> You need to use custom font(`anticon.ttf`) for RN
+> You need to use custom font(`anticon.ttf`). And `loading`(Deprecated) icon is not animated, it is recommended to use RN `ActivityIndicator` instead.
 
 - Download`https://at.alicdn.com/t/font_r5u29ls31bgldi.ttf` and rename to `anticon.ttf`
 - Open `info.plist` file in your xcode project, add `Fonts provided by application` property with one item and value `anticon.ttf`, then drag `anticon.ttf` to your xcode project.

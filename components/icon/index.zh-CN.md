@@ -15,7 +15,7 @@ subtitle: 图标
 
 ## 如何使用
 
-> RN 版本由于 Icon 无法做纯 UI，需要 native 支持
+> 由于 Icon 无法做纯 UI，需要 native 支持。另外 `loading`(废弃) icon 没有动画，建议自己使用 RN `ActivityIndicator` 来代替
 
 - 下载 `https://at.alicdn.com/t/font_r5u29ls31bgldi.ttf` 重命名为 `anticon.ttf`
 - 打开 iOS 项目 `info.plist` 文件，添加 `Fonts provided by application`，指定一个 item 的值为 `anticon.ttf`， 将 `anticon.ttf` 拖进项目；
