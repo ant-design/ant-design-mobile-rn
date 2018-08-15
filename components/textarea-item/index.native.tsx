@@ -119,6 +119,7 @@ export default class TextAreaItem extends React.Component<
       onErrorClick,
       styles,
       style,
+      allowFontScaling,
       ...restProps,
     } = this.props;
     const { value, defaultValue } = restProps;
@@ -182,7 +183,7 @@ export default class TextAreaItem extends React.Component<
         ) : null}
         {rows! > 1 && count! > 0 ? (
           <View style={[styles!.count]}>
-            <Text>
+            <Text allowFontScaling={allowFontScaling}>
               {inputCount} / {count}
             </Text>
           </View>
