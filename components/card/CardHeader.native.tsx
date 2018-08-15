@@ -30,6 +30,7 @@ export default class CardHeader extends React.Component<CardHeaderProps, any> {
       extra,
       style,
       styles,
+      allowFontScaling,
       ...restProps,
     } = this.props;
 
@@ -37,14 +38,14 @@ export default class CardHeader extends React.Component<CardHeaderProps, any> {
       title === undefined ? null : React.isValidElement(title) ? (
         <View style={{ flex: 1 }}>{title}</View>
       ) : (
-        <Text style={styles.headerContent}>{title}</Text>
+        <Text allowFontScaling={allowFontScaling} style={styles.headerContent}>{title}</Text>
       );
 
     const extraDom =
       extra === undefined ? null : React.isValidElement(extra) ? (
         <View style={{ flex: 1 }}>{extra}</View>
       ) : (
-        <Text style={[styles.headerExtra]}>{extra}</Text>
+        <Text allowFontScaling={allowFontScaling} style={[styles.headerExtra]}>{extra}</Text>
       );
 
     return (
