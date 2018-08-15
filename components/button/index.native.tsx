@@ -82,6 +82,7 @@ export default class Button extends React.Component<ButtonProps, any> {
       style,
       styles,
       loading,
+      allowFontScaling,
       ...restProps,
     } = this.props;
     // tslint:disable-next-line:variable-name
@@ -137,7 +138,7 @@ export default class Button extends React.Component<ButtonProps, any> {
               size="small"
             />
           ) : null}
-          <Text style={textStyle}>{this.props.children}</Text>
+          <Text style={textStyle} allowFontScaling={allowFontScaling}>{this.props.children}</Text>
         </View>
       </TouchableHighlight>
     );
