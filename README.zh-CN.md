@@ -17,6 +17,11 @@
 
 Ant Design 移动端设计规范。`antd-mobile-rn` 是 Ant Design 的移动规范的 React 实现，服务于蚂蚁及口碑无线业务。
 
+## 通知
+
+首先，很感谢信任我们，使用`antd-mobile-rn`。但由于RN目前应用场景比较少以及精力所限，`antd-mobile-rn`仓库不再更新、维护。
+如果社区中有人有意愿维护，可以私信我们。
+
 ## 特性
 
 - 基于 Ant Design 移动设计规范。
