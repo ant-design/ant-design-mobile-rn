@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import {
   Dimensions,
@@ -15,6 +16,8 @@ import {
 import RCModal from 'rmc-dialog/lib/Modal';
 import { ModalPropsType } from './PropsType';
 import modalStyle, { IModalStyle } from './style/index.native';
+import { getComponentLocale } from '../_util/getLocale';
+import zh_CN from './locale/zh_CN';
 
 const maxHeight = StyleSheet.create({
   maxHeight: {
@@ -50,6 +53,10 @@ class AntmModal extends React.Component<IModalNativeProps, any> {
   static operation: any;
   static prompt: any;
 
+  static contextTypes = {
+    antLocale: PropTypes.object,
+  };
+
   root: View | null;
 
   onFooterLayout = (e: LayoutChangeEvent) => {
@@ -83,6 +90,14 @@ class AntmModal extends React.Component<IModalNativeProps, any> {
     } = this.props;
 
     const styles = this.props.styles!;
+
+    // tslint:disable-next-line:variable-name
+    const _locale = getComponentLocale(
+      this.props,
+      this.context,
+      'Modal',
+      () => zh_CN,
+    );
 
     let btnGroupStyle = styles.buttonGroupV;
     let horizontalFlex = {};
@@ -133,7 +148,7 @@ class AntmModal extends React.Component<IModalNativeProps, any> {
           >
             <View style={[buttonWrapStyle, noneBorder]}>
               <Text style={[styles.buttonText, buttonStyle]}>
-                {button.text || `按钮${i}`}
+                {button.text || `${_locale.buttonText}${i}`}
               </Text>
             </View>
           </TouchableHighlight>

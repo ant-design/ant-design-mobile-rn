@@ -7,6 +7,7 @@ export interface LocaleProviderProps {
     DatePicker?: object;
     DatePickerView?: object;
     InputItem?: object;
+    Modal?: object;
   };
   children?: React.ReactElement<any>;
 }
