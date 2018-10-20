@@ -12,7 +12,7 @@ import {
 import variables from '../style/themes/default.native';
 import { TextAreaItemPropsType } from './PropsType';
 import TextAreaItemStyle, { ITextareaItemStyle } from './style/index.native';
-import { Omit } from '../_util/types';
+import { Omit } from 'utility-types';
 export type TextInputProps = Omit<
   TextInputProperties,
   'onChange' | 'onFocus' | 'onBlur'
@@ -119,7 +119,7 @@ export default class TextAreaItem extends React.Component<
       onErrorClick,
       styles,
       style,
-      ...restProps,
+      ...restProps
     } = this.props;
     const { value, defaultValue } = restProps;
     const { inputCount } = this.state;

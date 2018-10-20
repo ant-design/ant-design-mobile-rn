@@ -91,8 +91,8 @@ export default class LocaleProviderExample extends React.Component<any, any> {
       {
         value: 'Español',
         label: 'Español',
-        language: esES
-      }
+        language: esES,
+      },
     ];
     const currentLocale = languages.find(item => item.value === locale).language;
 

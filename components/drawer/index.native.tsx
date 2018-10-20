@@ -41,7 +41,7 @@ export default class Drawer extends React.Component<DrawerNativeProps, any> {
       position,
       drawerRef,
       drawerWidth = 300,
-      ...restProps,
+      ...restProps
     } = this.props;
     [
       'onOpenChange',

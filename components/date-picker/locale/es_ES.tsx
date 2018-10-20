@@ -14,5 +14,5 @@ export default {
     day: '',
     hour: '',
     minute: '',
-  }
+  },
 };

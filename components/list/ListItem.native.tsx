@@ -92,7 +92,7 @@ export default class Item extends React.Component<ListItemProps, any> {
       wrap,
       disabled,
       align,
-      ...restProps,
+      ...restProps
     } = this.props;
     const itemStyles = styles!; // assert none-null none-undefined
 

@@ -63,7 +63,8 @@ export default class DatePicker extends React.Component<
       >
         {children &&
           React.isValidElement(children) &&
-          React.cloneElement<object, object>(children, {
+          // TODO: fix ts error
+          React.cloneElement<object, any>(children as any, {
             extra: value ? formatFn(this, value) : this.props.extra || extra,
           })}
       </PopupDatePicker>

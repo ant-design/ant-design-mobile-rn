@@ -149,7 +149,7 @@ export default class Tag extends React.Component<TagNativeProps, any> {
           onPress={this.onTagClose}
         >
           <View
-            ref={component => ((this.closeDom as any) = component)}
+            ref={(component: any) => ((this.closeDom as any) = component)}
             style={[
               styles.close,
               Platform.OS === 'ios' ? styles.closeIOS : styles.closeAndroid,

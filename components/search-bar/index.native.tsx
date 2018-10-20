@@ -110,7 +110,7 @@ export default class SearchBar extends React.Component<
       onChange,
       disabled,
       style,
-      ...restProps,
+      ...restProps
     } = this.props;
 
     // tslint:disable-next-line:variable-name

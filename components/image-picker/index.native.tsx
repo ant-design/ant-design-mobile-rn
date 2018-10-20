@@ -146,7 +146,7 @@ export default class ImagePicker extends React.Component<
             onPressOut={this.onPressOut}
           >
             <View
-              ref={conponent => (this.plusWrap = conponent)}
+              ref={(conponent: any) => (this.plusWrap = conponent)}
               style={[
                 styles.item,
                 styles.size,
