@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
 // export type ListType = JSX.Element
 export interface ListPropsType {
   renderHeader?: (() => React.ReactType) | string | JSX.Element;
@@ -15,7 +16,7 @@ export interface ListItemPropsType {
   extra?: ReactNode;
   arrow?: 'horizontal' | 'down' | 'up' | 'empty' | '';
   wrap?: boolean;
-  activeStyle?: React.CSSProperties;
+  activeStyle?: StyleProp<ViewStyle>;
   error?: boolean;
   platform?: 'android' | 'ios';
 }
@@ -23,5 +24,5 @@ export interface ListItemPropsType {
 export interface BriefProps {
   children?: ReactNode;
   wrap?: boolean;
-  style?: React.CSSProperties | {} | Array<{}>;
+  style?: StyleProp<ViewStyle>;
 }
