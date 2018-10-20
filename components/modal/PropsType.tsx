@@ -9,6 +9,7 @@ export interface ModalPropsType<T> {
   transparent?: boolean;
   popup?: boolean;
   animated?: boolean;
+  locale?: object;
   animationType?: any;
   onAnimationEnd?: (visible: boolean) => void;
   animateAppear?: boolean;

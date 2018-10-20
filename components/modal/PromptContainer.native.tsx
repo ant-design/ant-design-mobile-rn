@@ -1,4 +1,5 @@
 /* tslint:disable:jsx-no-multiline-js */
+import PropTypes from 'prop-types';
 import React from 'react';
 import {
   KeyboardAvoidingView,
@@ -11,6 +12,8 @@ import {
 import Modal from './Modal.native';
 import { CallbackOrActions } from './PropsType';
 import promptStyle, { IPromptStyle } from './style/prompt.native';
+import { getComponentLocale } from '../_util/getLocale';
+import zh_CN from './locale/zh_CN';
 
 export interface PropmptContainerProps {
   title: React.ReactNode;
@@ -33,6 +36,10 @@ export default class PropmptContainer extends React.Component<
     type: 'default',
     defaultValue: '',
     styles: promptStyles,
+  };
+
+  static contextTypes = {
+    antLocale: PropTypes.object,
   };
 
   constructor(props: PropmptContainerProps) {
@@ -75,11 +82,20 @@ export default class PropmptContainer extends React.Component<
       }
       return func.apply(this, [text]);
     };
+
+    // tslint:disable-next-line:variable-name
+    const _locale = getComponentLocale(
+      this.props,
+      this.context,
+      'Modal',
+      () => zh_CN,
+    );
+
     let callbacks;
     if (typeof actions === 'function') {
       callbacks = [
-        { text: '取消', style: 'cancel', onPress: () => {} },
-        { text: '确定', onPress: () => getArgs(actions) },
+        { text: _locale.cancelText, style: 'cancel', onPress: () => {} },
+        { text: _locale.okText, onPress: () => getArgs(actions) },
       ];
     } else {
       callbacks = actions.map(item => {
