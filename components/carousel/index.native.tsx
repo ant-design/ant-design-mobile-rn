@@ -150,7 +150,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
       // FIXME: not work well in android when horizontal
       setTimeout(() => {
-        this.scrollviewRef.scrollTo({ x, y, animated: false });
+        // tslint:disable-next-line:no-unused-expression
+        this.scrollviewRef && this.scrollviewRef.scrollTo({ x, y, animated: false });
       }, 10);
     }
   }
@@ -238,7 +239,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     const { vertical, infinite } = this.props;
     if (Platform.OS === 'android' && vertical) {
       const selectedIndex = Math.round(offsetY / height) - (infinite ? 1 : 0);
-      this.scrollviewRef.scrollTo({ x: 0, y: (selectedIndex + (infinite ? 1 : 0)) * height });
+      // tslint:disable-next-line:no-unused-expression
+      this.scrollviewRef && this.scrollviewRef.scrollTo({ x: 0, y: (selectedIndex + (infinite ? 1 : 0)) * height });
 
       // if drag ScrollView, not slide ScrollView, onScrollEnd is not triggered, so need to manually trigger onScrollEnd
       if (Platform.OS === 'android' && vertical) {
@@ -311,9 +313,11 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     const diff = (infinite ? 1 : 0) + selectedIndex + 1;
 
     if (vertical) {
-      this.scrollviewRef.scrollTo({ x: 0, y: diff * height });
+      // tslint:disable-next-line:no-unused-expression
+      this.scrollviewRef && this.scrollviewRef.scrollTo({ x: 0, y: diff * height });
     } else {
-      this.scrollviewRef.scrollTo({ x: diff * width, y: 0 });
+      // tslint:disable-next-line:no-unused-expression
+      this.scrollviewRef && this.scrollviewRef.scrollTo({ x: diff * width, y: 0 });
     }
 
     this.setState({
@@ -403,7 +407,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         if (Platform.OS === 'android') {
           // scrollview has a layout animation when create, must delay to call scrollTo after the animation
           InteractionManager.runAfterInteractions(
-            () => this.scrollviewRef.scrollTo({ x: offsetX, y: offsetY, animated: false }),
+            () => this.scrollviewRef && this.scrollviewRef.scrollTo({ x: offsetX, y: offsetY, animated: false }),
           );
         }
       },
