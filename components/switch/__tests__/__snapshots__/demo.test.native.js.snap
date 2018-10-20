@@ -18,15 +18,8 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -41,8 +34,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
       <View
         style={
@@ -111,7 +102,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             onTintColor="#4dd865"
-            onValueChange={undefined}
             style={
               Array [
                 Object {
@@ -127,15 +117,8 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
       </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -150,8 +133,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
       <View
         style={
@@ -220,7 +201,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             onTintColor="#4dd865"
-            onValueChange={undefined}
             style={
               Array [
                 Object {
@@ -236,15 +216,8 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
       </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -259,8 +232,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
       <View
         style={
@@ -363,15 +334,8 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
       </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -386,8 +350,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
       <View
         style={
@@ -456,7 +418,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             onTintColor="#4dd865"
-            onValueChange={undefined}
             style={
               Array [
                 Object {
@@ -472,15 +433,8 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
       </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -495,8 +449,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
       <View
         style={
@@ -565,7 +517,6 @@ exports[`renders ./components/switch/demo/basic.native.tsx correctly 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             onTintColor="red"
-            onValueChange={undefined}
             style={
               Array [
                 Object {

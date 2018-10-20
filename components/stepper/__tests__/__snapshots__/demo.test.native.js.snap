@@ -8,9 +8,7 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
     }
   }
 >
-  <View
-    style={undefined}
-  >
+  <View>
     <View
       style={
         Object {
@@ -21,15 +19,8 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
       }
     >
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -44,8 +35,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
             undefined,
           ]
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -126,9 +115,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 accessibilityLabel="Decrease Value"
                 accessibilityTraits="button"
                 accessible={true}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -149,7 +135,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                     undefined,
                   ]
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -172,7 +157,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 </Text>
               </View>
               <TextInput
-                autoFocus={undefined}
                 editable={true}
                 keyboardType="numbers-and-punctuation"
                 onChange={[Function]}
@@ -199,9 +183,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 accessibilityLabel="Increase Value"
                 accessibilityTraits="button"
                 accessible={true}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -222,7 +203,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                     undefined,
                   ]
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -249,15 +229,8 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
         </View>
       </View>
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -272,8 +245,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
             undefined,
           ]
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -354,9 +325,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 accessibilityLabel="Decrease Value"
                 accessibilityTraits="disabled"
                 accessible={true}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -380,7 +348,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                     undefined,
                   ]
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -405,7 +372,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 </Text>
               </View>
               <TextInput
-                autoFocus={undefined}
                 editable={true}
                 keyboardType="numbers-and-punctuation"
                 onChange={[Function]}
@@ -432,9 +398,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 accessibilityLabel="Increase Value"
                 accessibilityTraits="button"
                 accessible={true}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -455,7 +418,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                     undefined,
                   ]
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -482,15 +444,8 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
         </View>
       </View>
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -505,8 +460,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
             undefined,
           ]
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -587,9 +540,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 accessibilityLabel="Decrease Value"
                 accessibilityTraits="disabled"
                 accessible={true}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -613,7 +563,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                     undefined,
                   ]
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -638,7 +587,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 </Text>
               </View>
               <TextInput
-                autoFocus={undefined}
                 editable={false}
                 keyboardType="numbers-and-punctuation"
                 onChange={[Function]}
@@ -667,9 +615,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 accessibilityLabel="Increase Value"
                 accessibilityTraits="disabled"
                 accessible={true}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -693,7 +638,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                     undefined,
                   ]
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}

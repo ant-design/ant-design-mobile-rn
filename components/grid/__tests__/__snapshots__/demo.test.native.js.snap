@@ -65,13 +65,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -99,16 +93,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -129,7 +116,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -162,13 +148,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
             </View>
           </View>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -196,16 +176,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -226,7 +199,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -259,13 +231,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
             </View>
           </View>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -293,16 +259,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -323,7 +282,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -356,13 +314,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
             </View>
           </View>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -390,16 +342,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -420,7 +365,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -475,13 +419,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -509,16 +447,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -539,7 +470,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -572,13 +502,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
             </View>
           </View>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -606,16 +530,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -636,7 +553,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -669,13 +585,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
             </View>
           </View>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -703,16 +613,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -733,7 +636,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -766,13 +668,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
             </View>
           </View>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -800,16 +696,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -830,7 +719,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -885,13 +773,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -919,16 +801,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 ],
               ]
             }
-            testID={undefined}
           >
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
               accessible={true}
-              hitSlop={undefined}
-              nativeID={undefined}
-              onLayout={undefined}
               onPress={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -949,7 +824,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   },
                 ]
               }
-              testID={undefined}
             >
               <Image
                 source={
@@ -1065,7 +939,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
         autoplay={false}
         autoplayInterval={3000}
         bounces={true}
-        contentContainerStyle={undefined}
         contentOffset={
           Object {
             "x": 0,
@@ -1164,13 +1037,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -1198,16 +1065,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -1228,7 +1088,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -1261,13 +1120,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -1295,16 +1148,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -1325,7 +1171,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -1358,13 +1203,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -1392,16 +1231,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -1422,7 +1254,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -1477,13 +1308,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -1511,16 +1336,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -1541,7 +1359,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -1574,13 +1391,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -1608,16 +1419,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -1638,7 +1442,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -1671,13 +1474,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -1705,16 +1502,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -1735,7 +1525,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -1812,13 +1601,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -1846,16 +1629,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -1876,7 +1652,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -1909,13 +1684,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -1943,16 +1712,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -1973,7 +1735,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -2006,13 +1767,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
                   accessible={true}
-                  hitSlop={undefined}
-                  nativeID={undefined}
-                  onLayout={undefined}
                   onPress={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
@@ -2040,16 +1795,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                       ],
                     ]
                   }
-                  testID={undefined}
                 >
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onPress={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -2070,7 +1818,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <Image
                       source={
@@ -2300,13 +2047,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -2337,16 +2078,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -2367,7 +2101,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={
@@ -2400,13 +2133,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -2437,16 +2164,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -2467,7 +2187,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={
@@ -2500,13 +2219,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -2537,16 +2250,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -2567,7 +2273,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={
@@ -2622,13 +2327,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -2659,16 +2358,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -2689,7 +2381,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={
@@ -2722,13 +2413,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -2759,16 +2444,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -2789,7 +2467,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={
@@ -2822,13 +2499,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -2859,16 +2530,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -2889,7 +2553,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={
@@ -2944,13 +2607,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -2981,16 +2638,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -3011,7 +2661,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={
@@ -3044,13 +2693,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -3081,16 +2724,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -3111,7 +2747,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={
@@ -3144,13 +2779,7 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
           onPress={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -3181,16 +2810,9 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
               ],
             ]
           }
-          testID={undefined}
         >
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onPress={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -3211,7 +2833,6 @@ exports[`renders ./components/grid/demo/basic.native.tsx correctly 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={

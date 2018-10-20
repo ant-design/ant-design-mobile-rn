@@ -19,13 +19,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
     }
   />
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
     accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -44,7 +38,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         undefined,
       ]
     }
-    testID={undefined}
   >
     <View
       style={
@@ -93,7 +86,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          collapsable={undefined}
           style={
             Object {
               "flexDirection": "row",
@@ -193,7 +185,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          collapsable={undefined}
           style={
             Object {
               "flexDirection": "row",
@@ -222,13 +213,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -240,7 +225,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           "marginRight": 15,
         }
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -333,7 +317,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          collapsable={undefined}
           style={
             Object {
               "flexDirection": "row",
@@ -362,13 +345,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -380,7 +357,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           "marginRight": 15,
         }
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -413,13 +389,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
     }
   />
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
     accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -438,7 +408,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         undefined,
       ]
     }
-    testID={undefined}
   >
     <View
       style={
@@ -487,7 +456,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          collapsable={undefined}
           style={
             Object {
               "flexDirection": "row",
@@ -558,13 +526,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
     }
   />
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
     accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -583,7 +545,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         undefined,
       ]
     }
-    testID={undefined}
   >
     <View
       style={
@@ -632,7 +593,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          collapsable={undefined}
           style={
             Object {
               "flexDirection": "row",
@@ -742,7 +702,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          collapsable={undefined}
           style={
             Object {
               "flexDirection": "row",
@@ -771,13 +730,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -789,7 +742,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           "marginRight": 15,
         }
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -882,7 +834,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          collapsable={undefined}
           style={
             Object {
               "flexDirection": "row",
@@ -911,13 +862,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -929,7 +874,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           "marginRight": 15,
         }
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -957,13 +901,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
     }
   />
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
     accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -982,7 +920,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         undefined,
       ]
     }
-    testID={undefined}
   >
     <View
       style={
@@ -1031,7 +968,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       >
         <View
-          collapsable={undefined}
           style={
             Object {
               "flexDirection": "row",

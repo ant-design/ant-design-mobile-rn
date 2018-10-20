@@ -8,9 +8,7 @@ exports[`renders ./components/picker/demo/basic.native.tsx correctly 1`] = `
     }
   }
 >
-  <View
-    style={undefined}
-  >
+  <View>
     <View
       style={
         Object {
@@ -20,19 +18,10 @@ exports[`renders ./components/picker/demo/basic.native.tsx correctly 1`] = `
         }
       }
     >
-      <View
-        style={undefined}
-      >
+      <View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -47,8 +36,6 @@ exports[`renders ./components/picker/demo/basic.native.tsx correctly 1`] = `
               undefined,
             ]
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             last={true}
@@ -157,19 +144,10 @@ exports[`renders ./components/picker/demo/basic.native.tsx correctly 1`] = `
           </View>
         </View>
       </View>
-      <View
-        style={undefined}
-      >
+      <View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -181,8 +159,6 @@ exports[`renders ./components/picker/demo/basic.native.tsx correctly 1`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={

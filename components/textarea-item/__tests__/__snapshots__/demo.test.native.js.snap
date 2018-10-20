@@ -12,9 +12,7 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
   }
 >
   <View>
-    <View
-      style={undefined}
-    >
+    <View>
       <View>
         <Text
           accessible={true}
@@ -62,10 +60,8 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
         >
           <TextInput
             clearButtonMode="while-editing"
-            defaultValue={undefined}
             editable={true}
             keyboardType="default"
-            maxLength={undefined}
             multiline={true}
             numberOfLines={4}
             onBlur={[Function]}
@@ -113,7 +109,6 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
         >
           <TextInput
             clearButtonMode="while-editing"
-            defaultValue={undefined}
             editable={true}
             keyboardType="default"
             maxLength={100}
@@ -186,10 +181,8 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
         >
           <TextInput
             clearButtonMode="while-editing"
-            defaultValue={undefined}
             editable={true}
             keyboardType="default"
-            maxLength={undefined}
             multiline={true}
             numberOfLines={4}
             onBlur={[Function]}
@@ -241,7 +234,6 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
-            maxLength={undefined}
             multiline={false}
             numberOfLines={1}
             onBlur={[Function]}
@@ -291,7 +283,6 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
             clearButtonMode="while-editing"
             editable={false}
             keyboardType="default"
-            maxLength={undefined}
             multiline={false}
             numberOfLines={1}
             onBlur={[Function]}
@@ -339,10 +330,8 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
         >
           <TextInput
             clearButtonMode="never"
-            defaultValue={undefined}
             editable={true}
             keyboardType="default"
-            maxLength={undefined}
             multiline={false}
             numberOfLines={1}
             onBlur={[Function]}
@@ -393,7 +382,6 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
             defaultValue="报错样式 error={true}"
             editable={true}
             keyboardType="default"
-            maxLength={undefined}
             multiline={false}
             numberOfLines={1}
             onBlur={[Function]}
@@ -422,13 +410,7 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
             underlineColorAndroid="transparent"
           />
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
             accessible={true}
-            hitSlop={undefined}
-            nativeID={undefined}
-            onLayout={undefined}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -444,7 +426,6 @@ exports[`renders ./components/textarea-item/demo/basic.native.tsx correctly 1`] 
                 },
               ]
             }
-            testID={undefined}
           >
             <Image
               source={1}

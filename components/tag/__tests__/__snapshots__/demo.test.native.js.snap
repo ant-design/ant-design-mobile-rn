@@ -22,13 +22,7 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -52,7 +46,6 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -101,13 +94,7 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -131,7 +118,6 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -180,13 +166,7 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -210,7 +190,6 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -259,13 +238,7 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -289,7 +262,6 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -338,13 +310,7 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -368,7 +334,6 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -393,13 +358,7 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
       </Text>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -422,7 +381,6 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -469,13 +427,7 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -502,7 +454,6 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -553,13 +504,7 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -583,7 +528,6 @@ exports[`renders ./components/tag/demo/basic.native.tsx correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
