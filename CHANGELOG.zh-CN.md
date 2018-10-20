@@ -14,6 +14,16 @@ toc: false
 
 ---
 
+### 2.3.0
+
+`2018-10-20`
+
+- `Input`添加`editable`. ([#78](https://github.com/ant-design/ant-design-mobile-rn/pull/78))
+- 修复`Button`组件`activeStyle`属性为对象时不起作用的问题. ([#105](https://github.com/ant-design/ant-design-mobile-rn/pull/105))
+- `Modal`支持多语言. ([#115](https://github.com/ant-design/ant-design-mobile-rn/pull/115))
+- 西班牙语. ([#75](https://github.com/ant-design/ant-design-mobile-rn/pull/75))
+- TypeScript 类型定义完善. ([#83](https://github.com/ant-design/ant-design-mobile-rn/pull/83))
+
 ### 2.2.1
 
 `2018-07-17`

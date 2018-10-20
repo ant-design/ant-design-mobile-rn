@@ -14,6 +14,16 @@ toc: false
 
 ---
 
+### 2.3.0
+
+`2018-10-20`
+
+- `Input` add `editable` support. ([#78](https://github.com/ant-design/ant-design-mobile-rn/pull/78))
+- Fix `Button` component's `activeStyle` does not work. ([#105](https://github.com/ant-design/ant-design-mobile-rn/pull/105))
+- `Modal` add locale support. ([#115](https://github.com/ant-design/ant-design-mobile-rn/pull/115))
+- Spanish. ([#75](https://github.com/ant-design/ant-design-mobile-rn/pull/75))
+- TypeScript type definition improvements. ([#83](https://github.com/ant-design/ant-design-mobile-rn/pull/83))
+
 ### 2.2.1
 
 `2018-07-17`
