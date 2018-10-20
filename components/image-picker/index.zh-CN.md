@@ -7,6 +7,9 @@ subtitle: 图片选择器
 
 注意：只是图片选择器，一般用于上传图片前的文件选择操作，但不包括图片上传的功能
 
+
+权限相关的问题可以移步至：https://github.com/ant-design/ant-design-mobile-rn/issues/90 查看
+
 ## API
 
 属性 | 说明 | 类型 | 默认值

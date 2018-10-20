@@ -6,6 +6,8 @@ title: ImagePicker
 
 Note: Just for selecting picture. Generally `ImagePicker` is used to select picture before uploading, but without the feature of uploading.
 
+If you have permission issues Please checkout https://github.com/ant-design/ant-design-mobile-rn/issues/90
+
 ## API
 
 Properties | Descrition | Type | Default
