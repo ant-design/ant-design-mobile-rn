@@ -4,6 +4,7 @@ import {
   Pagination, LocaleProvider, List, DatePicker, WhiteSpace, WingBlank,
   Picker, SearchBar,
 } from 'antd-mobile-rn';
+import esES from '../es_ES';
 import enUS from '../en_US';
 import ruRU from '../ru_RU';
 
@@ -47,7 +48,7 @@ const Page = () => (
         <List.Item arrow="horizontal">DatePicker</List.Item>
       </DatePicker>
       <Picker data={seasons} cascade={false}>
-        <List.Item arrow="horizontal">picker</List.Item>
+        <List.Item arrow="horizontal">Picker</List.Item>
       </Picker>
       <WhiteSpace />
       <SearchBar placeholder="Search" showCancelButton />
@@ -87,6 +88,11 @@ export default class LocaleProviderExample extends React.Component<any, any> {
         label: 'Русский',
         language: ruRU,
       },
+      {
+        value: 'Español',
+        label: 'Español',
+        language: esES
+      }
     ];
     const currentLocale = languages.find(item => item.value === locale).language;
 
