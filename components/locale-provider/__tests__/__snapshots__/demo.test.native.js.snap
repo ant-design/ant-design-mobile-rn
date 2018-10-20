@@ -669,7 +669,7 @@ exports[`renders ./components/locale-provider/demo/basic.native.tsx correctly 1`
                       ]
                     }
                   >
-                    picker
+                    Picker
                   </Text>
                 </View>
                 <View

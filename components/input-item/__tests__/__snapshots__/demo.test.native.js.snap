@@ -88,6 +88,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -232,6 +233,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={false}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -306,6 +308,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
         >
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -376,6 +379,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
             autoFocus={false}
             clearButtonMode="while-editing"
             defaultValue="xx"
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -444,6 +448,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           <TextInput
             clearButtonMode="while-editing"
             defaultValue={undefined}
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -710,6 +715,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -778,6 +784,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -846,6 +853,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -964,6 +972,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -1069,6 +1078,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="number-pad"
             labelPosition="left"
             onBlur={[Function]}
@@ -1137,6 +1147,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="phone-pad"
             labelPosition="left"
             onBlur={[Function]}
@@ -1205,6 +1216,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="default"
             labelPosition="left"
             onBlur={[Function]}
@@ -1273,6 +1285,7 @@ exports[`renders ./components/input-item/demo/basic.native.tsx correctly 1`] = `
           </Text>
           <TextInput
             clearButtonMode="while-editing"
+            editable={true}
             keyboardType="numeric"
             labelPosition="left"
             onBlur={[Function]}
