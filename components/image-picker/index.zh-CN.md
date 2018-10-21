@@ -20,8 +20,6 @@ subtitle: 图片选择器
 | onAddImageClick  | 自定义选择图片的方法  | (): void |   |
 | onFail | 取消回调  | (msg: string): void |   |
 | selectable| 是否显示添加按钮  | boolean |  true |
-| multiple| 是否支持多选  | boolean |  false |
-| accept| 图片类型  | string |  image/* |
 
 
 > 注: RN 版本回传 assets-library (性能考虑)，需要使用 native 模块进行上传，可参考 https://github.com/facebook/react-native/issues/201
