@@ -24,6 +24,9 @@ Ant Design 移动端设计规范。`antd-mobile-rn` 是 Ant Design 的移动规�
 
 现在由社区维护，我们都是利用空闲时间维护该项目，所以在提交`issues`的时候请描述清楚，如果已经知道问题所在也可以直接提`PR`，添加相应测试如果测试通过会尽快发布一个新版本。
 
+
+欢迎讨论: [新版计划](https://github.com/ant-design/ant-design-mobile-rn/issues/119)
+
 ## 特性
 
 - 基于 Ant Design 移动设计规范。
