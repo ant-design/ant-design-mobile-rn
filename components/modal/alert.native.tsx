@@ -1,5 +1,5 @@
 import React from 'react';
-import topView from 'rn-topview';
+import topView from 'react-native-top-view';
 import AlertContainer from './AlertContainer.native';
 
 export default function a(

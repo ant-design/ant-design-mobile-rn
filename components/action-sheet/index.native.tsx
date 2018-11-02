@@ -5,7 +5,7 @@ import {
   Platform,
   Share,
 } from 'react-native';
-import topView from 'rn-topview';
+import topView from 'react-native-top-view';
 import ActionSheetAndroidContainer from './AndroidContainer.native';
 
 let instance: ActionSheetAndroidContainer | null;

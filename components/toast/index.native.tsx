@@ -1,5 +1,5 @@
 import React from 'react';
-import topView from 'rn-topview';
+import topView from 'react-native-top-view';
 import ToastContainer from './ToastContainer.native';
 
 function notice(
