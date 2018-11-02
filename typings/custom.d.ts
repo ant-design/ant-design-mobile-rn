@@ -8,8 +8,6 @@ declare module 'react-native-camera-roll-picker';
 
 declare module 'rmc-dialog';
 declare module 'react-native-menu';
-declare module 'react-native/Libraries/StyleSheet/normalizeColor';
-declare module 'react-native/Libraries/StyleSheet/setNormalizedColorAlpha';
 
 declare module 'normalize-css-color';
 
