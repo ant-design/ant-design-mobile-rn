@@ -66,6 +66,7 @@
     "bisheng-plugin-react": "^0.6.0",
     "bisheng-plugin-toc": "^0.4.0",
     "classnames": "^2.2.1",
+    "codesandbox": "^1.3.5",
     "concurrently": "^3.4.0",
     "cross-env": "^5.0.1",
     "css-split-webpack-plugin": "^0.2.5",
@@ -106,7 +107,7 @@
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",
-    "srclint": "eslint site scripts --ext '.js,.jsx'",
+    "srclint": "eslint site scripts --ext '.js,.jsx' --fix",
     "tslint": "antd-tools run ts-lint && npm run compile && rm -rf lib",
     "tslint-fix": "antd-tools run ts-lint-fix && npm run compile && rm -rf lib",
     "applint": "eslint rn-kitchen-sink --ext '.js'",
