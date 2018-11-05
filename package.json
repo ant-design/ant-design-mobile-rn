@@ -27,8 +27,8 @@
     "es"
   ],
   "license": "MIT",
-  "main": "lib/index.native.js",
-  "module": "es/index.native.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "dependencies": {
     "array-tree-filter": "~2.1.0",
     "babel-runtime": "6.x",
@@ -121,7 +121,7 @@
     "prepublish": "antd-tools run guard",
     "prepare": "antd-tools run guard",
     "prepublishOnly": "antd-tools run guard",
-    "test": "jest --config .jest.native.js",
+    "test": "jest --config .jest.config.js",
     "test:all": "./scripts/test-all.sh",
     "compile": "cross-env BABEL_ENV=dist antd-tools run compile",
     "watch-tsc": "antd-tools run watch-tsc",
@@ -152,7 +152,7 @@
       "npm run lint-staged:es"
     ]
   },
-  "typings": "lib/index.native.d.ts",
+  "typings": "lib/index.d.ts",
   "pre-commit": [
     "lint-staged"
   ],

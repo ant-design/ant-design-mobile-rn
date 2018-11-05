@@ -53,13 +53,13 @@ component name separate with `-`, such as `date-picker`，and file Extensions sh
 
 general we do not distinguish Android and Ios, so no suffix.
 
-- `components/button/index.native.tsx`
+- `components/button/index.tsx`
 
 ```jsx
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-// just a example, may extract style to components/button/style/index.native.tsx
+// just a example, may extract style to components/button/style/index.tsx
 const styles = StyleSheet.create({
   button: {
     borderRadius: 4,
@@ -81,7 +81,7 @@ class Button extends React.Component {
 export default Button;
 ```
 
-- `components/button/demo/basic.native.tsx`
+- `components/button/demo/basic.tsx`
 
 ```jsx
 import { Button } from 'antd-mobile-rn';

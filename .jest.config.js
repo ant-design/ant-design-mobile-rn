@@ -14,7 +14,7 @@ module.exports = {
   ...tsjPreset,
   preset: 'react-native',
   setupFiles: [
-    './tests/setup.native.js'
+    './tests/setup.js'
   ],
   moduleFileExtensions: [
     'ts',
@@ -36,7 +36,7 @@ module.exports = {
     "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
     "^\\.\\./style/images/(\d+)\\.png$": '<rootDir>/tests/imageStub.js',
   },
-  // testRegex: libDir === 'dist' ? 'demo\\.test\\.native\\.js$' : '.*\\.test\\.native\\.js$',
+  // testRegex: libDir === 'dist' ? 'demo\\.test\\\\.js$' : '.*\\.test\\\\.js$',
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',
     '!components/*/style/*.{ts,tsx}',
