@@ -1,4 +1,5 @@
 const libDir = process.env.LIB_DIR;
+const { defaults: tsjPreset } = require('ts-jest/presets');
 
 const transformPackages = [
   'react-native',
@@ -10,6 +11,7 @@ const transformPackages = [
 ]
 
 module.exports = {
+  ...tsjPreset,
   preset: 'react-native',
   setupFiles: [
     './tests/setup.native.js'
@@ -31,11 +33,14 @@ module.exports = {
     'site',
   ],
   transform: {
-    '\\.tsx?$': './node_modules/antd-tools/lib/jest/codePreprocessor',
-    '\\.js$': './node_modules/antd-tools/lib/jest/codePreprocessor',
-    '\\.png': '<rootDir>/tests/imageStub.js',
+    // '\\.tsx?$': 'ts-jest',
+    ...tsjPreset.transform,
+    // '\\.tsx?$': './node_modules/antd-tools/lib/jest/codePreprocessor',
+    // '\\.js$': './node_modules/antd-tools/lib/jest/codePreprocessor',
+    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+    "^\\.\\./style/images/(\d+)\\.png$": '<rootDir>/tests/imageStub.js',
   },
-  testRegex: libDir === 'dist' ? 'demo\\.test\\.native\\.js$' : '.*\\.test\\.native\\.js$',
+  // testRegex: libDir === 'dist' ? 'demo\\.test\\.native\\.js$' : '.*\\.test\\.native\\.js$',
   collectCoverageFrom: [
     'components/**/*.native.{ts,tsx}',
     '!components/*/style/*.{ts,tsx}',
@@ -43,4 +48,13 @@ module.exports = {
   transformIgnorePatterns: [
     `node_modules/(?!(${transformPackages.join('|')})/)`,
   ],
+
+  globals: {
+    'ts-jest': {
+      babelConfig: true,
+    }
+  },
+  // This is the only part which you can keep
+  // from the above linked tutorial's config:
+  cacheDirectory: '.jest/cache',
 };

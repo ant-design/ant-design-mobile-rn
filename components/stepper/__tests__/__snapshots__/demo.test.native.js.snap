@@ -27,14 +27,7 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            undefined,
-          ]
-        }
+        style={null}
       >
         <View
           style={
@@ -79,10 +72,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 numberOfLines={1}
                 style={
                   Array [
@@ -137,10 +126,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  disabled={false}
-                  ellipsizeMode="tail"
                   style={
                     Array [
                       Object {
@@ -157,6 +142,7 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 </Text>
               </View>
               <TextInput
+                allowFontScaling={true}
                 editable={true}
                 keyboardType="numbers-and-punctuation"
                 onChange={[Function]}
@@ -205,10 +191,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  disabled={false}
-                  ellipsizeMode="tail"
                   style={
                     Array [
                       Object {
@@ -237,14 +219,7 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            undefined,
-          ]
-        }
+        style={null}
       >
         <View
           style={
@@ -289,10 +264,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 numberOfLines={1}
                 style={
                   Array [
@@ -350,10 +321,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  disabled={false}
-                  ellipsizeMode="tail"
                   style={
                     Array [
                       Object {
@@ -372,6 +339,7 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 </Text>
               </View>
               <TextInput
+                allowFontScaling={true}
                 editable={true}
                 keyboardType="numbers-and-punctuation"
                 onChange={[Function]}
@@ -420,10 +388,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  disabled={false}
-                  ellipsizeMode="tail"
                   style={
                     Array [
                       Object {
@@ -452,14 +416,7 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            undefined,
-          ]
-        }
+        style={null}
       >
         <View
           style={
@@ -504,10 +461,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 numberOfLines={1}
                 style={
                   Array [
@@ -565,10 +518,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  disabled={false}
-                  ellipsizeMode="tail"
                   style={
                     Array [
                       Object {
@@ -587,6 +536,7 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 </Text>
               </View>
               <TextInput
+                allowFontScaling={true}
                 editable={false}
                 keyboardType="numbers-and-punctuation"
                 onChange={[Function]}
@@ -640,10 +590,6 @@ exports[`renders ./components/stepper/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  disabled={false}
-                  ellipsizeMode="tail"
                   style={
                     Array [
                       Object {

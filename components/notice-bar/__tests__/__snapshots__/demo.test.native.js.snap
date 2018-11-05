@@ -95,9 +95,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             onLayout={[Function]}
@@ -194,9 +191,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             onLayout={[Function]}
@@ -227,10 +221,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -326,9 +316,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             onLayout={[Function]}
@@ -359,10 +346,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -465,9 +448,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             onLayout={[Function]}
@@ -491,10 +471,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -602,9 +578,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             onLayout={[Function]}
@@ -628,10 +601,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -711,9 +680,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             onLayout={[Function]}
@@ -744,10 +710,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -843,9 +805,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             onLayout={[Function]}
@@ -876,10 +835,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#a1a1a1",
@@ -977,9 +932,6 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             onLayout={[Function]}
@@ -1002,12 +954,7 @@ exports[`renders ./components/notice-bar/demo/basic.native.tsx correctly 1`] = `
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-      >
+      <Text>
         去看看
       </Text>
     </View>

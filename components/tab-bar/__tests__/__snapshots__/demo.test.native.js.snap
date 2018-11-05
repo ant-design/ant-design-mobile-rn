@@ -16,10 +16,18 @@ exports[`renders ./components/tab-bar/demo/basic.native.tsx correctly 1`] = `
   unselectedTintColor="#949494"
 >
   <RCTTabBarItem
-    icon={1}
+    icon={
+      Object {
+        "testUri": "../../../components/tab-bar/demo/alipay.png",
+      }
+    }
     onPress={[Function]}
     selected={false}
-    selectedIcon={1}
+    selectedIcon={
+      Object {
+        "testUri": "../../../components/tab-bar/demo/alipay_sel.png",
+      }
+    }
     style={
       Array [
         Object {
@@ -38,10 +46,18 @@ exports[`renders ./components/tab-bar/demo/basic.native.tsx correctly 1`] = `
   </RCTTabBarItem>
   <RCTTabBarItem
     badge={2}
-    icon={1}
+    icon={
+      Object {
+        "testUri": "../../../components/tab-bar/demo/koubei.png",
+      }
+    }
     onPress={[Function]}
     selected={true}
-    selectedIcon={1}
+    selectedIcon={
+      Object {
+        "testUri": "../../../components/tab-bar/demo/koubei_sel.png",
+      }
+    }
     style={
       Array [
         Object {
@@ -86,6 +102,7 @@ exports[`renders ./components/tab-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <TextInput
+            allowFontScaling={true}
             clearButtonMode="always"
             editable={true}
             onBlur={[Function]}
@@ -121,7 +138,11 @@ exports[`renders ./components/tab-bar/demo/basic.native.tsx correctly 1`] = `
         </View>
         <Image
           resizeMode="stretch"
-          source={1}
+          source={
+            Object {
+              "testUri": "../../../components/style/images/search.png",
+            }
+          }
           style={
             Object {
               "height": 15,
@@ -143,10 +164,6 @@ exports[`renders ./components/tab-bar/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             onPress={[Function]}
             style={
               Object {
@@ -161,10 +178,6 @@ exports[`renders ./components/tab-bar/demo/basic.native.tsx correctly 1`] = `
         </View>
       </View>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
         style={
           Object {
             "margin": 50,
@@ -176,10 +189,18 @@ exports[`renders ./components/tab-bar/demo/basic.native.tsx correctly 1`] = `
     </View>
   </RCTTabBarItem>
   <RCTTabBarItem
-    icon={1}
+    icon={
+      Object {
+        "testUri": "../../../components/tab-bar/demo/friend.png",
+      }
+    }
     onPress={[Function]}
     selected={false}
-    selectedIcon={1}
+    selectedIcon={
+      Object {
+        "testUri": "../../../components/tab-bar/demo/friend_sel.png",
+      }
+    }
     style={
       Array [
         Object {
@@ -197,10 +218,18 @@ exports[`renders ./components/tab-bar/demo/basic.native.tsx correctly 1`] = `
     <View />
   </RCTTabBarItem>
   <RCTTabBarItem
-    icon={1}
+    icon={
+      Object {
+        "testUri": "../../../components/tab-bar/demo/busi.png",
+      }
+    }
     onPress={[Function]}
     selected={false}
-    selectedIcon={1}
+    selectedIcon={
+      Object {
+        "testUri": "../../../components/tab-bar/demo/busi_sel.png",
+      }
+    }
     style={
       Array [
         Object {

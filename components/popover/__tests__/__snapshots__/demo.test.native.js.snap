@@ -4,10 +4,6 @@ exports[`renders ./components/popover/demo/basic.native.tsx correctly 1`] = `
 <View>
   <View>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
       style={
         Object {
           "marginLeft": 100,
@@ -69,12 +65,7 @@ exports[`renders ./components/popover/demo/basic.native.tsx correctly 1`] = `
               }
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-            >
+            <Text>
               菜单
             </Text>
           </View>

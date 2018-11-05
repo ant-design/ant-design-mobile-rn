@@ -67,14 +67,7 @@ exports[`renders ./components/swipe-action/demo/basic.native.tsx correctly 1`] =
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                undefined,
-              ]
-            }
+            style={null}
           >
             <View
               style={
@@ -119,10 +112,6 @@ exports[`renders ./components/swipe-action/demo/basic.native.tsx correctly 1`] =
                   }
                 >
                   <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
                     numberOfLines={1}
                     style={
                       Array [
@@ -148,10 +137,6 @@ exports[`renders ./components/swipe-action/demo/basic.native.tsx correctly 1`] =
                   }
                 >
                   <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
                     numberOfLines={1}
                     style={
                       Array [

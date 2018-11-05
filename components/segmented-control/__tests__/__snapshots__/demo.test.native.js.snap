@@ -9,12 +9,7 @@ exports[`renders ./components/segmented-control/demo/basic.native.tsx correctly 
     }
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-  >
+  <Text>
     Disabled
   </Text>
   <RCTSegmentedControl
@@ -47,12 +42,7 @@ exports[`renders ./components/segmented-control/demo/basic.native.tsx correctly 
       ]
     }
   />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-  >
+  <Text>
     TintColor and Style
   </Text>
   <RCTSegmentedControl
@@ -89,12 +79,7 @@ exports[`renders ./components/segmented-control/demo/basic.native.tsx correctly 
       ]
     }
   />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-  >
+  <Text>
     SelectedIndex
   </Text>
   <RCTSegmentedControl
@@ -128,12 +113,7 @@ exports[`renders ./components/segmented-control/demo/basic.native.tsx correctly 
       ]
     }
   />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-  >
+  <Text>
     onChange/onValueChange
   </Text>
   <RCTSegmentedControl

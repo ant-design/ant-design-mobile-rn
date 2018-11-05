@@ -32,29 +32,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderColor": "#dddddd",
-              },
-              false,
-              false,
-              false,
-              undefined,
-            ],
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            false,
+            undefined,
           ]
         }
       >
@@ -66,10 +61,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -109,29 +100,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderColor": "#dddddd",
-              },
-              false,
-              false,
-              false,
-              undefined,
-            ],
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            false,
+            undefined,
           ]
         }
       >
@@ -143,10 +129,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -186,29 +168,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderColor": "#dddddd",
-              },
-              false,
-              false,
-              false,
-              undefined,
-            ],
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            false,
+            undefined,
           ]
         }
       >
@@ -220,10 +197,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -263,29 +236,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderColor": "#dddddd",
-              },
-              false,
-              false,
-              false,
-              undefined,
-            ],
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            false,
+            undefined,
           ]
         }
       >
@@ -297,10 +265,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -340,29 +304,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderColor": "#dddddd",
-              },
-              false,
-              false,
-              false,
-              undefined,
-            ],
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            false,
+            undefined,
           ]
         }
       >
@@ -374,10 +333,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -417,29 +372,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderColor": "#dddddd",
-              },
-              false,
-              false,
-              false,
-              undefined,
-            ],
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            false,
+            undefined,
           ]
         }
       >
@@ -451,10 +401,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -494,29 +440,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderColor": "#dddddd",
-              },
-              false,
-              false,
-              false,
-              undefined,
-            ],
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            false,
+            undefined,
           ]
         }
       >
@@ -528,10 +469,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -571,29 +508,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderColor": "#dddddd",
-              },
-              false,
-              false,
-              false,
-              undefined,
-            ],
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            false,
+            undefined,
           ]
         }
       >
@@ -605,10 +537,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={false}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -658,10 +586,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "textAlign": "center",
@@ -671,10 +595,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
               Content...
             </Text>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "textAlign": "center",
@@ -696,29 +616,24 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
+                  "alignItems": "center",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "justifyContent": "center",
                 },
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 5,
-                    "borderWidth": 1,
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "height": 47,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
-                  },
-                  Object {
-                    "backgroundColor": "#108ee9",
-                    "borderColor": "#108ee9",
-                  },
-                  false,
-                  false,
-                  false,
-                  undefined,
-                ],
+                Object {
+                  "height": 47,
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {
+                  "backgroundColor": "#108ee9",
+                  "borderColor": "#108ee9",
+                },
+                false,
+                false,
+                false,
+                undefined,
               ]
             }
           >
@@ -730,10 +645,6 @@ exports[`renders ./components/modal/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {

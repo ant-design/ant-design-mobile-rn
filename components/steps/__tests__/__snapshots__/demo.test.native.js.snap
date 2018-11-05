@@ -73,7 +73,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -120,22 +124,13 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
             >
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     title:
                     Finished
                   </Text>
                 </View>
               </View>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -182,7 +177,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -229,22 +228,13 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
             >
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     title:
                     In Progress
                   </Text>
                 </View>
               </View>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -291,7 +281,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/more.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -338,22 +332,13 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
             >
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     title:
                     Waiting
                   </Text>
                 </View>
               </View>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -428,7 +413,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -475,12 +464,7 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
             >
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     title:
                     Finished
                   </Text>
@@ -488,12 +472,7 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               </View>
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     desc:
                     This is description
                   </Text>
@@ -535,7 +514,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -582,12 +565,7 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
             >
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     title:
                     In Progress
                   </Text>
@@ -595,12 +573,7 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               </View>
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     desc:
                     This is description
                   </Text>
@@ -642,7 +615,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/more.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -689,12 +666,7 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
             >
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     title:
                     Waiting
                   </Text>
@@ -702,12 +674,7 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               </View>
               <View>
                 <View>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                  >
+                  <Text>
                     desc:
                     This is description
                   </Text>
@@ -772,7 +739,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -818,10 +789,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -836,10 +803,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Finished
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -887,7 +850,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -933,10 +900,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -951,10 +914,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 In Progress
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1002,7 +961,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/cross.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -1048,10 +1011,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1066,10 +1025,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Waiting
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1117,7 +1072,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/more.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 14,
@@ -1163,10 +1122,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1181,10 +1136,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Waiting
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1256,7 +1207,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -1302,10 +1257,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1320,10 +1271,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Finished
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1372,7 +1319,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -1418,10 +1369,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1436,10 +1383,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 In Progress
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1488,7 +1431,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/more_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -1534,10 +1481,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1552,10 +1495,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Waiting
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1627,7 +1566,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -1673,10 +1616,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1691,10 +1630,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Finished
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1743,7 +1678,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -1789,10 +1728,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1807,10 +1742,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 In Progress
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1859,7 +1790,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/cross_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -1905,10 +1840,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1923,10 +1854,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Waiting
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1975,7 +1902,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/more_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -2021,10 +1952,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -2039,10 +1966,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Waiting
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -2114,7 +2037,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -2160,10 +2087,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -2178,10 +2101,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Finished
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -2230,7 +2149,11 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Image
-                  source={1}
+                  source={
+                    Object {
+                      "testUri": "../../../components/style/images/check_w.png",
+                    }
+                  }
                   style={
                     Object {
                       "height": 20,
@@ -2276,10 +2199,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -2294,10 +2213,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Progress
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -2346,10 +2261,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 }
               >
                 <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  disabled={false}
-                  ellipsizeMode="tail"
                   style={
                     Object {
                       "color": "white",
@@ -2399,10 +2310,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -2417,10 +2324,6 @@ exports[`renders ./components/steps/demo/basic.native.tsx correctly 1`] = `
                 Wait
               </Text>
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {

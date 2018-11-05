@@ -15,12 +15,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-    >
+    <Text>
       horizontal
     </Text>
     <View
@@ -122,12 +117,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 5
               </Text>
             </View>
@@ -155,12 +145,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 1
               </Text>
             </View>
@@ -188,12 +173,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 2
               </Text>
             </View>
@@ -221,12 +201,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 3
               </Text>
             </View>
@@ -254,12 +229,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 4
               </Text>
             </View>
@@ -287,12 +257,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 5
               </Text>
             </View>
@@ -320,12 +285,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 1
               </Text>
             </View>
@@ -454,20 +414,10 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
         </View>
       </View>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-    >
+    <Text>
       Carousel will adjust height based on content
     </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-    >
+    <Text>
       0
     </Text>
   </View>
@@ -478,12 +428,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-    >
+    <Text>
       vertical
     </Text>
     <View
@@ -585,12 +530,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 5
               </Text>
             </View>
@@ -618,12 +558,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 1
               </Text>
             </View>
@@ -651,12 +586,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 2
               </Text>
             </View>
@@ -684,12 +614,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 3
               </Text>
             </View>
@@ -717,12 +642,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 4
               </Text>
             </View>
@@ -750,12 +670,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 5
               </Text>
             </View>
@@ -783,12 +698,7 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-              >
+              <Text>
                 Carousel 1
               </Text>
             </View>
@@ -917,20 +827,10 @@ exports[`renders ./components/carousel/demo/basic.native.tsx correctly 1`] = `
         </View>
       </View>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-    >
+    <Text>
       Use the height of the first child as the height of the Carousel
     </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-    >
+    <Text>
       0
     </Text>
   </View>
