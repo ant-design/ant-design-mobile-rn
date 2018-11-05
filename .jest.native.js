@@ -17,10 +17,6 @@ module.exports = {
     './tests/setup.native.js'
   ],
   moduleFileExtensions: [
-    'native.ts',
-    'native.tsx',
-    'native.js',
-    'native.jsx',
     'ts',
     'tsx',
     'js',
@@ -42,7 +38,7 @@ module.exports = {
   },
   // testRegex: libDir === 'dist' ? 'demo\\.test\\.native\\.js$' : '.*\\.test\\.native\\.js$',
   collectCoverageFrom: [
-    'components/**/*.native.{ts,tsx}',
+    'components/**/*.{ts,tsx}',
     '!components/*/style/*.{ts,tsx}',
   ],
   transformIgnorePatterns: [

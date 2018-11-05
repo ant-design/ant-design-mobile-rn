@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import normalizeColor from 'normalize-css-color';
 import { SegmentedControlPropsType } from './PropsType';
-import AndroidStyle, { ISegmentControlStyle } from './style/index.native';
+import AndroidStyle, { ISegmentControlStyle } from './style/index';
 
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.

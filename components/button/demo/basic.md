@@ -5,7 +5,7 @@ title:
   en-US: Basic
 ---
 
-[Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/button/demo/basic.native.tsx)
+[Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/button/demo/basic.tsx)
 
 ````jsx
 /* tslint:disable:no-unused-variable */

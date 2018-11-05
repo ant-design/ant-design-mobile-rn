@@ -12,7 +12,7 @@ If you have permission issues Please checkout https://github.com/ant-design/ant-
 
 Properties | Descrition | Type | Default
 -----------|------------|------|--------
-| styles  | Styles object for the various elements of the ImagePicker | Object | See `/components/image-picker/style/index.native.tsx` for the defaults |
+| styles  | Styles object for the various elements of the ImagePicker | Object | See `/components/image-picker/style/index.tsx` for the defaults |
 | files    | Picture files array which includes `url`(required) in each object | Array  | []  |
 | onChange    |   Callback is called when the value of `files` is changed. The `operationType` is one of `add` or `remove`(the third argument is the removed index).| (files: Object, operationType: string, index: number): void |   |
 | onImageClick   | Callback is called when the user clicks the selected picture | (index: number, files: Array): void |   |

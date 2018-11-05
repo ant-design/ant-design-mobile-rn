@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { TabBarProps } from './PropsType';
-import TabBarStyle, { ITabBarStyle } from './style/index.native';
-import TabBarItem from './TabBarItem.native';
+import TabBarStyle, { ITabBarStyle } from './style/index';
+import TabBarItem from './TabBarItem';
 
 export interface TabBarNativeProps extends TabBarProps {
   styles?: ITabBarStyle;
