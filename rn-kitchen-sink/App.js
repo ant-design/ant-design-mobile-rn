@@ -1,6 +1,6 @@
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { UIVIEWS, UICONTROLS, OTHERS, UIBARS } from './demoList';
-
+import Home from './components/RnIndex'
 const getOptions = title => ({
   title,
   headerStyle: {
@@ -10,18 +10,10 @@ const getOptions = title => ({
 });
 
 const scenes = {
-  // Home: {
-  //   screen: Home,
-  //   navigationOptions: getOptions('Ant Design Mobile'),
-  // },
-  // web: {
-  //   screen: WebIndex,
-  //   navigationOptions: getOptions('Antm Web Component'),
-  // },
-  // native: {
-  //   screen: RnIndex,
-  //   navigationOptions: getOptions('Antm React Native'),
-  // },
+  Home: {
+    screen: Home,
+    navigationOptions: getOptions('Ant Design Mobile'),
+  },
 };
 
 [...UIVIEWS, ...UICONTROLS, ...OTHERS, ...UIBARS].map((component) => {
@@ -32,6 +24,6 @@ const scenes = {
   };
 });
 
-const App = StackNavigator(scenes);
+const App = createStackNavigator(scenes);
 
 export default App;
