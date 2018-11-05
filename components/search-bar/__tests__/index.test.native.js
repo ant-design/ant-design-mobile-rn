@@ -35,6 +35,7 @@ describe('SearchBar', () => {
       wrapper = shallow(<SearchBar value="test" showCancelButton onCancel={handler} />);
       // wrapper.find('Text').simulate('press');
       // expect(handler).toBeCalledWith('test');
+      // FIXME: tests
     });
   });
 });
