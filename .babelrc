@@ -1,9 +1,7 @@
 {
   "env": {
     "development": {
-      "presets": [
-        "react-native"
-      ],
+      "presets": ["module:metro-react-native-babel-preset"],
       "plugins": [
         [
           "import",
@@ -15,9 +13,8 @@
       ]
     },
     "production": {
-      "presets": [
-        "react-native"
-      ],
+      "presets": ["module:metro-react-native-babel-preset"],
+
       "plugins": [
         [
           "import",
@@ -29,9 +26,8 @@
       ]
     },
     "test": {
-      "presets": [
-        "react-native"
-      ],
+      "presets": ["module:metro-react-native-babel-preset"],
+
       "plugins": [
         [
           "import",

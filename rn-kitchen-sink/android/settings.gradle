@@ -1,4 +1,3 @@
-rootProject.name = 'antd-mobile-rn'
+rootProject.name = 'antd_mobile_rn'
 
-include ':app', ':react-native-code-push'
-project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../../node_modules/react-native-code-push/android/app')
+include ':app'
