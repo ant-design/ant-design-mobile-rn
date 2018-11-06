@@ -116,7 +116,7 @@
     "srclint": "eslint site scripts --ext '.js,.jsx' --fix",
     "tslint": "antd-tools run ts-lint && npm run compile && rm -rf lib",
     "tslint-fix": "antd-tools run ts-lint-fix && npm run compile && rm -rf lib",
-    "applint": "eslint rn-kitchen-sink --ext '.js'",
+    "applint": "eslint rn-kitchen-sink --ext '.js' --fix",
     "pre-publish": "npm run test:all",
     "prepublish": "antd-tools run guard",
     "prepare": "antd-tools run guard",

@@ -1,10 +1,10 @@
-import {AppRegistry} from 'react-native';
-import {createStackNavigator} from 'react-navigation';
+import { AppRegistry } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 
 // import Home from './components/Home';
 import RnIndex from './components/RnIndex';
 import WebIndex from './components/WebIndex';
-import {OTHERS, UIBARS, UICONTROLS, UIVIEWS} from './demoList';
+import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from './demoList';
 
 const getOptions = title => ({
   title,
