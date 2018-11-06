@@ -11,7 +11,7 @@ const transformPackages = [
 ]
 
 module.exports = {
-  ...tsjPreset,
+  // ...tsjPreset,
   preset: 'react-native',
   setupFiles: [
     './tests/setup.js'
@@ -34,9 +34,9 @@ module.exports = {
     // '\\.tsx?$': './node_modules/antd-tools/lib/jest/codePreprocessor',
     // '\\.js$': './node_modules/antd-tools/lib/jest/codePreprocessor',
     "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-    "^\\.\\./style/images/(\d+)\\.png$": '<rootDir>/tests/imageStub.js',
+    "\\.png": '<rootDir>/tests/imageStub.js',
   },
-  // testRegex: libDir === 'dist' ? 'demo\\.test\\\\.js$' : '.*\\.test\\\\.js$',
+  testRegex: libDir === 'dist' ? 'demo\\.test\\.js$' : '.*\\.test\\.js$',
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',
     '!components/*/style/*.{ts,tsx}',
@@ -48,9 +48,7 @@ module.exports = {
   globals: {
     'ts-jest': {
       babelConfig: true,
+      tsConfig: "tsconfig.test.json",
     }
-  },
-  // This is the only part which you can keep
-  // from the above linked tutorial's config:
-  cacheDirectory: '.jest/cache',
+  }
 };

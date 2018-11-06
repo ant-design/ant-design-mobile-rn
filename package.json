@@ -113,10 +113,10 @@
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",
-    "srclint": "eslint site scripts --ext '.js,.jsx' --fix",
+    "srclint": "eslint site scripts --ext '.js,.jsx'",
     "tslint": "antd-tools run ts-lint && npm run compile && rm -rf lib",
     "tslint-fix": "antd-tools run ts-lint-fix && npm run compile && rm -rf lib",
-    "applint": "eslint rn-kitchen-sink --ext '.js' --fix",
+    "applint": "eslint rn-kitchen-sink --ext '.js'",
     "pre-publish": "npm run test:all",
     "prepublish": "antd-tools run guard",
     "prepare": "antd-tools run guard",

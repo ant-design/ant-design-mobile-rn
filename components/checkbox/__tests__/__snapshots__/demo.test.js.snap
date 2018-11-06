@@ -29,7 +29,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../components/checkbox/image/checked.png",
+            "uri": "checked",
           }
         }
         style={
@@ -75,7 +75,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../components/checkbox/image/normal.png",
+            "uri": "normal",
           }
         }
         style={
@@ -128,7 +128,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../components/checkbox/image/checked_disable.png",
+            "uri": "checked_disable",
           }
         }
         style={
@@ -172,7 +172,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../components/checkbox/image/normal_disable.png",
+            "uri": "normal_disable",
           }
         }
         style={
@@ -235,7 +235,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../components/checkbox/image/normal.png",
+            "uri": "normal",
           }
         }
         style={
@@ -315,7 +315,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../components/checkbox/image/checked.png",
+            "uri": "checked",
           }
         }
         style={
@@ -397,7 +397,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../components/checkbox/image/normal_disable.png",
+            "uri": "normal_disable",
           }
         }
         style={
@@ -477,7 +477,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../components/checkbox/image/checked_disable.png",
+            "uri": "checked_disable",
           }
         }
         style={
@@ -579,7 +579,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             <Image
               source={
                 Object {
-                  "testUri": "../../../components/checkbox/image/checked.png",
+                  "uri": "checked",
                 }
               }
               style={
@@ -690,7 +690,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             <Image
               source={
                 Object {
-                  "testUri": "../../../components/checkbox/image/normal.png",
+                  "uri": "normal",
                 }
               }
               style={
@@ -801,7 +801,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             <Image
               source={
                 Object {
-                  "testUri": "../../../components/checkbox/image/normal_disable.png",
+                  "uri": "normal_disable",
                 }
               }
               style={
@@ -912,7 +912,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             <Image
               source={
                 Object {
-                  "testUri": "../../../components/checkbox/image/checked_disable.png",
+                  "uri": "checked_disable",
                 }
               }
               style={

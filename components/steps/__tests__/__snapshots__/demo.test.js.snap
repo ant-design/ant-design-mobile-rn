@@ -75,7 +75,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check.png",
+                      "uri": "check",
                     }
                   }
                   style={
@@ -179,7 +179,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check.png",
+                      "uri": "check",
                     }
                   }
                   style={
@@ -283,7 +283,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/more.png",
+                      "uri": "more",
                     }
                   }
                   style={
@@ -415,7 +415,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check.png",
+                      "uri": "check",
                     }
                   }
                   style={
@@ -516,7 +516,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check.png",
+                      "uri": "check",
                     }
                   }
                   style={
@@ -617,7 +617,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/more.png",
+                      "uri": "more",
                     }
                   }
                   style={
@@ -741,7 +741,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check.png",
+                      "uri": "check",
                     }
                   }
                   style={
@@ -852,7 +852,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check.png",
+                      "uri": "check",
                     }
                   }
                   style={
@@ -963,7 +963,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/cross.png",
+                      "uri": "cross",
                     }
                   }
                   style={
@@ -1074,7 +1074,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/more.png",
+                      "uri": "more",
                     }
                   }
                   style={
@@ -1209,7 +1209,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check_w.png",
+                      "uri": "check_w",
                     }
                   }
                   style={
@@ -1321,7 +1321,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check_w.png",
+                      "uri": "check_w",
                     }
                   }
                   style={
@@ -1433,7 +1433,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/more_w.png",
+                      "uri": "more_w",
                     }
                   }
                   style={
@@ -1568,7 +1568,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check_w.png",
+                      "uri": "check_w",
                     }
                   }
                   style={
@@ -1680,7 +1680,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check_w.png",
+                      "uri": "check_w",
                     }
                   }
                   style={
@@ -1792,7 +1792,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/cross_w.png",
+                      "uri": "cross_w",
                     }
                   }
                   style={
@@ -1904,7 +1904,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/more_w.png",
+                      "uri": "more_w",
                     }
                   }
                   style={
@@ -2039,7 +2039,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check_w.png",
+                      "uri": "check_w",
                     }
                   }
                   style={
@@ -2151,7 +2151,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                 <Image
                   source={
                     Object {
-                      "testUri": "../../../components/style/images/check_w.png",
+                      "uri": "check_w",
                     }
                   }
                   style={

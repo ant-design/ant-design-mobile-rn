@@ -278,7 +278,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               <Image
                 source={
                   Object {
-                    "testUri": "../../../components/style/images/arrow.png",
+                    "uri": "arrow",
                   }
                 }
                 style={
@@ -390,7 +390,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               <Image
                 source={
                   Object {
-                    "testUri": "../../../components/style/images/arrow-down.png",
+                    "uri": "arrow-down",
                   }
                 }
                 style={
@@ -501,7 +501,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               <Image
                 source={
                   Object {
-                    "testUri": "../../../components/style/images/arrow-up.png",
+                    "uri": "arrow-up",
                   }
                 }
                 style={
@@ -1021,7 +1021,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               <Image
                 source={
                   Object {
-                    "testUri": "../../../components/style/images/arrow.png",
+                    "uri": "arrow",
                   }
                 }
                 style={
@@ -1384,7 +1384,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               <Image
                 source={
                   Object {
-                    "testUri": "../../../components/style/images/arrow.png",
+                    "uri": "arrow",
                   }
                 }
                 style={
@@ -1483,7 +1483,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               <Image
                 source={
                   Object {
-                    "testUri": "../../../components/style/images/arrow.png",
+                    "uri": "arrow",
                   }
                 }
                 style={

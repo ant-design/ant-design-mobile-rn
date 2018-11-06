@@ -18,14 +18,14 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
   <RCTTabBarItem
     icon={
       Object {
-        "testUri": "../../../components/tab-bar/demo/alipay.png",
+        "uri": "alipay",
       }
     }
     onPress={[Function]}
     selected={false}
     selectedIcon={
       Object {
-        "testUri": "../../../components/tab-bar/demo/alipay_sel.png",
+        "uri": "alipay_sel",
       }
     }
     style={
@@ -48,14 +48,14 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
     badge={2}
     icon={
       Object {
-        "testUri": "../../../components/tab-bar/demo/koubei.png",
+        "uri": "koubei",
       }
     }
     onPress={[Function]}
     selected={true}
     selectedIcon={
       Object {
-        "testUri": "../../../components/tab-bar/demo/koubei_sel.png",
+        "uri": "koubei_sel",
       }
     }
     style={
@@ -140,7 +140,7 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
           resizeMode="stretch"
           source={
             Object {
-              "testUri": "../../../components/style/images/search.png",
+              "uri": "search",
             }
           }
           style={
@@ -191,14 +191,14 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
   <RCTTabBarItem
     icon={
       Object {
-        "testUri": "../../../components/tab-bar/demo/friend.png",
+        "uri": "friend",
       }
     }
     onPress={[Function]}
     selected={false}
     selectedIcon={
       Object {
-        "testUri": "../../../components/tab-bar/demo/friend_sel.png",
+        "uri": "friend_sel",
       }
     }
     style={
@@ -220,14 +220,14 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
   <RCTTabBarItem
     icon={
       Object {
-        "testUri": "../../../components/tab-bar/demo/busi.png",
+        "uri": "busi",
       }
     }
     onPress={[Function]}
     selected={false}
     selectedIcon={
       Object {
-        "testUri": "../../../components/tab-bar/demo/busi_sel.png",
+        "uri": "busi_sel",
       }
     }
     style={
