@@ -141,8 +141,7 @@
     "lint-staged": "lint-staged",
     "lint-staged:ts": "npm run tsc && node node_modules/tslint/bin/tslint -c node_modules/antd-tools/lib/tslint.json components/**/*.tsx",
     "lint-staged:es": "eslint ./.eslintrc.js",
-    "tsc": "antd-tools run tsc",
-    "postinstall": "sh scripts/fix-rn-0.57.sh"
+    "tsc": "antd-tools run tsc"
   },
   "lint-staged": {
     "components/**/*.tsx": [
