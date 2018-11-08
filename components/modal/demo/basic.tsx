@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
-import { Button, Modal, WhiteSpace, WingBlank } from 'antd-mobile-rn';
+import { Button, Modal, WhiteSpace, WingBlank } from '../../';
 
 export default class BasicModalExample extends React.Component<any, any> {
   constructor(props: any) {
@@ -124,7 +124,7 @@ export default class BasicModalExample extends React.Component<any, any> {
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
           </View>
-          <Button type="primary" inline onClick={this.onClose}>
+          <Button type="primary" onClick={this.onClose}>
             close modal
           </Button>
         </Modal>
@@ -138,7 +138,7 @@ export default class BasicModalExample extends React.Component<any, any> {
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
           </View>
-          <Button type="primary" inline onClick={this.onClose1}>
+          <Button type="primary" onClick={this.onClose1}>
             close modal
           </Button>
         </Modal>
@@ -152,7 +152,7 @@ export default class BasicModalExample extends React.Component<any, any> {
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
           </View>
-          <Button type="primary" inline onClick={this.onClose2}>
+          <Button type="primary" onClick={this.onClose2}>
             close modal
           </Button>
         </Modal>

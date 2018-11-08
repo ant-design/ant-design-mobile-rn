@@ -1,11 +1,12 @@
 import React from 'react';
+import { ImagePropertiesSourceOptions } from 'react-native';
 
 export interface ResultPropsType {
-  imgUrl?: string;
+  imgUrl?: ImagePropertiesSourceOptions;
   img?: React.ReactNode;
   title?: React.ReactNode;
   message?: React.ReactNode;
   buttonText?: string;
   buttonType?: 'primary' | 'ghost';
-  onButtonClick?: () => void;
+  onButtonClick?: (e: any) => void;
 }

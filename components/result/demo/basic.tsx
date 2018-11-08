@@ -1,7 +1,7 @@
 // tslint:disable:jsx-no-multiline-js
 import React from 'react';
 import { Image, ScrollView, Text } from 'react-native';
-import { Result } from 'antd-mobile-rn';
+import { Result } from '../../';
 
 export default class ResultExample extends React.Component<any, any> {
   render() {
@@ -48,7 +48,7 @@ export default class ResultExample extends React.Component<any, any> {
           message="所提交内容已成功完成验证"
           buttonText="完成"
           buttonType="primary"
-          buttonClick={(e: any) => alert(e.toString())}
+          onButtonClick={(e: any) => alert(e.toString())}
         />
       </ScrollView>
     );

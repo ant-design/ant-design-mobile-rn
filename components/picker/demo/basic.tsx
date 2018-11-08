@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { List, Picker } from 'antd-mobile-rn';
+import { List, Picker } from '../../';
 
 import { district } from 'antd-mobile-demo-data';
 
@@ -46,7 +46,7 @@ export default class PopupExample extends React.Component<any, any> {
             value={this.state.value}
             onChange={this.onChange}
           >
-            <List.Item arrow="horizontal" last onClick={this.onClick}>
+            <List.Item arrow="horizontal" onClick={this.onClick}>
               省市选择(异步加载)
             </List.Item>
           </Picker>

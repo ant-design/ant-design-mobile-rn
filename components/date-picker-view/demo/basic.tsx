@@ -1,11 +1,11 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { Text, View } from 'react-native';
-import { DatePickerView } from 'antd-mobile-rn';
+import { DatePickerView } from '../../';
 
 export default class DatePickerViewExample extends React.Component {
   state = {
-    value: null,
+    value: undefined,
   };
   onChange = (value: any) => {
     console.log(value);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PickerView } from 'antd-mobile-rn';
+import { PickerView } from '../../';
 
 const seasons = [
   [
@@ -26,7 +26,7 @@ const seasons = [
 
 export default class PickerViewExample extends React.Component {
   state = {
-    value: null,
+    value: undefined,
   };
   onChange = (value: any) => {
     this.setState({

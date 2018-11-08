@@ -24,7 +24,6 @@ export default class Result extends React.Component<ResultNativeProps, any> {
   static defaultProps = {
     styles: ResultStyles,
     buttonType: '',
-    buttonClick: () => {},
   };
 
   render() {

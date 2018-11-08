@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Platform } from 'react-native';
-import { ActionSheet, Button } from 'antd-mobile-rn';
+import { ActionSheet, Button } from '../../';
 
 export default class Test extends React.Component<any, any> {
   constructor(props: any) {

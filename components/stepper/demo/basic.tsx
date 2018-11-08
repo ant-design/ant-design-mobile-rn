@@ -2,7 +2,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { View } from 'react-native';
-import { List, Stepper } from 'antd-mobile-rn';
+import { List, Stepper } from '../../';
 
 function onChange(value: any) {
   console.log('changed', value);
@@ -12,7 +12,6 @@ export default class StepperExample extends React.Component<any, any> {
   render() {
     const readOnly = (
       <Stepper
-        size="small"
         key="1"
         max={10}
         min={1}

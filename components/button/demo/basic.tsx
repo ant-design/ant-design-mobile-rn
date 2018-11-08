@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 // tslint:disable:jsx-no-multiline-js
 import React from 'react';
-import { Button, WhiteSpace, WingBlank } from 'antd-mobile-rn';
+import { Button, WhiteSpace, WingBlank } from '../../';
 
 /* tslint:disable:no-console */
 export default () => (

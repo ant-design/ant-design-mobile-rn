@@ -2,7 +2,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { ScrollView, View } from 'react-native';
-import { Badge, WhiteSpace } from 'antd-mobile-rn';
+import { Badge, WhiteSpace } from '../../';
 
 export default class BasicTagExample extends React.Component<any, any> {
   render() {

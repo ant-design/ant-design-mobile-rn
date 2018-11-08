@@ -1,7 +1,7 @@
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
 import { ScrollView, Text } from 'react-native';
-import { Button, InputItem, List } from 'antd-mobile-rn';
+import { Button, InputItem, List } from '../../';
 
 declare var jest: any;
 
@@ -39,7 +39,6 @@ export default class BasicInputItemExample extends React.Component<any, any> {
           <InputItem
             clear
             error
-            onErrorPress={() => alert('clicked me')}
             value={this.state.value}
             onChange={(value: any) => {
               this.setState({
@@ -53,9 +52,6 @@ export default class BasicInputItemExample extends React.Component<any, any> {
           </InputItem>
           <InputItem
             clear
-            onErrorPress={() => {
-              alert(1);
-            }}
             value="不可编辑"
             onChange={(value: any) => {
               this.setState({

@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { Text, View } from 'react-native';
-import { SegmentedControl, WhiteSpace } from 'antd-mobile-rn';
+import { SegmentedControl, WhiteSpace } from '../../';
 
 export default class BasicTagExample extends React.Component<any, any> {
   onChange = (e: any) => {

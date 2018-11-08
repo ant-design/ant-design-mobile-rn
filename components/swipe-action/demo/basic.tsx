@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { View } from 'react-native';
-import { List, SwipeAction } from 'antd-mobile-rn';
+import { List, SwipeAction } from '../../';
 
 export default class BasicSwipeActionExample extends React.Component<any, any> {
   render() {

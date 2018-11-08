@@ -2,7 +2,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import { NoticeBar, WhiteSpace } from 'antd-mobile-rn';
+import { NoticeBar, WhiteSpace } from '../../';
 
 export default class NoticeBarExample extends React.Component<any, any> {
   render() {
@@ -47,7 +47,7 @@ export default class NoticeBarExample extends React.Component<any, any> {
           delayed during National Day.
         </NoticeBar>
         <WhiteSpace size="lg" />
-        <NoticeBar mode="closable" icon={null}>
+        <NoticeBar mode="closable" icon={undefined}>
           Remove the default icon.
         </NoticeBar>
         <WhiteSpace size="lg" />

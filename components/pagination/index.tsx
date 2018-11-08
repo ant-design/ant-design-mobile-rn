@@ -12,6 +12,10 @@ export interface PaginationNativeProps extends PaginationPropsType {
   styles?: IPaginationStyle;
   style?: StyleProp<ViewStyle>;
   indicatorStyle?: StyleProp<ViewStyle>;
+  locale?: {
+    prevText: string,
+    nextText: string,
+  }
 }
 
 const PaginationStyles = StyleSheet.create<any>(PaginationStyle);

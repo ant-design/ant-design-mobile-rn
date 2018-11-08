@@ -1,7 +1,7 @@
 // tslint:disable:jsx-no-multiline-js
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button, Drawer, List, WhiteSpace } from 'antd-mobile-rn';
+import { Button, Drawer, List, WhiteSpace } from '../../';
 
 const styles = StyleSheet.create({
   container: {

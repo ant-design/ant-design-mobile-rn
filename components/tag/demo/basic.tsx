@@ -2,7 +2,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { View } from 'react-native';
-import { Tag, WhiteSpace } from 'antd-mobile-rn';
+import { Tag, WhiteSpace } from '../../';
 
 function onChange(selected: any) {
   console.log(`tag selected: ${selected}`);

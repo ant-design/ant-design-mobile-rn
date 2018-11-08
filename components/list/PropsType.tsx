@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
+import { StyleProp, ViewStyle, TextStyle } from 'react-native';
 // export type ListType = JSX.Element
 export interface ListPropsType {
   renderHeader?: (() => React.ReactType) | string | JSX.Element;
@@ -24,5 +24,5 @@ export interface ListItemPropsType {
 export interface BriefProps {
   children?: ReactNode;
   wrap?: boolean;
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<TextStyle>;
 }

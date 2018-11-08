@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 export interface MarqueeProps {
-  text: React.ReactNode;
+  text?: React.ReactNode;
   loop?: boolean;
   leading?: number;
   trailing?: number;

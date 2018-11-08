@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { DeviceEventEmitter } from 'react-native';
-import { Button, Toast, WhiteSpace, WingBlank } from 'antd-mobile-rn';
+import { Button, Toast, WhiteSpace, WingBlank } from '../../';
 
 function showToast() {
   Toast.info('This is a toast tips !!!');
@@ -12,7 +12,7 @@ function successToast() {
 }
 
 function showToastNoMask() {
-  Toast.info('Toast without mask !!!', 1, null, false);
+  Toast.info('Toast without mask !!!', 1, undefined, false);
 }
 
 function failToast() {

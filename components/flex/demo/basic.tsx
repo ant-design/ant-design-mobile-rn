@@ -1,7 +1,7 @@
 // tslint:disable:jsx-no-multiline-js
 import React from 'react';
 import { ScrollView, Text, TouchableWithoutFeedback, View } from 'react-native';
-import { Button, Flex, WhiteSpace, WingBlank } from 'antd-mobile-rn';
+import { Button, Flex, WhiteSpace, WingBlank } from '../../';
 
 const Circle = (props: any) => {
   const size = props.size || 20;

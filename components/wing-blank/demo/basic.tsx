@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Text, View } from 'react-native';
-import { WhiteSpace, WingBlank } from 'antd-mobile-rn';
+import { WhiteSpace, WingBlank } from '../../';
 
 const PlaceHolder = (props: any) => (
   <View

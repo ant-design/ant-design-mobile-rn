@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import {
   Pagination, LocaleProvider, List, DatePicker, WhiteSpace, WingBlank,
   Picker, SearchBar,
-} from 'antd-mobile-rn';
+} from '../../';
 import esES from '../es_ES';
 import enUS from '../en_US';
 import ruRU from '../ru_RU';
