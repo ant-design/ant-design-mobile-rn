@@ -21,15 +21,6 @@ module.exports = {
         [
           'import',
           {libraryName: 'antd-mobile-rn', libraryDirectory: 'components'}
-        ],
-        [
-          'module-resolver', {
-            'root': ['./'],
-            'cwd': 'babelrc',
-            'extensions': ['.js', '.ios.js', '.android.js'],
-            'stripExtensions': ['.ios.js', '.android.js'],
-            'alias': {'antd-mobile-rn': './components'}
-          }
         ]
       ]
     }
