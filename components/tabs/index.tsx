@@ -10,6 +10,7 @@ export default class Tabs extends React.PureComponent<TabsProps, {}> {
   public static DefaultTabBar = RMCDefaultTabBar;
 
   static defaultProps = {};
+  tabsRef: RMCTabs | null;
 
   renderTabBar = (props: any) => {
     const { renderTab } = this.props;
@@ -21,7 +22,6 @@ export default class Tabs extends React.PureComponent<TabsProps, {}> {
       />
     );
   };
-
   render() {
     return (
       <RMCTabs
@@ -29,6 +29,7 @@ export default class Tabs extends React.PureComponent<TabsProps, {}> {
         styles={Styles as any}
         renderTabBar={this.renderTabBar}
         {...this.props}
+        ref={ref=> this.tabsRef = ref}
       />
     );
   }
