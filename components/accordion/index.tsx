@@ -68,16 +68,17 @@ class Accordion extends React.Component<AccordionNativeProps, any> {
     );
   }
 
-  onChange = (idx: number) => {
-    const { onChange, children } = this.props;
-    let key;
-    React.Children.map(children, (child: any, index) => {
-      if (idx === index) {
-        key = child.key || `${index}`;
-      }
-    });
+  onChange = (idx: number[]) => {
+    const { onChange } = this.props;
+    // TODO: document
+    // let key;
+    // React.Children.map(children, (child: any, index) => {
+    //   if (idx === index) {
+    //     key = child.key || `${index}`;
+    //   }
+    // });
     if (onChange) {
-      onChange(key);
+      onChange(idx);
     }
   }
 
@@ -85,12 +86,12 @@ class Accordion extends React.Component<AccordionNativeProps, any> {
     const { children, style, defaultActiveKey, activeKey } = this.props;
     const styles = this.props.styles!;
 
-    let defaultActiveSection;
-    let activeSection;
+    // let defaultActiveSection;
+    let activeSection = 0;
     const headers = React.Children.map(children, (child: any, index) => {
       const key = child.key || `${index}`;
       if (key === defaultActiveKey) {
-        defaultActiveSection = index;
+        // defaultActiveSection = index;
       }
       if (key === activeKey) {
         activeSection = index;
@@ -105,8 +106,7 @@ class Accordion extends React.Component<AccordionNativeProps, any> {
     return (
       <View style={[style, styles.container]}>
         <RNAccordion
-          initiallyActiveSection={defaultActiveSection}
-          activeSection={activeSection}
+          activeSections={[activeSection]}
           underlayColor="transparent"
           sections={headers as any}
           renderHeader={this.renderHeader}

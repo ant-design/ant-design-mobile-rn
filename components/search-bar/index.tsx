@@ -116,7 +116,7 @@ export default class SearchBar extends React.Component<
     // tslint:disable-next-line:variable-name
     const _locale = getComponentLocale(
       this.props,
-      this.context,
+      (this as any).context,
       'SearchBar',
       () => require('./locale/zh_CN'),
     );

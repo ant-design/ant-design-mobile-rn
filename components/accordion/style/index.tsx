@@ -1,10 +1,10 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle, ImageStyle } from 'react-native';
 import variables from '../../style/themes/default';
 
 export interface AccordionStyle {
   container: ViewStyle;
   header: ViewStyle;
-  arrow: ViewStyle;
+  arrow: ImageStyle;
   headerWrap: ViewStyle;
   headerText: TextStyle;
   content: ViewStyle;

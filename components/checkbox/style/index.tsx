@@ -1,13 +1,13 @@
-import { ViewStyle } from 'react-native';
+import { ViewStyle, ImageStyle } from 'react-native';
 import variables from '../../style/themes/default';
 
 export interface ICheckboxStyle {
   wrapper: ViewStyle;
-  icon: ViewStyle;
+  icon: ImageStyle;
   iconRight: ViewStyle;
   agreeItem: ViewStyle;
-  agreeItemCheckbox: ViewStyle;
-  checkboxItemCheckbox: ViewStyle;
+  agreeItemCheckbox: ImageStyle;
+  checkboxItemCheckbox: ImageStyle;
 }
 
 export default {

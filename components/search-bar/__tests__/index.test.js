@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { shallow } from 'enzyme';
 import SearchBar from '../index';
 
@@ -33,9 +34,8 @@ describe('SearchBar', () => {
 
     it('fires onCancel event', () => {
       wrapper = shallow(<SearchBar value="test" showCancelButton onCancel={handler} />);
-      // wrapper.find('Text').simulate('press');
-      // expect(handler).toBeCalledWith('test');
-      // FIXME: tests
+      wrapper.find(Text).first().props().onPress();
+      expect(handler).toBeCalledWith('test');
     });
   });
 });

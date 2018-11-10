@@ -23,8 +23,8 @@ export default class DatePickerView extends React.Component<
 
   render() {
     // tslint:disable-next-line:no-this-assignment
-    const { props, context } = this;
-    const locale = getComponentLocale(props, context, 'DatePickerView', () =>
+    const { props } = this;
+    const locale = getComponentLocale(props, (this as any).context, 'DatePickerView', () =>
       require('./locale/zh_CN'),
     );
 

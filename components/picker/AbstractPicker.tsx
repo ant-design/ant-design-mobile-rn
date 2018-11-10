@@ -153,7 +153,7 @@ export default abstract class AbstractPicker extends React.Component<
     } = this.props;
 
     // tslint:disable-next-line:variable-name
-    const _locale = getComponentLocale(this.props, this.context, 'Picker', () =>
+    const _locale = getComponentLocale(this.props, (this as any).context, 'Picker', () =>
       require('./locale/zh_CN'),
     );
 

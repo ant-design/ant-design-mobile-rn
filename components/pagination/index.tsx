@@ -68,7 +68,7 @@ export default class Pagination extends React.Component<
 
     const locale = getComponentLocale(
       this.props,
-      this.context,
+      (this as any).context,
       'Pagination',
       () => zh_CN,
     );

@@ -23,8 +23,6 @@ Properties | Descrition | Type | Default
 | rows        | sets the number of lines for a textarea     | number |   1 |
 | count |  it is used for word count and maxlength, the default is 0 which indicates that word count is turned off. | number | -  |
 | onChange    | callback that is called when the textarea's text changes. | (val: string): void |  -  |
-| onBlur     | callback that is called when the textarea is blurred. | (val: string): void |   -  |
-| onFocus    | callback that is called when the textarea is focused. | (val: string): void |  -  |
 | error       | whether to display error         | bool |  false  |
 | onErrorClick   | callback that is called when the error icon is clicked   | (): void |    |
 | autoHeight | auto adjust height (only use one of `autoHeight` and `rows` properties) | bool  | false  |

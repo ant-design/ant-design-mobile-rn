@@ -94,7 +94,7 @@ class AntmModal extends React.Component<IModalNativeProps, any> {
     // tslint:disable-next-line:variable-name
     const _locale = getComponentLocale(
       this.props,
-      this.context,
+      (this as any).context,
       'Modal',
       () => zh_CN,
     );

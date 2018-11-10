@@ -24,8 +24,6 @@ subtitle: 多行输入
 | rows      |   显示几行      | number |   1 |
 | count      |  计数功能,兼具最大长度,默认为0,代表不开启计数功能      | number | -  |
 | onChange    | change 事件触发的回调函数 | (val: string): void |  -  |
-| onBlur     | blur 事件触发的回调函数 | (val: string): void |   -  |
-| onFocus    | focus 事件触发的回调函数 | (val: string): void |  -  |
 | error       | 报错样式        | bool |  false  |
 | onErrorClick       | 点击报错 icon 触发的回调   | (): void |  无  |
 | autoHeight       | 高度自适应, autoHeight 和 rows 请二选一    | bool  | false  |

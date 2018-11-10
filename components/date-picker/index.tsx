@@ -33,9 +33,9 @@ export default class DatePicker extends React.Component<
 
   render() {
     // tslint:disable-next-line:no-this-assignment
-    const { props, context } = this;
+    const { props } = this;
     const { children, value, styles } = props;
-    const locale = getComponentLocale(props, context, 'DatePicker', () =>
+    const locale = getComponentLocale(props, (this as any).context, 'DatePicker', () =>
       require('./locale/zh_CN'),
     );
     const { okText, dismissText, extra, DatePickerLocale } = locale;

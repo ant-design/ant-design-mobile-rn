@@ -1,9 +1,9 @@
 import variables from '../../style/themes/default';
-import { ViewStyle, TextStyle } from 'react-native';
+import { ViewStyle, TextStyle, ImageStyle } from 'react-native';
 
 export interface IRadioStyle {
   wrapper: ViewStyle;
-  icon: ViewStyle;
+  icon: ImageStyle;
   radioItem: ViewStyle;
   radioItemRadio: ViewStyle;
   radioItemContent: TextStyle;
