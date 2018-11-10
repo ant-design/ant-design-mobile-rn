@@ -7,7 +7,7 @@ node = 6+
 npm = 3+
 ```
 
-## Code convention for antd-mobile-rn
+## Code convention for @ant-design/react-native
 
 TypeScript
 
@@ -84,7 +84,7 @@ export default Button;
 - `components/button/demo/basic.tsx`
 
 ```jsx
-import { Button } from 'antd-mobile-rn';
+import { Button } from '@ant-design/react-native';
 import * as React from 'react';
 import { Text, View } from 'react-native';
 

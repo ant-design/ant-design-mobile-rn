@@ -65,8 +65,8 @@ module.exports = {
     config.plugins.push(new CSSSplitWebpackPlugin({ size: 4000 }));
 
     config.resolve.alias = {
-      'antd-mobile-rn/lib': path.join(process.cwd(), 'components'),
-      'antd-mobile-rn': process.cwd(),
+      '@ant-design/react-native/lib': path.join(process.cwd(), 'components'),
+      '@ant-design/react-native': process.cwd(),
       site: path.join(process.cwd(), 'site'),
     };
     if (!useReact) {

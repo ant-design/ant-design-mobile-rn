@@ -4,7 +4,7 @@ module.exports = {
       presets: ['module:metro-react-native-babel-preset'],
       plugins: [[
         'import',
-        {libraryName: 'antd-mobile-rn', libraryDirectory: 'components'}
+        {libraryName: '@ant-design/react-native', libraryDirectory: 'components'}
       ]]
     },
     production: {
@@ -12,7 +12,7 @@ module.exports = {
 
       plugins: [[
         'import',
-        {libraryName: 'antd-mobile-rn', libraryDirectory: 'components'}
+        {libraryName: '@ant-design/react-native', libraryDirectory: 'components'}
       ]]
     },
     test: {
@@ -20,7 +20,7 @@ module.exports = {
       plugins: [
         [
           'import',
-          {libraryName: 'antd-mobile-rn', libraryDirectory: 'components'}
+          {libraryName: '@ant-design/react-native', libraryDirectory: 'components'}
         ]
       ]
     }

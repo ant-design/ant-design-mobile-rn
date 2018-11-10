@@ -3,7 +3,7 @@ order: 0
 title: Ant Design Mobile RN of React
 ---
 
-`antd-mobile-rn` 是 [Ant Design](http://ant.design) 的移动规范的 React 实现，服务于蚂蚁及口碑无线业务。
+`@ant-design/react-native` 是 [Ant Design](http://ant.design) 的移动规范的 React 实现，服务于蚂蚁及口碑无线业务。
 
 <div class="pic-plus">
   <img width="160" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg">
@@ -58,7 +58,7 @@ title: Ant Design Mobile RN of React
 ### 2. 安装
 
 ```bash
-$ npm install antd-mobile-rn --save
+$ npm install @ant-design/react-native --save
 ```
 
 ### 3. 使用
@@ -68,7 +68,7 @@ $ npm install antd-mobile-rn --save
 ```jsx
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
-import Button from 'antd-mobile-rn/lib/button';
+import Button from '@ant-design/react-native/lib/button';
 
 class HelloWorldApp extends Component {
   render() {
@@ -89,15 +89,15 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
    // .babelrc or babel-loader option
    {
      "plugins": [
-       ["import", { libraryName: "antd-mobile-rn" }] // 与 Web 平台的区别是不需要设置 style
+       ["import", { libraryName: "@ant-design/react-native" }] // 与 Web 平台的区别是不需要设置 style
      ]
    }
    ```
 
-   然后改变从 antd-mobile-rn 引入模块方式即可。
+   然后改变从 @ant-design/react-native 引入模块方式即可。
 
    ```jsx
-   import { Button } from 'antd-mobile-rn';
+   import { Button } from '@ant-design/react-native';
    ```
 
    > 说明：有人反映通过 `react-native init` 创建的项目在使用时可能会报 [Unable to resolve module `react-dom`](https://github.com/ant-design/ant-design-mobile/issues/2054) 的错误 ，此时不妨安装 [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver) 试试~
@@ -105,7 +105,7 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 - 手动引入
 
    ```jsx
-   import Button from 'antd-mobile-rn/lib/button';
+   import Button from '@ant-design/react-native/lib/button';
    ```
 
 ##### 更多增强 (非必须):
@@ -115,8 +115,8 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 
 ## 版本
 
-- 稳定版：[![npm package](http://img.shields.io/npm/v/antd-mobile-rn.svg?style=flat-square)](http://npmjs.com/package/antd-mobile-rn)
-- 开发版：[![npm package](https://img.shields.io/npm/v/antd-mobile-rn/next.svg)](http://npmjs.com/package/antd-mobile-rn)
+- 稳定版：[![npm package](http://img.shields.io/npm/v/@ant-design/react-native.svg?style=flat-square)](http://npmjs.com/package/@ant-design/react-native)
+- 开发版：[![npm package](https://img.shields.io/npm/v/@ant-design/react-native/next.svg)](http://npmjs.com/package/@ant-design/react-native)
 
 ## 链接
 

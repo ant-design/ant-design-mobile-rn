@@ -1,5 +1,5 @@
 {
-  "name": "antd-mobile-rn",
+  "name": "@ant-design/react-native",
   "version": "2.3.2-2",
   "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
   "keywords": [

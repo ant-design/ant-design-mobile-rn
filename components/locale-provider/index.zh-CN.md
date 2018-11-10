@@ -13,7 +13,7 @@ LocaleProvider 使用 React 的 [context](https://facebook.github.io/react/docs/
 
 
 ```jsx
-import enUS from 'antd-mobile-rn/lib/locale-provider/en_US';
+import enUS from '@ant-design/react-native/lib/locale-provider/en_US';
 
 ...
 
@@ -34,4 +34,4 @@ return <LocaleProvider locale={enUS}><App /></LocaleProvider>;
 
 | 参数    | 说明           | 类型              | 默认值        |
 |--------|----------------|------------------|--------------|
-| locale | 语言包配置，语言包可到 `antd-mobile-rn/lib/locale-provider/` 目录下寻找 | object | - |
+| locale | 语言包配置，语言包可到 `@ant-design/react-native/lib/locale-provider/` 目录下寻找 | object | - |

@@ -4,7 +4,7 @@ title: Change Log
 toc: false
 ---
 
-`antd-mobile-rn` strictly follows [Semantic Versioning 2.0.0](http://semver.org/).
+`@ant-design/react-native` strictly follows [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### Release Schedule
 

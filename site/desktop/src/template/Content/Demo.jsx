@@ -182,7 +182,7 @@ AppRegistry.runApplication("App", {
               extends: 'react-app',
             },
             dependencies: {
-              'antd-mobile-rn': '^2.3.2-2',
+              '@ant-design/react-native': '^2.3.2-2',
               'antd-mobile-rn-scripts': '2.1.5',
               react: '^16.6.0',
               'react-art': '^16.6.0',
@@ -201,7 +201,7 @@ AppRegistry.runApplication("App", {
     });
 
     const url = `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}&embed=1`;
-    return <iframe src={`${url}`} title="antd-mobile-rn-examles" style={{ width: '100%', height: 700, border: 0, borderRadius: 4, overflow: 'hidden' }} sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />;
+    return <iframe src={`${url}`} title="@ant-design/react-native-examles" style={{ width: '100%', height: 700, border: 0, borderRadius: 4, overflow: 'hidden' }} sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />;
   }
   /* eslint-disable react/jsx-indent */
   renderDemoCode = (highlightedCode, inModal) => {

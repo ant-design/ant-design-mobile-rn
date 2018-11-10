@@ -1,4 +1,4 @@
-declare module 'antd-mobile-rn';
+declare module '@ant-design/react-native';
 
 declare module 'antd-mobile-demo-data';
 

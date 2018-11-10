@@ -5,7 +5,7 @@ import {
   View,
   ScrollView,
 } from 'react-native';
-import { List, SearchBar } from 'antd-mobile-rn';
+import { List, SearchBar } from '@ant-design/react-native';
 import { UIVIEWS, UICONTROLS, OTHERS, UIBARS } from '../demoList';
 
 const styles = StyleSheet.create({
