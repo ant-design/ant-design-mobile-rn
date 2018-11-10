@@ -108,7 +108,7 @@ class Accordion extends React.Component<AccordionNativeProps, any> {
         <RNAccordion
           activeSections={[activeSection]}
           underlayColor="transparent"
-          sections={headers as any}
+          sections={headers}
           renderHeader={this.renderHeader}
           renderContent={this.renderContent}
           duration={0}
