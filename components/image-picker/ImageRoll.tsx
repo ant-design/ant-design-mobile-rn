@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import CameraRollPicker from 'react-native-camera-roll-picker';
 import varibles from '../style/themes/default';
+import CameraRollPicker from './CameraRollPicker';
 
 export interface ImageRollProps {
   onCancel: () => void;

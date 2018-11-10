@@ -2,8 +2,6 @@ declare module 'antd-mobile-rn';
 
 declare module 'antd-mobile-demo-data';
 
-declare module 'react-native-camera-roll-picker';
-
 declare module 'rmc-dialog';
 declare module 'react-native-menu';
 
