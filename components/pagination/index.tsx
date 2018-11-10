@@ -90,7 +90,7 @@ export default class Pagination extends React.Component<
         <Flex.Item>
           <Button
             disabled={current <= 1}
-            onClick={() => this.onChange(current - 1)}
+            onPress={() => this.onChange(current - 1)}
           >
             {prevText}
           </Button>
@@ -99,7 +99,7 @@ export default class Pagination extends React.Component<
         <Flex.Item>
           <Button
             disabled={current >= total}
-            onClick={() => this.onChange(current + 1)}
+            onPress={() => this.onChange(current + 1)}
           >
             {nextText}
           </Button>

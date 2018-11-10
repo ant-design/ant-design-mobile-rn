@@ -79,7 +79,7 @@ export default class ActivityIndicatorExample extends React.Component<any, any> 
         </WingBlank>
         <WhiteSpace size="xl" style={{ backgroundColor: '#fff' }} />
         <WingBlank>
-          <Button onClick={this.loadingToast}>Click to show Toast</Button>
+          <Button onPress={this.loadingToast}>Click to show Toast</Button>
         </WingBlank>
         <ActivityIndicator
           animating={this.state.animating}

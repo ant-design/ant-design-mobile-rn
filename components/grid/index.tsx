@@ -46,7 +46,7 @@ export default class Grid extends React.Component<GridProps, any> {
       hasLine,
       isCarousel,
       // tslint:disable-next-line:no-empty
-      onClick = () => {},
+      onPress = () => {},
       styles,
     } = this.props;
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/11640
@@ -63,7 +63,7 @@ export default class Grid extends React.Component<GridProps, any> {
           direction="column"
           justify="center"
           style={{ flex: 1 }}
-          onPress={() => onClick(dataItem, index)}
+          onPress={() => onPress(dataItem, index)}
         >
           {React.isValidElement(dataItem.icon) ? (
             dataItem.icon
@@ -92,7 +92,7 @@ export default class Grid extends React.Component<GridProps, any> {
                 { borderLeftWidth: hasLine && j === 0 ? StyleSheet.hairlineWidth : 0 },
                 customItemStyle,
               ]}
-              onPress={() => onClick(el, dataIndex)}
+              onPress={() => onPress(el, dataIndex)}
             >
               {renderItem(el, dataIndex)}
             </Flex.Item>,

@@ -23,7 +23,7 @@ const NoticeStyles = StyleSheet.create<any>(NoticeStyle);
 export default class NoticeBar extends React.Component<NoticeNativeProps, any> {
   static defaultProps = {
     mode: '',
-    onClick() {},
+    onPress() {},
     icon: (
       <Image
         // tslint:disable-next-line:jsx-no-multiline-js
@@ -44,10 +44,10 @@ export default class NoticeBar extends React.Component<NoticeNativeProps, any> {
     };
   }
 
-  onClick = () => {
-    const { mode, onClick } = this.props;
-    if (onClick) {
-      onClick();
+  onPress = () => {
+    const { mode, onPress } = this.props;
+    if (onPress) {
+      onPress();
     }
     if (mode === 'closable') {
       this.setState({
@@ -63,7 +63,7 @@ export default class NoticeBar extends React.Component<NoticeNativeProps, any> {
     let operationDom: any = null;
     if (mode === 'closable') {
       operationDom = (
-        <TouchableWithoutFeedback onPress={this.onClick}>
+        <TouchableWithoutFeedback onPress={this.onPress}>
           <View style={styles.actionWrap}>
             {action ? action : <Text style={[styles.close]}>×</Text>}
           </View>
@@ -90,7 +90,7 @@ export default class NoticeBar extends React.Component<NoticeNativeProps, any> {
       mode === 'closable' ? (
         main
       ) : (
-        <TouchableWithoutFeedback onPress={this.onClick}>
+        <TouchableWithoutFeedback onPress={this.onPress}>
           {main}
         </TouchableWithoutFeedback>
       )

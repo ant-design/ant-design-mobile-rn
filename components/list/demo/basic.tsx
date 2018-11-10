@@ -23,13 +23,13 @@ export default class BasicListExample extends React.Component<any, any> {
           <Item wrap>
             文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行
           </Item>
-          <Item disabled extra="箭头向右" arrow="horizontal" onClick={() => {}}>
+          <Item disabled extra="箭头向右" arrow="horizontal" onPress={() => {}}>
             标题文字
           </Item>
-          <Item extra="箭头向下" arrow="down" onClick={() => {}}>
+          <Item extra="箭头向下" arrow="down" onPress={() => {}}>
             标题文字
           </Item>
-          <Item extra="箭头向上" arrow="up" onClick={() => {}}>
+          <Item extra="箭头向上" arrow="up" onPress={() => {}}>
             标题文字
           </Item>
           <Item extra="没有箭头" arrow="empty">

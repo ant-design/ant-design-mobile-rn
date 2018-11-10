@@ -13,7 +13,7 @@ export type ImageItemProps = {
   imageMargin: number;
   containerWidth?: number;
   imagesPerRow: number;
-  onClick?: (...args: any[]) => any;
+  onPress?: (...args: any[]) => any;
 };
 class ImageItem extends Component<ImageItemProps, {}> {
   static defaultProps = {
@@ -60,8 +60,8 @@ class ImageItem extends Component<ImageItemProps, {}> {
     );
   }
   _handleClick(item: any) {
-    if (this.props.onClick) {
-      this.props.onClick(item);
+    if (this.props.onPress) {
+      this.props.onPress(item);
     }
   }
 }

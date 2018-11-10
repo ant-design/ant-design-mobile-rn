@@ -218,7 +218,7 @@ class CameraRollPicker extends Component<
         imagesPerRow={imagesPerRow}
         containerWidth={containerWidth}
         // tslint:disable-next-line:jsx-no-bind
-        onClick={this._selectImage.bind(this)}
+        onPress={this._selectImage.bind(this)}
       />
     );
   }

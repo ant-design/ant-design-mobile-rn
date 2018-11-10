@@ -29,7 +29,7 @@ export interface ListItemProps extends ListItemPropsType {
     Line: {};
     multipleLine: {};
   };
-  onClick?: () => void;
+  onPress?: () => void;
   onPressIn?: () => void;
   onPressOut?: () => void;
   style?: StyleProp<ViewStyle>;
@@ -86,7 +86,7 @@ export default class Item extends React.Component<ListItemProps, any> {
       extra,
       arrow,
       style,
-      onClick,
+      onPress,
       onPressIn,
       onPressOut,
       wrap,
@@ -105,7 +105,7 @@ export default class Item extends React.Component<ListItemProps, any> {
 
     let underlayColor = {};
 
-    if (!disabled && onClick) {
+    if (!disabled && onPress) {
       underlayColor = {
         underlayColor: StyleSheet.flatten(itemStyles.underlayColor)
           .backgroundColor,
@@ -247,7 +247,7 @@ export default class Item extends React.Component<ListItemProps, any> {
     return (
       <TouchableHighlight
         {...underlayColor}
-        onPress={onClick ? onClick : undefined}
+        onPress={onPress ? onPress : undefined}
         onPressIn={onPressIn}
         onPressOut={onPressOut}
       >

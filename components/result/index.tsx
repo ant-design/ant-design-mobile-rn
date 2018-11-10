@@ -79,7 +79,7 @@ export default class Result extends React.Component<ResultNativeProps, any> {
             <Button
               style={styles.button}
               type={buttonType}
-              onClick={onButtonClick}
+              onPress={onButtonClick}
             >
               {buttonText}
             </Button>

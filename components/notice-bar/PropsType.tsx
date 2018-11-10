@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface NoticeBarPropsType {
   mode?: 'closable' | 'link';
-  onClick?: () => void;
+  onPress?: () => void;
   icon?: React.ReactElement<any>;
   action?: React.ReactElement<any>;
 }

@@ -27,8 +27,8 @@ export default class CheckboxItem extends React.Component<
   handleClick = () => {
     const checkBox: Checkbox = this.refs[refCheckbox] as Checkbox;
     checkBox.handleClick();
-    if (this.props.onClick) {
-      this.props.onClick();
+    if (this.props.onPress) {
+      this.props.onPress();
     }
   }
 
@@ -58,7 +58,7 @@ export default class CheckboxItem extends React.Component<
     return (
       <ListItem
         style={style}
-        onClick={disabled ? undefined : this.handleClick}
+        onPress={disabled ? undefined : this.handleClick}
         extra={extra}
         thumb={thumbEl}
       >

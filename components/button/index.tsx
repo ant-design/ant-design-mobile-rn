@@ -18,7 +18,7 @@ export interface ButtonProps
     TouchableHighlightProperties {
   styles?: typeof buttonStyle;
   activeStyle?: StyleProp<ViewStyle>;
-  onClick?: (_?: any) => void;
+  onPress?: (_?: any) => void;
 }
 
 const buttonStyles = StyleSheet.create<any>(buttonStyle);
@@ -30,7 +30,7 @@ export default class Button extends React.Component<ButtonProps, any> {
     activeStyle: {},
     loading: false,
 
-    onClick: (_?: any) => {},
+    onPress: (_?: any) => {},
     onPressIn: (_?: any) => {},
     onPressOut: (_?: any) => {},
     onShowUnderlay: (_?: any) => {},
@@ -80,7 +80,7 @@ export default class Button extends React.Component<ButtonProps, any> {
       type = 'default',
       disabled,
       activeStyle,
-      onClick,
+      onPress,
       style,
       styles,
       loading,
@@ -123,7 +123,7 @@ export default class Button extends React.Component<ButtonProps, any> {
         disabled={disabled}
         activeOpacity={1}
         underlayColor={underlayColor}
-        onPress={(e?: any) => onClick && onClick(e)}
+        onPress={(e?: any) => onPress && onPress(e)}
         onPressIn={this.onPressIn}
         onPressOut={this.onPressOut}
         onShowUnderlay={this.onShowUnderlay}

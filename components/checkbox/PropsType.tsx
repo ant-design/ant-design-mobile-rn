@@ -13,5 +13,5 @@ export interface CheckboxPropsType {
 export interface CheckboxItemPropsType extends CheckboxPropsType {
   extra?: React.ReactNode;
   prefixCls?: string;
-  onClick?: (e?: any) => void;
+  onPress?: (e?: any) => void;
 }

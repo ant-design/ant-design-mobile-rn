@@ -85,29 +85,29 @@ export default class BasicModalExample extends React.Component<any, any> {
     return (
       <ScrollView style={{ marginTop: 20 }}>
         <WingBlank>
-          <Button onClick={() => this.setState({ visible: true })}>
+          <Button onPress={() => this.setState({ visible: true })}>
             showModal
           </Button>
           <WhiteSpace />
-          <Button onClick={() => this.setState({ visible1: true })}>
+          <Button onPress={() => this.setState({ visible1: true })}>
             transparent:false
           </Button>
           <WhiteSpace />
-          <Button onClick={() => this.setState({ visible2: true })}>
+          <Button onPress={() => this.setState({ visible2: true })}>
             popup
           </Button>
           <WhiteSpace />
-          <Button onClick={this.onButtonClick}>Modal.alert</Button>
+          <Button onPress={this.onButtonClick}>Modal.alert</Button>
           <WhiteSpace />
-          <Button onClick={this.onButtonClick2}>Modal.opertation</Button>
+          <Button onPress={this.onButtonClick2}>Modal.opertation</Button>
           <WhiteSpace />
-          <Button onClick={this.onButtonClick5}>Modal.prompt (default)</Button>
+          <Button onPress={this.onButtonClick5}>Modal.prompt (default)</Button>
           <WhiteSpace />
-          <Button onClick={this.onButtonClick3}>
+          <Button onPress={this.onButtonClick3}>
             Modal.prompt (login-password)
           </Button>
           <WhiteSpace />
-          <Button onClick={this.onButtonClick4}>
+          <Button onPress={this.onButtonClick4}>
             Modal.prompt (secure-text)
           </Button>
         </WingBlank>
@@ -124,7 +124,7 @@ export default class BasicModalExample extends React.Component<any, any> {
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
           </View>
-          <Button type="primary" onClick={this.onClose}>
+          <Button type="primary" onPress={this.onClose}>
             close modal
           </Button>
         </Modal>
@@ -138,7 +138,7 @@ export default class BasicModalExample extends React.Component<any, any> {
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
           </View>
-          <Button type="primary" onClick={this.onClose1}>
+          <Button type="primary" onPress={this.onClose1}>
             close modal
           </Button>
         </Modal>
@@ -152,7 +152,7 @@ export default class BasicModalExample extends React.Component<any, any> {
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
           </View>
-          <Button type="primary" onClick={this.onClose2}>
+          <Button type="primary" onPress={this.onClose2}>
             close modal
           </Button>
         </Modal>

@@ -77,7 +77,7 @@ export default class RadioItem extends React.Component<
     return (
       <ListItem
         style={style}
-        onClick={disabled ? undefined : this.handleClick}
+        onPress={disabled ? undefined : this.handleClick}
         extra={radioEl}
       >
         {contentDom}

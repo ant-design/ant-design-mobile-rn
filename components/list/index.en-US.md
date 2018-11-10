@@ -29,7 +29,7 @@ Properties | Descrition | Type | Default
 | extra      | extra content on the right side of `List`        | String/React.Element |    |
 | arrow      | arrow direction, options: `horizontal`,`up`,`down`, `empty`; `empty` option may hide the dom  | String |     |
 | align    | vertical alignment of child elements，options: `top`,`middle`,`bottom`  | String   | `middle` |
-| onClick    | callback is called when  list is clicked | (): void |    |
+| onPress    | callback is called when  list is clicked | (): void |    |
 | multipleLine    | multiple line | Boolean  | `false`  |
 | wrap    | Whether to wrap long texts, otherwise it will be hidden by default. | Boolean  | `false`  |
 

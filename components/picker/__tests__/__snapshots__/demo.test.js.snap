@@ -31,6 +31,7 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
           style={null}
         >
           <View
+            onClick={[Function]}
             style={
               Array [
                 Object {

@@ -14,13 +14,13 @@ export default class Test extends React.Component<any, any> {
     return (
       <View style={{ marginTop: 30 }}>
         <View style={[{ padding: 8 }]}>
-          <Button onClick={this.showActionSheet}>showActionSheet</Button>
+          <Button onPress={this.showActionSheet}>showActionSheet</Button>
         </View>
         <Text style={[{ padding: 8 }]}>
           clicked button: {this.state.clicked}
         </Text>
         <View style={[{ padding: 8 }]}>
-          <Button onClick={this.showShareActionSheet}>
+          <Button onPress={this.showShareActionSheet}>
             showShareActionSheet
           </Button>
         </View>

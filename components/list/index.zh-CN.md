@@ -30,7 +30,7 @@ subtitle: 列表
 | extra      | 右边内容        | String/React.Element |  无  |
 | arrow      | 箭头方向(右,上,下), 可选`horizontal`,`up`,`down`,`empty`，如果是`empty`则存在对应的dom,但是不显示   | String |   无  |
 | align    |  子元素垂直对齐，可选`top`,`middle`,`bottom`  | String   | `middle` |
-| onClick    | 点击事件的回调函数 | (): void |  无  |
+| onPress    | 点击事件的回调函数 | (): void |  无  |
 | multipleLine    | 多行 | Boolean  | `false`  |
 | wrap    | 是否换行，默认情况下，文字超长会被隐藏， | Boolean  | `false`  |
 

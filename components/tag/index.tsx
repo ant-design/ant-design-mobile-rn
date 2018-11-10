@@ -51,7 +51,7 @@ export default class Tag extends React.Component<TagNativeProps, any> {
     }
   }
 
-  onClick = () => {
+  onPress = () => {
     const { disabled, onChange } = this.props;
     if (disabled) {
       return;
@@ -169,7 +169,7 @@ export default class Tag extends React.Component<TagNativeProps, any> {
 
     return !this.state.closed ? (
       <View style={[styles.tag, style]}>
-        <TouchableWithoutFeedback onPress={this.onClick} onLongPress={this.handleLongPress}>
+        <TouchableWithoutFeedback onPress={this.onPress} onLongPress={this.handleLongPress}>
           <View style={[styles.wrap, sizeWrapStyle, wrapStyle]}>
             <Text style={[styles.text, sizeTextStyle, textStyle]}>
               {children}{' '}

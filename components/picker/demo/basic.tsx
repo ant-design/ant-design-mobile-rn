@@ -5,7 +5,7 @@ import { List, Picker } from '../../';
 import { district } from 'antd-mobile-demo-data';
 
 const CustomChildren = (props: any) => (
-  <TouchableOpacity onPress={props.onClick}>
+  <TouchableOpacity onPress={props.onPress}>
     <View
       style={{ height: 36, paddingLeft: 15, flexDirection: 'row', alignItems: 'center' }}
     >
@@ -24,7 +24,7 @@ export default class PopupExample extends React.Component<any, any> {
       pickerValue: [],
     };
   }
-  onClick = () => {
+  onPress = () => {
     // console.log('start loading data');
     setTimeout(() => {
       this.setState({
@@ -46,7 +46,7 @@ export default class PopupExample extends React.Component<any, any> {
             value={this.state.value}
             onChange={this.onChange}
           >
-            <List.Item arrow="horizontal" onClick={this.onClick}>
+            <List.Item arrow="horizontal" onPress={this.onPress}>
               省市选择(异步加载)
             </List.Item>
           </Picker>

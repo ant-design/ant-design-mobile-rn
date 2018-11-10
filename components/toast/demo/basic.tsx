@@ -56,19 +56,19 @@ export default class ToastExample extends React.Component<any, any> {
     return (
       <WingBlank style={{ marginTop: 80 }}>
         <WhiteSpace />
-        <Button onClick={showToastNoMask}>Without mask</Button>
+        <Button onPress={showToastNoMask}>Without mask</Button>
         <WhiteSpace />
-        <Button onClick={showToast}>Text toast</Button>
+        <Button onPress={showToast}>Text toast</Button>
         <WhiteSpace />
-        <Button onClick={successToast}>Success toast</Button>
+        <Button onPress={successToast}>Success toast</Button>
         <WhiteSpace />
-        <Button onClick={failToast}>Failed toast</Button>
+        <Button onPress={failToast}>Failed toast</Button>
         <WhiteSpace />
-        <Button onClick={offline}>Network failure toast</Button>
+        <Button onPress={offline}>Network failure toast</Button>
         <WhiteSpace />
-        <Button onClick={loadingToast}>Loading toast</Button>
+        <Button onPress={loadingToast}>Loading toast</Button>
         <WhiteSpace />
-        <Button onClick={this.alwaysShowToast}>Toast width duration = 0</Button>
+        <Button onPress={this.alwaysShowToast}>Toast width duration = 0</Button>
         <WhiteSpace />
       </WingBlank>
     );

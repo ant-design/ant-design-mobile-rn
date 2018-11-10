@@ -94,7 +94,7 @@ export default class BasicInputItemExample extends React.Component<any, any> {
           </InputItem>
           <List.Item>
             <Button
-              onClick={() => {
+              onPress={() => {
                 this.inputRef.focus();
               }}
               type="primary"

@@ -12,7 +12,7 @@ export interface GridPropsType {
   columnNum?: number;
   isCarousel?: boolean;
   carouselMaxRow?: number;
-  onClick?: (dataItem: DataItem | undefined, itemIndex: number) => void;
+  onPress?: (dataItem: DataItem | undefined, itemIndex: number) => void;
   renderItem?: (
     dataItem: DataItem | undefined,
     itemIndex: number,

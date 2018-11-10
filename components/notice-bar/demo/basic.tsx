@@ -21,14 +21,14 @@ export default class NoticeBarExample extends React.Component<any, any> {
         <WhiteSpace size="lg" />
         {/* marqueeProps.style only support text style props*/}
         <NoticeBar
-          onClick={() => alert('click')}
+          onPress={() => alert('click')}
           marqueeProps={{ loop: true, style: { fontSize: 12, color: 'red' } }}
         >
           Notice: The arrival time of incomes and transfers of Yu 'E Bao will be
           delayed during National Day.
         </NoticeBar>
         <WhiteSpace size="lg" />
-        <NoticeBar mode="closable" onClick={() => alert('will close')}>
+        <NoticeBar mode="closable" onPress={() => alert('will close')}>
           Notice: The arrival time of incomes and transfers of Yu 'E Bao will be
           delayed during National Day.
         </NoticeBar>
@@ -37,7 +37,7 @@ export default class NoticeBarExample extends React.Component<any, any> {
           Customized icon.
         </NoticeBar>
         <WhiteSpace size="lg" />
-        <NoticeBar mode="link" onClick={() => alert('link')}>
+        <NoticeBar mode="link" onPress={() => alert('link')}>
           Notice: The arrival time of incomes and transfers of Yu 'E Bao will be
           delayed during National Day.
         </NoticeBar>

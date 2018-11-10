@@ -6,21 +6,21 @@ import NoticeBar from '../index';
 // No need to render Snapshot again, because of `./demo.test.js`
 
 describe('NoticeBar', () => {
-  describe('onClick', () => {
+  describe('onPress', () => {
     let handleClick;
     let wrapper;
 
     beforeEach(() => {
       handleClick = jest.fn();
       wrapper = shallow(
-        <NoticeBar mode="closable" onClick={handleClick}>
+        <NoticeBar mode="closable" onPress={handleClick}>
           Notice: The arrival time of incomes and
         </NoticeBar>,
       );
       wrapper.find('TouchableWithoutFeedback').simulate('press');
     });
 
-    it('fires onClick event', () => {
+    it('fires onPress event', () => {
       expect(handleClick).toBeCalledWith();
     });
 

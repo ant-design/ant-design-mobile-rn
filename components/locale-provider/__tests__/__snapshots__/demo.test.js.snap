@@ -25,6 +25,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
       style={null}
     >
       <View
+        onClick={[Function]}
         style={
           Array [
             Object {
@@ -392,6 +393,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
             style={null}
           >
             <View
+              onClick={[Function]}
               style={
                 Array [
                   Object {
@@ -506,6 +508,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
             style={null}
           >
             <View
+              onClick={[Function]}
               style={
                 Array [
                   Object {
