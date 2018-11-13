@@ -247,7 +247,8 @@ export default class Item extends React.Component<ListItemProps, any> {
     return (
       <TouchableHighlight
         {...underlayColor}
-        onPress={onPress ? onPress : undefined}
+        // TODO: fix onClick
+        onPress={(this.props as any).onClick ? (this.props as any).onClick : onPress ? onPress : undefined}
         onPressIn={onPressIn}
         onPressOut={onPressOut}
       >
