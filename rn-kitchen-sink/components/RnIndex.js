@@ -56,7 +56,7 @@ export default class RnIndex extends React.Component {
   renderItem = el => (
     <List.Item
       thumb={el.icon}
-      onClick={() => {
+      onPress={() => {
         this.onPressRow(el);
       }}
       arrow="horizontal"
