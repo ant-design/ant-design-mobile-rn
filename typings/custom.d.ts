@@ -6,6 +6,7 @@ declare module 'rmc-dialog';
 declare module 'react-native-menu';
 
 declare module 'normalize-css-color';
+declare module 'hoist-non-react-statics';
 
 declare var process: {
   env: {
