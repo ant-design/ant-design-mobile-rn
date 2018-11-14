@@ -70,6 +70,12 @@ module.exports = {
       module: require('../components/popover/demo/basic'),
     },
     {
+      title: 'Portal',
+      description: 'portal',
+      icon: 'https://os.alipayobjects.com/rmsportal/iIOLFHTKUCxBgUV.png',
+      module: require('../components/portal/demo/basic'),
+    },
+    {
       title: 'Result', // 必须
       description: '结果页',
       icon: 'https://os.alipayobjects.com/rmsportal/nREwETegxvDndJZ.png',

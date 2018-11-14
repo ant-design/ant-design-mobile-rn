@@ -9,7 +9,6 @@ export interface LocaleProviderProps {
     InputItem?: object;
     Modal?: object;
   };
-  children?: React.ReactElement<any>;
 }
 
 export default class LocaleProvider extends React.Component<
