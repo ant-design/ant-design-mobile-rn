@@ -16,17 +16,19 @@ subtitle: 手风琴
 
 ### Accordion
 
-属性 | 说明 | 类型 | 默认值
-----|-----|------|------
-| activeKey        | 当前激活 tab 面板的 key| Array or String   | 默认无，accordion模式下默认第一个元素|
-| defaultActiveKey | 初始化选中面板的 key | String   | 无 |
-| onChange      |   切换面板的回调   | (key: string): void |  noop  |
+| 属性              | 说明                                    | 类型                      | 默认值 |
+| ----------------- | --------------------------------------- | ------------------------- | ------ |
+| onChange(indexes) | 当section(s)发生变化的时候执行        | (indexes: number[])=>void | -      |
+| activeSections    | 初始化选中`sections` ，留空关闭所有面板 | number[]                  | []     |
+
+更多自定义属性请参考 https://github.com/oblador/react-native-collapsible#properties-1
+
 
 ### Accordion.Panel
 
-属性 | 说明 | 类型 | 默认值
-----|-----|------|------
-| key  | 对应 activeKey   | String          | 无     |
-| header | 面板头内容 | React.Element or String | 无     |
+| 属性   | 说明           | 类型                    | 默认值 |
+| ------ | -------------- | ----------------------- | ------ |
+| key    | 对应 activeKey | String                  | 无     |
+| header | 面板头内容     | React.Element or String | 无     |
 
 注意: 目前暂不支持嵌套使用
