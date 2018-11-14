@@ -59,7 +59,6 @@ export default class PortalHost extends React.Component<PortalHostProps> {
       if (!action) {
         continue;
       }
-      // eslint-disable-next-line default-case
       // tslint:disable-next-line:switch-default
       switch (action.type) {
         case 'mount':
