@@ -5,8 +5,8 @@ title:
   en-US: Basic
 ---
 
-[Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/tag/demo/basic.native.tsx)
+[Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/tag/demo/basic.tsx)
 
 ````jsx
-// todos: include('./basic.native.tsx')
+// todos: include('./basic.tsx')
 ````
