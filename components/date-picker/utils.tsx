@@ -29,3 +29,20 @@ export function formatFn(instance: any, value: Date) {
   }
   return formatIt(value, (formatsEnum as any)[instance.props.mode]);
 }
+
+export function formatProps(props: any, value: Date) {
+  const formatsEnum = {
+    date: 'YYYY-MM-DD',
+    time: 'HH:mm',
+    datetime: 'YYYY-MM-DD HH:mm',
+  };
+  const { format } = props;
+  const type = typeof format;
+  if (type === 'string') {
+    return formatIt(value, format);
+  }
+  if (type === 'function') {
+    return format(value);
+  }
+  return formatIt(value, (formatsEnum as any)[props.mode]);
+}

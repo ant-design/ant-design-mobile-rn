@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Portal from '../portal/portal';
-import LocaleProvider from '../locale-provider';
+import { LocaleProvider } from '../locale-provider';
 import { ThemeProvider, Theme } from '../style';
 export interface ProviderProps {
   locale?: any;
@@ -9,7 +9,7 @@ export interface ProviderProps {
 export default class Provider extends React.Component<ProviderProps> {
   render() {
     return (
-      <LocaleProvider locale={this.props.locale}>
+      <LocaleProvider value={this.props.locale}>
         <ThemeProvider value={this.props.theme}>
           <Portal.Host>{this.props.children}</Portal.Host>
         </ThemeProvider>
