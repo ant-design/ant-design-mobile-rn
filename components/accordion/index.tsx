@@ -1,8 +1,9 @@
 // tslint:disable:jsx-no-multiline-js
 import React from 'react';
 import { Image, StyleProp, Text, View, ViewStyle } from 'react-native';
-import RNAccordion from 'react-native-collapsible/Accordion';
-import { AccordionPropsTypes } from './PropsType';
+import RNAccordion, {
+  AccordionProps,
+} from 'react-native-collapsible/Accordion';
 import AccordionStyles, { AccordionStyle } from './style/index';
 
 export interface AccordionPanelProps {
@@ -10,7 +11,7 @@ export interface AccordionPanelProps {
   header: any;
 }
 
-export interface AccordionNativeProps extends AccordionPropsTypes {
+export interface AccordionNativeProps<T> extends Partial<AccordionProps<T>> {
   styles?: AccordionStyle;
   style?: StyleProp<ViewStyle>;
 }
@@ -25,14 +26,17 @@ class AccordionPanel extends React.Component<AccordionPanelProps, any> {
   }
 }
 
-class Accordion extends React.Component<AccordionNativeProps, any> {
+class Accordion<T extends AccordionHeader> extends React.Component<
+  AccordionNativeProps<T>,
+  any
+> {
   static defaultProps = {
     styles: AccordionStyles as any,
   };
 
   static Panel: any;
 
-  renderHeader = (section: AccordionHeader, _: number, isActive: boolean) => {
+  renderHeader = (section: T, _: number, isActive: boolean) => {
     const styles = this.props.styles!;
     return (
       <View style={[styles.header, section.style]}>
@@ -55,9 +59,9 @@ class Accordion extends React.Component<AccordionNativeProps, any> {
         </View>
       </View>
     );
-  }
+  };
 
-  renderContent = (section: AccordionHeader) => {
+  renderContent = (section: T) => {
     const styles = this.props.styles!;
     return React.isValidElement(section.content) ? (
       section.content
@@ -66,53 +70,33 @@ class Accordion extends React.Component<AccordionNativeProps, any> {
         <Text style={styles.contentText}>{section.content}</Text>
       </View>
     );
-  }
-
-  onChange = (idx: number[]) => {
-    const { onChange } = this.props;
-    // TODO: document
-    // let key;
-    // React.Children.map(children, (child: any, index) => {
-    //   if (idx === index) {
-    //     key = child.key || `${index}`;
-    //   }
-    // });
-    if (onChange) {
-      onChange(idx);
-    }
-  }
+  };
 
   render() {
-    const { children, style, defaultActiveKey, activeKey } = this.props;
+    const { children, style, activeSections = [], ...rest } = this.props;
     const styles = this.props.styles!;
 
-    // let defaultActiveSection;
-    let activeSection = 0;
-    const headers = React.Children.map(children, (child: any, index) => {
-      const key = child.key || `${index}`;
-      if (key === defaultActiveKey) {
-        // defaultActiveSection = index;
-      }
-      if (key === activeKey) {
-        activeSection = index;
-      }
-      return {
-        title: child.props.header,
-        content: child.props.children,
-        style: child.props.style || {},
-      };
-    });
+    const headers: AccordionHeader[] = React.Children.map(
+      children,
+      (child: any) => {
+        return {
+          title: child.props.header,
+          content: child.props.children,
+          style: child.props.style || {},
+        };
+      },
+    );
 
     return (
       <View style={[style, styles.container]}>
         <RNAccordion
-          activeSections={[activeSection]}
           underlayColor="transparent"
-          sections={headers}
           renderHeader={this.renderHeader}
           renderContent={this.renderContent}
           duration={0}
-          onChange={this.onChange}
+          sections={headers}
+          activeSections={activeSections}
+          {...rest as AccordionProps<T>}
         />
       </View>
     );

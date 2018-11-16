@@ -519,7 +519,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
               <Image
                 source={
                   Object {
-                    "uri": "down",
+                    "uri": "up",
                   }
                 }
                 style={
@@ -533,13 +533,8 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          pointerEvents="none"
-          style={
-            Object {
-              "height": 0,
-              "overflow": "hidden",
-            }
-          }
+          pointerEvents="auto"
+          style={false}
         >
           <View
             onLayout={[Function]}

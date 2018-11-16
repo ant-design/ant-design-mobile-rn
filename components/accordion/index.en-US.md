@@ -15,17 +15,19 @@ You can collapse / expand the content area.
 
 ### Accordion
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| activeKey | current active Panel key | Array or String   | The first panel key on accordion mode|
-| defaultActiveKey | default active key | String   | null |
-| onChange    | called when collapse Panel is changed | (key: string): void |  noop  |
+| Properties        | Descrition                                                                                       | Type                      | Default |
+| ----------------- | ------------------------------------------------------------------------------------------------ | ------------------------- | ------- |
+| onChange(indexes) | A function that is called when the currently active section(s) are updated.                      | (indexes: number[])=>void | -       |
+| activeSections    | Control which indices in the `sections` array are currently open. If empty, closes all sections. | number[]                  | []      |
+
+
+Read more https://github.com/oblador/react-native-collapsible#properties-1
 
 ### Accordion.Panel
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| key  | corresponding activeKey   | String   | -   |
-| header | header content of Panel | React.Element or String | -   |
+| Properties | Descrition              | Type                    | Default |
+| ---------- | ----------------------- | ----------------------- | ------- |
+| key        | corresponding activeKey | String                  | -       |
+| header     | header content of Panel | React.Element or String | -       |
 
 Note: Currently does not support nested use for RN.
