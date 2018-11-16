@@ -107,7 +107,7 @@ export default class LocaleProviderExample extends React.Component<any, any> {
           <List.Item arrow="horizontal">Choose language</List.Item>
         </Picker>
         <WhiteSpace />
-        <LocaleProvider locale={currentLocale}>
+        <LocaleProvider value={currentLocale}>
           <Page />
         </LocaleProvider>
       </WingBlank>

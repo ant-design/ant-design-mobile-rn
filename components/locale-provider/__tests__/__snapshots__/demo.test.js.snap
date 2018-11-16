@@ -231,7 +231,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                Prev
+                上一页
               </Text>
             </View>
           </View>
@@ -347,7 +347,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                Next
+                下一页
               </Text>
             </View>
           </View>
@@ -588,7 +588,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                       ]
                     }
                   >
-                    please select
+                    请选择
                   </Text>
                 </View>
                 <Image
@@ -712,7 +712,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              Cancel
+              取消
             </Text>
           </View>
         </View>

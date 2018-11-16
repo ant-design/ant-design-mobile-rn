@@ -12083,7 +12083,7 @@ react-document-title@^2.0.1:
     prop-types "^15.5.6"
     react-side-effect "^1.0.2"
 
-react-dom@^16.0.0, react-dom@^16.6.1:
+react-dom@^16.0.0:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.6.1.tgz#5476e08694ae504ae385a28b62ecc4fe3a29add9"
   integrity sha512-zm+wBuEMGm009Wt1uE4Zw5KcXOW7qC4E/xW/fpJsCsbOco4U/R84u+DzzO/S4SYSdNBcqcaulcp4w3FXl8pImw==
@@ -12092,6 +12092,16 @@ react-dom@^16.0.0, react-dom@^16.6.1:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.11.0"
+
+react-dom@^16.7.0-alpha.2:
+  version "16.7.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.7.0-alpha.2.tgz#16632880ed43676315991d8b412cce6975a30282"
+  integrity sha512-o0mMw8jBlwHjGZEy/vvKd/6giAX0+skREMOTs3/QHmgi+yAhUClp4My4Z9lsKy3SXV+03uPdm1l/QM7NTcGuMw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.12.0-alpha.2"
 
 react-error-overlay@^3.0.0:
   version "3.0.0"
@@ -12125,6 +12135,11 @@ react-is@^16.6.1:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.1.tgz#f77b1c3d901be300abe8d58645b7a59e794e5982"
   integrity sha512-wOKsGtvTMYs7WAscmwwdM8sfRRvE17Ym30zFj3n37Qx5tHRfhenPKEPILHaHob6WoLFADmQm1ZNrE5xMCM6sCw==
+
+react-is@^16.7.0-alpha.2:
+  version "16.7.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0-alpha.2.tgz#0dd7f95d45ad5318b7f7bcb99dcb84da9385cb57"
+  integrity sha512-1Q3qN8nMWUfFcRz/bBC1f9zSL3il9OcSxMd9CNnpJbeFf4VCX0qYxL3TuwT4f+tFk1TkidwIL11yYgk4HjldYg==
 
 react-lazy-load@^3.0.13:
   version "3.0.13"
@@ -12393,7 +12408,7 @@ react-sublime-video@^0.2.0:
     prop-types "^15.5.10"
     rc-tween-one "^1.2.5"
 
-react-test-renderer@^16.0.0-0, react-test-renderer@^16.6.1:
+react-test-renderer@^16.0.0-0:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.6.1.tgz#8ea357652be3cf81cbd6b2f686e74ebe67c17b78"
   integrity sha512-sgZwJZYIgQptRi2qk5+gB8FBQGk4gLSs0gmKZPMfhd3dLkdxIUwVLHteLN3Bnj4LokIZd3U+V2NEJUqeV2PT2w==
@@ -12402,6 +12417,16 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.6.1:
     prop-types "^15.6.2"
     react-is "^16.6.1"
     scheduler "^0.11.0"
+
+react-test-renderer@^16.7.0-alpha.2:
+  version "16.7.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.7.0-alpha.2.tgz#8606a5a82240c405539da0401d7b3572898b5611"
+  integrity sha512-taA9MrHMi7hEM/cKgvcvht+9cszhPirCaSP99yxkVQ2JwQxYSltGYq2gFf/UQBqGJMgmgEghN62rxziaL1EK+A==
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    react-is "^16.7.0-alpha.2"
+    scheduler "^0.12.0-alpha.2"
 
 react-timer-mixin@^0.13.2, react-timer-mixin@^0.13.3:
   version "0.13.4"
