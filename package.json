@@ -30,6 +30,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "dependencies": {
+    "@ant-design/icons-react-native": "^1.0.1",
     "array-tree-filter": "~2.1.0",
     "babel-runtime": "6.x",
     "deepmerge": "^2.2.1",
@@ -153,10 +154,5 @@
   "typings": "lib/index.d.ts",
   "pre-commit": [
     "lint-staged"
-  ],
-  "rnpm": {
-    "assets": [
-      "./fonts"
-    ]
-  }
+  ]
 }

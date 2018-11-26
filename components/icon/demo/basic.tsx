@@ -1,34 +1,25 @@
 import React from 'react';
 import { Grid, Icon } from '../../';
-
-const list = [
-  'check-circle',
-  'check',
-  'check-circle-o',
-  'cross-circle',
-  'cross',
-  'cross-circle-o',
-  'up',
-  'down',
-  'left',
-  'right',
-  'ellipsis',
-];
+import { ScrollView } from 'react-native';
+import {
+  outlineGlyphMap,
+  OutlineGlyphMapType,
+} from '@ant-design/icons-react-native/lib/outline';
 
 export default class IConDemo extends React.Component<any, any> {
   render() {
-    const data = list
-      .map(item => ({
-        icon: <Icon type={item} />,
+    const outlineData = Object.keys(outlineGlyphMap).map(
+      (item: OutlineGlyphMapType) => ({
+        icon: <Icon name={item} />,
         text: item,
-      }))
-      .concat([
-        {
-          icon: <Icon type={'\ue601'} size={55} color="red" />,
-          text: 'Customized',
-        },
-      ]);
-    return <Grid data={data} columnNum={3} hasLine={false} />;
+      }),
+    );
+
+    return (
+      <ScrollView>
+        <Grid data={outlineData} columnNum={3} hasLine={false} />
+      </ScrollView>
+    );
   }
 }
 
