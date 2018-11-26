@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@ant-design/icons-react-native@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ant-design/icons-react-native/-/icons-react-native-1.0.1.tgz#a9016b6274e5c3574d067941086eb095f4edfdd2"
+  integrity sha512-WhhCC2gGA6wcuwBiq2KTLniRyKSwhpUN45KgOAhCNjLon4W6Ly1oEr5JqMLoN+zX7b6Y7zQ+q+u0JJUbycbmKw==
+
 "@ant-design/icons-react@~1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@ant-design/icons-react/-/icons-react-1.1.2.tgz#df25c4560864f8a3b687b305c3238daff048ed72"
