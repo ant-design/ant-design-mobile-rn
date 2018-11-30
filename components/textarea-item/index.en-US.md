@@ -27,5 +27,6 @@ Properties | Descrition | Type | Default
 | onErrorClick   | callback that is called when the error icon is clicked   | (): void |    |
 | autoHeight | auto adjust height (only use one of `autoHeight` and `rows` properties) | bool  | false  |
 | labelNumber  | number of label text, valid value is 2 to 7 | number | `5` |
+| last      |  If it is the last item, the `borderBottom` will be removed, the default has `borderBottom`   | bool | false  |
 
 > More available react-native `TextareaItem` API can be found at [react-native TextInput](http://facebook.github.io/react-native/docs/textinput.html)
