@@ -46,7 +46,6 @@
     "rmc-dialog": "^1.0.1",
     "rmc-input-number": "^1.0.0",
     "rmc-picker": "~5.0.0",
-    "rmc-tabs": "~1.2.0",
     "utility-types": "^2.1.0"
   },
   "devDependencies": {
@@ -97,12 +96,12 @@
     "qrcode.react": "^0.8.0",
     "raf": "^3.4.0",
     "rc-form": "2.2.6",
+    "react": "^16.7.0-alpha.2",
     "react-copy-to-clipboard": "^5.0.0",
     "react-document-title": "^2.0.1",
     "react-dom": "^16.7.0-alpha.2",
     "react-github-button": "^0.1.9",
     "react-intl": "^2.2.3",
-    "react": "^16.7.0-alpha.2",
     "react-native": "^0.57.7",
     "react-native-mocker": "^0.0.12",
     "react-navigation": "^2.18.2",

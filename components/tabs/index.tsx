@@ -1,13 +1,11 @@
 import React from "react";
-import {
-  DefaultTabBar as RMCDefaultTabBar,
-  Tabs as RMCTabs,
-} from "rmc-tabs/lib/index";
+
 import TabsProps from "./PropsType";
 import Styles from "./style/index";
-
+import { DefaultTabBar } from "./DefaultTabBar";
+import RMCTabs from './Tabs'
 export default class Tabs extends React.PureComponent<TabsProps, {}> {
-  public static DefaultTabBar = RMCDefaultTabBar;
+  public static DefaultTabBar = DefaultTabBar;
 
   static defaultProps = {};
   tabsRef: RMCTabs | null;
@@ -15,7 +13,7 @@ export default class Tabs extends React.PureComponent<TabsProps, {}> {
   renderTabBar = (props: any) => {
     const { renderTab } = this.props;
     return (
-      <RMCDefaultTabBar
+      <DefaultTabBar
         styles={Styles as any}
         {...props}
         renderTab={renderTab}
@@ -25,7 +23,6 @@ export default class Tabs extends React.PureComponent<TabsProps, {}> {
   render() {
     return (
       <RMCTabs
-        // @ts-ignore
         styles={Styles as any}
         renderTabBar={this.renderTabBar}
         {...this.props}
