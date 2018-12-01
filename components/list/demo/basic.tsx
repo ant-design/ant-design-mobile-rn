@@ -16,7 +16,7 @@ export default class BasicListExample extends React.Component<any, any> {
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       >
-        <List renderHeader={() => 'basic'}>
+        <List renderHeader={'basic'}>
           <Item data-seed="logId">
             标题文字点击无反馈，文字超长则隐藏，文字超长则隐藏
           </Item>
@@ -73,7 +73,7 @@ export default class BasicListExample extends React.Component<any, any> {
             底部对齐
           </Item>
         </List>
-        <List renderHeader={() => '带缩略图'}>
+        <List renderHeader={'带缩略图'}>
           <Item thumb="https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png">
             thumb
           </Item>

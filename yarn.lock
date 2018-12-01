@@ -11745,7 +11745,7 @@ rc-form@2.2.6, rc-form@^2.2.3:
     lodash "^4.17.4"
     warning "^3.0.0"
 
-rc-gesture@~0.0.18, rc-gesture@~0.0.22:
+rc-gesture@~0.0.22:
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/rc-gesture/-/rc-gesture-0.0.22.tgz#fbcbdd5b46387a978b3ede48b42748e8ff77dddd"
   integrity sha512-6G6qrCE0MUTXyjh/powj91XkjRjoFL4HiJLPU5lALXHvGX+/efcUjGYUrHrrw0mwQdmrmg4POqnY/bibns+G3g==
@@ -13208,14 +13208,6 @@ rmc-picker@~5.0.0:
     classnames "^2.2.0"
     rmc-dialog "^1.0.1"
     rmc-feedback "^2.0.0"
-
-rmc-tabs@~1.2.0:
-  version "1.2.27"
-  resolved "https://registry.yarnpkg.com/rmc-tabs/-/rmc-tabs-1.2.27.tgz#19a8c97aa1a5ffb43b55849352048fcd17abe96e"
-  integrity sha512-Jlo4uQgtAaz/D4xq8bBTwOl5MqKais2Xco/WiMw+tzAa6S1PI9uieVIpyqsLuSI+kRVS38141FDYEkNS9xiJzw==
-  dependencies:
-    babel-runtime "6.x"
-    rc-gesture "~0.0.18"
 
 rst-selector-parser@^2.2.3:
   version "2.2.3"

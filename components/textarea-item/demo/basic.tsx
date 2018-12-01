@@ -27,7 +27,7 @@ export default class BasicTextAreaItemExample extends React.Component<
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       >
-        <List renderHeader={() => '基本'}>
+        <List renderHeader={'基本'}>
           <TextareaItem rows={4} placeholder="固定行数" />
 
           <TextareaItem rows={4} placeholder="多行带计数" count={100} />
