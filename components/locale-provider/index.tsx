@@ -14,17 +14,22 @@ export interface Locale {
 
 export type LocaleValue = Locale & { locale: string };
 export interface LocaleProviderProps {
-  value: Locale & { locale: string };
+  value?: LocaleValue;
   children?: React.ReactNode;
 }
 
-export const LocaleProvider = (props: LocaleProviderProps) => {
-  return <LocaleContext.Provider {...props} />;
+export const LocaleProvider = (props: LocaleProviderProps = {}) => {
+  const locale = deepmerge(en_US, props.value || {});
+  return (
+    <LocaleContext.Provider value={locale}>
+      {props.children}
+    </LocaleContext.Provider>
+  );
 };
 
 export const useLocale = (locale: Partial<Locale> = {}) => {
-  const l = useContext(LocaleContext);
-  return deepmerge(l, locale);
+  const currentLocale = useContext(LocaleContext);
+  return deepmerge(currentLocale, locale);
 };
 
 export default LocaleProvider;

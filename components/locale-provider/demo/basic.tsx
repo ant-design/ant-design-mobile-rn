@@ -7,6 +7,7 @@ import {
 import esES from '../es_ES';
 import enUS from '../en_US';
 import ruRU from '../ru_RU';
+import zhCN from '../zh_CN';
 
 const maxDate = new Date(2018, 11, 3, 22, 0);
 const minDate = new Date(2015, 7, 6, 8, 30);
@@ -76,7 +77,7 @@ export default class LocaleProviderExample extends React.Component<any, any> {
       {
         value: '中国',
         label: '中国',
-        language: undefined,
+        language: zhCN,
       },
       {
         value: 'English',

@@ -97,13 +97,13 @@
     "qrcode.react": "^0.8.0",
     "raf": "^3.4.0",
     "rc-form": "2.2.6",
-    "react": "^16.7.0-alpha.2",
     "react-copy-to-clipboard": "^5.0.0",
     "react-document-title": "^2.0.1",
     "react-dom": "^16.7.0-alpha.2",
     "react-github-button": "^0.1.9",
     "react-intl": "^2.2.3",
-    "react-native": "npm:@brunolemos/react-native",
+    "react": "^16.7.0-alpha.2",
+    "react-native": "^0.57.7",
     "react-native-mocker": "^0.0.12",
     "react-navigation": "^2.18.2",
     "react-test-renderer": "^16.7.0-alpha.2",
@@ -154,5 +154,8 @@
   "typings": "lib/index.d.ts",
   "pre-commit": [
     "lint-staged"
-  ]
+  ],
+  "resolutions": {
+    "react": "^16.7.0-alpha.2"
+  }
 }

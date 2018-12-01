@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Portal from '../portal/portal';
-import { LocaleProvider } from '../locale-provider';
+import { LocaleProvider, LocaleValue } from '../locale-provider';
 import { ThemeProvider, Theme } from '../style';
 export interface ProviderProps {
-  locale?: any;
+  locale?: LocaleValue;
   theme?: Theme;
 }
 export default class Provider extends React.Component<ProviderProps> {
