@@ -98,7 +98,7 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
           name={iconType[type]}
           style={styles.image}
           color="white"
-          size={32}
+          size={36}
         />
       );
     }

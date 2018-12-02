@@ -1,5 +1,5 @@
+import { Platform, TextStyle, ViewStyle } from 'react-native';
 import variables from '../../style/themes/default';
-import { Platform, ViewStyle, TextStyle } from 'react-native';
 
 export interface IToastStyle {
   container: ViewStyle;
@@ -46,8 +46,8 @@ export default {
     fontSize: variables.font_size_subhead,
   },
   image: {
-    width: variables.icon_size_lg,
-    height: variables.icon_size_lg,
+    // width: variables.icon_size_lg,
+    // height: variables.icon_size_lg,
     marginBottom: variables.v_spacing_xs,
   },
   centering: {
