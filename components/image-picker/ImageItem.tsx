@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import {
-  Image,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-  ImageStyle,
-} from 'react-native';
+import { Dimensions, Image, ImageStyle, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from '../icon';
 export type ImageItemProps = {
   item?: any;
   selected?: boolean;
@@ -40,9 +35,9 @@ class ImageItem extends Component<ImageItemProps, {}> {
     const marker = selectedMarker ? (
       selectedMarker
     ) : (
-      <Image
-        style={[styles.marker, { width: 25, height: 25 }]}
-        source={require('./circle-check.png')}
+      <Icon
+        name="check-circle"
+        style={[styles.marker]}
       />
     );
     const image = item.node.image;

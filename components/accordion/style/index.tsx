@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle, ViewStyle, ImageStyle } from 'react-native';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import variables from '../../style/themes/default';
 
 export interface AccordionStyle {
@@ -27,8 +27,7 @@ export default StyleSheet.create<any>({
     borderBottomColor: variables.border_color_base,
   },
   arrow: {
-    width: 12,
-    height: 12,
+    color: variables.color_text_paragraph,
   },
   headerWrap: {
     flex: 1,

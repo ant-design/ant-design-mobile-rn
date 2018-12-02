@@ -1,9 +1,8 @@
 // tslint:disable:jsx-no-multiline-js
 import React from 'react';
-import { Image, StyleProp, Text, View, ViewStyle } from 'react-native';
-import RNAccordion, {
-  AccordionProps,
-} from 'react-native-collapsible/Accordion';
+import { StyleProp, Text, View, ViewStyle } from 'react-native';
+import RNAccordion, { AccordionProps } from 'react-native-collapsible/Accordion';
+import Icon from '../icon';
 import AccordionStyles, { AccordionStyle } from './style/index';
 
 export interface AccordionPanelProps {
@@ -48,14 +47,7 @@ class Accordion<T extends AccordionHeader> extends React.Component<
           </View>
         )}
         <View style={styles.arrow}>
-          <Image
-            source={
-              isActive
-                ? require('./style/assets/up.png')
-                : require('./style/assets/down.png')
-            }
-            style={styles.arrow}
-          />
+          <Icon name={isActive ? 'up' : 'down'} style={styles.arrow} />
         </View>
       </View>
     );

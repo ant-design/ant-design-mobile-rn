@@ -46,19 +46,22 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "uri": "https://zos.alipayobjects.com/rmsportal/UgviADRsIpznkjSEXWEaPTlKtPCMSlth.png",
-          }
-        }
+      <Text
         style={
-          Object {
-            "height": 12,
-            "width": 14,
-          }
+          Array [
+            Object {
+              "color": "#f4333c",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
         }
-      />
+      >
+        
+      </Text>
     </View>
     <View
       style={
@@ -142,19 +145,22 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "uri": "https://zos.alipayobjects.com/rmsportal/UgviADRsIpznkjSEXWEaPTlKtPCMSlth.png",
-          }
-        }
+      <Text
         style={
-          Object {
-            "height": 12,
-            "width": 14,
-          }
+          Array [
+            Object {
+              "color": "#f4333c",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
         }
-      />
+      >
+        
+      </Text>
     </View>
     <View
       style={
@@ -399,19 +405,22 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "uri": "https://zos.alipayobjects.com/rmsportal/UgviADRsIpznkjSEXWEaPTlKtPCMSlth.png",
-          }
-        }
+      <Text
         style={
-          Object {
-            "height": 12,
-            "width": 14,
-          }
+          Array [
+            Object {
+              "color": "#f4333c",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
         }
-      />
+      >
+        
+      </Text>
     </View>
     <View
       style={
@@ -529,19 +538,22 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "uri": "https://zos.alipayobjects.com/rmsportal/UgviADRsIpznkjSEXWEaPTlKtPCMSlth.png",
-          }
-        }
+      <Text
         style={
-          Object {
-            "height": 12,
-            "width": 14,
-          }
+          Array [
+            Object {
+              "color": "#f4333c",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
         }
-      />
+      >
+        
+      </Text>
     </View>
     <View
       style={
@@ -652,19 +664,22 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "uri": "https://zos.alipayobjects.com/rmsportal/UgviADRsIpznkjSEXWEaPTlKtPCMSlth.png",
-          }
-        }
+      <Text
         style={
-          Object {
-            "height": 12,
-            "width": 14,
-          }
+          Array [
+            Object {
+              "color": "#f4333c",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
         }
-      />
+      >
+        
+      </Text>
     </View>
     <View
       style={
@@ -777,19 +792,22 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "uri": "https://zos.alipayobjects.com/rmsportal/UgviADRsIpznkjSEXWEaPTlKtPCMSlth.png",
-          }
-        }
+      <Text
         style={
-          Object {
-            "height": 12,
-            "width": 14,
-          }
+          Array [
+            Object {
+              "color": "#f4333c",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
         }
-      />
+      >
+        
+      </Text>
     </View>
     <View
       style={
@@ -904,19 +922,22 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "uri": "https://zos.alipayobjects.com/rmsportal/UgviADRsIpznkjSEXWEaPTlKtPCMSlth.png",
-          }
-        }
+      <Text
         style={
-          Object {
-            "height": 12,
-            "width": 14,
-          }
+          Array [
+            Object {
+              "color": "#f4333c",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
         }
-      />
+      >
+        
+      </Text>
     </View>
     <View
       style={

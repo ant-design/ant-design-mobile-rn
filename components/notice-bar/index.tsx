@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-  Image,
-  StyleProp,
-  StyleSheet,
-  Text,
-  TouchableWithoutFeedback,
-  View,
-  ViewStyle,
-} from 'react-native';
+import { StyleProp, StyleSheet, Text, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
+import Icon from '../icon';
+import variables from '../style/themes/default';
 import Marquee, { MarqueeProps } from './Marquee';
 import { NoticeBarPropsType } from './PropsType';
 import NoticeStyle, { INoticeBarStyle } from './style/index';
@@ -24,16 +18,7 @@ export default class NoticeBar extends React.Component<NoticeNativeProps, any> {
   static defaultProps = {
     mode: '',
     onPress() {},
-    icon: (
-      <Image
-        // tslint:disable-next-line:jsx-no-multiline-js
-        source={{
-          uri:
-            'https://zos.alipayobjects.com/rmsportal/UgviADRsIpznkjSEXWEaPTlKtPCMSlth.png',
-        }}
-        style={{ width: 14, height: 12 }}
-      />
-    ),
+    icon: <Icon name="sound" color={variables.brand_warning}/>,
     styles: NoticeStyles,
   };
 
@@ -54,7 +39,7 @@ export default class NoticeBar extends React.Component<NoticeNativeProps, any> {
         show: false,
       });
     }
-  }
+  };
 
   render() {
     const { children, mode, icon, style, action, marqueeProps } = this.props;

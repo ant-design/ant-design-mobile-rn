@@ -74,24 +74,28 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "height": 12,
-                  "width": 12,
+                  "color": "#333333",
                 }
               }
             >
-              <Image
-                source={
-                  Object {
-                    "uri": "up",
-                  }
-                }
+              <Text
                 style={
-                  Object {
-                    "height": 12,
-                    "width": 12,
-                  }
+                  Array [
+                    Object {
+                      "color": "#cccccc",
+                      "fontFamily": "antoutline",
+                      "fontSize": 22,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {
+                      "color": "#333333",
+                    },
+                  ]
                 }
-              />
+              >
+                
+              </Text>
             </View>
           </View>
         </View>
@@ -400,24 +404,28 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "height": 12,
-                  "width": 12,
+                  "color": "#333333",
                 }
               }
             >
-              <Image
-                source={
-                  Object {
-                    "uri": "down",
-                  }
-                }
+              <Text
                 style={
-                  Object {
-                    "height": 12,
-                    "width": 12,
-                  }
+                  Array [
+                    Object {
+                      "color": "#cccccc",
+                      "fontFamily": "antoutline",
+                      "fontSize": 22,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {
+                      "color": "#333333",
+                    },
+                  ]
                 }
-              />
+              >
+                
+              </Text>
             </View>
           </View>
         </View>
@@ -511,24 +519,28 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "height": 12,
-                  "width": 12,
+                  "color": "#333333",
                 }
               }
             >
-              <Image
-                source={
-                  Object {
-                    "uri": "up",
-                  }
-                }
+              <Text
                 style={
-                  Object {
-                    "height": 12,
-                    "width": 12,
-                  }
+                  Array [
+                    Object {
+                      "color": "#cccccc",
+                      "fontFamily": "antoutline",
+                      "fontSize": 22,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {
+                      "color": "#333333",
+                    },
+                  ]
                 }
-              />
+              >
+                
+              </Text>
             </View>
           </View>
         </View>

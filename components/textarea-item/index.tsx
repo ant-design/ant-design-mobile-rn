@@ -1,20 +1,11 @@
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TextInputProperties,
-  TouchableWithoutFeedback,
-  View,
-  NativeSyntheticEvent,
-  TextInputChangeEventData,
-} from 'react-native';
+import { NativeSyntheticEvent, StyleSheet, Text, TextInput, TextInputChangeEventData, TextInputProperties, TouchableWithoutFeedback, View } from 'react-native';
+import { Omit } from 'utility-types';
+import Icon from '../icon';
 import variables from '../style/themes/default';
 import { TextAreaItemPropsType } from './PropsType';
 import TextAreaItemStyle, { ITextareaItemStyle } from './style/index';
-import { Omit } from 'utility-types';
-import Icon from '../icon';
 export type TextInputProps = Omit<
   TextInputProperties,
   'onChange' | 'onFocus' | 'onBlur'
@@ -168,8 +159,6 @@ export default class TextAreaItem extends React.Component<
               <Icon
                 name="info-circle"
                 style={{
-                  width: variables.icon_size_xs,
-                  height: variables.icon_size_xs,
                   color: variables.brand_error,
                 }}
               />

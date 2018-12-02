@@ -1,21 +1,12 @@
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
-import {
-  GestureResponderEvent,
-  StyleSheet,
-  Text,
-  TextInputProperties,
-  TouchableWithoutFeedback,
-  View,
-  Platform,
-  TouchableOpacity,
-} from 'react-native';
+import { GestureResponderEvent, Platform, StyleSheet, Text, TextInputProperties, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
+import { Omit } from 'utility-types';
+import Icon from '../icon';
 import variables from '../style/themes/default';
 import Input from './Input';
 import { InputItemPropsType } from './PropsType';
 import InputItemStyle from './style/index';
-import { Omit } from 'utility-types';
-import Icon from '../icon';
 /**
  * React Native TextInput Props except these props
  */
@@ -218,7 +209,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
             onPress={this.onInputClear}
             hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
           >
-            <Icon name="close" style={{ width: 12, height: 12 }} />
+            <Icon name="close" />
           </TouchableOpacity>
         ) : null}
         {extra ? (
@@ -238,8 +229,6 @@ export default class InputItem extends React.Component<InputItemProps, any> {
               <Icon
                 name="info-circle"
                 style={{
-                  width: variables.icon_size_xs,
-                  height: variables.icon_size_xs,
                   color: variables.brand_error,
                 }}
               />
