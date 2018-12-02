@@ -2,7 +2,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
-  Image,
   StyleProp,
   StyleSheet,
   Text,
@@ -13,6 +12,7 @@ import {
 import { getComponentLocale } from '../_util/getLocale';
 import { defaultProps, SearchBarPropsType, SearchBarState } from './PropsType';
 import SearchBarStyle, { ISearchBarStyle } from './style/index';
+import Icon from '../icon';
 
 export interface SearchBarNativeProps extends SearchBarPropsType {
   styles: ISearchBarStyle;
@@ -142,10 +142,9 @@ export default class SearchBar extends React.Component<
             onBlur={this.onBlur}
           />
         </View>
-        <Image
-          source={require('../style/images/search.png')}
+        <Icon
+          name='search'
           style={styles.search}
-          resizeMode="stretch"
         />
         {_showCancelButton && (
           <View style={styles.cancelTextContainer}>

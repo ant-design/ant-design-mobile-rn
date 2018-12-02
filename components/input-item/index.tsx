@@ -2,7 +2,6 @@
 import React from 'react';
 import {
   GestureResponderEvent,
-  Image,
   StyleSheet,
   Text,
   TextInputProperties,
@@ -15,7 +14,8 @@ import variables from '../style/themes/default';
 import Input from './Input';
 import { InputItemPropsType } from './PropsType';
 import InputItemStyle from './style/index';
-import {Omit} from 'utility-types'
+import { Omit } from 'utility-types';
+import Icon from '../icon';
 /**
  * React Native TextInput Props except these props
  */
@@ -90,33 +90,33 @@ export default class InputItem extends React.Component<InputItemProps, any> {
     if (onChange) {
       onChange(text);
     }
-  }
+  };
 
   onInputBlur = () => {
     if (this.props.onBlur) {
       this.props.onBlur(this.props.value);
     }
-  }
+  };
 
   onInputFocus = () => {
     if (this.props.onFocus) {
       this.props.onFocus(this.props.value);
     }
-  }
+  };
 
   onInputClear = () => {
     if (this.inputRef) {
       this.inputRef.clear();
     }
     this.onChange('');
-  }
+  };
 
   // this is instance method for user to use
   focus = () => {
     if (this.inputRef) {
       this.inputRef.focus();
     }
-  }
+  };
 
   render() {
     const {
@@ -212,16 +212,13 @@ export default class InputItem extends React.Component<InputItemProps, any> {
           onFocus={this.onInputFocus}
         />
         {/* 只在有 value 的 受控模式 下展示 自定义的 安卓 clear 按钮 */}
-        {(editable && clear && value && Platform.OS === 'android') ? (
+        {editable && clear && value && Platform.OS === 'android' ? (
           <TouchableOpacity
             style={[styles.clear]}
             onPress={this.onInputClear}
             hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
           >
-            <Image
-              source={require('../style/images/cross_w.png')}
-              style={{ width: 12, height: 12 }}
-            />
+            <Icon name="close" style={{ width: 12, height: 12 }} />
           </TouchableOpacity>
         ) : null}
         {extra ? (
@@ -238,11 +235,12 @@ export default class InputItem extends React.Component<InputItemProps, any> {
         {error && (
           <TouchableWithoutFeedback onPress={onErrorClick}>
             <View style={[styles.errorIcon]}>
-              <Image
-                source={require('../style/images/error.png')}
+              <Icon
+                name="info-circle"
                 style={{
                   width: variables.icon_size_xs,
                   height: variables.icon_size_xs,
+                  color: variables.brand_error,
                 }}
               />
             </View>

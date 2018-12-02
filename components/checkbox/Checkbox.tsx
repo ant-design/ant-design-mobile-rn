@@ -1,20 +1,21 @@
 import React from 'react';
 import {
-  Image,
-  ImageStyle,
   StyleProp,
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
   View,
+  TextStyle,
 } from 'react-native';
 
 import { CheckboxPropsType } from './PropsType';
 import CheckboxStyle, { ICheckboxStyle } from './style/index';
+import Icon from '../icon';
+import variables from '../style/themes/default';
 
 export interface ICheckboxNativeProps extends CheckboxPropsType {
   styles?: ICheckboxStyle;
-  style?: StyleProp<ImageStyle>;
+  style?: StyleProp<TextStyle>;
 }
 
 const CheckboxStyles = StyleSheet.create<any>(CheckboxStyle);
@@ -59,28 +60,40 @@ export default class Checkbox extends React.Component<
     if (this.props.onChange) {
       this.props.onChange({ target: { checked } });
     }
-  }
+  };
 
   render(): JSX.Element {
     const { style, disabled, children, styles } = this.props;
     const checked = this.state.checked;
-    let imgSrc;
+    let icon;
     if (checked) {
-      imgSrc = disabled
-        ? require('./image/checked_disable.png')
-        : require('./image/checked.png');
+      icon = disabled ? (
+        <Icon name="check-square" style={[styles!.icon, style]} />
+      ) : (
+        <Icon
+          name="check-square"
+          color={variables.brand_primary}
+          style={[styles!.icon, style]}
+        />
+      );
     } else {
-      imgSrc = disabled
-        ? require('./image/normal_disable.png')
-        : require('./image/normal.png');
+      icon = disabled ? (
+        <Icon name="border" style={[styles!.icon, style]} />
+      ) : (
+        <Icon
+          name="border"
+          color={variables.brand_primary}
+          style={[styles!.icon, style]}
+        />
+      );
     }
 
     return (
       <TouchableWithoutFeedback onPress={this.handleClick}>
         <View style={[styles!.wrapper]}>
-          <Image source={imgSrc} style={[styles!.icon, style]} />
+          {icon}
           {typeof children === 'string' ? (
-          // tslint:disable-next-line:jsx-no-multiline-js
+            // tslint:disable-next-line:jsx-no-multiline-js
             <Text style={styles!.iconRight}>{this.props.children}</Text>
           ) : (
             children
