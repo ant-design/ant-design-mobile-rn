@@ -1,5 +1,5 @@
+import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 import variables from '../../style/themes/default';
-import { ViewStyle, TextStyle, ImageStyle } from 'react-native';
 
 export interface IRadioStyle {
   wrapper: ViewStyle;
@@ -16,8 +16,8 @@ export default {
     alignItems: 'center',
   },
   icon: {
-    width: variables.icon_size_xxs,
-    height: variables.icon_size_xxs * 0.8,
+    // width: variables.icon_size_xxs,
+    // height: variables.icon_size_xxs * 0.8,
   },
   radioItem: {
     flexDirection: 'row',
