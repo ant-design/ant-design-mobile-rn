@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { DeviceEventEmitter, NativeEventEmitter, StyleSheet, View } from 'react-native';
 import PortalManager from './portal-manager';
 
 export type PortalHostProps = {
@@ -18,7 +18,23 @@ export type PortalMethods = {
 };
 
 export const PortalContext = React.createContext<PortalMethods>(null as any);
+// events
+const addType = 'RN_PREFIX_ADDTOPVIEW';
+const removeType = 'RN_PREFIX_REMOVETOPVIEW';
+// fix react native web does not support DeviceEventEmitter
+const TopViewEventEmitter = DeviceEventEmitter || new NativeEventEmitter();
 
+class PortalGuard {
+  private nextKey = 10000;
+  add = (e: React.ReactNode) => {
+    const key = this.nextKey++;
+    TopViewEventEmitter.emit(addType, e, key);
+    return key;
+  };
+  remove = (key: number) => TopViewEventEmitter.emit(removeType, key);
+}
+
+export const portal = new PortalGuard();
 /**
  * Portal host renders all of its children `Portal` elements.
  * For example, you can wrap a screen in `Portal.Host` to render items above the screen.
@@ -54,6 +70,9 @@ export default class PortalHost extends React.Component<PortalHostProps> {
     const manager = this._manager;
     const queue = this._queue;
 
+    TopViewEventEmitter.addListener(addType, this._mount);
+    TopViewEventEmitter.addListener(removeType, this._unmount);
+
     while (queue.length && manager) {
       const action = queue.pop();
       if (!action) {
@@ -73,14 +92,16 @@ export default class PortalHost extends React.Component<PortalHostProps> {
       }
     }
   }
-
+  componentWillUnmount() {
+    TopViewEventEmitter.removeListener(addType, this._mount);
+    TopViewEventEmitter.removeListener(removeType, this._unmount);
+  }
   _setManager = (manager?: any) => {
     this._manager = manager;
   };
 
-  _mount = (children: React.ReactNode) => {
-    const key = this._nextKey++;
-
+  _mount = (children: React.ReactNode, _key?: number) => {
+    const key = _key || this._nextKey++;
     if (this._manager) {
       this._manager.mount(key, children);
     } else {

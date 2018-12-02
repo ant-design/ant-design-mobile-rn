@@ -1,16 +1,8 @@
 // tslint:disable:jsx-no-multiline-js
 import React from 'react';
-import {
-  ActionSheetIOSOptions,
-  Text,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import { ActionSheetIOSOptions, Text, TouchableHighlight, View } from 'react-native';
 import Modal from 'rmc-dialog/lib/Modal';
-import styles, {
-  ActionSheetStyle,
-  vars as variables,
-} from './style/index';
+import styles, { ActionSheetStyle, vars as variables } from './style/index';
 
 export interface ActionSheetNativeProps {
   onAnimationEnd?: (visible: boolean) => void;
@@ -20,7 +12,7 @@ export interface ActionSheetNativeProps {
   styles?: ActionSheetStyle;
 }
 
-class ActionSheetAndroid extends React.Component<ActionSheetNativeProps, any> {
+class ActionSheetAndroid extends React.PureComponent<ActionSheetNativeProps, any> {
   constructor(props: ActionSheetNativeProps) {
     super(props);
     this.state = {
@@ -57,7 +49,6 @@ class ActionSheetAndroid extends React.Component<ActionSheetNativeProps, any> {
         <Text style={styles.titleText}>{title}</Text>
       </View>
     );
-
     const content = (options as string[]).map((item, index) => (
       <View
         key={index}

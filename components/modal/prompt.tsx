@@ -1,8 +1,8 @@
 import React from 'react';
-import topView from 'react-native-top-view';
+import { TextStyle } from 'react-native';
+import { portal } from '../portal';
 import PromptContainer from './PromptContainer';
 import { CallbackOrActions } from './PropsType';
-import { TextStyle } from 'react-native';
 
 export default function prompt(
   title: React.ReactNode,
@@ -18,20 +18,18 @@ export default function prompt(
     return;
   }
 
-  const onAnimationEnd = (visible: boolean) => {
-    if (!visible) {
-      topView.remove();
-    }
-  };
-
-  topView.set(
+  const key = portal.add(
     <PromptContainer
       title={title}
       message={message}
       actions={callbackOrActions}
       type={type as any}
       defaultValue={defaultValue}
-      onAnimationEnd={onAnimationEnd}
+      onAnimationEnd={(visible: boolean) => {
+        if (!visible) {
+          portal.remove(key);
+        }
+      }}
       placeholders={placeholders}
     />,
   );

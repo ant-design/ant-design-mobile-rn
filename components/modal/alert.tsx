@@ -1,5 +1,5 @@
 import React from 'react';
-import topView from 'react-native-top-view';
+import { portal } from '../portal';
 import AlertContainer from './AlertContainer';
 
 export default function a(
@@ -7,18 +7,16 @@ export default function a(
   content: React.ReactNode,
   actions = [{ text: '确定' }],
 ) {
-  const onAnimationEnd = (visible: boolean) => {
-    if (!visible) {
-      topView.remove();
-    }
-  };
-
-  topView.set(
+  const key = portal.add(
     <AlertContainer
       title={title}
       content={content}
       actions={actions}
-      onAnimationEnd={onAnimationEnd}
+      onAnimationEnd={(visible: boolean) => {
+        if (!visible) {
+          portal.remove(key);
+        }
+      }}
     />,
   );
 }

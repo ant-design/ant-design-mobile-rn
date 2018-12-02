@@ -1,20 +1,9 @@
 import React from 'react';
-import {
-  ActionSheetIOS,
-  ActionSheetIOSOptions,
-  Platform,
-  Share,
-} from 'react-native';
-import topView from 'react-native-top-view';
+import { ActionSheetIOS, ActionSheetIOSOptions, Platform, Share } from 'react-native';
+import { portal } from '../portal';
 import ActionSheetAndroidContainer from './AndroidContainer';
 
 let instance: ActionSheetAndroidContainer | null;
-
-const onAnimationEnd = (visible: boolean) => {
-  if (!visible) {
-    topView.remove();
-  }
-};
 
 export default {
   showActionSheetWithOptions(
@@ -23,17 +12,22 @@ export default {
   ) {
     if (Platform.OS === 'ios') {
       ActionSheetIOS.showActionSheetWithOptions(config, callback);
-    } else {
-      topView.set(
-        <ActionSheetAndroidContainer
-          visible
-          ref={ref => (instance = ref)}
-          onAnimationEnd={onAnimationEnd}
-          config={config}
-          callback={callback}
-        />,
-      );
+      return;
     }
+
+    const key = portal.add(
+      <ActionSheetAndroidContainer
+        visible
+        ref={ref => (instance = ref)}
+        onAnimationEnd={(visible: boolean) => {
+          if (!visible) {
+            portal.remove(key);
+          }
+        }}
+        config={config}
+        callback={callback}
+      />,
+    );
   },
 
   showShareActionSheetWithOptions(

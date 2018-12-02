@@ -12279,11 +12279,6 @@ react-native-tab-view@^1.0.0:
   dependencies:
     prop-types "^15.6.1"
 
-react-native-top-view@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/react-native-top-view/-/react-native-top-view-1.0.5.tgz#a295418c0778206b56307278839bfe0cbdfedd94"
-  integrity sha512-+CEKlPT+UsKyIfwR3MQDBM+WVBt0bncV75D4HXhtjerSlpvFQa5KdudXpRjAZNgX4QUJVNggM5WOrpGGtFe0wA==
-
 react-native@^0.57.7:
   version "0.57.7"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.57.7.tgz#5b3af1c43366c41d8d8d2540fea8ce590060bca1"
