@@ -42,11 +42,21 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
       this.anim = null;
     }
     const animArr = [
-      timing(this.state.fadeAnim, { toValue: 1, duration: 200 }),
+      timing(this.state.fadeAnim, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }),
       Animated.delay(duration * 1000),
     ];
     if (duration > 0) {
-      animArr.push(timing(this.state.fadeAnim, { toValue: 0, duration: 200 }));
+      animArr.push(
+        timing(this.state.fadeAnim, {
+          toValue: 0,
+          duration: 200,
+          useNativeDriver: true,
+        }),
+      );
     }
     this.anim = Animated.sequence(animArr);
     this.anim.start(() => {

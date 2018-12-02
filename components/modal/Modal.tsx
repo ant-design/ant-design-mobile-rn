@@ -1,23 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-  Dimensions,
-  LayoutChangeEvent,
-  Modal,
-  StyleProp,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  TouchableWithoutFeedback,
-  View,
-  ViewStyle,
-  TextStyle,
-} from 'react-native';
+import { Dimensions, LayoutChangeEvent, Modal, StyleProp, StyleSheet, Text, TextStyle, TouchableHighlight, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
 import RCModal from 'rmc-dialog/lib/Modal';
-import { ModalPropsType } from './PropsType';
-import modalStyle, { IModalStyle } from './style/index';
 import { getComponentLocale } from '../_util/getLocale';
 import zh_CN from './locale/zh_CN';
+import { ModalPropsType } from './PropsType';
+import modalStyle, { IModalStyle } from './style/index';
 
 const maxHeight = StyleSheet.create({
   maxHeight: {
@@ -244,6 +232,7 @@ class AntmModal extends React.Component<IModalNativeProps, any> {
           visible={visible}
           animationType={animType}
           onRequestClose={onClose}
+          hardwareAccelerated
         >
           <View style={style}>{children}</View>
         </Modal>
