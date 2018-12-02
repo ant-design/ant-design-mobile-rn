@@ -149,19 +149,26 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
               ]
             }
           >
-            <Image
-              source={
-                Object {
-                  "uri": "error",
-                }
-              }
+            <Text
               style={
-                Object {
-                  "height": 18,
-                  "width": 18,
-                }
+                Array [
+                  Object {
+                    "color": "#cccccc",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {
+                    "color": "#f4333c",
+                    "height": 18,
+                    "width": 18,
+                  },
+                ]
               }
-            />
+            >
+              
+            </Text>
           </View>
         </View>
         <View
@@ -910,19 +917,26 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
               ]
             }
           >
-            <Image
-              source={
-                Object {
-                  "uri": "error",
-                }
-              }
+            <Text
               style={
-                Object {
-                  "height": 18,
-                  "width": 18,
-                }
+                Array [
+                  Object {
+                    "color": "#cccccc",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {
+                    "color": "#f4333c",
+                    "height": 18,
+                    "width": 18,
+                  },
+                ]
               }
-            />
+            >
+              
+            </Text>
           </View>
         </View>
         <View

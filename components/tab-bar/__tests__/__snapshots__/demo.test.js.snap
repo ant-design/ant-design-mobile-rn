@@ -136,24 +136,29 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
             value=""
           />
         </View>
-        <Image
-          resizeMode="stretch"
-          source={
-            Object {
-              "uri": "search",
-            }
-          }
+        <Text
           style={
-            Object {
-              "height": 15,
-              "left": 16,
-              "position": "absolute",
-              "tintColor": "#cccccc",
-              "top": 14.5,
-              "width": 15,
-            }
+            Array [
+              Object {
+                "color": "#cccccc",
+                "fontFamily": "antoutline",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {
+                "color": "#cccccc",
+                "height": 15,
+                "left": 16,
+                "position": "absolute",
+                "top": 14.5,
+                "width": 15,
+              },
+            ]
           }
-        />
+        >
+          
+        </Text>
         <View
           style={
             Object {
