@@ -1,5 +1,5 @@
 import variables from '../../style/themes/default';
-import { Platform, ViewStyle, ImageStyle, TextStyle } from 'react-native';
+import { Platform, ViewStyle, TextStyle } from 'react-native';
 
 export interface IToastStyle {
   container: ViewStyle;
@@ -8,7 +8,7 @@ export interface IToastStyle {
   iconToast: ViewStyle;
   textToast: ViewStyle;
   content: TextStyle;
-  image: ImageStyle;
+  image: TextStyle;
   centering: ViewStyle;
 }
 

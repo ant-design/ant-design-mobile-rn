@@ -1,14 +1,8 @@
 // tslint:disable:jsx-no-multiline-js
 
 import React from 'react';
-import {
-  ActivityIndicator,
-  Animated,
-  Image,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { ActivityIndicator, Animated, StyleSheet, Text, View } from 'react-native';
+import Icon, { IconNames } from '../icon';
 import ToastContainerStyle, { IToastStyle } from './style/index';
 
 export interface ToastProps {
@@ -79,11 +73,11 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
     const { type = '', content, mask } = this.props;
     const styles = this.props.styles!;
     const iconType: {
-      [key: string]: any;
+      [key: string]: IconNames;
     } = {
-      success: require('./images/success.png'),
-      fail: require('./images/fail.png'),
-      offline: require('./images/offline.png'),
+      success: 'check-circle',
+      fail: 'close-circle',
+      offline: 'frown',
     };
 
     let iconDom: React.ReactElement<any> | null = null;
@@ -99,7 +93,14 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
     } else if (type === 'info') {
       iconDom = null;
     } else {
-      iconDom = <Image source={iconType[type]} style={styles.image} />;
+      iconDom = (
+        <Icon
+          name={iconType[type]}
+          style={styles.image}
+          color="white"
+          size={32}
+        />
+      );
     }
 
     return (
