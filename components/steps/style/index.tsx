@@ -8,14 +8,14 @@ export interface IStepsStyle {
   head_blue_s: ViewStyle;
   head_gray_s: ViewStyle;
   head_red_s: ViewStyle;
-  icon_s: ViewStyle;
+  icon_s: TextStyle;
 
   head_default_l: ViewStyle;
   head_blue_l: ViewStyle;
   head_gray_l: ViewStyle;
   head_red_l: ViewStyle;
   tail_default_l: ViewStyle;
-  icon_l: ViewStyle;
+  icon_l: TextStyle;
 
   tail_default_s: ViewStyle;
   tail_gray: ViewStyle;
@@ -50,8 +50,7 @@ export default {
     borderColor: variables.brand_error,
   },
   icon_s: {
-    width: 14,
-    height: 14,
+    fontSize: 14,
   },
 
   head_default_l: {
@@ -82,8 +81,7 @@ export default {
     marginLeft: 11,
   },
   icon_l: {
-    width: 20,
-    height: 20,
+    fontSize: 20,
   },
   tail_default_s: {
     width: variables.border_width_lg,

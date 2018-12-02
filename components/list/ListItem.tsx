@@ -14,6 +14,7 @@ import {
   ListItemPropsType,
 } from './PropsType';
 import listItemStyle from './style/index';
+import Icon from '../icon';
 
 export interface ListItemProps extends ListItemPropsType {
   styles?: {
@@ -198,24 +199,9 @@ export default class Item extends React.Component<ListItemProps, any> {
     }
 
     const arrEnum = {
-      horizontal: (
-        <Image
-          source={require('../style/images/arrow.png')}
-          style={itemStyles.Arrow}
-        />
-      ),
-      down: (
-        <Image
-          source={require('../style/images/arrow-down.png')}
-          style={itemStyles.ArrowV}
-        />
-      ),
-      up: (
-        <Image
-          source={require('../style/images/arrow-up.png')}
-          style={itemStyles.ArrowV}
-        />
-      ),
+      horizontal: <Icon name="right" style={itemStyles.Arrow} />,
+      down: <Icon name="down" style={itemStyles.ArrowV} />,
+      up: <Icon name="up" style={itemStyles.ArrowV} />,
     };
 
     const itemView = (
@@ -248,7 +234,13 @@ export default class Item extends React.Component<ListItemProps, any> {
       <TouchableHighlight
         {...underlayColor}
         // TODO: fix onClick
-        onPress={(this.props as any).onClick ? (this.props as any).onClick : onPress ? onPress : undefined}
+        onPress={
+          (this.props as any).onClick
+            ? (this.props as any).onClick
+            : onPress
+            ? onPress
+            : undefined
+        }
         onPressIn={onPressIn}
         onPressOut={onPressOut}
       >

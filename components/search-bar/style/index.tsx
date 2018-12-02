@@ -48,7 +48,7 @@ export default {
     paddingLeft: variables.h_spacing_lg,
   },
   search: {
-    tintColor: variables.input_color_icon,
+    color: variables.input_color_icon,
     position: 'absolute',
     left: variables.h_spacing_md + 8,
     top: (variables.search_bar_height - variables.icon_size_xxs) / 2,

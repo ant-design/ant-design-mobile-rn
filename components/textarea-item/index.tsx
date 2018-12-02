@@ -1,7 +1,6 @@
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
 import {
-  Image,
   StyleSheet,
   Text,
   TextInput,
@@ -15,6 +14,7 @@ import variables from '../style/themes/default';
 import { TextAreaItemPropsType } from './PropsType';
 import TextAreaItemStyle, { ITextareaItemStyle } from './style/index';
 import { Omit } from 'utility-types';
+import Icon from '../icon';
 export type TextInputProps = Omit<
   TextInputProperties,
   'onChange' | 'onFocus' | 'onBlur'
@@ -78,7 +78,7 @@ export default class TextAreaItem extends React.Component<
     if (onChange) {
       onChange(text);
     }
-  }
+  };
 
   onContentSizeChange = (event: {
     nativeEvent: { contentSize: { width: number; height: number } };
@@ -101,7 +101,7 @@ export default class TextAreaItem extends React.Component<
     if (onContentSizeChange) {
       onContentSizeChange(event);
     }
-  }
+  };
 
   render() {
     const {
@@ -165,11 +165,12 @@ export default class TextAreaItem extends React.Component<
         {error ? (
           <TouchableWithoutFeedback onPress={onErrorClick}>
             <View style={[styles!.errorIcon]}>
-              <Image
-                source={require('../style/images/error.png')}
+              <Icon
+                name="info-circle"
                 style={{
                   width: variables.icon_size_xs,
                   height: variables.icon_size_xs,
+                  color: variables.brand_error,
                 }}
               />
             </View>

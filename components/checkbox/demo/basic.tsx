@@ -21,7 +21,7 @@ export default class BasicCheckboxExample extends React.Component<any, any> {
         <View style={{ padding: 10 }}>
           <Checkbox
             checked={this.state.checkBox1}
-            style={{ tintColor: '#f00' }}
+            style={{ color: '#f00' }}
             onChange={(event: any) => {
               this.setState({ checkBox1: event.target.checked });
             }}
@@ -42,7 +42,7 @@ export default class BasicCheckboxExample extends React.Component<any, any> {
         <WhiteSpace />
         <AgreeItem
           checked={this.state.agreeItem1}
-          checkboxStyle={{ tintColor: '#f00' }}
+          checkboxStyle={{ color: '#f00' }}
           onChange={(event: any) => {
             this.setState({ agreeItem1: event.target.checked });
           }}

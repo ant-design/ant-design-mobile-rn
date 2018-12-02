@@ -4,6 +4,7 @@ import {
   IconOutline,
   OutlineGlyphMapType,
 } from '@ant-design/icons-react-native';
+import variables from '../style/themes/default';
 
 export interface IconProps extends TextProps {
   size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | number;
@@ -14,7 +15,7 @@ export interface IconProps extends TextProps {
 export default class Icon extends React.Component<IconProps, any> {
   static defaultProps = {
     size: 'md',
-    color: '#000',
+    color: variables.color_icon_base,
   };
 
   render() {

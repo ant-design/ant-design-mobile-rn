@@ -1,6 +1,8 @@
 /* tslint:disable: jsx-no-multiline-js */
 import React from 'react';
-import { Image, StyleProp, Text, View, ViewStyle } from 'react-native';
+import { StyleProp, Text, View, ViewStyle } from 'react-native';
+import Icon from '../icon';
+import variables from '../style/themes/default';
 
 export interface StepsItemProps {
   width?: number;
@@ -75,11 +77,29 @@ export default class StepsItem extends React.Component<StepsItemProps, any> {
         index === current ||
         status === 'process'
       ) {
-        iconSource = require('../style/images/check.png');
+        iconSource = (
+          <Icon
+            name="check"
+            color={variables.brand_primary}
+            style={styles[`icon${sizeCls}`]}
+          />
+        );
       } else if (index > current || status === 'wait') {
-        iconSource = require('../style/images/more.png');
+        iconSource = (
+          <Icon
+            name="ellipsis"
+            color={variables.color_icon_base}
+            style={styles[`icon${sizeCls}`]}
+          />
+        );
       } else if (status === 'error') {
-        iconSource = require('../style/images/cross.png');
+        iconSource = (
+          <Icon
+            name="close"
+            color={variables.brand_error}
+            style={styles[`icon${sizeCls}`]}
+          />
+        );
       }
     } else {
       if (
@@ -88,14 +108,32 @@ export default class StepsItem extends React.Component<StepsItemProps, any> {
         index === current ||
         status === 'process'
       ) {
-        iconSource = require('../style/images/check_w.png');
+        iconSource = (
+          <Icon
+            name="check"
+            color={variables.color_icon_base}
+            style={styles[`icon${sizeCls}`]}
+          />
+        );
       } else if (index > current || status === 'wait') {
-        iconSource = require('../style/images/more_w.png');
+        iconSource = (
+          <Icon
+            name="ellipsis"
+            color={variables.color_icon_base}
+            style={styles[`icon${sizeCls}`]}
+          />
+        );
         if (!!icon) {
           iconSource = icon;
         }
       } else if (status === 'error') {
-        iconSource = require('../style/images/cross_w.png');
+        iconSource = (
+          <Icon
+            name="close"
+            color={variables.color_icon_base}
+            style={styles[`icon${sizeCls}`]}
+          />
+        );
       }
     }
 
@@ -115,11 +153,7 @@ export default class StepsItem extends React.Component<StepsItemProps, any> {
       <View style={parentStyle}>
         <View style={childStyle}>
           <View style={[styles[`head_default${sizeCls}`], styles[headCls]]}>
-            {React.isValidElement(iconSource) ? (
-              iconSource
-            ) : (
-              <Image source={iconSource} style={styles[`icon${sizeCls}`]} />
-            )}
+            {React.isValidElement(iconSource) ? iconSource : null}
           </View>
           {
             <View

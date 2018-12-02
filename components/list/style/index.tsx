@@ -78,14 +78,10 @@ export default {
     textAlignVertical: 'center',
   },
   Arrow: {
-    width: 8,
-    height: 13,
     marginLeft: variables.h_spacing_md,
     marginTop: variables.v_spacing_xs,
   },
   ArrowV: {
-    width: 13,
-    height: 8,
     marginLeft: variables.h_spacing_md,
   },
   multipleLine: {
