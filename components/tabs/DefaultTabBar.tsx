@@ -53,10 +53,6 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
   }
 
   componentDidMount() {
-    if (__DEV__) {
-      // tslint:disable-next-line:no-console
-      console.log(this.props);
-    }
     this.props.scrollValue.addListener(this.updateView);
   }
 

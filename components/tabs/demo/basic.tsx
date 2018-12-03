@@ -49,7 +49,7 @@ export default class BasicTabsExample extends React.Component<any, any> {
     } as any;
     return (
       <View style={{ flex: 1 }}>
-        <Tabs tabs={tabs} initialPage={1}>
+        <Tabs tabs={tabs}>
           <View style={style}>
             <Text>Content of First Tab</Text>
           </View>

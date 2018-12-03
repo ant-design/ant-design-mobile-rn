@@ -1,10 +1,9 @@
 import React from 'react';
-import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, ScrollView } from 'react-native';
+import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, Platform, ScrollView, ViewPagerAndroid } from 'react-native';
 import View from '../view';
 import { DefaultTabBar } from './DefaultTabBar';
 import { PropsType, TabData } from './PropsType';
 import Styles from './Styles';
-import { TabPane } from './TabPane';
 
 export interface StateType {
   currentTab: number;
@@ -31,8 +30,8 @@ export class Tabs extends React.PureComponent<PropsType, StateType> {
   };
   static DefaultTabBar = DefaultTabBar;
 
-  AnimatedScrollView = Animated.createAnimatedComponent(ScrollView);
   scrollView: { _component: ScrollView };
+  viewPager: ViewPagerAndroid | null;
 
   protected instanceId: number;
   protected prevCurrentTab: number;
@@ -58,22 +57,11 @@ export class Tabs extends React.PureComponent<PropsType, StateType> {
 
   componentDidMount() {
     this.prevCurrentTab = this.state.currentTab;
-
     this.state.scrollX.addListener(({ value }) => {
       const scrollValue = value / this.state.containerWidth;
       this.state.scrollValue.setValue(scrollValue);
     });
   }
-
-  onScroll = (evt?: NativeSyntheticEvent<NativeScrollEvent>) => {
-    if (evt) {
-      Animated.event([
-        {
-          nativeEvent: { contentOffset: { x: this.state.scrollX } },
-        },
-      ])(evt);
-    }
-  };
 
   setScrollView = (sv: any) => {
     this.scrollView = sv;
@@ -88,16 +76,68 @@ export class Tabs extends React.PureComponent<PropsType, StateType> {
       keyboardShouldPersistTaps,
     } = this.props;
     const { currentTab = 0, containerWidth = 0 } = this.state;
+    const content = tabs.map((tab, index) => {
+      const key = tab.key || `tab_${index}`;
 
-    const AnimatedScrollView = this.AnimatedScrollView;
+      // update tab cache
+      if (this.shouldRenderTab(index)) {
+        this.tabCache[index] = this.getSubElement(tab, index, getSubElements);
+      } else if (destroyInactiveTab) {
+        this.tabCache[index] = undefined;
+      }
+
+      return (
+        <View
+          key={key}
+          // active={currentTab === index}
+          style={{ width: containerWidth }}
+        >
+          {this.tabCache[index]}
+        </View>
+      );
+    });
+    if (Platform.OS === 'android') {
+      return (
+        <ViewPagerAndroid
+          key="$content"
+          keyboardDismissMode="on-drag"
+          initialPage={currentTab}
+          scrollEnabled={usePaged}
+          onPageScroll={e => {
+            this.state.scrollX.setValue(
+              e.nativeEvent.position * this.state.containerWidth,
+            );
+          }}
+          style={{ flex: 1 }}
+          onPageSelected={e => {
+            this.setState({
+              currentTab: e.nativeEvent.position,
+            });
+            this.nextCurrentTab = e.nativeEvent.position;
+          }}
+          ref={ref => (this.viewPager = ref)}
+        >
+          {content}
+        </ViewPagerAndroid>
+      );
+    }
     return (
-      <AnimatedScrollView
+      <Animated.ScrollView
         key="$content"
         horizontal
         pagingEnabled={usePaged}
         automaticallyAdjustContentInsets={false}
         ref={this.setScrollView}
-        onScroll={this.onScroll}
+        onScroll={Animated.event(
+          [
+            {
+              nativeEvent: {
+                contentOffset: { x: this.state.scrollX },
+              },
+            },
+          ],
+          { useNativeDriver: true }, // <-- Add this
+        )}
         onMomentumScrollEnd={this.onMomentumScrollEnd}
         scrollEventThrottle={16}
         scrollsToTop={false}
@@ -108,31 +148,8 @@ export class Tabs extends React.PureComponent<PropsType, StateType> {
         keyboardDismissMode="on-drag"
         keyboardShouldPersistTaps={keyboardShouldPersistTaps}
       >
-        {tabs.map((tab, index) => {
-          const key = tab.key || `tab_${index}`;
-
-          // update tab cache
-          if (this.shouldRenderTab(index)) {
-            this.tabCache[index] = this.getSubElement(
-              tab,
-              index,
-              getSubElements,
-            );
-          } else if (destroyInactiveTab) {
-            this.tabCache[index] = undefined;
-          }
-
-          return (
-            <TabPane
-              key={key}
-              active={currentTab === index}
-              style={{ width: containerWidth }}
-            >
-              {this.tabCache[index]}
-            </TabPane>
-          );
-        })}
-      </AnimatedScrollView>
+        {content}
+      </Animated.ScrollView>
     );
   };
 
@@ -155,6 +172,16 @@ export class Tabs extends React.PureComponent<PropsType, StateType> {
   };
 
   scrollTo = (index: number, animated = true) => {
+    if (Platform.OS === 'android') {
+      if (this.viewPager) {
+        if (animated) {
+          this.viewPager.setPage(index);
+        } else {
+          this.viewPager.setPageWithoutAnimation(index);
+        }
+        return;
+      }
+    }
     const { containerWidth } = this.state;
     if (containerWidth) {
       const offset = index * containerWidth;
@@ -295,15 +322,19 @@ export class Tabs extends React.PureComponent<PropsType, StateType> {
           return false;
         }
       }
-
-      this.setState({
-        currentTab: index,
-        ...newState,
-      });
+      this.setState(
+        {
+          currentTab: index,
+          ...newState,
+        },
+        () => {
+          requestAnimationFrame(() => {
+            this.scrollTo(this.state.currentTab, this.props.animated);
+          });
+        },
+      );
     }
-    requestAnimationFrame(() => {
-      this.scrollTo(this.state.currentTab, this.props.animated);
-    });
+
     return true;
   }
 
