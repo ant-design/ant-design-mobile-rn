@@ -571,7 +571,7 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
     >
       <Modal
         animationType="slide"
-        hardwareAccelerated={false}
+        hardwareAccelerated={true}
         onRequestClose={[Function]}
         visible={false}
       >
