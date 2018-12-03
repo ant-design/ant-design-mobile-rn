@@ -1,19 +1,12 @@
 /* tslint:disable:jsx-no-multiline-js */
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-  KeyboardAvoidingView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  TextStyle,
-} from 'react-native';
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TextStyle, View } from 'react-native';
+import { getComponentLocale } from '../_util/getLocale';
+import zh_CN from './locale/zh_CN';
 import Modal from './Modal';
 import { CallbackOrActions } from './PropsType';
 import promptStyle, { IPromptStyle } from './style/prompt';
-import { getComponentLocale } from '../_util/getLocale';
-import zh_CN from './locale/zh_CN';
 
 export interface PropmptContainerProps {
   title: React.ReactNode;
@@ -150,7 +143,7 @@ export default class PropmptContainer extends React.Component<
         onAnimationEnd={onAnimationEnd}
       >
         <KeyboardAvoidingView behavior="padding">
-          {message && <Text style={styles.message}>{message}</Text>}
+          {message ? <Text style={styles.message}>{message}</Text> : null}
           <View style={styles.inputGroup}>
             {type !== 'secure-text' && (
               <View style={firstStyle}>
