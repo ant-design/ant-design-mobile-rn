@@ -1,21 +1,14 @@
 /* tslint:disable:jsx-no-multiline-js */
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-  StyleProp,
-  StyleSheet,
-  Text,
-  TextInput,
-  TextStyle,
-  View,
-} from 'react-native';
+import { StyleProp, StyleSheet, Text, TextInput, TextStyle, View } from 'react-native';
+import Icon from '../icon';
 import { getComponentLocale } from '../_util/getLocale';
 import { defaultProps, SearchBarPropsType, SearchBarState } from './PropsType';
 import SearchBarStyle, { ISearchBarStyle } from './style/index';
-import Icon from '../icon';
 
 export interface SearchBarNativeProps extends SearchBarPropsType {
-  styles: ISearchBarStyle;
+  styles?: ISearchBarStyle;
   onChangeText?: (text: string) => void;
   onSubmitEditing?: (event: { nativeEvent: { text: string } }) => void;
   style?: StyleProp<TextStyle>;
@@ -66,7 +59,7 @@ export default class SearchBar extends React.Component<
     if (this.props.onSubmit) {
       this.props.onSubmit(this.state.value || '');
     }
-  }
+  };
 
   onChangeText = (value: string) => {
     if (!('value' in this.props)) {
@@ -75,13 +68,13 @@ export default class SearchBar extends React.Component<
     if (this.props.onChange) {
       this.props.onChange(value);
     }
-  }
+  };
 
   onCancel = () => {
     if (this.props.onCancel) {
       this.props.onCancel(this.state.value || '');
     }
-  }
+  };
 
   onFocus = () => {
     this.setState({
@@ -90,7 +83,7 @@ export default class SearchBar extends React.Component<
     if (this.props.onFocus) {
       this.props.onFocus();
     }
-  }
+  };
 
   onBlur = () => {
     this.setState({
@@ -99,7 +92,7 @@ export default class SearchBar extends React.Component<
     if (this.props.onBlur) {
       this.props.onBlur();
     }
-  }
+  };
   render() {
     const {
       showCancelButton,
@@ -124,16 +117,16 @@ export default class SearchBar extends React.Component<
     const { value, focus } = this.state;
     // tslint:disable-next-line:variable-name
     const _showCancelButton = showCancelButton || focus;
-
+    const _styles = styles!;
     return (
-      <View style={styles.wrapper}>
-        <View style={styles.inputWrapper}>
+      <View style={_styles.wrapper}>
+        <View style={_styles.inputWrapper}>
           <TextInput
             clearButtonMode="always"
             underlineColorAndroid="transparent"
             editable={!disabled}
             {...restProps}
-            style={[styles.input, style]}
+            style={[_styles.input, style]}
             ref={el => ((this.inputRef as any) = el)}
             value={value}
             onChangeText={this.onChangeText}
@@ -142,13 +135,10 @@ export default class SearchBar extends React.Component<
             onBlur={this.onBlur}
           />
         </View>
-        <Icon
-          name='search'
-          style={styles.search}
-        />
+        <Icon name="search" style={_styles.search} />
         {_showCancelButton && (
-          <View style={styles.cancelTextContainer}>
-            <Text style={styles.cancelText} onPress={this.onCancel}>
+          <View style={_styles.cancelTextContainer}>
+            <Text style={_styles.cancelText} onPress={this.onCancel}>
               {cancelText || _locale.cancelText}
             </Text>
           </View>
