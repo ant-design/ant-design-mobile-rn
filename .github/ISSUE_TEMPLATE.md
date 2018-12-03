@@ -11,5 +11,5 @@ If your issue was not created using the app above, it will be closed immediately
 
   http://new-issue.ant.design?repo=ant-design-mobile-rn
 
-不是用上面的链接创建的 issue 会被立即关闭。
+不使用上面的链接创建的 issue 会被立即关闭。
 -->
