@@ -11,15 +11,18 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
   <View
     onLayout={[Function]}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {},
+      ]
     }
   >
     <View
       style={
         Object {
-          "borderBottomColor": "#dddddd",
+          "borderBottomColor": "#eee",
           "borderBottomWidth": 1,
         }
       }
@@ -29,6 +32,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
         style={
           Object {
             "backgroundColor": "#fff",
+            "height": 43.5,
           }
         }
       >
@@ -36,6 +40,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
           bounces={false}
           directionalLockEnabled={true}
           horizontal={true}
+          renderToHardwareTextureAndroid={true}
           scrollEnabled={false}
           scrollsToTop={false}
           showsHorizontalScrollIndicator={false}
@@ -47,12 +52,10 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
               style={
                 Object {
                   "backgroundColor": "#fff",
-                  "elevation": 0,
                   "flex": 1,
                   "flexDirection": "row",
+                  "height": 43.5,
                   "justifyContent": "space-around",
-                  "shadowOpacity": 0,
-                  "shadowRadius": 0,
                 }
               }
             >
@@ -77,9 +80,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     Object {
                       "alignItems": "center",
                       "flexDirection": "row",
-                      "height": 42,
+                      "height": 43.5,
                       "justifyContent": "center",
-                      "padding": 0,
+                      "paddingBottom": 0,
+                      "paddingLeft": 2,
+                      "paddingRight": 2,
+                      "paddingTop": 0,
                       "width": 250,
                     }
                   }
@@ -87,7 +93,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   <Text
                     style={
                       Object {
-                        "color": "#000000",
+                        "color": "#000",
                         "fontSize": 15,
                       }
                     }
@@ -117,9 +123,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     Object {
                       "alignItems": "center",
                       "flexDirection": "row",
-                      "height": 42,
+                      "height": 43.5,
                       "justifyContent": "center",
-                      "padding": 0,
+                      "paddingBottom": 0,
+                      "paddingLeft": 2,
+                      "paddingRight": 2,
+                      "paddingTop": 0,
                       "width": 250,
                     }
                   }
@@ -157,9 +166,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     Object {
                       "alignItems": "center",
                       "flexDirection": "row",
-                      "height": 42,
+                      "height": 43.5,
                       "justifyContent": "center",
-                      "padding": 0,
+                      "paddingBottom": 0,
+                      "paddingLeft": 2,
+                      "paddingRight": 2,
+                      "paddingTop": 0,
                       "width": 250,
                     }
                   }
@@ -167,7 +179,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   <Text
                     style={
                       Object {
-                        "color": "#000000",
+                        "color": "#000",
                         "fontSize": 15,
                       }
                     }
@@ -287,15 +299,18 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
     <View
       onLayout={[Function]}
       style={
-        Object {
-          "flex": 1,
-        }
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {},
+        ]
       }
     >
       <View
         style={
           Object {
-            "borderBottomColor": "#dddddd",
+            "borderBottomColor": "#eee",
             "borderBottomWidth": 1,
           }
         }
@@ -305,6 +320,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
           style={
             Object {
               "backgroundColor": "#fff",
+              "height": 43.5,
             }
           }
         >
@@ -312,6 +328,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
             bounces={false}
             directionalLockEnabled={true}
             horizontal={true}
+            renderToHardwareTextureAndroid={true}
             scrollEnabled={true}
             scrollsToTop={false}
             showsHorizontalScrollIndicator={false}
@@ -323,12 +340,10 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#fff",
-                    "elevation": 0,
                     "flex": 1,
                     "flexDirection": "row",
+                    "height": 43.5,
                     "justifyContent": "space-around",
-                    "shadowOpacity": 0,
-                    "shadowRadius": 0,
                   }
                 }
               >
@@ -353,9 +368,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -363,7 +381,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     <Text
                       style={
                         Object {
-                          "color": "#000000",
+                          "color": "#000",
                           "fontSize": 15,
                         }
                       }
@@ -393,9 +411,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -433,9 +454,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -443,7 +467,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     <Text
                       style={
                         Object {
-                          "color": "#000000",
+                          "color": "#000",
                           "fontSize": 15,
                         }
                       }
@@ -473,9 +497,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -483,7 +510,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     <Text
                       style={
                         Object {
-                          "color": "#000000",
+                          "color": "#000",
                           "fontSize": 15,
                         }
                       }
@@ -513,9 +540,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -523,7 +553,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     <Text
                       style={
                         Object {
-                          "color": "#000000",
+                          "color": "#000",
                           "fontSize": 15,
                         }
                       }
@@ -553,9 +583,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -563,7 +596,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     <Text
                       style={
                         Object {
-                          "color": "#000000",
+                          "color": "#000",
                           "fontSize": 15,
                         }
                       }
@@ -593,9 +626,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -603,7 +639,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     <Text
                       style={
                         Object {
-                          "color": "#000000",
+                          "color": "#000",
                           "fontSize": 15,
                         }
                       }
@@ -633,9 +669,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -643,7 +682,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     <Text
                       style={
                         Object {
-                          "color": "#000000",
+                          "color": "#000",
                           "fontSize": 15,
                         }
                       }
@@ -673,9 +712,12 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                       Object {
                         "alignItems": "center",
                         "flexDirection": "row",
-                        "height": 42,
+                        "height": 43.5,
                         "justifyContent": "center",
-                        "padding": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 2,
+                        "paddingRight": 2,
+                        "paddingTop": 0,
                         "width": 150,
                       }
                     }
@@ -683,7 +725,7 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                     <Text
                       style={
                         Object {
-                          "color": "#000000",
+                          "color": "#000",
                           "fontSize": 15,
                         }
                       }

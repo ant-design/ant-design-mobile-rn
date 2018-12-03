@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  default as RN,
-  Animated,
-  Dimensions,
-  Platform,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Animated, Dimensions, LayoutChangeEvent, Platform, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { TabBarPropsType, TabData } from './PropsType';
 import defaultStyles from './Styles';
 
@@ -17,8 +8,8 @@ const WINDOW_WIDTH = Dimensions.get('window').width;
 export interface PropsType extends TabBarPropsType {
   scrollValue?: any;
   styles?: typeof defaultStyles;
-  tabStyle?: RN.ViewStyle;
-  tabsContainerStyle?: RN.ViewStyle;
+  tabStyle?: ViewStyle;
+  tabsContainerStyle?: ViewStyle;
   /** default: false */
   dynamicTabUnderlineWidth?: boolean;
   keyboardShouldPersistTaps?: boolean;
@@ -62,6 +53,10 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
   }
 
   componentDidMount() {
+    if (__DEV__) {
+      // tslint:disable-next-line:no-console
+      console.log(this.props);
+    }
     this.props.scrollValue.addListener(this.updateView);
   }
 
@@ -217,7 +212,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
   render() {
     const {
       tabs,
-      page = 1,
+      page = 0,
       tabBarUnderlineStyle,
       tabBarBackgroundColor,
       styles = defaultStyles,
@@ -266,6 +261,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
           scrollsToTop={false}
           scrollEnabled={tabs.length > page}
           keyboardShouldPersistTaps={keyboardShouldPersistTaps}
+          renderToHardwareTextureAndroid
         >
           <View
             style={{
@@ -298,7 +294,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     );
   }
 
-  onTabContainerLayout = (e: RN.LayoutChangeEvent) => {
+  onTabContainerLayout = (e: LayoutChangeEvent) => {
     this._tabContainerMeasurements = e.nativeEvent.layout;
     let width = this._tabContainerMeasurements.width;
     if (width < WINDOW_WIDTH) {
@@ -311,7 +307,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     this.updateView({ value: this.props.scrollValue._value });
   };
 
-  onContainerLayout = (e: RN.LayoutChangeEvent) => {
+  onContainerLayout = (e: LayoutChangeEvent) => {
     this._containerMeasurements = e.nativeEvent.layout;
     this.setState({ _containerWidth: this._containerMeasurements.width });
     this.updateView({ value: this.props.scrollValue._value });

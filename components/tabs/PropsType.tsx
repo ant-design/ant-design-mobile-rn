@@ -1,3 +1,5 @@
+import { StyleProp, ViewStyle } from "react-native";
+import Styles from "./Styles";
 
 export interface TabData {
   key?: string;
@@ -92,11 +94,7 @@ export interface PropsType {
   noRenderContent?: boolean;
   /** use left instead of transform | default: false */
   useLeftInsteadTransform?: boolean;
+  style?: StyleProp<ViewStyle>;
+  styles?: typeof Styles;
+  keyboardShouldPersistTaps?: boolean;
 }
-
-interface TabsProps extends PropsType {
-  /** render for replace the tab of tabbar. */
-  renderTab?: (tab: TabData) => React.ReactNode;
-}
-
-export default TabsProps;

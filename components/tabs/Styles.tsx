@@ -1,18 +1,18 @@
-import * as RN from 'react-native';
+import { ViewStyle } from "react-native";
 
 export default {
   Tabs: {
     container: {
       flex: 1,
-    } as RN.ViewStyle,
+    } as ViewStyle,
     topTabBarSplitLine: {
       borderBottomColor: '#eee',
       borderBottomWidth: 1,
-    } as RN.ViewStyle,
+    } as ViewStyle,
     bottomTabBarSplitLine: {
       borderTopColor: '#eee',
       borderTopWidth: 1,
-    } as RN.ViewStyle,
+    } as ViewStyle,
   },
   TabBar: {
     container: {
@@ -24,7 +24,7 @@ export default {
       height: 43.5,
       backgroundColor: '#fff',
       justifyContent: 'space-around',
-    } as RN.ViewStyle,
+    } as ViewStyle,
     tab: {
       height: 43.5,
       alignItems: 'center',
@@ -34,14 +34,14 @@ export default {
       paddingRight: 2,
       paddingLeft: 2,
       flexDirection: 'row',
-    } as RN.ViewStyle,
+    } as ViewStyle,
     underline: {
       height: 2,
       backgroundColor: '#108ee9',
-    } as RN.ViewStyle,
+    } as ViewStyle,
     textStyle: {
       fontSize: 15,
-    } as RN.ViewStyle,
+    } as ViewStyle,
     activeTextColor: '#108ee9',
     inactiveTextColor: '#000',
   },
