@@ -377,13 +377,15 @@ AppRegistry.runApplication("App", {
             <a href={`#${meta.id}`} ref={this.saveAnchor}>
               {localizedTitle}
             </a>
+            <span
+              className="fullscreen anticon anticon-arrow-salt"
+              onClick={this.viewFullscreen}
+              unselectable="none"
+              style={{ bottom: 'inherit', top: 16 }}
+            />
           </div>
           {introChildren}
-          <span
-            className="fullscreen anticon anticon-arrow-salt"
-            onClick={this.viewFullscreen}
-            unselectable="none"
-          />
+
           {!Array.isArray(highlightedCode) && (
             <Radio.Group
               value={state.lang}
@@ -395,10 +397,10 @@ AppRegistry.runApplication("App", {
           )}
         </section>
 
-        <section className="highlight-wrapper" key="code">
+        {/* <section className="highlight-wrapper" key="code">
           {this.renderDemoCode(highlightedCode, false)}
           {hsNode}
-        </section>
+        </section> */}
         {this.rendeSandbox()}
       </section>
     );
