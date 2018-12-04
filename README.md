@@ -23,7 +23,11 @@ A configurable Mobile UI specification and React-based implementation.
 
 We(Community) will continue maintain this project. If you found a bug you can file an issue directly and `PR` are always welcome.
 
+By the way. you can support this project via Star star sta st s... ⭐️ ⭐️ ⭐️ ⭐️ ⭐️.
+
 Discussion: [The new plan](https://github.com/ant-design/ant-design-mobile-rn/issues/119)
+
+
 
 ## Features
 
