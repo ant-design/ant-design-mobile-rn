@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Dimensions, LayoutChangeEvent, Modal, StyleProp, StyleSheet, Text, TextStyle, TouchableHighlight, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
-import RCModal from 'rmc-dialog/lib/Modal';
+import { Dimensions, LayoutChangeEvent, StyleProp, StyleSheet, Text, TextStyle, TouchableHighlight, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
 import { getComponentLocale } from '../_util/getLocale';
 import zh_CN from './locale/zh_CN';
+import RCModal from './ModalView';
 import { ModalPropsType } from './PropsType';
 import modalStyle, { IModalStyle } from './style/index';
 
@@ -53,11 +53,11 @@ class AntmModal extends React.Component<IModalNativeProps, any> {
         style: [{ paddingBottom: e.nativeEvent.layout.height }, maxHeight],
       });
     }
-  }
+  };
 
   saveRoot = (root: any) => {
     this.root = root;
-  }
+  };
 
   render() {
     const {
@@ -219,23 +219,14 @@ class AntmModal extends React.Component<IModalNativeProps, any> {
         </View>
       );
     }
-    if (
-      animType === 'slide-up' ||
-      animType === 'slide-down' ||
-      animType === 'slide'
-    ) {
-      animType = 'slide';
+    if (animType === 'slide') {
+      animType = undefined;
     }
     return (
       <View style={styles.container}>
-        <Modal
-          visible={visible}
-          animationType={animType}
-          onRequestClose={onClose}
-          hardwareAccelerated
-        >
+        <RCModal visible={visible} animationType={animType} onClose={onClose}>
           <View style={style}>{children}</View>
-        </Modal>
+        </RCModal>
       </View>
     );
   }

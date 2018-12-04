@@ -1,7 +1,7 @@
 // tslint:disable:jsx-no-multiline-js
 import React from 'react';
 import { ActionSheetIOSOptions, Text, TouchableHighlight, View } from 'react-native';
-import Modal from 'rmc-dialog/lib/Modal';
+import Modal from '../modal/ModalView';
 import styles, { ActionSheetStyle, vars as variables } from './style/index';
 
 export interface ActionSheetNativeProps {
@@ -12,7 +12,10 @@ export interface ActionSheetNativeProps {
   styles?: ActionSheetStyle;
 }
 
-class ActionSheetAndroid extends React.PureComponent<ActionSheetNativeProps, any> {
+class ActionSheetAndroid extends React.PureComponent<
+  ActionSheetNativeProps,
+  any
+> {
   constructor(props: ActionSheetNativeProps) {
     super(props);
     this.state = {
@@ -33,7 +36,7 @@ class ActionSheetAndroid extends React.PureComponent<ActionSheetNativeProps, any
     this.setState({
       visible: false,
     });
-  }
+  };
   render() {
     const { config, onAnimationEnd } = this.props;
     const {

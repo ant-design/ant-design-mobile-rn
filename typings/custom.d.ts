@@ -2,7 +2,6 @@ declare module '@ant-design/react-native';
 
 declare module 'antd-mobile-demo-data';
 
-declare module 'rmc-dialog';
 declare module 'react-native-menu';
 
 declare module 'normalize-css-color';
