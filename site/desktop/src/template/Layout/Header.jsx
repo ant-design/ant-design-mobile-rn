@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'bisheng/router';
-import { FormattedMessage } from 'react-intl';
-import classNames from 'classnames';
-import { Select, Menu, Row, Col, Icon, Button, AutoComplete, Input, Popover } from 'antd';
 import { version as antdVersion } from '@ant-design/react-native/package.json';
+import { AutoComplete, Button, Col, Icon, Input, Menu, Popover, Row, Select } from 'antd';
+import { Link } from 'bisheng/router';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import * as utils from '../../../../utils';
 
 const { Option } = AutoComplete;
@@ -123,7 +123,7 @@ export default class Header extends React.Component {
         const url = `/components/${pathSnippet}`;
         const { subtitle } = meta;
         return (
-          <Option value={url} key={url} data-label={`${(meta.title || meta.english).toLowerCase()} ${meta.subtitle || meta.chinese}`}>
+          <Option value={url} key={url} data-label={`${(meta.title || meta.english || '').toLowerCase()} ${meta.subtitle || meta.chinese}`}>
             <strong>{meta.title || meta.english}</strong>
             {subtitle && <span className="ant-component-decs">{meta.subtitle || meta.chinese}</span>}
           </Option>

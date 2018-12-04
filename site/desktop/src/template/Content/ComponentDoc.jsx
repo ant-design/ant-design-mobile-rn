@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import DocumentTitle from 'react-document-title';
-import { FormattedMessage } from 'react-intl';
 import Icon from 'antd/lib/icon';
 import Popover from 'antd/lib/popover';
-import QRCode from 'qrcode.react';
+import throttleByAnimationFrame from 'antd/lib/_util/throttleByAnimationFrame';
 import classnames from 'classnames';
 import { getChildren } from 'jsonml.js/lib/utils';
-import throttleByAnimationFrame from 'antd/lib/_util/throttleByAnimationFrame';
+import PropTypes from 'prop-types';
+import QRCode from 'qrcode.react';
+import React from 'react';
+import DocumentTitle from 'react-document-title';
+import { FormattedMessage } from 'react-intl';
 import Demo from './Demo';
 
 function getDemos(props) {
@@ -77,7 +77,6 @@ export default class ComponentDoc extends React.Component {
     const { props } = this;
     const { doc, location } = props;
     const { content, meta } = doc;
-
     const demos = Object.keys(props.demos)
       .map(key => props.demos[key])
       .filter(demoData => !demoData.meta.hidden);
@@ -91,6 +90,7 @@ export default class ComponentDoc extends React.Component {
         leftChildren.push(<Demo
           togglePreview={this.togglePreview}
           {...demoData}
+          doc={doc}
           className={currentIndex === index ? 'code-box-target' : ''}
           key={index}
           index={index}

@@ -1,17 +1,16 @@
 /* eslint react/no-danger: 0 */
-import React from 'react';
-import PropTypes from 'prop-types';
+import { Button, Icon, Modal, Radio, Tooltip } from 'antd';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { FormattedMessage } from 'react-intl';
-import { Button, Modal, Radio, Tooltip, Icon } from 'antd';
-import { getParameters } from 'codesandbox/lib/api/define';
 import { ping } from '../../../../utils';
 
 export default class Demo extends React.Component {
   static contextTypes = {
     intl: PropTypes.object,
-  }
+  };
 
   state = {
     fullscreen: false,
@@ -23,7 +22,7 @@ export default class Demo extends React.Component {
 
   saveAnchor = (anchor) => {
     this.anchor = anchor;
-  }
+  };
 
   componentDidMount() {
     const { meta } = this.props;
@@ -42,36 +41,37 @@ export default class Demo extends React.Component {
   }
 
   handleClick = (e) => {
-    const {
-      togglePreview, index, currentIndex, meta,
-    } = this.props;
+    const { togglePreview, index, currentIndex, meta } = this.props;
 
-    if (index !== currentIndex && e.target.className !== 'collapse anticon anticon-circle-o-right' &&
-      e.target.className !== 'fullscreen anticon anticon-arrow-salt') {
+    if (
+      index !== currentIndex &&
+      e.target.className !== 'collapse anticon anticon-circle-o-right' &&
+      e.target.className !== 'fullscreen anticon anticon-arrow-salt'
+    ) {
       togglePreview({
         index,
       });
     }
 
     window.location.hash = meta.id;
-  }
+  };
 
   viewFullscreen = (e) => {
     e.stopPropagation();
     this.setState({
       fullscreen: true,
     });
-  }
+  };
 
   handleCancel = () => {
     this.setState({
       fullscreen: false,
     });
-  }
+  };
 
   handleCodeCopied = () => {
     this.setState({ copied: true });
-  }
+  };
 
   onCopyTooltipVisibleChange = (visible) => {
     if (visible) {
@@ -84,14 +84,14 @@ export default class Demo extends React.Component {
     this.setState({
       copyTooltipVisible: visible,
     });
-  }
+  };
 
   handleProgrammingLangChange = (e) => {
     this.setState({ lang: e.target.value });
-  }
-  renderCodeSandbox = () => {
-    const { sourceCode } = this.state;
-    const parameters = getParameters({
+  };
+  getSandboxParameters = (sourceCode) => {
+    const sandboxName = `${this.props.doc.meta.title}`;
+    const parameters = {
       files: {
         'public/index.html': {
           content: `
@@ -142,31 +142,6 @@ AppRegistry.runApplication("App", {
         'src/App.js': {
           content: sourceCode,
         },
-        //         'tsconfig.json':{
-        //           content: `
-        // {
-        //   "compilerOptions": {
-        //     "target": "es5",
-        //     "allowJs": true,
-        //     "skipLibCheck": true,
-        //     "esModuleInterop": true,
-        //     "allowSyntheticDefaultImports": true,
-        //     "strict": true,
-        //     "forceConsistentCasingInFileNames": true,
-        //     "module": "esnext",
-        //     "moduleResolution": "node",
-        //     "resolveJsonModule": true,
-        //     "isolatedModules": true,
-        //     "noEmit": true,
-        //     "jsx": "preserve",
-        //     "noImplicitAny": false
-        //   },
-        //   "include": [
-        //     "src"
-        //   ]
-        // }
-        // `
-        //         },
         'package.json': {
           content: {
             version: '0.2.0',
@@ -177,12 +152,12 @@ AppRegistry.runApplication("App", {
               build: 'react-scripts build',
             },
             private: true,
-            name: 'antd-rn-example',
+            name: sandboxName,
             eslintConfig: {
               extends: 'react-app',
             },
             dependencies: {
-              '@ant-design/react-native': '^2.3.2-2',
+              '@ant-design/react-native': 'latest',
               'antd-mobile-rn-scripts': '2.1.5',
               react: '^16.6.0',
               'react-art': '^16.6.0',
@@ -198,79 +173,102 @@ AppRegistry.runApplication("App", {
           },
         },
       },
-    });
+    };
+    return parameters;
+  };
+  sandbox = async () => {
+    const { sourceCode } = this.state;
+    if (!sourceCode) {
+      return null;
+    }
+    const parameters = this.getSandboxParameters(sourceCode);
+    const data = await fetch(
+      'https://codesandbox.io/api/v1/sandboxes/define?json=1',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(parameters),
+      },
+    ).then(x => x.json());
 
-    const url = `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}&embed=1`;
-    return <iframe src={`${url}`} title="@ant-design/react-native-examles" style={{ width: '100%', height: 700, border: 0, borderRadius: 4, overflow: 'hidden' }} sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />;
-  }
+    if (data) {
+      this.setState({ sandbox_id: data.sandbox_id });
+    }
+    return data;
+  };
+  rendeSandbox = () => {
+    const { sandbox_id: id } = this.state;
+    if (!id) {
+      return null;
+    }
+    return (
+      <iframe
+        title="example"
+        src={`https://codesandbox.io/embed/${id}?autoresize=1&codemirror=1`}
+        style={{
+          width: '100%',
+          height: '700px',
+          border: 0,
+          borderRadius: '4px',
+          overflow: 'hidden',
+        }}
+        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+      />
+    );
+  };
   /* eslint-disable react/jsx-indent */
   renderDemoCode = (highlightedCode, inModal) => {
-    const {
-      meta,
-      style,
-    } = this.props;
+    const { meta, style } = this.props;
     const { lang, sourceCode } = this.state;
     const { locale } = this.context.intl;
     const localizedTitle = meta.title[locale] || meta.title;
-    const prefillStyle = `@import 'antd-mobile@2/dist/antd-mobile.min.css';\n\n${style || ''}`.replace(new RegExp(`#${meta.id}\\s*`, 'g'), '');
+    const prefillStyle = `@import 'antd-mobile@2/dist/antd-mobile.min.css';\n\n${style ||
+      ''}`.replace(new RegExp(`#${meta.id}\\s*`, 'g'), '');
 
-    const js = sourceCode
-      .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'rc-form';/, 'const { $1 } = window["rc-form"];')
-      .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'array-tree-filter';/, 'const { $1 } = window["arrayTreeFilter"];')
-      .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'antd-mobile-demo-data';/, 'const { $1 } = window["antd-mobile-demo-data"];')
-      .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'antd-mobile';/, 'const { $1 } = window["antd-mobile"];');
-
-    const codepenPrefillConfig = {
-      title: `${localizedTitle} - Ant Design Mobile Demo`,
-      html: `<div id="container" style="padding: 24px"></div>
-              <script>
-                var mountNode = document.getElementById('container');
-              </script>`,
-      js,
-      css: prefillStyle,
-      editors: '001',
-      css_external: 'https://unpkg.com/antd-mobile@2/dist/antd-mobile.min.css',
-      js_external: [
-        'react@16/umd/react.production.min.js',
-        'react-dom@16/umd/react-dom.production.min.js',
-        'rc-form@1/dist/rc-form.min.js',
-        'antd-mobile@2/dist/antd-mobile.min.js',
-        'array-tree-filter@2',
-        'antd-mobile-demo-data@0.2',
-      ]
-        .map(url => `https://unpkg.com/${url}`)
-        .concat(['https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js'])
-        .join(';'),
-      js_pre_processor: 'typescript',
-    };
     const riddlePrefillConfig = {
-      title: `${localizedTitle} - Ant Design Mobile Demo`,
-      js: sourceCode.replace('from \'antd-mobile\'', 'from \'antd-mobile\''),
-      css: prefillStyle.replace('\'antd-mobile/', '\'antd-mobile/'),
+      title: `${localizedTitle} - Ant Design Mobile RN Demo`,
+      js: sourceCode.replace(
+        "from '../../'",
+        "from '@ant-design/react-native'",
+      ),
+      css: prefillStyle.replace("'antd-mobile/", "'antd-mobile/"),
     };
     return Array.isArray(highlightedCode) ? (
       <div className="highlight">
         <div className="code-box-actions">
           {this.state.showRiddleButton ? (
-            <form action="//riddle.alibaba-inc.com/riddles/define" method="POST" target="_blank">
-              <input type="hidden" name="data" value={JSON.stringify(riddlePrefillConfig)} />
+            <form
+              action="//riddle.alibaba-inc.com/riddles/define"
+              method="POST"
+              target="_blank"
+            >
+              <input
+                type="hidden"
+                name="data"
+                value={JSON.stringify(riddlePrefillConfig)}
+              />
               <Tooltip title={<FormattedMessage id="app.demo.riddle" />}>
-                <input type="submit" value="Create New Riddle with Prefilled Data" className="code-box-riddle" />
+                <input
+                  type="submit"
+                  value="Create New Riddle with Prefilled Data"
+                  className="code-box-riddle"
+                />
               </Tooltip>
             </form>
           ) : null}
-          <form action="https://codepen.io/pen/define" method="POST" target="_blank">
-            <input type="hidden" name="data" value={JSON.stringify(codepenPrefillConfig)} />
-            <Tooltip title={<FormattedMessage id="app.demo.codepen" />}>
-              <input type="submit" value="Create New Pen with Prefilled Data" className="code-box-codepen" />
-            </Tooltip>
-          </form>
           <CopyToClipboard
             text={this.state.sourceCode}
             onCopy={this.handleCodeCopied}
           >
             <Tooltip
-              title={<FormattedMessage id={`app.demo.${this.state.copied ? 'copied' : 'copy'}`} />}
+              title={
+                <FormattedMessage
+                  id={`app.demo.${this.state.copied ? 'copied' : 'copy'}`}
+                />
+              }
               visible={this.state.copyTooltipVisible}
               onVisibleChange={this.onCopyTooltipVisibleChange}
             >
@@ -278,7 +276,13 @@ AppRegistry.runApplication("App", {
                 className="code-box-code-copy"
                 onClick={e => e.stopPropagation()}
               >
-                <Icon type={(this.state.copied && this.state.copyTooltipVisible) ? 'check' : 'copy'} />
+                <Icon
+                  type={
+                    this.state.copied && this.state.copyTooltipVisible
+                      ? 'check'
+                      : 'copy'
+                  }
+                />
               </span>
             </Tooltip>
           </CopyToClipboard>
@@ -288,10 +292,7 @@ AppRegistry.runApplication("App", {
     ) : (
       <div className="highlight">
         {inModal && (
-          <Radio.Group
-            value={lang}
-            onChange={this.handleProgrammingLangChange}
-          >
+          <Radio.Group value={lang} onChange={this.handleProgrammingLangChange}>
             <Radio.Button value="es6">ES2016</Radio.Button>
             <Radio.Button value="ts">TypeScript</Radio.Button>
           </Radio.Group>
@@ -301,14 +302,19 @@ AppRegistry.runApplication("App", {
         </pre>
       </div>
     );
-  }
+  };
   componentWillReceiveProps(nextProps) {
     const { highlightedCode } = nextProps;
     const div = document.createElement('div');
     div.innerHTML = highlightedCode[1].highlighted;
-    this.setState({ sourceCode: div.textContent });
+    this.setState(
+      {
+        sourceCode: this.replaceLibName(div.textContent),
+      },
+      () => this.sandbox(),
+    );
   }
-
+  replaceLibName = code => code.replace('../../', '@ant-design/react-native');
   render() {
     const { props, state } = this;
     const {
@@ -340,7 +346,8 @@ AppRegistry.runApplication("App", {
             }}
           />
         </pre>
-      </div>) : null;
+      </div>
+    ) : null;
 
     return (
       <section className={codeBoxClass} id={meta.id} onClick={this.handleClick}>
@@ -351,7 +358,14 @@ AppRegistry.runApplication("App", {
           onCancel={this.handleCancel}
           width={900}
           footer={[
-            <Button key="back" type="ghost" size="large" onClick={this.handleCancel}><FormattedMessage id="app.ComponentDoc.Modal.return" /></Button>,
+            <Button
+              key="back"
+              type="ghost"
+              size="large"
+              onClick={this.handleCancel}
+            >
+              <FormattedMessage id="app.ComponentDoc.Modal.return" />
+            </Button>,
           ]}
         >
           {this.renderDemoCode(highlightedCode, true)}
@@ -381,14 +395,11 @@ AppRegistry.runApplication("App", {
           )}
         </section>
 
-        <section
-          className="highlight-wrapper"
-          key="code"
-        >
+        <section className="highlight-wrapper" key="code">
           {this.renderDemoCode(highlightedCode, false)}
           {hsNode}
         </section>
-        {this.renderCodeSandbox(highlightedCode)}
+        {this.rendeSandbox()}
       </section>
     );
   }
