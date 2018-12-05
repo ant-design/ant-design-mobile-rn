@@ -1,5 +1,5 @@
 /* tslint:disable:jsx-no-multiline-js */
-import React from 'react';
+import React from "react";
 import {
   Dimensions,
   Image,
@@ -8,15 +8,16 @@ import {
   Text,
   View,
   ViewStyle,
-} from 'react-native';
-import Carousel from '../carousel/index.native';
-import Flex from '../flex/index.native';
-import { DataItem, GridPropsType } from './PropsType';
-import GridStyle from './style/index.native';
+} from "react-native";
+import Carousel, { CarouselProps } from "../carousel/index.native";
+import Flex from "../flex/index.native";
+import { DataItem, GridPropsType } from "./PropsType";
+import GridStyle from "./style/index.native";
 
 export interface GridProps extends GridPropsType {
   styles?: any;
   itemStyle?: StyleProp<ViewStyle>;
+  carouselProps?: CarouselProps;
 }
 
 const GridStyles = StyleSheet.create<any>(GridStyle);
@@ -30,11 +31,12 @@ export default class Grid extends React.Component<GridProps, any> {
     carouselMaxRow: 2,
     styles: GridStyles,
     itemStyle: {},
+    carouselProps: {},
   };
 
   getFlexItemStyle(columnNum: number) {
     return {
-      height: Dimensions.get('window').width / columnNum,
+      height: Dimensions.get("window").width / columnNum,
       borderRightWidth: this.props.hasLine ? StyleSheet.hairlineWidth : 0,
     };
   }
@@ -48,6 +50,7 @@ export default class Grid extends React.Component<GridProps, any> {
       // tslint:disable-next-line:no-empty
       onClick = () => {},
       styles,
+      carouselProps,
     } = this.props;
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/11640
     const columnNum = this.props.columnNum as number;
@@ -89,7 +92,10 @@ export default class Grid extends React.Component<GridProps, any> {
               style={[
                 styles.grayBorderBox,
                 flexItemStyle,
-                { borderLeftWidth: hasLine && j === 0 ? StyleSheet.hairlineWidth : 0 },
+                {
+                  borderLeftWidth:
+                    hasLine && j === 0 ? StyleSheet.hairlineWidth : 0,
+                },
                 customItemStyle,
               ]}
               onPress={() => onClick(el, dataIndex)}
@@ -151,7 +157,10 @@ export default class Grid extends React.Component<GridProps, any> {
             key={pageIndex}
             style={[
               styles.grayBorderBox,
-              { borderTopWidth: hasLine && pageIndex !== 0 ? StyleSheet.hairlineWidth : 0 },
+              {
+                borderTopWidth:
+                  hasLine && pageIndex !== 0 ? StyleSheet.hairlineWidth : 0,
+              },
             ]}
           >
             {pageRows}
@@ -161,7 +170,7 @@ export default class Grid extends React.Component<GridProps, any> {
     }
 
     return isCarousel && pageCount > 1 ? (
-      <Carousel infinite={false} dots>
+      <Carousel infinite={false} dots {...carouselProps}>
         {pagesArr}
       </Carousel>
     ) : (
