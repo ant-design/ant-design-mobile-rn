@@ -1,0 +1,8 @@
+{
+  "tslint.configFile": "node_modules/antd-tools/lib/tslint.json",
+  "tslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
+}
