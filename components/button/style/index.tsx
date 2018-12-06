@@ -1,114 +1,147 @@
-import variables from '../../style/themes/default';
-import { ViewStyle } from 'react-native';
-
-export default {
-  container: {
-    flexDirection: 'row',
-  } as ViewStyle,
-  defaultHighlight: {
-    backgroundColor: variables.fill_tap,
-    borderColor: variables.border_color_base,
-  },
-  primaryHighlight: {
-    backgroundColor: variables.primary_button_fill_tap,
-    borderColor: variables.primary_button_fill,
-  },
-  ghostHighlight: {
-    backgroundColor: 'transparent',
-    borderColor: variables.ghost_button_fill_tap,
-  },
-  warningHighlight: {
-    backgroundColor: variables.warning_button_fill_tap,
-    borderColor: variables.warning_button_fill,
-  },
-  wrapperStyle: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: variables.radius_md,
-    borderWidth: 1,
-  },
-  largeRaw: {
-    height: variables.button_height,
-    paddingLeft: variables.h_spacing_lg,
-    paddingRight: variables.h_spacing_lg,
-  },
-  smallRaw: {
-    height: variables.button_height_sm,
-    paddingLeft: variables.h_spacing_sm,
-    paddingRight: variables.h_spacing_sm,
-  },
-  defaultRaw: {
-    backgroundColor: variables.fill_base,
-    borderColor: variables.border_color_base,
-  },
-  primaryRaw: {
-    backgroundColor: variables.primary_button_fill,
-    borderColor: variables.primary_button_fill,
-  },
-  ghostRaw: {
-    backgroundColor: 'transparent',
-    borderColor: variables.ghost_button_color,
-  },
-  warningRaw: {
-    backgroundColor: variables.warning_button_fill,
-    borderColor: variables.warning_button_fill,
-  },
-  defaultDisabledRaw: {
-    backgroundColor: variables.fill_disabled,
-    borderColor: variables.fill_disabled,
-  },
-  primaryDisabledRaw: {
-    opacity: 0.4,
-  },
-  ghostDisabledRaw: {
-    borderColor: `${variables.color_text_base}1A`, // alpha 10%  https://codepen.io/chriscoyier/pen/XjbzAW
-  },
-  warningDisabledRaw: {
-    opacity: 0.4,
-  },
-  defaultHighlightText: {
-    color: variables.color_text_base,
-  },
-  primaryHighlightText: {
-    color: `${variables.color_text_base_inverse}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
-  },
-  ghostHighlightText: {
-    color: variables.ghost_button_fill_tap,
-  },
-  warningHighlightText: {
-    color: `${variables.color_text_base_inverse}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
-  },
-  largeRawText: {
-    fontSize: variables.button_font_size,
-  },
-  smallRawText: {
-    fontSize: variables.button_font_size_sm,
-  },
-  defaultRawText: {
-    color: variables.color_text_base,
-  },
-  primaryRawText: {
-    color: variables.color_text_base_inverse,
-  },
-  ghostRawText: {
-    color: variables.ghost_button_color,
-  },
-  warningRawText: {
-    color: variables.color_text_base_inverse,
-  },
-  defaultDisabledRawText: {
-    color: `${variables.color_text_base}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
-  },
-  primaryDisabledRawText: {
-    color: `${variables.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
-  },
-  ghostDisabledRawText: {
-    color: `${variables.color_text_base}1A`, // alpha 10%  https://codepen.io/chriscoyier/pen/XjbzAW
-  },
-  warningDisabledRawText: {
-    color: `${variables.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
-  },
-  indicator: {
-    marginRight: variables.h_spacing_md,
-  },
-};
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Theme } from '../../style';
+export interface ButtonStyles {
+  container: ViewStyle;
+  defaultHighlight: ViewStyle;
+  primaryHighlight: ViewStyle;
+  ghostHighlight: ViewStyle;
+  warningHighlight: ViewStyle;
+  wrapperStyle: ViewStyle;
+  largeRaw: ViewStyle;
+  smallRaw: ViewStyle;
+  defaultRaw: ViewStyle;
+  primaryRaw: ViewStyle;
+  ghostRaw: ViewStyle;
+  warningRaw: ViewStyle;
+  defaultDisabledRaw: ViewStyle;
+  primaryDisabledRaw: ViewStyle;
+  ghostDisabledRaw: ViewStyle;
+  warningDisabledRaw: ViewStyle;
+  defaultHighlightText: TextStyle;
+  primaryHighlightText: TextStyle;
+  ghostHighlightText: TextStyle;
+  warningHighlightText: TextStyle;
+  largeRawText: TextStyle;
+  smallRawText: TextStyle;
+  defaultRawText: TextStyle;
+  primaryRawText: TextStyle;
+  ghostRawText: TextStyle;
+  warningRawText: TextStyle;
+  defaultDisabledRawText: TextStyle;
+  primaryDisabledRawText: TextStyle;
+  ghostDisabledRawText: TextStyle;
+  warningDisabledRawText: TextStyle;
+  indicator: ViewStyle;
+}
+export default (theme: Theme) =>
+  StyleSheet.create<ButtonStyles>({
+    container: {
+      flexDirection: 'row',
+    },
+    defaultHighlight: {
+      backgroundColor: theme.fill_tap,
+      borderColor: theme.border_color_base,
+    },
+    primaryHighlight: {
+      backgroundColor: theme.primary_button_fill_tap,
+      borderColor: theme.primary_button_fill,
+    },
+    ghostHighlight: {
+      backgroundColor: 'transparent',
+      borderColor: theme.ghost_button_fill_tap,
+    },
+    warningHighlight: {
+      backgroundColor: theme.warning_button_fill_tap,
+      borderColor: theme.warning_button_fill,
+    },
+    wrapperStyle: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: theme.radius_md,
+      borderWidth: 1,
+    },
+    largeRaw: {
+      height: theme.button_height,
+      paddingLeft: theme.h_spacing_lg,
+      paddingRight: theme.h_spacing_lg,
+    },
+    smallRaw: {
+      height: theme.button_height_sm,
+      paddingLeft: theme.h_spacing_sm,
+      paddingRight: theme.h_spacing_sm,
+    },
+    defaultRaw: {
+      backgroundColor: theme.fill_base,
+      borderColor: theme.border_color_base,
+    },
+    primaryRaw: {
+      backgroundColor: theme.primary_button_fill,
+      borderColor: theme.primary_button_fill,
+    },
+    ghostRaw: {
+      backgroundColor: 'transparent',
+      borderColor: theme.ghost_button_color,
+    },
+    warningRaw: {
+      backgroundColor: theme.warning_button_fill,
+      borderColor: theme.warning_button_fill,
+    },
+    defaultDisabledRaw: {
+      backgroundColor: theme.fill_disabled,
+      borderColor: theme.fill_disabled,
+    },
+    primaryDisabledRaw: {
+      opacity: 0.4,
+    },
+    ghostDisabledRaw: {
+      borderColor: `${theme.color_text_base}1A`, // alpha 10%  https://codepen.io/chriscoyier/pen/XjbzAW
+    },
+    warningDisabledRaw: {
+      opacity: 0.4,
+    },
+    defaultHighlightText: {
+      color: theme.color_text_base,
+    },
+    primaryHighlightText: {
+      color: `${theme.color_text_base_inverse}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
+    },
+    ghostHighlightText: {
+      color: theme.ghost_button_fill_tap,
+    },
+    warningHighlightText: {
+      color: `${theme.color_text_base_inverse}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
+    },
+    largeRawText: {
+      fontSize: theme.button_font_size,
+    },
+    smallRawText: {
+      fontSize: theme.button_font_size_sm,
+    },
+    defaultRawText: {
+      color: theme.color_text_base,
+    },
+    primaryRawText: {
+      color: theme.color_text_base_inverse,
+    },
+    ghostRawText: {
+      color: theme.ghost_button_color,
+    },
+    warningRawText: {
+      color: theme.color_text_base_inverse,
+    },
+    defaultDisabledRawText: {
+      color: `${theme.color_text_base}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
+    },
+    primaryDisabledRawText: {
+      color: `${theme.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
+    },
+    ghostDisabledRawText: {
+      color: `${theme.color_text_base}1A`, // alpha 10%  https://codepen.io/chriscoyier/pen/XjbzAW
+    },
+    warningDisabledRawText: {
+      color: `${theme.color_text_base_inverse}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
+    },
+    indicator: {
+      marginRight: theme.h_spacing_md,
+    },
+  });

@@ -1,27 +1,17 @@
 // tslint:disable:no-empty
 import React from 'react';
-import {
-  ActivityIndicator,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  TouchableHighlightProperties,
-  View,
-  ViewStyle,
-  StyleProp,
-} from 'react-native';
+import { ActivityIndicator, StyleProp, StyleSheet, Text, TouchableHighlight, TouchableHighlightProperties, View, ViewStyle } from 'react-native';
+import { WithTheme, WithThemeStyles } from '../style';
 import { ButtonPropsType } from './PropsType';
-import buttonStyle from './style/index';
+import buttonStyles, { ButtonStyles } from './style/index';
 
 export interface ButtonProps
   extends ButtonPropsType,
+    WithThemeStyles<ButtonStyles>,
     TouchableHighlightProperties {
-  styles?: typeof buttonStyle;
   activeStyle?: StyleProp<ViewStyle>;
   onPress?: (_?: any) => void;
 }
-
-const buttonStyles = StyleSheet.create<any>(buttonStyle);
 
 export default class Button extends React.Component<ButtonProps, any> {
   static defaultProps = {
@@ -35,8 +25,6 @@ export default class Button extends React.Component<ButtonProps, any> {
     onPressOut: (_?: any) => {},
     onShowUnderlay: (_?: any) => {},
     onHideUnderlay: (_?: any) => {},
-
-    styles: buttonStyles,
   };
 
   constructor(props: ButtonProps) {
@@ -52,25 +40,25 @@ export default class Button extends React.Component<ButtonProps, any> {
     if (this.props.onPressIn) {
       (this.props.onPressIn as any)(...arg);
     }
-  }
+  };
   onPressOut = (...arg: any[]) => {
     this.setState({ pressIn: false });
     if (this.props.onPressOut) {
       (this.props.onPressOut as any)(...arg);
     }
-  }
+  };
   onShowUnderlay = (...arg: any[]) => {
     this.setState({ touchIt: true });
     if (this.props.onShowUnderlay) {
       (this.props.onShowUnderlay as any)(...arg);
     }
-  }
+  };
   onHideUnderlay = (...arg: any[]) => {
     this.setState({ touchIt: false });
     if (this.props.onHideUnderlay) {
       (this.props.onHideUnderlay as any)(...arg);
     }
-  }
+  };
 
   render() {
     // TODO: replace `TouchableHighlight` with `TouchableWithoutFeedback` in version 1.1.0
@@ -86,62 +74,65 @@ export default class Button extends React.Component<ButtonProps, any> {
       loading,
       ...restProps
     } = this.props;
-    // tslint:disable-next-line:variable-name
-    const _styles: any = styles!;
-
-    const textStyle = [
-      _styles[`${size}RawText`],
-      _styles[`${type}RawText`],
-      disabled && _styles[`${type}DisabledRawText`],
-      this.state.pressIn && _styles[`${type}HighlightText`],
-    ];
-
-    const wrapperStyle = [
-      _styles.wrapperStyle,
-      _styles[`${size}Raw`],
-      _styles[`${type}Raw`],
-      disabled && _styles[`${type}DisabledRaw`],
-      this.state.pressIn && activeStyle && _styles[`${type}Highlight`],
-      activeStyle && this.state.touchIt && activeStyle,
-      style,
-    ];
-
-    const underlayColor = (StyleSheet.flatten(
-      activeStyle ? activeStyle : _styles[`${type}Highlight`],
-    ) as any).backgroundColor;
-
-    const indicatorColor = (StyleSheet.flatten(
-      this.state.pressIn
-        ? _styles[`${type}HighlightText`]
-        : _styles[`${type}RawText`],
-    ) as any).color;
-
     return (
-      <TouchableHighlight
-        {...restProps}
-        style={wrapperStyle}
-        disabled={disabled}
-        activeOpacity={1}
-        underlayColor={underlayColor}
-        onPress={(e?: any) => onPress && onPress(e)}
-        onPressIn={this.onPressIn}
-        onPressOut={this.onPressOut}
-        onShowUnderlay={this.onShowUnderlay}
-        onHideUnderlay={this.onHideUnderlay}
-      >
-        <View style={_styles.container}>
-          {loading ? (
-          // tslint:disable-next-line:jsx-no-multiline-js
-            <ActivityIndicator
-              style={_styles.indicator}
-              animating
-              color={indicatorColor}
-              size="small"
-            />
-          ) : null}
-          <Text style={textStyle}>{this.props.children}</Text>
-        </View>
-      </TouchableHighlight>
+      <WithTheme themeStyles={buttonStyles} styles={styles}>
+        {_styles => {
+          const textStyle = [
+            _styles[`${size}RawText`],
+            _styles[`${type}RawText`],
+            disabled && _styles[`${type}DisabledRawText`],
+            this.state.pressIn && _styles[`${type}HighlightText`],
+          ];
+
+          const wrapperStyle = [
+            _styles.wrapperStyle,
+            _styles[`${size}Raw`],
+            _styles[`${type}Raw`],
+            disabled && _styles[`${type}DisabledRaw`],
+            this.state.pressIn && activeStyle && _styles[`${type}Highlight`],
+            activeStyle && this.state.touchIt && activeStyle,
+            style,
+          ];
+
+          const underlayColor = (StyleSheet.flatten(
+            activeStyle ? activeStyle : _styles[`${type}Highlight`],
+          ) as any).backgroundColor;
+
+          const indicatorColor = (StyleSheet.flatten(
+            this.state.pressIn
+              ? _styles[`${type}HighlightText`]
+              : _styles[`${type}RawText`],
+          ) as any).color;
+
+          return (
+            <TouchableHighlight
+              {...restProps}
+              style={wrapperStyle}
+              disabled={disabled}
+              activeOpacity={1}
+              underlayColor={underlayColor}
+              onPress={(e?: any) => onPress && onPress(e)}
+              onPressIn={this.onPressIn}
+              onPressOut={this.onPressOut}
+              onShowUnderlay={this.onShowUnderlay}
+              onHideUnderlay={this.onHideUnderlay}
+            >
+              <View style={_styles.container}>
+                {loading ? (
+                  // tslint:disable-next-line:jsx-no-multiline-js
+                  <ActivityIndicator
+                    style={_styles.indicator}
+                    animating
+                    color={indicatorColor}
+                    size="small"
+                  />
+                ) : null}
+                <Text style={textStyle}>{this.props.children}</Text>
+              </View>
+            </TouchableHighlight>
+          );
+        }}
+      </WithTheme>
     );
   }
 }
