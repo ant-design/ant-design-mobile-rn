@@ -1,52 +1,51 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import variables from '../../style/themes/default';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Theme } from '../../style';
 
 export interface AccordionStyle {
   container: ViewStyle;
   header: ViewStyle;
-  arrow: ImageStyle;
+  arrow: TextStyle;
   headerWrap: ViewStyle;
   headerText: TextStyle;
   content: ViewStyle;
   contentText: TextStyle;
 }
 
-// wait for https://github.com/DefinitelyTyped/DefinitelyTyped/pull/18278
-// them below any and change to IAccordionStyle
-export default StyleSheet.create<any>({
-  container: {
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: variables.border_color_base,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingLeft: variables.h_spacing_lg,
-    paddingRight: 2 * variables.h_spacing_lg,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: variables.border_color_base,
-  },
-  arrow: {
-    color: variables.color_text_paragraph,
-  },
-  headerWrap: {
-    flex: 1,
-    height: variables.list_item_height,
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  headerText: {
-    color: variables.color_text_base,
-    fontSize: variables.font_size_heading,
-  },
-  content: {
-    paddingVertical: variables.v_spacing_md,
-    paddingHorizontal: variables.h_spacing_md,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: variables.border_color_base,
-  },
-  contentText: {
-    fontSize: variables.font_size_subhead,
-    color: variables.color_text_paragraph,
-  },
-});
+export default (theme: Theme) =>
+  StyleSheet.create<AccordionStyle>({
+    container: {
+      borderTopWidth: StyleSheet.hairlineWidth,
+      borderTopColor: theme.border_color_base,
+    },
+    header: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingLeft: theme.h_spacing_lg,
+      paddingRight: 2 * theme.h_spacing_lg,
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderBottomColor: theme.border_color_base,
+    },
+    arrow: {
+      color: theme.color_text_paragraph,
+    },
+    headerWrap: {
+      flex: 1,
+      height: theme.list_item_height,
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
+    headerText: {
+      color: theme.color_text_base,
+      fontSize: theme.font_size_heading,
+    },
+    content: {
+      paddingVertical: theme.v_spacing_md,
+      paddingHorizontal: theme.h_spacing_md,
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderBottomColor: theme.border_color_base,
+    },
+    contentText: {
+      fontSize: theme.font_size_subhead,
+      color: theme.color_text_paragraph,
+    },
+  });
