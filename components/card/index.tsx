@@ -1,23 +1,20 @@
 import React from 'react';
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleProp, View, ViewStyle } from 'react-native';
+import { WithTheme, WithThemeStyles } from '../style';
 import CardBody from './CardBody';
 import CardFooter from './CardFooter';
 import CardHeader from './CardHeader';
-import { CardPropsType } from './PropsType';
-import CardStyle, { ICardStyle } from './style/index';
+import CardStyles, { CardStyle } from './style/index';
 
-export interface CardNativeProps extends CardPropsType {
-  styles?: ICardStyle;
+export interface CardNativeProps extends WithThemeStyles<CardStyle> {
   style?: StyleProp<ViewStyle>;
+  full?: boolean;
 }
-
-const CardStyles = StyleSheet.create<any>(CardStyle);
 
 export default class Card extends React.Component<CardNativeProps, any> {
   static defaultProps = {
     style: {},
     full: false,
-    styles: CardStyles,
   };
 
   static Header = CardHeader;
@@ -26,14 +23,20 @@ export default class Card extends React.Component<CardNativeProps, any> {
 
   render() {
     const { style, styles, full, children, ...restProps } = this.props;
-    const cardStyle = full ? styles!.full : {};
-    const childDom = React.Children.map(children, child =>
-      React.cloneElement(child as React.ReactElement<any>, { styles }),
-    );
     return (
-      <View style={[styles!.card, cardStyle, style]} {...restProps}>
-        {childDom}
-      </View>
+      <WithTheme themeStyles={CardStyles} styles={styles}>
+        {(s) => {
+          const cardStyle = full ? s.full : {};
+          const childDom = React.Children.map(children, child =>
+            React.cloneElement(child as React.ReactElement<any>, { s }),
+          );
+          return (
+            <View style={[s.card, cardStyle, style]} {...restProps}>
+              {childDom}
+            </View>
+          );
+        }}
+      </WithTheme>
     );
   }
 }
