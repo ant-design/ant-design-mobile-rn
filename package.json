@@ -42,7 +42,6 @@
     "react-native-swipeout": "^2.3.6",
     "rmc-cascader": "~5.0.0",
     "rmc-date-picker": "^6.0.8",
-    "rmc-input-number": "^1.0.0",
     "rmc-picker": "~5.0.0",
     "utility-types": "^2.1.0"
   },

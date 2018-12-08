@@ -1,3 +1,5 @@
+import { StyleProp, TextStyle, ViewStyle } from "react-native";
+
 export interface StepPropsType {
   min?: number;
   max?: number;
@@ -8,8 +10,8 @@ export interface StepPropsType {
   value?: number;
   defaultValue?: number;
   onChange?: (value: any) => void;
-  upStyle?: {};
-  downStyle?: {};
-  inputStyle?: {};
+  upStyle?: StyleProp<ViewStyle>;
+  downStyle?: StyleProp<ViewStyle>;
+  inputStyle?: StyleProp<TextStyle>;
   name?: string;
 }
