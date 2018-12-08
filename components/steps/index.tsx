@@ -3,7 +3,7 @@ import React from 'react';
 import { LayoutChangeEvent, View } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
 import StepsItem from './StepsItem';
-import { StepsStyle } from './style/index';
+import StepsStyles, { StepsStyle } from './style/index';
 
 export interface StepsProps extends WithThemeStyles<StepsStyle> {
   direction?: 'vertical' | 'horizontal';
@@ -37,7 +37,7 @@ export default class Steps extends React.Component<StepsProps, any> {
     const children = this.props.children;
     const direction = this.props.direction === 'horizontal' ? 'row' : 'column';
     return (
-      <WithTheme styles={this.props.styles}>
+      <WithTheme styles={this.props.styles} themeStyles={StepsStyles}>
         {styles => (
           <View
             style={{ flexDirection: direction }}
