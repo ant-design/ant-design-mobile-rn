@@ -1,11 +1,19 @@
 import React from 'react';
 import { Slider, View } from 'react-native';
-import { SliderPropsType } from './PropsType';
-import SliderStyle from './style/index';
+import { WithTheme } from '../style';
 
-export interface SliderProps extends SliderPropsType {
+export interface SliderProps {
   maximumTrackTintColor?: string;
   minimumTrackTintColor?: string;
+  onChange?: (value?: number) => void;
+  onAfterChange?: (value?: number) => void;
+  defaultValue?: number;
+  tipFormatter?: (value?: string) => React.ReactNode;
+  value?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  disabled?: boolean;
 }
 
 export default class SliderAntm extends React.Component<SliderProps, any> {
@@ -14,8 +22,6 @@ export default class SliderAntm extends React.Component<SliderProps, any> {
     onAfterChange() {},
     defaultValue: 0,
     disabled: false,
-    maximumTrackTintColor: SliderStyle.maximum.color,
-    minimumTrackTintColor: SliderStyle.minimum.color,
   };
 
   render() {
@@ -32,19 +38,27 @@ export default class SliderAntm extends React.Component<SliderProps, any> {
       minimumTrackTintColor,
     } = this.props;
     return (
-      <View>
-        <Slider
-          value={defaultValue || value}
-          minimumValue={min}
-          maximumValue={max}
-          step={step}
-          minimumTrackTintColor={minimumTrackTintColor}
-          maximumTrackTintColor={maximumTrackTintColor}
-          disabled={disabled}
-          onValueChange={onChange}
-          onSlidingComplete={onAfterChange}
-        />
-      </View>
+      <WithTheme>
+        {(_, theme) => (
+          <View>
+            <Slider
+              value={defaultValue || value}
+              minimumValue={min}
+              maximumValue={max}
+              step={step}
+              minimumTrackTintColor={
+                minimumTrackTintColor || theme.brand_primary
+              }
+              maximumTrackTintColor={
+                maximumTrackTintColor || theme.border_color_base
+              }
+              disabled={disabled}
+              onValueChange={onChange}
+              onSlidingComplete={onAfterChange}
+            />
+          </View>
+        )}
+      </WithTheme>
     );
   }
 }
