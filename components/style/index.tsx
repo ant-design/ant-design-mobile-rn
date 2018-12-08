@@ -2,7 +2,7 @@ import deepmerge from 'deepmerge';
 import React, { useContext } from 'react';
 import defaultTheme from './themes/default';
 export const ThemeContext = React.createContext(defaultTheme);
-export type Theme = typeof defaultTheme;
+export type Theme = typeof defaultTheme & { [key: string]: any };
 export type PartialTheme = Partial<Theme>;
 export interface ThemeProviderProps {
   value?: PartialTheme;

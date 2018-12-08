@@ -1,11 +1,10 @@
-/* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
-import { NativeSyntheticEvent, StyleSheet, Text, TextInput, TextInputChangeEventData, TextInputProperties, TouchableWithoutFeedback, View } from 'react-native';
+import { NativeSyntheticEvent, Text, TextInput, TextInputChangeEventData, TextInputProperties, TouchableWithoutFeedback, View } from 'react-native';
 import { Omit } from 'utility-types';
 import Icon from '../icon';
-import variables from '../style/themes/default';
+import { Theme, WithTheme, WithThemeStyles } from '../style';
 import { TextAreaItemPropsType } from './PropsType';
-import TextAreaItemStyle, { ITextareaItemStyle } from './style/index';
+import TextareaItemStyles, { TextareaItemStyle } from './style/index';
 export type TextInputProps = Omit<
   TextInputProperties,
   'onChange' | 'onFocus' | 'onBlur'
@@ -17,18 +16,16 @@ function fixControlledValue(value?: string) {
   return value;
 }
 
-export interface TextareaItemNativeProps
+export interface TextareaItemProps
   extends TextAreaItemPropsType,
-    TextInputProps {
+    TextInputProps,
+    WithThemeStyles<TextareaItemStyle> {
   last?: boolean;
   onContentSizeChange?: (e: any) => void;
-  styles?: ITextareaItemStyle;
 }
 
-const TextAreaItemStyles = StyleSheet.create<any>(TextAreaItemStyle);
-
 export default class TextAreaItem extends React.Component<
-  TextareaItemNativeProps,
+  TextareaItemProps,
   any
 > {
   static defaultProps = {
@@ -44,17 +41,12 @@ export default class TextAreaItem extends React.Component<
     keyboardType: 'default',
     autoHeight: false,
     last: false,
-    styles: TextAreaItemStyles,
   };
 
-  constructor(props: TextareaItemNativeProps) {
+  constructor(props: TextareaItemProps) {
     super(props);
     this.state = {
       inputCount: 0,
-      height:
-        props.rows !== undefined && props.rows > 1
-          ? 6 * props.rows * 4
-          : variables.list_item_height,
     };
   }
 
@@ -71,7 +63,7 @@ export default class TextAreaItem extends React.Component<
     }
   };
 
-  onContentSizeChange = (event: {
+  onContentSizeChange = (theme: Theme) => (event: {
     nativeEvent: { contentSize: { width: number; height: number } };
   }) => {
     let height;
@@ -82,7 +74,7 @@ export default class TextAreaItem extends React.Component<
     } else if (rows > 1) {
       height = 6 * rows * 4;
     } else {
-      height = variables.list_item_height;
+      height = theme.list_item_height;
     }
 
     this.setState({
@@ -93,7 +85,16 @@ export default class TextAreaItem extends React.Component<
       onContentSizeChange(event);
     }
   };
+  getHeight = (theme: Theme) => {
+    const { rows } = this.props;
 
+    if (this.state.height) {
+      return this.state.height;
+    }
+    return rows !== undefined && rows > 1
+      ? 6 * rows * 4
+      : theme.list_item_height;
+  };
   render() {
     const {
       rows,
@@ -110,69 +111,75 @@ export default class TextAreaItem extends React.Component<
     const { value, defaultValue } = restProps;
     const { inputCount } = this.state;
 
-    let valueProps;
-    if ('value' in this.props) {
-      valueProps = {
-        value: fixControlledValue(value),
-      };
-    } else {
-      valueProps = {
-        defaultValue,
-      };
-    }
-
-    const containerStyle = {
-      borderBottomWidth: last ? 0 : variables.border_width_sm,
-    };
-
-    const textareaStyle = {
-      color: error ? '#f50' : variables.color_text_base,
-      paddingRight: error ? 2 * variables.h_spacing_lg : 0,
-    };
-
-    const maxLength = count! > 0 ? count : undefined;
-
     return (
-      <View
-        style={[styles!.container, containerStyle, { position: 'relative' }]}
-      >
-        <TextInput
-          clearButtonMode={clear ? 'while-editing' : 'never'}
-          underlineColorAndroid="transparent"
-          style={[
-            styles!.input,
-            textareaStyle,
-            { height: Math.max(45, this.state.height) },
-            style,
-          ]}
-          {...restProps}
-          {...valueProps}
-          onChange={event => this.onChange(event)}
-          onContentSizeChange={this.onContentSizeChange}
-          multiline={rows! > 1 || autoHeight}
-          numberOfLines={rows}
-          maxLength={maxLength}
-        />
-        {error ? (
-          <TouchableWithoutFeedback onPress={onErrorClick}>
-            <View style={[styles!.errorIcon]}>
-              <Icon
-                name="info-circle"
-                style={{
-                  color: variables.brand_error,
-                }}
+      <WithTheme themeStyles={TextareaItemStyles} styles={styles}>
+        {(s, theme) => {
+          let valueProps;
+          if ('value' in this.props) {
+            valueProps = {
+              value: fixControlledValue(value),
+            };
+          } else {
+            valueProps = {
+              defaultValue,
+            };
+          }
+
+          const containerStyle = {
+            borderBottomWidth: last ? 0 : theme.border_width_sm,
+          };
+
+          const textareaStyle = {
+            color: error ? '#f50' : theme.color_text_base,
+            paddingRight: error ? 2 * theme.h_spacing_lg : 0,
+          };
+
+          const maxLength = count! > 0 ? count : undefined;
+
+          return (
+            <View
+              style={[s.container, containerStyle, { position: 'relative' }]}
+            >
+              <TextInput
+                clearButtonMode={clear ? 'while-editing' : 'never'}
+                underlineColorAndroid="transparent"
+                style={[
+                  s.input,
+                  textareaStyle,
+                  { height: Math.max(45, this.getHeight(theme)) },
+                  style,
+                ]}
+                {...restProps}
+                {...valueProps}
+                onChange={event => this.onChange(event)}
+                onContentSizeChange={this.onContentSizeChange(theme)}
+                multiline={rows! > 1 || autoHeight}
+                numberOfLines={rows}
+                maxLength={maxLength}
               />
+              {error ? (
+                <TouchableWithoutFeedback onPress={onErrorClick}>
+                  <View style={[s.errorIcon]}>
+                    <Icon
+                      name="info-circle"
+                      style={{
+                        color: theme.brand_error,
+                      }}
+                    />
+                  </View>
+                </TouchableWithoutFeedback>
+              ) : null}
+              {rows! > 1 && count! > 0 ? (
+                <View style={[s.count]}>
+                  <Text>
+                    {inputCount} / {count}
+                  </Text>
+                </View>
+              ) : null}
             </View>
-          </TouchableWithoutFeedback>
-        ) : null}
-        {rows! > 1 && count! > 0 ? (
-          <View style={[styles!.count]}>
-            <Text>
-              {inputCount} / {count}
-            </Text>
-          </View>
-        ) : null}
-      </View>
+          );
+        }}
+      </WithTheme>
     );
   }
 }
