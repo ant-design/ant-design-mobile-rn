@@ -1,36 +1,33 @@
 import React from 'react';
-import { ImageStyle, StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle, ViewStyle } from 'react-native';
 import List from '../list/index';
+import { WithTheme, WithThemeStyles } from '../style';
 import Checkbox from './Checkbox';
 import { CheckboxItemPropsType } from './PropsType';
-import CheckboxItemStyle, { ICheckboxStyle } from './style/index';
+import CheckboxItemStyles, { CheckboxStyle } from './style/index';
 
 const ListItem = List.Item;
-const refCheckbox = 'checkbox';
 
-export interface ICheckboxItemNativeProps extends CheckboxItemPropsType {
-  styles?: ICheckboxStyle;
-  checkboxStyle?: StyleProp<ImageStyle>;
+export interface CheckboxItemProps
+  extends CheckboxItemPropsType,
+    WithThemeStyles<CheckboxStyle> {
+  checkboxStyle?: StyleProp<TextStyle>;
   style?: StyleProp<ViewStyle>;
 }
 
-const CheckboxItemStyles = StyleSheet.create<any>(CheckboxItemStyle);
-
 export default class CheckboxItem extends React.Component<
-  ICheckboxItemNativeProps,
+  CheckboxItemProps,
   any
 > {
-  static defaultProps = {
-    styles: CheckboxItemStyles,
-  };
-
+  checkbox: Checkbox | null;
   handleClick = () => {
-    const checkBox: Checkbox = this.refs[refCheckbox] as Checkbox;
-    checkBox.handleClick();
+    if (this.checkbox) {
+      this.checkbox.handleClick();
+    }
     if (this.props.onPress) {
       this.props.onPress();
     }
-  }
+  };
 
   render() {
     const {
@@ -43,24 +40,27 @@ export default class CheckboxItem extends React.Component<
       extra,
       onChange,
     } = this.props;
-    const styles = this.props.styles!;
 
-    const thumbEl = (
-      <Checkbox
-        ref={refCheckbox}
-        style={[styles.checkboxItemCheckbox, checkboxStyle]}
-        defaultChecked={defaultChecked}
-        checked={checked}
-        onChange={onChange}
-        disabled={disabled}
-      />
+    const thumbNode = (
+      <WithTheme styles={this.props.styles} themeStyles={CheckboxItemStyles}>
+        {styles => (
+          <Checkbox
+            ref={ref => (this.checkbox = ref)}
+            style={[styles.checkboxItemCheckbox, checkboxStyle]}
+            defaultChecked={defaultChecked}
+            checked={checked}
+            onChange={onChange}
+            disabled={disabled}
+          />
+        )}
+      </WithTheme>
     );
     return (
       <ListItem
         style={style}
         onPress={disabled ? undefined : this.handleClick}
         extra={extra}
-        thumb={thumbEl}
+        thumb={thumbNode}
       >
         {children}
       </ListItem>

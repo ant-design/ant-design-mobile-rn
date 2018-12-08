@@ -1,37 +1,22 @@
 import React from 'react';
-import {
-  StyleProp,
-  StyleSheet,
-  Text,
-  TouchableWithoutFeedback,
-  View,
-  TextStyle,
-} from 'react-native';
-
-import { CheckboxPropsType } from './PropsType';
-import CheckboxStyle, { ICheckboxStyle } from './style/index';
+import { StyleProp, Text, TextStyle, TouchableWithoutFeedback, View } from 'react-native';
 import Icon from '../icon';
+import { WithTheme, WithThemeStyles } from '../style';
 import variables from '../style/themes/default';
+import { CheckboxPropsType } from './PropsType';
+import CheckboxStyles, { CheckboxStyle } from './style/index';
 
-export interface ICheckboxNativeProps extends CheckboxPropsType {
-  styles?: ICheckboxStyle;
+export interface CheckboxProps
+  extends CheckboxPropsType,
+    WithThemeStyles<CheckboxStyle> {
   style?: StyleProp<TextStyle>;
 }
 
-const CheckboxStyles = StyleSheet.create<any>(CheckboxStyle);
-
-export default class Checkbox extends React.Component<
-  ICheckboxNativeProps,
-  any
-> {
+export default class Checkbox extends React.Component<CheckboxProps, any> {
   static CheckboxItem: any;
   static AgreeItem: any;
 
-  static defaultProps = {
-    styles: CheckboxStyles,
-  };
-
-  constructor(props: CheckboxPropsType, context: any) {
+  constructor(props: CheckboxProps, context: any) {
     super(props, context);
 
     this.state = {
@@ -39,7 +24,7 @@ export default class Checkbox extends React.Component<
     };
   }
 
-  componentWillReceiveProps(nextProps: CheckboxPropsType): void {
+  componentWillReceiveProps(nextProps: CheckboxProps): void {
     if (typeof nextProps.checked === 'boolean') {
       this.setState({
         checked: !!nextProps.checked,
@@ -63,43 +48,49 @@ export default class Checkbox extends React.Component<
   };
 
   render(): JSX.Element {
-    const { style, disabled, children, styles } = this.props;
+    const { style, disabled, children } = this.props;
     const checked = this.state.checked;
-    let icon;
-    if (checked) {
-      icon = disabled ? (
-        <Icon name="check-square" style={[styles!.icon, style]} />
-      ) : (
-        <Icon
-          name="check-square"
-          color={variables.brand_primary}
-          style={[styles!.icon, style]}
-        />
-      );
-    } else {
-      icon = disabled ? (
-        <Icon name="border" style={[styles!.icon, style]} />
-      ) : (
-        <Icon
-          name="border"
-          color={variables.brand_primary}
-          style={[styles!.icon, style]}
-        />
-      );
-    }
-
     return (
-      <TouchableWithoutFeedback onPress={this.handleClick}>
-        <View style={[styles!.wrapper]}>
-          {icon}
-          {typeof children === 'string' ? (
-            // tslint:disable-next-line:jsx-no-multiline-js
-            <Text style={styles!.iconRight}>{this.props.children}</Text>
-          ) : (
-            children
-          )}
-        </View>
-      </TouchableWithoutFeedback>
+      <WithTheme themeStyles={CheckboxStyles} styles={this.props.styles}>
+        {styles => {
+          let icon;
+          if (checked) {
+            icon = disabled ? (
+              <Icon name="check-square" style={[styles.icon, style]} />
+            ) : (
+              <Icon
+                name="check-square"
+                color={variables.brand_primary}
+                style={[styles.icon, style]}
+              />
+            );
+          } else {
+            icon = disabled ? (
+              <Icon name="border" style={[styles.icon, style]} />
+            ) : (
+              <Icon
+                name="border"
+                color={variables.brand_primary}
+                style={[styles.icon, style]}
+              />
+            );
+          }
+
+          return (
+            <TouchableWithoutFeedback onPress={this.handleClick}>
+              <View style={[styles.wrapper]}>
+                {icon}
+                {typeof children === 'string' ? (
+                  // tslint:disable-next-line:jsx-no-multiline-js
+                  <Text style={styles.iconRight}>{this.props.children}</Text>
+                ) : (
+                  children
+                )}
+              </View>
+            </TouchableWithoutFeedback>
+          );
+        }}
+      </WithTheme>
     );
   }
 }
