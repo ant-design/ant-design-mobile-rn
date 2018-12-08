@@ -3,7 +3,6 @@ import { SegmentedControlIOS, StyleProp, ViewStyle } from 'react-native';
 import { SegmentedControlPropsType } from './PropsType';
 
 export interface SegmentedControlProps extends SegmentedControlPropsType {
-  styles?: any;
   style?: StyleProp<ViewStyle>;
 }
 
