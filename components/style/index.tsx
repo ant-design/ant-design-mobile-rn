@@ -31,7 +31,7 @@ export interface WithThemeProps<T, S> {
     // fix: styles[`${size}RawText`]
     styles: T & { [key: string]: any },
     theme: Theme,
-  ) => React.ReactElement<any>;
+  ) => React.ReactNode;
 }
 
 /**
