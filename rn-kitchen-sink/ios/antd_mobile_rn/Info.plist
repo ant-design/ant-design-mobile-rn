@@ -38,7 +38,11 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Access Photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access Photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>antfill.ttf</string>
