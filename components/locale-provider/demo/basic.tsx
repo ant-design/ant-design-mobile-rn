@@ -1,11 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import {
-  Pagination, LocaleProvider, List, DatePicker, WhiteSpace, WingBlank,
-  Picker, SearchBar,
-} from '../../';
-import esES from '../es_ES';
+import { DatePicker, List, LocaleProvider, Pagination, Picker, SearchBar, WhiteSpace, WingBlank } from '../../';
 import enUS from '../en_US';
+import esES from '../es_ES';
 import ruRU from '../ru_RU';
 import zhCN from '../zh_CN';
 
@@ -108,7 +105,7 @@ export default class LocaleProviderExample extends React.Component<any, any> {
           <List.Item arrow="horizontal">Choose language</List.Item>
         </Picker>
         <WhiteSpace />
-        <LocaleProvider value={currentLocale}>
+        <LocaleProvider locale={currentLocale}>
           <Page />
         </LocaleProvider>
       </WingBlank>

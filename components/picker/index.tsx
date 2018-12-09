@@ -66,10 +66,7 @@ export default class Picker extends React.Component<PickerProps, any> {
 
   getPickerCol = () => {
     const { data, pickerPrefixCls, itemStyle, indicatorStyle } = this.props;
-    if (__DEV__) {
-      // tslint:disable-next-line:no-console
-      console.log(data);
-    }
+
     return (data as PickerData[][]).map((col, index) => {
       return (
         <RMCPicker

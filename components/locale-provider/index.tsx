@@ -1,35 +1,39 @@
-import en_US from './en_US';
-import React, { useContext } from 'react';
-import deepmerge from 'deepmerge';
-export const LocaleContext = React.createContext(en_US);
-export interface Locale {
-  DatePicker: any;
-  DatePickerView: any;
-  InputItem: any;
-  Modal: any;
-  Pagination: any;
-  Picker: any;
-  SearchBar: any;
-}
+import PropTypes from 'prop-types';
+import React from 'react';
 
-export type LocaleValue = Locale & { locale: string };
 export interface LocaleProviderProps {
-  value?: LocaleValue;
-  children?: React.ReactNode;
+  locale: {
+    Pagination?: object;
+    DatePicker?: object;
+    DatePickerView?: object;
+    InputItem?: object;
+    Modal?: object;
+  };
+  children?: React.ReactElement<any>;
 }
 
-export const LocaleProvider = (props: LocaleProviderProps = {}) => {
-  const locale = deepmerge(en_US, props.value || {});
-  return (
-    <LocaleContext.Provider value={locale}>
-      {props.children}
-    </LocaleContext.Provider>
-  );
-};
+export default class LocaleProvider extends React.Component<
+  LocaleProviderProps,
+  any
+> {
+  static propTypes = {
+    locale: PropTypes.object,
+  };
 
-export const useLocale = (locale: Partial<Locale> = {}) => {
-  const currentLocale = useContext(LocaleContext);
-  return deepmerge(currentLocale, locale);
-};
+  static childContextTypes = {
+    antLocale: PropTypes.object,
+  };
 
-export default LocaleProvider;
+  getChildContext() {
+    return {
+      antLocale: {
+        ...this.props.locale,
+        exist: true,
+      },
+    };
+  }
+
+  render() {
+    return React.Children.only(this.props.children);
+  }
+}
