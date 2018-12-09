@@ -1,18 +1,16 @@
 import React from 'react';
-import {
-  Modal,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Modal, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import varibles from '../style/themes/default';
 import CameraRollPicker from './CameraRollPicker';
 
-export interface ImageRollProps {
+export interface ImageRollProps extends ImageRollTexts {
   onCancel: () => void;
   onSelected: (imgObj: {}) => void;
+}
+
+export interface ImageRollTexts {
+  title?: React.ReactNode;
+  cancelText?: React.ReactNode;
 }
 
 const styles = StyleSheet.create({
@@ -42,12 +40,17 @@ const styles = StyleSheet.create({
 });
 
 export default class ImageRoll extends React.Component<ImageRollProps, any> {
+  static defaultProps = {
+    title: 'Photos',
+    cancelText: 'Cancel',
+  };
   onSelected = (images: any[], _: any) => {
     this.props.onSelected(images[0]);
     this.props.onCancel();
-  }
-
+  };
   render() {
+    const { title, cancelText } = this.props;
+
     return (
       <Modal
         animationType="slide"
@@ -60,9 +63,9 @@ export default class ImageRoll extends React.Component<ImageRollProps, any> {
           <StatusBar barStyle="light-content" />
           <View style={styles.statusBarBg} />
           <View style={[styles.naviBar]}>
-            <Text style={[styles.barTitle]}>Photos</Text>
+            <Text style={[styles.barTitle]}>{title}</Text>
             <TouchableOpacity onPress={this.props.onCancel}>
-              <Text style={styles.rightBtn}>Cancel</Text>
+              <Text style={styles.rightBtn}>{cancelText}</Text>
             </TouchableOpacity>
           </View>
           <CameraRollPicker

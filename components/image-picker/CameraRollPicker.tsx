@@ -3,17 +3,37 @@
  * Will refactor it later
  */
 import React, { Component } from 'react';
-import {
-  CameraRoll,
-  Platform,
-  StyleSheet,
-  View,
-  Text,
-  ListView,
-  ActivityIndicator,
-  GetPhotosReturnType,
-} from 'react-native';
+import { ActivityIndicator, CameraRoll, GetPhotosReturnType, ListView, Platform, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import ImageItem from './ImageItem';
+
+export interface CameraRollPickerStyle {
+  wrapper: ViewStyle;
+  loader: ViewStyle;
+  row: ViewStyle;
+  marker: ViewStyle;
+  spinner: ViewStyle;
+}
+const styles = StyleSheet.create<CameraRollPickerStyle>({
+  wrapper: {
+    flexGrow: 1,
+  },
+  loader: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  row: {
+    flexDirection: 'row',
+    flex: 1,
+  },
+  marker: {
+    position: 'absolute',
+    top: 5,
+    backgroundColor: 'transparent',
+  },
+  spinner: {},
+});
+
 export type CameraRollPickerProps = {
   scrollRenderAheadDistance?: number;
   initialListSize?: number;
@@ -290,24 +310,5 @@ class CameraRollPicker extends Component<
       .indexOf(value);
   }
 }
-const styles = StyleSheet.create<any>({
-  wrapper: {
-    flexGrow: 1,
-  },
-  loader: {
-    flexGrow: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  row: {
-    flexDirection: 'row',
-    flex: 1,
-  },
-  marker: {
-    position: 'absolute',
-    top: 5,
-    backgroundColor: 'transparent',
-  },
-});
 
 export default CameraRollPicker;
