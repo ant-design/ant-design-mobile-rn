@@ -17,7 +17,7 @@ export type PortalProps = {
  * ## Usage
  * ```js
  * import * as React from 'react';
- * import { Portal, Text } from 'react-native-paper';
+ * import { Portal, Text } from '@ant-design/react-native';
  *
  * export default class MyComponent extends React.Component {
  *   render() {

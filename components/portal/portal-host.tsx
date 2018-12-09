@@ -19,8 +19,8 @@ export type PortalMethods = {
 
 export const PortalContext = React.createContext<PortalMethods>(null as any);
 // events
-const addType = 'RN_PREFIX_ADDTOPVIEW';
-const removeType = 'RN_PREFIX_REMOVETOPVIEW';
+const addType = 'ANT_DESIGN_MOBILE_RN_ADD_PORTAL';
+const removeType = 'ANT_DESIGN_MOBILE_RN_REMOVE_PORTAL';
 // fix react native web does not support DeviceEventEmitter
 const TopViewEventEmitter = DeviceEventEmitter || new NativeEventEmitter();
 
@@ -33,7 +33,9 @@ class PortalGuard {
   };
   remove = (key: number) => TopViewEventEmitter.emit(removeType, key);
 }
-
+/**
+ * portal
+ */
 export const portal = new PortalGuard();
 /**
  * Portal host renders all of its children `Portal` elements.
@@ -44,7 +46,7 @@ export const portal = new PortalGuard();
  * ```js
  * import * as React from 'react';
  * import { Text } from 'react-native';
- * import { Portal } from 'react-native-paper';
+ * import { Portal } from '@ant-design/react-native';
  *
  * export default class MyComponent extends React.Component {
  *   render() {
