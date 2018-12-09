@@ -1,13 +1,15 @@
 import React from 'react';
-import { Animated, Dimensions, LayoutChangeEvent, Platform, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Animated, Dimensions, LayoutChangeEvent, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Theme, WithTheme, WithThemeStyles } from '../style';
 import { TabBarPropsType, TabData } from './PropsType';
-import defaultStyles from './Styles';
+import TabBarStyles, { TabBarStyle } from './style';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
-export interface PropsType extends TabBarPropsType {
+export interface PropsType
+  extends TabBarPropsType,
+    WithThemeStyles<TabBarStyle> {
   scrollValue?: any;
-  styles?: typeof defaultStyles;
   tabStyle?: ViewStyle;
   tabsContainerStyle?: ViewStyle;
   /** default: false */
@@ -34,7 +36,6 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     tabBarInactiveTextColor: '',
     tabBarTextStyle: {},
     dynamicTabUnderlineWidth: false,
-    styles: defaultStyles,
   };
 
   _tabsMeasurements: any[] = [];
@@ -151,19 +152,25 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     goToTab && goToTab(index);
   };
 
-  renderTab(tab: TabData, index: number, width: number, onLayoutHandler: any) {
+  renderTab = (
+    tab: TabData,
+    index: number,
+    width: number,
+    onLayoutHandler: any,
+    styles: ReturnType<typeof TabBarStyles>,
+    theme: Theme,
+  ) => {
     const {
       tabBarActiveTextColor: activeTextColor,
       tabBarInactiveTextColor: inactiveTextColor,
       tabBarTextStyle: textStyle,
       activeTab,
       renderTab,
-      styles = defaultStyles,
     } = this.props;
     const isTabActive = activeTab === index;
     const textColor = isTabActive
-      ? activeTextColor || styles.TabBar.activeTextColor
-      : inactiveTextColor || styles.TabBar.inactiveTextColor;
+      ? activeTextColor || theme.activeTextColor
+      : inactiveTextColor || theme.inactiveTextColor;
 
     return (
       <TouchableOpacity
@@ -176,7 +183,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
       >
         <View
           style={{
-            ...styles.TabBar.tab,
+            ...StyleSheet.flatten(styles.tab),
             ...this.props.tabStyle,
             width,
           }}
@@ -187,7 +194,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
             <Text
               style={{
                 color: textColor,
-                ...styles.TabBar.textStyle,
+                ...StyleSheet.flatten(styles.textStyle),
                 ...textStyle,
               }}
             >
@@ -197,7 +204,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
         </View>
       </TouchableOpacity>
     );
-  }
+  };
 
   measureTab = (page: number, event: any) => {
     const { x, width, height } = event.nativeEvent.layout;
@@ -211,82 +218,95 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
       page = 0,
       tabBarUnderlineStyle,
       tabBarBackgroundColor,
-      styles = defaultStyles,
       tabsContainerStyle,
       renderUnderline,
       keyboardShouldPersistTaps,
     } = this.props;
-
-    const tabUnderlineStyle = {
-      position: 'absolute',
-      bottom: 0,
-      ...styles.TabBar.underline,
-      ...tabBarUnderlineStyle,
-    };
-
-    const dynamicTabUnderline = {
-      left: this.state._leftTabUnderline,
-      width: this.state._widthTabUnderline,
-    };
-
-    const tabWidth = this.state._containerWidth / Math.min(page, tabs.length);
-    const underlineProps = {
-      style: {
-        ...tabUnderlineStyle,
-        ...dynamicTabUnderline,
-      },
-    };
-
     return (
-      <View
-        style={{
-          ...styles.TabBar.container,
-          backgroundColor: tabBarBackgroundColor,
+      <WithTheme styles={this.props.styles} themeStyles={TabBarStyles}>
+        {(styles, theme) => {
+          const tabUnderlineStyle = {
+            position: 'absolute',
+            bottom: 0,
+            ...StyleSheet.flatten(styles.underline),
+            ...tabBarUnderlineStyle,
+          };
+
+          const dynamicTabUnderline = {
+            left: this.state._leftTabUnderline,
+            width: this.state._widthTabUnderline,
+          };
+
+          const tabWidth =
+            this.state._containerWidth / Math.min(page, tabs.length);
+          const underlineProps = {
+            style: {
+              ...tabUnderlineStyle,
+              ...dynamicTabUnderline,
+            },
+          };
+
+          return (
+            <View
+              style={[
+                styles.container,
+
+                {
+                  backgroundColor: tabBarBackgroundColor,
+                },
+              ]}
+              onLayout={this.onContainerLayout}
+            >
+              <ScrollView
+                ref={(scrollView: any) => {
+                  this._scrollView = scrollView;
+                }}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
+                directionalLockEnabled
+                bounces={false}
+                scrollsToTop={false}
+                scrollEnabled={tabs.length > page}
+                keyboardShouldPersistTaps={keyboardShouldPersistTaps}
+                renderToHardwareTextureAndroid
+              >
+                <View
+                  style={[
+                    styles.tabs,
+
+                    {
+                      ...tabsContainerStyle,
+                      backgroundColor: tabBarBackgroundColor,
+                    },
+                  ]}
+                  onLayout={this.onTabContainerLayout}
+                >
+                  {tabs.map((name, index) => {
+                    let tab = { title: name } as TabData;
+                    if (tabs.length - 1 >= index) {
+                      tab = tabs[index];
+                    }
+                    return this.renderTab(
+                      tab,
+                      index,
+                      tabWidth,
+                      this.measureTab.bind(this, index),
+                      styles,
+                      theme,
+                    );
+                  })}
+                  {renderUnderline ? (
+                    renderUnderline(underlineProps)
+                  ) : (
+                    <Animated.View {...underlineProps} />
+                  )}
+                </View>
+              </ScrollView>
+            </View>
+          );
         }}
-        onLayout={this.onContainerLayout}
-      >
-        <ScrollView
-          ref={(scrollView: any) => {
-            this._scrollView = scrollView;
-          }}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-          directionalLockEnabled
-          bounces={false}
-          scrollsToTop={false}
-          scrollEnabled={tabs.length > page}
-          keyboardShouldPersistTaps={keyboardShouldPersistTaps}
-          renderToHardwareTextureAndroid
-        >
-          <View
-            style={{
-              ...styles.TabBar.tabs,
-              ...tabsContainerStyle,
-              backgroundColor: tabBarBackgroundColor,
-            }}
-            onLayout={this.onTabContainerLayout}
-          >
-            {tabs.map((name, index) => {
-              let tab = { title: name } as TabData;
-              if (tabs.length - 1 >= index) {
-                tab = tabs[index];
-              }
-              return this.renderTab(
-                tab,
-                index,
-                tabWidth,
-                this.measureTab.bind(this, index),
-              );
-            })}
-            {renderUnderline ? (
-              renderUnderline(underlineProps)
-            ) : (
-              <Animated.View {...underlineProps} />
-            )}
-          </View>
-        </ScrollView>
-      </View>
+      </WithTheme>
     );
   }
 

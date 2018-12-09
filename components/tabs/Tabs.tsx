@@ -1,9 +1,10 @@
 import React from 'react';
 import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, Platform, ScrollView, ViewPagerAndroid } from 'react-native';
+import { WithTheme, WithThemeStyles } from '../style';
 import View from '../view';
 import { DefaultTabBar } from './DefaultTabBar';
 import { PropsType, TabData } from './PropsType';
-import Styles from './Styles';
+import TabsStyles, { TabsStyle } from './style/tabs';
 
 export interface StateType {
   currentTab: number;
@@ -13,8 +14,8 @@ export interface StateType {
 }
 
 let instanceId: number = 0;
-
-export class Tabs extends React.PureComponent<PropsType, StateType> {
+export interface TabsProps extends PropsType, WithThemeStyles<TabsStyle> {}
+export class Tabs extends React.PureComponent<TabsProps, StateType> {
   static defaultProps: PropsType = {
     tabBarPosition: 'top',
     initialPage: 0,
@@ -196,7 +197,6 @@ export class Tabs extends React.PureComponent<PropsType, StateType> {
   render() {
     const {
       tabBarPosition,
-      styles = Styles,
       noRenderContent,
       keyboardShouldPersistTaps,
     } = this.props;
@@ -221,33 +221,33 @@ export class Tabs extends React.PureComponent<PropsType, StateType> {
       //     [this.props.tabBarPosition === 'overlayTop' ? 'top' : 'bottom']: 0,
       // };
     }
-
-    const content = [
-      <View
-        key="$tabbar"
-        style={
-          tabBarPosition === 'top'
-            ? styles.Tabs.topTabBarSplitLine
-            : styles.Tabs.bottomTabBarSplitLine
-        }
-      >
-        {this.renderTabBar(tabBarProps, DefaultTabBar)}
-      </View>,
-      !noRenderContent && this.renderContent(),
-    ];
-
     return (
-      <View
-        style={[
-          {
-            ...styles.Tabs.container,
-          },
-          this.props.style,
-        ]}
-        onLayout={this.handleLayout}
-      >
-        {tabBarPosition === 'top' ? content : content.reverse()}
-      </View>
+      <WithTheme styles={this.props.styles} themeStyles={TabsStyles}>
+        {styles => {
+          const content = [
+            <View
+              key="$tabbar"
+              style={
+                tabBarPosition === 'top'
+                  ? styles.topTabBarSplitLine
+                  : styles.bottomTabBarSplitLine
+              }
+            >
+              {this.renderTabBar(tabBarProps, DefaultTabBar)}
+            </View>,
+            !noRenderContent && this.renderContent(),
+          ];
+
+          return (
+            <View
+              style={[styles.container, this.props.style]}
+              onLayout={this.handleLayout}
+            >
+              {tabBarPosition === 'top' ? content : content.reverse()}
+            </View>
+          );
+        }}
+      </WithTheme>
     );
   }
   getTabIndex(props: PropsType) {

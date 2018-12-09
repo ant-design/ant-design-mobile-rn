@@ -1,5 +1,4 @@
 import { StyleProp, ViewStyle } from "react-native";
-import Styles from "./Styles";
 
 export interface TabData {
   key?: string;
@@ -95,6 +94,5 @@ export interface PropsType {
   /** use left instead of transform | default: false */
   useLeftInsteadTransform?: boolean;
   style?: StyleProp<ViewStyle>;
-  styles?: typeof Styles;
   keyboardShouldPersistTaps?: boolean;
 }
