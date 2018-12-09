@@ -4,7 +4,7 @@ import Portal from '../portal/portal';
 import { Theme, ThemeProvider } from '../style';
 export interface ProviderProps {
   locale?: any;
-  theme?: Theme;
+  theme?: Partial<Theme>;
 }
 export default class Provider extends React.Component<ProviderProps> {
   render() {
