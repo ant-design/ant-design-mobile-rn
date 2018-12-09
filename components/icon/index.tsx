@@ -1,10 +1,7 @@
+import { IconOutline, OutlineGlyphMapType } from '@ant-design/icons-react-native';
 import React from 'react';
 import { TextProps } from 'react-native';
-import {
-  IconOutline,
-  OutlineGlyphMapType,
-} from '@ant-design/icons-react-native';
-import variables from '../style/themes/default';
+import { WithTheme } from '../style';
 export type IconNames = OutlineGlyphMapType;
 export interface IconProps extends TextProps {
   size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | number;
@@ -15,7 +12,6 @@ export interface IconProps extends TextProps {
 export default class Icon extends React.Component<IconProps, any> {
   static defaultProps = {
     size: 'md',
-    color: variables.color_icon_base,
   };
 
   render() {
@@ -29,6 +25,17 @@ export default class Icon extends React.Component<IconProps, any> {
     };
     const fontSize = typeof size === 'string' ? sizeMap[size] : size;
 
-    return <IconOutline size={fontSize} color={color} name={name} {...rest} />;
+    return (
+      <WithTheme>
+        {(_, theme) => (
+          <IconOutline
+            size={fontSize}
+            color={color || theme.color_icon_base}
+            name={name}
+            {...rest}
+          />
+        )}
+      </WithTheme>
+    );
   }
 }

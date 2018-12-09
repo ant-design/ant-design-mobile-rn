@@ -1,16 +1,22 @@
-import variables from '../../style/themes/default';
-
-export default {
-  grayBorderBox: {
-    borderColor: variables.border_color_base,
-  },
-  icon: {
-    width: variables.icon_size_md,
-    height: variables.icon_size_md,
-  },
-  text: {
-    fontSize: variables.font_size_caption_sm,
-    color: variables.color_text_base,
-    marginTop: variables.v_spacing_md,
-  },
-};
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Theme } from '../../style';
+export interface GridStyle {
+  grayBorderBox: ViewStyle;
+  icon: ImageStyle;
+  text: TextStyle;
+}
+export default (theme: Theme) =>
+  StyleSheet.create<GridStyle>({
+    grayBorderBox: {
+      borderColor: theme.border_color_base,
+    },
+    icon: {
+      width: theme.icon_size_md,
+      height: theme.icon_size_md,
+    },
+    text: {
+      fontSize: theme.font_size_caption_sm,
+      color: theme.color_text_base,
+      marginTop: theme.v_spacing_md,
+    },
+  });

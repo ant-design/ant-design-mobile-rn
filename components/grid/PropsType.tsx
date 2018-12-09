@@ -9,9 +9,9 @@ export interface DataItem {
 export interface GridPropsType {
   data?: Array<DataItem | undefined>;
   hasLine?: boolean;
-  columnNum?: number;
+  columnNum: number;
   isCarousel?: boolean;
-  carouselMaxRow?: number;
+  carouselMaxRow: number;
   onPress?: (dataItem: DataItem | undefined, itemIndex: number) => void;
   renderItem?: (
     dataItem: DataItem | undefined,
