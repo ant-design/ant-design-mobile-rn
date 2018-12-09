@@ -1,25 +1,23 @@
 /* tslint:disable:jsx-no-multiline-js */
 import PropTypes from 'prop-types';
 import React from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TextStyle, View } from 'react-native';
+import { KeyboardAvoidingView, Text, TextInput, TextStyle, View } from 'react-native';
+import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
 import zh_CN from './locale/zh_CN';
 import Modal from './Modal';
 import { CallbackOrActions } from './PropsType';
-import promptStyle, { IPromptStyle } from './style/prompt';
+import promptStyles, { PromptStyle } from './style/prompt';
 
-export interface PropmptContainerProps {
+export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
   title: React.ReactNode;
   message?: React.ReactNode;
   type?: 'default' | 'login-password' | 'secure-text';
   defaultValue?: string;
   actions: CallbackOrActions<TextStyle>;
   onAnimationEnd?: (visible: boolean) => void;
-  styles?: IPromptStyle;
   placeholders?: string[];
 }
-
-const promptStyles = StyleSheet.create<any>(promptStyle);
 
 export default class PropmptContainer extends React.Component<
   PropmptContainerProps,
@@ -28,7 +26,6 @@ export default class PropmptContainer extends React.Component<
   static defaultProps = {
     type: 'default',
     defaultValue: '',
-    styles: promptStyles,
   };
 
   static contextTypes = {
@@ -48,7 +45,7 @@ export default class PropmptContainer extends React.Component<
     this.setState({
       visible: false,
     });
-  }
+  };
 
   onChangeText(type: string, value: string) {
     this.setState({
@@ -65,7 +62,6 @@ export default class PropmptContainer extends React.Component<
       actions,
       placeholders,
     } = this.props;
-    const styles = this.props.styles!;
     const { text, password } = this.state;
     const getArgs = function(func: (...args: any[]) => void) {
       if (type === 'login-password') {
@@ -120,63 +116,69 @@ export default class PropmptContainer extends React.Component<
       return button;
     });
 
-    const firstStyle = [styles.inputWrapper];
-    const lastStyle = [styles.inputWrapper];
-
-    if (type === 'login-password') {
-      firstStyle.push(styles.inputFirst);
-      lastStyle.push(styles.inputLast);
-    } else if (type === 'secure-text') {
-      lastStyle.push(styles.inputFirst);
-      lastStyle.push(styles.inputLast);
-    } else {
-      firstStyle.push(styles.inputFirst);
-      firstStyle.push(styles.inputLast);
-    }
-
     return (
-      <Modal
-        transparent
-        title={title}
-        visible={this.state.visible}
-        footer={footer}
-        onAnimationEnd={onAnimationEnd}
-      >
-        <KeyboardAvoidingView behavior="padding">
-          {message ? <Text style={styles.message}>{message}</Text> : null}
-          <View style={styles.inputGroup}>
-            {type !== 'secure-text' && (
-              <View style={firstStyle}>
-                <TextInput
-                  autoFocus
-                  onChangeText={value => {
-                    this.onChangeText('text', value);
-                  }}
-                  value={this.state.text}
-                  style={styles.input}
-                  underlineColorAndroid="transparent"
-                  placeholder={placeholders![0]}
-                />
-              </View>
-            )}
-            {(type === 'secure-text' || type === 'login-password') && (
-              <View style={lastStyle}>
-                <TextInput
-                  autoFocus
-                  secureTextEntry
-                  onChangeText={value => {
-                    this.onChangeText('password', value);
-                  }}
-                  value={this.state.password}
-                  style={styles.input}
-                  underlineColorAndroid="transparent"
-                  placeholder={placeholders![1]}
-                />
-              </View>
-            )}
-          </View>
-        </KeyboardAvoidingView>
-      </Modal>
+      <WithTheme styles={this.props.styles} themeStyles={promptStyles}>
+        {styles => {
+          const firstStyle = [styles.inputWrapper];
+          const lastStyle = [styles.inputWrapper];
+
+          if (type === 'login-password') {
+            firstStyle.push(styles.inputFirst);
+            lastStyle.push(styles.inputLast);
+          } else if (type === 'secure-text') {
+            lastStyle.push(styles.inputFirst);
+            lastStyle.push(styles.inputLast);
+          } else {
+            firstStyle.push(styles.inputFirst);
+            firstStyle.push(styles.inputLast);
+          }
+
+          return (
+            <Modal
+              transparent
+              title={title}
+              visible={this.state.visible}
+              footer={footer}
+              onAnimationEnd={onAnimationEnd}
+            >
+              <KeyboardAvoidingView behavior="padding">
+                {message ? <Text style={styles.message}>{message}</Text> : null}
+                <View style={styles.inputGroup}>
+                  {type !== 'secure-text' && (
+                    <View style={firstStyle}>
+                      <TextInput
+                        autoFocus
+                        onChangeText={value => {
+                          this.onChangeText('text', value);
+                        }}
+                        value={this.state.text}
+                        style={styles.input}
+                        underlineColorAndroid="transparent"
+                        placeholder={placeholders![0]}
+                      />
+                    </View>
+                  )}
+                  {(type === 'secure-text' || type === 'login-password') && (
+                    <View style={lastStyle}>
+                      <TextInput
+                        autoFocus
+                        secureTextEntry
+                        onChangeText={value => {
+                          this.onChangeText('password', value);
+                        }}
+                        value={this.state.password}
+                        style={styles.input}
+                        underlineColorAndroid="transparent"
+                        placeholder={placeholders![1]}
+                      />
+                    </View>
+                  )}
+                </View>
+              </KeyboardAvoidingView>
+            </Modal>
+          );
+        }}
+      </WithTheme>
     );
   }
 }

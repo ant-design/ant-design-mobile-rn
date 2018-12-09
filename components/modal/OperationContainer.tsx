@@ -1,8 +1,9 @@
 import React from 'react';
 import { TextStyle } from 'react-native';
+import { WithTheme } from '../style';
 import Modal from './Modal';
-import modalStyle from './style/index';
 import { Action } from './PropsType';
+import modalStyle from './style/index';
 
 export interface OperationContainerProps {
   actions: Action<TextStyle>[];
@@ -24,7 +25,7 @@ export default class OperationContainer extends React.Component<
     this.setState({
       visible: false,
     });
-  }
+  };
 
   render() {
     const { actions, onAnimationEnd } = this.props;
@@ -44,17 +45,21 @@ export default class OperationContainer extends React.Component<
       return button;
     });
     return (
-      <Modal
-        operation
-        transparent
-        maskClosable
-        visible={this.state.visible}
-        onClose={this.onClose}
-        onAnimationEnd={onAnimationEnd}
-        style={modalStyle.operationContainer}
-        bodyStyle={modalStyle.operationBody}
-        footer={footer}
-      />
+      <WithTheme themeStyles={modalStyle}>
+        {styles => (
+          <Modal
+            operation
+            transparent
+            maskClosable
+            visible={this.state.visible}
+            onClose={this.onClose}
+            onAnimationEnd={onAnimationEnd}
+            style={styles.operationContainer}
+            bodyStyle={styles.operationBody}
+            footer={footer}
+          />
+        )}
+      </WithTheme>
     );
   }
 }

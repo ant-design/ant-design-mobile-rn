@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Dimensions, Easing, StyleSheet, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
+import { Animated, Dimensions, Easing, StyleProp, StyleSheet, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
 import { Portal } from '../portal';
 
 const styles = StyleSheet.create({
@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
 const screen = Dimensions.get('window');
 
 export interface IModalPropTypes {
-  wrapStyle?: ViewStyle;
-  maskStyle?: ViewStyle;
+  wrapStyle?: StyleProp<ViewStyle>;
+  maskStyle?: StyleProp<ViewStyle>;
   style?: {};
   animationType: 'none' | 'fade' | 'slide-up' | 'slide-down';
   animationDuration?: number;
