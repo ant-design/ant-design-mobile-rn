@@ -1,32 +1,33 @@
 /* tslint:disable:jsx-no-multiline-js */
-import { StyleSheet } from 'react-native';
+import React from 'react';
 import RCDatePicker from 'rmc-date-picker/lib/DatePicker';
 import PopupDatePicker from 'rmc-date-picker/lib/Popup';
-import PickerStyle, { IPickerStyle } from '../picker/style/index';
+import PickerStyles, { PickerStyle } from '../picker/style/index';
+import { WithTheme, WithThemeStyles } from '../style';
+import { getComponentLocale } from '../_util/getLocale';
 import { DatePickerPropsType } from './PropsType';
 import { formatProps } from './utils';
-import { useLocale } from '../locale-provider';
-import React from 'react';
 
-export interface DatePickerNativeProps extends DatePickerPropsType {
-  styles?: IPickerStyle;
+export interface DatePickerProps
+  extends DatePickerPropsType,
+    WithThemeStyles<PickerStyle> {
   triggerTypes?: string;
 }
 
-const PickerStyles = StyleSheet.create<any>(PickerStyle);
 DatePicker.defaultProps = {
   mode: 'datetime',
   triggerType: 'onClick',
-  styles: PickerStyles,
   minuteStep: 1,
 };
-export default function DatePicker(props: DatePickerNativeProps) {
-  const { children, value, styles } = props;
-  // const locale = getComponentLocale(props, (this as any).context, 'DatePicker', () =>
-  //   require('./locale/zh_CN'),
-  // );
+export default function DatePicker(props: DatePickerProps) {
+  const { children, value } = props;
+  const locale = getComponentLocale(
+    props,
+    (this as any).context,
+    'DatePicker',
+    () => require('./locale/zh_CN'),
+  );
 
-  const { DatePicker: locale } = useLocale();
   const { okText, dismissText, extra, DatePickerLocale } = locale;
 
   const dataPicker = (
@@ -42,20 +43,24 @@ export default function DatePicker(props: DatePickerNativeProps) {
   );
 
   return (
-    <PopupDatePicker
-      datePicker={dataPicker}
-      styles={styles}
-      {...props as any}
-      date={value}
-      dismissText={props.dismissText || dismissText}
-      okText={props.okText || okText}
-    >
-      {children &&
-        React.isValidElement(children) &&
-        // TODO: fix ts error
-        React.cloneElement<object, any>(children as any, {
-          extra: value ? formatProps(props, value) : props.extra || extra,
-        })}
-    </PopupDatePicker>
+    <WithTheme styles={props.styles} themeStyles={PickerStyles}>
+      {styles => (
+        <PopupDatePicker
+          datePicker={dataPicker}
+          styles={styles}
+          {...props as any}
+          date={value}
+          dismissText={props.dismissText || dismissText}
+          okText={props.okText || okText}
+        >
+          {children &&
+            React.isValidElement(children) &&
+            // TODO: fix ts error
+            React.cloneElement<object, any>(children as any, {
+              extra: value ? formatProps(props, value) : props.extra || extra,
+            })}
+        </PopupDatePicker>
+      )}
+    </WithTheme>
   );
 }

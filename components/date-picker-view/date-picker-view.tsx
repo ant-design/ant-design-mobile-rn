@@ -1,7 +1,7 @@
 import React from 'react';
 import RCDatePicker from 'rmc-date-picker/lib/DatePicker';
+import { getComponentLocale } from '../_util/getLocale';
 import { DatePickerProps } from './PropsType';
-import { useLocale } from '../locale-provider';
 DatePickerView.defaultProps = {
   mode: 'datetime',
   // extra: '请选择',
@@ -11,7 +11,12 @@ DatePickerView.defaultProps = {
   use12Hours: false,
 };
 export default function DatePickerView(props: DatePickerProps) {
-  const { DatePickerView: locale } = useLocale();
+  const locale = getComponentLocale(
+    props,
+    (this as any).context,
+    'DatePickerView',
+    () => require('./locale/zh_CN'),
+  );
   // DatePicker use `defaultDate`, maybe because there are PopupDatePicker inside? @yiminghe
   // Here Use `date` instead of `defaultDate`, make it controlled fully.
   return (
