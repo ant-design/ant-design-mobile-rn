@@ -1,11 +1,12 @@
 import { CascaderValue } from 'rmc-cascader/lib/CascaderTypes';
 import { IPopupPickerProps } from 'rmc-picker/lib/PopupPickerTypes';
+import { Omit } from 'utility-types';
 export interface PickerData {
   value: string | number;
   label: string;
   children?: PickerData[];
 }
-export interface PickerPropsType extends IPopupPickerProps {
+export interface PickerPropsType extends Omit<IPopupPickerProps, 'styles'> {
   data: PickerData[] | PickerData[][];
   cascade?: boolean;
   value?: Array<string | number>;

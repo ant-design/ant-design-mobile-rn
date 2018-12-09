@@ -16,7 +16,7 @@ function getDefaultProps() {
   };
 }
 
-export interface IPickerView {
+export interface PickerViewProps {
   prefixCls?: string;
   pickerPrefixCls?: string;
   cols?: number;
@@ -30,7 +30,7 @@ export interface IPickerView {
   itemStyle?: any;
 }
 
-export default class PickerView extends React.Component<IPickerView, any> {
+export default class PickerView extends React.Component<PickerViewProps, any> {
   static defaultProps = getDefaultProps();
 
   getCol = () => {
