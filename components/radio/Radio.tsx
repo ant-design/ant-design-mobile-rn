@@ -1,21 +1,19 @@
 import React from 'react';
-import { StyleProp, StyleSheet, Text, TextStyle, TouchableWithoutFeedback, View } from 'react-native';
+import { StyleProp, Text, TextStyle, TouchableWithoutFeedback, View } from 'react-native';
 import Icon from '../icon';
+import { WithTheme, WithThemeStyles } from '../style';
 import variables from '../style/themes/default';
 import { RadioPropsType } from './PropsType';
-import RadioStyle, { IRadioStyle } from './style/index';
+import RadioStyles, { RadioStyle } from './style/index';
 
-export interface RadioNativeProps extends RadioPropsType {
-  styles?: IRadioStyle;
+export interface RadioNativeProps
+  extends RadioPropsType,
+    WithThemeStyles<RadioStyle> {
   style?: StyleProp<TextStyle>;
 }
-const RadioStyles = StyleSheet.create<any>(RadioStyle);
 
 export default class Radio extends React.Component<RadioNativeProps, any> {
   static RadioItem: any;
-  static defaultProps = {
-    styles: RadioStyles,
-  };
 
   constructor(props: RadioNativeProps, context: any) {
     super(props, context);
@@ -49,33 +47,38 @@ export default class Radio extends React.Component<RadioNativeProps, any> {
 
   render(): JSX.Element {
     const { style, disabled, children } = this.props;
-    const styles = this.props.styles!;
 
-    const checked = this.state.checked;
-    let icon = undefined;
-    if (checked) {
-      icon = disabled ? (
-        <Icon name="check" style={[styles.icon, style]} />
-      ) : (
-        <Icon
-          name="check"
-          color={variables.brand_primary}
-          style={[styles.icon, style]}
-        />
-      );
-    }
     return (
-      <TouchableWithoutFeedback onPress={this.handleClick}>
-        <View style={[styles.wrapper]}>
-          {icon}
-          {typeof children === 'string' ? (
-            // tslint:disable-next-line:jsx-no-multiline-js
-            <Text>{this.props.children}</Text>
-          ) : (
-            children
-          )}
-        </View>
-      </TouchableWithoutFeedback>
+      <WithTheme styles={this.props.styles} themeStyles={RadioStyles}>
+        {styles => {
+          const checked = this.state.checked;
+          let icon = undefined;
+          if (checked) {
+            icon = disabled ? (
+              <Icon name="check" style={[styles.icon, style]} />
+            ) : (
+              <Icon
+                name="check"
+                color={variables.brand_primary}
+                style={[styles.icon, style]}
+              />
+            );
+          }
+          return (
+            <TouchableWithoutFeedback onPress={this.handleClick}>
+              <View style={[styles.wrapper]}>
+                {icon}
+                {typeof children === 'string' ? (
+                  // tslint:disable-next-line:jsx-no-multiline-js
+                  <Text>{this.props.children}</Text>
+                ) : (
+                  children
+                )}
+              </View>
+            </TouchableWithoutFeedback>
+          );
+        }}
+      </WithTheme>
     );
   }
 }

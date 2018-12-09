@@ -1,19 +1,16 @@
 import React from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
-import Menu, {
-  MenuContext,
-  MenuOption,
-  MenuOptions,
-  MenuTrigger,
-} from 'react-native-menu';
-import { PopoverPropsType } from './PropsType';
-export interface PopoverProps extends PopoverPropsType {
+import Menu, { MenuContext, MenuOption, MenuOptions, MenuTrigger } from 'react-native-menu';
+export interface PopoverProps {
   style?: StyleProp<ViewStyle>;
   triggerStyle?: StyleProp<ViewStyle>;
   overlayStyle?: StyleProp<ViewStyle>;
   contextStyle?: StyleProp<ViewStyle>;
   renderOverlayComponent?: (values: any) => JSX.Element;
   name?: string;
+  onSelect?: (node: any, index?: number) => void;
+  overlay: React.ReactNode;
+  disabled?: boolean;
 }
 export default class Popover extends React.Component<PopoverProps, any> {
   static defaultProps = {

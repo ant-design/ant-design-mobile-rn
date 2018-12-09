@@ -1,7 +1,7 @@
-import variables from '../../style/themes/default';
-import { ViewStyle, TextStyle, ImageStyle } from 'react-native';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Theme } from '../../style';
 
-export interface IResultStyle {
+export interface ResultStyle {
   result: ViewStyle;
   imgWrap: ViewStyle;
   img: ImageStyle;
@@ -13,42 +13,43 @@ export interface IResultStyle {
   button: ViewStyle;
 }
 
-export default {
-  result: {
-    alignItems: 'center',
-    paddingVertical: variables.v_spacing_xl,
-    backgroundColor: variables.fill_base,
-    borderBottomColor: variables.border_color_base,
-  },
-  imgWrap: {
-    margin: 0,
-  },
-  img: {
-    width: 60,
-    height: 60,
-  },
-  title: {
-    marginTop: variables.v_spacing_lg,
-    paddingHorizontal: variables.h_spacing_lg,
-  },
-  titleText: {
-    fontSize: 21,
-    color: variables.color_text_base,
-  },
-  message: {
-    marginTop: variables.v_spacing_lg,
-    paddingHorizontal: variables.h_spacing_lg,
-  },
-  messageText: {
-    fontSize: variables.font_size_caption,
-    color: variables.color_text_caption,
-  },
-  buttonWrap: {
-    flexDirection: 'row',
-    marginTop: variables.v_spacing_lg,
-    paddingHorizontal: variables.h_spacing_lg,
-  },
-  button: {
-    flex: 1,
-  },
-};
+export default (theme: Theme) =>
+  StyleSheet.create<ResultStyle>({
+    result: {
+      alignItems: 'center',
+      paddingVertical: theme.v_spacing_xl,
+      backgroundColor: theme.fill_base,
+      borderBottomColor: theme.border_color_base,
+    },
+    imgWrap: {
+      margin: 0,
+    },
+    img: {
+      width: 60,
+      height: 60,
+    },
+    title: {
+      marginTop: theme.v_spacing_lg,
+      paddingHorizontal: theme.h_spacing_lg,
+    },
+    titleText: {
+      fontSize: 21,
+      color: theme.color_text_base,
+    },
+    message: {
+      marginTop: theme.v_spacing_lg,
+      paddingHorizontal: theme.h_spacing_lg,
+    },
+    messageText: {
+      fontSize: theme.font_size_caption,
+      color: theme.color_text_caption,
+    },
+    buttonWrap: {
+      flexDirection: 'row',
+      marginTop: theme.v_spacing_lg,
+      paddingHorizontal: theme.h_spacing_lg,
+    },
+    button: {
+      flex: 1,
+    },
+  });

@@ -1,24 +1,17 @@
 import React from 'react';
-import {
-  Animated,
-  Dimensions,
-  LayoutChangeEvent,
-  StyleProp,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from 'react-native';
-import { ProgressPropsType } from './PropsType';
-import ProgressStyle from './style/index';
+import { Animated, Dimensions, LayoutChangeEvent, StyleProp, View, ViewStyle } from 'react-native';
+import { WithTheme, WithThemeStyles } from '../style';
+import ProgressStyles, { ProgressStyle } from './style/index';
 
-export interface ProgressProps extends ProgressPropsType {
+export interface ProgressProps extends WithThemeStyles<ProgressStyle> {
   wrapWidth?: number;
-  styles?: any;
   style?: StyleProp<ViewStyle>;
   barStyle?: StyleProp<ViewStyle>;
+  percent?: number;
+  position?: 'fixed' | 'normal';
+  unfilled?: boolean;
+  appearTransition?: boolean;
 }
-
-const ProgressStyles = StyleSheet.create<any>(ProgressStyle);
 
 export default class Progress extends React.Component<ProgressProps, any> {
   static defaultProps = {
@@ -26,7 +19,6 @@ export default class Progress extends React.Component<ProgressProps, any> {
     position: 'normal',
     unfilled: true,
     appearTransition: false,
-    styles: ProgressStyles,
   };
 
   constructor(props: ProgressProps) {
@@ -65,7 +57,7 @@ export default class Progress extends React.Component<ProgressProps, any> {
     this.setState({
       wrapWidth: e.nativeEvent.layout.width,
     });
-  }
+  };
 
   normalPercent = (percent?: number) => {
     let widthPercent: any = 0;
@@ -73,39 +65,49 @@ export default class Progress extends React.Component<ProgressProps, any> {
       widthPercent = percent > 100 ? 100 : percent;
     }
     return widthPercent;
-  }
+  };
 
   getWidth = (percent = this.props.percent) => {
     return this.state.wrapWidth * (this.normalPercent(percent) / 100);
-  }
+  };
 
   render() {
-    const { position, unfilled, style, styles, barStyle } = this.props;
+    const { position, unfilled, style, barStyle } = this.props;
 
     const percentStyle = {
       width: this.getWidth(),
       height: 0,
     };
 
-    let child = <View style={[styles.progressBar, percentStyle, barStyle]} />;
-    if (this.props.appearTransition) {
-      percentStyle.width = this.state.percentage;
-      child = (
-        <Animated.View style={[styles.progressBar, percentStyle, barStyle]} />
-      );
-    }
-
-    const outerStyle = [
-      styles.progressOuter,
-      position === 'fixed' ? { position: 'absolute', top: 0 } : null,
-      !unfilled ? { backgroundColor: 'transparent' } : null,
-      style,
-    ];
-
     return (
-      <View onLayout={this.onLayout} style={outerStyle}>
-        {child}
-      </View>
+      <WithTheme styles={this.props.styles} themeStyles={ProgressStyles}>
+        {styles => {
+          let child = (
+            <View style={[styles.progressBar, percentStyle, barStyle]} />
+          );
+          if (this.props.appearTransition) {
+            percentStyle.width = this.state.percentage;
+            child = (
+              <Animated.View
+                style={[styles.progressBar, percentStyle, barStyle]}
+              />
+            );
+          }
+
+          const outerStyle = [
+            styles.progressOuter,
+            position === 'fixed' ? { position: 'absolute', top: 0 } : {},
+            !unfilled ? { backgroundColor: 'transparent' } : {},
+            style,
+          ] as ViewStyle;
+
+          return (
+            <View onLayout={this.onLayout} style={outerStyle}>
+              {child}
+            </View>
+          );
+        }}
+      </WithTheme>
     );
   }
 }
