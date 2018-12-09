@@ -14,7 +14,7 @@ exports[`renders ./components/progress/demo/basic.tsx correctly 1`] = `
           "position": "absolute",
           "top": 0,
         },
-        null,
+        Object {},
         undefined,
       ]
     }
@@ -65,8 +65,8 @@ exports[`renders ./components/progress/demo/basic.tsx correctly 1`] = `
               "backgroundColor": "#dddddd",
               "flex": 1,
             },
-            null,
-            null,
+            Object {},
+            Object {},
             undefined,
           ]
         }
@@ -173,8 +173,8 @@ exports[`renders ./components/progress/demo/basic.tsx correctly 1`] = `
           "backgroundColor": "#dddddd",
           "flex": 1,
         },
-        null,
-        null,
+        Object {},
+        Object {},
         undefined,
       ]
     }

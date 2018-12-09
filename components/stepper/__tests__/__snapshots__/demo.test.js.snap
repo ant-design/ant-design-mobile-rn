@@ -113,9 +113,9 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "white",
-                      "borderColor": "#d9d9d9",
-                      "borderRadius": 6,
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
                       "borderWidth": 1,
                       "height": 28,
                       "width": 28,
@@ -130,7 +130,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
-                        "color": "#999",
+                        "color": "#bbbbbb",
                         "fontSize": 20,
                         "textAlign": "center",
                       },
@@ -151,14 +151,17 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#222",
+                      "color": "#000000",
                       "flex": 1,
-                      "fontSize": 16,
+                      "fontSize": 17,
                       "paddingHorizontal": 8,
                       "textAlign": "center",
                     },
                     null,
-                    Object {},
+                    Array [
+                      Object {},
+                      Object {},
+                    ],
                   ]
                 }
                 underlineColorAndroid="transparent"
@@ -178,9 +181,9 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "white",
-                      "borderColor": "#d9d9d9",
-                      "borderRadius": 6,
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
                       "borderWidth": 1,
                       "height": 28,
                       "width": 28,
@@ -195,7 +198,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
-                        "color": "#999",
+                        "color": "#bbbbbb",
                         "fontSize": 20,
                         "textAlign": "center",
                       },
@@ -305,16 +308,16 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "white",
-                      "borderColor": "#d9d9d9",
-                      "borderRadius": 6,
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
                       "borderWidth": 1,
                       "height": 28,
                       "width": 28,
                     },
                     Object {
-                      "backgroundColor": "rgba(239, 239, 239, 0.72)",
-                      "borderColor": "#d9d9d9",
+                      "backgroundColor": "#dddddd",
+                      "borderColor": "#bbbbbb",
                     },
                     undefined,
                   ]
@@ -325,12 +328,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
-                        "color": "#999",
+                        "color": "#bbbbbb",
                         "fontSize": 20,
                         "textAlign": "center",
                       },
                       Object {
-                        "color": "#ccc",
+                        "color": "#bbbbbb",
                       },
                     ]
                   }
@@ -348,14 +351,17 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#222",
+                      "color": "#000000",
                       "flex": 1,
-                      "fontSize": 16,
+                      "fontSize": 17,
                       "paddingHorizontal": 8,
                       "textAlign": "center",
                     },
                     null,
-                    Object {},
+                    Array [
+                      Object {},
+                      Object {},
+                    ],
                   ]
                 }
                 underlineColorAndroid="transparent"
@@ -375,9 +381,9 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "white",
-                      "borderColor": "#d9d9d9",
-                      "borderRadius": 6,
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
                       "borderWidth": 1,
                       "height": 28,
                       "width": 28,
@@ -392,7 +398,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
-                        "color": "#999",
+                        "color": "#bbbbbb",
                         "fontSize": 20,
                         "textAlign": "center",
                       },
@@ -502,16 +508,16 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "white",
-                      "borderColor": "#d9d9d9",
-                      "borderRadius": 6,
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
                       "borderWidth": 1,
                       "height": 28,
                       "width": 28,
                     },
                     Object {
-                      "backgroundColor": "rgba(239, 239, 239, 0.72)",
-                      "borderColor": "#d9d9d9",
+                      "backgroundColor": "#dddddd",
+                      "borderColor": "#bbbbbb",
                     },
                     undefined,
                   ]
@@ -522,12 +528,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
-                        "color": "#999",
+                        "color": "#bbbbbb",
                         "fontSize": 20,
                         "textAlign": "center",
                       },
                       Object {
-                        "color": "#ccc",
+                        "color": "#bbbbbb",
                       },
                     ]
                   }
@@ -545,16 +551,19 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#222",
+                      "color": "#000000",
                       "flex": 1,
-                      "fontSize": 16,
+                      "fontSize": 17,
                       "paddingHorizontal": 8,
                       "textAlign": "center",
                     },
                     Object {
-                      "color": "#ccc",
+                      "color": "#bbbbbb",
                     },
-                    Object {},
+                    Array [
+                      Object {},
+                      Object {},
+                    ],
                   ]
                 }
                 underlineColorAndroid="transparent"
@@ -574,16 +583,16 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "white",
-                      "borderColor": "#d9d9d9",
-                      "borderRadius": 6,
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
                       "borderWidth": 1,
                       "height": 28,
                       "width": 28,
                     },
                     Object {
-                      "backgroundColor": "rgba(239, 239, 239, 0.72)",
-                      "borderColor": "#d9d9d9",
+                      "backgroundColor": "#dddddd",
+                      "borderColor": "#bbbbbb",
                     },
                     undefined,
                   ]
@@ -594,12 +603,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
-                        "color": "#999",
+                        "color": "#bbbbbb",
                         "fontSize": 20,
                         "textAlign": "center",
                       },
                       Object {
-                        "color": "#ccc",
+                        "color": "#bbbbbb",
                       },
                     ]
                   }

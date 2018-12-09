@@ -235,7 +235,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                上一页
+                Prev
               </Text>
             </View>
           </View>
@@ -351,7 +351,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                下一页
+                Next
               </Text>
             </View>
           </View>
@@ -596,7 +596,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                       ]
                     }
                   >
-                    请选择
+                    please select
                   </Text>
                 </View>
                 <Text
@@ -663,7 +663,6 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
               onSubmit={[Function]}
               onSubmitEditing={[Function]}
               placeholder="Search"
-              prefixCls="am-search"
               style={
                 Array [
                   Object {
@@ -729,7 +728,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              取消
+              Cancel
             </Text>
           </View>
         </View>
