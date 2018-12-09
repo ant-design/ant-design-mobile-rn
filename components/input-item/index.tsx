@@ -3,10 +3,10 @@ import React from 'react';
 import { GestureResponderEvent, Platform, StyleSheet, Text, TextInputProperties, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import { Omit } from 'utility-types';
 import Icon from '../icon';
-import variables from '../style/themes/default';
+import { WithTheme, WithThemeStyles } from '../style';
 import Input from './Input';
 import { InputItemPropsType } from './PropsType';
-import InputItemStyle from './style/index';
+import InputItemStyles, { InputItemStyle } from './style/index';
 /**
  * React Native TextInput Props except these props
  */
@@ -15,7 +15,10 @@ export type TextInputProps = Omit<
   'onChange' | 'onFocus' | 'onBlur'
 >;
 
-export interface InputItemProps extends InputItemPropsType, TextInputProps {
+export interface InputItemProps
+  extends InputItemPropsType,
+    TextInputProps,
+    WithThemeStyles<InputItemStyle> {
   last?: boolean;
   onExtraClick?: (event: GestureResponderEvent) => void;
   onErrorClick?: (event: GestureResponderEvent) => void;
@@ -29,8 +32,6 @@ function normalizeValue(value?: string) {
   }
   return value;
 }
-
-const InputItemStyles = StyleSheet.create<any>(InputItemStyle);
 
 export default class InputItem extends React.Component<InputItemProps, any> {
   static defaultProps = {
@@ -48,7 +49,6 @@ export default class InputItem extends React.Component<InputItemProps, any> {
     labelPosition: 'left',
     textAlign: 'left',
     last: false,
-    styles: InputItemStyles,
   };
 
   inputRef: Input | null;
@@ -126,7 +126,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
     } = this.props;
     const { value, defaultValue, style } = restProps;
 
-    let valueProps;
+    let valueProps: any;
     if ('value' in this.props) {
       valueProps = {
         value: normalizeValue(value),
@@ -137,105 +137,111 @@ export default class InputItem extends React.Component<InputItemProps, any> {
       };
     }
 
-    const containerStyle = {
-      borderBottomWidth: last ? 0 : StyleSheet.hairlineWidth,
-    };
-
-    const textStyle = {
-      width: variables.font_size_heading * (labelNumber as number) * 1.05,
-    };
-
-    const extraStyle = {
-      width:
-        typeof extra === 'string' && (extra as string).length > 0
-          ? (extra as string).length * variables.font_size_heading
-          : 0,
-    };
-
-    const keyboardTypeArray = [
-      'default',
-      'email-address',
-      'numeric',
-      'phone-pad',
-      'ascii-capable',
-      'numbers-and-punctuation',
-      'url',
-      'number-pad',
-      'name-phone-pad',
-      'decimal-pad',
-      'twitter',
-      'web-search',
-    ];
-
-    let keyboardType: any = 'default';
-
-    if (type === 'number') {
-      keyboardType = 'numeric';
-    } else if (type === 'bankCard') {
-      keyboardType = 'number-pad'; // 不带小数点
-    } else if (type === 'phone') {
-      keyboardType = 'phone-pad';
-    } else if (type && keyboardTypeArray.indexOf(type) > -1) {
-      keyboardType = type;
-    }
-
     return (
-      <View style={[styles.container, containerStyle, style]}>
-        {children ? (
-          typeof children === 'string' ? (
-            <Text style={[styles.text, textStyle]}>{children}</Text>
-          ) : (
-            <View style={textStyle}>{children}</View>
-          )
-        ) : null}
-        <Input
-          editable={editable}
-          clearButtonMode={clear ? 'while-editing' : 'never'}
-          underlineColorAndroid="transparent"
-          ref={el => (this.inputRef = el)}
-          {...restProps}
-          {...valueProps}
-          style={[styles.input, error ? styles.inputErrorColor : null]}
-          keyboardType={keyboardType}
-          onChange={event => this.onChange(event.nativeEvent.text)}
-          secureTextEntry={type === 'password'}
-          onBlur={this.onInputBlur}
-          onFocus={this.onInputFocus}
-        />
-        {/* 只在有 value 的 受控模式 下展示 自定义的 安卓 clear 按钮 */}
-        {editable && clear && value && Platform.OS === 'android' ? (
-          <TouchableOpacity
-            style={[styles.clear]}
-            onPress={this.onInputClear}
-            hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
-          >
-            <Icon name="close" />
-          </TouchableOpacity>
-        ) : null}
-        {extra ? (
-          <TouchableWithoutFeedback onPress={onExtraClick}>
-            <View>
-              {typeof extra === 'string' ? (
-                <Text style={[styles.extra, extraStyle]}>{extra}</Text>
-              ) : (
-                extra
+      <WithTheme styles={styles} themeStyles={InputItemStyles}>
+        {(s, theme) => {
+          const containerStyle = {
+            borderBottomWidth: last ? 0 : StyleSheet.hairlineWidth,
+          };
+
+          const textStyle = {
+            width: theme.font_size_heading * (labelNumber as number) * 1.05,
+          };
+
+          const extraStyle = {
+            width:
+              typeof extra === 'string' && (extra as string).length > 0
+                ? (extra as string).length * theme.font_size_heading
+                : 0,
+          };
+
+          const keyboardTypeArray = [
+            'default',
+            'email-address',
+            'numeric',
+            'phone-pad',
+            'ascii-capable',
+            'numbers-and-punctuation',
+            'url',
+            'number-pad',
+            'name-phone-pad',
+            'decimal-pad',
+            'twitter',
+            'web-search',
+          ];
+
+          let keyboardType: any = 'default';
+
+          if (type === 'number') {
+            keyboardType = 'numeric';
+          } else if (type === 'bankCard') {
+            keyboardType = 'number-pad'; // 不带小数点
+          } else if (type === 'phone') {
+            keyboardType = 'phone-pad';
+          } else if (type && keyboardTypeArray.indexOf(type) > -1) {
+            keyboardType = type;
+          }
+
+          return (
+            <View style={[s.container, containerStyle, style]}>
+              {children ? (
+                typeof children === 'string' ? (
+                  <Text style={[s.text, textStyle]}>{children}</Text>
+                ) : (
+                  <View style={textStyle}>{children}</View>
+                )
+              ) : null}
+              <Input
+                editable={editable}
+                clearButtonMode={clear ? 'while-editing' : 'never'}
+                underlineColorAndroid="transparent"
+                ref={el => (this.inputRef = el)}
+                {...restProps}
+                {...valueProps}
+                style={[s.input, error ? s.inputErrorColor : null]}
+                keyboardType={keyboardType}
+                onChange={event => this.onChange(event.nativeEvent.text)}
+                secureTextEntry={type === 'password'}
+                onBlur={this.onInputBlur}
+                onFocus={this.onInputFocus}
+              />
+              {/* 只在有 value 的 受控模式 下展示 自定义的 安卓 clear 按钮 */}
+              {editable && clear && value && Platform.OS === 'android' ? (
+                <TouchableOpacity
+                  style={[s.clear]}
+                  onPress={this.onInputClear}
+                  hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
+                >
+                  <Icon name="close" />
+                </TouchableOpacity>
+              ) : null}
+              {extra ? (
+                <TouchableWithoutFeedback onPress={onExtraClick}>
+                  <View>
+                    {typeof extra === 'string' ? (
+                      <Text style={[s.extra, extraStyle]}>{extra}</Text>
+                    ) : (
+                      extra
+                    )}
+                  </View>
+                </TouchableWithoutFeedback>
+              ) : null}
+              {error && (
+                <TouchableWithoutFeedback onPress={onErrorClick}>
+                  <View style={[s.errorIcon]}>
+                    <Icon
+                      name="info-circle"
+                      style={{
+                        color: theme.brand_error,
+                      }}
+                    />
+                  </View>
+                </TouchableWithoutFeedback>
               )}
             </View>
-          </TouchableWithoutFeedback>
-        ) : null}
-        {error && (
-          <TouchableWithoutFeedback onPress={onErrorClick}>
-            <View style={[styles.errorIcon]}>
-              <Icon
-                name="info-circle"
-                style={{
-                  color: variables.brand_error,
-                }}
-              />
-            </View>
-          </TouchableWithoutFeedback>
-        )}
-      </View>
+          );
+        }}
+      </WithTheme>
     );
   }
 }

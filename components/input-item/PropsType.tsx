@@ -27,7 +27,6 @@ export interface InputItemPropsType {
   labelPosition?: 'left' | 'top';
   textAlign?: 'left' | 'center';
   updatePlaceholder?: boolean;
-  styles?: any;
   locale?: object;
   onChange?: (value: string) => void;
   onFocus?: InputEventHandler;
