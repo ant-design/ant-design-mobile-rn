@@ -5,7 +5,7 @@ import ToastContainer from './ToastContainer';
 function notice(
   content: string,
   type: string,
-  duration = 3,
+  duration = 2,
   onClose: (() => void) | undefined,
   mask = true,
 ) {
