@@ -45,7 +45,12 @@ export default class NoticeBar extends React.Component<NoticeNativeProps, any> {
       <WithTheme styles={this.props.styles} themeStyles={NoticeStyles}>
         {(styles, theme) => {
           let operationDom: any = null;
-          icon = icon || <Icon name="sound" color={theme.brand_warning} />;
+          icon =
+            typeof icon === 'undefined' ? (
+              <Icon name="sound" color={theme.brand_warning} />
+            ) : (
+              icon
+            );
           if (mode === 'closable') {
             operationDom = (
               <TouchableWithoutFeedback onPress={this.onPress}>
