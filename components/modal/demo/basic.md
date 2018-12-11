@@ -11,9 +11,15 @@ title:
 /* tslint:disable:no-console */
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import { Button, Modal, WhiteSpace, WingBlank } from '@ant-design/react-native';
-import toast from '../../toast';
-export default class BasicModalExample extends React.Component {
+import {
+  Button,
+  Modal,
+  WhiteSpace,
+  WingBlank,
+  Toast,
+  Provider,
+} from '@ant-design/react-native';
+export class BasicModalExample extends React.Component {
   constructor(props) {
     super(props);
     this.onClose = () => {
@@ -146,7 +152,7 @@ export default class BasicModalExample extends React.Component {
           </View>
           <Button
             type="primary"
-            onPress={() => toast.info('Hello Toast in Modal now works')}
+            onPress={() => Toast.info('Hello Toast in Modal now works')}
           >
             Hello Toast in Modal now works
           </Button>
@@ -172,4 +178,9 @@ export default class BasicModalExample extends React.Component {
     );
   }
 }
+export default () => (
+  <Provider>
+    <BasicModalExample />
+  </Provider>
+);
 ```

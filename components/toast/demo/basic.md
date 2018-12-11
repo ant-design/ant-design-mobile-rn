@@ -11,8 +11,14 @@ title:
 /* tslint:disable:no-console */
 import React from 'react';
 import { DeviceEventEmitter } from 'react-native';
-import { Button, Toast, WhiteSpace, WingBlank } from '@ant-design/react-native';
-import { portal } from '../../portal';
+import {
+  Provider,
+  Button,
+  Toast,
+  WhiteSpace,
+  WingBlank,
+  portal,
+} from '@ant-design/react-native';
 function showToast() {
   // multiple toast
   Toast.info('This is a toast tips 1 !!!', 4);
@@ -36,7 +42,7 @@ function loadingToast() {
     console.log('Load complete !!!');
   });
 }
-export default class ToastExample extends React.Component {
+export class ToastExample extends React.Component {
   constructor() {
     super(...arguments);
     this.alwaysShowToast = () => {
@@ -75,4 +81,9 @@ export default class ToastExample extends React.Component {
     );
   }
 }
+export default () => (
+  <Provider>
+    <ToastExample />
+  </Provider>
+);
 ```

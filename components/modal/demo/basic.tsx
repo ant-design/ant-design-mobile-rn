@@ -1,8 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import { Button, Modal, WhiteSpace, WingBlank } from '../../';
-import toast from '../../toast';
+import { Button, Modal, Toast, WhiteSpace, WingBlank } from '../../';
 
 export default class BasicModalExample extends React.Component<any, any> {
   constructor(props: any) {
@@ -141,7 +140,7 @@ export default class BasicModalExample extends React.Component<any, any> {
           </View>
           <Button
             type="primary"
-            onPress={() => toast.info('Hello Toast in Modal now works')}
+            onPress={() => Toast.info('Hello Toast in Modal now works')}
           >
             Hello Toast in Modal now works
           </Button>
