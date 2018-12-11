@@ -1,4 +1,4 @@
-/* tslint:disable:jsx-no-multiline-js */
+
 import treeFilter from 'array-tree-filter';
 import PropTypes from 'prop-types';
 import React from 'react';

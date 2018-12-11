@@ -1,4 +1,4 @@
-// tslint:disable:jsx-no-multiline-js
+
 import React from 'react';
 import { ActionSheetIOSOptions, Text, TouchableHighlight, View } from 'react-native';
 import Modal from '../modal/ModalView';

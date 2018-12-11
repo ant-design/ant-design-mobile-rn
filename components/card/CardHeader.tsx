@@ -1,4 +1,4 @@
-/* tslint:disable:jsx-no-multiline-js */
+
 import React from 'react';
 import { Image, ImageStyle, StyleProp, Text, View, ViewStyle } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';

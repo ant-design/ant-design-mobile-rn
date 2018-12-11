@@ -1,4 +1,4 @@
-// tslint:disable:jsx-no-multiline-js
+
 import React from 'react';
 import { Platform, StyleProp, Text, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';

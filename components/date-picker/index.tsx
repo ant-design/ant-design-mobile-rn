@@ -1,4 +1,4 @@
-/* tslint:disable:jsx-no-multiline-js */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import RCDatePicker from 'rmc-date-picker/lib/DatePicker';

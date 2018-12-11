@@ -1,4 +1,4 @@
-/* tslint:disable:jsx-no-multiline-js */
+
 import React from 'react';
 import { Image, StyleProp, StyleSheet, Text, TouchableHighlight, View, ViewStyle } from 'react-native';
 import Icon from '../icon';

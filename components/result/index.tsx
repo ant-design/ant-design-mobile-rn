@@ -1,4 +1,4 @@
-/* tslint:disable:jsx-no-multiline-js */
+
 import React from 'react';
 import { Image, ImageURISource, StyleProp, Text, View, ViewStyle } from 'react-native';
 import Button from '../button/index';

@@ -1,4 +1,4 @@
-// tslint:disable:jsx-no-multiline-js
+
 import React from 'react';
 import { ScrollView, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { Button, Flex, WhiteSpace, WingBlank } from '../../';

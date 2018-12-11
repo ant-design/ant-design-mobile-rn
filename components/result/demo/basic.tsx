@@ -1,4 +1,4 @@
-// tslint:disable:jsx-no-multiline-js
+
 import React from 'react';
 import { Image, ScrollView, Text } from 'react-native';
 import { Result } from '../../';

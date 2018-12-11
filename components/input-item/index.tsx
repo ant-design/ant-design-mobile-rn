@@ -1,4 +1,4 @@
-/* tslint:disable:jsx-no-multiline-js */
+
 import React from 'react';
 import { GestureResponderEvent, Platform, StyleSheet, Text, TextInputProperties, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import { Omit } from 'utility-types';

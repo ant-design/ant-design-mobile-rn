@@ -9,7 +9,7 @@ name: Flex
 [Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/flex/demo/basic.tsx)
 
 ````jsx
-// tslint:disable:jsx-no-multiline-js
+
 import React from 'react';
 import { ScrollView, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { Button, Flex, WhiteSpace, WingBlank } from '../../';

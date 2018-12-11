@@ -9,7 +9,7 @@ title:
 
 ````jsx
 /* tslint:disable:no-unused-variable */
-// tslint:disable:jsx-no-multiline-js
+
 import React from 'react';
 import { Button, WhiteSpace, WingBlank } from '@ant-design/react-native';
 

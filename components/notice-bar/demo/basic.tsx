@@ -1,4 +1,4 @@
-// tslint:disable:jsx-no-multiline-js
+
 /* tslint:disable:no-console */
 import React from 'react';
 import { Image, Text, View } from 'react-native';

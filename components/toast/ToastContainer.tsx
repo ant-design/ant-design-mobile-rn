@@ -1,5 +1,3 @@
-// tslint:disable:jsx-no-multiline-js
-
 import React from 'react';
 import { ActivityIndicator, Animated, Text, View } from 'react-native';
 import Icon, { IconNames } from '../icon';

@@ -1,4 +1,4 @@
-// tslint:disable:jsx-no-multiline-js
+
 import React from 'react';
 import { List, Switch } from '../../';
 

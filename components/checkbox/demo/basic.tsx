@@ -1,4 +1,4 @@
-// tslint:disable:jsx-no-multiline-js
+
 import React from 'react';
 import { Text, View } from 'react-native';
 import { Checkbox, List, WhiteSpace } from '../../';

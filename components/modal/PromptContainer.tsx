@@ -1,4 +1,4 @@
-/* tslint:disable:jsx-no-multiline-js */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { KeyboardAvoidingView, Text, TextInput, TextStyle, View } from 'react-native';

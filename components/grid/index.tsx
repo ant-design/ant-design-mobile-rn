@@ -1,4 +1,4 @@
-/* tslint:disable:jsx-no-multiline-js */
+
 import React from 'react';
 import { Dimensions, Image, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import Carousel, { CarouselProps } from '../carousel/index';
