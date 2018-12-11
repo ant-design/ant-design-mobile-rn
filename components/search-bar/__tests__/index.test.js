@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { shallow } from 'enzyme';
+import { TextInput } from 'react-native';
+import renderer from 'react-test-renderer';
 import SearchBar from '../index';
 
 // No need to render Snapshot again, because of `./demo.test.js`
@@ -8,6 +8,7 @@ import SearchBar from '../index';
 describe('SearchBar', () => {
   describe('test some events', () => {
     let handler;
+    /** @type {renderer.ReactTestRenderer} */
     let wrapper;
 
     beforeEach(() => {
@@ -15,26 +16,26 @@ describe('SearchBar', () => {
     });
 
     it('fires onChange event', () => {
-      wrapper = shallow(<SearchBar onChange={handler} />);
-      wrapper.find('TextInput').simulate('changeText', 'foo');
+      wrapper = renderer.create(<SearchBar onChange={handler} />);
+      wrapper.root.findByType(TextInput).props.onChangeText('foo');
       expect(handler).toBeCalledWith('foo');
     });
 
     it('fires onFocus event', () => {
-      wrapper = shallow(<SearchBar onFocus={handler} />);
-      wrapper.find('TextInput').simulate('focus');
+      wrapper = renderer.create(<SearchBar onFocus={handler} />);
+      wrapper.root.findByType(TextInput).props.onFocus();
       expect(handler).toBeCalledWith();
     });
 
     it('fires onBlur event', () => {
-      wrapper = shallow(<SearchBar onBlur={handler} />);
-      wrapper.find('TextInput').simulate('blur');
+      wrapper = renderer.create(<SearchBar onBlur={handler} />);
+      wrapper.root.findByType(TextInput).props.onBlur();
       expect(handler).toBeCalledWith();
     });
 
     it('fires onCancel event', () => {
-      wrapper = shallow(<SearchBar value="test" showCancelButton onCancel={handler} />);
-      wrapper.find(Text).first().props().onPress();
+      wrapper = renderer.create(<SearchBar value="test" showCancelButton onCancel={handler} />);
+      wrapper.root.instance.onCancel();
       expect(handler).toBeCalledWith('test');
     });
   });
