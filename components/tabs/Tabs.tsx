@@ -111,10 +111,17 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
           }}
           style={{ flex: 1 }}
           onPageSelected={e => {
-            this.setState({
-              currentTab: e.nativeEvent.position,
-            });
-            this.nextCurrentTab = e.nativeEvent.position;
+            const index = e.nativeEvent.position;
+            this.setState(
+              {
+                currentTab: index,
+              },
+              () => {
+                // tslint:disable-next-line:no-unused-expression
+                this.props.onChange && this.props.onChange(tabs[index], index);
+              },
+            );
+            this.nextCurrentTab = index;
           }}
           ref={ref => (this.viewPager = ref)}
         >
@@ -318,9 +325,6 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       if (!force) {
         // tslint:disable-next-line:no-unused-expression
         onChange && onChange(tabs[index], index);
-        if (this.props.page !== undefined) {
-          return false;
-        }
       }
       this.setState(
         {
