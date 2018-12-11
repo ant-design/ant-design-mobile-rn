@@ -1,23 +1,23 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-
+import { TouchableWithoutFeedback } from 'react-native';
+import renderer from 'react-test-renderer';
 import NoticeBar from '../index';
-
 // No need to render Snapshot again, because of `./demo.test.js`
 
 describe('NoticeBar', () => {
   describe('onPress', () => {
     let handleClick;
+    /** @type {renderer.ReactTestRenderer} */
     let wrapper;
 
     beforeEach(() => {
       handleClick = jest.fn();
-      wrapper = shallow(
+      wrapper = renderer.create(
         <NoticeBar mode="closable" onPress={handleClick}>
           Notice: The arrival time of incomes and
         </NoticeBar>,
       );
-      wrapper.find('TouchableWithoutFeedback').simulate('press');
+      wrapper.root.findByType(TouchableWithoutFeedback).props.onPress();
     });
 
     it('fires onPress event', () => {
@@ -25,7 +25,7 @@ describe('NoticeBar', () => {
     });
 
     it('change state', () => {
-      expect(wrapper.state('show')).toBe(false);
+      expect(wrapper.getInstance().state.show).toBe(false);
     });
   });
 });
