@@ -26,6 +26,12 @@ export default (sourceCode, doc) => {
     Learn how to configure a non-root public URL by running npm run build.
   -->
   <title>React App</title>
+  <style>
+  @font-face {
+    src: url('https://unpkg.com/@ant-design/icons-react-native@1.0.1/fonts/antoutline.ttf'    );
+    font-family: antoutline;
+  }
+  </style>
 </head>
 <body>
   <noscript>
