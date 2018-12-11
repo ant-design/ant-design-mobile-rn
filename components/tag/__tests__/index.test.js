@@ -1,43 +1,47 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { shallow } from 'enzyme';
+import { Text, TouchableWithoutFeedback } from 'react-native';
+import renderer from 'react-test-renderer';
 import Tag from '../index';
-
 // No need to render Snapshot again, because of `./demo.test.js`
 
 describe('Tag', () => {
   it('small size does not have closeDom', () => {
-    const wrapper = shallow(<Tag small closable>Basic</Tag>);
-    expect(wrapper.find('TouchableWithoutFeedback')).toHaveLength(1);
-    expect(wrapper.containsMatchingElement(<Text>x</Text>)).toBeFalsy();
+    const inst = renderer.create(
+      <Tag small closable>Basic</Tag>,
+    );
+    inst.root.findAllByType(TouchableWithoutFeedback);
+    expect(inst.root.findAllByType(TouchableWithoutFeedback)).toHaveLength(1);
+    expect(inst.root.findByType(Text).children === 'x').toBeFalsy();
   });
 
   it('onChange then selected', () => {
     const onChange = jest.fn();
-    const wrapper = shallow(<Tag onChange={onChange}>Basic</Tag>);
-    expect(wrapper.state('selected')).toEqual(false);
-    wrapper.find('TouchableWithoutFeedback').at(0).simulate('press');
-    expect(wrapper.state('selected')).toEqual(true);
+    const inst = renderer.create(
+      <Tag onChange={onChange}>Basic</Tag>,
+    );
+    expect(inst.getInstance().state.selected).toEqual(false);
+    inst.getInstance().onPress();
+    expect(inst.getInstance().state.selected).toEqual(true);
     expect(onChange).toHaveBeenCalledWith(true);
   });
 
   it('onClose and removed', () => {
     const onClose = jest.fn();
     const afterClose = jest.fn();
-    const wrapper = shallow(<Tag closable onClose={onClose} afterClose={afterClose}>Basic</Tag>);
-    expect(wrapper.find('TouchableWithoutFeedback')).toHaveLength(2);
-    expect(wrapper.state('closed')).toEqual(false);
-    wrapper.find('TouchableWithoutFeedback').at(1).simulate('press');
+    const inst = renderer.create(<Tag closable onClose={onClose} afterClose={afterClose}>Basic</Tag>);
+    expect(inst.root.findAllByType(TouchableWithoutFeedback)).toHaveLength(2);
+    expect(inst.getInstance().state.closed).toEqual(false);
+    inst.getInstance().onTagClose();
     expect(onClose).toHaveBeenCalled();
-    expect(wrapper.state('closed')).toEqual(true);
+    expect(inst.getInstance().state.closed).toEqual(true);
     expect(afterClose).toHaveBeenCalled();
-    expect(wrapper.find('TouchableWithoutFeedback')).toHaveLength(0);
+    expect(inst.root.findAllByType(TouchableWithoutFeedback)).toHaveLength(0);
   });
 
   it('onLongPress then callback', () => {
     const onLongPress = jest.fn();
-    const wrapper = shallow(<Tag onLongPress={onLongPress}>Basic</Tag>);
-    wrapper.find('TouchableWithoutFeedback').at(0).simulate('longPress');
+    const inst = renderer.create(<Tag onLongPress={onLongPress}>Basic</Tag>);
+    inst.getInstance().handleLongPress();
     expect(onLongPress).toHaveBeenCalledWith();
   });
 });
