@@ -10,7 +10,6 @@ title:
 ```jsx
 import React from 'react';
 import { View } from 'react-native';
-import LocaleProvider from '..';
 import {
   DatePicker,
   List,
@@ -19,11 +18,12 @@ import {
   SearchBar,
   WhiteSpace,
   WingBlank,
+  Provider,
 } from '@ant-design/react-native';
-import enUS from '../en_US';
-import esES from '../es_ES';
-import ruRU from '../ru_RU';
-import zhCN from '../zh_CN';
+import enUS from '@ant-design/react-native/es/locale-provider/en_US';
+import esES from '@ant-design/react-native/es/locale-provider/es_ES';
+import ruRU from '@ant-design/react-native/es/locale-provider/ru_RU';
+import zhCN from '@ant-design/react-native/es/locale-provider/zh_CN';
 const maxDate = new Date(2018, 11, 3, 22, 0);
 const minDate = new Date(2015, 7, 6, 8, 30);
 const seasons = [
@@ -118,9 +118,9 @@ export default class LocaleProviderExample extends React.Component {
           <List.Item arrow="horizontal">Choose language</List.Item>
         </Picker>
         <WhiteSpace />
-        <LocaleProvider locale={currentLocale}>
+        <Provider locale={currentLocale}>
           <Page />
-        </LocaleProvider>
+        </Provider>
       </WingBlank>
     );
   }
