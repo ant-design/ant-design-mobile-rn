@@ -1,8 +1,8 @@
 
 import React from 'react';
-import RMCCascader from 'rmc-cascader/lib/Cascader';
-import RMCMultiPicker from 'rmc-picker/lib/MultiPicker';
-import RMCPicker from 'rmc-picker/lib/Picker';
+import RMCCascader from '../picker/cascader';
+import MultiPicker from '../picker/MultiPicker';
+import RMCPicker from '../picker/Picker';
 import { PickerData } from '../picker/PropsType';
 
 function getDefaultProps() {
@@ -75,7 +75,7 @@ export default class PickerView extends React.Component<PickerViewProps, any> {
       );
     } else {
       picker = (
-        <RMCMultiPicker
+        <MultiPicker
           prefixCls={props.prefixCls}
           selectedValue={props.value}
           onValueChange={props.onChange}
@@ -83,7 +83,7 @@ export default class PickerView extends React.Component<PickerViewProps, any> {
           style={{ flexDirection: 'row' }}
         >
           {this.getCol()}
-        </RMCMultiPicker>
+        </MultiPicker>
       );
     }
     return picker;

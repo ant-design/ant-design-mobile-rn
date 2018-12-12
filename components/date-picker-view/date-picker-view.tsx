@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import RCDatePicker from 'rmc-date-picker/lib/DatePicker';
+import RCDatePicker from '../date-picker/datepicker';
 import { getComponentLocale } from '../_util/getLocale';
 import { DatePickerProps } from './PropsType';
 export default class DatePickerView extends React.Component<

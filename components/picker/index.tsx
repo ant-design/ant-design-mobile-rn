@@ -2,15 +2,14 @@
 import treeFilter from 'array-tree-filter';
 import PropTypes from 'prop-types';
 import React from 'react';
-import RMCCascader from 'rmc-cascader/lib/Cascader';
-import RMCPopupCascader from 'rmc-cascader/lib/Popup';
-import RMCMultiPicker from 'rmc-picker/lib/MultiPicker';
-import RMCPicker from 'rmc-picker/lib/Picker';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
+import RMCCascader from './cascader';
+import RMCPopupCascader from './cascader/Popup';
+import MultiPicker from './MultiPicker';
+import RMCPicker from './Picker';
 import { PickerData, PickerPropsType } from './PropsType';
 import PickerStyles, { PickerStyle } from './style';
-
 export interface PickerProps
   extends PickerPropsType,
     WithThemeStyles<PickerStyle> {
@@ -23,7 +22,7 @@ export function getDefaultProps() {
     return values.join(',');
   };
   return {
-    triggerType: 'onClick',
+    triggerType: 'onPress',
     prefixCls: 'am-picker',
     pickerPrefixCls: 'am-picker-col',
     popupPrefixCls: 'am-picker-popup',
@@ -232,13 +231,13 @@ export default class Picker extends React.Component<PickerProps, any> {
       );
     } else {
       cascader = (
-        <RMCMultiPicker
+        <MultiPicker
           style={{ flexDirection: 'row', alignItems: 'center' }}
           prefixCls={prefixCls}
           onScrollChange={this.setScrollValue}
         >
           {this.getPickerCol()}
-        </RMCMultiPicker>
+        </MultiPicker>
       );
       popupMoreProps = {
         pickerValueProp: 'selectedValue',

@@ -1,8 +1,7 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { List, Picker } from '../../';
-
 import { district } from 'antd-mobile-demo-data';
+import React from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { List, Picker } from '../../';
 
 const CustomChildren = (props: any) => (
   <TouchableOpacity onPress={props.onPress}>
@@ -25,7 +24,6 @@ export default class PopupExample extends React.Component<any, any> {
     };
   }
   onPress = () => {
-    // console.log('start loading data');
     setTimeout(() => {
       this.setState({
         data: district,
@@ -33,7 +31,6 @@ export default class PopupExample extends React.Component<any, any> {
     }, 500);
   }
   onChange = (value: any) => {
-    // console.log(value);
     this.setState({ value });
   }
   render() {

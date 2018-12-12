@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Image, StyleProp, StyleSheet, Text, TouchableHighlight, View, ViewStyle } from 'react-native';
 import Icon from '../icon';
@@ -218,9 +217,7 @@ export default class Item extends React.Component<ListItemProps, any> {
               onPress={
                 (this.props as any).onClick
                   ? (this.props as any).onClick
-                  : onPress
-                  ? onPress
-                  : undefined
+                  : onPress || undefined
               }
               onPressIn={onPressIn}
               onPressOut={onPressOut}
