@@ -14,7 +14,7 @@ export interface StepsProps extends WithThemeStyles<StepsStyle> {
 }
 
 export default class Steps extends React.Component<StepsProps, any> {
-  static Step: any;
+  static Step: typeof StepsItem;
 
   static defaultProps = {
     direction: '',

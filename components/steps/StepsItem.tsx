@@ -3,7 +3,11 @@ import React from 'react';
 import { StyleProp, Text, View, ViewStyle } from 'react-native';
 import Icon from '../icon';
 import { WithTheme } from '../style';
-
+export interface RenderIconParams {
+  starting: boolean;
+  waiting: boolean;
+  error: boolean;
+}
 export interface StepsItemProps {
   width?: number;
   size?: string;
@@ -11,12 +15,13 @@ export interface StepsItemProps {
   index?: number;
   last?: boolean;
   direction?: string;
-  title?: string;
-  description?: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
   status?: string;
-  icon?: string;
+  icon?: React.ReactNode;
   errorTail?: number;
   styles?: any;
+  renderIcon?: (params: RenderIconParams) => React.ReactNode;
 }
 
 export default class StepsItem extends React.Component<StepsItemProps, any> {
@@ -30,11 +35,19 @@ export default class StepsItem extends React.Component<StepsItemProps, any> {
       status,
       icon,
       styles,
+      renderIcon,
     } = this.props;
 
     const index = this.props.index as number;
     const current = this.props.current as number;
     const errorTail = this.props.errorTail as number;
+    const starting =
+      index < current ||
+      status === 'finish' ||
+      index === current ||
+      status === 'process';
+    const waiting = index > current || status === 'wait';
+    const error = status === 'error';
     return (
       <WithTheme>
         {(_, theme) => {
@@ -72,44 +85,10 @@ export default class StepsItem extends React.Component<StepsItemProps, any> {
           }
 
           let iconSource;
-          if (size === 'small') {
-            if (
-              index < current ||
-              status === 'finish' ||
-              index === current ||
-              status === 'process'
-            ) {
-              iconSource = (
-                <Icon
-                  name="check"
-                  color={theme.brand_primary}
-                  style={styles[`icon${sizeCls}`]}
-                />
-              );
-            } else if (index > current || status === 'wait') {
-              iconSource = (
-                <Icon
-                  name="ellipsis"
-                  color={theme.color_icon_base}
-                  style={styles[`icon${sizeCls}`]}
-                />
-              );
-            } else if (status === 'error') {
-              iconSource = (
-                <Icon
-                  name="close"
-                  color={theme.brand_error}
-                  style={styles[`icon${sizeCls}`]}
-                />
-              );
-            }
+          if (renderIcon) {
+            iconSource = renderIcon({ starting, waiting, error });
           } else {
-            if (
-              index < current ||
-              status === 'finish' ||
-              index === current ||
-              status === 'process'
-            ) {
+            if (starting) {
               iconSource = (
                 <Icon
                   name="check"
@@ -117,7 +96,7 @@ export default class StepsItem extends React.Component<StepsItemProps, any> {
                   style={styles[`icon${sizeCls}`]}
                 />
               );
-            } else if (index > current || status === 'wait') {
+            } else if (waiting) {
               iconSource = (
                 <Icon
                   name="ellipsis"
@@ -128,7 +107,7 @@ export default class StepsItem extends React.Component<StepsItemProps, any> {
               if (!!icon) {
                 iconSource = icon;
               }
-            } else if (status === 'error') {
+            } else if (error) {
               iconSource = (
                 <Icon
                   name="close"
