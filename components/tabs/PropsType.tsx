@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle } from 'react-native';
 
 export interface TabData {
   key?: string;
@@ -18,17 +18,17 @@ export interface TabBarPropsType {
   /** render the tab of tabbar */
   renderTab?: (tab: TabData) => React.ReactNode;
   /** render the underline of tabbar */
-  renderUnderline?: (style: React.CSSProperties|any) => React.ReactNode;
+  renderUnderline?: (style: React.CSSProperties | any) => React.ReactNode;
   /** page size of tabbar's tab | default: 5 */
   page?: number;
   /** on tab click */
   onTabClick?: (tab: TabData, index: number) => void;
   /** tabBar's position | defualt: top */
-  tabBarPosition?: 'top'|'bottom'|'left'|'right';
+  tabBarPosition?: 'top' | 'bottom' | 'left' | 'right';
 
   // TabBar shortcut settings.
   /** tabBar underline style */
-  tabBarUnderlineStyle?: React.CSSProperties|any;
+  tabBarUnderlineStyle?: React.CSSProperties | any;
   /** tabBar background color */
   tabBarBackgroundColor?: string;
   /** tabBar active text color */
@@ -36,22 +36,22 @@ export interface TabBarPropsType {
   /** tabBar inactive text color */
   tabBarInactiveTextColor?: string;
   /** tabBar text style */
-  tabBarTextStyle?: React.CSSProperties|any;
+  tabBarTextStyle?: React.CSSProperties | any;
 
-  instanceId: number,
+  instanceId: number;
 }
 
 export interface PropsType {
   /** tabs data */
   tabs: TabData[];
   /** TabBar's position | default: top */
-  tabBarPosition?: 'top'|'bottom'|'left'|'right';
+  tabBarPosition?: 'top' | 'bottom';
   /** render for TabBar */
-  renderTabBar?: ((props: TabBarPropsType) => React.ReactNode)|false;
+  renderTabBar?: ((props: TabBarPropsType) => React.ReactNode) | false;
   /** initial Tab, index or key */
-  initialPage?: number|string;
+  initialPage?: number | string;
   /** current tab, index or key */
-  page?: number|string;
+  page?: number | string;
   /**
    * whether to switch tabs with swipe gestrue in the content | default: true
    */
@@ -76,11 +76,11 @@ export interface PropsType {
   /** use paged | default: true */
   usePaged?: boolean;
   /** tab paging direction | default: horizontal */
-  tabDirection?: 'horizontal'|'vertical';
+  tabDirection?: 'horizontal' | 'vertical';
 
   // TabBar shortcut settings.
   /** tabBar underline style */
-  tabBarUnderlineStyle?: React.CSSProperties|any;
+  tabBarUnderlineStyle?: React.CSSProperties | any;
   /** tabBar background color */
   tabBarBackgroundColor?: string;
   /** tabBar active text color */
@@ -88,7 +88,7 @@ export interface PropsType {
   /** tabBar inactive text color */
   tabBarInactiveTextColor?: string;
   /** tabBar text style */
-  tabBarTextStyle?: React.CSSProperties|any;
+  tabBarTextStyle?: React.CSSProperties | any;
   /** can't render content | default: false */
   noRenderContent?: boolean;
   /** use left instead of transform | default: false */
