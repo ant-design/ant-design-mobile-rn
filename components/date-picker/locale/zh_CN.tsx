@@ -1,4 +1,4 @@
-import DatePickerLocale from 'rmc-date-picker/lib/locale/zh_CN';
+import DatePickerLocale from '../datepicker/locale/zh_CN';
 
 export default {
   okText: '确定',

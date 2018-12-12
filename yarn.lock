@@ -1367,7 +1367,7 @@ array-slice@^1.0.0:
   resolved "https://registry.yarnpkg.com/array-slice/-/array-slice-1.1.0.tgz#e368ea15f89bc7069f7ffb89aec3a6c7d4ac22d4"
   integrity sha512-B1qMD3RBP7O8o0H2KbrXDyB0IccejMF15+87Lvlor12ONPRHP6gTjXMNkt/d3ZuOGbAe66hFmaCfECI24Ufp6w==
 
-array-tree-filter@1.0.x, array-tree-filter@^1.0.0:
+array-tree-filter@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/array-tree-filter/-/array-tree-filter-1.0.1.tgz#0a8ad1eefd38ce88858632f9cc0423d7634e4d5d"
   integrity sha1-CorR7v04zoiFhjL5zAQj12NOTV0=
@@ -13362,31 +13362,6 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rmc-cascader@~5.0.0:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/rmc-cascader/-/rmc-cascader-5.0.2.tgz#8c1d0ac197837e187f50d9bc3fcd0267cfc7b022"
-  integrity sha512-faf/nsJtW7hlwu+GTnm/o2Nqm7Ph2gvzUjQXRKNT/CdXcgZKWikX1Kxr0u9CdhfJvqiOQHB3Oy3zdwGAB5Cd5Q==
-  dependencies:
-    array-tree-filter "1.0.x"
-    babel-runtime "6.x"
-    rmc-picker "~5.0.0"
-
-rmc-date-picker@^6.0.8:
-  version "6.0.8"
-  resolved "https://registry.yarnpkg.com/rmc-date-picker/-/rmc-date-picker-6.0.8.tgz#9aab87b3aa8dc9c5a57349d8f0b05de4e8f4808a"
-  integrity sha512-Llohv+eNzv4pdo0WsOUNIYKOTjVeA3bZzY8J/YUE3bDxIXJEawcjxuB/QDLH2ewveL/cv/EpkYwt+r544CyL9g==
-  dependencies:
-    babel-runtime "6.x"
-    rmc-picker "~5.0.0"
-
-rmc-dialog@^1.0.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/rmc-dialog/-/rmc-dialog-1.1.1.tgz#1d7fbc6b2cad5b0b53fbab71fe29636d76f78217"
-  integrity sha512-28aJqtPTX6v13Z/aU1WBy1AFIXkE74PxZXde7JvtEIy9hQDTjH8fqOi822BpzAbXCyNE7jF9iFomy3H2ClsDJA==
-  dependencies:
-    babel-runtime "6.x"
-    rc-animate "2.x"
-
 rmc-feedback@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/rmc-feedback/-/rmc-feedback-2.0.0.tgz#cbc6cb3ae63c7a635eef0e25e4fbaf5ac366eeaa"
@@ -13394,16 +13369,6 @@ rmc-feedback@^2.0.0:
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
-
-rmc-picker@~5.0.0:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/rmc-picker/-/rmc-picker-5.0.5.tgz#2a33244ced1f4e6b10611ff6e0384a5dbbfc566e"
-  integrity sha512-Gycgsf3S6/sluI71WPUx167jdUHYe8kJ5seYxQN1m8z/g401V7bwr/G66d9Az7T44jlxywcQ3w3leuo1E+54Kw==
-  dependencies:
-    babel-runtime "6.x"
-    classnames "^2.2.0"
-    rmc-dialog "^1.0.1"
-    rmc-feedback "^2.0.0"
 
 rst-selector-parser@^2.2.3:
   version "2.2.3"

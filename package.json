@@ -40,9 +40,6 @@
     "react-native-drawer-layout": "~2.0.0",
     "react-native-menu": "^0.23.0",
     "react-native-swipeout": "^2.3.6",
-    "rmc-cascader": "~5.0.0",
-    "rmc-date-picker": "^6.0.8",
-    "rmc-picker": "~5.0.0",
     "utility-types": "^2.1.0"
   },
   "devDependencies": {

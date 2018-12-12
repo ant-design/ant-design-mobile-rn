@@ -1,11 +1,11 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import RCDatePicker from 'rmc-date-picker/lib/DatePicker';
-import PopupDatePicker from 'rmc-date-picker/lib/Popup';
 import PickerStyles, { PickerStyle } from '../picker/style/index';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
+import RCDatePicker from './datepicker';
+import PopupDatePicker from './datepicker/Popup';
 import { DatePickerPropsType } from './PropsType';
 import { formatProps } from './utils';
 
