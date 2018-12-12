@@ -66,6 +66,20 @@ export default class BasicInputItemExample extends React.Component<any, any> {
           </InputItem>
           <InputItem
             clear
+            value="disabled"
+            onChange={(value: any) => {
+              this.setState({
+                value,
+              });
+            }}
+            extra={<Text>元</Text>}
+            placeholder="disabled"
+            disabled
+          >
+            输入框
+          </InputItem>
+          <InputItem
+            clear
             value={this.state.value1}
             onChange={(value: any) => {
               this.setState({

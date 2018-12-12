@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { GestureResponderEvent, Platform, StyleSheet, Text, TextInputProperties, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import { Omit } from 'utility-types';
@@ -22,6 +21,7 @@ export interface InputItemProps
   last?: boolean;
   onExtraClick?: (event: GestureResponderEvent) => void;
   onErrorClick?: (event: GestureResponderEvent) => void;
+  disabled?: boolean;
 }
 
 const noop = () => {};
@@ -122,6 +122,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
       onExtraClick,
       onErrorClick,
       styles,
+      disabled,
       ...restProps
     } = this.props;
     const { value, defaultValue, style } = restProps;
@@ -181,7 +182,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
           } else if (type && keyboardTypeArray.indexOf(type) > -1) {
             keyboardType = type;
           }
-
+          const disabledStyle = disabled ? s.inputDisabled : {};
           return (
             <View style={[s.container, containerStyle, style]}>
               {children ? (
@@ -192,13 +193,17 @@ export default class InputItem extends React.Component<InputItemProps, any> {
                 )
               ) : null}
               <Input
-                editable={editable}
+                editable={!disabled && editable}
                 clearButtonMode={clear ? 'while-editing' : 'never'}
                 underlineColorAndroid="transparent"
                 ref={el => (this.inputRef = el)}
                 {...restProps}
                 {...valueProps}
-                style={[s.input, error ? s.inputErrorColor : null]}
+                style={[
+                  s.input,
+                  error ? s.inputErrorColor : null,
+                  disabledStyle,
+                ]}
                 keyboardType={keyboardType}
                 onChange={event => this.onChange(event.nativeEvent.text)}
                 secureTextEntry={type === 'password'}
