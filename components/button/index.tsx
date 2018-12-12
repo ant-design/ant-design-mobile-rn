@@ -106,10 +106,10 @@ export default class Button extends React.Component<ButtonProps, any> {
 
           return (
             <TouchableHighlight
+              activeOpacity={0.4}
               {...restProps}
               style={wrapperStyle}
               disabled={disabled}
-              activeOpacity={1}
               underlayColor={underlayColor}
               onPress={(e?: any) => onPress && onPress(e)}
               onPressIn={this.onPressIn}
