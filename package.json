@@ -39,6 +39,7 @@
     "react-native-drawer-layout": "~2.0.0",
     "react-native-menu": "^0.23.0",
     "react-native-swipeout": "^2.3.6",
+    "react-native-ultimate-listview": "^3.3.0",
     "utility-types": "^2.1.0"
   },
   "devDependencies": {

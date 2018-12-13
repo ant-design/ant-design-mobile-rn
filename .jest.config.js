@@ -1,21 +1,16 @@
 const libDir = process.env.LIB_DIR;
-const { defaults: tsjPreset } = require('ts-jest/presets');
+const {defaults: tsjPreset} = require('ts-jest/presets');
 
 const transformPackages = [
-  'react-native',
-  'react-native-menu',
-  'react-native-tab-view',
-  'react-native-collapsible',
-  'react-native-swipeout',
-  'react-native-camera-roll-picker',
+  'react-native', 'react-native-menu', 'react-native-tab-view',
+  'react-native-collapsible', 'react-native-swipeout',
+  'react-native-camera-roll-picker', 'react-native-ultimate-listview'
 ]
 
 module.exports = {
   // ...tsjPreset,
   preset: 'react-native',
-  setupFiles: [
-    './tests/setup.js'
-  ],
+  setupFiles: ['./tests/setup.js'],
   moduleFileExtensions: [
     'ts',
     'tsx',
@@ -33,8 +28,8 @@ module.exports = {
     ...tsjPreset.transform,
     // '\\.tsx?$': './node_modules/antd-tools/lib/jest/codePreprocessor',
     // '\\.js$': './node_modules/antd-tools/lib/jest/codePreprocessor',
-    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-    "\\.png": '<rootDir>/tests/imageStub.js',
+    '^.+\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
+    '\\.png': '<rootDir>/tests/imageStub.js',
   },
   testRegex: libDir === 'dist' ? 'demo\\.test\\.js$' : '.*\\.test\\.js$',
   collectCoverageFrom: [
@@ -48,7 +43,7 @@ module.exports = {
   globals: {
     'ts-jest': {
       babelConfig: true,
-      tsConfig: "tsconfig.test.json",
+      tsConfig: 'tsconfig.test.json',
     }
   }
 };
