@@ -139,7 +139,6 @@ class Picker extends React.Component<IPickerProp & PickerProps, any> {
       if (selectedValue === item.props.value) {
         totalStyle.push(styles.selectedItemText);
       }
-      totalStyle.push(itemStyle);
       return (
         <View
           ref={el => ((this as any)[`item${index}`] = el)}
@@ -147,7 +146,7 @@ class Picker extends React.Component<IPickerProp & PickerProps, any> {
           key={item.key}
         >
           <Text
-            style={[{ includeFontPadding: false }, totalStyle]}
+            style={[{ includeFontPadding: false }, totalStyle, itemStyle]}
             numberOfLines={1}
           >
             {item.props.label}
