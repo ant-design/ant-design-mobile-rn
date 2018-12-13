@@ -8,6 +8,7 @@ export interface DatePickerPropsType {
   onChange?: (value: Date) => void;
   onValueChange?: (vals: any, index: number) => void;
   visible?: boolean;
+  use12Hours?: boolean;
   onDismiss?: () => void;
   locale?: {
     okText: string;

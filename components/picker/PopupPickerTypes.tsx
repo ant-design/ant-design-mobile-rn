@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type IPopupPickerProps = {
+export type PopupPickerProps = {
   picker?: any;
   value?: any;
   triggerType?: string;
@@ -15,14 +15,10 @@ export type IPopupPickerProps = {
   onVisibleChange?: (visible: boolean) => void;
   content?: React.ReactElement<any> | string;
   onDismiss?: () => void;
-  /** react-native only */
   styles?: any;
   actionTextUnderlayColor?: string;
   actionTextActiveOpacity?: number;
-  /** web only */
   wrapStyle?: React.CSSProperties;
-  prefixCls?: string;
-  className?: string;
   pickerValueProp?: string;
   pickerValueChangeProp?: string;
   transitionName?: string;

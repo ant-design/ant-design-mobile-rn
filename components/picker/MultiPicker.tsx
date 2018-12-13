@@ -3,11 +3,11 @@ import { View } from 'react-native';
 import MultiPickerMixin from './MultiPickerMixin';
 import MultiPickerProps from './MultiPickerProps';
 
-export interface IMultiPickerProp {
+export interface MultiPickerProp {
   getValue: Function;
 }
 
-const MultiPicker = (props: IMultiPickerProp & MultiPickerProps) => {
+const MultiPicker = (props: MultiPickerProp & MultiPickerProps) => {
   const { children, style } = props;
   const selectedValue = props.getValue();
   const colElements = React.Children.map(children, (col: any, i) => {

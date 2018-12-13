@@ -1,7 +1,7 @@
 import React from 'react';
 import MultiPicker from '../../picker/MultiPicker';
 import Picker from '../../picker/Picker';
-import IDatePickerProps from './IDatePickerProps';
+import DatePickerProps from './DatePickerProps';
 import defaultLocale from './locale/en_US';
 
 function getDaysInMonth(date: any) {
@@ -33,7 +33,7 @@ const MONTH = 'month';
 const YEAR = 'year';
 const ONE_DAY = 24 * 60 * 60 * 1000;
 
-class DatePicker extends React.Component<IDatePickerProps, any> {
+class DatePicker extends React.Component<DatePickerProps, any> {
   static defaultProps = {
     prefixCls: 'rmc-date-picker',
     pickerPrefixCls: 'rmc-picker',
@@ -495,26 +495,12 @@ class DatePicker extends React.Component<IDatePickerProps, any> {
 
   render() {
     const { value, cols } = this.getValueCols();
-    const {
-      disabled,
-      pickerPrefixCls,
-      prefixCls,
-      rootNativeProps,
-      className,
-      style,
-      itemStyle,
-    } = this.props;
-    const multiStyle = {
-      flexDirection: 'row',
-      alignItems: 'center',
-      ...style,
-    };
+    const { disabled, rootNativeProps, style, itemStyle } = this.props;
+
     return (
       <MultiPicker
-        style={multiStyle}
+        style={[{ flexDirection: 'row', alignItems: 'center' }, style]}
         rootNativeProps={rootNativeProps}
-        className={className}
-        prefixCls={prefixCls}
         selectedValue={value}
         onValueChange={this.onValueChange}
         onScrollChange={this.onScrollChange}
@@ -524,7 +510,6 @@ class DatePicker extends React.Component<IDatePickerProps, any> {
             style={{ flex: 1 }}
             key={p.key}
             disabled={disabled}
-            prefixCls={pickerPrefixCls}
             itemStyle={itemStyle}
           >
             {p.props.children.map((item: any) => {

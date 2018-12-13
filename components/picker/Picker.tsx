@@ -9,7 +9,7 @@ class Picker extends React.Component<PickerProps, {}> {
     children: [],
   };
 
-  static Item(): any {}
+  static Item: any = () => {};
 
   getValue() {
     if ('selectedValue' in this.props) {

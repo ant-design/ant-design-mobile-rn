@@ -1,4 +1,6 @@
-interface IDatePickerProps {
+import { StyleProp, ViewStyle } from "react-native";
+
+interface DatePickerProps {
   date?: any;
   defaultDate?: any;
   minDate?: any;
@@ -11,16 +13,11 @@ interface IDatePickerProps {
   formatDay?: (day: number, date?: any) => any;
   onDateChange?: (date: any) => void;
   onValueChange?: (vals: any, index: number) => void;
-  itemStyle?: any;
-  style?: any;
-  /** web only */
-  prefixCls?: string;
-  /** web only */
+  itemStyle?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>;
   onScrollChange?: (date: any, vals: any, index: number) => void;
   rootNativeProps?: {};
-  pickerPrefixCls?: string;
-  className?: string;
   use12Hours?: boolean;
 }
 
-export default IDatePickerProps;
+export default DatePickerProps;
