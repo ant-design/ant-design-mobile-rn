@@ -18,6 +18,7 @@ Array [
   "Icon",
   "ImagePicker",
   "InputItem",
+  "ListView",
   "List",
   "Modal",
   "NoticeBar",

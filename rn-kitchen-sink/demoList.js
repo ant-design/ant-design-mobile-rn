@@ -58,6 +58,12 @@ module.exports = {
       module: require('../components/list/demo/basic'),
     },
     {
+      title: 'ListView',
+      description: '列表',
+      icon: 'https://os.alipayobjects.com/rmsportal/tiapjpdKPQGHhnC.png',
+      module: require('../components/list-view/demo/basic'),
+    },
+    {
       title: 'Modal',
       description: '对话框',
       icon: 'https://os.alipayobjects.com/rmsportal/HzRRcuwtqUCCOBg.png',

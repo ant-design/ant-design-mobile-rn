@@ -14,6 +14,7 @@ export { default as Grid } from './grid/index';
 export { default as Icon } from './icon/index';
 export { default as ImagePicker } from './image-picker/index';
 export { default as InputItem } from './input-item/index';
+export { default as ListView } from './list-view/index';
 export { default as List } from './list/index';
 export { default as Modal } from './modal/index';
 export { default as NoticeBar } from './notice-bar/index';
