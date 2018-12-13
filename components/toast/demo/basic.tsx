@@ -1,8 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { DeviceEventEmitter } from 'react-native';
-import { Button, Toast, WhiteSpace, WingBlank } from '../../';
-import { portal } from '../../portal';
+import { Button, Portal, Toast, WhiteSpace, WingBlank } from '../../';
 
 function showToast() {
   // multiple toast
@@ -47,7 +46,7 @@ export default class ToastExample extends React.Component<any, any> {
   alwaysShowToast = () => {
     const key = Toast.info('A toast width duration = 0 !!!', 0);
     this.timer = setTimeout(() => {
-      portal.remove(key);
+      Portal.remove(key);
     }, 5000);
   };
 
