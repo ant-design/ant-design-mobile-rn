@@ -420,7 +420,7 @@ exports[`renders ./components/activity-indicator/demo/basic.native.tsx correctly
             },
             false,
             false,
-            false,
+            undefined,
             undefined,
           ],
         ]
