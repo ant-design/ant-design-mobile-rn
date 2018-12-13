@@ -378,7 +378,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
 
   // tslint:disable-next-line:no-shadowed-variable
   renderTabBar(tabBarProps: any, DefaultTabBar: React.ComponentClass) {
-    const { renderTabBar } = this.props as PropsType;
+    const { renderTabBar } = this.props;
     if (renderTabBar === false) {
       return null;
     } else if (renderTabBar) {

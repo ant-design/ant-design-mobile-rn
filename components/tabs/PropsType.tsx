@@ -80,7 +80,7 @@ export interface PropsType {
 
   // TabBar shortcut settings.
   /** tabBar underline style */
-  tabBarUnderlineStyle?: React.CSSProperties | any;
+  tabBarUnderlineStyle?: StyleProp<ViewStyle>;
   /** tabBar background color */
   tabBarBackgroundColor?: string;
   /** tabBar active text color */
@@ -88,7 +88,7 @@ export interface PropsType {
   /** tabBar inactive text color */
   tabBarInactiveTextColor?: string;
   /** tabBar text style */
-  tabBarTextStyle?: React.CSSProperties | any;
+  tabBarTextStyle?: StyleProp<TextStyle>;
   /** can't render content | default: false */
   noRenderContent?: boolean;
   /** use left instead of transform | default: false */
