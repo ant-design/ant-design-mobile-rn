@@ -39,10 +39,10 @@ export interface IPickerProp {
 class Picker extends React.Component<IPickerProp & IPickerProps, any> {
   itemHeight: number;
   itemWidth: number;
-  scrollBuffer: any;
-  scrollerRef: any;
-  contentRef: any;
-  indicatorRef: any;
+  scrollBuffer: number;
+  scrollerRef: ScrollView | null;
+  contentRef: View | null;
+  indicatorRef: View | null;
 
   onItemLayout = (e: any) => {
     const { height, width } = e.nativeEvent.layout;
@@ -65,7 +65,7 @@ class Picker extends React.Component<IPickerProp & IPickerProps, any> {
     if (this.itemHeight !== height) {
       this.itemHeight = height;
       if (this.scrollerRef) {
-        this.scrollerRef.setNativeProps({
+        (this.scrollerRef as any).setNativeProps({
           style: {
             height: height * 7,
           },
@@ -129,7 +129,7 @@ class Picker extends React.Component<IPickerProp & IPickerProps, any> {
     this.scrollBuffer = setTimeout(() => {
       this.clearScrollBuffer();
       this.props.doScrollingComplete(y, this.itemHeight, this.fireValueChange);
-    }, 100);
+    }, 50);
   };
 
   render() {
@@ -146,7 +146,10 @@ class Picker extends React.Component<IPickerProp & IPickerProps, any> {
           onLayout={index === 0 ? this.onItemLayout : undefined}
           key={item.key}
         >
-          <Text style={totalStyle} numberOfLines={1}>
+          <Text
+            style={[{ includeFontPadding: false }, totalStyle]}
+            numberOfLines={1}
+          >
             {item.props.label}
           </Text>
         </View>
@@ -161,6 +164,12 @@ class Picker extends React.Component<IPickerProp & IPickerProps, any> {
           onScroll={this.onScroll}
           showsVerticalScrollIndicator={false}
           overScrollMode="never"
+          renderToHardwareTextureAndroid
+          scrollEventThrottle={10}
+          needsOffscreenAlphaCompositing
+          collapsable
+          horizontal={false}
+          removeClippedSubviews
         >
           <View ref={el => (this.contentRef = el)}>{items}</View>
         </ScrollView>
