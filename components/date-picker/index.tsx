@@ -4,7 +4,7 @@ import React from 'react';
 import PickerStyles, { PickerStyle } from '../picker/style/index';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
-import RCDatePicker from './datepicker';
+import AntDatePicker from './datepicker';
 import PopupDatePicker from './datepicker/Popup';
 import { DatePickerPropsType } from './PropsType';
 import { formatProps } from './utils';
@@ -36,7 +36,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
     const { okText, dismissText, extra, DatePickerLocale } = locale;
 
     const dataPicker = (
-      <RCDatePicker
+      <AntDatePicker
         minuteStep={this.props.minuteStep}
         locale={DatePickerLocale}
         mode={this.props.mode}

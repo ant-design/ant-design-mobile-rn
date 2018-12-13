@@ -16,6 +16,7 @@ Properties | Descrition | Type | Default
 | maxDate   | maximum date | Date  |  2030-1-1  |
 | minuteStep |   The amount of time, in minutes, between each minute item.    | Number | 1 |
 | locale   | international, can override the configuration of the global `[LocaleProvider](https://mobile.ant.design/components/locale-provider)` | Object: {DatePickerLocale: {year, month, day, hour, minute, am?, pm?}, okText, dismissText} |  -  |
-| disabled   | 是否不可用      | Boolean |    false  |
+| disabled   | disabled      | Boolean |    false  |
+| use12Hours   | 12 hours format      | Boolean |    false  |
 | onChange  | change handler | (date: Object): void |  -  |
 | onValueChange | fire when picker col change | (vals: any, index: number) => void | - |
