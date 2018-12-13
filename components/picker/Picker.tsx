@@ -1,10 +1,10 @@
 import React from 'react';
 import NativePicker from './NativePicker';
-import { IPickerProps } from './PickerTypes';
+import { PickerProps } from './PickerTypes';
 
 const Item: any = NativePicker.Item;
 
-class Picker extends React.Component<IPickerProps, {}> {
+class Picker extends React.Component<PickerProps, {}> {
   static defaultProps = {
     children: [],
   };

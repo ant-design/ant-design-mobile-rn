@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import React from 'react';
-import { IPickerProps } from './PickerTypes';
+import { PickerProps } from './PickerTypes';
 
 type IItemProps = {
   className?: string;
@@ -10,7 +10,7 @@ type IItemProps = {
 const Item = (_props: IItemProps) => null;
 
 export default function(ComposedComponent: any) {
-  return class extends React.Component<IPickerProps, any> {
+  return class extends React.Component<PickerProps, any> {
     static Item = Item;
 
     select = (value: any, itemHeight: any, scrollTo: any) => {

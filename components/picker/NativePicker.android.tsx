@@ -1,7 +1,7 @@
 import React from 'react';
 import { PixelRatio, ScrollView, StyleSheet, Text, View } from 'react-native';
 import PickerMixin from './PickerMixin';
-import { IPickerProps } from './PickerTypes';
+import { PickerProps } from './PickerTypes';
 
 const ratio = PixelRatio.get();
 const styles = StyleSheet.create({
@@ -36,7 +36,7 @@ export interface IPickerProp {
   doScrollingComplete: Function;
 }
 
-class Picker extends React.Component<IPickerProp & IPickerProps, any> {
+class Picker extends React.Component<IPickerProp & PickerProps, any> {
   itemHeight: number;
   itemWidth: number;
   scrollBuffer: number;
