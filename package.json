@@ -32,7 +32,6 @@
   "dependencies": {
     "@ant-design/icons-react-native": "^1.0.2",
     "array-tree-filter": "~2.1.0",
-    "babel-runtime": "6.x",
     "deepmerge": "^3.0.0",
     "hoist-non-react-statics": "^3.2.1",
     "normalize-css-color": "^1.0.2",
