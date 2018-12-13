@@ -2,7 +2,7 @@ import { district } from 'antd-mobile-demo-data';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { List, Picker } from '../../';
-
+const data = require('./data.json')
 const CustomChildren = (props: any) => (
   <TouchableOpacity onPress={props.onPress}>
     <View
@@ -34,9 +34,20 @@ export default class PopupExample extends React.Component<any, any> {
     this.setState({ value });
   }
   render() {
+
     return (
       <View style={{ marginTop: 30 }}>
         <List>
+          <Picker
+            data={data}
+            cols={3}
+            value={this.state.value}
+            onChange={this.onChange}
+          >
+            <List.Item arrow="horizontal" onPress={this.onPress}>
+              省市选择
+            </List.Item>
+          </Picker>
           <Picker
             data={this.state.data}
             cols={2}
