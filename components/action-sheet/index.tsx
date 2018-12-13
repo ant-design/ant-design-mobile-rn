@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActionSheetIOS, ActionSheetIOSOptions, Platform, Share } from 'react-native';
-import { portal } from '../portal';
+import Portal from '../portal';
 import ActionSheetAndroidContainer from './AndroidContainer';
 
 let instance: ActionSheetAndroidContainer | null;
@@ -15,13 +15,13 @@ export default {
       return;
     }
 
-    const key = portal.add(
+    const key = Portal.add(
       <ActionSheetAndroidContainer
         visible
         ref={ref => (instance = ref)}
         onAnimationEnd={(visible: boolean) => {
           if (!visible) {
-            portal.remove(key);
+            Portal.remove(key);
           }
         }}
         config={config}
