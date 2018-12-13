@@ -18,5 +18,6 @@ DatePickerView 的功能类似于 DatePicker ，但它是直接渲染在区域�
 | minuteStep |  分钟数递增步长设置   | Number | 1 |
 | locale   | 国际化，可覆盖全局`[LocaleProvider](https://mobile.ant.design/components/locale-provider)`的配置 | Object: {DatePickerLocale: {year, month, day, hour, minute, am?, pm?}, okText, dismissText } | - |
 | disabled   | 是否不可用      | Boolean |    false  |
+| use12Hours   | 12小时制      | Boolean |    false  |
 | onChange   | 时间发生变化的回调函数  | (date: Object): void | - |
 | onValueChange | 每列 picker 改变时的回调 | (vals: any, index: number) => void | - |
