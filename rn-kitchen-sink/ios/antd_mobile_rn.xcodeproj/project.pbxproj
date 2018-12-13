@@ -36,6 +36,7 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* antd_mobile_rnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* antd_mobile_rnTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		3681F1A421C22D7700BC0307 /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3681F04C21BCD31900BC0307 /* libRCTCameraRoll.a */; };
 		5EACFA6AE5E74B0FB2B01B5D /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 246DCC90FC0C4EB4B35F02AE /* antfill.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		91B69CCFCA0A4931B1246C22 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A07C67ED8BB74DFCB83435DE /* antoutline.ttf */; };
@@ -370,6 +371,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3681F1A421C22D7700BC0307 /* libRCTCameraRoll.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
