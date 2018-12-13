@@ -1,4 +1,3 @@
-
 import PropTypes from 'prop-types';
 import React from 'react';
 import PickerStyles, { PickerStyle } from '../picker/style/index';
@@ -25,7 +24,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
     antLocale: PropTypes.object,
   };
   render() {
-    const { children, value } = this.props;
+    const { children, value, itemStyle } = this.props;
     const locale = getComponentLocale(
       this.props,
       (this as any).context,
@@ -44,6 +43,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
         maxDate={this.props.maxDate}
         defaultDate={value}
         onValueChange={this.props.onValueChange}
+        itemStyle={itemStyle}
       />
     );
 

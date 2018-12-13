@@ -25,6 +25,8 @@ Properties | Descrition | Type | Default
 | onValueChange | fire when picker col change | (vals: any, index: number) => void | - |
 | format  | format the selected value | `(value: Date) => date string` / `format string`(corresponding mode under the format are: `YYYY-MM-DD` or `HH:mm` or `YYYY-MM-DD HH:mm`) | - |
 | title  | title | string/React.ReactElement |  -  |
+| itemStyle  | itemStyle |   StyleProp<ViewStyle>;
+ |  -  |
 | extra   | the display text | String  |  `请选择`  |
 | onOk  | handler called when click ok | (val): void  |  - |
 | onDismiss  | handler called when click cancel | (): void  |  -  |

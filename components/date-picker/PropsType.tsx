@@ -1,6 +1,6 @@
 import React from 'react';
-
-export interface DatePickerPropsType {
+import AntDatePickerProps from './datepicker/DatePickerProps';
+export interface DatePickerPropsType extends AntDatePickerProps {
   value?: Date;
   mode?: 'datetime' | 'date' | 'year' | 'month' | 'time';
   minDate?: Date;

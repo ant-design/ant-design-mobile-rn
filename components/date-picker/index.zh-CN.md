@@ -26,6 +26,8 @@ subtitle: 日期选择
 | onValueChange | 每列 picker 改变时的回调 | (vals: any, index: number) => void | - |
 | format  | 格式化选中的值 | `(value: Date) => date string` / `format string`(对应 mode 下格式分别为:`YYYY-MM-DD`,`HH:mm`,`YYYY-MM-DD HH:mm`) | - |
 | title  | 弹框的标题 | string/React.ReactElement |  无  |
+| itemStyle  | itemStyle |   StyleProp<ViewStyle>;
+ |  -  |
 | extra   | 显示文案 | String  |  `请选择`  |
 | onOk  | 点击选中时执行的回调 | (val): void  |  无 |
 | onDismiss  | 点击取消时执行的回调 | (): void  |  无  |
