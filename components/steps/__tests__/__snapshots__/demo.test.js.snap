@@ -76,7 +76,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#108ee9",
+                        "color": "#cccccc",
                         "fontFamily": "antoutline",
                         "fontSize": 22,
                         "fontStyle": "normal",
@@ -185,7 +185,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#108ee9",
+                        "color": "#cccccc",
                         "fontFamily": "antoutline",
                         "fontSize": 22,
                         "fontStyle": "normal",
@@ -431,7 +431,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#108ee9",
+                        "color": "#cccccc",
                         "fontFamily": "antoutline",
                         "fontSize": 22,
                         "fontStyle": "normal",
@@ -537,7 +537,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#108ee9",
+                        "color": "#cccccc",
                         "fontFamily": "antoutline",
                         "fontSize": 22,
                         "fontStyle": "normal",
@@ -772,7 +772,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#108ee9",
+                        "color": "#cccccc",
                         "fontFamily": "antoutline",
                         "fontSize": 22,
                         "fontStyle": "normal",
@@ -888,7 +888,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#108ee9",
+                        "color": "#cccccc",
                         "fontFamily": "antoutline",
                         "fontSize": 22,
                         "fontStyle": "normal",
@@ -1004,7 +1004,7 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#f4333c",
+                        "color": "#cccccc",
                         "fontFamily": "antoutline",
                         "fontSize": 22,
                         "fontStyle": "normal",
@@ -2370,6 +2370,489 @@ exports[`renders ./components/steps/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   
+                </Text>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "marginLeft": 11,
+                      "width": 2,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                  ]
+                }
+              />
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "marginLeft": 11,
+                      "width": 2,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "fontWeight": "bold",
+                      "paddingBottom": 9,
+                    },
+                  ]
+                }
+              >
+                Wait
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 15,
+                    },
+                  ]
+                }
+              >
+                This is description
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "marginLeft": 15,
+              "marginRight": 15,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          onLayout={[Function]}
+          style={
+            Object {
+              "flexDirection": "column",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "column",
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#108ee9",
+                      "borderRadius": 18,
+                      "borderStyle": "solid",
+                      "borderWidth": 2,
+                      "height": 24,
+                      "overflow": "hidden",
+                      "width": 24,
+                    },
+                    Object {
+                      "backgroundColor": "#108ee9",
+                      "borderColor": "#108ee9",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#cccccc",
+                        "fontFamily": "antoutline",
+                        "fontSize": 22,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "marginLeft": 11,
+                      "width": 2,
+                    },
+                    Object {
+                      "backgroundColor": "#108ee9",
+                    },
+                  ]
+                }
+              />
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "marginLeft": 11,
+                      "width": 2,
+                    },
+                    Object {
+                      "backgroundColor": "#108ee9",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "fontWeight": "bold",
+                      "paddingBottom": 9,
+                    },
+                  ]
+                }
+              >
+                Finished
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 15,
+                    },
+                  ]
+                }
+              >
+                This is description
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "column",
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#108ee9",
+                      "borderRadius": 18,
+                      "borderStyle": "solid",
+                      "borderWidth": 2,
+                      "height": 24,
+                      "overflow": "hidden",
+                      "width": 24,
+                    },
+                    Object {
+                      "backgroundColor": "#108ee9",
+                      "borderColor": "#108ee9",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#cccccc",
+                        "fontFamily": "antoutline",
+                        "fontSize": 22,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "marginLeft": 11,
+                      "width": 2,
+                    },
+                    Object {
+                      "backgroundColor": "#108ee9",
+                    },
+                  ]
+                }
+              />
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "marginLeft": 11,
+                      "width": 2,
+                    },
+                    Object {
+                      "backgroundColor": "#bbbbbb",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "fontWeight": "bold",
+                      "paddingBottom": 9,
+                    },
+                  ]
+                }
+              >
+                Progress
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 15,
+                    },
+                  ]
+                }
+              >
+                This is description
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "column",
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#108ee9",
+                      "borderRadius": 18,
+                      "borderStyle": "solid",
+                      "borderWidth": 2,
+                      "height": 24,
+                      "overflow": "hidden",
+                      "width": 24,
+                    },
+                    Object {
+                      "backgroundColor": "#bbbbbb",
+                      "borderColor": "#bbbbbb",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#cccccc",
+                        "fontFamily": "antoutline",
+                        "fontSize": 22,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "marginLeft": 11,
+                      "width": 2,
+                    },
+                    Object {
+                      "backgroundColor": "#bbbbbb",
+                    },
+                  ]
+                }
+              />
+              <View
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "marginLeft": 11,
+                      "width": 2,
+                    },
+                    Object {
+                      "backgroundColor": "#f4333c",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "fontWeight": "bold",
+                      "paddingBottom": 9,
+                    },
+                  ]
+                }
+              >
+                Wait
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 15,
+                    },
+                  ]
+                }
+              >
+                This is description
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "column",
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#108ee9",
+                      "borderRadius": 18,
+                      "borderStyle": "solid",
+                      "borderWidth": 2,
+                      "height": 24,
+                      "overflow": "hidden",
+                      "width": 24,
+                    },
+                    Object {
+                      "backgroundColor": "#bbbbbb",
+                      "borderColor": "#bbbbbb",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#cccccc",
+                        "fontFamily": "antoutline",
+                        "fontSize": 22,
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  
                 </Text>
               </View>
               <View
