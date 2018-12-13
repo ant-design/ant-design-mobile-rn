@@ -18,7 +18,7 @@ export interface DatePickerProps
 export default class DatePicker extends React.Component<DatePickerProps> {
   static defaultProps = {
     mode: 'datetime',
-    triggerType: 'onClick',
+    triggerType: 'onPress',
     minuteStep: 1,
   };
   static contextTypes = {

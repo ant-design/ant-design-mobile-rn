@@ -1,31 +1,25 @@
 import * as React from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
 
 export type CascaderOneValue = string | number;
 export type CascaderValue = CascaderOneValue[];
 
-export interface ICascaderDataItem {
+export interface CascaderDataItem {
   label: React.ReactNode;
   value: CascaderOneValue;
-  children?: ICascaderDataItem[];
+  children?: CascaderDataItem[];
 }
 
-export interface ICascaderProps {
+export interface CascaderProps {
   defaultValue?: CascaderValue;
   value?: CascaderValue;
   onChange?: (value: CascaderValue) => void;
-  data: ICascaderDataItem[];
+  data: CascaderDataItem[];
   cols?: number;
   disabled?: boolean;
   rootNativeProps?: {};
-  pickerItemStyle?: {};
-  indicatorStyle?: {};
-  style?: any;
-  /** web only */
-  prefixCls?: string;
-  /** web only */
-  pickerPrefixCls?: string;
-  /** web only */
-  className?: string;
-  /** web only */
+  pickerItemStyle?: StyleProp<ViewStyle>;
+  indicatorStyle?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>;
   onScrollChange?: (value: CascaderValue) => void;
 }

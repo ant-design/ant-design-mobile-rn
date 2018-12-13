@@ -10,8 +10,6 @@ export default class DatePickerView extends React.Component<
   static defaultProps = {
     mode: 'datetime',
     // extra: '请选择',
-    prefixCls: 'am-picker',
-    pickerPrefixCls: 'am-picker-col',
     minuteStep: 1,
     use12Hours: false,
   };

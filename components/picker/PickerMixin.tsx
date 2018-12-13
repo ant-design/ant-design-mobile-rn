@@ -2,12 +2,11 @@
 import React from 'react';
 import { PickerProps } from './PickerTypes';
 
-type IItemProps = {
-  className?: string;
+type ItemProps = {
   value: any;
 };
 
-const Item = (_props: IItemProps) => null;
+const Item = (_props: ItemProps) => null;
 
 export default function(ComposedComponent: any) {
   return class extends React.Component<PickerProps, any> {

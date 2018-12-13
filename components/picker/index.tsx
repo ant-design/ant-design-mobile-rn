@@ -64,13 +64,12 @@ export default class Picker extends React.Component<PickerProps, any> {
   };
 
   getPickerCol = () => {
-    const { data, pickerPrefixCls, itemStyle, indicatorStyle } = this.props;
+    const { data, itemStyle, indicatorStyle } = this.props;
 
     return (data as PickerData[][]).map((col, index) => {
       return (
         <RMCPicker
           key={index}
-          prefixCls={pickerPrefixCls}
           style={{ flex: 1 }}
           itemStyle={itemStyle}
           indicatorStyle={indicatorStyle}
@@ -149,8 +148,6 @@ export default class Picker extends React.Component<PickerProps, any> {
       dismissText,
       extra,
       cascade,
-      prefixCls,
-      pickerPrefixCls,
       data,
       cols,
       onOk,
@@ -170,8 +167,6 @@ export default class Picker extends React.Component<PickerProps, any> {
       popupMoreProps,
     }: { cascader: JSX.Element; popupMoreProps: {} } = this.getCascade(
       cascade,
-      prefixCls,
-      pickerPrefixCls,
       data,
       cols,
       itemStyle,
@@ -185,7 +180,6 @@ export default class Picker extends React.Component<PickerProps, any> {
             {...this.popupProps}
             {...restProps}
             styles={styles}
-            prefixCls={popupPrefixCls}
             value={value}
             dismissText={dismissText || _locale.dismissText}
             okText={okText || _locale.okText}
@@ -207,8 +201,6 @@ export default class Picker extends React.Component<PickerProps, any> {
 
   getCascade = (
     cascade: boolean | undefined,
-    prefixCls: string | undefined,
-    pickerPrefixCls: string | undefined,
     data: PickerData[] | PickerData[][],
     cols: number | undefined,
     itemStyle: any,
@@ -219,8 +211,6 @@ export default class Picker extends React.Component<PickerProps, any> {
     if (cascade) {
       cascader = (
         <RMCCascader
-          prefixCls={prefixCls}
-          pickerPrefixCls={pickerPrefixCls}
           data={data as PickerData[]}
           cols={cols}
           onChange={this.onPickerChange}
@@ -233,7 +223,6 @@ export default class Picker extends React.Component<PickerProps, any> {
       cascader = (
         <MultiPicker
           style={{ flexDirection: 'row', alignItems: 'center' }}
-          prefixCls={prefixCls}
           onScrollChange={this.setScrollValue}
         >
           {this.getPickerCol()}

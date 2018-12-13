@@ -1,6 +1,5 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { Theme } from '../../style';
-export { ImageStyle, TextStyle, ViewStyle };
 export interface StepperStyle {
   container: ViewStyle;
   input: TextStyle;

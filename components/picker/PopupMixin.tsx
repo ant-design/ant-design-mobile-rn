@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { IPopupPickerProps } from './PopupPickerTypes';
+import { PopupPickerProps } from './PopupPickerTypes';
 
 export default function PopupMixin(
   getModal: (
@@ -16,7 +16,7 @@ export default function PopupMixin(
     WrapComponent: View;
   },
 ) {
-  return class extends React.Component<IPopupPickerProps, any> {
+  return class extends React.Component<PopupPickerProps, any> {
     static defaultProps = {
       onVisibleChange(_: any) {},
       okText: 'Ok',
@@ -29,7 +29,7 @@ export default function PopupMixin(
 
     picker: any;
 
-    constructor(props: Readonly<IPopupPickerProps>) {
+    constructor(props: Readonly<PopupPickerProps>) {
       super(props);
 
       this.state = {

@@ -1,15 +1,14 @@
+import { StyleProp, ViewStyle } from "react-native";
+
 export type PickerProps = {
   disabled?: boolean;
   selectedValue?: any;
   onValueChange?: (value: any) => void;
-  itemStyle?: any;
-  /** web only */
-  prefixCls?: string;
-  indicatorStyle?: any;
+  itemStyle?: StyleProp<ViewStyle>;
+  indicatorStyle?: StyleProp<ViewStyle>;
   indicatorClassName?: string;
-  className?: string;
   defaultSelectedValue?: any;
-  style?: any;
+  style?: StyleProp<ViewStyle>;
   onScrollChange?: (value: any) => void;
   noAnimate?: boolean;
 };

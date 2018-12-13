@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
 import RMCCascader from '../picker/cascader';
 import MultiPicker from '../picker/MultiPicker';
 import RMCPicker from '../picker/Picker';
@@ -7,8 +8,6 @@ import { PickerData } from '../picker/PropsType';
 
 function getDefaultProps() {
   return {
-    prefixCls: 'am-picker',
-    pickerPrefixCls: 'am-picker-col',
     cols: 3,
     cascade: true,
     value: [],
@@ -17,8 +16,6 @@ function getDefaultProps() {
 }
 
 export interface PickerViewProps {
-  prefixCls?: string;
-  pickerPrefixCls?: string;
   cols?: number;
   cascade?: boolean;
   value?: any[];
@@ -26,20 +23,19 @@ export interface PickerViewProps {
   styles?: any;
   onChange?: (value?: any) => void;
   onScrollChange?: (value?: any) => void;
-  indicatorStyle?: any;
-  itemStyle?: any;
+  indicatorStyle?: StyleProp<ViewStyle>;
+  itemStyle?: StyleProp<ViewStyle>;
 }
 
 export default class PickerView extends React.Component<PickerViewProps, any> {
   static defaultProps = getDefaultProps();
 
   getCol = () => {
-    const { data, pickerPrefixCls, indicatorStyle, itemStyle } = this.props;
+    const { data, indicatorStyle, itemStyle } = this.props;
     return (data as PickerData[][]).map((col, index) => {
       return (
         <RMCPicker
           key={index}
-          prefixCls={pickerPrefixCls}
           style={{ flex: 1 }}
           indicatorStyle={indicatorStyle}
           itemStyle={itemStyle}
@@ -62,8 +58,6 @@ export default class PickerView extends React.Component<PickerViewProps, any> {
     if (props.cascade) {
       picker = (
         <RMCCascader
-          prefixCls={props.prefixCls}
-          pickerPrefixCls={props.pickerPrefixCls}
           data={props.data as PickerData[]}
           value={props.value}
           onChange={props.onChange}
@@ -76,7 +70,6 @@ export default class PickerView extends React.Component<PickerViewProps, any> {
     } else {
       picker = (
         <MultiPicker
-          prefixCls={props.prefixCls}
           selectedValue={props.value}
           onValueChange={props.onChange}
           onScrollChange={props.onScrollChange}
