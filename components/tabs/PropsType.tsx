@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle, ViewStyle } from 'react-native';
 
 export interface TabData {
   key?: string;
@@ -18,7 +18,7 @@ export interface TabBarPropsType {
   /** render the tab of tabbar */
   renderTab?: (tab: TabData) => React.ReactNode;
   /** render the underline of tabbar */
-  renderUnderline?: (style: React.CSSProperties | any) => React.ReactNode;
+  renderUnderline?: (style: any) => React.ReactNode;
   /** page size of tabbar's tab | default: 5 */
   page?: number;
   /** on tab click */
@@ -28,7 +28,7 @@ export interface TabBarPropsType {
 
   // TabBar shortcut settings.
   /** tabBar underline style */
-  tabBarUnderlineStyle?: React.CSSProperties | any;
+  tabBarUnderlineStyle?: StyleProp<ViewStyle>;
   /** tabBar background color */
   tabBarBackgroundColor?: string;
   /** tabBar active text color */
@@ -36,7 +36,7 @@ export interface TabBarPropsType {
   /** tabBar inactive text color */
   tabBarInactiveTextColor?: string;
   /** tabBar text style */
-  tabBarTextStyle?: React.CSSProperties | any;
+  tabBarTextStyle?: StyleProp<TextStyle>;
 
   instanceId: number;
 }

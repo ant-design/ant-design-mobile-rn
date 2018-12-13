@@ -192,11 +192,13 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
             renderTab(tab)
           ) : (
             <Text
-              style={{
-                color: textColor,
-                ...StyleSheet.flatten(styles.textStyle),
-                ...textStyle,
-              }}
+              style={[
+                {
+                  color: textColor,
+                  ...StyleSheet.flatten(styles.textStyle),
+                },
+                textStyle,
+              ]}
             >
               {tab.title}
             </Text>
@@ -229,7 +231,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
             position: 'absolute',
             bottom: 0,
             ...StyleSheet.flatten(styles.underline),
-            ...tabBarUnderlineStyle,
+            ...StyleSheet.flatten(tabBarUnderlineStyle),
           };
 
           const dynamicTabUnderline = {
@@ -297,7 +299,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
                     );
                   })}
                   {renderUnderline ? (
-                    renderUnderline(underlineProps)
+                    renderUnderline(underlineProps.style)
                   ) : (
                     <Animated.View {...underlineProps} />
                   )}
