@@ -21,7 +21,7 @@ export { default as Pagination } from './pagination/index';
 export { default as PickerView } from './picker-view/index';
 export { default as Picker } from './picker/index';
 export { default as Popover } from './popover/index';
-export { default as Portal, portal } from './portal/index';
+export { default as Portal } from './portal/index';
 export { default as Progress } from './progress/index';
 export { default as Provider } from './provider/index';
 export { default as Radio } from './radio/index';

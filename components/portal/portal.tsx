@@ -1,6 +1,6 @@
 import React from 'react';
 import PortalConsumer from './portal-consumer';
-import PortalHost, { PortalContext } from './portal-host';
+import PortalHost, { portal, PortalContext } from './portal-host';
 
 export type PortalProps = {
   /**
@@ -33,16 +33,15 @@ export type PortalProps = {
  */
 class Portal extends React.Component<PortalProps> {
   static Host = PortalHost;
-
+  static add = portal.add;
+  static remove = portal.remove;
   render() {
     const { children } = this.props;
 
     return (
       <PortalContext.Consumer>
         {manager => (
-          <PortalConsumer manager={manager}>
-           {children}
-          </PortalConsumer>
+          <PortalConsumer manager={manager}>{children}</PortalConsumer>
         )}
       </PortalContext.Consumer>
     );

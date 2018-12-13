@@ -1,5 +1,5 @@
 import React from 'react';
-import { portal } from '../portal';
+import Portal from '../portal';
 import AlertContainer from './AlertContainer';
 
 export default function a(
@@ -7,14 +7,14 @@ export default function a(
   content: React.ReactNode,
   actions = [{ text: '确定' }],
 ) {
-  const key = portal.add(
+  const key = Portal.add(
     <AlertContainer
       title={title}
       content={content}
       actions={actions}
       onAnimationEnd={(visible: boolean) => {
         if (!visible) {
-          portal.remove(key);
+          Portal.remove(key);
         }
       }}
     />,

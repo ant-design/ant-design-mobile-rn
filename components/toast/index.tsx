@@ -1,5 +1,5 @@
 import React from 'react';
-import { portal } from '../portal';
+import Portal from '../portal';
 import ToastContainer from './ToastContainer';
 
 function notice(
@@ -9,14 +9,14 @@ function notice(
   onClose: (() => void) | undefined,
   mask = true,
 ) {
-  const key = portal.add(
+  const key = Portal.add(
     <ToastContainer
       content={content}
       duration={duration}
       onClose={onClose}
       type={type}
       mask={mask}
-      onAnimationEnd={() => portal.remove(key)}
+      onAnimationEnd={() => Portal.remove(key)}
     />,
   );
   return key;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextStyle } from 'react-native';
-import { portal } from '../portal';
+import Portal from '../portal';
 import PromptContainer from './PromptContainer';
 import { CallbackOrActions } from './PropsType';
 
@@ -18,7 +18,7 @@ export default function prompt(
     return;
   }
 
-  const key = portal.add(
+  const key = Portal.add(
     <PromptContainer
       title={title}
       message={message}
@@ -27,7 +27,7 @@ export default function prompt(
       defaultValue={defaultValue}
       onAnimationEnd={(visible: boolean) => {
         if (!visible) {
-          portal.remove(key);
+          Portal.remove(key);
         }
       }}
       placeholders={placeholders}

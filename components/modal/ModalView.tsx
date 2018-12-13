@@ -1,6 +1,6 @@
 import React from 'react';
 import { Animated, Dimensions, Easing, StyleProp, StyleSheet, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
-import { Portal } from '../portal';
+import Portal from '../portal';
 
 const styles = StyleSheet.create({
   wrap: {

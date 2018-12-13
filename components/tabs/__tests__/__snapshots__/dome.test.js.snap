@@ -98,10 +98,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                 >
                   <Text
                     style={
-                      Object {
-                        "color": undefined,
-                        "fontSize": 15,
-                      }
+                      Array [
+                        Object {
+                          "color": undefined,
+                          "fontSize": 15,
+                        },
+                        Object {},
+                      ]
                     }
                   >
                     First Tab
@@ -138,10 +141,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                 >
                   <Text
                     style={
-                      Object {
-                        "color": undefined,
-                        "fontSize": 15,
-                      }
+                      Array [
+                        Object {
+                          "color": undefined,
+                          "fontSize": 15,
+                        },
+                        Object {},
+                      ]
                     }
                   >
                     Second Tab
@@ -178,10 +184,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                 >
                   <Text
                     style={
-                      Object {
-                        "color": undefined,
-                        "fontSize": 15,
-                      }
+                      Array [
+                        Object {
+                          "color": undefined,
+                          "fontSize": 15,
+                        },
+                        Object {},
+                      ]
                     }
                   >
                     Third Tab
@@ -371,10 +380,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       1st Tab
@@ -411,10 +423,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       2nd Tab
@@ -451,10 +466,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       3rd Tab
@@ -491,10 +509,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       4th Tab
@@ -531,10 +552,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       5th Tab
@@ -571,10 +595,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       6th Tab
@@ -611,10 +638,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       7th Tab
@@ -651,10 +681,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       8th Tab
@@ -691,10 +724,13 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
                   >
                     <Text
                       style={
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {
+                            "color": undefined,
+                            "fontSize": 15,
+                          },
+                          Object {},
+                        ]
                       }
                     >
                       9th Tab

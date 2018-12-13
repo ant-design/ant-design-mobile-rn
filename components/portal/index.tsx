@@ -1,2 +1,2 @@
-export { default as Portal } from './portal';
-export { default as PortalHost, portal } from './portal-host';
+import Portal from './portal';
+export default Portal
