@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
 
 export default class ImageRoll extends React.Component<ImageRollProps, any> {
   static defaultProps = {
-    title: 'Photos',
-    cancelText: 'Cancel',
+    title: '图片',
+    cancelText: '取消',
     cameraPickerProps: {},
   };
   onSelected = (images: any[], _: any) => {
@@ -73,7 +73,6 @@ export default class ImageRoll extends React.Component<ImageRollProps, any> {
             selected={[]}
             callback={this.onSelected}
             maximum={1}
-            imagesPerRow={4}
             {...cameraPickerProps}
           />
         </View>
