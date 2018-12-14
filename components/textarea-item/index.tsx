@@ -42,6 +42,7 @@ export default class TextAreaItem extends React.Component<
     autoHeight: false,
     last: false,
   };
+  textAreaRef: TextInput | null;
 
   constructor(props: TextareaItemProps) {
     super(props);
@@ -156,6 +157,7 @@ export default class TextAreaItem extends React.Component<
                 multiline={rows! > 1 || autoHeight}
                 numberOfLines={rows}
                 maxLength={maxLength}
+                ref={ref=> this.textAreaRef = ref}
               />
               {error ? (
                 <TouchableWithoutFeedback onPress={onErrorClick}>
