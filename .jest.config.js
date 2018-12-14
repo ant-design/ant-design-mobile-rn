@@ -2,9 +2,13 @@ const libDir = process.env.LIB_DIR;
 const {defaults: tsjPreset} = require('ts-jest/presets');
 
 const transformPackages = [
-  'react-native', 'react-native-menu', 'react-native-tab-view',
-  'react-native-collapsible', 'react-native-swipeout',
-  'react-native-camera-roll-picker', 'react-native-ultimate-listview'
+  'react-native',
+  'react-native-menu',
+  'react-native-tab-view',
+  'react-native-collapsible',
+  'react-native-swipeout',
+  'react-native-camera-roll-picker',
+  'react-native-ultimate-listview',
 ]
 
 module.exports = {
