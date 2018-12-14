@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { List, TextareaItem } from '../../';
+import { List, TextareaItem, Toast } from '../../';
 
 export default class BasicTextAreaItemExample extends React.Component<
   any,
@@ -43,7 +43,7 @@ export default class BasicTextAreaItemExample extends React.Component<
           <TextareaItem
             error
             defaultValue="报错样式 error={true}"
-            onErrorClick={() => console.log('err')}
+            onErrorClick={() => Toast.fail('Error message')}
           />
         </List>
       </ScrollView>

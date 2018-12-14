@@ -16,21 +16,21 @@ subtitle: 标签栏
 
 ### TabBar
 
-属性 | 说明 | 类型 | 默认值
-----|-----|------|------
-| barTintColor        | tabbar 背景色    | String   | `white`            |
-| tintColor         | 选中的字体颜色     | String | `#108ee9`         |
-| unselectedTintColor       | 未选中的字体颜色  | String | '#888'     |
+| 属性                | 说明             | 类型   | 默认值    |
+| ------------------- | ---------------- | ------ | --------- |
+| barTintColor        | tabbar 背景色    | String | `white`   |
+| tintColor           | 选中的字体颜色   | String | `#108ee9` |
+| unselectedTintColor | 未选中的字体颜色 | String | '#888'    |
 
 ### TabBar.Item
 
-属性 | 说明 | 类型 | 默认值
-----|-----|------|------
-| badge  | 徽标数  | Number \ String           | 无     |
-| onPress  | bar 点击触发，需要自己改变组件 state & selecte={true} | Function | `(){}`     |
-| selected  | 是否选中 | Boolean | false     |
-| icon  | 默认展示图片 | Image Source |      |
-| selectedIcon  |  选中后的展示图片 | Image Source |      |
-| title  |  标题文字 | String |      |
-| key  |  唯一标识 | String |   无   |
-| iconStyle  |  icon 样式 (`rn android only`) (ios 更多API请参考 [tabbarios](https://facebook.github.io/react-native/docs/tabbarios.html)) | String | { width: 28, height: 28 }     |
+| 属性         | 说明                                                  | 类型                             | 默认值                    |
+| ------------ | ----------------------------------------------------- | -------------------------------- | ------------------------- |
+| badge        | 徽标数                                                | Number \ String                  | 无                        |
+| onPress      | bar 点击触发，需要自己改变组件 state & selecte={true} | Function                         | `(){}`                    |
+| selected     | 是否选中                                              | Boolean                          | false                     |
+| icon         | 默认展示图片                                          | `Image Source | React.ReactNode` |                           |
+| selectedIcon | 选中后的展示图片                                      | `Image Source | React.ReactNode` |                           |
+| title        | 标题文字                                              | String                           |                           |
+| key          | 唯一标识                                              | String                           | 无                        |
+| iconStyle    | icon 样式                                             | String                           | { width: 28, height: 28 } |

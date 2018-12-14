@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { SearchBar, TabBar } from '../../';
-import Icon from '../../icon';
+import { Icon, SearchBar, TabBar } from '../../';
 
 export default class BasicTabBarExample extends React.Component<any, any> {
   constructor(props: any) {

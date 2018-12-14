@@ -29,8 +29,8 @@ Properties | Descrition | Type | Default
 | badge  | badge number  | Number \ String           | 无     |
 | onPress  | on press the bar, need change component by yourself. state & selecte={true} | Function | `(){}`     |
 | selected  | whether it is selected | Boolean | false     |
-| icon  | the default icon | Image Source |      |
-| selectedIcon  |  the icon of selected | Image Source |      |
+| icon  | the default icon | `Image Source | React.ReactNode` |      |
+| selectedIcon  |  the icon of selected | `Image Source | React.ReactNode` |      |
 | title  |  title | String |      |
 | key  |  unique identification | String |   无   |
-| iconStyle  |  icon style (`rn android only`) (ios more API reference [tabbarios](https://facebook.github.io/react-native/docs/tabbarios.html)) | String | { width: 28, height: 28 }     |
+| iconStyle  |  icon style | String | { width: 28, height: 28 }     |
