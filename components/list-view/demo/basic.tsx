@@ -26,7 +26,7 @@ export default class BasicListExample extends React.Component<any, any> {
       );
 
       //Simulate the end of the list if there is no more data returned from the server
-      if (page === 10) {
+      if (page === 3) {
         rowData = [];
       }
 
