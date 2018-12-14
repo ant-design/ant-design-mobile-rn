@@ -65,7 +65,7 @@ export interface ListViewProps<T> extends UltimateListViewProps {
     },
   ) => React.ReactElement<any> | null;
   numColumns?: number;
-  keyExtractor: (item: T, index: number) => string;
+  keyExtractor?: (item: T, index: number) => string;
 }
 export interface ListViewState {}
 class ListView<T> extends React.PureComponent<ListViewProps<T>, ListViewState> {
@@ -93,6 +93,7 @@ class ListView<T> extends React.PureComponent<ListViewProps<T>, ListViewState> {
     return (
       <UltimateListView
         key="ant-list-view"
+        keyExtractor={(_: any, index: number) => `item-${index}`} // this is required when you are using FlatList
         refreshableMode={Platform.OS === 'ios' ? 'advanced' : 'basic'}
         numColumns={1}
         waitingSpinnerText={locale.loading}
