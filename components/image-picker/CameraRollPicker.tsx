@@ -3,7 +3,8 @@
  * Will refactor it later
  */
 import React, { Component } from 'react';
-import { ActivityIndicator, CameraRoll, GetPhotosReturnType, ListView, Platform, StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { CameraRoll, GetPhotosReturnType, StyleSheet, View, ViewStyle } from 'react-native';
+import ListView from '../list-view';
 import ImageItem from './ImageItem';
 
 export interface CameraRollPickerStyle {
@@ -15,7 +16,7 @@ export interface CameraRollPickerStyle {
 }
 const styles = StyleSheet.create<CameraRollPickerStyle>({
   wrapper: {
-    flexGrow: 1,
+    flex: 1,
   },
   loader: {
     flexGrow: 1,
@@ -65,7 +66,7 @@ export type CameraRollPickerState = {
   selected: any;
   loadingMore: boolean;
   initialLoading: boolean;
-  dataSource: any;
+  dataSource?: any;
   images: any[];
   lastCursor: null;
   noMore: boolean;
@@ -95,6 +96,7 @@ class CameraRollPicker extends Component<
     },
     emptyText: 'No photos.',
   };
+  after: string | undefined;
   constructor(props: CameraRollPickerProps) {
     super(props);
     this.state = {
@@ -104,46 +106,49 @@ class CameraRollPicker extends Component<
       initialLoading: true,
       loadingMore: false,
       noMore: false,
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (r1, r2) => r1 !== r2,
-      }),
+      // dataSource: new ListView.DataSource({
+      //   rowHasChanged: (r1, r2) => r1 !== r2,
+      // }),
     };
   }
-  componentWillMount() {
-    this.fetch();
-  }
+
   componentWillReceiveProps(nextProps: CameraRollPickerProps) {
     this.setState({
       selected: nextProps.selected,
     });
   }
-  fetch() {
-    if (!this.state.loadingMore) {
-      this.setState({ loadingMore: true }, () => {
-        this._fetch();
+
+  onFetch = async (_ = 1, startFetch: any, abortFetch: () => void) => {
+    try {
+      const first = 60;
+
+      const res = await CameraRoll.getPhotos({
+        first,
+        after: this.after,
+        // tslint:disable-next-line:no-console
       });
+      if (res) {
+        if (__DEV__) {
+          // tslint:disable-next-line:no-console
+          console.log(res);
+        }
+
+        const data = res.edges; // .map(r => r.node.image);
+        if (res.page_info) {
+          this.after = res.page_info.has_next_page
+            ? res.page_info.end_cursor
+            : '';
+        }
+        startFetch(data, first);
+      }
+    } catch (err) {
+      if (__DEV__) {
+        // tslint:disable-next-line:no-console
+        console.error(err);
+      }
+      abortFetch(); // manually stop the refresh or pagination if it encounters network error
     }
-  }
-  _fetch() {
-    const { groupTypes, assetType } = this.props;
-    const fetchParams: any = {
-      first: 1000,
-      groupTypes: groupTypes,
-      assetType: assetType,
-    };
-    if (Platform.OS === 'android') {
-      // not supported in android
-      delete fetchParams.groupTypes;
-    }
-    if (this.state.lastCursor) {
-      fetchParams.after = this.state.lastCursor;
-    }
-    CameraRoll.getPhotos(fetchParams).then(
-      data => this._appendImages(data),
-      // tslint:disable-next-line:no-console
-      e => console.log(e),
-    );
-  }
+  };
   _appendImages(data: GetPhotosReturnType) {
     const assets = data.edges;
     const newState: any = {
@@ -163,45 +168,8 @@ class CameraRollPicker extends Component<
     this.setState(newState);
   }
   render() {
-    const { dataSource } = this.state;
-    const {
-      scrollRenderAheadDistance,
-      initialListSize,
-      pageSize,
-      removeClippedSubviews,
-      imageMargin,
-      backgroundColor,
-      emptyText,
-      emptyTextStyle,
-      loader,
-    } = this.props;
-    if (this.state.initialLoading) {
-      return (
-        <View style={[styles.loader, { backgroundColor }]}>
-          {loader || <ActivityIndicator />}
-        </View>
-      );
-    }
-    const listViewOrEmptyText =
-      dataSource.getRowCount() > 0 ? (
-        <ListView
-          style={{ flex: 1 }}
-          scrollRenderAheadDistance={scrollRenderAheadDistance}
-          initialListSize={initialListSize}
-          pageSize={pageSize}
-          removeClippedSubviews={removeClippedSubviews}
-          // tslint:disable-next-line:jsx-no-bind
-          renderFooter={this._renderFooterSpinner.bind(this)}
-          // tslint:disable-next-line:jsx-no-bind
-          onEndReached={this._onEndReached.bind(this)}
-          dataSource={dataSource}
-          renderRow={rowData => this._renderRow(rowData)}
-        />
-      ) : (
-        <Text style={[{ textAlign: 'center' }, emptyTextStyle]}>
-          {emptyText}
-        </Text>
-      );
+    const { imageMargin, backgroundColor, imagesPerRow } = this.props;
+
     return (
       <View
         style={[
@@ -213,11 +181,16 @@ class CameraRollPicker extends Component<
           },
         ]}
       >
-        {listViewOrEmptyText}
+        <ListView
+          onFetch={this.onFetch}
+          refreshable={false}
+          numColumns={imagesPerRow}
+          renderItem={item => this._renderImage(item)}
+        />
       </View>
     );
   }
-  _renderImage(item: any) {
+  _renderImage = (item: any) => {
     const { selected } = this.state;
     const {
       imageMargin,
@@ -242,28 +215,9 @@ class CameraRollPicker extends Component<
       />
     );
   }
-  _renderRow(rowData: any) {
-    const items = rowData.map((item: any) => {
-      if (item === null) {
-        return null;
-      }
-      return this._renderImage(item);
-    });
-    return <View style={styles.row}>{items}</View>;
-  }
-  _renderFooterSpinner() {
-    if (!this.state.noMore) {
-      return <ActivityIndicator style={styles.spinner} />;
-    }
-    return null;
-  }
-  _onEndReached() {
-    if (!this.state.noMore) {
-      this.fetch();
-    }
-  }
+
   _selectImage(image: { uri: any }) {
-    const { maximum, imagesPerRow, callback, selectSingleItem } = this.props;
+    const { maximum, callback, selectSingleItem } = this.props;
     const selected = this.state.selected;
     const index = this._arrayObjectIndexOf(selected, 'uri', image.uri);
     if (index >= 0) {
@@ -278,9 +232,6 @@ class CameraRollPicker extends Component<
     }
     this.setState({
       selected: selected,
-      dataSource: this.state.dataSource.cloneWithRows(
-        this._nEveryRow(this.state.images, imagesPerRow),
-      ),
     });
     callback!(selected, image);
   }

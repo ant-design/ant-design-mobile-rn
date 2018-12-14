@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
+import { CameraRollPickerProps } from './CameraRollPicker';
 import ImageRoll, { ImageRollTexts } from './ImageRoll';
 import { ImagePickerPropTypes } from './PropsType';
 import ImagePickerStyles, { ImagePickerStyle } from './style/index';
@@ -8,7 +9,9 @@ import ImagePickerStyles, { ImagePickerStyle } from './style/index';
 export interface ImagePickerProps
   extends ImagePickerPropTypes,
     WithThemeStyles<ImagePickerStyle>,
-    ImageRollTexts {}
+    ImageRollTexts {
+  cameraPickerProps?: CameraRollPickerProps;
+}
 
 export default class ImagePicker extends React.Component<
   ImagePickerProps,
@@ -94,7 +97,7 @@ export default class ImagePicker extends React.Component<
   }
 
   render() {
-    const { files = [], selectable } = this.props;
+    const { files = [], selectable, cameraPickerProps } = this.props;
     return (
       <WithTheme styles={this.props.styles} themeStyles={ImagePickerStyles}>
         {styles => {
@@ -125,6 +128,7 @@ export default class ImagePicker extends React.Component<
               onSelected={imgObj => this.addImage(imgObj)}
               title={this.props.title}
               cancelText={this.props.cancelText}
+              cameraPickerProps={cameraPickerProps}
             />
           );
           return (

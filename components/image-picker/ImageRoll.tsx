@@ -1,11 +1,12 @@
 import React from 'react';
 import { Modal, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import varibles from '../style/themes/default';
-import CameraRollPicker from './CameraRollPicker';
+import CameraRollPicker, { CameraRollPickerProps } from './CameraRollPicker';
 
 export interface ImageRollProps extends ImageRollTexts {
   onCancel: () => void;
   onSelected: (imgObj: {}) => void;
+  cameraPickerProps?: CameraRollPickerProps;
 }
 
 export interface ImageRollTexts {
@@ -43,19 +44,19 @@ export default class ImageRoll extends React.Component<ImageRollProps, any> {
   static defaultProps = {
     title: 'Photos',
     cancelText: 'Cancel',
+    cameraPickerProps: {},
   };
   onSelected = (images: any[], _: any) => {
     this.props.onSelected(images[0]);
     this.props.onCancel();
   };
   render() {
-    const { title, cancelText } = this.props;
+    const { title, cancelText, cameraPickerProps } = this.props;
 
     return (
       <Modal
         animationType="slide"
         visible
-        // tslint:disable-next-line:no-empty
         onRequestClose={() => {}}
         transparent={false}
       >
@@ -72,6 +73,8 @@ export default class ImageRoll extends React.Component<ImageRollProps, any> {
             selected={[]}
             callback={this.onSelected}
             maximum={1}
+            imagesPerRow={4}
+            {...cameraPickerProps}
           />
         </View>
       </Modal>
