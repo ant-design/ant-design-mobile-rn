@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { TabBar, SearchBar } from '../../';
+import { Text, View } from 'react-native';
+import { SearchBar, TabBar } from '../../';
+import Icon from '../../icon';
 
 export default class BasicTabBarExample extends React.Component<any, any> {
   constructor(props: any) {
@@ -34,16 +35,14 @@ export default class BasicTabBarExample extends React.Component<any, any> {
       >
         <TabBar.Item
           title="Life"
-          icon={require('./alipay.png')}
-          selectedIcon={require('./alipay_sel.png')}
+          icon={<Icon name="home" />}
           selected={this.state.selectedTab === 'blueTab'}
           onPress={() => this.onChangeTab('blueTab')}
         >
           {this.renderContent('Life Tab')}
         </TabBar.Item>
         <TabBar.Item
-          icon={require('./koubei.png')}
-          selectedIcon={require('./koubei_sel.png')}
+          icon={<Icon name='ordered-list' />}
           title="Koubei"
           badge={2}
           selected={this.state.selectedTab === 'redTab'}
@@ -52,8 +51,7 @@ export default class BasicTabBarExample extends React.Component<any, any> {
           {this.renderContent('Koubei Tab')}
         </TabBar.Item>
         <TabBar.Item
-          icon={require('./friend.png')}
-          selectedIcon={require('./friend_sel.png')}
+          icon={<Icon name="like" />}
           title="Friend"
           selected={this.state.selectedTab === 'greenTab'}
           onPress={() => this.onChangeTab('greenTab')}
@@ -61,8 +59,7 @@ export default class BasicTabBarExample extends React.Component<any, any> {
           {this.renderContent('Friend Tab')}
         </TabBar.Item>
         <TabBar.Item
-          icon={require('./busi.png')}
-          selectedIcon={require('./busi_sel.png')}
+          icon={<Icon name="user" />}
           title="My"
           selected={this.state.selectedTab === 'yellowTab'}
           onPress={() => this.onChangeTab('yellowTab')}

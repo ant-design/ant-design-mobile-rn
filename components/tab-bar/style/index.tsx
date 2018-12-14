@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { Theme } from '../../style';
 
 export interface TabBarStyle {
@@ -6,7 +6,7 @@ export interface TabBarStyle {
   content: ViewStyle;
   tabs: ViewStyle;
   barItem: ViewStyle;
-  barIcon: ViewStyle;
+  barIcon: ImageStyle;
   barItemSelected: ViewStyle;
   barItemTitle: TextStyle;
   contentItem: ViewStyle;

@@ -1,31 +1,25 @@
-import React from 'react';
-import {
-  Image,
-  ImageRequireSource,
-  ImageStyle,
-  ImageURISource,
-  StyleProp,
-  Text,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import React, { isValidElement } from 'react';
+import { Image, ImageStyle, StyleProp, Text, TouchableWithoutFeedback, View } from 'react-native';
+import Icon, { IconProps } from '../icon';
+import { TabBarIcon } from './PropsType';
+import TabBarItemStyles from './style';
 
 export interface TabBarItemProps {
   badge?: string | number;
   onPress?: () => void;
   selected?: boolean;
-  icon?: ImageURISource | ImageURISource[] | ImageRequireSource;
-  selectedIcon?: ImageURISource | ImageURISource[] | ImageRequireSource;
+  icon?: TabBarIcon;
+  selectedIcon?: TabBarIcon;
   title: string;
   tintColor?: string;
   unselectedTintColor?: string;
-  /*react-native android only*/
   iconStyle?: StyleProp<ImageStyle>;
   renderAsOriginal?: boolean;
-  /* react-native only */
-  styles?: any;
+  styles?: ReturnType<typeof TabBarItemStyles>;
 }
-
+const wrapperIcon = (IconElement: any, props: any) => {
+  return <IconElement {...props} />;
+};
 export default class TabBarItem extends React.Component<TabBarItemProps, any> {
   static defaultProps = {
     onPress() {},
@@ -40,9 +34,9 @@ export default class TabBarItem extends React.Component<TabBarItemProps, any> {
       selectedIcon,
       onPress,
       badge,
-      styles,
       iconStyle,
     } = this.props;
+    const styles = this.props.styles!;
     const itemSelectedStyle = selected ? styles.barItemSelected : null;
     const badgeDom = badge ? (
       <View style={[styles.badge]}>
@@ -53,26 +47,30 @@ export default class TabBarItem extends React.Component<TabBarItemProps, any> {
     const source =
       selected && selectedIcon !== undefined
         ? selectedIcon
-        : icon !== undefined ? icon : null;
+        : icon !== undefined
+        ? icon
+        : null;
+    const color = selected ? tintColor : unselectedTintColor;
+    const isIcon =
+      source &&
+      (source as any).type &&
+      (source as any).type.displayName === 'Icon';
     return (
       <TouchableWithoutFeedback onPress={onPress}>
         <View style={[styles.barItem, itemSelectedStyle]}>
           <View>
-            {source === null ? null : (
-            // tslint:disable-next-line:jsx-no-multiline-js
+            {source === null ? null : isValidElement(source) ? (
+              isIcon ? (
+                <Icon color={color} {...source.props as IconProps} />
+              ) : (
+                source
+              )
+            ) : (
               <Image source={source} style={[styles.barIcon, iconStyle]} />
             )}
             {badgeDom}
           </View>
-          <Text
-            // tslint:disable-next-line:jsx-no-multiline-js
-            style={[
-              styles.barItemTitle,
-              { color: selected ? tintColor : unselectedTintColor },
-            ]}
-          >
-            {title}
-          </Text>
+          <Text style={[styles.barItemTitle, { color }]}>{title}</Text>
         </View>
       </TouchableWithoutFeedback>
     );

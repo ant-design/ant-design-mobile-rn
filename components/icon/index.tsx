@@ -13,7 +13,7 @@ export default class Icon extends React.Component<IconProps, any> {
   static defaultProps = {
     size: 'md',
   };
-
+  static displayName = 'Icon';
   render() {
     const { size, color, name, ...rest } = this.props;
     const sizeMap: { [key: string]: number } = {
