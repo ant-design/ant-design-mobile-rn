@@ -206,7 +206,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                   "borderColor": "#dddddd",
                 },
                 false,
-                false,
+                undefined,
                 undefined,
               ]
             }
@@ -324,7 +324,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 },
                 false,
                 false,
-                false,
+                undefined,
                 undefined,
               ]
             }

@@ -50,7 +50,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -121,7 +121,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
           "borderColor": "#dddddd",
         },
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -191,7 +191,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -261,7 +261,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
           "opacity": 0.4,
         },
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -331,7 +331,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -401,7 +401,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
           "opacity": 0.4,
         },
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -471,7 +471,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -692,7 +692,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
           },
           false,
           false,
-          false,
+          undefined,
           undefined,
         ]
       }
@@ -752,7 +752,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
             "borderColor": "#0000001A",
           },
           false,
-          false,
+          undefined,
           undefined,
         ]
       }
@@ -812,7 +812,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
           },
           false,
           false,
-          false,
+          undefined,
           undefined,
         ]
       }
