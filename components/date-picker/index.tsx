@@ -60,7 +60,6 @@ export default class DatePicker extends React.Component<DatePickerProps> {
           >
             {children &&
               React.isValidElement(children) &&
-              // TODO: fix ts error
               React.cloneElement<object, any>(children as any, {
                 extra: value
                   ? formatProps(this.props, value)
