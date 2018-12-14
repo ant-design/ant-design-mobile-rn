@@ -314,10 +314,11 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
 
   onTabContainerLayout = (e: LayoutChangeEvent) => {
     this._tabContainerMeasurements = e.nativeEvent.layout;
-    let width = this._tabContainerMeasurements.width;
-    if (width < WINDOW_WIDTH) {
-      width = WINDOW_WIDTH;
-    }
+    const width = this._tabContainerMeasurements.width;
+    // fix: https://github.com/ant-design/ant-design-mobile-rn/issues/162
+    // if (width < WINDOW_WIDTH) {
+      // width = WINDOW_WIDTH;
+    // }
     this.setState({ _tabContainerWidth: width });
     if (!this.props.dynamicTabUnderlineWidth) {
       this.state._widthTabUnderline.setValue(width / this.props.tabs.length);
