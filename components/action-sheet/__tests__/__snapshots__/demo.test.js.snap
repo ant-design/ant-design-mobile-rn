@@ -45,7 +45,7 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
           },
           false,
           false,
-          false,
+          undefined,
           undefined,
         ]
       }
@@ -125,7 +125,7 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
           },
           false,
           false,
-          false,
+          undefined,
           undefined,
         ]
       }

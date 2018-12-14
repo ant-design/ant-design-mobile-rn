@@ -52,7 +52,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -120,7 +120,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -188,7 +188,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -256,7 +256,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -324,7 +324,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -392,7 +392,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
@@ -460,7 +460,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         },
         false,
         false,
-        false,
+        undefined,
         undefined,
       ]
     }
