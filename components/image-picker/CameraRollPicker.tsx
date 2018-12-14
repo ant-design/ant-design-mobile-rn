@@ -1,15 +1,10 @@
-/**
- * Copy from https://github.com/jeanpan/react-native-camera-roll-picker
- * Will refactor it later
- */
 import React, { Component } from 'react';
-import { CameraRoll, GetPhotosReturnType, StyleSheet, View, ViewStyle } from 'react-native';
+import { CameraRoll, GetPhotosParamType, StyleSheet, View, ViewStyle } from 'react-native';
 import ListView from '../list-view';
 import ImageItem from './ImageItem';
 
 export interface CameraRollPickerStyle {
   wrapper: ViewStyle;
-  loader: ViewStyle;
   row: ViewStyle;
   marker: ViewStyle;
   spinner: ViewStyle;
@@ -17,11 +12,6 @@ export interface CameraRollPickerStyle {
 const styles = StyleSheet.create<CameraRollPickerStyle>({
   wrapper: {
     flex: 1,
-  },
-  loader: {
-    flexGrow: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   row: {
     flexDirection: 'row',
@@ -35,21 +25,8 @@ const styles = StyleSheet.create<CameraRollPickerStyle>({
   spinner: {},
 });
 
-export type CameraRollPickerProps = {
-  scrollRenderAheadDistance?: number;
-  initialListSize?: number;
-  pageSize?: number;
-  removeClippedSubviews?: boolean;
-  groupTypes?:
-    | 'Album'
-    | 'All'
-    | 'Event'
-    | 'Faces'
-    | 'Library'
-    | 'PhotoStream'
-    | 'SavedPhotos';
+export interface CameraRollPickerProps extends GetPhotosParamType {
   maximum: number;
-  assetType?: 'Photos' | 'Videos' | 'All';
   selectSingleItem?: boolean;
   imagesPerRow: number;
   imageMargin: number;
@@ -58,32 +35,21 @@ export type CameraRollPickerProps = {
   selected?: any[];
   selectedMarker?: JSX.Element;
   backgroundColor?: string;
-  emptyText?: string;
-  emptyTextStyle?: any;
-  loader?: React.ReactNode;
-};
+}
 export type CameraRollPickerState = {
   selected: any;
-  loadingMore: boolean;
-  initialLoading: boolean;
-  dataSource?: any;
   images: any[];
-  lastCursor: null;
-  noMore: boolean;
 };
 class CameraRollPicker extends Component<
   CameraRollPickerProps,
   CameraRollPickerState
 > {
   static defaultProps = {
-    scrollRenderAheadDistance: 500,
-    initialListSize: 1,
-    pageSize: 3,
-    removeClippedSubviews: true,
     groupTypes: 'SavedPhotos',
     maximum: 15,
-    imagesPerRow: 3,
-    imageMargin: 5,
+    imagesPerRow: 6,
+    imageMargin: 4,
+    first: 50,
     selectSingleItem: false,
     assetType: 'Photos',
     backgroundColor: 'white',
@@ -94,7 +60,6 @@ class CameraRollPicker extends Component<
       // tslint:disable-next-line:no-console
       console.log(selectedImages);
     },
-    emptyText: 'No photos.',
   };
   after: string | undefined;
   constructor(props: CameraRollPickerProps) {
@@ -102,13 +67,6 @@ class CameraRollPicker extends Component<
     this.state = {
       images: [],
       selected: this.props.selected,
-      lastCursor: null,
-      initialLoading: true,
-      loadingMore: false,
-      noMore: false,
-      // dataSource: new ListView.DataSource({
-      //   rowHasChanged: (r1, r2) => r1 !== r2,
-      // }),
     };
   }
 
@@ -120,20 +78,24 @@ class CameraRollPicker extends Component<
 
   onFetch = async (_ = 1, startFetch: any, abortFetch: () => void) => {
     try {
-      const first = 60;
+      const {
+        assetType,
+        groupTypes,
+        first,
+        groupName,
+        mimeTypes,
+      } = this.props;
 
       const res = await CameraRoll.getPhotos({
         first,
         after: this.after,
-        // tslint:disable-next-line:no-console
+        assetType: assetType,
+        groupTypes: groupTypes,
+        groupName,
+        mimeTypes,
       });
       if (res) {
-        if (__DEV__) {
-          // tslint:disable-next-line:no-console
-          console.log(res);
-        }
-
-        const data = res.edges; // .map(r => r.node.image);
+        const data = res.edges;
         if (res.page_info) {
           this.after = res.page_info.has_next_page
             ? res.page_info.end_cursor
@@ -149,24 +111,6 @@ class CameraRollPicker extends Component<
       abortFetch(); // manually stop the refresh or pagination if it encounters network error
     }
   };
-  _appendImages(data: GetPhotosReturnType) {
-    const assets = data.edges;
-    const newState: any = {
-      loadingMore: false,
-      initialLoading: false,
-    };
-    if (!data.page_info.has_next_page) {
-      newState.noMore = true;
-    }
-    if (assets.length > 0) {
-      newState.lastCursor = data.page_info.end_cursor;
-      newState.images = this.state.images.concat(assets);
-      newState.dataSource = this.state.dataSource.cloneWithRows(
-        this._nEveryRow(newState.images, this.props.imagesPerRow),
-      );
-    }
-    this.setState(newState);
-  }
   render() {
     const { imageMargin, backgroundColor, imagesPerRow } = this.props;
 
@@ -214,7 +158,7 @@ class CameraRollPicker extends Component<
         onPress={this._selectImage.bind(this)}
       />
     );
-  }
+  };
 
   _selectImage(image: { uri: any }) {
     const { maximum, callback, selectSingleItem } = this.props;
