@@ -31,7 +31,7 @@ class Picker extends React.Component<PickerProps, {}> {
       return (
         <Item
           label={c.props.children + ''}
-          value={c.props.value + ''}
+          value={c.props.value}
           key={c.key}
         />
       );
