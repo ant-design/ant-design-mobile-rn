@@ -31,7 +31,7 @@ export default class BasicTabBarExample extends React.Component<any, any> {
       <TabBar
         unselectedTintColor="#949494"
         tintColor="#33A3F4"
-        barTintColor="#ccc"
+        barTintColor="#f5f5f5"
       >
         <TabBar.Item
           title="Life"

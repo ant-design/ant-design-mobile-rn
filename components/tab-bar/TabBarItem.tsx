@@ -17,9 +17,6 @@ export interface TabBarItemProps {
   renderAsOriginal?: boolean;
   styles?: ReturnType<typeof TabBarItemStyles>;
 }
-const wrapperIcon = (IconElement: any, props: any) => {
-  return <IconElement {...props} />;
-};
 export default class TabBarItem extends React.Component<TabBarItemProps, any> {
   static defaultProps = {
     onPress() {},
