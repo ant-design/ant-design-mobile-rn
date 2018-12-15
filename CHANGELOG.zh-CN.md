@@ -8,11 +8,28 @@ toc: false
 
 #### 发布周期
 
-* 修订版本号：每周末会进行日常 bugfix 更新。（如果有紧急的 bugfix，则任何时候都可发布）
-* 次版本号：每月发布一个带有新特性的向下兼容的版本。
-* 主版本号：含有破坏性更新和新特性，不在发布周期内。
+- 修订版本号：每周末会进行日常 bugfix 更新。（如果有紧急的 bugfix，则任何时候都可发布）
+- 次版本号：每月发布一个带有新特性的向下兼容的版本。
+- 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+
+### 3.0.0
+
+`2018-12-15`
+
+**不兼容更新** 更多信息请查看 [#119](https://github.com/ant-design/ant-design-mobile-rn/issues/119)
+
+- 全新的包名 `@ant-design/react-native` 谢谢 [afc163](https://github.com/afc163) 提供
+- 组件文件重命名，去掉了之前的`.native`后缀
+- 更友好的主题支持，方便用户自定义，全新的 `Provider`
+- 重构了所有组件支持自定义局部样式
+- 完善 TypeScript 类型定义
+- bug 修复
+- 完善文档，使用 codesandbox 以及 react-native-web 提供部分组件在线预览
+- 重构 Icon 组件，现在使用 [ant-design-icons](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native)
+- 更多组件优化以及使用方式请查看文档
+- 从 2.x 升级到 3.0.0 请查看[upgrade notes](/docs/react/upgrade-notes)
 
 ### 2.3.0
 

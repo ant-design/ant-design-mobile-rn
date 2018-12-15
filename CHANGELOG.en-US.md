@@ -8,11 +8,26 @@ toc: false
 
 #### Release Schedule
 
-* Weekly release: patch version at the end of every week for routine bugfix (anytime for urgent bugfix).
-* Monthly release: minor version at the end of every month for new features.
-* Major version release is not included in this schedule for breadking change and new features.
+- Weekly release: patch version at the end of every week for routine bugfix (anytime for urgent bugfix).
+- Monthly release: minor version at the end of every month for new features.
+- Major version release is not included in this schedule for breadking change and new features.
 
 ---
+
+### 3.0.0
+
+`2018-12-15`
+
+** Breaking Changes ** for more informations please checkout [#119](https://github.com/ant-design/ant-design-mobile-rn/issues/119)
+
+- We get a new package name `@ant-design/react-native` from [afc163](https://github.com/afc163). Thanks..
+- Remove the native suffix
+- More friendly theme support
+- Improve TypeScript type definitions
+- Bug fixes
+- We can preview our Components online using codesandbox and react-native-web
+- Refactor Icon Component and use [ant-design-icons](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native) instead
+-  Upgrade from 2.x to 3.0.0 please checkout [upgrade notes](/docs/react/upgrade-notes)
 
 ### 2.3.0
 
