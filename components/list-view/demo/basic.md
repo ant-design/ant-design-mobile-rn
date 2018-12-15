@@ -5,108 +5,70 @@ title:
   en-US: Basic
 ---
 
-[Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/list/demo/basic.tsx)
+[Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/list-view/demo/basic.tsx)
 
 ```jsx
-// tslint:disable:no-empty
 import React from 'react';
-import { Image, ScrollView, View } from 'react-native';
-import { List } from '@ant-design/react-native';
-const Item = List.Item;
-const Brief = Item.Brief;
+import { Text, View } from 'react-native';
+import { ListView } from '@ant-design/react-native';
+
 export default class BasicListExample extends React.Component {
+  state = {
+    layout: 'list',
+  };
+  sleep = (time: any) =>
+    new Promise(resolve => setTimeout(() => resolve(), time));
+  onFetch = async (
+    page = 1,
+    startFetch,
+    abortFetch
+  ) => {
+    try {
+      let pageLimit = 30;
+      if (this.state.layout === 'grid') pageLimit = 60;
+      const skip = (page - 1) * pageLimit;
+
+      //Generate dummy data
+      let rowData = Array.from(
+        { length: pageLimit },
+        (_, index) => `item -> ${index + skip}`
+      );
+
+      //Simulate the end of the list if there is no more data returned from the server
+      if (page === 3) {
+        rowData = [];
+      }
+
+      //Simulate the network loading in ES7 syntax (async/await)
+      await this.sleep(2000);
+      startFetch(rowData, pageLimit);
+    } catch (err) {
+      abortFetch(); //manually stop the refresh or pagination if it encounters network error
+    }
+  };
+
+  renderItem = (item) => {
+    return (
+      <View style={{ padding: 10 }}>
+        <Text>{item}</Text>
+      </View>
+    );
+  };
+
   render() {
     return (
-      <ScrollView
-        style={{ flex: 1, backgroundColor: '#f5f5f9' }}
-        automaticallyAdjustContentInsets={false}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-      >
-        <List renderHeader={'basic'}>
-          <Item data-seed="logId">
-            标题文字点击无反馈，文字超长则隐藏，文字超长则隐藏
-          </Item>
-          <Item wrap>
-            文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行
-          </Item>
-          <Item disabled extra="箭头向右" arrow="horizontal" onPress={() => {}}>
-            标题文字
-          </Item>
-          <Item extra="箭头向下" arrow="down" onPress={() => {}}>
-            标题文字
-          </Item>
-          <Item extra="箭头向上" arrow="up" onPress={() => {}}>
-            标题文字
-          </Item>
-          <Item extra="没有箭头" arrow="empty">
-            标题文字
-          </Item>
-          <Item
-            extra={
-              <View>
-                内容内容
-                <Brief style={{ textAlign: 'right' }}>辅助文字内容</Brief>
-              </View>
-            }
-            multipleLine
-          >
-            垂直居中对齐
-          </Item>
-          <Item extra="内容内容" multipleLine>
-            垂直居中对齐<Brief>辅助文字内容</Brief>
-          </Item>
-          <Item
-            wrap
-            extra="文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行"
-            multipleLine
-            align="top"
-            arrow="horizontal"
-          >
-            顶部对齐
-            <Brief>辅助文字内容辅助文字内容辅助文字内容辅助文字内容</Brief>
-            <Brief>辅助文字内容</Brief>
-          </Item>
-          <Item
-            extra={
-              <View>
-                内容内容
-                <Brief style={{ textAlign: 'right' }}>辅助文字内容</Brief>
-              </View>
-            }
-            multipleLine
-            align="bottom"
-          >
-            底部对齐
-          </Item>
-        </List>
-        <List renderHeader={'带缩略图'}>
-          <Item thumb="https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png">
-            thumb
-          </Item>
-          <Item
-            thumb="https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png"
-            arrow="horizontal"
-          >
-            thumb
-          </Item>
-          <Item
-            extra={
-              <Image
-                source={{
-                  uri:
-                    'https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png',
-                }}
-                style={{ width: 29, height: 29 }}
-              />
-            }
-            arrow="horizontal"
-          >
-            extra为Image
-          </Item>
-        </List>
-      </ScrollView>
+      <ListView
+        onFetch={this.onFetch}
+        keyExtractor={(item, index) =>
+          `${this.state.layout} - ${item} - ${index}`
+        }
+        renderItem={this.renderItem}
+        numColumns={this.state.layout === 'list' ? 1 : 3}
+      />
     );
   }
 }
+
+export const title = 'ListView';
+export const description = 'ListView Example';
 ```
