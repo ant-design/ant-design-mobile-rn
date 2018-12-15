@@ -31,6 +31,7 @@
   "module": "es/index.js",
   "dependencies": {
     "@ant-design/icons-react-native": "^1.0.2",
+    "@bang88/react-native-ultimate-listview": "^3.3.0",
     "array-tree-filter": "~2.1.0",
     "deepmerge": "^3.0.0",
     "hoist-non-react-statics": "^3.2.1",
@@ -40,7 +41,6 @@
     "react-native-menu": "^0.23.0",
     "react-native-safe-area-view": "^0.11.0",
     "react-native-swipeout": "^2.3.6",
-    "react-native-ultimate-listview": "^3.3.0",
     "utility-types": "^2.1.0"
   },
   "devDependencies": {

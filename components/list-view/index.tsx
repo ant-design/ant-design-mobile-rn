@@ -1,7 +1,7 @@
+import { UltimateListView } from '@bang88/react-native-ultimate-listview';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ActivityIndicator, Platform, Text, View } from 'react-native';
-import { UltimateListView } from 'react-native-ultimate-listview';
 import Icon from '../icon';
 import { getComponentLocale } from '../_util/getLocale';
 import zh_CN from './locale/zh_CN';
