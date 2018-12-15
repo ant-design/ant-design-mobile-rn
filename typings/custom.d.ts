@@ -5,7 +5,6 @@ declare module 'antd-mobile-demo-data';
 declare module 'react-native-menu';
 
 declare module 'normalize-css-color';
-declare module 'hoist-non-react-statics';
 declare module '@bang88/react-native-ultimate-listview';
 
 declare var process: {

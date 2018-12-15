@@ -34,7 +34,6 @@
     "@bang88/react-native-ultimate-listview": "^3.3.0",
     "array-tree-filter": "~2.1.0",
     "deepmerge": "^3.0.0",
-    "hoist-non-react-statics": "^3.2.1",
     "normalize-css-color": "^1.0.2",
     "react-native-collapsible": "^1.4.0",
     "react-native-drawer-layout": "~2.0.0",
