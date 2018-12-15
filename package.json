@@ -147,8 +147,5 @@
   "typings": "lib/index.d.ts",
   "pre-commit": [
     "lint-staged"
-  ],
-  "resolutions": {
-    "react": "^16.7.0-alpha.2"
-  }
+  ]
 }
