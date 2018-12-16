@@ -122,6 +122,7 @@ module.exports = {
       '0.8.x': 'http://08x.mobile.ant.design',
       '0.9.x': 'http://09x.mobile.ant.design',
       '1.x': 'http://1x.mobile.ant.design',
+      '2.x': 'http://2x.rn.mobile.ant.design',
     },
   },
   devServerConfig: {
