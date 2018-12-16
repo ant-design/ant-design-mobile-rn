@@ -40,6 +40,12 @@ Here list some of main incompatible changes and recommended changes in the upgra
      - Configure the default global theme style via `Provider`
      - Override local component styles by using styles of the component, without importing all styles of the current component
      - There is no need to import a theme style file like 2.x. The current style file returns a function instead of an object.
+- `Toast` has removed method `hide`
+- Link Icon Fonts
+
+  ```sh
+  react-native link @ant-design/icons-react-native
+  ```
 
 ### 2.1.11 and before
 

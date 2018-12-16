@@ -61,6 +61,64 @@ The complete procedure please check the document here: [antd-mobile-sample/creat
 $ npm install @ant-design/react-native --save
 ```
 
+or
+
+```bash
+yarn add @ant-design/react-native
+```
+
+### Link icon fonts
+
+```bash
+react-native link @ant-design/icons-react-native
+```
+
+> If you are using expo please make sure fonts has been loaded
+
+```jsx
+import { AppLoading, Font } from 'expo';
+...
+...
+class App extends React.Component {
+  state = {
+    theme: null,
+    currentTheme: null,
+    isReady: false,
+  };
+  changeTheme = (theme, currentTheme) => {
+    this.setState({ theme, currentTheme });
+  };
+  async componentDidMount() {
+    await Font.loadAsync(
+      'antoutline',
+      // eslint-disable-next-line
+      require('@ant-design/icons-react-native/fonts/antoutline.ttf')
+    );
+
+    await Font.loadAsync(
+      'antfill',
+      // eslint-disable-next-line
+      require('@ant-design/icons-react-native/fonts/antfill.ttf')
+    );
+    // eslint-disable-next-line
+    this.setState({ isReady: true });
+  }
+  render() {
+    const { theme, currentTheme, isReady } = this.state;
+    if (!isReady) {
+      return <AppLoading />;
+    }
+    return (
+      <Provider theme={theme}>
+        <RootNavigator
+          screenProps={{ changeTheme: this.changeTheme, currentTheme }}
+        />
+      </Provider>
+    );
+  }
+}
+```
+
 ### 3. Usage
 
 Example of usage:
@@ -85,28 +143,28 @@ The following two ways used to load the **only components you used**, select one
 
 - Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
 
-   ```js
-   // .babelrc or babel-loader option
-   {
-     "plugins": [
-       ["import", { libraryName: "@ant-design/react-native" }] // The difference with the Web platform is that you do not need to set the style
-     ]
-   }
-   ```
+  ```js
+  // .babelrc or babel-loader option
+  {
+    "plugins": [
+      ["import", { libraryName: "@ant-design/react-native" }] // The difference with the Web platform is that you do not need to set the style
+    ]
+  }
+  ```
 
-   Then just change the way of import modules from @ant-design/react-native.
+  Then just change the way of import modules from @ant-design/react-native.
 
-   ```jsx
-   import { Button } from '@ant-design/react-native';
-   ```
+  ```jsx
+  import { Button } from '@ant-design/react-native';
+  ```
 
-   > Note: Some people reflected that it would be [unable to resolve module `react-dom`](https://github.com/ant-design/ant-design-mobile/issues/2054) in a project created with `react-native init`. If you encounter the same problem, you might try to install [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
+  > Note: Some people reflected that it would be [unable to resolve module `react-dom`](https://github.com/ant-design/ant-design-mobile/issues/2054) in a project created with `react-native init`. If you encounter the same problem, you might try to install [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
 
 - Manually import
 
-   ```jsx
-   import Button from '@ant-design/react-native/lib/button';
-   ```
+  ```jsx
+  import Button from '@ant-design/react-native/lib/button';
+  ```
 
 ##### More enhanced (optional):
 
@@ -130,7 +188,7 @@ Please read our [CONTRIBUTING.md](https://github.com/ant-design/ant-design-mobil
 
 If you'd like to help us improve @ant-design/react-native, just create a [Pull Request](https://github.com/ant-design/ant-design-mobile-rn/pulls). Feel free to report bugs and issues [here](https://github.com/ant-design/ant-design-mobile-rn/issues/new).
 
-> If you're new to posting issues, we ask that you read [*How To Ask Questions The Smart Way*](http://www.catb.org/~esr/faqs/smart-questions.html) and [How to Ask a Question in Open Source Community](https://github.com/seajs/seajs/issues/545) and [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) prior to posting. Well written bug reports help us help you!
+> If you're new to posting issues, we ask that you read [_How To Ask Questions The Smart Way_](http://www.catb.org/~esr/faqs/smart-questions.html) and [How to Ask a Question in Open Source Community](https://github.com/seajs/seajs/issues/545) and [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) prior to posting. Well written bug reports help us help you!
 
 ## Need Help?
 

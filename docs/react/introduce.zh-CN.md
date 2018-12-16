@@ -32,12 +32,12 @@ title: Ant Design Mobile RN of React
 - 基于 React Native 的 iOS / Android / Web 多平台支持，组件丰富、能全面覆盖各类场景 (antd-mobile)
 - 提供 "组件按需加载" / "Web 页面高清显示" / "SVG Icon" 等优化方案，一体式开发
 - 使用 TypeScript 开发，提供类型定义文件，支持类型及属性智能提示，方便业务开发
-- 全面兼容 react / preact
+- 全面兼容 react
 
 ## 适用场景
 
 - 适合于中大型产品应用
-- 适合于基于 react / preact / react-native 的多终端应用
+- 适合于基于 react-native 的多终端应用
 - 适合不同 UI 风格的高度定制需求的应用
 
 ## 快速上手
@@ -58,7 +58,65 @@ title: Ant Design Mobile RN of React
 ### 2. 安装
 
 ```bash
-$ npm install @ant-design/react-native --save
+npm install @ant-design/react-native --save
+```
+
+or
+
+```bash
+yarn add @ant-design/react-native
+```
+
+### 链接字体图标
+
+```bash
+react-native link @ant-design/icons-react-native
+```
+
+> 如果你用的是 expo 请确保字体已经加载完成再初始化 app
+
+```jsx
+import { AppLoading, Font } from 'expo';
+...
+...
+class App extends React.Component {
+  state = {
+    theme: null,
+    currentTheme: null,
+    isReady: false,
+  };
+  changeTheme = (theme, currentTheme) => {
+    this.setState({ theme, currentTheme });
+  };
+  async componentDidMount() {
+    await Font.loadAsync(
+      'antoutline',
+      // eslint-disable-next-line
+      require('@ant-design/icons-react-native/fonts/antoutline.ttf')
+    );
+
+    await Font.loadAsync(
+      'antfill',
+      // eslint-disable-next-line
+      require('@ant-design/icons-react-native/fonts/antfill.ttf')
+    );
+    // eslint-disable-next-line
+    this.setState({ isReady: true });
+  }
+  render() {
+    const { theme, currentTheme, isReady } = this.state;
+    if (!isReady) {
+      return <AppLoading />;
+    }
+    return (
+      <Provider theme={theme}>
+        <RootNavigator
+          screenProps={{ changeTheme: this.changeTheme, currentTheme }}
+        />
+      </Provider>
+    );
+  }
+}
 ```
 
 ### 3. 使用
@@ -85,28 +143,28 @@ AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 
 - 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)（推荐）。
 
-   ```js
-   // .babelrc or babel-loader option
-   {
-     "plugins": [
-       ["import", { libraryName: "@ant-design/react-native" }] // 与 Web 平台的区别是不需要设置 style
-     ]
-   }
-   ```
+  ```js
+  // .babelrc or babel-loader option
+  {
+    "plugins": [
+      ["import", { libraryName: "@ant-design/react-native" }] // 与 Web 平台的区别是不需要设置 style
+    ]
+  }
+  ```
 
-   然后改变从 @ant-design/react-native 引入模块方式即可。
+  然后改变从 @ant-design/react-native 引入模块方式即可。
 
-   ```jsx
-   import { Button } from '@ant-design/react-native';
-   ```
+  ```jsx
+  import { Button } from '@ant-design/react-native';
+  ```
 
-   > 说明：有人反映通过 `react-native init` 创建的项目在使用时可能会报 [Unable to resolve module `react-dom`](https://github.com/ant-design/ant-design-mobile/issues/2054) 的错误 ，此时不妨安装 [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver) 试试~
+  > 说明：有人反映通过 `react-native init` 创建的项目在使用时可能会报 [Unable to resolve module `react-dom`](https://github.com/ant-design/ant-design-mobile/issues/2054) 的错误 ，此时不妨安装 [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver) 试试~
 
 - 手动引入
 
-   ```jsx
-   import Button from '@ant-design/react-native/lib/button';
-   ```
+  ```jsx
+  import Button from '@ant-design/react-native/lib/button';
+  ```
 
 ##### 更多增强 (非必须):
 

@@ -40,6 +40,12 @@ title: 升级指南
   - 通过 `Provider` 的 theme 配置默认的全局主题样式
   - 通过组件的 styles 覆盖局部组件样式，不需要导入当前组件的所有样式
   - 不需要像 2.x 那样导入一个样式文件，现在的样式文件返回的是一个 function 而不是一个对象了
+- Toast 移除了 `hide` 方法
+- Link Icon Fonts
+
+  ```sh
+  react-native link @ant-design/icons-react-native
+  ```
 
 ### 2.1.11 and before
 
