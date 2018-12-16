@@ -18,7 +18,7 @@ toc: false
 
 `2018-12-15`
 
-** Breaking Changes ** for more informations please checkout [#119](https://github.com/ant-design/ant-design-mobile-rn/issues/119)
+**Breaking Changes** for more informations please checkout [#119](https://github.com/ant-design/ant-design-mobile-rn/issues/119)
 
 - We get a new package name `@ant-design/react-native` from [afc163](https://github.com/afc163). Thanks..
 - Remove the native suffix
@@ -26,9 +26,9 @@ toc: false
 - Improve TypeScript type definitions
 - Bug fixes
 - We can preview our Components online using codesandbox and react-native-web
-- Refactor Icon Component and use [ant-design-icons](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native) instead
+- Refactor Icon Component and use [ant-design-icons](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native) instead
 - `Toast` has removed method `hide`
--  Upgrade from 2.x to 3.0.0 please checkout [upgrade notes](https://rn.mobile.ant.design/docs/react/upgrade-notes)
+- Upgrade from 2.x to 3.0.0 please checkout [upgrade notes](https://rn.mobile.ant.design/docs/react/upgrade-notes)
 
 ### 2.3.0
 
