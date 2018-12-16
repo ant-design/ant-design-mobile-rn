@@ -28,7 +28,7 @@ By the way. you can support this project via Star star sta st s... ⭐️ ⭐️
 
 ~~Discussion: [The new plan](https://github.com/ant-design/ant-design-mobile-rn/issues/119)~~
 
-The new version `3.x` has been released, please see the installation upgrade guide. [Changelog](https://rn.mobile.ant.design/changelog)
+The new version `3.x` has been released, please see the installation upgrade guide.[Changelog](https://rn.mobile.ant.design/changelog)
 
 ## Features
 
