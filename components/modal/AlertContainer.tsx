@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { isValidElement } from 'react';
 import { ScrollView, Text, TextStyle } from 'react-native';
 import Modal from './Modal';
 import { Action } from './PropsType';
@@ -26,7 +25,7 @@ export default class AlertContainer extends React.Component<
     this.setState({
       visible: false,
     });
-  }
+  };
 
   render() {
     const { title, actions, content, onAnimationEnd } = this.props;
@@ -59,7 +58,7 @@ export default class AlertContainer extends React.Component<
         }}
       >
         <ScrollView>
-          <Text>{content}</Text>
+          {isValidElement(content) ? content : <Text>{content}</Text>}
         </ScrollView>
       </Modal>
     );
