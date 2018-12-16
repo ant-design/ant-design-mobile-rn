@@ -1,14 +1,14 @@
 ---
 category: Components
-title: LocaleProvider
+title: Provider
 type: Other
 ---
 
-`LocaleProvider` provides a uniform localization support for built-in text of components.
+`Provider` provides a uniform localization support for built-in text of components.
 
 ## Usage
 
-`LocaleProvider` takes use of [context](https://facebook.github.io/react/docs/context.html), a feature of React, to accomplish global effectiveness by wrapping the app only once.
+`Provider` takes use of [context](https://facebook.github.io/react/docs/context.html), a feature of React, to accomplish global effectiveness by wrapping the app only once.
 
 
 ```jsx
@@ -16,7 +16,7 @@ import enUS from '@ant-design/react-native/lib/locale-provider/en_US';
 
 ...
 
-return <LocaleProvider locale={enUS}><App /></LocaleProvider>;
+return <Provider locale={enUS}><App /></Provider>;
 ```
 
 We support English and Chinese temporarily, all locale packages can be found in [here](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/locale-provider/).
@@ -31,6 +31,7 @@ This component aims for localization of the built-in text, if you want to suppor
 
 ## API
 
-| Property    | Description           | Type              | Default        |
-|--------|----------------|------------------|--------------|
-| locale | anguage package setting, you can find the packages in this path: `@ant-design/react-native/lib/locale-provider/` | object | - |
+| Property | Description                                                                                                                     | Type   | Default |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------- | ------ | ------- |
+| locale   | anguage package setting, you can find the packages in this path: `@ant-design/react-native/lib/locale-provider/`                | object | -       |
+| theme    | Theme customization [theme](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx) | object | -       |
