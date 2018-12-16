@@ -38,7 +38,7 @@ Discussion: [The new plan](https://github.com/ant-design/ant-design-mobile-rn/is
 
 ## Demo
 
-<img width="250" src="https://user-images.githubusercontent.com/1698185/27175806-f0a8a7f0-51f2-11e7-85fb-4b7ea9f89e5b.png" />
+<img width="250" src="https://user-images.githubusercontent.com/433259/50051494-1c934080-014e-11e9-82b2-b18c6b727443.png" />
 
 install expo app: https://expo.io/tools
 
