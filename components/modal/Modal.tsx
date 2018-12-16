@@ -3,8 +3,11 @@ import React from 'react';
 import { Dimensions, LayoutChangeEvent, StyleProp, StyleSheet, Text, TextStyle, TouchableHighlight, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
+import alert from './alert';
 import zh_CN from './locale/zh_CN';
 import RCModal from './ModalView';
+import operation from './operation';
+import prompt from './prompt';
 import { ModalPropsType } from './PropsType';
 import modalStyles, { ModalStyle } from './style/index';
 
@@ -36,9 +39,9 @@ class AntmModal extends React.Component<ModalProps, any> {
     animateAppear: true,
     operation: false,
   };
-  static alert: any;
-  static operation: any;
-  static prompt: any;
+  static alert = alert;
+  static operation = operation;
+  static prompt = prompt;
 
   static contextTypes = {
     antLocale: PropTypes.object,
@@ -73,7 +76,6 @@ class AntmModal extends React.Component<ModalProps, any> {
       onClose,
       bodyStyle,
       onAnimationEnd,
-      operation,
     } = this.props;
 
     // tslint:disable-next-line:variable-name
@@ -89,7 +91,7 @@ class AntmModal extends React.Component<ModalProps, any> {
         {styles => {
           let btnGroupStyle = styles.buttonGroupV;
           let horizontalFlex = {};
-          if (footer && footer.length === 2 && !operation) {
+          if (footer && footer.length === 2 && !this.props.operation) {
             btnGroupStyle = styles.buttonGroupH;
             horizontalFlex = { flex: 1 };
           }
@@ -101,7 +103,7 @@ class AntmModal extends React.Component<ModalProps, any> {
           if (footer && footer.length) {
             const footerButtons = footer.map((button, i) => {
               let buttonStyle = {};
-              if (operation) {
+              if (this.props.operation) {
                 buttonStyle = styles.buttonTextOperation;
               }
               if (button.style) {
