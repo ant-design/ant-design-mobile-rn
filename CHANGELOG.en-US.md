@@ -27,7 +27,8 @@ toc: false
 - Bug fixes
 - We can preview our Components online using codesandbox and react-native-web
 - Refactor Icon Component and use [ant-design-icons](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native) instead
--  Upgrade from 2.x to 3.0.0 please checkout [upgrade notes](/docs/react/upgrade-notes)
+- `Toast` has removed method `hide`
+-  Upgrade from 2.x to 3.0.0 please checkout [upgrade notes](https://rn.mobile.ant.design/docs/react/upgrade-notes)
 
 ### 2.3.0
 
