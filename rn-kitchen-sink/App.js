@@ -1,11 +1,11 @@
+import React from 'react';
 import { AppRegistry } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import React from 'react';
+import Provider from '../components/provider';
 // import Home from './components/Home';
 import RnIndex from './components/RnIndex';
 import WebIndex from './components/WebIndex';
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from './demoList';
-import Provider from '../components/provider';
 
 const getOptions = title => ({
   title,
@@ -39,10 +39,21 @@ const scenes = {
 });
 
 const RootNavigator = createStackNavigator(scenes);
-
-const App = () => (<Provider>
-  <RootNavigator />
-</Provider>);
+class App extends React.Component {
+  state = {
+    theme: null,
+    currentTheme: null,
+  }
+  changeTheme = (theme, currentTheme) => {
+    this.setState({ theme, currentTheme });
+  }
+  render() {
+    const { theme, currentTheme } = this.state;
+    return (<Provider theme={theme}>
+      <RootNavigator screenProps={{ changeTheme: this.changeTheme, currentTheme }} />
+    </Provider>);
+  }
+}
 
 
 AppRegistry.registerComponent('kitchen-sink', () => App);

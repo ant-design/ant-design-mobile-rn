@@ -26,7 +26,7 @@ export default (theme: Theme) =>
       borderBottomColor: theme.border_color_base,
     },
     arrow: {
-      color: theme.color_text_paragraph,
+      color: theme.color_icon_base,
     },
     headerWrap: {
       flex: 1,
