@@ -18,7 +18,7 @@ toc: false
 
 `2018-12-15`
 
-**Breaking Changes** for more informations please checkout [#119](https://github.com/ant-design/ant-design-mobile-rn/issues/119)
+**Breaking Changes** for more informations please checkout [#119](https://github.com/ant-design/ant-design-mobile-rn/issues/119)
 
 - We get a new package name `@ant-design/react-native` from [afc163](https://github.com/afc163). Thanks..
 - Remove the native suffix
