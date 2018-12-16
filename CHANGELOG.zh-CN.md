@@ -25,6 +25,7 @@ toc: false
 - 更友好的主题支持，方便用户自定义，全新的 `Provider`
 - 重构了所有组件支持自定义局部样式
 - 完善 TypeScript 类型定义
+- Toast现在支持在Modal之上显示
 - bug 修复
 - 完善文档，使用 codesandbox 以及 react-native-web 提供部分组件在线预览
 - 重构 Icon 组件，现在使用 [ant-design-icons](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native)

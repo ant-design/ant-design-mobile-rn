@@ -1,26 +1,41 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Text, View } from 'react-native';
-import Portal from '../portal';
+import { Button, Icon, Portal } from '../..';
 
 export default class PopoverExample extends React.Component<any, any> {
   render() {
+    let key: number;
+
+    const contents = (
+      <View style={{ backgroundColor: 'green', padding: 100 }}>
+        <Button
+          onPress={() => {
+            Portal.remove(key);
+          }}
+          type="primary"
+          style={{
+            position: 'absolute',
+            top: 100,
+            right: 0,
+          }}
+        >
+          <Icon name="close-circle" />
+        </Button>
+        <View>
+          <Text>自定义Portal</Text>
+        </View>
+      </View>
+    );
     return (
-      <Fragment>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => (
-          <Portal key={i}>
-            <View
-              style={{
-                marginTop: 88 + i * 30,
-                backgroundColor: 'red',
-                height: 100,
-                opacity: i * 0.1,
-              }}
-            >
-              <Text style={{ fontWeight: '700', fontSize: 24 }}>{i}</Text>
-            </View>
-          </Portal>
-        ))}
-      </Fragment>
+      <View>
+        <Button
+          onPress={() => {
+            key = Portal.add(contents);
+          }}
+        >
+          Open Portal
+        </Button>
+      </View>
     );
   }
 }

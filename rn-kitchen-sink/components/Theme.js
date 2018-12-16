@@ -13,12 +13,10 @@ class ThemePanel extends React.Component {
       <Flex direction="row" wrap="wrap">
         {Object.keys(presetPalettes).map(palettes => (
           <Button
-            styles={{
-              wrapperStyle: {
-                width: '46%',
-                marginRight: 10,
-                marginBottom: 10,
-              },
+            style={{
+              width: '46%',
+              marginRight: 10,
+              marginBottom: 10,
             }}
             type={this.state.currentTheme === palettes ? 'primary' : undefined}
             key={palettes}
