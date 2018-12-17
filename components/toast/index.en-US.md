@@ -28,7 +28,3 @@ Properties | Descrition | Type | Default
 | mask    | Whether to show a transparent mask, which will prevent touch event of the whole page |  Boolean  | true          |
 
 > **Notice：** OnClose is invalid and Toast does not hide, If set duration = 0, toast will not auto hide, you have to manually do it.
-
-Provides global configuration and global destroy methods:
-
-- `Toast.hide()`

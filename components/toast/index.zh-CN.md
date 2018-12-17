@@ -29,7 +29,3 @@ subtitle: 轻提示
 | mask    | 是否显示透明蒙层，防止触摸穿透 |  Boolean  | true          |
 
 > **注：**  duration = 0 时，onClose 无效，toast 不会消失；隐藏 toast 需要手动调用 hide
-
-还提供了全局配置和全局销毁方法：
-
-- `Toast.hide()`
