@@ -1,4 +1,5 @@
 import React from 'react';
+import { TextStyle } from 'react-native';
 export interface ModalPropsType<T> {
   title?: React.ReactNode;
   visible: boolean;
@@ -16,7 +17,7 @@ export interface ModalPropsType<T> {
   operation?: boolean;
 }
 
-export interface Action<T> {
+export interface Action<T = TextStyle> {
   text: string;
   onPress?: () => void | Promise<any>;
   style?: T | string;

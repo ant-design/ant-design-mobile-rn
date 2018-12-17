@@ -52,7 +52,7 @@ export default class BasicModalExample extends React.Component<any, any> {
       (login: any, password: any) =>
         console.log(`login: ${login}, password: ${password}`),
       'login-password',
-      null,
+      '',
       ['Please input name', 'Please input password'],
     );
   };
@@ -73,7 +73,7 @@ export default class BasicModalExample extends React.Component<any, any> {
       'name message',
       (password: any) => console.log(`password: ${password}`),
       'default',
-      null,
+      '',
       ['please input name'],
     );
   };
