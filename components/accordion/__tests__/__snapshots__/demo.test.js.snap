@@ -74,7 +74,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "color": "#333333",
+                  "color": "#cccccc",
                 }
               }
             >
@@ -89,7 +89,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
                       "fontWeight": "normal",
                     },
                     Object {
-                      "color": "#333333",
+                      "color": "#cccccc",
                     },
                   ]
                 }
@@ -404,7 +404,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "color": "#333333",
+                  "color": "#cccccc",
                 }
               }
             >
@@ -419,7 +419,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
                       "fontWeight": "normal",
                     },
                     Object {
-                      "color": "#333333",
+                      "color": "#cccccc",
                     },
                   ]
                 }
@@ -519,7 +519,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "color": "#333333",
+                  "color": "#cccccc",
                 }
               }
             >
@@ -534,7 +534,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
                       "fontWeight": "normal",
                     },
                     Object {
-                      "color": "#333333",
+                      "color": "#cccccc",
                     },
                   ]
                 }
