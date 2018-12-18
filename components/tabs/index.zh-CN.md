@@ -37,6 +37,7 @@ tabBarActiveTextColor  | tabBar激活Tab文字颜色 | string |  | false
 tabBarInactiveTextColor  | tabBar非激活Tab文字颜色 | string |  | false
 tabBarTextStyle  | tabBar文字样式 | React.CSSProperties \| any |  | false
 renderTab | 替换TabBar的Tab | (tab: Models.TabData) => React.ReactNode | | false
+renderUnderline | renderUnderline | (style: any) => React.ReactNode | | false
 
 ### Tabs.DefaultTabBar
 

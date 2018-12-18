@@ -37,6 +37,7 @@ tabBarActiveTextColor | color of the default tab bar's text when active | string
 tabBarInactiveTextColor | color of the default tab bar's text when inactive | string |  | false
 tabBarTextStyle | tional styles to the tab bar's text | React.CSSProperties \| any |  | false
 renderTab | render for replace the tab of tabbar | (tab: Models.TabData) => React.ReactNode | | false
+renderUnderline | renderUnderline | (style: any) => React.ReactNode | | false
 
 ### Tabs.DefaultTabBar
 
