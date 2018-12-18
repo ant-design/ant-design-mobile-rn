@@ -46,6 +46,8 @@ export interface PropsType {
   tabs: TabData[];
   /** TabBar's position | default: top */
   tabBarPosition?: 'top' | 'bottom';
+  /** render the tab of tabbar */
+  renderTab?: (tab: TabData) => React.ReactNode;
   /** render for TabBar */
   renderTabBar?: ((props: TabBarPropsType) => React.ReactNode) | false;
   /** initial Tab, index or key */
