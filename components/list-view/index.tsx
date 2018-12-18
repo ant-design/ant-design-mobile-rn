@@ -118,11 +118,6 @@ class ListView<T> extends React.PureComponent<ListViewProps<T>, ListViewState> {
             </View>
           );
         }}
-        paginationAllLoadedView={() => (
-          <Text style={{ textAlign: 'center', padding: '10%' }}>
-            {locale.allLoadedText}
-          </Text>
-        )}
         customRefreshView={(status: number) => {
           return (
             <View style={{ flexDirection: 'row' }}>
