@@ -9,18 +9,22 @@ export type PortalHostProps = {
 export type Operation =
   | { type: 'mount'; key: number; children: React.ReactNode }
   | { type: 'update'; key: number; children: React.ReactNode }
-  | { type: 'unmount'; key: number };
+  | { type: 'unmount'; key: number }
+  | { type: 'clear' };
 
 export type PortalMethods = {
   mount: (children: React.ReactNode) => number;
   update: (key: number, children: React.ReactNode) => void;
   unmount: (key: number) => void;
+  clear: () => void;
 };
 
 export const PortalContext = React.createContext<PortalMethods>(null as any);
 // events
 const addType = 'ANT_DESIGN_MOBILE_RN_ADD_PORTAL';
 const removeType = 'ANT_DESIGN_MOBILE_RN_REMOVE_PORTAL';
+const clearType = 'ANT_DESIGN_MOBILE_RN_CLEAR_PORTAL';
+
 // fix react native web does not support DeviceEventEmitter
 const TopViewEventEmitter = DeviceEventEmitter || new NativeEventEmitter();
 
@@ -32,6 +36,7 @@ class PortalGuard {
     return key;
   };
   remove = (key: number) => TopViewEventEmitter.emit(removeType, key);
+  clear = () => TopViewEventEmitter.emit(clearType);
 }
 /**
  * portal
@@ -74,6 +79,7 @@ export default class PortalHost extends React.Component<PortalHostProps> {
 
     TopViewEventEmitter.addListener(addType, this._mount);
     TopViewEventEmitter.addListener(removeType, this._unmount);
+    TopViewEventEmitter.addListener(clearType, this._clear);
 
     while (queue.length && manager) {
       const action = queue.pop();
@@ -91,12 +97,16 @@ export default class PortalHost extends React.Component<PortalHostProps> {
         case 'unmount':
           manager.unmount(action.key);
           break;
+        case 'clear':
+          manager.clear();
+          break;
       }
     }
   }
   componentWillUnmount() {
     TopViewEventEmitter.removeListener(addType, this._mount);
     TopViewEventEmitter.removeListener(removeType, this._unmount);
+    TopViewEventEmitter.removeListener(clearType, this._clear);
   }
   _setManager = (manager?: any) => {
     this._manager = manager;
@@ -138,6 +148,12 @@ export default class PortalHost extends React.Component<PortalHostProps> {
     }
   };
 
+  _clear = () => {
+    if (this._manager) {
+      this._manager.clear();
+    }
+  };
+
   render() {
     return (
       <PortalContext.Provider
@@ -145,6 +161,7 @@ export default class PortalHost extends React.Component<PortalHostProps> {
           mount: this._mount,
           update: this._update,
           unmount: this._unmount,
+          clear: this._clear,
         }}
       >
         {/* Need collapsable=false here to clip the elevations, otherwise they appear above Portal components */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Button, Icon, Portal } from '../..';
+import { Button, Icon, Portal, Toast } from '../..';
 
 export default class PopoverExample extends React.Component<any, any> {
   render() {
@@ -26,6 +26,28 @@ export default class PopoverExample extends React.Component<any, any> {
         </View>
       </View>
     );
+
+    const contents1 = (
+      <View style={{ backgroundColor: 'green', padding: 100 }}>
+        <Button
+          onPress={() => {
+            Portal.clear();
+          }}
+          type="primary"
+          style={{
+            position: 'absolute',
+            top: 100,
+            right: 0,
+          }}
+        >
+          <Icon name="close-circle" />
+        </Button>
+        <View>
+          <Text>自定义Portal</Text>
+        </View>
+      </View>
+    )
+
     return (
       <View>
         <Button
@@ -34,6 +56,14 @@ export default class PopoverExample extends React.Component<any, any> {
           }}
         >
           Open Portal
+        </Button>
+        <Button
+          onPress={() => {
+            key = Portal.add(contents1);
+            Toast.info('Toast1',0,undefined,false)
+          }}
+        >
+          Open multiple Portal
         </Button>
       </View>
     );

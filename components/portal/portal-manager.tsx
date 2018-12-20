@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 export type State = {
   portals: Array<{
     key: number;
@@ -37,6 +37,10 @@ export default class PortalManager extends React.PureComponent<
     this.setState(state => ({
       portals: state.portals.filter(item => item.key !== key),
     }));
+  clear = () =>
+    this.setState({
+      portals:[],
+    });
   render() {
     return this.state.portals.map(({ key, children }, i) => (
       <View

@@ -35,6 +35,8 @@ class Portal extends React.Component<PortalProps> {
   static Host = PortalHost;
   static add = portal.add;
   static remove = portal.remove;
+  static clear = portal.clear;
+
   render() {
     const { children } = this.props;
 
