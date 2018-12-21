@@ -53,7 +53,7 @@
     "antd-mobile-demo-data": "^0.2.0",
     "antd-tools": "^5.2.6",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",
     "babel-plugin-import": "^1.6.2",
     "babel-plugin-transform-runtime": "^6.23.0",
