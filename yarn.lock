@@ -1100,10 +1100,10 @@ antd-tools@^5.2.6:
     webpack "^3.6.0"
     webpackbar "^3.1.2"
 
-antd@3.11.1:
-  version "3.11.1"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-3.11.1.tgz#0fe0873b1e5c101f5bd53e9bbbb31a8fdd16ca5f"
-  integrity sha512-uV6LJO0e+3kbaeh4yvMxXPbZWUA0kWebdDeRFfoVB6fQX11SpT+2nspRGlFGowYJSQEaTN5fBAmdKbu2mo86zA==
+antd@3.11.2:
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-3.11.2.tgz#150eb55c65c554961394c14418843348e1de1d3d"
+  integrity sha512-bwc9L+5Dk6sGbtA2Nr9rnfchM5JJ28Zb/AZTzMzevwA/89CFm5Eq4uBhFtYrITv8R2+p0FXyPo4lDVUQ16IlPQ==
   dependencies:
     "@ant-design/icons" "~1.1.15"
     "@ant-design/icons-react" "~1.1.2"
