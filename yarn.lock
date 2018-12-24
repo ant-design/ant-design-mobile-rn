@@ -9242,10 +9242,10 @@ metro-babel7-plugin-react-transform@0.48.3:
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
 
-metro-babel7-plugin-react-transform@0.50.0:
-  version "0.50.0"
-  resolved "https://registry.yarnpkg.com/metro-babel7-plugin-react-transform/-/metro-babel7-plugin-react-transform-0.50.0.tgz#a2f8eb879cf79f2251a23751f09520f63f525167"
-  integrity sha512-qKc0ecMFBr7mXwdjrSXmTszL4aJPYHGlIc2O+oYxDt+AAtPe++AjVBb6Mbup098U7KQ6xtz/wK0pshog+sbOzg==
+metro-babel7-plugin-react-transform@0.51.1:
+  version "0.51.1"
+  resolved "https://registry.yarnpkg.com/metro-babel7-plugin-react-transform/-/metro-babel7-plugin-react-transform-0.51.1.tgz#9cce2c340cc4006fc82aa6dfab27af22d592607e"
+  integrity sha512-wzn4X9KgmAMZ7Bi6v9KxA7dw+AHGL0RODPxU5NDJ3A6d0yERvzfZ3qkzWhz8jbFkVBK12cu5DTho3HBazKQDOw==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
 
@@ -9333,10 +9333,10 @@ metro-react-native-babel-preset@0.48.3:
     metro-babel7-plugin-react-transform "0.48.3"
     react-transform-hmr "^1.0.4"
 
-metro-react-native-babel-preset@0.50.0:
-  version "0.50.0"
-  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.50.0.tgz#591daebea81ecb3fba76c5ff1afa3cceb9ed4509"
-  integrity sha512-ycofvgp6mgP3T5TgoEqI+B0GKJgkWX/5ELBPjSoaqS6W53L9jHuT4hccJmUPVpSzH3JjtayLuHFQX6DctKI8bA==
+metro-react-native-babel-preset@0.51.1:
+  version "0.51.1"
+  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.51.1.tgz#44aeeedfea37f7c2ab8f6f273fa71b90fe65f089"
+  integrity sha512-e9tsYDFhU70gar0jQWcZXRPJVCv4k7tEs6Pm74wXO2OO/T1MEumbvniDIGwGG8bG8RUnYdHhjcaiub2Vc5BRWw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-proposal-export-default-from" "^7.0.0"
@@ -9371,7 +9371,7 @@ metro-react-native-babel-preset@0.50.0:
     "@babel/plugin-transform-typescript" "^7.0.0"
     "@babel/plugin-transform-unicode-regex" "^7.0.0"
     "@babel/template" "^7.0.0"
-    metro-babel7-plugin-react-transform "0.50.0"
+    metro-babel7-plugin-react-transform "0.51.1"
     react-transform-hmr "^1.0.4"
 
 metro-resolver@0.48.3:
