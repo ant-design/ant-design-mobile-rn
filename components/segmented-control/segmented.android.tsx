@@ -88,7 +88,7 @@ export default class SegmentedControl extends React.Component<
       <WithTheme styles={this.props.styles} themeStyles={AndroidStyles}>
         {(styles, theme) => {
           const selectedIndex = this.state.selectedIndex;
-          tintColor = tintColor || theme.brand_primary;
+          tintColor = tintColor || theme.segmented_control_color;
           const items = values.map((value, idx) => {
             let itemRadius: any = null;
             if (idx === 0) {
