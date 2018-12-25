@@ -46,7 +46,6 @@ export default class SegmentedControl extends React.Component<
     values: [],
     onChange() {},
     onValueChange() {},
-    tintColor: '#108ee9',
     style: {},
   };
 
@@ -83,12 +82,13 @@ export default class SegmentedControl extends React.Component<
   }
 
   render() {
-    const { style, disabled, values = [], tintColor } = this.props;
-
+    const { style, disabled, values = [] } = this.props;
+    let { tintColor } = this.props;
     return (
       <WithTheme styles={this.props.styles} themeStyles={AndroidStyles}>
-        {styles => {
+        {(styles, theme) => {
           const selectedIndex = this.state.selectedIndex;
+          tintColor = tintColor || theme.brand_primary;
           const items = values.map((value, idx) => {
             let itemRadius: any = null;
             if (idx === 0) {
@@ -110,10 +110,10 @@ export default class SegmentedControl extends React.Component<
             const underlayColor =
               idx === selectedIndex
                 ? tintColor
-                : setNormalizedColorAlpha(
+                : '#'+setNormalizedColorAlpha(
                     normalizeColor(tintColor),
                     0.3,
-                  ).toString();
+                  ).toString(16);
 
             return (
               <TouchableHighlight

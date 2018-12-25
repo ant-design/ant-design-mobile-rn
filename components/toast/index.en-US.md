@@ -20,11 +20,20 @@ A lightweight feedback or tips, used to display content that does not interrupt 
 
 The component provide several static methods：
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| content    | Toast content       | React.Element or String    | -           |
-| duration   | Delay time to close, which units is second | number                 | 3          |
-| onClose    | A callback function Triggered when the Toast is closed |  Function                 | -          |
-| mask    | Whether to show a transparent mask, which will prevent touch event of the whole page |  Boolean  | true          |
+| Properties | Descrition                                                                           | Type                    | Default |
+| ---------- | ------------------------------------------------------------------------------------ | ----------------------- | ------- |
+| content    | Toast content                                                                        | React.Element or String | -       |
+| duration   | Delay time to close, which units is second                                           | number                  | 3       |
+| onClose    | A callback function Triggered when the Toast is closed                               | Function                | -       |
+| mask       | Whether to show a transparent mask, which will prevent touch event of the whole page | Boolean                 | true    |
 
 > **Notice：** OnClose is invalid and Toast does not hide, If set duration = 0, toast will not auto hide, you have to manually do it.
+
+
+> 3.0.0 began to remove the previous `Toast.hide` method, `Toast.xxx` now returns a `key` to manually close the prompt using `Portal.remove(key)`
+
+```js
+  import { Portal, Toast } from '@ant-design/react-native'
+  const key Toast.loading('messsage')
+  Portal.remove(key)
+```
