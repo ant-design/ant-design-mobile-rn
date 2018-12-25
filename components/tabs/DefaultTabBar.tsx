@@ -245,8 +245,8 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
             this.state._containerWidth / Math.min(page, tabs.length);
           const underlineProps = {
             style: {
-              ...tabUnderlineStyle,
               ...dynamicTabUnderline,
+              ...tabUnderlineStyle,
             },
           };
 
