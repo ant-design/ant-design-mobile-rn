@@ -2,7 +2,10 @@ import React from 'react';
 import { StyleProp, Text, TextStyle, View } from 'react-native';
 import Swipeout, { SwipeoutButtonProperties, SwipeoutProperties } from 'react-native-swipeout';
 
-export interface SwipeActionProps extends SwipeoutProperties {}
+export interface SwipeActionProps extends SwipeoutProperties {
+  left?: SwipeoutButtonProps[];
+  right?: SwipeoutButtonProps[];
+}
 export interface SwipeoutButtonProps extends SwipeoutButtonProperties {
   style?: StyleProp<TextStyle> & { backgroundColor: string };
 }
