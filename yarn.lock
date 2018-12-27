@@ -15316,10 +15316,10 @@ util@^0.10.3:
   dependencies:
     inherits "2.0.3"
 
-utility-types@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-2.1.0.tgz#0c78fc9f7eb424d14302222b4ddd13fdb17f44ab"
-  integrity sha512-/nP2gqavggo6l38rtQI/CdeV+2fmBGXVvHgj9kV2MAnms3TIi77Mz9BtapPFI0+GZQCqqom0vACQ+VlTTaCovw==
+utility-types@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.2.0.tgz#e0ce64cc278768f0e3230a17e9c22228df099cc8"
+  integrity sha512-pg3spWUFl9NjKuJRfFXvPSBVBsMFGyDujf95HkRGxYa3JoD6bqabcL48FeWjbFdnumDLEh3Lr18U9P1IXL0yXA==
 
 utils-merge@1.0.1:
   version "1.0.1"
