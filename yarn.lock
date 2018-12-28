@@ -11604,10 +11604,10 @@ qr.js@0.0.0:
   resolved "https://registry.yarnpkg.com/qr.js/-/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
   integrity sha1-ys6GOG9ZoNuAUPqQ2baw6IoeNk8=
 
-qrcode.react@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/qrcode.react/-/qrcode.react-0.8.0.tgz#413b31cc3b62910e39513f7bead945e01c4c34fb"
-  integrity sha512-16wKpuFvLwciIq2YAsfmPUCnSR8GrYPsXRK5KVdcIuX0+W/MKZbBkFhl44ttRx4TWZHqRjfztoWOxdPF0Hb9JA==
+qrcode.react@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/qrcode.react/-/qrcode.react-0.9.1.tgz#53620ba4ae9c8db03cc83f724c3778c323369262"
+  integrity sha512-Fbkj/kAzqv75RlAzd8AnPc3fpCLROSoRWvLGmZfWdQz0FAYwanRBN2gkl39bH68FTDLhcWtWNdjkgFBEvnOCew==
   dependencies:
     prop-types "^15.6.0"
     qr.js "0.0.0"

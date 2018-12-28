@@ -88,7 +88,7 @@
     "metro-react-native-babel-preset": "0.50.0",
     "mockdate": "^2.0.1",
     "pre-commit": "1.x",
-    "qrcode.react": "^0.8.0",
+    "qrcode.react": "^0.9.1",
     "raf": "^3.4.0",
     "rc-form": "2.2.7",
     "react": "^16.7.0-alpha.2",
