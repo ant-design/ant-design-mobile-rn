@@ -30,6 +30,7 @@ toc: false
 - 完善文档，使用 codesandbox 以及 react-native-web 提供部分组件在线预览
 - 重构 Icon 组件，现在使用 [ant-design-icons](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native)
 - Toast 移除了 `hide` 方法
+- 修改`Grid`的`onClick`属性为`onPress`
 - 更多组件优化以及使用方式请查看文档
 - 从 2.x 升级到 3.0.0 请查看[upgrade notes](https://rn.mobile.ant.design/docs/react/upgrade-notes-cn)
 
