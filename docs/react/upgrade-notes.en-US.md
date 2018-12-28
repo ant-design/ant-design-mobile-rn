@@ -41,6 +41,7 @@ Here list some of main incompatible changes and recommended changes in the upgra
      - Override local component styles by using styles of the component, without importing all styles of the current component
      - There is no need to import a theme style file like 2.x. The current style file returns a function instead of an object.
 - `Toast` has removed method `hide`
+- Change `Grid` property `onClick` to `onPress`
 - Link Icon Fonts
 
   ```sh
