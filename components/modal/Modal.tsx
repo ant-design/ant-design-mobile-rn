@@ -19,7 +19,7 @@ const maxHeight = StyleSheet.create({
 
 export interface ModalProps
   extends ModalPropsType<TextStyle>,
-    WithThemeStyles<ModalStyle> {
+  WithThemeStyles<ModalStyle> {
   style?: StyleProp<ViewStyle>;
   bodyStyle?: StyleProp<ViewStyle>;
 }
@@ -32,16 +32,16 @@ class AntmModal extends React.Component<ModalProps, any> {
     style: {},
     bodyStyle: {},
     animationType: 'fade',
-    onClose() {},
+    onClose() { },
     footer: [],
     transparent: false,
     popup: false,
     animateAppear: true,
     operation: false,
   };
-  static alert = alert;
-  static operation = operation;
-  static prompt = prompt;
+  static alert: typeof alert;
+  static operation: typeof operation;
+  static prompt: typeof prompt;
 
   static contextTypes = {
     antLocale: PropTypes.object,
