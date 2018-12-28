@@ -14,6 +14,17 @@ toc: false
 
 ---
 
+### 3.0.4
+
+`2018-12-28`
+
+- 修改`SegmentedControl`默认颜色为主题颜色 [#211](https://github.com/ant-design/ant-design-mobile-rn/pull/211)
+- 允许覆盖`Tabs` `tabBarUnderlineStyle`
+- 完善`SwipeAction` TypeScript类型定义 [#230](https://github.com/ant-design/ant-design-mobile-rn/pull/230)
+- 完善 `Grid` 文档，修改`onClick`属性为`onPress` [#234](https://github.com/ant-design/ant-design-mobile-rn/pull/234)
+- 修复`Modal`循环引用警告 [#242](https://github.com/ant-design/ant-design-mobile-rn/pull/242)
+
+
 ### 3.0.0
 
 `2018-12-15`

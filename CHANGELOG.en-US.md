@@ -14,6 +14,16 @@ toc: false
 
 ---
 
+### 3.0.4
+
+`2018-12-28`
+
+- Modify `SegmentedControl` default color to theme color [#211](https://github.com/ant-design/ant-design-mobile-rn/pull/211)
+- Allow overriding `Tabs` `tabBarUnderlineStyle`
+- Improve `SwipeAction` TypeScript type definition [#230](https://github.com/ant-design/ant-design-mobile-rn/pull/230)
+- Improve the `Grid` document and modify the `onClick` property to `onPress` [#234](https://github.com/ant-design/ant-design-mobile-rn/pull/234)
+- Fixed `Modal` circular reference warning [#242](https://github.com/ant-design/ant-design-mobile-rn/pull/242)
+
 ### 3.0.0
 
 `2018-12-15`
