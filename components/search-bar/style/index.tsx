@@ -59,7 +59,6 @@ export default (theme: Theme) =>
       position: 'absolute',
       left: theme.h_spacing_md + 8,
       top: (theme.search_bar_height - theme.icon_size_xxs) / 2,
-      width: theme.icon_size_xxs,
-      height: theme.icon_size_xxs,
+      fontSize: theme.icon_size_xxs,
     },
   });
