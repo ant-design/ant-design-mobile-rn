@@ -13,6 +13,13 @@ toc: false
 - Major version release is not included in this schedule for breadking change and new features.
 
 ---
+### 3.0.5
+
+`2019-01-03`
+
+- Modify `search-bar` icon size [#250](https://github.com/ant-design/ant-design-mobile-rn/pull/250)
+- Fixes `input-item` has new line after blur under `ios` [#249](https://github.com/ant-design/ant-design-mobile-rn/issues/249)
+- Fixes `input-item` clear icon is not displayed correctly under `android` [#248](https://github.com/ant-design/ant-design-mobile-rn/issues/248)
 
 ### 3.0.4
 

@@ -14,6 +14,15 @@ toc: false
 
 ---
 
+### 3.0.5
+
+`2019-01-03`
+
+- 修改`search-bar` icon size [#250](https://github.com/ant-design/ant-design-mobile-rn/pull/250)
+- 修复`input-item` 在`iOS`下换行显示 [#249](https://github.com/ant-design/ant-design-mobile-rn/issues/249)
+- 修复`input-item` clear icon 在`android`下显示不正确 [#248](https://github.com/ant-design/ant-design-mobile-rn/issues/248)
+
+
 ### 3.0.4
 
 `2018-12-28`
