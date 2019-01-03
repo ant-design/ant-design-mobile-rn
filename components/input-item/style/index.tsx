@@ -31,7 +31,7 @@ export default (theme: Theme) =>
     },
     input: {
       flex: 1,
-      height: theme.list_item_height,
+      height: theme.list_item_height_sm,
       backgroundColor: 'transparent',
       fontSize: theme.input_font_size,
       color: theme.color_text_base,
