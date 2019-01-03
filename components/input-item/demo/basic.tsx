@@ -34,6 +34,7 @@ export default class BasicInputItemExample extends React.Component<any, any> {
         automaticallyAdjustContentInsets={false}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps={'handled'}
       >
         <List renderHeader={'基本'}>
           <InputItem

@@ -24,7 +24,7 @@ subtitle: 文本输入
 | placeholder      | placeholder        | String | ''  |
 | editable    | 是否可编辑        | bool |  true  |
 | disabled    | 是否禁用        | bool |  true  |
-| clear      |  是否带清除功能(仅`editable`为`true`,`disabled`为`false`才生效) | bool | false  |
+| clear      |  是否带清除功能(仅`editable`为`true`,`disabled`为`false`才生效)。在 Android 中, 处于编辑状态(focus)时 icon 才会出现, 且此组件被`ScrollView`包裹时, 设置`ScrollView`的`keyboardShouldPersistTaps`属性为`handled`或`always`时, icon才会正确响应点击事件 | bool | false  |
 | maxLength      |  最大长度      | number |  无  |
 | onChange    | change 事件触发的回调函数 | (val: string): void |  -  |
 | onBlur     | blur 事件触发的回调函数 | (val: string): void |   -  |

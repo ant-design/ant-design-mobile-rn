@@ -1,5 +1,14 @@
 import React from 'react';
-import { GestureResponderEvent, Platform, StyleSheet, Text, TextInputProperties, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
+import {
+  GestureResponderEvent,
+  Platform,
+  StyleSheet,
+  Text,
+  TextInputProperties,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import { Omit } from 'utility-types';
 import Icon from '../icon';
 import { WithTheme, WithThemeStyles } from '../style';
@@ -24,7 +33,11 @@ export interface InputItemProps
   disabled?: boolean;
 }
 
-const noop = () => { };
+interface InputItemState {
+  focus: boolean;
+}
+
+const noop = () => {};
 
 function normalizeValue(value?: string) {
   if (typeof value === 'undefined' || value === null) {
@@ -33,7 +46,10 @@ function normalizeValue(value?: string) {
   return value;
 }
 
-export default class InputItem extends React.Component<InputItemProps, any> {
+export default class InputItem extends React.Component<
+  InputItemProps,
+  InputItemState
+> {
   static defaultProps = {
     type: 'text',
     editable: true,
@@ -51,6 +67,9 @@ export default class InputItem extends React.Component<InputItemProps, any> {
     last: false,
   };
 
+  state: InputItemState = {
+    focus: false,
+  };
   inputRef: Input | null;
 
   onChange = (text: string) => {
@@ -84,15 +103,19 @@ export default class InputItem extends React.Component<InputItemProps, any> {
   };
 
   onInputBlur = () => {
-    if (this.props.onBlur) {
-      this.props.onBlur(this.props.value);
-    }
+    this.setState({ focus: false }, () => {
+      if (this.props.onBlur) {
+        this.props.onBlur(this.props.value);
+      }
+    });
   };
 
   onInputFocus = () => {
-    if (this.props.onFocus) {
-      this.props.onFocus(this.props.value);
-    }
+    this.setState({ focus: true }, () => {
+      if (this.props.onFocus) {
+        this.props.onFocus(this.props.value);
+      }
+    });
   };
 
   onInputClear = () => {
@@ -110,6 +133,7 @@ export default class InputItem extends React.Component<InputItemProps, any> {
   };
 
   render() {
+    const android = Platform.OS === 'android';
     const {
       type,
       editable,
@@ -125,8 +149,8 @@ export default class InputItem extends React.Component<InputItemProps, any> {
       disabled,
       ...restProps
     } = this.props;
+    const { focus } = this.state;
     const { value, defaultValue, style } = restProps;
-
     let valueProps: any;
     if ('value' in this.props) {
       valueProps = {
@@ -201,11 +225,13 @@ export default class InputItem extends React.Component<InputItemProps, any> {
                 {...valueProps}
                 style={[
                   {
-                    height: Platform.OS === 'ios' ? theme.list_item_height_sm : theme.list_item_height,
+                    height: !android ? theme.list_item_height_sm : theme.list_item_height,
                   },
                   s.input,
                   error ? s.inputErrorColor : null,
                   disabledStyle,
+                  // 支持自定义样式
+                  restProps.style,
                 ]}
                 keyboardType={keyboardType}
                 onChange={event => this.onChange(event.nativeEvent.text)}
@@ -213,14 +239,14 @@ export default class InputItem extends React.Component<InputItemProps, any> {
                 onBlur={this.onInputBlur}
                 onFocus={this.onInputFocus}
               />
-              {/* 只在有 value 的 受控模式 下展示 自定义的 安卓 clear 按钮 */}
-              {editable && clear && value && Platform.OS === 'android' ? (
+              {/* 只在有 value 的受控模式下且在编辑状态时展示自定义的安卓 clear 按钮 */}
+              {editable && clear && value && focus && android ? (
                 <TouchableOpacity
                   style={[s.clear]}
                   onPress={this.onInputClear}
                   hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
                 >
-                  <Icon name="close" />
+                  <Icon name="close" color={'white'} />
                 </TouchableOpacity>
               ) : null}
               {extra ? (
