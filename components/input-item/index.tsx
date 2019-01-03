@@ -16,15 +16,15 @@ export type TextInputProps = Omit<
 
 export interface InputItemProps
   extends InputItemPropsType,
-    TextInputProps,
-    WithThemeStyles<InputItemStyle> {
+  TextInputProps,
+  WithThemeStyles<InputItemStyle> {
   last?: boolean;
   onExtraClick?: (event: GestureResponderEvent) => void;
   onErrorClick?: (event: GestureResponderEvent) => void;
   disabled?: boolean;
 }
 
-const noop = () => {};
+const noop = () => { };
 
 function normalizeValue(value?: string) {
   if (typeof value === 'undefined' || value === null) {
@@ -189,8 +189,8 @@ export default class InputItem extends React.Component<InputItemProps, any> {
                 typeof children === 'string' ? (
                   <Text style={[s.text, textStyle]}>{children}</Text>
                 ) : (
-                  <View style={textStyle}>{children}</View>
-                )
+                    <View style={textStyle}>{children}</View>
+                  )
               ) : null}
               <Input
                 editable={!disabled && editable}
@@ -200,6 +200,9 @@ export default class InputItem extends React.Component<InputItemProps, any> {
                 {...restProps}
                 {...valueProps}
                 style={[
+                  {
+                    height: Platform.OS === 'ios' ? theme.list_item_height_sm : theme.list_item_height,
+                  },
                   s.input,
                   error ? s.inputErrorColor : null,
                   disabledStyle,
@@ -226,8 +229,8 @@ export default class InputItem extends React.Component<InputItemProps, any> {
                     {typeof extra === 'string' ? (
                       <Text style={[s.extra, extraStyle]}>{extra}</Text>
                     ) : (
-                      extra
-                    )}
+                        extra
+                      )}
                   </View>
                 </TouchableWithoutFeedback>
               ) : null}
