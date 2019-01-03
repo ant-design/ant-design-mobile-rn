@@ -3,6 +3,7 @@
 exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
 <RCTScrollView
   automaticallyAdjustContentInsets={false}
+  keyboardShouldPersistTaps="handled"
   showsHorizontalScrollIndicator={false}
   showsVerticalScrollIndicator={false}
   style={
@@ -90,16 +91,19 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 Object {
                   "color": "#f50",
                 },
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -222,14 +226,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -302,17 +309,20 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {
                   "backgroundColor": "#dddddd",
                   "color": "#bbbbbb",
                 },
+                undefined,
               ]
             }
             textAlign="left"
@@ -368,14 +378,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -437,14 +450,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -503,14 +519,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -728,14 +747,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -795,14 +817,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -862,14 +887,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -973,16 +1001,19 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 Object {
                   "color": "#f50",
                 },
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -1079,14 +1110,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -1146,14 +1180,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -1213,14 +1250,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
@@ -1280,14 +1320,17 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             style={
               Array [
                 Object {
+                  "height": 35,
+                },
+                Object {
                   "backgroundColor": "transparent",
                   "color": "#000000",
                   "flex": 1,
                   "fontSize": 17,
-                  "height": 35,
                 },
                 null,
                 Object {},
+                undefined,
               ]
             }
             textAlign="left"
