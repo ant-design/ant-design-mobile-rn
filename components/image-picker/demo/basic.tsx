@@ -1,5 +1,5 @@
 import React from 'react';
-import { PermissionsAndroid, Text, View } from 'react-native';
+import { PermissionsAndroid, Platform, Text, View } from 'react-native';
 import { ImagePicker, WhiteSpace } from '../../';
 
 export default class ImagePickerExample extends React.Component<any, any> {
@@ -70,11 +70,15 @@ export default class ImagePickerExample extends React.Component<any, any> {
     }
   }
   async componentDidMount() {
-    await this.requestCameraPermission();
+    if (Platform.OS === 'android') {
+      await this.requestCameraPermission();
+    }
+
   }
 
   render() {
-    if (!this.state.granted) {
+
+    if (Platform.OS === 'android' && !this.state.granted) {
       return <Text>需要访问相册的权限</Text>;
     }
     return (
