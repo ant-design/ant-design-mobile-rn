@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CameraRoll, GetPhotosParamType, StyleSheet, View, ViewStyle } from 'react-native';
+import { CameraRoll, GetPhotosParamType, Platform, StyleSheet, View, ViewStyle } from 'react-native';
 import ListView from '../list-view';
 import ImageItem from './ImageItem';
 
@@ -43,7 +43,7 @@ export type CameraRollPickerState = {
 class CameraRollPicker extends Component<
   CameraRollPickerProps,
   CameraRollPickerState
-> {
+  > {
   static defaultProps = {
     groupTypes: 'SavedPhotos',
     maximum: 15,
@@ -54,7 +54,7 @@ class CameraRollPicker extends Component<
     assetType: 'Photos',
     backgroundColor: 'white',
     selected: [],
-    callback: function(selectedImages: any, currentImage: any) {
+    callback: function (selectedImages: any, currentImage: any) {
       // tslint:disable-next-line:no-console
       console.log(currentImage);
       // tslint:disable-next-line:no-console
@@ -86,14 +86,17 @@ class CameraRollPicker extends Component<
         mimeTypes,
       } = this.props;
 
-      const res = await CameraRoll.getPhotos({
+      const params: GetPhotosParamType = {
         first,
         after: this.after,
         assetType: assetType,
-        groupTypes: groupTypes,
         groupName,
         mimeTypes,
-      });
+      };
+      if (Platform.OS !== 'android') {
+        params.groupTypes = groupTypes;
+      }
+      const res = await CameraRoll.getPhotos(params);
       if (res) {
         const data = res.edges;
         if (res.page_info) {
