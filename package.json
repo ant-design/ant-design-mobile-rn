@@ -38,7 +38,7 @@
     "react-native-collapsible": "^1.4.0",
     "react-native-drawer-layout": "~2.0.0",
     "react-native-menu": "^0.23.0",
-    "react-native-safe-area-view": "^0.11.0",
+    "react-native-safe-area-view": "^0.12.0",
     "react-native-swipeout": "^2.3.6",
     "utility-types": "^2.1.0"
   },
