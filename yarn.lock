@@ -11867,23 +11867,10 @@ rc-editor-mention@^1.1.7:
     rc-animate "^2.3.0"
     rc-editor-core "~0.8.3"
 
-rc-form@2.2.7, rc-form@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/rc-form/-/rc-form-2.2.7.tgz#8880851b9cd4a9c911f5272c91db73978a72377d"
-  integrity sha512-50zIXXa+QzssgZZQx5OwGFbELr99d0sCZYVo1SIXS216ioWnFefzbFs+iofTCir+YbTCQHh/cxqXDdC6r6HvYg==
-  dependencies:
-    async-validator "~1.8.5"
-    babel-runtime "6.x"
-    create-react-class "^15.5.3"
-    dom-scroll-into-view "1.x"
-    hoist-non-react-statics "^2.3.1"
-    lodash "^4.17.4"
-    warning "^3.0.0"
-
-rc-form@^2.2.3:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/rc-form/-/rc-form-2.2.6.tgz#737bd1eb1f45c6ce821854e86248e145adb6230c"
-  integrity sha512-6RxafBLeOltmS5V/ozuzUo7hhanI9Vopdu8y4WI5dWMM32Wm5PjuidLs8elHmK8yy3UgZ9TcsIYHW9m1Myez4w==
+rc-form@2.4.1, rc-form@^2.2.3, rc-form@^2.2.7:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/rc-form/-/rc-form-2.4.1.tgz#b1685533d13cbdf2a2ba2051ebdc30f3d9c3a8dd"
+  integrity sha512-ZWnAR5w63fNUdeY/EuSpmrScM9EDxtgUbsSnao2BS9HIKIjqSCu6bJNX6SKvU7jRnklLOfEf8nCEMzibFZwplA==
   dependencies:
     async-validator "~1.8.5"
     babel-runtime "6.x"
