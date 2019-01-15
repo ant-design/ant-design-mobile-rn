@@ -29,7 +29,7 @@ class TabBar extends React.Component<TabBarNativeProps, any> {
     });
     const newChildren: any[] = [];
     React.Children.map(children, (child: any, idx) => {
-      if (content) {
+      if (content && selectedIndex === idx) {
         newChildren.push(
           <View
             key={idx}
@@ -52,6 +52,9 @@ class TabBar extends React.Component<TabBarNativeProps, any> {
         );
       }
     });
+    if (content) {
+      return newChildren.filter((_, i) => i === selectedIndex);
+    }
 
     return newChildren;
   }
