@@ -14,6 +14,13 @@ toc: false
 
 ---
 
+### 3.0.6
+
+`2019-01-15`
+
+- 修复`image-picker` 报错 `groupTypes` is not supported on Android [#264](https://github.com/ant-design/ant-design-mobile-rn/issues/264)
+- 修复`tab-bar` 不会更新tab内容 [#201](https://github.com/ant-design/ant-design-mobile-rn/issues/201)
+
 ### 3.0.5
 
 `2019-01-03`

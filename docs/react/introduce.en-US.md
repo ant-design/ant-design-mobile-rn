@@ -137,6 +137,26 @@ class HelloWorldApp extends Component {
 AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 ```
 
+**If you need to use `Modal` and `Toast` you also need to add `Provider` to the app entry point**
+
+```jsx
+import React, { Component } from 'react';
+import { AppRegistry } from 'react-native';
+import { Button, Provider, Toast } from '@ant-design/react-native';
+
+class HelloWorldApp extends Component {
+  render() {
+    return (
+      <Provider>
+        <Button onPress={() => Toast.info('This is a toast tips')}>
+          Start
+        </Button>
+      </Provider>
+    );
+  }
+}
+```
+
 ##### Use modularized @ant-design/react-native
 
 The following two ways used to load the **only components you used**, select one of the ways you like.

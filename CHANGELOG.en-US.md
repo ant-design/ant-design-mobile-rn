@@ -13,6 +13,16 @@ toc: false
 - Major version release is not included in this schedule for breadking change and new features.
 
 ---
+
+
+### 3.0.6
+
+`2019-01-15`
+
+- Fixes `image-picker` `groupTypes` is not supported on Android [#264](https://github.com/ant-design/ant-design-mobile-rn/issues/264)
+- Fixes `tab-bar` does not update component after tab has changed [#201](https://github.com/ant-design/ant-design-mobile-rn/issues/201)
+
+
 ### 3.0.5
 
 `2019-01-03`

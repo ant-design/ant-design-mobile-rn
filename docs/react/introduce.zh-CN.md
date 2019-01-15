@@ -137,6 +137,26 @@ class HelloWorldApp extends Component {
 AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 ```
 
+**如果需要使用`Modal`以及`Toast`还需要在 App 的入口处加上`Provider`**
+
+```jsx
+import React, { Component } from 'react';
+import { AppRegistry } from 'react-native';
+import { Button, Provider, Toast } from '@ant-design/react-native';
+
+class HelloWorldApp extends Component {
+  render() {
+    return (
+      <Provider>
+        <Button onPress={() => Toast.info('This is a toast tips')}>
+          Start
+        </Button>
+      </Provider>
+    );
+  }
+}
+```
+
 ##### 按需加载
 
 下面两种方式都可以**只加载**用到的组件，选择其中一种方式即可。
