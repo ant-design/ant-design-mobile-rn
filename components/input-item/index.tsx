@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  GestureResponderEvent,
-  Platform,
-  StyleSheet,
-  Text,
-  TextInputProperties,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import { GestureResponderEvent, Platform, StyleSheet, Text, TextInputProperties, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import { Omit } from 'utility-types';
 import Icon from '../icon';
 import { WithTheme, WithThemeStyles } from '../style';
@@ -208,7 +199,7 @@ export default class InputItem extends React.Component<
           }
           const disabledStyle = disabled ? s.inputDisabled : {};
           return (
-            <View style={[s.container, containerStyle, style]}>
+            <View style={[s.container, containerStyle]}>
               {children ? (
                 typeof children === 'string' ? (
                   <Text style={[s.text, textStyle]}>{children}</Text>
@@ -231,7 +222,7 @@ export default class InputItem extends React.Component<
                   error ? s.inputErrorColor : null,
                   disabledStyle,
                   // 支持自定义样式
-                  restProps.style,
+                  style,
                 ]}
                 keyboardType={keyboardType}
                 onChange={event => this.onChange(event.nativeEvent.text)}
