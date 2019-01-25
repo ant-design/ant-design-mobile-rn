@@ -97,7 +97,7 @@
     "react-dom": "^16.7.0-alpha.2",
     "react-github-button": "^0.1.9",
     "react-intl": "^2.2.3",
-    "react-native": "^0.57.7",
+    "react-native": "^0.58.0",
     "react-native-mocker": "^0.0.12",
     "react-navigation": "^2.18.2",
     "react-test-renderer": "^16.7.0-alpha.2",
