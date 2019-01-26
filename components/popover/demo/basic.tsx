@@ -1,6 +1,6 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View, ViewStyle } from 'react-native';
-import { Popover } from '../../';
+import { StyleSheet, Text, View } from 'react-native';
+import { List, Popover } from '../../';
 
 const Item = Popover.Item;
 
@@ -22,7 +22,7 @@ export default class PopoverExample extends React.Component<any, any> {
       // visible: false,
       selected: value,
     });
-  }
+  };
   // handleVisibleChange = (_visible) => {
   //   this.setState({
   //     visible,
@@ -43,60 +43,44 @@ export default class PopoverExample extends React.Component<any, any> {
       </Item>,
     ]);
     return (
-      <View>
-        <View>
-          <Text style={{ marginTop: 30, marginLeft: 100 }}>
-            选择了：{this.state.selected}
-          </Text>
-        </View>
-        <View style={styles.menuContainer}>
+      <List>
+        {[1, 2, 3, 4, 5, 6, 7, 8].map(item => this.newMethod(overlay, item))}
+      </List>
+    );
+  }
+
+  private newMethod(overlay: JSX.Element[], key: number) {
+    return (
+      <List.Item
+        key={key}
+        extra={
           <Popover
-            name="m"
-            style={{ backgroundColor: '#eee' }}
             overlay={overlay}
-            contextStyle={styles.contextStyle}
-            // tslint:disable-next-line:jsx-no-multiline-js
-            overlayStyle={[
-              styles.overlayStyle,
-              Platform.OS === 'android' && styles.androidOverlayStyle,
-            ]}
             triggerStyle={styles.triggerStyle}
-            onSelect={this.onSelect}
+            onSelect={v =>
+              this.setState({
+                [`selected${key}`]: v,
+              })
+            }
           >
             <Text>菜单</Text>
           </Popover>
+        }
+      >
+        <View>
+          <Text>选择了：{this.state[`selected${key}`]}</Text>
         </View>
-      </View>
+      </List.Item>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  contextStyle: {
-    margin: 50,
-    flex: 1,
-  },
-  menuContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    height: 400,
-    paddingHorizontal: 5,
-    paddingVertical: 10,
-  } as ViewStyle,
+
   triggerStyle: {
-    flexDirection: 'row',
-    paddingHorizontal: 10,
+    paddingHorizontal: 6,
   },
-  overlayStyle: {
-    left: 90,
-    marginTop: 20,
-  },
-  // 在 iOS 上弹出层有阴影，Android 上没有，
-  // 详细：http://facebook.github.io/react-native/releases/0.39/docs/shadow-props.html#shadowcolor
-  androidOverlayStyle: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-  },
+
 });
 
 export const title = 'Popover';
