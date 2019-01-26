@@ -8,26 +8,16 @@ export default class PopoverExample extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      // visible: false,
       selected: '',
     };
   }
-  // componentDidMount() {
-  //   setInterval(() => {
-  //     this.refs.mc.refs.menuContext.toggleMenu('m');
-  //   }, 2000);
-  // }
+
   onSelect = (value: any) => {
     this.setState({
       // visible: false,
       selected: value,
     });
   };
-  // handleVisibleChange = (_visible) => {
-  //   this.setState({
-  //     visible,
-  //   });
-  // }
   render() {
     let overlay = [1, 2, 3].map((i, index) => (
       <Item key={index} value={`option ${i}`}>
@@ -43,13 +33,66 @@ export default class PopoverExample extends React.Component<any, any> {
       </Item>,
     ]);
     return (
-      <List>
-        {[1, 2, 3, 4, 5, 6, 7, 8].map(item => this.newMethod(overlay, item))}
-      </List>
+      <React.Fragment>
+        <List>
+          {[1, 2, 3, 4, 5, 6, 7, 8].map(item => this.renderList(overlay, item))}
+        </List>
+        <Popover
+          overlay={
+            <Popover.Item value={'test'}>
+              <Text>自定义组件 x</Text>
+            </Popover.Item>
+          }
+          renderOverlayComponent={nodes => (
+            <View>
+              <Text
+                style={{
+                  paddingHorizontal: 9,
+                  paddingTop: 16,
+                  color: '#2b2b2b',
+                  fontWeight: 'bold',
+                }}
+              >
+                我是自定义组件title
+              </Text>
+              {nodes}
+            </View>
+          )}
+        >
+          <Text
+            style={{
+              margin: 16,
+            }}
+          >
+            自定义组件
+          </Text>
+        </Popover>
+        <Popover
+          overlay={
+            <Popover.Item value={'test'}>
+              <Text>自定义组件 x</Text>
+            </Popover.Item>
+          }
+          styles={{
+            arrow: {
+              borderTopColor: 'transparent',
+            },
+          }}
+        >
+          <Text
+            style={{
+              padding: 16,
+              backgroundColor: '#ddd',
+            }}
+          >
+            隐藏箭头
+          </Text>
+        </Popover>
+      </React.Fragment>
     );
   }
 
-  private newMethod(overlay: JSX.Element[], key: number) {
+  private renderList(overlay: JSX.Element[], key: number) {
     return (
       <List.Item
         key={key}
@@ -76,11 +119,9 @@ export default class PopoverExample extends React.Component<any, any> {
 }
 
 const styles = StyleSheet.create({
-
   triggerStyle: {
     paddingHorizontal: 6,
   },
-
 });
 
 export const title = 'Popover';

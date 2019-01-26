@@ -9,6 +9,7 @@ export interface PopoverProps extends WithThemeStyles<PopoverStyle> {
   onSelect?: (node: any, index?: number) => void;
   overlay: React.ReactNode;
   disabled?: boolean;
+  renderOverlayComponent?: (node: React.ReactNode) => React.ReactNode;
 }
 export interface PopoverItemProps {
   value: any;
@@ -19,7 +20,7 @@ export interface PopoverItemProps {
 export class PopoverItem extends React.PureComponent<PopoverItemProps> {
   static displayName: 'PopoverItem';
   render() {
-    const { value, disabled, children, onPress, style } = this.props;
+    const { value, disabled, children, onSelect, style } = this.props;
     return (
       <WithTheme>
         {(_, theme) => (
@@ -27,8 +28,8 @@ export class PopoverItem extends React.PureComponent<PopoverItemProps> {
             activeOpacity={0.75}
             disabled={disabled}
             onPress={() => {
-              if (typeof onPress === 'function') {
-                onPress(value);
+              if (typeof onSelect === 'function') {
+                onSelect(value);
               }
             }}
             style={[
@@ -59,15 +60,18 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
     closePopover();
   };
   renderOverlay = (closePopover: any) => {
-    const { overlay } = this.props;
+    const { overlay, renderOverlayComponent } = this.props;
     const items = React.Children.map(overlay, child => {
       if (!isValidElement(child)) {
         return child;
       }
       return React.cloneElement(child, {
-        onPress: (v: any) => this.onSelect(v, closePopover),
+        onSelect: (v: any) => this.onSelect(v, closePopover),
       } as any);
     });
+    if (typeof renderOverlayComponent === 'function') {
+      return renderOverlayComponent(items);
+    }
     return <ScrollView>{items}</ScrollView>;
   };
   render() {
