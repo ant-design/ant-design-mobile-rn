@@ -9,17 +9,12 @@ title:
 
 ```jsx
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import { Popover } from '@ant-design/react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { List, Popover } from '@ant-design/react-native';
 const Item = Popover.Item;
 export default class PopoverExample extends React.Component {
   constructor(props) {
     super(props);
-    // componentDidMount() {
-    //   setInterval(() => {
-    //     this.refs.mc.refs.menuContext.toggleMenu('m');
-    //   }, 2000);
-    // }
     this.onSelect = value => {
       this.setState({
         // visible: false,
@@ -27,15 +22,9 @@ export default class PopoverExample extends React.Component {
       });
     };
     this.state = {
-      // visible: false,
       selected: '',
     };
   }
-  // handleVisibleChange = (_visible) => {
-  //   this.setState({
-  //     visible,
-  //   });
-  // }
   render() {
     let overlay = [1, 2, 3].map((i, index) => (
       <Item key={index} value={`option ${i}`}>
@@ -51,58 +40,92 @@ export default class PopoverExample extends React.Component {
       </Item>,
     ]);
     return (
-      <View>
-        <View>
-          <Text style={{ marginTop: 30, marginLeft: 100 }}>
-            选择了：{this.state.selected}
+      <React.Fragment>
+        <List>
+          {[1, 2, 3, 4, 5, 6, 7, 8].map(item => this.renderList(overlay, item))}
+        </List>
+        <Popover
+          overlay={
+            <Popover.Item value={'test'}>
+              <Text>自定义组件 x</Text>
+            </Popover.Item>
+          }
+          renderOverlayComponent={nodes => (
+            <View>
+              <Text
+                style={{
+                  paddingHorizontal: 9,
+                  paddingTop: 16,
+                  color: '#2b2b2b',
+                  fontWeight: 'bold',
+                }}
+              >
+                我是自定义组件title
+              </Text>
+              {nodes}
+            </View>
+          )}
+        >
+          <Text
+            style={{
+              margin: 16,
+            }}
+          >
+            自定义组件
           </Text>
-        </View>
-        <View style={styles.menuContainer}>
+        </Popover>
+        <Popover
+          overlay={
+            <Popover.Item value={'test'}>
+              <Text>自定义组件 x</Text>
+            </Popover.Item>
+          }
+          styles={{
+            arrow: {
+              borderTopColor: 'transparent',
+            },
+          }}
+        >
+          <Text
+            style={{
+              padding: 16,
+              backgroundColor: '#ddd',
+            }}
+          >
+            隐藏箭头
+          </Text>
+        </Popover>
+      </React.Fragment>
+    );
+  }
+  renderList(overlay, key) {
+    return (
+      <List.Item
+        key={key}
+        extra={
           <Popover
-            name="m"
-            style={{ backgroundColor: '#eee' }}
             overlay={overlay}
-            contextStyle={styles.contextStyle}
-            // tslint:disable-next-line:jsx-no-multiline-js
-            overlayStyle={[
-              styles.overlayStyle,
-              Platform.OS === 'android' && styles.androidOverlayStyle,
-            ]}
             triggerStyle={styles.triggerStyle}
-            onSelect={this.onSelect}
+            onSelect={v =>
+              this.setState({
+                [`selected${key}`]: v,
+              })
+            }
           >
             <Text>菜单</Text>
           </Popover>
+        }
+      >
+        <View>
+          <Text>选择了：{this.state[`selected${key}`]}</Text>
         </View>
-      </View>
+      </List.Item>
     );
   }
 }
 const styles = StyleSheet.create({
-  contextStyle: {
-    margin: 50,
-    flex: 1,
-  },
-  menuContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    height: 400,
-    paddingHorizontal: 5,
-    paddingVertical: 10,
-  },
   triggerStyle: {
-    flexDirection: 'row',
-    paddingHorizontal: 10,
-  },
-  overlayStyle: {
-    left: 90,
-    marginTop: 20,
-  },
-  // 在 iOS 上弹出层有阴影，Android 上没有，
-  // 详细：http://facebook.github.io/react-native/releases/0.39/docs/shadow-props.html#shadowcolor
-  androidOverlayStyle: {
-    borderWidth: 1,
-    borderColor: '#ccc',
+    paddingHorizontal: 6,
   },
 });
 export const title = 'Popover';
