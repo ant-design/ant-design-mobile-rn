@@ -1,98 +1,2981 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders ./components/popover/demo/basic.tsx correctly 1`] = `
-<View>
+Array [
   <View>
-    <Text
-      style={
-        Object {
-          "marginLeft": 100,
-          "marginTop": 30,
-        }
-      }
-    >
-      选择了：
-      
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "flexDirection": "row",
-        "height": 400,
-        "justifyContent": "flex-end",
-        "paddingHorizontal": 5,
-        "paddingVertical": 10,
-      }
-    }
-  >
     <View
-      onLayout={[Function]}
       style={
         Object {
-          "flex": 1,
+          "backgroundColor": "#ffffff",
+          "borderTopColor": "#dddddd",
+          "borderTopWidth": 0.5,
         }
       }
     >
-      <View
-        style={
-          Object {
-            "flex": 1,
-            "margin": 50,
-          }
-        }
-      >
-        <View
-          collapsable={false}
-          style={
-            Object {
-              "backgroundColor": "#eee",
-            }
-          }
-        >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "flexDirection": "row",
-                "paddingHorizontal": 10,
-              }
-            }
-          >
-            <Text>
-              菜单
-            </Text>
-          </View>
-        </View>
-      </View>
       <View
         accessible={true}
+        isTVSelectable={true}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View>
+                <Text>
+                  选择了：
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "paddingHorizontal": 6,
+                  }
+                }
+              >
+                <Text>
+                  菜单
+                </Text>
+              </View>
+              <Modal
+                hardwareAccelerated={false}
+                onDismiss={[Function]}
+                onOrientationChange={[Function]}
+                onRequestClose={[Function]}
+                supportedOrientations={
+                  Array [
+                    "portrait",
+                    "landscape",
+                  ]
+                }
+                transparent={true}
+                visible={false}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    accessible={true}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  />
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "left": 0,
+                        "position": "absolute",
+                        "shadowColor": "black",
+                        "shadowOffset": Object {
+                          "height": 2,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.4,
+                        "shadowRadius": 2,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  >
+                    <View
+                      onLayout={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 3,
+                          "flexDirection": "column",
+                          "padding": 0,
+                          "position": "absolute",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                            Object {
+                              "translateY": 0,
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                        }
+                      }
+                      useNativeDriver={false}
+                    >
+                      <RCTScrollView>
+                        <View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              1
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              2
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              3
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#ddd",
+                                }
+                              }
+                            >
+                              disabled opt
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#efeff4",
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              关闭
+                            </Text>
+                          </View>
+                        </View>
+                      </RCTScrollView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "borderBottomColor": "transparent",
+                          "borderBottomWidth": 9,
+                          "borderLeftColor": "transparent",
+                          "borderLeftWidth": 9,
+                          "borderRightColor": "transparent",
+                          "borderRightWidth": 9,
+                          "borderTopColor": "#ffffff",
+                          "borderTopWidth": 9,
+                          "height": 18,
+                          "left": -9,
+                          "position": "absolute",
+                          "top": -9,
+                          "transform": Array [
+                            Object {
+                              "rotate": "0deg",
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                          "width": 18,
+                        }
+                      }
+                      useNativeDriver={false}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View>
+                <Text>
+                  选择了：
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "paddingHorizontal": 6,
+                  }
+                }
+              >
+                <Text>
+                  菜单
+                </Text>
+              </View>
+              <Modal
+                hardwareAccelerated={false}
+                onDismiss={[Function]}
+                onOrientationChange={[Function]}
+                onRequestClose={[Function]}
+                supportedOrientations={
+                  Array [
+                    "portrait",
+                    "landscape",
+                  ]
+                }
+                transparent={true}
+                visible={false}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    accessible={true}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  />
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "left": 0,
+                        "position": "absolute",
+                        "shadowColor": "black",
+                        "shadowOffset": Object {
+                          "height": 2,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.4,
+                        "shadowRadius": 2,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  >
+                    <View
+                      onLayout={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 3,
+                          "flexDirection": "column",
+                          "padding": 0,
+                          "position": "absolute",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                            Object {
+                              "translateY": 0,
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                        }
+                      }
+                      useNativeDriver={false}
+                    >
+                      <RCTScrollView>
+                        <View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              1
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              2
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              3
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#ddd",
+                                }
+                              }
+                            >
+                              disabled opt
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#efeff4",
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              关闭
+                            </Text>
+                          </View>
+                        </View>
+                      </RCTScrollView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "borderBottomColor": "transparent",
+                          "borderBottomWidth": 9,
+                          "borderLeftColor": "transparent",
+                          "borderLeftWidth": 9,
+                          "borderRightColor": "transparent",
+                          "borderRightWidth": 9,
+                          "borderTopColor": "#ffffff",
+                          "borderTopWidth": 9,
+                          "height": 18,
+                          "left": -9,
+                          "position": "absolute",
+                          "top": -9,
+                          "transform": Array [
+                            Object {
+                              "rotate": "0deg",
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                          "width": 18,
+                        }
+                      }
+                      useNativeDriver={false}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View>
+                <Text>
+                  选择了：
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "paddingHorizontal": 6,
+                  }
+                }
+              >
+                <Text>
+                  菜单
+                </Text>
+              </View>
+              <Modal
+                hardwareAccelerated={false}
+                onDismiss={[Function]}
+                onOrientationChange={[Function]}
+                onRequestClose={[Function]}
+                supportedOrientations={
+                  Array [
+                    "portrait",
+                    "landscape",
+                  ]
+                }
+                transparent={true}
+                visible={false}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    accessible={true}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  />
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "left": 0,
+                        "position": "absolute",
+                        "shadowColor": "black",
+                        "shadowOffset": Object {
+                          "height": 2,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.4,
+                        "shadowRadius": 2,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  >
+                    <View
+                      onLayout={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 3,
+                          "flexDirection": "column",
+                          "padding": 0,
+                          "position": "absolute",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                            Object {
+                              "translateY": 0,
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                        }
+                      }
+                      useNativeDriver={false}
+                    >
+                      <RCTScrollView>
+                        <View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              1
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              2
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              3
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#ddd",
+                                }
+                              }
+                            >
+                              disabled opt
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#efeff4",
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              关闭
+                            </Text>
+                          </View>
+                        </View>
+                      </RCTScrollView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "borderBottomColor": "transparent",
+                          "borderBottomWidth": 9,
+                          "borderLeftColor": "transparent",
+                          "borderLeftWidth": 9,
+                          "borderRightColor": "transparent",
+                          "borderRightWidth": 9,
+                          "borderTopColor": "#ffffff",
+                          "borderTopWidth": 9,
+                          "height": 18,
+                          "left": -9,
+                          "position": "absolute",
+                          "top": -9,
+                          "transform": Array [
+                            Object {
+                              "rotate": "0deg",
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                          "width": 18,
+                        }
+                      }
+                      useNativeDriver={false}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View>
+                <Text>
+                  选择了：
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "paddingHorizontal": 6,
+                  }
+                }
+              >
+                <Text>
+                  菜单
+                </Text>
+              </View>
+              <Modal
+                hardwareAccelerated={false}
+                onDismiss={[Function]}
+                onOrientationChange={[Function]}
+                onRequestClose={[Function]}
+                supportedOrientations={
+                  Array [
+                    "portrait",
+                    "landscape",
+                  ]
+                }
+                transparent={true}
+                visible={false}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    accessible={true}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  />
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "left": 0,
+                        "position": "absolute",
+                        "shadowColor": "black",
+                        "shadowOffset": Object {
+                          "height": 2,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.4,
+                        "shadowRadius": 2,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  >
+                    <View
+                      onLayout={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 3,
+                          "flexDirection": "column",
+                          "padding": 0,
+                          "position": "absolute",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                            Object {
+                              "translateY": 0,
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                        }
+                      }
+                      useNativeDriver={false}
+                    >
+                      <RCTScrollView>
+                        <View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              1
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              2
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              3
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#ddd",
+                                }
+                              }
+                            >
+                              disabled opt
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#efeff4",
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              关闭
+                            </Text>
+                          </View>
+                        </View>
+                      </RCTScrollView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "borderBottomColor": "transparent",
+                          "borderBottomWidth": 9,
+                          "borderLeftColor": "transparent",
+                          "borderLeftWidth": 9,
+                          "borderRightColor": "transparent",
+                          "borderRightWidth": 9,
+                          "borderTopColor": "#ffffff",
+                          "borderTopWidth": 9,
+                          "height": 18,
+                          "left": -9,
+                          "position": "absolute",
+                          "top": -9,
+                          "transform": Array [
+                            Object {
+                              "rotate": "0deg",
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                          "width": 18,
+                        }
+                      }
+                      useNativeDriver={false}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View>
+                <Text>
+                  选择了：
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "paddingHorizontal": 6,
+                  }
+                }
+              >
+                <Text>
+                  菜单
+                </Text>
+              </View>
+              <Modal
+                hardwareAccelerated={false}
+                onDismiss={[Function]}
+                onOrientationChange={[Function]}
+                onRequestClose={[Function]}
+                supportedOrientations={
+                  Array [
+                    "portrait",
+                    "landscape",
+                  ]
+                }
+                transparent={true}
+                visible={false}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    accessible={true}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  />
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "left": 0,
+                        "position": "absolute",
+                        "shadowColor": "black",
+                        "shadowOffset": Object {
+                          "height": 2,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.4,
+                        "shadowRadius": 2,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  >
+                    <View
+                      onLayout={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 3,
+                          "flexDirection": "column",
+                          "padding": 0,
+                          "position": "absolute",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                            Object {
+                              "translateY": 0,
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                        }
+                      }
+                      useNativeDriver={false}
+                    >
+                      <RCTScrollView>
+                        <View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              1
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              2
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              3
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#ddd",
+                                }
+                              }
+                            >
+                              disabled opt
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#efeff4",
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              关闭
+                            </Text>
+                          </View>
+                        </View>
+                      </RCTScrollView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "borderBottomColor": "transparent",
+                          "borderBottomWidth": 9,
+                          "borderLeftColor": "transparent",
+                          "borderLeftWidth": 9,
+                          "borderRightColor": "transparent",
+                          "borderRightWidth": 9,
+                          "borderTopColor": "#ffffff",
+                          "borderTopWidth": 9,
+                          "height": 18,
+                          "left": -9,
+                          "position": "absolute",
+                          "top": -9,
+                          "transform": Array [
+                            Object {
+                              "rotate": "0deg",
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                          "width": 18,
+                        }
+                      }
+                      useNativeDriver={false}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View>
+                <Text>
+                  选择了：
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "paddingHorizontal": 6,
+                  }
+                }
+              >
+                <Text>
+                  菜单
+                </Text>
+              </View>
+              <Modal
+                hardwareAccelerated={false}
+                onDismiss={[Function]}
+                onOrientationChange={[Function]}
+                onRequestClose={[Function]}
+                supportedOrientations={
+                  Array [
+                    "portrait",
+                    "landscape",
+                  ]
+                }
+                transparent={true}
+                visible={false}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    accessible={true}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  />
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "left": 0,
+                        "position": "absolute",
+                        "shadowColor": "black",
+                        "shadowOffset": Object {
+                          "height": 2,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.4,
+                        "shadowRadius": 2,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  >
+                    <View
+                      onLayout={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 3,
+                          "flexDirection": "column",
+                          "padding": 0,
+                          "position": "absolute",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                            Object {
+                              "translateY": 0,
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                        }
+                      }
+                      useNativeDriver={false}
+                    >
+                      <RCTScrollView>
+                        <View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              1
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              2
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              3
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#ddd",
+                                }
+                              }
+                            >
+                              disabled opt
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#efeff4",
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              关闭
+                            </Text>
+                          </View>
+                        </View>
+                      </RCTScrollView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "borderBottomColor": "transparent",
+                          "borderBottomWidth": 9,
+                          "borderLeftColor": "transparent",
+                          "borderLeftWidth": 9,
+                          "borderRightColor": "transparent",
+                          "borderRightWidth": 9,
+                          "borderTopColor": "#ffffff",
+                          "borderTopWidth": 9,
+                          "height": 18,
+                          "left": -9,
+                          "position": "absolute",
+                          "top": -9,
+                          "transform": Array [
+                            Object {
+                              "rotate": "0deg",
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                          "width": 18,
+                        }
+                      }
+                      useNativeDriver={false}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View>
+                <Text>
+                  选择了：
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "paddingHorizontal": 6,
+                  }
+                }
+              >
+                <Text>
+                  菜单
+                </Text>
+              </View>
+              <Modal
+                hardwareAccelerated={false}
+                onDismiss={[Function]}
+                onOrientationChange={[Function]}
+                onRequestClose={[Function]}
+                supportedOrientations={
+                  Array [
+                    "portrait",
+                    "landscape",
+                  ]
+                }
+                transparent={true}
+                visible={false}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    accessible={true}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  />
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "left": 0,
+                        "position": "absolute",
+                        "shadowColor": "black",
+                        "shadowOffset": Object {
+                          "height": 2,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.4,
+                        "shadowRadius": 2,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  >
+                    <View
+                      onLayout={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 3,
+                          "flexDirection": "column",
+                          "padding": 0,
+                          "position": "absolute",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                            Object {
+                              "translateY": 0,
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                        }
+                      }
+                      useNativeDriver={false}
+                    >
+                      <RCTScrollView>
+                        <View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              1
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              2
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              3
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#ddd",
+                                }
+                              }
+                            >
+                              disabled opt
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#efeff4",
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              关闭
+                            </Text>
+                          </View>
+                        </View>
+                      </RCTScrollView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "borderBottomColor": "transparent",
+                          "borderBottomWidth": 9,
+                          "borderLeftColor": "transparent",
+                          "borderLeftWidth": 9,
+                          "borderRightColor": "transparent",
+                          "borderRightWidth": 9,
+                          "borderTopColor": "#ffffff",
+                          "borderTopWidth": 9,
+                          "height": 18,
+                          "left": -9,
+                          "position": "absolute",
+                          "top": -9,
+                          "transform": Array [
+                            Object {
+                              "rotate": "0deg",
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                          "width": 18,
+                        }
+                      }
+                      useNativeDriver={false}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View>
+                <Text>
+                  选择了：
+                </Text>
+              </View>
+            </View>
+            <View>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "paddingHorizontal": 6,
+                  }
+                }
+              >
+                <Text>
+                  菜单
+                </Text>
+              </View>
+              <Modal
+                hardwareAccelerated={false}
+                onDismiss={[Function]}
+                onOrientationChange={[Function]}
+                onRequestClose={[Function]}
+                supportedOrientations={
+                  Array [
+                    "portrait",
+                    "landscape",
+                  ]
+                }
+                transparent={true}
+                visible={false}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    accessible={true}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  />
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "left": 0,
+                        "position": "absolute",
+                        "shadowColor": "black",
+                        "shadowOffset": Object {
+                          "height": 2,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.4,
+                        "shadowRadius": 2,
+                        "top": 0,
+                      }
+                    }
+                    useNativeDriver={false}
+                  >
+                    <View
+                      onLayout={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 3,
+                          "flexDirection": "column",
+                          "padding": 0,
+                          "position": "absolute",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                            Object {
+                              "translateY": 0,
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                        }
+                      }
+                      useNativeDriver={false}
+                    >
+                      <RCTScrollView>
+                        <View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              1
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              2
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              option 
+                              3
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#ddd",
+                                }
+                              }
+                            >
+                              disabled opt
+                            </Text>
+                          </View>
+                          <View
+                            accessible={true}
+                            isTVSelectable={true}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#efeff4",
+                                "opacity": 1,
+                                "padding": 9,
+                              }
+                            }
+                          >
+                            <Text>
+                              关闭
+                            </Text>
+                          </View>
+                        </View>
+                      </RCTScrollView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "borderBottomColor": "transparent",
+                          "borderBottomWidth": 9,
+                          "borderLeftColor": "transparent",
+                          "borderLeftWidth": 9,
+                          "borderRightColor": "transparent",
+                          "borderRightWidth": 9,
+                          "borderTopColor": "#ffffff",
+                          "borderTopWidth": 9,
+                          "height": 18,
+                          "left": -9,
+                          "position": "absolute",
+                          "top": -9,
+                          "transform": Array [
+                            Object {
+                              "rotate": "0deg",
+                            },
+                            Object {
+                              "scale": 0,
+                            },
+                          ],
+                          "width": 18,
+                        }
+                      }
+                      useNativeDriver={false}
+                    />
+                  </View>
+                </View>
+              </Modal>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
         style={
           Array [
             Object {
-              "bottom": -1334,
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
               "left": 0,
-              "opacity": 0,
               "position": "absolute",
-              "top": 1334,
+              "right": 0,
             },
-            null,
           ]
         }
       />
     </View>
-  </View>
-</View>
+  </View>,
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "margin": 16,
+          }
+        }
+      >
+        自定义组件
+      </Text>
+    </View>
+    <Modal
+      hardwareAccelerated={false}
+      onDismiss={[Function]}
+      onOrientationChange={[Function]}
+      onRequestClose={[Function]}
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
+      }
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            false,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          useNativeDriver={false}
+        />
+        <View
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "left": 0,
+              "position": "absolute",
+              "shadowColor": "black",
+              "shadowOffset": Object {
+                "height": 2,
+                "width": 0,
+              },
+              "shadowOpacity": 0.4,
+              "shadowRadius": 2,
+              "top": 0,
+            }
+          }
+          useNativeDriver={false}
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderRadius": 3,
+                "flexDirection": "column",
+                "padding": 0,
+                "position": "absolute",
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
+                  },
+                  Object {
+                    "scale": 0,
+                  },
+                ],
+              }
+            }
+            useNativeDriver={false}
+          >
+            <View>
+              <Text
+                style={
+                  Object {
+                    "color": "#2b2b2b",
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 9,
+                    "paddingTop": 16,
+                  }
+                }
+              >
+                我是自定义组件title
+              </Text>
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                    "padding": 9,
+                  }
+                }
+              >
+                <Text>
+                  自定义组件 x
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "borderBottomColor": "transparent",
+                "borderBottomWidth": 9,
+                "borderLeftColor": "transparent",
+                "borderLeftWidth": 9,
+                "borderRightColor": "transparent",
+                "borderRightWidth": 9,
+                "borderTopColor": "#ffffff",
+                "borderTopWidth": 9,
+                "height": 18,
+                "left": -9,
+                "position": "absolute",
+                "top": -9,
+                "transform": Array [
+                  Object {
+                    "rotate": "0deg",
+                  },
+                  Object {
+                    "scale": 0,
+                  },
+                ],
+                "width": 18,
+              }
+            }
+            useNativeDriver={false}
+          />
+        </View>
+      </View>
+    </Modal>
+  </View>,
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "backgroundColor": "#ddd",
+            "padding": 16,
+          }
+        }
+      >
+        隐藏箭头
+      </Text>
+    </View>
+    <Modal
+      hardwareAccelerated={false}
+      onDismiss={[Function]}
+      onOrientationChange={[Function]}
+      onRequestClose={[Function]}
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
+      }
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            false,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          useNativeDriver={false}
+        />
+        <View
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "left": 0,
+              "position": "absolute",
+              "shadowColor": "black",
+              "shadowOffset": Object {
+                "height": 2,
+                "width": 0,
+              },
+              "shadowOpacity": 0.4,
+              "shadowRadius": 2,
+              "top": 0,
+            }
+          }
+          useNativeDriver={false}
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderRadius": 3,
+                "flexDirection": "column",
+                "padding": 0,
+                "position": "absolute",
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
+                  },
+                  Object {
+                    "scale": 0,
+                  },
+                ],
+              }
+            }
+            useNativeDriver={false}
+          >
+            <RCTScrollView>
+              <View>
+                <View
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "padding": 9,
+                    }
+                  }
+                >
+                  <Text>
+                    自定义组件 x
+                  </Text>
+                </View>
+              </View>
+            </RCTScrollView>
+          </View>
+          <View
+            style={
+              Object {
+                "borderBottomColor": "transparent",
+                "borderBottomWidth": 9,
+                "borderLeftColor": "transparent",
+                "borderLeftWidth": 9,
+                "borderRightColor": "transparent",
+                "borderRightWidth": 9,
+                "borderTopColor": "transparent",
+                "borderTopWidth": 9,
+                "height": 18,
+                "left": -9,
+                "position": "absolute",
+                "top": -9,
+                "transform": Array [
+                  Object {
+                    "rotate": "0deg",
+                  },
+                  Object {
+                    "scale": 0,
+                  },
+                ],
+                "width": 18,
+              }
+            }
+            useNativeDriver={false}
+          />
+        </View>
+      </View>
+    </Modal>
+  </View>,
+]
 `;

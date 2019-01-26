@@ -2,8 +2,6 @@ declare module '@ant-design/react-native';
 
 declare module 'antd-mobile-demo-data';
 
-declare module 'react-native-menu';
-
 declare module 'normalize-css-color';
 declare module '@bang88/react-native-ultimate-listview';
 

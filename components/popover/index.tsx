@@ -1,54 +1,119 @@
-import React from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
-import Menu, { MenuContext, MenuOption, MenuOptions, MenuTrigger } from 'react-native-menu';
-export interface PopoverProps {
-  style?: StyleProp<ViewStyle>;
+import React, { isValidElement } from 'react';
+import { ScrollView, StyleProp, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Popover as Pop, PopoverController } from 'react-native-modal-popover';
+import { WithTheme, WithThemeStyles } from '../style';
+import PopoverStyles, { PopoverStyle } from './style';
+
+export interface PopoverProps extends WithThemeStyles<PopoverStyle> {
   triggerStyle?: StyleProp<ViewStyle>;
-  overlayStyle?: StyleProp<ViewStyle>;
-  contextStyle?: StyleProp<ViewStyle>;
-  renderOverlayComponent?: (values: any) => JSX.Element;
-  name?: string;
   onSelect?: (node: any, index?: number) => void;
   overlay: React.ReactNode;
   disabled?: boolean;
+  renderOverlayComponent?: (node: React.ReactNode) => React.ReactNode;
 }
-export default class Popover extends React.Component<PopoverProps, any> {
+export interface PopoverItemProps {
+  value: any;
+  [key: string]: any;
+  disabled?: boolean;
+  style?: StyleProp<ViewStyle>;
+}
+export class PopoverItem extends React.PureComponent<PopoverItemProps> {
+  static displayName: 'PopoverItem';
+  render() {
+    const { value, disabled, children, onSelect, style } = this.props;
+    return (
+      <WithTheme>
+        {(_, theme) => (
+          <TouchableOpacity
+            activeOpacity={0.75}
+            disabled={disabled}
+            onPress={() => {
+              if (typeof onSelect === 'function') {
+                onSelect(value);
+              }
+            }}
+            style={[
+              {
+                padding: theme.v_spacing_md,
+              },
+              style,
+            ]}
+          >
+            {children}
+          </TouchableOpacity>
+        )}
+      </WithTheme>
+    );
+  }
+}
+export default class Popover extends React.PureComponent<PopoverProps, any> {
   static defaultProps = {
     onSelect: () => {},
   };
 
-  static Item = MenuOption;
-  menuContextRef: any;
-
+  static Item = PopoverItem;
+  onSelect = (value: any, closePopover: any) => {
+    const { onSelect } = this.props;
+    if (onSelect) {
+      onSelect(value);
+    }
+    closePopover();
+  };
+  renderOverlay = (closePopover: any) => {
+    const { overlay, renderOverlayComponent } = this.props;
+    const items = React.Children.map(overlay, child => {
+      if (!isValidElement(child)) {
+        return child;
+      }
+      return React.cloneElement(child, {
+        onSelect: (v: any) => this.onSelect(v, closePopover),
+      } as any);
+    });
+    if (typeof renderOverlayComponent === 'function') {
+      return renderOverlayComponent(items);
+    }
+    return <ScrollView>{items}</ScrollView>;
+  };
   render() {
-    const {
-      children,
-      onSelect,
-      overlay,
-      disabled,
-      contextStyle,
-      name,
-      style,
-      triggerStyle,
-      overlayStyle,
-      renderOverlayComponent,
-    } = this.props;
-    const menuOptionsProp = {
-      optionsContainerStyle: overlayStyle,
-      renderOptionsContainer: renderOverlayComponent,
-    };
+    const { children, disabled, triggerStyle, styles } = this.props;
+
     return (
-      <MenuContext
-        ref={(el: any) => (this.menuContextRef = el)}
-        style={contextStyle}
-      >
-        <Menu name={name} onSelect={onSelect} style={style}>
-          <MenuTrigger disabled={disabled} style={triggerStyle}>
-            {children}
-          </MenuTrigger>
-          <MenuOptions {...menuOptionsProp}>{overlay}</MenuOptions>
-        </Menu>
-      </MenuContext>
+      <WithTheme themeStyles={PopoverStyles} styles={styles}>
+        {s => (
+          <PopoverController>
+            {({
+              openPopover,
+              closePopover,
+              popoverVisible,
+              setPopoverAnchor,
+              popoverAnchorRect,
+            }) => (
+              <View>
+                <TouchableOpacity
+                  ref={setPopoverAnchor}
+                  onPress={openPopover}
+                  style={triggerStyle}
+                  disabled={disabled}
+                  activeOpacity={0.75}
+                >
+                  {children}
+                </TouchableOpacity>
+                <Pop
+                  contentStyle={s.content}
+                  arrowStyle={s.arrow}
+                  backgroundStyle={s.background}
+                  visible={popoverVisible}
+                  onClose={closePopover}
+                  fromRect={popoverAnchorRect}
+                  supportedOrientations={['portrait', 'landscape']}
+                >
+                  {this.renderOverlay(closePopover)}
+                </Pop>
+              </View>
+            )}
+          </PopoverController>
+        )}
+      </WithTheme>
     );
   }
 }

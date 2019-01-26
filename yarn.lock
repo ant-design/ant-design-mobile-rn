@@ -748,6 +748,11 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"
   integrity sha512-ZBFR7TROLVzCkswA3Fmqq+IIJt62/T7aY/Dmz+QkU7CaW2QFqAitCE8Ups7IzmGhcN1YWMBT4Qcoc07jU9hOJQ==
 
+"@types/prop-types@^15.5.5":
+  version "15.5.8"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.8.tgz#8ae4e0ea205fe95c3901a5a1df7f66495e3a56ce"
+  integrity sha512-3AQoUxQcQtLHsK25wtTWIoIpgYjH3vSDroZOUr7PpCHw/jLY1RB9z9E8dBT/OSmwStVgkRNvdh+ZHNiomRieaw==
+
 "@types/prop-types@^15.5.7":
   version "15.5.7"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.7.tgz#c6f1e0d0109ff358b132d98b7b4025c7a7b707c5"
@@ -12331,16 +12336,6 @@ react-dom@^16.0.0:
     prop-types "^15.6.2"
     scheduler "^0.11.2"
 
-react-dom@^16.7.0-alpha.2:
-  version "16.7.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.7.0-alpha.2.tgz#16632880ed43676315991d8b412cce6975a30282"
-  integrity sha512-o0mMw8jBlwHjGZEy/vvKd/6giAX0+skREMOTs3/QHmgi+yAhUClp4My4Z9lsKy3SXV+03uPdm1l/QM7NTcGuMw==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.12.0-alpha.2"
-
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
@@ -12369,10 +12364,10 @@ react-is@^16.5.2, react-is@^16.6.1, react-is@^16.6.3:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
   integrity sha512-u7FDWtthB4rWibG/+mFbVd5FvdI20yde86qKGx4lVUTWmPlSWQ4QxbBIrrs+HnXGbxOUlUzTAP/VDmvCwaP2yA==
 
-react-is@^16.7.0-alpha.2:
-  version "16.7.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0-alpha.2.tgz#0dd7f95d45ad5318b7f7bcb99dcb84da9385cb57"
-  integrity sha512-1Q3qN8nMWUfFcRz/bBC1f9zSL3il9OcSxMd9CNnpJbeFf4VCX0qYxL3TuwT4f+tFk1TkidwIL11yYgk4HjldYg==
+react-is@^16.7.0:
+  version "16.7.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
+  integrity sha512-Z0VRQdF4NPDoI0tsXVMLkJLiwEBa+RP66g0xDHxgxysxSoCUccSten4RTF/UFvZF1dZvZ9Zu1sx+MDXwcOR34g==
 
 react-lazy-load@^3.0.13:
   version "3.0.13"
@@ -12420,15 +12415,6 @@ react-native-drawer-layout@~2.0.0:
   resolved "https://registry.yarnpkg.com/react-native-drawer-layout/-/react-native-drawer-layout-2.0.0.tgz#8ce1e4027bd3f3a09045afdb46080e18346be232"
   integrity sha512-zYmzv+4QKDwxmAj7pF1yr8VUb+Hp7oBlwMjRZsvv56vPwO89I+kPTI8G78uwSNIf5b4e/iOChE4vpB5J2XsJFA==
 
-react-native-menu@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/react-native-menu/-/react-native-menu-0.23.0.tgz#3c023239aed95d419275df50c199982ad7eb062b"
-  integrity sha1-PAIyOa7ZXUGSdd9QwZmYKtfrBis=
-  dependencies:
-    create-react-class "^15.6.0"
-    prop-types "^15.5.10"
-    react-timer-mixin "^0.13.3"
-
 react-native-mocker@^0.0.12:
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/react-native-mocker/-/react-native-mocker-0.0.12.tgz#ddfe80be86744a24b744cfd9e30150f98c823c4e"
@@ -12446,6 +12432,15 @@ react-native-mocker@^0.0.12:
     react-addons-update "^15.4.0"
     react-timer-mixin "^0.13.3"
     warning "^2.1.0"
+
+react-native-modal-popover@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/react-native-modal-popover/-/react-native-modal-popover-0.0.12.tgz#5c0b5e9e0323490c3c5867821fc94b6582bfa3dc"
+  integrity sha512-uZQsTDcGOI8y/05L/Lb0OMBesJYYRWEc0pj2038a579LnDnJJpKay0kD654cQpA4Ozt3xbu4DMTGwenynBSEFg==
+  dependencies:
+    "@types/prop-types" "^15.5.5"
+    lodash.debounce "^4.0.8"
+    prop-types "^15.6.2"
 
 react-native-safe-area-view@0.11.0, react-native-safe-area-view@^0.11.0:
   version "0.11.0"
@@ -12647,15 +12642,15 @@ react-test-renderer@^16.0.0-0:
     react-is "^16.6.3"
     scheduler "^0.11.2"
 
-react-test-renderer@^16.7.0-alpha.2:
-  version "16.7.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.7.0-alpha.2.tgz#8606a5a82240c405539da0401d7b3572898b5611"
-  integrity sha512-taA9MrHMi7hEM/cKgvcvht+9cszhPirCaSP99yxkVQ2JwQxYSltGYq2gFf/UQBqGJMgmgEghN62rxziaL1EK+A==
+react-test-renderer@^16.7.0:
+  version "16.7.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.7.0.tgz#1ca96c2b450ab47c36ba92cd8c03fcefc52ea01c"
+  integrity sha512-tFbhSjknSQ6+ttzmuGdv+SjQfmvGcq3PFKyPItohwhhOBmRoTf1We3Mlt3rJtIn85mjPXOkKV+TaKK4irvk9Yg==
   dependencies:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    react-is "^16.7.0-alpha.2"
-    scheduler "^0.12.0-alpha.2"
+    react-is "^16.7.0"
+    scheduler "^0.12.0"
 
 react-timer-mixin@^0.13.2, react-timer-mixin@^0.13.3:
   version "0.13.4"
@@ -12687,16 +12682,6 @@ react@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.11.2"
-
-react@^16.7.0-alpha.2:
-  version "16.7.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.7.0-alpha.2.tgz#924f2ae843a46ea82d104a8def7a599fbf2c78ce"
-  integrity sha512-Xh1CC8KkqIojhC+LFXd21jxlVtzoVYdGnQAi/I2+dxbmos9ghbx5TQf9/nDxc4WxaFfUQJkya0w1k6rMeyIaxQ==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.12.0-alpha.2"
 
 read-file-stdin@^0.2.0:
   version "0.2.1"
@@ -13541,10 +13526,10 @@ scheduler@^0.11.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.12.0-alpha.2:
-  version "0.12.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.12.0-alpha.2.tgz#2a8bc8dc6ecdb75fa6480ceeedc1f187c9539970"
-  integrity sha512-bfqFzGH18MjjhePIzYQNR0uGQ1wMCX6Q83c2s+3fzyuqKT6zBI2wNQTpq01q72C7QItAp8if5w2LfMiXnI2SYw==
+scheduler@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.12.0.tgz#8ab17699939c0aedc5a196a657743c496538647b"
+  integrity sha512-t7MBR28Akcp4Jm+QoR63XgAi9YgCUmgvDHqf5otgAj4QvdoBE4ImCX0ffehefePPG+aitiYHp0g/mW6s4Tp+dw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
