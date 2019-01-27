@@ -7,6 +7,8 @@ Here list some of main incompatible changes and recommended changes in the upgra
 
 ### 3.0.0
 
+**3.0.0** needs to install `react-native@0.57.x`
+
 - Change import to `import { Button, ... } from '@ant-design/react-native`
 - Change `LocaleProvider` to `Provider` and the Provider are required from now on.
 

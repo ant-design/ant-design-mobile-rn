@@ -7,6 +7,8 @@ title: 升级指南
 
 ### 3.0.0
 
+**3.0.0**开始需要安装 `react-native@0.57.x`
+
 - 修改之前的 import 方式改成 `import { Button, ... } from '@ant-design/react-native`
 - 多语言以及主题，由之前的 `LocaleProvider` 改成`Provider`，现在的`Provider` 支持`theme`跟`locale`，Provider 必须在 app 入口指定，不然部分组件用不了（因为现在支持多个 Modal 以及在 Modal 上面显示 Toast）
 

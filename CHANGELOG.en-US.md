@@ -14,6 +14,14 @@ toc: false
 
 ---
 
+### 3.1.0
+
+`2019-01-27`
+
+- Refactor `popover` [#298](https://github.com/ant-design/ant-design-mobile-rn/pull/298)
+  - Removed the (`overlayStyle` `contextStyle` `name` `openMenu / closeMenu / toggleMenu` `style` ) property. The refactored version supports multiple Popovers.
+  - Please see the popover example for how to use it.
+- Fix `input-item` style should not be applied to outer container [#279](https://github.com/ant-design/ant-design-mobile-rn/issues/279)
 
 ### 3.0.6
 
@@ -21,7 +29,6 @@ toc: false
 
 - Fixes `image-picker` `groupTypes` is not supported on Android [#264](https://github.com/ant-design/ant-design-mobile-rn/issues/264)
 - Fixes `tab-bar` does not update component after tab has changed [#201](https://github.com/ant-design/ant-design-mobile-rn/issues/201)
-
 
 ### 3.0.5
 

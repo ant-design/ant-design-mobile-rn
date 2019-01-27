@@ -14,12 +14,21 @@ toc: false
 
 ---
 
+### 3.1.0
+
+`2019-01-27`
+
+- 重构`popover` [#298](https://github.com/ant-design/ant-design-mobile-rn/pull/298)
+  - 删除了(`overlayStyle` `contextStyle` `name` `openMenu / closeMenu / toggleMenu` `style` )属性，重构后的版本支持多个 Popover 同时使用
+  - 使用方式请查看popover示例
+- 修复`input-item` style 不应该应用于外层 container [#279](https://github.com/ant-design/ant-design-mobile-rn/issues/279)
+
 ### 3.0.6
 
 `2019-01-15`
 
 - 修复`image-picker` 报错 `groupTypes` is not supported on Android [#264](https://github.com/ant-design/ant-design-mobile-rn/issues/264)
-- 修复`tab-bar` 不会更新tab内容 [#201](https://github.com/ant-design/ant-design-mobile-rn/issues/201)
+- 修复`tab-bar` 不会更新 tab 内容 [#201](https://github.com/ant-design/ant-design-mobile-rn/issues/201)
 
 ### 3.0.5
 
@@ -29,17 +38,15 @@ toc: false
 - 修复`input-item` 在`iOS`下换行显示 [#249](https://github.com/ant-design/ant-design-mobile-rn/issues/249)
 - 修复`input-item` clear icon 在`android`下显示不正确 [#248](https://github.com/ant-design/ant-design-mobile-rn/issues/248)
 
-
 ### 3.0.4
 
 `2018-12-28`
 
 - 修改`SegmentedControl`默认颜色为主题颜色 [#211](https://github.com/ant-design/ant-design-mobile-rn/pull/211)
 - 允许覆盖`Tabs` `tabBarUnderlineStyle`
-- 完善`SwipeAction` TypeScript类型定义 [#230](https://github.com/ant-design/ant-design-mobile-rn/pull/230)
+- 完善`SwipeAction` TypeScript 类型定义 [#230](https://github.com/ant-design/ant-design-mobile-rn/pull/230)
 - 完善 `Grid` 文档，修改`onClick`属性为`onPress` [#234](https://github.com/ant-design/ant-design-mobile-rn/pull/234)
 - 修复`Modal`循环引用警告 [#242](https://github.com/ant-design/ant-design-mobile-rn/pull/242)
-
 
 ### 3.0.0
 
