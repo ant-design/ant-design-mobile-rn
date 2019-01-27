@@ -67,27 +67,6 @@ export default class PopoverExample extends React.Component<any, any> {
             自定义组件
           </Text>
         </Popover>
-        <Popover
-          overlay={
-            <Popover.Item value={'test'}>
-              <Text>自定义组件 x</Text>
-            </Popover.Item>
-          }
-          styles={{
-            arrow: {
-              borderTopColor: 'transparent',
-            },
-          }}
-        >
-          <Text
-            style={{
-              padding: 16,
-              backgroundColor: '#ddd',
-            }}
-          >
-            隐藏箭头
-          </Text>
-        </Popover>
       </React.Fragment>
     );
   }

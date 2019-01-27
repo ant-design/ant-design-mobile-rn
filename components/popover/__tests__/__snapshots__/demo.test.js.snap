@@ -167,6 +167,7 @@ Array [
                         Object {
                           "backgroundColor": "#ffffff",
                           "borderRadius": 3,
+                          "elevation": 3,
                           "flexDirection": "column",
                           "padding": 0,
                           "position": "absolute",
@@ -309,7 +310,7 @@ Array [
                           "borderLeftWidth": 9,
                           "borderRightColor": "transparent",
                           "borderRightWidth": 9,
-                          "borderTopColor": "#ffffff",
+                          "borderTopColor": "transparent",
                           "borderTopWidth": 9,
                           "height": 18,
                           "left": -9,
@@ -490,6 +491,7 @@ Array [
                         Object {
                           "backgroundColor": "#ffffff",
                           "borderRadius": 3,
+                          "elevation": 3,
                           "flexDirection": "column",
                           "padding": 0,
                           "position": "absolute",
@@ -632,7 +634,7 @@ Array [
                           "borderLeftWidth": 9,
                           "borderRightColor": "transparent",
                           "borderRightWidth": 9,
-                          "borderTopColor": "#ffffff",
+                          "borderTopColor": "transparent",
                           "borderTopWidth": 9,
                           "height": 18,
                           "left": -9,
@@ -813,6 +815,7 @@ Array [
                         Object {
                           "backgroundColor": "#ffffff",
                           "borderRadius": 3,
+                          "elevation": 3,
                           "flexDirection": "column",
                           "padding": 0,
                           "position": "absolute",
@@ -955,7 +958,7 @@ Array [
                           "borderLeftWidth": 9,
                           "borderRightColor": "transparent",
                           "borderRightWidth": 9,
-                          "borderTopColor": "#ffffff",
+                          "borderTopColor": "transparent",
                           "borderTopWidth": 9,
                           "height": 18,
                           "left": -9,
@@ -1136,6 +1139,7 @@ Array [
                         Object {
                           "backgroundColor": "#ffffff",
                           "borderRadius": 3,
+                          "elevation": 3,
                           "flexDirection": "column",
                           "padding": 0,
                           "position": "absolute",
@@ -1278,7 +1282,7 @@ Array [
                           "borderLeftWidth": 9,
                           "borderRightColor": "transparent",
                           "borderRightWidth": 9,
-                          "borderTopColor": "#ffffff",
+                          "borderTopColor": "transparent",
                           "borderTopWidth": 9,
                           "height": 18,
                           "left": -9,
@@ -1459,6 +1463,7 @@ Array [
                         Object {
                           "backgroundColor": "#ffffff",
                           "borderRadius": 3,
+                          "elevation": 3,
                           "flexDirection": "column",
                           "padding": 0,
                           "position": "absolute",
@@ -1601,7 +1606,7 @@ Array [
                           "borderLeftWidth": 9,
                           "borderRightColor": "transparent",
                           "borderRightWidth": 9,
-                          "borderTopColor": "#ffffff",
+                          "borderTopColor": "transparent",
                           "borderTopWidth": 9,
                           "height": 18,
                           "left": -9,
@@ -1782,6 +1787,7 @@ Array [
                         Object {
                           "backgroundColor": "#ffffff",
                           "borderRadius": 3,
+                          "elevation": 3,
                           "flexDirection": "column",
                           "padding": 0,
                           "position": "absolute",
@@ -1924,7 +1930,7 @@ Array [
                           "borderLeftWidth": 9,
                           "borderRightColor": "transparent",
                           "borderRightWidth": 9,
-                          "borderTopColor": "#ffffff",
+                          "borderTopColor": "transparent",
                           "borderTopWidth": 9,
                           "height": 18,
                           "left": -9,
@@ -2105,6 +2111,7 @@ Array [
                         Object {
                           "backgroundColor": "#ffffff",
                           "borderRadius": 3,
+                          "elevation": 3,
                           "flexDirection": "column",
                           "padding": 0,
                           "position": "absolute",
@@ -2247,7 +2254,7 @@ Array [
                           "borderLeftWidth": 9,
                           "borderRightColor": "transparent",
                           "borderRightWidth": 9,
-                          "borderTopColor": "#ffffff",
+                          "borderTopColor": "transparent",
                           "borderTopWidth": 9,
                           "height": 18,
                           "left": -9,
@@ -2428,6 +2435,7 @@ Array [
                         Object {
                           "backgroundColor": "#ffffff",
                           "borderRadius": 3,
+                          "elevation": 3,
                           "flexDirection": "column",
                           "padding": 0,
                           "position": "absolute",
@@ -2570,7 +2578,7 @@ Array [
                           "borderLeftWidth": 9,
                           "borderRightColor": "transparent",
                           "borderRightWidth": 9,
-                          "borderTopColor": "#ffffff",
+                          "borderTopColor": "transparent",
                           "borderTopWidth": 9,
                           "height": 18,
                           "left": -9,
@@ -2715,6 +2723,7 @@ Array [
               Object {
                 "backgroundColor": "#ffffff",
                 "borderRadius": 3,
+                "elevation": 3,
                 "flexDirection": "column",
                 "padding": 0,
                 "position": "absolute",
@@ -2767,183 +2776,6 @@ Array [
                 </Text>
               </View>
             </View>
-          </View>
-          <View
-            style={
-              Object {
-                "borderBottomColor": "transparent",
-                "borderBottomWidth": 9,
-                "borderLeftColor": "transparent",
-                "borderLeftWidth": 9,
-                "borderRightColor": "transparent",
-                "borderRightWidth": 9,
-                "borderTopColor": "#ffffff",
-                "borderTopWidth": 9,
-                "height": 18,
-                "left": -9,
-                "position": "absolute",
-                "top": -9,
-                "transform": Array [
-                  Object {
-                    "rotate": "0deg",
-                  },
-                  Object {
-                    "scale": 0,
-                  },
-                ],
-                "width": 18,
-              }
-            }
-            useNativeDriver={false}
-          />
-        </View>
-      </View>
-    </Modal>
-  </View>,
-  <View>
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "backgroundColor": "#ddd",
-            "padding": 16,
-          }
-        }
-      >
-        隐藏箭头
-      </Text>
-    </View>
-    <Modal
-      hardwareAccelerated={false}
-      onDismiss={[Function]}
-      onOrientationChange={[Function]}
-      onRequestClose={[Function]}
-      supportedOrientations={
-        Array [
-          "portrait",
-          "landscape",
-        ]
-      }
-      transparent={true}
-      visible={false}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "bottom": 0,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            false,
-          ]
-        }
-      >
-        <View
-          accessible={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "bottom": 0,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-          useNativeDriver={false}
-        />
-        <View
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "left": 0,
-              "position": "absolute",
-              "shadowColor": "black",
-              "shadowOffset": Object {
-                "height": 2,
-                "width": 0,
-              },
-              "shadowOpacity": 0.4,
-              "shadowRadius": 2,
-              "top": 0,
-            }
-          }
-          useNativeDriver={false}
-        >
-          <View
-            onLayout={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderRadius": 3,
-                "flexDirection": "column",
-                "padding": 0,
-                "position": "absolute",
-                "transform": Array [
-                  Object {
-                    "translateX": 0,
-                  },
-                  Object {
-                    "translateY": 0,
-                  },
-                  Object {
-                    "scale": 0,
-                  },
-                ],
-              }
-            }
-            useNativeDriver={false}
-          >
-            <RCTScrollView>
-              <View>
-                <View
-                  accessible={true}
-                  isTVSelectable={true}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                      "padding": 9,
-                    }
-                  }
-                >
-                  <Text>
-                    自定义组件 x
-                  </Text>
-                </View>
-              </View>
-            </RCTScrollView>
           </View>
           <View
             style={

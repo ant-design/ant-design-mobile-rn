@@ -13,9 +13,10 @@ export default (theme: Theme) =>
       backgroundColor: theme.fill_base,
       borderRadius: theme.radius_sm,
       padding: 0,
+      elevation: 3,
     },
     arrow: {
-      borderTopColor: theme.fill_base,
+      borderTopColor: 'transparent',
     },
     background: {
       backgroundColor: 'transparent',
