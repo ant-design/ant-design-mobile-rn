@@ -67,6 +67,36 @@ export default class PopoverExample extends React.Component<any, any> {
             自定义组件
           </Text>
         </Popover>
+        <View style={{ alignItems: 'center' }}>
+          <Text
+            style={{
+              margin: 16,
+              color: 'red',
+            }}
+          >
+            如果你设置了 placement 属性请确保你的内容够位置显示，默认是 auto
+            自动计算位置
+          </Text>
+          {['left', 'right', 'top', 'bottom'].map(p => (
+            <Popover
+              key={p}
+              overlay={
+                <Popover.Item value={p}>
+                  <Text>自定义组件 {p}</Text>
+                </Popover.Item>
+              }
+              placement={p as any}
+            >
+              <Text
+                style={{
+                  margin: 16,
+                }}
+              >
+                {p}
+              </Text>
+            </Popover>
+          ))}
+        </View>
       </React.Fragment>
     );
   }

@@ -15,6 +15,7 @@ subtitle: 气泡
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | overlay   | 弹出层内容    | ReactNode |  -   |
+| placement   |   弹出层位置  | 'top | right | bottom | left | auto' |  auto   |
 | onSelect   | 选中某选项时的回调函数    | (value: any): void |  -   |
 | triggerStyle  | 触发元素外围容器样式    | ViewStyle |  -   |
 | renderOverlayComponent  | 自定义弹出层的外围组件，默认是`ScrollView`，示例`(nodes) => <View>{nodes}</View>`  | (node: React.ReactNode) => React.ReactNode |  -   |

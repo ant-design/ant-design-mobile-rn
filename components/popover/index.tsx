@@ -1,6 +1,7 @@
 import React, { isValidElement } from 'react';
 import { ScrollView, StyleProp, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { Popover as Pop, PopoverController } from 'react-native-modal-popover';
+import { Placement } from 'react-native-modal-popover/lib/PopoverGeometry';
 import { WithTheme, WithThemeStyles } from '../style';
 import PopoverStyles, { PopoverStyle } from './style';
 
@@ -10,6 +11,7 @@ export interface PopoverProps extends WithThemeStyles<PopoverStyle> {
   overlay: React.ReactNode;
   disabled?: boolean;
   renderOverlayComponent?: (node: React.ReactNode) => React.ReactNode;
+  placement?: Placement | 'auto';
 }
 export interface PopoverItemProps {
   value: any;
@@ -75,7 +77,7 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
     return <ScrollView>{items}</ScrollView>;
   };
   render() {
-    const { children, disabled, triggerStyle, styles } = this.props;
+    const { children, disabled, triggerStyle, styles, placement } = this.props;
 
     return (
       <WithTheme themeStyles={PopoverStyles} styles={styles}>
@@ -106,6 +108,7 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
                   onClose={closePopover}
                   fromRect={popoverAnchorRect}
                   supportedOrientations={['portrait', 'landscape']}
+                  placement={placement}
                 >
                   {this.renderOverlay(closePopover)}
                 </Pop>
