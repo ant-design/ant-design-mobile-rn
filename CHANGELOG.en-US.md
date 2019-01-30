@@ -14,6 +14,14 @@ toc: false
 
 ---
 
+### 3.1.1
+
+`2019-01-30`
+
+Happy Chinese New Year
+
+- `popover` adds the `placement` property to support configuration of different positions `'top | right | bottom | left | auto'` [#308](https://github.com/ant-design/ant-design-mobile-rn/issues/308)
+
 ### 3.1.0
 
 `2019-01-27`

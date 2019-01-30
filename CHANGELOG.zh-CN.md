@@ -14,13 +14,21 @@ toc: false
 
 ---
 
+### 3.1.1
+
+`2019-01-30`
+
+新春快乐 🐷年吉祥
+
+- `popover` 新增 `placement` 属性，支持配置不同位置 'top | right | bottom | left | auto' [#308](https://github.com/ant-design/ant-design-mobile-rn/issues/308)
+
 ### 3.1.0
 
 `2019-01-27`
 
 - 重构`popover` [#298](https://github.com/ant-design/ant-design-mobile-rn/pull/298)
   - 删除了(`overlayStyle` `contextStyle` `name` `openMenu / closeMenu / toggleMenu` `style` )属性，重构后的版本支持多个 Popover 同时使用
-  - 使用方式请查看popover示例
+  - 使用方式请查看 popover 示例
 - 修复`input-item` style 不应该应用于外层 container [#279](https://github.com/ant-design/ant-design-mobile-rn/issues/279)
 
 ### 3.0.6
