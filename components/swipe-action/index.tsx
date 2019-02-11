@@ -80,6 +80,7 @@ class SwipeAction extends React.Component<SwipeActionProps> {
         onOpen={onOpen}
         onClose={onClose}
         disabled={disabled}
+        {...restProps}
       >
         {children}
       </Swipeout>
