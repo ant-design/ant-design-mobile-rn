@@ -748,38 +748,20 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.11.tgz#715c476c99a5f6898a1ae61caf9825e43c03912e"
   integrity sha512-3iIOhNiPGTdcUNVCv9e5G7GotfvJJe2pc9w2UgDXlUwnxSZ3RgcUocIU+xYm+rTU54jIKih998QE4dMOyMN1NQ==
 
-"@types/prop-types@*":
-  version "15.5.6"
-  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"
-  integrity sha512-ZBFR7TROLVzCkswA3Fmqq+IIJt62/T7aY/Dmz+QkU7CaW2QFqAitCE8Ups7IzmGhcN1YWMBT4Qcoc07jU9hOJQ==
-
-"@types/prop-types@^15.5.5":
+"@types/prop-types@*", "@types/prop-types@^15.5.5", "@types/prop-types@^15.5.7":
   version "15.5.8"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.8.tgz#8ae4e0ea205fe95c3901a5a1df7f66495e3a56ce"
   integrity sha512-3AQoUxQcQtLHsK25wtTWIoIpgYjH3vSDroZOUr7PpCHw/jLY1RB9z9E8dBT/OSmwStVgkRNvdh+ZHNiomRieaw==
 
-"@types/prop-types@^15.5.7":
-  version "15.5.7"
-  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.7.tgz#c6f1e0d0109ff358b132d98b7b4025c7a7b707c5"
-  integrity sha512-a6WH0fXkgPNiGIuLjjdpf0n/GnmgWZ4vLuVIJJnDwhmRDPEaiRBcy5ofQPh+EJFua0S1QWmk1745+JqZQGnJ8Q==
-
 "@types/react-native@^0.57.15":
-  version "0.57.15"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.15.tgz#80ddae98249ea0625b13b6d20a96582b67511a29"
-  integrity sha512-F4Uh8RlP0FJT4A70rgCEA35Q9chGqm7QwFzJL7PdgpX0LGIZfsQBgVYdh87WPe8MUK5FcYxtKEYksxoXu/BgYQ==
+  version "0.57.37"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.37.tgz#8cc9d142d5c6a2b7580fec9673984edfbd125194"
+  integrity sha512-huAmdfInEHK34hsJmEpU+Gj1L/WwIGVpSMdFl4oGClIgUB+y71tWx0fCiFWGSb4JYL/OkSEIa49fGFO1BgmUlw==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react@*":
-  version "16.7.11"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.11.tgz#1743b82ea6a0c659467f0c7317c233edb1f10be9"
-  integrity sha512-KZvX2XjzBPz+Dh7cjgDzzLxUmg4k8CnCSsB1V2Vtt1YtSIGe1sfHp2+Htl3S5DzeKrHnioaDHTMN/fjAvnEsSg==
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
-"@types/react@~16.7.13":
+"@types/react@*", "@types/react@~16.7.13":
   version "16.7.13"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.13.tgz#d2369ae78377356d42fb54275d30218e84f2247a"
   integrity sha512-WhqrQLAE9z65hfcvWqZfR6qUtIazFRyb8LXqHo8440R53dAQqNkt2OlVJ3FXwqOwAXXg4nfYxt0qgBvE18o5XA==
