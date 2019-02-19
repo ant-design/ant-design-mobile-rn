@@ -7,6 +7,7 @@ module.exports = {
     'app.header.search': 'Search...',
     'app.header.menu.home': 'Home',
     'app.header.menu.components': 'Components',
+    'app.header.menu.support': 'Support us',
     'app.header.menu.design': 'Specification',
     'app.header.menu.web': 'Web Components',
     'app.header.menu.pc': 'Desktop',
