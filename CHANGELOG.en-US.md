@@ -13,7 +13,14 @@ toc: false
 - Major version release is not included in this schedule for breadking change and new features.
 
 ---
+### 3.1.3
 
+`2019-02-19`
+
+
+- Fixes `babel-runtime/helpers/extends` not found after using `babel-plugin-import` [#346](https://github.com/ant-design/ant-design-mobile-rn/issues/346)
+- Fixes `drawer` component of `ios`. When returning, there will be a short stay on the page [#344](https://github.com/ant-design/ant-design-mobile-rn/issues/344)
+  
 ### 3.1.1
 
 `2019-01-30`

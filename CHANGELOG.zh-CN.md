@@ -14,6 +14,16 @@ toc: false
 
 ---
 
+### 3.1.3
+
+`2019-02-19`
+
+
+- 修复使用 `babel-plugin-import`后找不到`babel-runtime/helpers/extends` [#346](https://github.com/ant-design/ant-design-mobile-rn/issues/346)
+- 修复`ios` 端的 `drawer` 组件，当返回的时候，会有短暂的停留在页面上 [#344](https://github.com/ant-design/ant-design-mobile-rn/issues/344)
+
+
+
 ### 3.1.1
 
 `2019-01-30`
