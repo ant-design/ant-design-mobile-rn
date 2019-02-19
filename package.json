@@ -58,7 +58,7 @@
     "babel-plugin-import": "^1.6.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-react-native": "^4.0.1",
-    "bisheng": "^0.28.0",
+    "bisheng": "^1.1.2",
     "bisheng-plugin-antd": "^0.17.0",
     "bisheng-plugin-description": "^0.1.1",
     "bisheng-plugin-react": "^0.6.0",
