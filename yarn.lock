@@ -12434,10 +12434,17 @@ react-native-modal-popover@^0.0.12:
     lodash.debounce "^4.0.8"
     prop-types "^15.6.2"
 
-react-native-safe-area-view@0.11.0, react-native-safe-area-view@^0.11.0:
+react-native-safe-area-view@0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.11.0.tgz#4f3dda43c2bace37965e7c6aef5fc83d4f19d174"
   integrity sha512-N3nElaahu1Me2ltnfc9acpgt1znm6pi8DSadKy79kvdzKwvVIzw0IXueA/Hjr51eCW1BsfNw7D1SgBT9U6qEkA==
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
+
+react-native-safe-area-view@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.13.1.tgz#834bbb6d22f76a7ff07de56725ee5667ba1386b0"
+  integrity sha512-d/pu2866jApSwLtK/xWAvMXZkNTIQcFrjjbcTATBrmIfFNnu8TNFUcMRFpfJ+eOn5nmx7uGmDvs9B53Ft7JGpQ==
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
