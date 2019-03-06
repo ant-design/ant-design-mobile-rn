@@ -90,7 +90,7 @@
     "pre-commit": "1.x",
     "qrcode.react": "^0.8.0",
     "raf": "^3.4.0",
-    "rc-form": "2.2.7",
+    "rc-form": "2.4.3",
     "react-copy-to-clipboard": "^5.0.0",
     "react-document-title": "^2.0.1",
     "react-github-button": "^0.1.9",

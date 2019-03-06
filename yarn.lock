@@ -6722,6 +6722,13 @@ hoist-non-react-statics@^2.2.0, hoist-non-react-statics@^2.3.1, hoist-non-react-
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
+hoist-non-react-statics@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  dependencies:
+    react-is "^16.7.0"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -11869,31 +11876,18 @@ rc-editor-mention@^1.1.7:
     rc-animate "^2.3.0"
     rc-editor-core "~0.8.3"
 
-rc-form@2.2.7, rc-form@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/rc-form/-/rc-form-2.2.7.tgz#8880851b9cd4a9c911f5272c91db73978a72377d"
-  integrity sha512-50zIXXa+QzssgZZQx5OwGFbELr99d0sCZYVo1SIXS216ioWnFefzbFs+iofTCir+YbTCQHh/cxqXDdC6r6HvYg==
+rc-form@2.4.3, rc-form@^2.2.3, rc-form@^2.2.7:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/rc-form/-/rc-form-2.4.3.tgz#742ed935ed029c6cd9a98ee6837cb37ab3b51e5d"
+  integrity sha512-59KeQat5TU4YzpfXYpFlyQ1/5uFXm0SV7VokRr+i8bPMhimpKpZl5gt0J7dNiKLTsGnkCqBLSL88d9ufPJ+EQQ==
   dependencies:
     async-validator "~1.8.5"
     babel-runtime "6.x"
     create-react-class "^15.5.3"
     dom-scroll-into-view "1.x"
-    hoist-non-react-statics "^2.3.1"
+    hoist-non-react-statics "^3.3.0"
     lodash "^4.17.4"
-    warning "^3.0.0"
-
-rc-form@^2.2.3:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/rc-form/-/rc-form-2.2.6.tgz#737bd1eb1f45c6ce821854e86248e145adb6230c"
-  integrity sha512-6RxafBLeOltmS5V/ozuzUo7hhanI9Vopdu8y4WI5dWMM32Wm5PjuidLs8elHmK8yy3UgZ9TcsIYHW9m1Myez4w==
-  dependencies:
-    async-validator "~1.8.5"
-    babel-runtime "6.x"
-    create-react-class "^15.5.3"
-    dom-scroll-into-view "1.x"
-    hoist-non-react-statics "^2.3.1"
-    lodash "^4.17.4"
-    warning "^3.0.0"
+    warning "^4.0.3"
 
 rc-hammerjs@~0.6.0:
   version "0.6.9"
@@ -15503,10 +15497,10 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-warning@^4.0.1, warning@^4.0.2, warning@~4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.2.tgz#aa6876480872116fa3e11d434b0d0d8d91e44607"
-  integrity sha512-wbTp09q/9C+jJn4KKJfJfoS6VleK/Dti0yqWSm6KMvJ4MRCXFQNapHuJXutJIrWV0Cf4AhTdeIe4qdKHR1+Hug==
+warning@^4.0.1, warning@^4.0.2, warning@^4.0.3, warning@~4.0.2:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
 
