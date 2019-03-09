@@ -15,6 +15,8 @@ English | [简体中文](./README.zh-CN.md)
 [![Dependency Status](https://david-dm.org/ant-design/ant-design-mobile-rn.svg?style=flat-square)](https://david-dm.org/ant-design/ant-design-mobile-rn)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/ant-design/ant-design-mobile-rn.svg)](http://isitmaintained.com/project/ant-design/ant-design-mobile-rn 'Percentage of issues still open')
 [![Join the chat at https://gitter.im/ant-design/ant-design](https://img.shields.io/gitter/room/ant-design/ant-design.svg?style=flat-square)](https://gitter.im/ant-design/ant-design?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Backers on Open Collective](https://opencollective.com/ant-design-mobile-rn/backers/badge.svg)](#backers) 
+[![Sponsors on Open Collective](https://opencollective.com/ant-design-mobile-rn/sponsors/badge.svg)](#sponsors) 
 
 A configurable Mobile UI specification and React-based implementation.
 
@@ -73,3 +75,33 @@ react-native link @ant-design/icons-react-native
 ## Contributing
 
 We welcome all contributions, please read our [CONTRIBUTING.md](https://github.com/ant-design/ant-design-mobile-rn/blob/master/.github/CONTRIBUTING.md) first. You can submit any ideas as [pull requests](https://github.com/ant-design/ant-design-mobile-rn/pulls) or as a [GitHub issue](https://github.com/ant-design/ant-design-mobile-rn/issues). If you'd like to improve code, check out the [Development Instruction](https://github.com/ant-design/ant-design-mobile-rn/blob/master/development.en-US.md) and have a good time! :)
+
+## Contributors
+
+This project exists thanks to all the people who contribute. 
+<a href="https://github.com/ant-design/ant-design-mobile-rn/graphs/contributors"><img src="https://opencollective.com/ant-design-mobile-rn/contributors.svg?width=890&button=false" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/ant-design-mobile-rn#backer)]
+
+<a href="https://opencollective.com/ant-design-mobile-rn#backers" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/ant-design-mobile-rn#sponsor)]
+
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/0/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/1/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/2/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/3/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/4/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/5/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/6/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/7/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/8/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/ant-design-mobile-rn/sponsor/9/website" target="_blank"><img src="https://opencollective.com/ant-design-mobile-rn/sponsor/9/avatar.svg"></a>
+
+
