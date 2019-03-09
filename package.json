@@ -37,11 +37,13 @@
     "babel-runtime": "^6.x",
     "deepmerge": "^3.0.0",
     "normalize-css-color": "^1.0.2",
+    "opencollective-postinstall": "^2.0.2",
     "react-native-collapsible": "^1.4.0",
     "react-native-modal-popover": "^0.0.12",
     "react-native-safe-area-view": "^0.11.0",
     "react-native-swipeout": "^2.3.6",
-    "utility-types": "^2.1.0"
+    "utility-types": "^2.1.0",
+    "opencollective": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
@@ -133,7 +135,8 @@
     "lint-staged": "lint-staged",
     "lint-staged:ts": "npm run tsc && node node_modules/tslint/bin/tslint -c node_modules/antd-tools/lib/tslint.json components/**/*.tsx",
     "lint-staged:es": "eslint ./.eslintrc.js",
-    "tsc": "antd-tools run tsc"
+    "tsc": "antd-tools run tsc",
+    "postinstall": "opencollective-postinstall"
   },
   "lint-staged": {
     "components/**/*.tsx": [
@@ -146,5 +149,9 @@
   "typings": "lib/index.d.ts",
   "pre-commit": [
     "lint-staged"
-  ]
+  ],
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/ant-design-mobile-rn"
+  }
 }
