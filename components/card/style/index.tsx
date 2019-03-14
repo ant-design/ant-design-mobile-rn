@@ -7,7 +7,9 @@ export interface CardStyle {
   headerWrap: ViewStyle;
   headerTitle: ViewStyle;
   headerImage: ImageStyle;
+  headerContentWrap: ViewStyle;
   headerContent: TextStyle;
+  headerExtraWrap: ViewStyle;
   headerExtra: TextStyle;
   body: ViewStyle;
   footerWrap: ViewStyle;
@@ -45,9 +47,15 @@ export default (theme: Theme) =>
     headerImage: {
       marginRight: theme.h_spacing_sm,
     },
+    headerContentWrap: {
+      flex: 1,
+    },
     headerContent: {
       color: theme.color_text_base,
       fontSize: theme.font_size_heading,
+      flex: 1,
+    },
+    headerExtraWrap: {
       flex: 1,
     },
     headerExtra: {

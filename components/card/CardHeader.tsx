@@ -8,7 +8,9 @@ export interface CardHeaderPropsType
   extends WithThemeStyles<
     Pick<
       CardStyle,
+      | 'headerContentWrap'
       | 'headerContent'
+      | 'headerExtraWrap'
       | 'headerExtra'
       | 'headerImage'
       | 'headerTitle'
@@ -46,14 +48,14 @@ export default class CardHeader extends React.Component<CardHeaderProps, any> {
         {s => {
           const titleDom =
             title === undefined ? null : React.isValidElement(title) ? (
-              <View style={{ flex: 1 }}>{title}</View>
+              <View style={s.headerContentWrap}>{title}</View>
             ) : (
               <Text style={s.headerContent}>{title}</Text>
             );
 
           const extraDom =
             extra === undefined ? null : React.isValidElement(extra) ? (
-              <View style={{ flex: 1 }}>{extra}</View>
+              <View style={s.headerExtraWrap}>{extra}</View>
             ) : (
               <Text style={[s.headerExtra]}>{extra}</Text>
             );
