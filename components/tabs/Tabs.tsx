@@ -103,7 +103,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
           key="$content"
           keyboardDismissMode="on-drag"
           initialPage={currentTab}
-          scrollEnabled={usePaged}
+          scrollEnabled={this.props.swipeable || usePaged}
           onPageScroll={e => {
             this.state.scrollX.setValue(
               e.nativeEvent.position * this.state.containerWidth,
