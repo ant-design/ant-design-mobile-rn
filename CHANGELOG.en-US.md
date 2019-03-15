@@ -13,14 +13,21 @@ toc: false
 - Major version release is not included in this schedule for breadking change and new features.
 
 ---
+
+### 3.1.4
+
+`2019-03-15`
+
+- Fixed `tabs` swipeable does not work under Android [#380](https://github.com/ant-design/ant-design-mobile-rn/issues/380)
+- Add Wrap style for `HeaderContent` and `HeaderExtra` of the `card` component for easy customization  [#395](https://github.com/ant-design/ant-design-mobile-rn/issues/395) By [christtrc](https://github.com/ant-design/ant-design-mobile-rn/commits?author=christtrc)
+
 ### 3.1.3
 
 `2019-02-19`
 
-
 - Fixes `babel-runtime/helpers/extends` not found after using `babel-plugin-import` [#346](https://github.com/ant-design/ant-design-mobile-rn/issues/346)
 - Fixes `drawer` component of `ios`. When returning, there will be a short stay on the page [#344](https://github.com/ant-design/ant-design-mobile-rn/issues/344)
-  
+
 ### 3.1.1
 
 `2019-01-30`
