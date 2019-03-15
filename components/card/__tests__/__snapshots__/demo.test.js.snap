@@ -77,11 +77,17 @@ exports[`renders ./components/card/demo/basic.tsx correctly 1`] = `
               "flex": 1,
               "fontSize": 17,
             },
+            "headerContentWrap": Object {
+              "flex": 1,
+            },
             "headerExtra": Object {
               "color": "#888888",
               "flex": 1,
               "fontSize": 17,
               "textAlign": "right",
+            },
+            "headerExtraWrap": Object {
+              "flex": 1,
             },
             "headerImage": Object {
               "marginRight": 5,
@@ -211,11 +217,17 @@ exports[`renders ./components/card/demo/basic.tsx correctly 1`] = `
               "flex": 1,
               "fontSize": 17,
             },
+            "headerContentWrap": Object {
+              "flex": 1,
+            },
             "headerExtra": Object {
               "color": "#888888",
               "flex": 1,
               "fontSize": 17,
               "textAlign": "right",
+            },
+            "headerExtraWrap": Object {
+              "flex": 1,
             },
             "headerImage": Object {
               "marginRight": 5,
@@ -307,11 +319,17 @@ exports[`renders ./components/card/demo/basic.tsx correctly 1`] = `
               "flex": 1,
               "fontSize": 17,
             },
+            "headerContentWrap": Object {
+              "flex": 1,
+            },
             "headerExtra": Object {
               "color": "#888888",
               "flex": 1,
               "fontSize": 17,
               "textAlign": "right",
+            },
+            "headerExtraWrap": Object {
+              "flex": 1,
             },
             "headerImage": Object {
               "marginRight": 5,
@@ -439,11 +457,17 @@ exports[`renders ./components/card/demo/basic.tsx correctly 1`] = `
             "flex": 1,
             "fontSize": 17,
           },
+          "headerContentWrap": Object {
+            "flex": 1,
+          },
           "headerExtra": Object {
             "color": "#888888",
             "flex": 1,
             "fontSize": 17,
             "textAlign": "right",
+          },
+          "headerExtraWrap": Object {
+            "flex": 1,
           },
           "headerImage": Object {
             "marginRight": 5,
@@ -573,11 +597,17 @@ exports[`renders ./components/card/demo/basic.tsx correctly 1`] = `
             "flex": 1,
             "fontSize": 17,
           },
+          "headerContentWrap": Object {
+            "flex": 1,
+          },
           "headerExtra": Object {
             "color": "#888888",
             "flex": 1,
             "fontSize": 17,
             "textAlign": "right",
+          },
+          "headerExtraWrap": Object {
+            "flex": 1,
           },
           "headerImage": Object {
             "marginRight": 5,
@@ -669,11 +699,17 @@ exports[`renders ./components/card/demo/basic.tsx correctly 1`] = `
             "flex": 1,
             "fontSize": 17,
           },
+          "headerContentWrap": Object {
+            "flex": 1,
+          },
           "headerExtra": Object {
             "color": "#888888",
             "flex": 1,
             "fontSize": 17,
             "textAlign": "right",
+          },
+          "headerExtraWrap": Object {
+            "flex": 1,
           },
           "headerImage": Object {
             "marginRight": 5,
