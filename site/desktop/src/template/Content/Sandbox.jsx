@@ -80,6 +80,7 @@ rootTag: document.getElementById("root")
             'react-dom': '^16.6.0',
             'react-native-web': '^0.11.0',
             'antd-mobile-demo-data': '^0.2.0',
+            '@bang88/china-city-data': '^1.0.0',
           },
           browserslist: [
             '>0.2%',
