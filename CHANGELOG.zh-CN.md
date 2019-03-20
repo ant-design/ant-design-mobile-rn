@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 3.1.5
+
+`2019-03-20`
+
+- 修复 `tabs` 在react-native@0.59.1 下报错  [#403](https://github.com/ant-design/ant-design-mobile-rn/issues/403) by [bestv2](https://github.com/bestv2)
+
 ### 3.1.4
 
 `2019-03-15`

@@ -14,12 +14,18 @@ toc: false
 
 ---
 
+### 3.1.5
+
+`2019-03-20`
+
+- Fixed `tabs` type error under react-native@0.59.1 [#403](https://github.com/ant-design/ant-design-mobile-rn/issues/403) by [bestv2](https://github.com/bestv2)
+
 ### 3.1.4
 
 `2019-03-15`
 
 - Fixed `tabs` swipeable does not work under Android [#380](https://github.com/ant-design/ant-design-mobile-rn/issues/380)
-- Add Wrap style for `HeaderContent` and `HeaderExtra` of the `card` component for easy customization  [#395](https://github.com/ant-design/ant-design-mobile-rn/issues/395) By [christtrc](https://github.com/ant-design/ant-design-mobile-rn/commits?author=christtrc)
+- Add Wrap style for `HeaderContent` and `HeaderExtra` of the `card` component for easy customization [#395](https://github.com/ant-design/ant-design-mobile-rn/issues/395) By [christtrc](https://github.com/ant-design/ant-design-mobile-rn/commits?author=christtrc)
 
 ### 3.1.3
 
