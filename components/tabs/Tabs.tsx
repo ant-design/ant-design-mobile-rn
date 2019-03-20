@@ -196,7 +196,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       if (this.scrollView && this.scrollView._component) {
         const { scrollTo } = this.scrollView._component;
         // tslint:disable-next-line:no-unused-expression
-        scrollTo && scrollTo({ x: offset, animated });
+        scrollTo && scrollTo.call(this.scrollView._component, { x: offset, animated });
       }
     }
   };
