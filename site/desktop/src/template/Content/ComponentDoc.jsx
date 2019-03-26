@@ -1,10 +1,7 @@
-import Icon from 'antd/lib/icon';
-import Popover from 'antd/lib/popover';
 import throttleByAnimationFrame from 'antd/lib/_util/throttleByAnimationFrame';
 import classnames from 'classnames';
 import { getChildren } from 'jsonml.js/lib/utils';
 import PropTypes from 'prop-types';
-import QRCode from 'qrcode.react';
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { FormattedMessage } from 'react-intl';
@@ -100,20 +97,20 @@ export default class ComponentDoc extends React.Component {
         />);
       });
 
-    const { protocol } = window.location;
-    const path = doc.meta.filename.split('/')[1];
-    const isLocalMode = window.location.port;
-    const host = isLocalMode ? 'localhost:8002' : window.location.host;
-    const demoUrl = `${protocol}//${host}/kitchen-sink/components/${path}`;
+    // const { protocol } = window.location;
+    // const path = doc.meta.filename.split('/')[1];
+    // const isLocalMode = window.location.port;
+    // const host = isLocalMode ? 'localhost:8002' : window.location.host;
+    // const demoUrl = `${protocol}//${host}/kitchen-sink/components/${path}`;
 
-    const PopoverContent = (
-      <div>
-        <h4 style={{ margin: '8Px 0 12Px', textAlign: 'center' }}>
-          <FormattedMessage id="app.ComponentDoc.codeQrcode" />
-        </h4>
-        <QRCode size={144} value={demoUrl} />
-      </div>
-    );
+    // const PopoverContent = (
+    //   <div>
+    //     <h4 style={{ margin: '8Px 0 12Px', textAlign: 'center' }}>
+    //       <FormattedMessage id="app.ComponentDoc.codeQrcode" />
+    //     </h4>
+    //     <QRCode size={144} value={demoUrl} />
+    //   </div>
+    // );
 
     const {
       title, subtitle, chinese, english,
@@ -130,9 +127,9 @@ export default class ComponentDoc extends React.Component {
           <section className="markdown">
             <h1 className="section-title">
               {meta.title || meta.english} {meta.subtitle || meta.chinese}
-              <Popover content={PopoverContent} placement="bottom">
+              {/* <Popover content={PopoverContent} placement="bottom">
                 <Icon type="qrcode" />
-              </Popover>
+              </Popover> */}
             </h1>
             {
               props.utils.toReactComponent(['section', { className: 'markdown' }]
