@@ -51,9 +51,7 @@ export default class PopupExample extends React.Component<any, any> {
             value={this.state.value}
             onChange={this.onChange}
           >
-            <List.Item arrow="horizontal" onPress={this.onPress}>
-              省市选择
-            </List.Item>
+            <List.Item arrow="horizontal">省市选择</List.Item>
           </Picker>
           <Picker
             data={this.state.data}
