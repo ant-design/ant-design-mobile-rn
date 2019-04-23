@@ -49,7 +49,7 @@
     "@types/react": "~16.7.13",
     "@types/react-native": "^0.57.15",
     "ant-design-palettes": "^1.1.3",
-    "antd": "3.11.1",
+    "antd": "3.16.5",
     "antd-mobile-demo-data": "^0.2.0",
     "antd-tools": "^5.2.6",
     "babel-core": "^7.0.0-bridge.0",
