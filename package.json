@@ -97,7 +97,7 @@
     "react-intl": "^2.2.3",
     "react-native": "^0.57.7",
     "react-native-mocker": "^0.0.12",
-    "react-navigation": "^2.18.2",
+    "react-navigation": "^3.9.0",
     "react-test-renderer": "^16.7.0",
     "regenerator-runtime": "^0.13.1",
     "ts-jest": "^23.10.4",
