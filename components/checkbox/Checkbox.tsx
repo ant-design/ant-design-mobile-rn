@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleProp, Text, TextStyle, TouchableWithoutFeedback, View } from 'react-native';
 import Icon from '../icon';
 import { WithTheme, WithThemeStyles } from '../style';
-import variables from '../style/themes/default';
 import { CheckboxPropsType } from './PropsType';
 import CheckboxStyles, { CheckboxStyle } from './style/index';
 
@@ -52,7 +51,7 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
     const checked = this.state.checked;
     return (
       <WithTheme themeStyles={CheckboxStyles} styles={this.props.styles}>
-        {styles => {
+        {(styles,theme) => {
           let icon;
           if (checked) {
             icon = disabled ? (
@@ -60,7 +59,7 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
             ) : (
               <Icon
                 name="check-square"
-                color={variables.brand_primary}
+                color={theme.brand_primary}
                 style={[styles.icon, style]}
               />
             );
@@ -70,7 +69,7 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
             ) : (
               <Icon
                 name="border"
-                color={variables.brand_primary}
+                color={theme.brand_primary}
                 style={[styles.icon, style]}
               />
             );
