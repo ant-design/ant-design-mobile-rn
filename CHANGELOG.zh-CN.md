@@ -14,11 +14,17 @@ toc: false
 
 ---
 
+### 3.1.7
+
+`2019-04-30`
+
+- 修复 `checkbox` 没有从主题里面读取变量 [#416](https://github.com/ant-design/ant-design-mobile-rn/issues/416)
+
 ### 3.1.5
 
 `2019-03-20`
 
-- 修复 `tabs` 在react-native@0.59.1 下报错  [#403](https://github.com/ant-design/ant-design-mobile-rn/issues/403) by [bestv2](https://github.com/bestv2)
+- 修复 `tabs` 在 react-native@0.59.1 下报错 [#403](https://github.com/ant-design/ant-design-mobile-rn/issues/403) by [bestv2](https://github.com/bestv2)
 
 ### 3.1.4
 
