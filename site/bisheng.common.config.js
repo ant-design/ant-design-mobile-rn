@@ -87,6 +87,18 @@ module.exports = {
       test: /webpack-dev-server|to-fast-properties/,
       loader: 'babel-loader',
     });
+    config.module.rules.push({
+      test: /\.less$/,
+      use: [
+        {
+          loader: 'less-loader',
+          options: {
+            javascriptEnabled: true,
+            sourceMap: true,
+          }
+        }
+      ]
+    });
     return config;
   },
   htmlTemplateExtraData: {

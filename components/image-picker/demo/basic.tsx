@@ -51,6 +51,7 @@ export default class ImagePickerExample extends React.Component<any, any> {
     try {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+        // @ts-ignore */}
         {
           'title': '需要访问相册',
           'message': '需要访问相册',

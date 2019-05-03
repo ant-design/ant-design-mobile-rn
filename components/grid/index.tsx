@@ -88,6 +88,8 @@ export default class Grid extends React.Component<GridProps, any> {
                     ]}
                     onPress={() => onPress(el, dataIndex)}
                   >
+                    {/* 
+                    // @ts-ignore */}
                     {renderItem(el, dataIndex)}
                   </Flex.Item>,
                 );
