@@ -1,4 +1,4 @@
-import { Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { Theme } from '../../style';
 
 export interface ToastStyle {
@@ -16,7 +16,7 @@ export default (theme: Theme) =>
   StyleSheet.create<ToastStyle>({
     container: {
       position: 'absolute',
-      top: Platform.OS === 'ios' ? 64 : 54,
+      top: 0,
       left: 0,
       bottom: 0,
       right: 0,
