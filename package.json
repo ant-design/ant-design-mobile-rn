@@ -65,6 +65,7 @@
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "enzyme-to-json": "^3.3.5",
+    "jest": "^24.8.0",
     "lint-staged": "^8.0.4",
     "metro-react-native-babel-preset": "^0.50.0",
     "mockdate": "^2.0.1",
