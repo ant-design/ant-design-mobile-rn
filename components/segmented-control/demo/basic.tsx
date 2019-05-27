@@ -23,6 +23,7 @@ export default class BasicTagExample extends React.Component<any, any> {
           values={['Segment1', 'Segment2', 'Segment3']}
           tintColor={'#ff0000'}
           style={{ height: 40, width: 280 }}
+          selectedSegTextColor={'black'}
         />
         <WhiteSpace size="lg" />
         <Text>SelectedIndex</Text>

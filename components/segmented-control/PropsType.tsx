@@ -5,5 +5,5 @@ export interface SegmentedControlPropsType {
   values?: string[];
   onChange?: (e: any) => void;
   onValueChange?: (value: string) => void;
-  selectedSegTextColor?: string  //for android platform
+  selectedSegTextColor?: string;  //for android platform
 }
