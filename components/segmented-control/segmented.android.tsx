@@ -128,7 +128,7 @@ export default class SegmentedControl extends React.Component<
                   // tslint:disable-next-line:jsx-no-multiline-js
                   style={[
                     styles.itemText,
-                    { color: idx === selectedIndex ? style.color == undefined ? '#fff' : style.color : tintColor },
+                    { color: idx === selectedIndex ? style.color === undefined ? '#fff' : style.color : tintColor },
                   ]}
                 >
                   {value}
