@@ -47,7 +47,7 @@ export default class SegmentedControl extends React.Component<
     onChange() {},
     onValueChange() {},
     style: {},
-    selectedSegTextColor: '#fff',
+    selectedTextColor: '#fff',
   };
 
   constructor(props: SegmentControlProps) {
@@ -83,7 +83,7 @@ export default class SegmentedControl extends React.Component<
   }
 
   render() {
-    const { style, disabled, values = [], selectedSegTextColor } = this.props;
+    const { style, disabled, values = [], selectedTextColor } = this.props;
     let { tintColor } = this.props;
     return (
       <WithTheme styles={this.props.styles} themeStyles={AndroidStyles}>
@@ -129,7 +129,7 @@ export default class SegmentedControl extends React.Component<
                   // tslint:disable-next-line:jsx-no-multiline-js
                   style={[
                     styles.itemText,
-                    { color: idx === selectedIndex ? selectedSegTextColor : tintColor },
+                    { color: idx === selectedIndex ? selectedTextColor : tintColor },
                   ]}
                 >
                   {value}
