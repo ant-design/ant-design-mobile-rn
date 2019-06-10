@@ -118,6 +118,14 @@ class App extends React.Component {
   }
 }
 ```
+This is not the way you would write it if you were using expo sdk32 or above 
+```jsx 
+import { Font } from 'expo';
+```
+Instead, use a separate name
+```jsx 
+import * as Font from 'expo-font';
+```
 
 ### 3. Usage
 
