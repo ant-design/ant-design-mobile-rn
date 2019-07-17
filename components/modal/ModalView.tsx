@@ -1,5 +1,14 @@
 import React from 'react';
-import { Animated, Dimensions, Easing, StyleProp, StyleSheet, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
+import {
+  Animated,
+  Dimensions,
+  Easing,
+  StyleProp,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+  ViewStyle,
+} from 'react-native';
 import Portal from '../portal';
 
 const styles = StyleSheet.create({
@@ -91,6 +100,9 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
     if (prevProps.visible !== props.visible) {
       this.animateDialog(props.visible);
     }
+  }
+  componentWillUnmount() {
+    this.stopDialogAnim();
   }
   animateMask = (visible: boolean) => {
     this.stopMaskAnim();
