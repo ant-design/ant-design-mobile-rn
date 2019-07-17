@@ -109,7 +109,7 @@
     "test:all": "./scripts/test-all.sh",
     "compile": "cross-env BABEL_ENV=dist antd-tools run compile",
     "watch-tsc": "antd-tools run watch-tsc",
-    "clean": "antd-tools run clean",
+    "clean": "antd-tools run clean; rm -Rf lib es dist components/**/*.js components/**/*.jsx",
     "start": "cross-env NODE_ENV=development cross-env DEMO_ENV=react bisheng start -c ./site/bisheng.desktop.config.js",
     "site": "cross-env NODE_ENV=production cross-env DEMO_ENV=react bisheng build -c ./site/bisheng.desktop.config.js && cp CNAME _site",
     "deploy": "npm run clean && npm run site && bisheng gh-pages --push-only",
