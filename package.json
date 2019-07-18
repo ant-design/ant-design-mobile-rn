@@ -64,7 +64,7 @@
     "bisheng-plugin-react": "^0.6.0",
     "bisheng-plugin-toc": "^0.4.0",
     "classnames": "^2.2.1",
-    "codesandbox": "^1.3.5",
+    "codesandbox": "^2.1.9",
     "concurrently": "^4.0.1",
     "cross-env": "^5.0.1",
     "css-split-webpack-plugin": "^0.2.5",
