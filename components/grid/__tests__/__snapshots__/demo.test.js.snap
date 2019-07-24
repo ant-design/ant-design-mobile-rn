@@ -828,6 +828,7 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                     "borderRightWidth": 0,
                     "height": 187.5,
                   },
+                  Object {},
                 ],
               ]
             }
@@ -846,6 +847,7 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                     "borderRightWidth": 0,
                     "height": 187.5,
                   },
+                  Object {},
                 ],
               ]
             }
@@ -864,6 +866,7 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                     "borderRightWidth": 0,
                     "height": 187.5,
                   },
+                  Object {},
                 ],
               ]
             }
