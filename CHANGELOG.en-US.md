@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 3.1.7
+
+`2019-04-30`
+
+- Fixes `checkbox` read color from theme [#416](https://github.com/ant-design/ant-design-mobile-rn/issues/416)
+
 ### 3.1.5
 
 `2019-03-20`

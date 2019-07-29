@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/react-native",
-  "version": "3.1.6",
+  "version": "3.1.11",
   "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
   "keywords": [
     "ant",
@@ -73,7 +73,7 @@
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "enzyme-to-json": "^3.3.5",
-    "eslint": "~4.3.0",
+    "eslint": "~4.18.2",
     "eslint-config-airbnb": "~15.1.0",
     "eslint-plugin-babel": "~4.1.1",
     "eslint-plugin-import": "~2.7.0",
