@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 3.1.12
+
+`2019-08-02`
+
+- `datepicker`组件增加一个`defaultDate`属性 [#593](https://github.com/ant-design/ant-design-mobile-rn/pull/593)
+
 ### 3.1.7
 
 `2019-04-30`
