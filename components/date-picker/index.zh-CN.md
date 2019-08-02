@@ -17,6 +17,7 @@ subtitle: 日期选择
 ----|-----|------|------
 | mode  | 日期选择的类型, 可以是日期`date`,时间`time`,日期+时间`datetime`,年`year`,月`month` | String | `date` |
 | value | 当前选中时间 | Date | 无 |
+| defaultDate | 默认选中时间 | Date | 无 |
 | minDate   | 最小可选日期 | Date  |  2000-1-1  |
 | maxDate   | 最大可选日期 | Date  |  2030-1-1  |
 | minuteStep |  分钟数递增步长设置   | Number | 1 |
