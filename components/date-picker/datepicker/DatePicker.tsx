@@ -154,20 +154,20 @@ class DatePicker extends React.Component<DatePickerProps, any> {
 
   getDefaultMinDate() {
     if (!this.defaultMinDate) {
-      this.defaultMinDate = new Date(2000, 1, 1, 0, 0, 0);
+      this.defaultMinDate = new Date(2000, 0, 1, 0, 0, 0);
     }
     return this.defaultMinDate;
   }
 
   getDefaultMaxDate() {
     if (!this.defaultMaxDate) {
-      this.defaultMaxDate = new Date(2030, 1, 1, 23, 59, 59);
+      this.defaultMaxDate = new Date(2030, 0, 1, 23, 59, 59);
     }
     return this.defaultMaxDate;
   }
 
   getDate() {
-    return this.clipDate(this.state.date || this.getDefaultMinDate());
+    return this.clipDate(this.state.date || this.props.defaultDate || this.getDefaultMinDate());
   }
 
   // used by rmc-picker/lib/PopupMixin.js
