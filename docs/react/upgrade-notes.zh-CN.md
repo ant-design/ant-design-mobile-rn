@@ -50,6 +50,12 @@ title: 升级指南
   react-native link @ant-design/icons-react-native
   ```
 
+  如果你使用的是 react-native@0.60.x 会自动link，如需手动link请使用
+
+  ```sh
+  react-native link @ant-design/react-native
+  ```
+
 ### 2.1.11 and before
 
 [antd-mobile upgrade-notes](https://github.com/ant-design/ant-design-mobile/blob/master/docs/react/upgrade-notes.zh-CN.md)
