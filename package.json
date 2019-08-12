@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/react-native",
-  "version": "3.1.12",
+  "version": "3.1.13",
   "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
   "keywords": [
     "ant",
@@ -24,7 +24,8 @@
   },
   "files": [
     "lib",
-    "es"
+    "es",
+    "react-native.config.js"
   ],
   "license": "MIT",
   "main": "lib/index.js",
