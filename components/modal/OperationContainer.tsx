@@ -36,7 +36,7 @@ export default class OperationContainer extends React.Component<
       return true;
     }
     return false;
-  }
+  };
 
   onClose = () => {
     this.setState({
