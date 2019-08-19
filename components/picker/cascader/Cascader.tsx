@@ -2,7 +2,7 @@ import arrayTreeFilter from 'array-tree-filter';
 import React from 'react';
 import MultiPicker from '../MultiPicker';
 import Picker from '../Picker';
-import { CascaderProps } from './CascaderTypes';
+import { CascaderDataItem, CascaderProps } from './CascaderTypes';
 
 class Cascader extends React.Component<CascaderProps, any> {
   static defaultProps = {
@@ -53,17 +53,34 @@ class Cascader extends React.Component<CascaderProps, any> {
 
   getValue(d: any, val: any) {
     let data = d || this.props.data;
-    let value = val || this.props.value || this.props.defaultValue;
-    if (!value || !value.length || value.indexOf(undefined) > -1) {
-      value = [];
-      for (let i = 0; i < this.props.cols!; i++) {
-        if (data && data.length) {
-          value[i] = data[0].value;
-          data = data[0].children;
+    const value = val || this.props.value || this.props.defaultValue;
+    let level = 0;
+    const nextValue = [];
+
+    if (value && value.length) {
+      do {
+        const index = (data as CascaderDataItem[]).findIndex(item => item.value === value[level]);
+
+        if (index < 0) {
+          break;
         }
+
+        nextValue[level] = value[level];
+        level += 1;
+        data = data[index].children || [];
+      } while (data.length > 0);
+    }
+
+    for (let i = level; i < this.props.cols!; i++) {
+      if (data && data.length) {
+        nextValue[i] = data[0].value;
+        data = data[0].children;
+      } else {
+        break;
       }
     }
-    return value;
+
+    return nextValue;
   }
 
   getCols() {

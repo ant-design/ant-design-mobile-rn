@@ -30,6 +30,7 @@ export default class PopupExample extends React.Component {
             <DatePicker
               value={this.state.value}
               mode="date"
+              defaultDate={new Date()}
               minDate={new Date(2015, 7, 6)}
               maxDate={new Date(2026, 11, 3)}
               onChange={this.onChange}

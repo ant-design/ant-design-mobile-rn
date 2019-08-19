@@ -24,7 +24,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
     antLocale: PropTypes.object,
   };
   render() {
-    const { children, value, itemStyle } = this.props;
+    const { children, value, defaultDate, itemStyle, ...restProps } = this.props;
     const locale = getComponentLocale(
       this.props,
       (this as any).context,
@@ -41,19 +41,20 @@ export default class DatePicker extends React.Component<DatePickerProps> {
         mode={this.props.mode}
         minDate={this.props.minDate}
         maxDate={this.props.maxDate}
-        defaultDate={value}
+        defaultDate={defaultDate}
+        date={value}
         onValueChange={this.props.onValueChange}
         itemStyle={itemStyle}
       />
     );
 
     return (
-      <WithTheme styles={this.props.styles} themeStyles={PickerStyles}>
+      <WithTheme styles={restProps.styles} themeStyles={PickerStyles}>
         {styles => (
           <PopupDatePicker
             datePicker={dataPicker}
+            {...restProps as any}
             styles={styles}
-            {...this.props as any}
             date={value}
             dismissText={this.props.dismissText || dismissText}
             okText={this.props.okText || okText}

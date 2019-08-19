@@ -2,6 +2,7 @@ import React from 'react';
 import AntDatePickerProps from './datepicker/DatePickerProps';
 export interface DatePickerPropsType extends AntDatePickerProps {
   value?: Date;
+  defaultDate?: Date;
   mode?: 'datetime' | 'date' | 'year' | 'month' | 'time';
   minDate?: Date;
   maxDate?: Date;

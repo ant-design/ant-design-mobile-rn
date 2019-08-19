@@ -14,6 +14,18 @@ toc: false
 
 ---
 
+### 3.1.12
+
+`2019-08-02`
+
+- `datepicker` Add a `defaultDate` property [#593](https://github.com/ant-design/ant-design-mobile-rn/pull/593)
+
+### 3.1.7
+
+`2019-04-30`
+
+- Fixes `checkbox` read color from theme [#416](https://github.com/ant-design/ant-design-mobile-rn/issues/416)
+
 ### 3.1.5
 
 `2019-03-20`

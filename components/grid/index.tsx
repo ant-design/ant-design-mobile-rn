@@ -95,7 +95,7 @@ export default class Grid extends React.Component<GridProps, any> {
                 rowArr.push(
                   <Flex.Item
                     key={j}
-                    style={[styles.grayBorderBox, flexItemStyle]}
+                    style={[styles.grayBorderBox, flexItemStyle, customItemStyle]}
                   />,
                 );
               }

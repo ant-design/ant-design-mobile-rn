@@ -50,6 +50,15 @@ Here list some of main incompatible changes and recommended changes in the upgra
   react-native link @ant-design/icons-react-native
   ```
 
+
+  If you are at react-native@0.60.x after you install the package it will link automatically.
+
+  or if you want link it manually.
+
+  ```sh
+  react-native link @ant-design/react-native
+  ```
+
 ### 2.1.11 and before
 
 [antd-mobile upgrade-notes](https://github.com/ant-design/ant-design-mobile/blob/master/docs/react/upgrade-notes.en-US.md#1x--20)

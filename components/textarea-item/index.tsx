@@ -47,7 +47,7 @@ export default class TextAreaItem extends React.Component<
   constructor(props: TextareaItemProps) {
     super(props);
     this.state = {
-      inputCount: 0,
+      inputCount: fixControlledValue(props.value||props.defaultValue).length,
     };
   }
 
