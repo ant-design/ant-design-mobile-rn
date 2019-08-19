@@ -1,5 +1,5 @@
 import React, { isValidElement } from 'react';
-import { ScrollView, Text, TextStyle } from 'react-native';
+import { BackHandler, ScrollView, Text, TextStyle } from 'react-native';
 import Modal from './Modal';
 import { Action } from './PropsType';
 
@@ -8,17 +8,40 @@ export interface AlertContainerProps {
   content: React.ReactNode;
   actions: Action<TextStyle>[];
   onAnimationEnd?: (visible: boolean) => void;
+  onRequestClose?: () => boolean;
 }
 
 export default class AlertContainer extends React.Component<
   AlertContainerProps,
   any
-> {
+  > {
   constructor(props: AlertContainerProps) {
     super(props);
     this.state = {
       visible: true,
     };
+  }
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+  }
+
+  onBackAndroid = () => {
+    // 判断是否传递了
+    const { onRequestClose } = this.props;
+    if (typeof onRequestClose === 'function') {
+      return onRequestClose();
+    }
+    // 如果弹窗显示了。就关闭
+    if (this.state.visible) {
+      this.onClose();
+      return true;
+    }
+    return false;
   }
 
   onClose = () => {
@@ -31,7 +54,7 @@ export default class AlertContainer extends React.Component<
     const { title, actions, content, onAnimationEnd } = this.props;
     const footer = actions.map(button => {
       // tslint:disable-next-line:only-arrow-functions
-      const orginPress = button.onPress || function() {};
+      const orginPress = button.onPress || function () { };
       button.onPress = () => {
         const res = orginPress();
         if (res && res.then) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextStyle } from 'react-native';
+import { BackHandler, TextStyle } from 'react-native';
 import { WithTheme } from '../style';
 import Modal from './Modal';
 import { Action } from './PropsType';
@@ -13,12 +13,29 @@ export interface OperationContainerProps {
 export default class OperationContainer extends React.Component<
   OperationContainerProps,
   any
-> {
+  > {
   constructor(props: OperationContainerProps) {
     super(props);
     this.state = {
       visible: true,
     };
+  }
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+  }
+
+  onBackAndroid = () => {
+    // 如果弹窗显示了。就关闭
+    if (this.state.visible) {
+      this.onClose();
+      return true;
+    }
+    return false;
   }
 
   onClose = () => {
@@ -31,7 +48,7 @@ export default class OperationContainer extends React.Component<
     const { actions, onAnimationEnd } = this.props;
     const footer = actions.map(button => {
       // tslint:disable-next-line:only-arrow-functions
-      const orginPress = button.onPress || function() {};
+      const orginPress = button.onPress || function () { };
       button.onPress = () => {
         const res = orginPress();
         if (res && (res as any).then) {
