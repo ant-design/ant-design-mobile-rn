@@ -12,7 +12,7 @@ export default function prompt(
   defaultValue = '',
   placeholders = ['', ''],
   // 点击返回键的回调事件
-  onRequestClose?: CallbackOnRequestClose
+  onRequestClose?: CallbackOnRequestClose,
 ) {
   if (!callbackOrActions) {
     // tslint:disable-next-line:no-console

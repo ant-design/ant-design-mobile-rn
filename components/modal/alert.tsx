@@ -7,7 +7,7 @@ export default function a(
   title: React.ReactNode,
   content: React.ReactNode,
   actions: Action[] = [{ text: '确定' }],
-  onRequestClose?: CallbackOnRequestClose
+  onRequestClose?: CallbackOnRequestClose,
 ) {
   const key = Portal.add(
     <AlertContainer
