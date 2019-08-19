@@ -2,7 +2,7 @@ import React from 'react';
 import { TextStyle } from 'react-native';
 import Portal from '../portal';
 import PromptContainer from './PromptContainer';
-import { CallbackOnRequestClose, CallbackOrActions } from './PropsType';
+import { CallbackOrActions } from './PropsType';
 
 export default function prompt(
   title: React.ReactNode,
@@ -11,8 +11,6 @@ export default function prompt(
   type = 'default',
   defaultValue = '',
   placeholders = ['', ''],
-  // 点击返回键的回调事件
-  onRequestClose?: CallbackOnRequestClose,
 ) {
   if (!callbackOrActions) {
     // tslint:disable-next-line:no-console
@@ -33,7 +31,6 @@ export default function prompt(
         }
       }}
       placeholders={placeholders}
-      onRequestClose={onRequestClose}
     />,
   );
 }

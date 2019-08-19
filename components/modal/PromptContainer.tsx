@@ -17,7 +17,6 @@ export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
   actions: CallbackOrActions<TextStyle>;
   onAnimationEnd?: (visible: boolean) => void;
   placeholders?: string[];
-  onRequestClose?: () => boolean;
 }
 
 export default class PropmptContainer extends React.Component<
@@ -51,18 +50,13 @@ export default class PropmptContainer extends React.Component<
   }
 
   onBackAndroid = () => {
-    // 判断是否传递了
-    const { onRequestClose } = this.props;
-    if (typeof onRequestClose === 'function') {
-      return onRequestClose();
-    }
     // 如果弹窗显示了。就关闭
     if (this.state.visible) {
       this.onClose();
       return true;
     }
     return false;
-  }
+  };
 
   onClose = () => {
     this.setState({
