@@ -2,12 +2,13 @@ import React from 'react';
 import { BackHandler, TextStyle } from 'react-native';
 import { WithTheme } from '../style';
 import Modal from './Modal';
-import { Action } from './PropsType';
+import { Action, CallbackOnBackHandler } from './PropsType';
 import modalStyle from './style/index';
 
 export interface OperationContainerProps {
   actions: Action<TextStyle>[];
   onAnimationEnd?: (visible: boolean) => void;
+  onBackHandler?: CallbackOnBackHandler;
 }
 
 export default class OperationContainer extends React.Component<
@@ -30,8 +31,14 @@ export default class OperationContainer extends React.Component<
   }
 
   onBackAndroid = () => {
-    // 如果弹窗显示了。就关闭
-    if (this.state.visible) {
+    const { onBackHandler } = this.props;
+    if (typeof onBackHandler === 'function') {
+      const flag = onBackHandler();
+      if(flag){
+        this.onClose();
+      }
+      return true;
+    } else if (this.state.visible) {
       this.onClose();
       return true;
     }

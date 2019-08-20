@@ -35,6 +35,7 @@ Properties | Descrition | Type | Default
 | title | title | String or React.Element | -  |
 | message | message  | String or React.Element  | -  |
 | actions | button group, [{text, onPress, style}]  | Array | -  |
+| onBackHandler | Callback of the back key (not required), returns true to close modal, false to prevent modal from closing| (): boolean | 无 |
 
 call `Modal.alert(title, message, actions?).close()`  can close Alert Modal outside anywhere as you wish.
 
@@ -48,13 +49,15 @@ Properties | Descrition | Type | Default
 | type  | prompt style | String (`default`, `secure-text`, `login-password`)|  `default`  |
 | defaultValue  | Default(input whick type is password is not supported) | String | -  |
 | placeholders  | ['', '']  | String[] | -  |
+| onBackHandler | Callback of the back key (not required), returns true to close modal, false to prevent modal from closing| (): boolean | 无 |
 
 call Modal.prompt(title, message, callbackOrActions, type?, defaultValue?, placeholders?).close()` can close prompt Modal outside anywhere as you wish.
 
-### Modal.operation(actions?)
+### Modal.operation(actions?, onBackHandler?)
 
 Properties | Descrition | Type | Default
 -----------|------------|------|--------
 | actions | button group, [{text, onPress, style}]  | Array | -  |
+| onBackHandler | Callback of the back key (not required), returns true to close modal, false to prevent modal from closing| (): boolean | 无 |
 
 call Modal.operation(actions?).close()` can close Operation Modal outside anywhere as you wish.

@@ -77,6 +77,16 @@ export default class BasicModalExample extends React.Component<any, any> {
       ['please input name'],
     );
   };
+
+  onButtonClick6 = () => {
+    Modal.operation([
+      { text: '标为未读', onPress: () => console.log('标为未读被点击了') },
+      { text: '置顶聊天', onPress: () => console.log('置顶聊天被点击了') },
+    ], () => {
+      console.log('返回键点击');
+      return false;
+    });
+  };
   render() {
     const footerButtons = [
       { text: 'Cancel', onPress: () => console.log('cancel') },
@@ -100,6 +110,8 @@ export default class BasicModalExample extends React.Component<any, any> {
           <Button onPress={this.onButtonClick}>Modal.alert</Button>
           <WhiteSpace />
           <Button onPress={this.onButtonClick2}>Modal.opertation</Button>
+          <WhiteSpace />
+          <Button onPress={this.onButtonClick6}>Modal.opertation (onBackHandler)</Button>
           <WhiteSpace />
           <Button onPress={this.onButtonClick5}>Modal.prompt (default)</Button>
           <WhiteSpace />

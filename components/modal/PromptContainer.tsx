@@ -6,7 +6,7 @@ import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
 import zh_CN from './locale/zh_CN';
 import Modal from './Modal';
-import { CallbackOrActions } from './PropsType';
+import { CallbackOnBackHandler, CallbackOrActions } from './PropsType';
 import promptStyles, { PromptStyle } from './style/prompt';
 
 export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
@@ -17,6 +17,7 @@ export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
   actions: CallbackOrActions<TextStyle>;
   onAnimationEnd?: (visible: boolean) => void;
   placeholders?: string[];
+  onBackHandler?: CallbackOnBackHandler;
 }
 
 export default class PropmptContainer extends React.Component<
@@ -50,7 +51,14 @@ export default class PropmptContainer extends React.Component<
   }
 
   onBackAndroid = () => {
-    // 如果弹窗显示了。就关闭
+    const { onBackHandler } = this.props;
+    if (typeof onBackHandler === 'function') {
+      const flag = onBackHandler();
+      if(flag){
+        this.onClose();
+      }
+      return flag;
+    }
     if (this.state.visible) {
       this.onClose();
       return true;

@@ -1,13 +1,14 @@
 import React, { isValidElement } from 'react';
 import { BackHandler, ScrollView, Text, TextStyle } from 'react-native';
 import Modal from './Modal';
-import { Action } from './PropsType';
+import { Action, CallbackOnBackHandler } from './PropsType';
 
 export interface AlertContainerProps {
   title: React.ReactNode;
   content: React.ReactNode;
   actions: Action<TextStyle>[];
   onAnimationEnd?: (visible: boolean) => void;
+  onBackHandler?: CallbackOnBackHandler;
 }
 
 export default class AlertContainer extends React.Component<
@@ -30,7 +31,14 @@ export default class AlertContainer extends React.Component<
   }
 
   onBackAndroid = () => {
-    // 如果弹窗显示了。就关闭
+    const { onBackHandler } = this.props;
+    if (typeof onBackHandler === 'function') {
+      const flag = onBackHandler();
+      if(flag){
+        this.onClose();
+      }
+      return flag;
+    }
     if (this.state.visible) {
       this.onClose();
       return true;
