@@ -32,6 +32,7 @@ export default function prompt(
         }
       }}
       placeholders={placeholders}
+      onBackHandler={onBackHandler}
     />,
   );
 }
