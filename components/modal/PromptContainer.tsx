@@ -1,12 +1,12 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { KeyboardAvoidingView, Text, TextInput, TextStyle, View } from 'react-native';
+import { BackHandler, KeyboardAvoidingView, Text, TextInput, TextStyle, View } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
 import zh_CN from './locale/zh_CN';
 import Modal from './Modal';
-import { CallbackOrActions } from './PropsType';
+import { CallbackOnBackHandler, CallbackOrActions } from './PropsType';
 import promptStyles, { PromptStyle } from './style/prompt';
 
 export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
@@ -17,12 +17,13 @@ export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
   actions: CallbackOrActions<TextStyle>;
   onAnimationEnd?: (visible: boolean) => void;
   placeholders?: string[];
+  onBackHandler?: CallbackOnBackHandler;
 }
 
 export default class PropmptContainer extends React.Component<
   PropmptContainerProps,
   any
-> {
+  > {
   static defaultProps = {
     type: 'default',
     defaultValue: '',
@@ -40,6 +41,30 @@ export default class PropmptContainer extends React.Component<
       password: props.type === 'secure-text' ? props.defaultValue : '',
     };
   }
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+  }
+
+  onBackAndroid = () => {
+    const { onBackHandler } = this.props;
+    if (typeof onBackHandler === 'function') {
+      const flag = onBackHandler();
+      if(flag){
+        this.onClose();
+      }
+      return flag;
+    }
+    if (this.state.visible) {
+      this.onClose();
+      return true;
+    }
+    return false;
+  };
 
   onClose = () => {
     this.setState({
@@ -63,7 +88,7 @@ export default class PropmptContainer extends React.Component<
       placeholders,
     } = this.props;
     const { text, password } = this.state;
-    const getArgs = function(func: (...args: any[]) => void) {
+    const getArgs = function (func: (...args: any[]) => void) {
       if (type === 'login-password') {
         return func.apply(this, [text, password]);
       } else if (type === 'secure-text') {
@@ -83,7 +108,7 @@ export default class PropmptContainer extends React.Component<
     let callbacks;
     if (typeof actions === 'function') {
       callbacks = [
-        { text: _locale.cancelText, style: 'cancel', onPress: () => {} },
+        { text: _locale.cancelText, style: 'cancel', onPress: () => { } },
         { text: _locale.okText, onPress: () => getArgs(actions) },
       ];
     } else {
@@ -102,7 +127,7 @@ export default class PropmptContainer extends React.Component<
 
     const footer = (callbacks as any).map((button: any) => {
       // tslint:disable-next-line:only-arrow-functions
-      const orginPress = button.onPress || function() {};
+      const orginPress = button.onPress || function () { };
       button.onPress = () => {
         const res = orginPress();
         if (res && res.then) {

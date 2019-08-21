@@ -36,7 +36,7 @@ subtitle: 对话框
 | title | 标题  | String 或 React.Element | 无  |
 | message  | 提示信息  | String 或 React.Element  | 无  |
 | actions | 按钮组, [{text, onPress, style}] | Array | 无  |
-
+| onBackHandler | 返回键的回调(非必须)，返回true则关闭modal，false阻止modal关闭| (): boolean | 无 | 
 `Modal.alert(title, message, actions?, platform?).close()` 可以在外部关闭 Alert
 
 ### Modal.prompt(title, message, callbackOrActions, type?, defaultValue?, placeholders?, platform?)
@@ -49,14 +49,15 @@ subtitle: 对话框
 | type | prompt 的样式 | String (`default`, `secure-text`, `login-password`)|  `default`  |
 | defaultValue | 默认值(input 为 password 类型不支持) | String | -  |
 | placeholders | ['', '']  | String[] | -  |
-
+| onBackHandler | 返回键的回调(非必须)，返回true则关闭modal，false阻止modal关闭| (): boolean | 无 | 
 
 `Modal.prompt(title, message, callbackOrActions, type?, defaultValue?, placeholders?, platform?).close()` 可以在外部关闭 prompt`
 
-### Modal.operation(actions?, platform?)
+### Modal.operation(actions?, onBackHandler?)
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | actions | 按钮组, [{text, onPress, style}] | Array | 无  |
+| onBackHandler | 返回键的回调(非必须)，返回true则关闭modal，false阻止modal关闭| (): boolean | 无 | 
 
 `Modal.operation(actions?, platform?).close()` 可以在外部关闭 operation`

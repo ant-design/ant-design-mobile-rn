@@ -25,3 +25,6 @@ export interface Action<T = TextStyle> {
 
 export type Callback = (valueOrLogin: string, password?: string) => void;
 export type CallbackOrActions<T> = Callback | Action<T>[];
+
+// 点击返回键的回调事件。参考RN中的BackHandler来返回值
+export type CallbackOnBackHandler = () => boolean;

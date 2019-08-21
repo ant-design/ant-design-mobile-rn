@@ -2,7 +2,7 @@ import React from 'react';
 import { TextStyle } from 'react-native';
 import Portal from '../portal';
 import PromptContainer from './PromptContainer';
-import { CallbackOrActions } from './PropsType';
+import { CallbackOnBackHandler, CallbackOrActions } from './PropsType';
 
 export default function prompt(
   title: React.ReactNode,
@@ -11,6 +11,7 @@ export default function prompt(
   type = 'default',
   defaultValue = '',
   placeholders = ['', ''],
+  onBackHandler?: CallbackOnBackHandler,
 ) {
   if (!callbackOrActions) {
     // tslint:disable-next-line:no-console
@@ -31,6 +32,7 @@ export default function prompt(
         }
       }}
       placeholders={placeholders}
+      onBackHandler={onBackHandler}
     />,
   );
 }
