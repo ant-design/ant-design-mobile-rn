@@ -24,13 +24,13 @@ describe('SearchBar', () => {
     it('fires onFocus event', () => {
       wrapper = renderer.create(<SearchBar onFocus={handler} />);
       wrapper.root.findByType(TextInput).props.onFocus();
-      expect(handler).toBeCalledWith();
+      expect(handler).toBeCalledWith(undefined);
     });
 
     it('fires onBlur event', () => {
       wrapper = renderer.create(<SearchBar onBlur={handler} />);
       wrapper.root.findByType(TextInput).props.onBlur();
-      expect(handler).toBeCalledWith();
+      expect(handler).toBeCalledWith(undefined);
     });
 
     it('fires onCancel event', () => {
