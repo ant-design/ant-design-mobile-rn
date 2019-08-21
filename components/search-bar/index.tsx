@@ -1,7 +1,6 @@
-
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleProp, Text, TextInput, TextStyle, View } from 'react-native';
+import { NativeSyntheticEvent, StyleProp, Text, TextInput, TextInputFocusEventData, TextStyle, View } from 'react-native';
 import Icon from '../icon';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
@@ -75,21 +74,21 @@ export default class SearchBar extends React.Component<
     }
   };
 
-  onFocus = () => {
+  onFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     this.setState({
       focus: true,
     });
     if (this.props.onFocus) {
-      this.props.onFocus();
+      this.props.onFocus(e);
     }
   };
 
-  onBlur = () => {
+  onBlur = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     this.setState({
       focus: false,
     });
     if (this.props.onBlur) {
-      this.props.onBlur();
+      this.props.onBlur(e);
     }
   };
   render() {

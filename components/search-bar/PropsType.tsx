@@ -1,3 +1,5 @@
+import { NativeSyntheticEvent, TextInputFocusEventData } from "react-native";
+
 function noop() {}
 
 export interface SearchBarPropsType {
@@ -6,8 +8,8 @@ export interface SearchBarPropsType {
   placeholder?: string;
   onSubmit?: (value: string) => void;
   onChange?: (value: string) => void;
-  onFocus?: () => void;
-  onBlur?: () => void;
+  onFocus?: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+  onBlur?: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
   onCancel?: (value: string) => void;
   showCancelButton?: boolean;
   cancelText?: string;
