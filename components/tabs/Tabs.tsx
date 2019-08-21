@@ -1,5 +1,6 @@
 import React from 'react';
-import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, Platform, ScrollView, ViewPagerAndroid } from 'react-native';
+import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, Platform, ScrollView } from 'react-native';
+import ViewPagerAndroid from '@react-native-community/viewpager';
 import { WithTheme, WithThemeStyles } from '../style';
 import View from '../view';
 import { DefaultTabBar } from './DefaultTabBar';
