@@ -14,6 +14,13 @@ toc: false
 
 ---
 
+### 3.1.14
+
+`2019-08-21`
+
+- `modal` 相关的组件增加一个`onBackHandler`属性 [#611](https://github.com/ant-design/ant-design-mobile-rn/pull/611) by [Tzng](https://github.com/Tzng)
+- 完善 `search-bar` 类型定义
+
 ### 3.1.12
 
 `2019-08-02`

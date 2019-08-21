@@ -14,6 +14,13 @@ toc: false
 
 ---
 
+### 3.1.14
+
+`2019-08-21`
+
+- Add `onBackHandler` to `modal` related components [#611](https://github.com/ant-design/ant-design-mobile-rn/pull/611) by [Tzng](https://github.com/Tzng)
+- Fixes `search-bar` type definition
+
 ### 3.1.12
 
 `2019-08-02`
