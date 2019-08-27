@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 3.1.15
+
+`2019-08-27`
+
+- Add `onLongPress` to `ListItem` [#619](https://github.com/ant-design/ant-design-mobile-rn/pull/619) by [Zixuan](https://github.com/nodece)
+
 ### 3.1.14
 
 `2019-08-21`
