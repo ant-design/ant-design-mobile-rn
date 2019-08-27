@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleProp, StyleSheet, Text, TouchableHighlight, View, ViewStyle } from 'react-native';
+import { GestureResponderEvent, Image, StyleProp, StyleSheet, Text, TouchableHighlight, View, ViewStyle } from 'react-native';
 import Icon from '../icon';
 import { WithTheme, WithThemeStyles } from '../style';
 import { BriefProps as BriefBasePropsType, ListItemPropsType } from './PropsType';
@@ -8,9 +8,11 @@ import ListStyles, { ListStyle } from './style/index';
 export interface ListItemProps
   extends ListItemPropsType,
     WithThemeStyles<ListStyle> {
-  onPress?: () => void;
-  onPressIn?: () => void;
-  onPressOut?: () => void;
+  onPress?: (event: GestureResponderEvent) => void;
+  onPressIn?: (event: GestureResponderEvent) => void;
+  onPressOut?: (event: GestureResponderEvent) => void;
+  delayLongPress?: number;
+  onLongPress?: (event: GestureResponderEvent) => void;
   style?: StyleProp<ViewStyle>;
 }
 
@@ -47,6 +49,8 @@ export default class Item extends React.Component<ListItemProps, any> {
   static defaultProps: Partial<ListItemProps> = {
     multipleLine: false,
     wrap: false,
+    delayLongPress: 500,
+    onLongPress: () => {},
   };
   static Brief = Brief;
   render() {
@@ -61,6 +65,8 @@ export default class Item extends React.Component<ListItemProps, any> {
       onPress,
       onPressIn,
       onPressOut,
+      onLongPress,
+      delayLongPress,
       wrap,
       disabled,
       align,
@@ -221,6 +227,8 @@ export default class Item extends React.Component<ListItemProps, any> {
               }
               onPressIn={onPressIn}
               onPressOut={onPressOut}
+              onLongPress={onLongPress}
+              delayLongPress={delayLongPress}
             >
               {itemView}
             </TouchableHighlight>
