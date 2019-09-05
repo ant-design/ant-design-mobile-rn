@@ -67,6 +67,57 @@ export default class BasicTabsExample extends React.Component {
             <Text>Content of Third Tab</Text>
           </View>
         </Tabs>
+        <Text style={{ margin: 16 }}>Custom RenderTabBar</Text>
+        <Tabs
+          tabs={tabs}
+          renderTabBar={tabProps => (
+            <View
+              style={{
+                paddingHorizontal: 16,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-evenly',
+              }}
+            >
+              {tabProps.tabs.map((tab, i) => (
+                // change the style to fit your needs
+                <TouchableOpacity
+                  activeOpacity={0.9}
+                  key={tab.key || i}
+                  style={{
+                    // width: '30%',
+                    padding: 6,
+                  }}
+                  onPress={() => {
+                    const { goToTab, onTabClick } = tabProps;
+                    // tslint:disable-next-line:no-unused-expression
+                    onTabClick && onTabClick(tabs[i], i);
+                    // tslint:disable-next-line:no-unused-expression
+                    goToTab && goToTab(i);
+                  }}
+                >
+                  <Text
+                    style={{
+                      color: tabProps.activeTab === i ? 'green' : undefined,
+                    }}
+                  >
+                    {tab.title}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+        >
+          <View style={style}>
+            <Text>Content of First Tab</Text>
+          </View>
+          <View style={style}>
+            <Text>Content of Second Tab</Text>
+          </View>
+          <View style={style}>
+            <Text>Content of Third Tab</Text>
+          </View>
+        </Tabs>
         <View style={{ flex: 2 }}>
           <Tabs tabs={tabs2} initialPage={1} tabBarPosition="top">
             {renderContent}
