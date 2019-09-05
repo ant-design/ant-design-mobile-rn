@@ -26,7 +26,7 @@ const renderContent = (tab: any, index: any) => {
 export default class BasicTabsExample extends React.Component<any, any> {
   render() {
     const tabs = [
-      { title: 'First Tab hello world' },
+      { title: 'First Tab' },
       { title: 'Second Tab' },
       { title: 'Third Tab' },
     ];

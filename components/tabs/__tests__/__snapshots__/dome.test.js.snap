@@ -283,6 +283,193 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
       </View>
     </RCTScrollView>
   </View>
+  <Text
+    style={
+      Object {
+        "margin": 16,
+      }
+    }
+  >
+    Custom RenderTabBar
+  </Text>
+  <View
+    onLayout={[Function]}
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {},
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderBottomColor": "#dddddd",
+          "borderBottomWidth": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-evenly",
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "padding": 6,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "green",
+              }
+            }
+          >
+            First Tab
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "padding": 6,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+          >
+            Second Tab
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "padding": 6,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+          >
+            Third Tab
+          </Text>
+        </View>
+      </View>
+    </View>
+    <RCTScrollView
+      alwaysBounceVertical={false}
+      automaticallyAdjustContentInsets={false}
+      directionalLockEnabled={true}
+      horizontal={true}
+      keyboardDismissMode="on-drag"
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      pagingEnabled={true}
+      scrollEnabled={true}
+      scrollEventThrottle={16}
+      scrollsToTop={false}
+      showsHorizontalScrollIndicator={false}
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "width": 750,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fff",
+                "height": 150,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text>
+              Content of First Tab
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "width": 750,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fff",
+                "height": 150,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text>
+              Content of Second Tab
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "width": 750,
+            }
+          }
+        />
+      </View>
+    </RCTScrollView>
+  </View>
   <View
     style={
       Object {
