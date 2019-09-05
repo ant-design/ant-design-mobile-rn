@@ -9,7 +9,7 @@ title:
 
 ```jsx
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
 import { Tabs } from '@ant-design/react-native';
 const renderContent = (tab, index) => {
   const style = {
