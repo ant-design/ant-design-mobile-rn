@@ -50,7 +50,7 @@ export default class BasicRadioExample extends React.Component<any, any> {
               }
             }}
           >
-            Use Ant Desgin Component
+            Use Ant Design Component
           </RadioItem>
           <RadioItem
             checked={this.state.part2Value === 2}
@@ -60,7 +60,7 @@ export default class BasicRadioExample extends React.Component<any, any> {
               }
             }}
           >
-            Use Ant Desgin Component
+            Use Ant Design Component
           </RadioItem>
           <RadioItem disabled>Set disabled</RadioItem>
           <RadioItem disabled checked>
