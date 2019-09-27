@@ -84,7 +84,7 @@
     "eslint-plugin-react": "~7.2.0",
     "eslint-tinker": "~0.4.1",
     "glob": "^7.1.1",
-    "jest": "23.6.0",
+    "jest": "24.9.0",
     "jsonml.js": "^0.1.0",
     "lint-staged": "^8.0.4",
     "metro-react-native-babel-preset": "0.50.0",
@@ -102,7 +102,7 @@
     "react-navigation": "^2.18.2",
     "react-test-renderer": "^16.7.0",
     "regenerator-runtime": "^0.13.1",
-    "ts-jest": "^23.10.4",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.2.2"
   },
   "scripts": {
