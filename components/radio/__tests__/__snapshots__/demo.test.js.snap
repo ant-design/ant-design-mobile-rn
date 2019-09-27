@@ -181,7 +181,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                Use Ant Desgin Component
+                Use Ant Design Component
               </Text>
             </View>
             <View
@@ -289,7 +289,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                Use Ant Desgin Component
+                Use Ant Design Component
               </Text>
             </View>
             <View
