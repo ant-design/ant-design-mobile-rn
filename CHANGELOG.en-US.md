@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 3.2.0
+
+`2019-09-29`
+
+- Using `@react-native-community/viewpager` [#615](https://github.com/ant-design/ant-design-mobile-rn/pull/615) by [xinbowang](https://github.com/xinbowang)
+
 ### 3.1.15
 
 `2019-08-27`
