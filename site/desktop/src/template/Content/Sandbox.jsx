@@ -73,7 +73,7 @@ rootTag: document.getElementById("root")
             extends: 'react-app',
           },
           dependencies: {
-            '@ant-design/react-native': '^3.0.0',
+            '@ant-design/react-native': '3.1.15',
             'antd-mobile-rn-scripts': 'latest',
             react: '^16.6.0',
             'react-art': '^16.6.0',
