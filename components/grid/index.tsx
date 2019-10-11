@@ -88,7 +88,7 @@ export default class Grid extends React.Component<GridProps, any> {
                     ]}
                     onPress={() => onPress(el, dataIndex)}
                   >
-                    {renderItem(el, dataIndex)}
+                    {el && renderItem(el, dataIndex)}
                   </Flex.Item>,
                 );
               } else {

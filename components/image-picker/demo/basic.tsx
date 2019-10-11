@@ -54,7 +54,7 @@ export default class ImagePickerExample extends React.Component<any, any> {
         {
           'title': '需要访问相册',
           'message': '需要访问相册',
-        },
+        } as any,
       )
       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
         this.setState({
