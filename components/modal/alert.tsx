@@ -22,4 +22,5 @@ export default function a(
       onBackHandler={onBackHandler}
     />,
   );
+  return key;
 }
