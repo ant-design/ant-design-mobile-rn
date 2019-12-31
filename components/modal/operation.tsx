@@ -15,4 +15,5 @@ export default function a(actions: any[], onBackHandler?: CallbackOnBackHandler)
       onBackHandler={onBackHandler}
     />,
   );
+  return key;
 }

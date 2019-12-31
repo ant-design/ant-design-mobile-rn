@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 3.2.1
+
+`2019-12-31`
+
+- `Modal.alert` `Modal.prompt` `Modal.operation` now returns a `key` that can be manually closed via `Portal.remove(key)`.
+
 ### 3.2.0
 
 `2019-09-29`

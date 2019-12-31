@@ -14,12 +14,17 @@ toc: false
 
 ---
 
+### 3.2.1
+
+`2019-12-31`
+
+- `Modal.alert` `Modal.prompt` `Modal.operation` 现在返回一个`key`，可以通过`Portal.remove(key)` 手动关闭
+
 ### 3.2.0
 
 `2019-09-29`
 
 - 使用 `@react-native-community/viewpager` [#615](https://github.com/ant-design/ant-design-mobile-rn/pull/615) by [xinbowang](https://github.com/xinbowang)
-
 
 ### 3.1.15
 

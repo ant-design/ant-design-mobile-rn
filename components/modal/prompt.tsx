@@ -35,4 +35,5 @@ export default function prompt(
       onBackHandler={onBackHandler}
     />,
   );
+  return key;
 }
