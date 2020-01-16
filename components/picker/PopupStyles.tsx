@@ -11,6 +11,7 @@ const styles = StyleSheet.create<any>({
     flexDirection: 'column',
     justifyContent: 'flex-end',
   },
+  container: {},
   header: {
     // flex:1, 0.39.0 needs to remove
     height: 44,

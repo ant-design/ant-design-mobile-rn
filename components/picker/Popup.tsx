@@ -29,6 +29,7 @@ const getModal = (props: any, visible: any, { getContent, hide, onDismiss, onOk 
     <Modal
       animationType="slide-up"
       wrapStyle={styles.modal}
+      style={styles.container}
       visible={visible}
       onClose={hide}
     >
