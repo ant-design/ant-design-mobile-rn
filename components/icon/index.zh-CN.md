@@ -11,7 +11,7 @@ subtitle: 图标
 
 更多信息请查看https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native
 
-安装完成后需要link字体文件
+安装完成后需要link字体文件（如果你的RN版本支持auto-link的话可以省略这一步）
 
 ```bash
 react-native link @ant-design/icons-react-native

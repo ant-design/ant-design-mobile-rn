@@ -28,7 +28,7 @@ export default (sourceCode, doc) => {
   <title>React App</title>
   <style>
   @font-face {
-    src: url('https://unpkg.com/@ant-design/icons-react-native@1.0.2/fonts/antoutline.ttf'    );
+    src: url('https://unpkg.com/@ant-design/icons-react-native@2.0.0/fonts/antoutline.ttf');
     font-family: antoutline;
   }
   </style>
