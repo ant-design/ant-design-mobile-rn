@@ -12879,9 +12879,9 @@ regenerator-runtime@^0.12.0:
   integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
 
 regenerator-runtime@^0.13.1:
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.1.tgz#522ea2aafd9200a00eee143dc14219a35a0f3991"
-  integrity sha512-5KzMIyPLvfdPmvsdlYsHqITrDfK9k7bmvf97HvHSN4810i254ponbxCQ1NukpRWlu6en2MBWzAlhDExEKISwAA==
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
+  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
 
 regenerator-transform@^0.10.0:
   version "0.10.1"
