@@ -58,7 +58,7 @@ yarn add @ant-design/react-native
 ### Link icon fonts
 
 ```bash
-react-native link @ant-design/icons-react-native
+react-native link @ant-design/react-native
 ```
 
 [introduce](docs/react/introduce.en-US.md#安装)
