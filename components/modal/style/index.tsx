@@ -30,8 +30,10 @@ export default (theme: Theme) =>
       zIndex: theme.modal_zindex,
     },
     wrap: {
+      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundColor: 'transparent',
     },
     popupContainer: {},
     popupSlideUp: {
@@ -46,6 +48,7 @@ export default (theme: Theme) =>
       width: 286,
       paddingTop: theme.v_spacing_xl,
       overflow: 'hidden',
+      backgroundColor: theme.fill_base,
     },
     // fix android borderRadius
     footer: {
@@ -77,7 +80,7 @@ export default (theme: Theme) =>
     },
     closeWrap: {
       position: 'absolute',
-      top: 0,
+      top: theme.v_spacing_xl,
       left: theme.h_spacing_lg,
     },
     close: {
