@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Dimensions, LayoutChangeEvent, StyleProp, StyleSheet, Text, TextStyle, TouchableHighlight, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
+import { Dimensions, LayoutChangeEvent, StyleProp, StyleSheet, Text, TextStyle, TouchableHighlight, TouchableWithoutFeedback, View, ViewStyle, KeyboardAvoidingView, Platform } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
 import alert from './alert';
@@ -176,20 +176,22 @@ class AntmModal extends React.Component<ModalProps, any> {
                   onClose={onClose}
                   animationType={animType}
                   wrapStyle={transparent ? styles.wrap : undefined}
-                  style={[styles.innerContainer, style]}
+                  style={styles.wrap}
                   visible={visible}
                   onAnimationEnd={onAnimationEnd}
                   animateAppear={animateAppear}
                   maskClosable={maskClosable}
                 >
-                  <View style={maxHeight} ref={this.saveRoot}>
-                    {title ? (
-                      <Text style={[styles.header]}>{title}</Text>
-                    ) : null}
-                    <View style={[styles.body, bodyStyle]}>{children}</View>
-                    {footerDom}
-                    {closableDom}
-                  </View>
+                  <KeyboardAvoidingView behavior="padding" enabled={Platform.OS==="ios"}>
+                    <View style={[styles.innerContainer,style]} ref={this.saveRoot}>
+                      {title ? (
+                        <Text style={[styles.header]}>{title}</Text>
+                      ) : null}
+                      <View style={[styles.body, bodyStyle]}>{children}</View>
+                      {footerDom}
+                      {closableDom}
+                    </View>
+                  </KeyboardAvoidingView>
                 </RCModal>
               </View>
             );
