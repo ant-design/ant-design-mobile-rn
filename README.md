@@ -46,19 +46,19 @@ install expo app: https://expo.io/tools
 ## Install & Usage
 
 ```bash
-$ npm install @ant-design/react-native --save
+$ npm install @ant-design/react-native @ant-design/icons-react-native @react-native-community/cameraroll --save
 ```
 
 or
 
 ```bash
-yarn add @ant-design/react-native
+yarn add @ant-design/react-native @ant-design/icons-react-native @react-native-community/cameraroll
 ```
 
 ### Link icon fonts
 
 ```bash
-react-native link @ant-design/icons-react-native
+react-native link @ant-design/icons-react-native @react-native-community/cameraroll && cd ios && pod install
 ```
 
 [introduce](docs/react/introduce.en-US.md#安装)
