@@ -45,19 +45,19 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 ## 安装 & 使用
 
 ```bash
-npm install @ant-design/react-native --save
+npm install @ant-design/react-native @react-native-community/cameraroll @ant-design/icons-react-native --save
 ```
 
 or
 
 ```bash
-yarn add @ant-design/react-native
+yarn add @ant-design/react-native @ant-design/icons-react-native
 ```
 
 ### 链接字体图标
 
 ```bash
-react-native link @ant-design/icons-react-native
+react-native link @ant-design/icons-react-native @react-native-community/cameraroll && cd ios && pod install
 ```
 
 [介绍](docs/react/introduce.zh-CN.md#安装)
