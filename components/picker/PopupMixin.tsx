@@ -2,11 +2,18 @@ import React from 'react';
 import { View } from 'react-native';
 import { PopupPickerProps } from './PopupPickerTypes';
 
+interface Args {
+  getContent: any,
+  hide: any,
+  onDismiss: any,
+  onOk: any
+}
+
 export default function PopupMixin(
   getModal: (
     props: any,
     visible: any,
-    { getContent, hide, onDismiss, onOk }: any,
+    args: Args,
   ) => JSX.Element,
   platformProps: {
     actionTextUnderlayColor: string;
