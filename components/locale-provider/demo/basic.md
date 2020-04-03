@@ -24,6 +24,8 @@ import enUS from '@ant-design/react-native/es/locale-provider/en_US';
 import esES from '@ant-design/react-native/es/locale-provider/es_ES';
 import ruRU from '@ant-design/react-native/es/locale-provider/ru_RU';
 import zhCN from '@ant-design/react-native/es/locale-provider/zh_CN';
+import ptBR from '@ant-design/react-native/es/locale-provider/pt_BR';
+
 const maxDate = new Date(2018, 11, 3, 22, 0);
 const minDate = new Date(2015, 7, 6, 8, 30);
 const seasons = [
@@ -103,6 +105,11 @@ export default class LocaleProviderExample extends React.Component {
         value: 'Español',
         label: 'Español',
         language: esES,
+      },
+      {
+        value: 'Português - BR',
+        label: 'Português - BR',
+        language: ptBR,
       },
     ];
     const currentLocale = languages.find(item => item.value === locale)

@@ -4,6 +4,7 @@ import LocaleProvider from '..';
 import { DatePicker, List, Pagination, Picker, SearchBar, WhiteSpace, WingBlank } from '../../';
 import enUS from '../en_US';
 import esES from '../es_ES';
+import ptBR from '../pt_BR';
 import ruRU from '../ru_RU';
 import zhCN from '../zh_CN';
 
@@ -91,6 +92,11 @@ export default class LocaleProviderExample extends React.Component<any, any> {
         value: 'Español',
         label: 'Español',
         language: esES,
+      },
+      {
+        value: 'Português - BR',
+        label: 'Português - BR',
+        language: ptBR,
       },
     ];
     const currentLocale = languages.find(item => item.value === locale).language;
