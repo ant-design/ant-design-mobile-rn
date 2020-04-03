@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackHandler, TextStyle } from 'react-native';
+import { TextStyle } from 'react-native';
 import { WithTheme } from '../style';
 import Modal from './Modal';
 import { Action, CallbackOnBackHandler } from './PropsType';
@@ -20,14 +20,6 @@ export default class OperationContainer extends React.Component<
     this.state = {
       visible: true,
     };
-  }
-
-  componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
-  }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
   }
 
   onBackAndroid = () => {
@@ -78,6 +70,7 @@ export default class OperationContainer extends React.Component<
             visible={this.state.visible}
             onClose={this.onClose}
             onAnimationEnd={onAnimationEnd}
+            onRequestClose={this.onBackAndroid}
             style={styles.operationContainer}
             bodyStyle={styles.operationBody}
             footer={footer}

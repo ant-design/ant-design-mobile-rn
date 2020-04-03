@@ -8,7 +8,7 @@ import zh_CN from './locale/zh_CN';
 import RCModal from './ModalView';
 import operation from './operation';
 import prompt from './prompt';
-import { ModalPropsType } from './PropsType';
+import { CallbackOnBackHandler, ModalPropsType } from './PropsType';
 import modalStyles, { ModalStyle } from './style/index';
 
 const maxHeight = StyleSheet.create({
@@ -22,6 +22,7 @@ export interface ModalProps
   WithThemeStyles<ModalStyle> {
   style?: StyleProp<ViewStyle>;
   bodyStyle?: StyleProp<ViewStyle>;
+  onRequestClose?: CallbackOnBackHandler;
 }
 
 class AntmModal extends React.Component<ModalProps, any> {
@@ -76,6 +77,7 @@ class AntmModal extends React.Component<ModalProps, any> {
       onClose,
       bodyStyle,
       onAnimationEnd,
+      onRequestClose,
     } = this.props;
 
     // tslint:disable-next-line:variable-name
@@ -179,6 +181,7 @@ class AntmModal extends React.Component<ModalProps, any> {
                   style={styles.wrap}
                   visible={visible}
                   onAnimationEnd={onAnimationEnd}
+                  onRequestClose={onRequestClose}
                   animateAppear={animateAppear}
                   maskClosable={maskClosable}
                 >
@@ -217,6 +220,7 @@ class AntmModal extends React.Component<ModalProps, any> {
                   ]}
                   visible={visible}
                   onAnimationEnd={onAnimationEnd}
+                  onRequestClose={onRequestClose}
                   animateAppear={animateAppear}
                   maskClosable={maskClosable}
                 >
@@ -235,6 +239,7 @@ class AntmModal extends React.Component<ModalProps, any> {
               <RCModal
                 visible={visible}
                 animationType={animType}
+                onRequestClose={onRequestClose}
                 onClose={onClose}
               >
                 <View style={style}>{children}</View>
