@@ -1,5 +1,5 @@
 import React, { isValidElement } from 'react';
-import { BackHandler, ScrollView, Text, TextStyle } from 'react-native';
+import { ScrollView, Text, TextStyle } from 'react-native';
 import Modal from './Modal';
 import { Action, CallbackOnBackHandler } from './PropsType';
 
@@ -20,14 +20,6 @@ export default class AlertContainer extends React.Component<
     this.state = {
       visible: true,
     };
-  }
-
-  componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
-  }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
   }
 
   onBackAndroid = () => {
@@ -77,6 +69,7 @@ export default class AlertContainer extends React.Component<
         visible={this.state.visible}
         footer={footer}
         onAnimationEnd={onAnimationEnd}
+        onRequestClose={this.onBackAndroid}
         bodyStyle={{
           marginTop: 8,
           alignItems: 'center',

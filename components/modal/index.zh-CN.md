@@ -28,6 +28,7 @@ subtitle: 对话框
 | animationType | 可选: 'fade' / 'slide' | String | fade |
 | title | 标题 | React.Element | 无 |
 | footer | 底部内容 | Array [{text, onPress}] | [] |
+| onRequestClose | `onRequestClose`回调会在用户按下 Android 设备上的后退按键或是 Apple TV 上的菜单键时触发。返回true时会在 modal 处于开启状态时阻止`BackHandler`事件。| (): boolean | false | 
 
 ### Modal.alert(title, message, actions?, platform?)
 

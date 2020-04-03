@@ -27,6 +27,7 @@ Properties | Descrition | Type | Default
 | animationType | Options: 'fade' / 'slide' | String | fade |
 | title | title | React.Element | - |
 | footer | footer content | Array [{text, onPress}] | [] |
+| onRequestClose | The `onRequestClose` callback is called when the user taps the hardware back button on Android or the menu button on Apple TV. Returns `true` to prevent `BackHandler` events when modal is open.| (): boolean | false |
 
 ### Modal.alert(title, message, actions?)
 
