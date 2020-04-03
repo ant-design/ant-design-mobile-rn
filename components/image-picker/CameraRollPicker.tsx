@@ -70,7 +70,7 @@ class CameraRollPicker extends Component<
     };
   }
 
-  componentWillReceiveProps(nextProps: CameraRollPickerProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: CameraRollPickerProps) {
     this.setState({
       selected: nextProps.selected,
     });

@@ -52,7 +52,7 @@ class DatePicker extends React.Component<DatePickerProps, any> {
   defaultMinDate: any;
   defaultMaxDate: any;
 
-  componentWillReceiveProps(nextProps: { date: any; defaultDate: any }) {
+  UNSAFE_componentWillReceiveProps(nextProps: { date: any; defaultDate: any }) {
     if ('date' in nextProps) {
       this.setState({
         date: nextProps.date || nextProps.defaultDate,

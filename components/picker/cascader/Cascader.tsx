@@ -18,7 +18,7 @@ class Cascader extends React.Component<CascaderProps, any> {
     ),
   };
 
-  componentWillReceiveProps(nextProps: { data: any; value: any }) {
+  UNSAFE_componentWillReceiveProps(nextProps: { data: any; value: any }) {
     if ('value' in nextProps) {
       this.setState({
         value: this.getValue(nextProps.data, nextProps.value),

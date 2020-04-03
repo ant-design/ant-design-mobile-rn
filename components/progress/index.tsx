@@ -29,7 +29,7 @@ export default class Progress extends React.Component<ProgressProps, any> {
     };
   }
 
-  componentWillReceiveProps(nextProps: ProgressProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: ProgressProps) {
     if (nextProps.wrapWidth !== this.props.wrapWidth) {
       this.setState({ wrapWidth: nextProps.wrapWidth });
     }

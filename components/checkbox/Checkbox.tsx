@@ -23,7 +23,7 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
     };
   }
 
-  componentWillReceiveProps(nextProps: CheckboxProps): void {
+  UNSAFE_componentWillReceiveProps(nextProps: CheckboxProps): void {
     if (typeof nextProps.checked === 'boolean') {
       this.setState({
         checked: !!nextProps.checked,

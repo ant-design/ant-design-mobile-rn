@@ -19,7 +19,7 @@ class ImageItem extends Component<ImageItemProps, {}> {
   constructor(props: ImageItemProps) {
     super(props);
   }
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let { width } = Dimensions.get('window');
     const { imageMargin, imagesPerRow, containerWidth } = this.props;
     if (typeof containerWidth !== 'undefined') {

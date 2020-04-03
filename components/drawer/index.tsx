@@ -23,7 +23,7 @@ export default class Drawer extends React.Component<DrawerNativeProps, any> {
     }
   }
 
-  componentWillReceiveProps(nextProps: DrawerNativeProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: DrawerNativeProps) {
     if (nextProps.open !== this.props.open && this.drawer) {
       this.drawer[nextProps.open ? 'openDrawer' : 'closeDrawer']();
     }

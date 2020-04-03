@@ -17,7 +17,7 @@ class Input extends React.Component<TextInputProps, any> {
     };
   }
 
-  componentWillReceiveProps(nextProps: TextInputProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: TextInputProps) {
     if (nextProps.focused !== this.state.focused) {
       this.setState({
         focused: nextProps.focused,

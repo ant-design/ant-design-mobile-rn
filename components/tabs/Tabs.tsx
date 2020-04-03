@@ -288,7 +288,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     );
   };
 
-  componentWillReceiveProps(nextProps: PropsType) {
+  UNSAFE_componentWillReceiveProps(nextProps: PropsType) {
     if (this.props.page !== nextProps.page && nextProps.page !== undefined) {
       this.goToTab(this.getTabIndex(nextProps), true);
     }

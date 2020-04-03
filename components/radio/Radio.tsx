@@ -23,7 +23,7 @@ export default class Radio extends React.Component<RadioNativeProps, any> {
     };
   }
 
-  componentWillReceiveProps(nextProps: RadioNativeProps): void {
+  UNSAFE_componentWillReceiveProps(nextProps: RadioNativeProps): void {
     if ('checked' in nextProps) {
       this.setState({
         checked: !!nextProps.checked,

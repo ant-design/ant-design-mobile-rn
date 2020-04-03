@@ -89,7 +89,7 @@ export default class InputNumber<
     } as S;
   }
 
-  componentWillReceiveProps(nextProps: P) {
+  UNSAFE_componentWillReceiveProps(nextProps: P) {
     if ('value' in nextProps) {
       const value = this.state.focused
         ? nextProps.value

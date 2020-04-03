@@ -72,7 +72,7 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
       modalVisible: visible,
     };
   }
-  componentWillReceiveProps(nextProps: IModalPropTypes) {
+  UNSAFE_componentWillReceiveProps(nextProps: IModalPropTypes) {
     if (this.shouldComponentUpdate(nextProps, null)) {
       this.setState({
         modalVisible: true,
