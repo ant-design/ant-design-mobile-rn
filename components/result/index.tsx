@@ -13,9 +13,6 @@ export interface ResultNativeProps
 }
 
 export default class Result extends React.Component<ResultNativeProps, any> {
-  static defaultProps = {
-    buttonType: '',
-  };
 
   render() {
     const {
