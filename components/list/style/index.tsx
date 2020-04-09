@@ -13,8 +13,8 @@ export interface ListStyle {
   Extra: TextStyle;
   Brief: ViewStyle;
   BriefText: TextStyle;
-  Arrow: ViewStyle;
-  ArrowV: ViewStyle;
+  Arrow: TextStyle;
+  ArrowV: TextStyle;
   multipleLine: ViewStyle;
   multipleThumb: ImageStyle;
   column: ViewStyle;
