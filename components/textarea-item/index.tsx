@@ -173,7 +173,7 @@ export default class TextAreaItem extends React.Component<
               ) : null}
               {rows! > 1 && count! > 0 ? (
                 <View style={[s.count]}>
-                  <Text>
+                  <Text style={s.countText}>
                     {inputCount} / {count}
                   </Text>
                 </View>

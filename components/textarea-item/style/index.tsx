@@ -7,6 +7,7 @@ export interface TextareaItemStyle {
   icon: ViewStyle;
   errorIcon: ViewStyle;
   count: ViewStyle;
+  countText: TextStyle;
 }
 
 export default (theme: Theme) =>
@@ -38,4 +39,5 @@ export default (theme: Theme) =>
       right: theme.h_spacing_md,
       bottom: theme.h_spacing_md,
     },
+    countText: {},
   });
