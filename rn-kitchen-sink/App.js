@@ -1,11 +1,12 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
+import 'react-native-gesture-handler';
 import { createStackNavigator } from 'react-navigation';
 import Provider from '../components/provider';
-// import Home from './components/Home';
 import RnIndex from './components/RnIndex';
 import WebIndex from './components/WebIndex';
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from './demoList';
+
 
 const getOptions = title => ({
   title,
@@ -56,6 +57,6 @@ class App extends React.Component {
 }
 
 
-AppRegistry.registerComponent('kitchen-sink', () => App);
+AppRegistry.registerComponent('KitchenSink', () => App);
 
 export default App;

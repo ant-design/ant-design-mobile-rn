@@ -1,0 +1,6 @@
+module Pods_KitchenSink_KitchenSinkTests {
+  umbrella header "Pods-KitchenSink-KitchenSinkTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
