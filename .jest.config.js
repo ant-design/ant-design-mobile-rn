@@ -1,29 +1,24 @@
 const libDir = process.env.LIB_DIR;
-const {defaults: tsjPreset} = require('ts-jest/presets');
+const { defaults: tsjPreset } = require('ts-jest/presets');
 
 const transformPackages = [
-  'react-native', 'react-native-modal-popover', 'react-native-tab-view',
-  'react-native-collapsible', 'react-native-swipeout',
-  'react-native-camera-roll-picker', '@bang88/react-native-ultimate-listview',
-  'react-native-safe-area-view'
-]
+  'react-native',
+  'react-native-modal-popover',
+  'react-native-tab-view',
+  'react-native-collapsible',
+  'react-native-swipeout',
+  'react-native-camera-roll-picker',
+  '@bang88/react-native-ultimate-listview',
+  'react-native-safe-area-view',
+  '@react-native-community/cameraroll',
+];
 
 module.exports = {
   // ...tsjPreset,
   preset: 'react-native',
   setupFiles: ['./tests/setup.js'],
-  moduleFileExtensions: [
-    'ts',
-    'tsx',
-    'js',
-    'jsx',
-    'json',
-  ],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '_site',
-    'site',
-  ],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  testPathIgnorePatterns: ['/node_modules/', '_site', 'site'],
   transform: {
     // '\\.tsx?$': 'ts-jest',
     ...tsjPreset.transform,
@@ -45,6 +40,6 @@ module.exports = {
     'ts-jest': {
       babelConfig: true,
       tsConfig: 'tsconfig.test.json',
-    }
-  }
+    },
+  },
 };

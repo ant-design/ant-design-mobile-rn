@@ -1,5 +1,5 @@
 module.exports = {
   dependency: {
-    assets: ["../icons-react-native/fonts"]
-  }
+    assets: ['../icons-react-native/fonts'],
+  },
 };

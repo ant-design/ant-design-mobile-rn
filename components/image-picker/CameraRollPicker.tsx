@@ -1,5 +1,6 @@
+import CameraRoll from "@react-native-community/cameraroll";
 import React, { Component } from 'react';
-import { CameraRoll, GetPhotosParamType, Platform, StyleSheet, View, ViewStyle } from 'react-native';
+import { GetPhotosParamType, Platform, StyleSheet, View, ViewStyle } from 'react-native';
 import ListView from '../list-view';
 import ImageItem from './ImageItem';
 
