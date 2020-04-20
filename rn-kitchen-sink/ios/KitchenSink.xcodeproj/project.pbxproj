@@ -16,6 +16,8 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* KitchenSinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* KitchenSinkTests.m */; };
+		36CBFE3D244D2E300072D6D2 /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36CBFE3B244D2E300072D6D2 /* antfill.ttf */; };
+		36CBFE3E244D2E300072D6D2 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36CBFE3C244D2E300072D6D2 /* antoutline.ttf */; };
 		8CAD9BA1C2A7B40096DF3195 /* libPods-KitchenSink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90229AB818AE3F814E5514D2 /* libPods-KitchenSink.a */; };
 		CDAB779EBB73A13830D0EB77 /* libPods-KitchenSink-KitchenSinkTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1485535A7D71BCF37126AD /* libPods-KitchenSink-KitchenSinkTests.a */; };
 		D495C2CD8FDB44200BCDD1F2 /* libPods-KitchenSink-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B18B74EED8704684D5505B /* libPods-KitchenSink-tvOSTests.a */; };
@@ -56,6 +58,8 @@
 		2D02E47B1E0B4A5D006451C7 /* KitchenSink-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KitchenSink-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* KitchenSink-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KitchenSink-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB10F0AD3B34077D72598A8 /* libPods-KitchenSink-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KitchenSink-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36CBFE3B244D2E300072D6D2 /* antfill.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = antfill.ttf; sourceTree = "<group>"; };
+		36CBFE3C244D2E300072D6D2 /* antoutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = antoutline.ttf; sourceTree = "<group>"; };
 		50C94D78AC08F290B2431E5B /* Pods-KitchenSink-KitchenSinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSink-KitchenSinkTests.debug.xcconfig"; path = "Target Support Files/Pods-KitchenSink-KitchenSinkTests/Pods-KitchenSink-KitchenSinkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D1485535A7D71BCF37126AD /* libPods-KitchenSink-KitchenSinkTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KitchenSink-KitchenSinkTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7019393086B1FF9D0FF773DA /* Pods-KitchenSink-KitchenSinkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSink-KitchenSinkTests.release.xcconfig"; path = "Target Support Files/Pods-KitchenSink-KitchenSinkTests/Pods-KitchenSink-KitchenSinkTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		36CBFE3A244D2E300072D6D2 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				36CBFE3B244D2E300072D6D2 /* antfill.ttf */,
+				36CBFE3C244D2E300072D6D2 /* antoutline.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		5DF7B205AF690F3CB88F192C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +187,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				36CBFE3A244D2E300072D6D2 /* fonts */,
 				13B07FAE1A68108700A75B9A /* KitchenSink */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* KitchenSinkTests */,
@@ -337,6 +351,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36CBFE3D244D2E300072D6D2 /* antfill.ttf in Resources */,
+				36CBFE3E244D2E300072D6D2 /* antoutline.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);

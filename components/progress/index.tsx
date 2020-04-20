@@ -49,6 +49,7 @@ export default class Progress extends React.Component<ProgressProps, any> {
       Animated.timing(this.state.percentage, {
         toValue: this.getWidth(),
         duration: 1000,
+        useNativeDriver: true,
       }).start();
     }
   }
