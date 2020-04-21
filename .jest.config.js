@@ -17,10 +17,10 @@ module.exports = {
   // ...tsjPreset,
   preset: '@testing-library/react-native',
   setupFiles: ["@testing-library/react-native/jest-preset",],
-  setupFilesAfterEnv: [
-    '@testing-library/react-native/cleanup-after-each',
-    // ... other setup files ...
-  ],
+  // setupFilesAfterEnv: [
+  //   '@testing-library/react-native/cleanup-after-each',
+  //   // ... other setup files ...
+  // ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testPathIgnorePatterns: ['/node_modules/', '_site', 'site'],
   transform: {
