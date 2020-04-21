@@ -119,7 +119,6 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
   <RCTSegmentedControl
     enabled={true}
     onChange={[Function]}
-    onValueChange={[Function]}
     selectedIndex={0}
     style={
       Array [

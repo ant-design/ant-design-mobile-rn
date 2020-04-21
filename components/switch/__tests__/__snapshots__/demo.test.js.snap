@@ -17,16 +17,10 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
       }
     }
   >
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
+    <
+      activeOpacity={1}
+      delayLongPress={500}
+      onLongPress={[Function]}
     >
       <View
         style={
@@ -85,33 +79,18 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               On(controlled)
             </Text>
           </View>
-          <RCTSwitch
+          <Switch
             disabled={false}
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             onTintColor="#4dd865"
-            style={
-              Object {
-                "height": 31,
-                "width": 51,
-              }
-            }
             value={true}
           />
         </View>
       </View>
-    </View>
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
+    </>
+    <
+      activeOpacity={1}
+      delayLongPress={500}
+      onLongPress={[Function]}
     >
       <View
         style={
@@ -170,33 +149,18 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               Off(controlled)
             </Text>
           </View>
-          <RCTSwitch
+          <Switch
             disabled={false}
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             onTintColor="#4dd865"
-            style={
-              Object {
-                "height": 31,
-                "width": 51,
-              }
-            }
             value={false}
           />
         </View>
       </View>
-    </View>
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
+    </>
+    <
+      activeOpacity={1}
+      delayLongPress={500}
+      onLongPress={[Function]}
     >
       <View
         style={
@@ -269,33 +233,19 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               close
             </Text>
           </View>
-          <RCTSwitch
+          <Switch
             disabled={false}
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             onTintColor="#4dd865"
-            style={
-              Object {
-                "height": 31,
-                "width": 51,
-              }
-            }
+            onValueChange={[Function]}
             value={false}
           />
         </View>
       </View>
-    </View>
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
+    </>
+    <
+      activeOpacity={1}
+      delayLongPress={500}
+      onLongPress={[Function]}
     >
       <View
         style={
@@ -354,33 +304,18 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               disabled
             </Text>
           </View>
-          <RCTSwitch
+          <Switch
             disabled={true}
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             onTintColor="#4dd865"
-            style={
-              Object {
-                "height": 31,
-                "width": 51,
-              }
-            }
             value={false}
           />
         </View>
       </View>
-    </View>
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
+    </>
+    <
+      activeOpacity={1}
+      delayLongPress={500}
+      onLongPress={[Function]}
     >
       <View
         style={
@@ -439,23 +374,14 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               color
             </Text>
           </View>
-          <RCTSwitch
+          <Switch
             disabled={false}
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             onTintColor="red"
-            style={
-              Object {
-                "height": 31,
-                "width": 51,
-              }
-            }
             value={true}
           />
         </View>
       </View>
-    </View>
+    </>
     <View
       style={
         Array [

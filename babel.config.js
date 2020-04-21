@@ -4,25 +4,25 @@ module.exports = {
       presets: ['module:metro-react-native-babel-preset'],
       plugins: [[
         'import',
-        {libraryName: '@ant-design/react-native', libraryDirectory: 'components'}
-      ]]
+        { libraryName: '@ant-design/react-native', libraryDirectory: 'components' },
+      ]],
     },
     production: {
       presets: ['module:metro-react-native-babel-preset'],
 
       plugins: [[
         'import',
-        {libraryName: '@ant-design/react-native', libraryDirectory: 'components'}
-      ]]
+        { libraryName: '@ant-design/react-native', libraryDirectory: 'components' },
+      ]],
     },
     test: {
       presets: ['module:metro-react-native-babel-preset'],
       plugins: [
         [
           'import',
-          {libraryName: '@ant-design/react-native', libraryDirectory: 'components'}
-        ]
-      ]
-    }
-  }
+          { libraryName: '@ant-design/react-native', libraryDirectory: 'components' },
+        ],
+      ],
+    },
+  },
 };

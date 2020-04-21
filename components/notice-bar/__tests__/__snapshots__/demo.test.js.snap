@@ -18,102 +18,99 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <View
-    accessible={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fffada",
-          "flexDirection": "row",
-          "height": 36,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
+  <TouchableWithoutFeedback
+    onPress={[Function]}
   >
-    <View
-      style={
-        Object {
-          "marginLeft": 15,
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "#f4333c",
-              "fontFamily": "antoutline",
-              "fontSize": 22,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            undefined,
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
     <View
       style={
         Array [
           Object {
-            "flex": 1,
-            "marginRight": 15,
+            "alignItems": "center",
+            "backgroundColor": "#fffada",
+            "flexDirection": "row",
+            "height": 36,
             "overflow": "hidden",
-            "width": 0,
           },
-          Object {
-            "marginLeft": 5,
-          },
+          undefined,
         ]
       }
     >
       <View
-        onLayout={[Function]}
         style={
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
+            "marginLeft": 15,
           }
         }
       >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#f4333c",
+                "fontFamily": "antoutline",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              undefined,
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "marginRight": 15,
+              "overflow": "hidden",
+              "width": 0,
+            },
+            Object {
+              "marginLeft": 5,
+            },
+          ]
+        }
+      >
         <View
+          onLayout={[Function]}
           style={
             Object {
+              "alignItems": "center",
+              "flex": 1,
               "flexDirection": "row",
-              "left": 0,
-              "width": 1000,
             }
           }
         >
-          <Text
-            ellipsizeMode="tail"
-            numberOfLines={1}
-            onLayout={[Function]}
+          <View
             style={
               Object {
-                "color": "red",
-                "fontSize": 12,
+                "flexDirection": "row",
+                "left": 0,
+                "width": 1000,
               }
             }
           >
-            Notice: The arrival time of incomes and transfers of Yu 'E Bao will be delayed during National Day.
-          </Text>
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              onLayout={[Function]}
+              style={
+                Object {
+                  "color": "red",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Notice: The arrival time of incomes and transfers of Yu 'E Bao will be delayed during National Day.
+            </Text>
+          </View>
         </View>
       </View>
     </View>
-  </View>
+  </TouchableWithoutFeedback>
   <View
     style={
       Array [
@@ -212,35 +209,32 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
-      accessible={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "marginRight": 15,
-        }
-      }
+    <TouchableWithoutFeedback
+      onPress={[Function]}
     >
-      <Text
+      <View
         style={
-          Array [
-            Object {
-              "color": "#f4333c",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "left",
-            },
-          ]
+          Object {
+            "marginRight": 15,
+          }
         }
       >
-        ×
-      </Text>
-    </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#f4333c",
+                "fontSize": 18,
+                "fontWeight": "200",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          ×
+        </Text>
+      </View>
+    </TouchableWithoutFeedback>
   </View>
   <View
     style={
@@ -337,35 +331,32 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
-      accessible={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "marginRight": 15,
-        }
-      }
+    <TouchableWithoutFeedback
+      onPress={[Function]}
     >
-      <Text
+      <View
         style={
-          Array [
-            Object {
-              "color": "#f4333c",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "left",
-            },
-          ]
+          Object {
+            "marginRight": 15,
+          }
         }
       >
-        ×
-      </Text>
-    </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#f4333c",
+                "fontSize": 18,
+                "fontWeight": "200",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          ×
+        </Text>
+      </View>
+    </TouchableWithoutFeedback>
   </View>
   <View
     style={
@@ -377,129 +368,126 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <View
-    accessible={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fffada",
-          "flexDirection": "row",
-          "height": 36,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
+  <TouchableWithoutFeedback
+    onPress={[Function]}
   >
-    <View
-      style={
-        Object {
-          "marginLeft": 15,
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "#f4333c",
-              "fontFamily": "antoutline",
-              "fontSize": 22,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            undefined,
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
     <View
       style={
         Array [
           Object {
-            "flex": 1,
-            "marginRight": 15,
+            "alignItems": "center",
+            "backgroundColor": "#fffada",
+            "flexDirection": "row",
+            "height": 36,
             "overflow": "hidden",
-            "width": 0,
           },
-          Object {
-            "marginLeft": 5,
-          },
+          undefined,
         ]
       }
     >
       <View
-        onLayout={[Function]}
         style={
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
+            "marginLeft": 15,
           }
         }
       >
-        <View
+        <Text
           style={
-            Object {
-              "flexDirection": "row",
-              "left": 0,
-              "width": 1000,
-            }
-          }
-        >
-          <Text
-            ellipsizeMode="tail"
-            numberOfLines={1}
-            onLayout={[Function]}
-            style={
+            Array [
               Object {
                 "color": "#f4333c",
-                "fontSize": 15,
-              }
-            }
-          >
-            Notice: The arrival time of incomes and transfers of Yu 'E Bao will be delayed during National Day.
-          </Text>
-        </View>
+                "fontFamily": "antoutline",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              undefined,
+            ]
+          }
+        >
+          
+        </Text>
       </View>
-    </View>
-    <View
-      style={
-        Object {
-          "marginRight": 15,
-        }
-      }
-    >
-      <Text
+      <View
         style={
           Array [
             Object {
-              "color": "#f4333c",
-              "fontSize": 10,
-              "fontWeight": "500",
-              "textAlign": "left",
-              "transform": Array [
-                Object {
-                  "rotate": "225deg",
-                },
-              ],
+              "flex": 1,
+              "marginRight": 15,
+              "overflow": "hidden",
+              "width": 0,
+            },
+            Object {
+              "marginLeft": 5,
             },
           ]
         }
       >
-        ∟
-      </Text>
+        <View
+          onLayout={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "left": 0,
+                "width": 1000,
+              }
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              onLayout={[Function]}
+              style={
+                Object {
+                  "color": "#f4333c",
+                  "fontSize": 15,
+                }
+              }
+            >
+              Notice: The arrival time of incomes and transfers of Yu 'E Bao will be delayed during National Day.
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginRight": 15,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#f4333c",
+                "fontSize": 10,
+                "fontWeight": "500",
+                "textAlign": "left",
+                "transform": Array [
+                  Object {
+                    "rotate": "225deg",
+                  },
+                ],
+              },
+            ]
+          }
+        >
+          ∟
+        </Text>
+      </View>
     </View>
-  </View>
+  </TouchableWithoutFeedback>
   <View
     style={
       Array [
@@ -510,129 +498,126 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <View
-    accessible={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fffada",
-          "flexDirection": "row",
-          "height": 36,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
+  <TouchableWithoutFeedback
+    onPress={[Function]}
   >
-    <View
-      style={
-        Object {
-          "marginLeft": 15,
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "#f4333c",
-              "fontFamily": "antoutline",
-              "fontSize": 22,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            undefined,
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
     <View
       style={
         Array [
           Object {
-            "flex": 1,
-            "marginRight": 15,
+            "alignItems": "center",
+            "backgroundColor": "#fffada",
+            "flexDirection": "row",
+            "height": 36,
             "overflow": "hidden",
-            "width": 0,
           },
-          Object {
-            "marginLeft": 5,
-          },
+          undefined,
         ]
       }
     >
       <View
-        onLayout={[Function]}
         style={
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
+            "marginLeft": 15,
           }
         }
       >
-        <View
+        <Text
           style={
-            Object {
-              "flexDirection": "row",
-              "left": 0,
-              "width": 1000,
-            }
-          }
-        >
-          <Text
-            ellipsizeMode="tail"
-            numberOfLines={1}
-            onLayout={[Function]}
-            style={
+            Array [
               Object {
                 "color": "#f4333c",
-                "fontSize": 15,
-              }
-            }
-          >
-            Notice: The arrival time of incomes and transfers of Yu 'E Bao will be delayed during National Day.
-          </Text>
-        </View>
+                "fontFamily": "antoutline",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              undefined,
+            ]
+          }
+        >
+          
+        </Text>
       </View>
-    </View>
-    <View
-      style={
-        Object {
-          "marginRight": 15,
-        }
-      }
-    >
-      <Text
+      <View
         style={
           Array [
             Object {
-              "color": "#f4333c",
-              "fontSize": 10,
-              "fontWeight": "500",
-              "textAlign": "left",
-              "transform": Array [
-                Object {
-                  "rotate": "225deg",
-                },
-              ],
+              "flex": 1,
+              "marginRight": 15,
+              "overflow": "hidden",
+              "width": 0,
+            },
+            Object {
+              "marginLeft": 5,
             },
           ]
         }
       >
-        ∟
-      </Text>
+        <View
+          onLayout={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "left": 0,
+                "width": 1000,
+              }
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              onLayout={[Function]}
+              style={
+                Object {
+                  "color": "#f4333c",
+                  "fontSize": 15,
+                }
+              }
+            >
+              Notice: The arrival time of incomes and transfers of Yu 'E Bao will be delayed during National Day.
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginRight": 15,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#f4333c",
+                "fontSize": 10,
+                "fontWeight": "500",
+                "textAlign": "left",
+                "transform": Array [
+                  Object {
+                    "rotate": "225deg",
+                  },
+                ],
+              },
+            ]
+          }
+        >
+          ∟
+        </Text>
+      </View>
     </View>
-  </View>
+  </TouchableWithoutFeedback>
   <View
     style={
       Array [
@@ -731,35 +716,32 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
-      accessible={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "marginRight": 15,
-        }
-      }
+    <TouchableWithoutFeedback
+      onPress={[Function]}
     >
-      <Text
+      <View
         style={
-          Array [
-            Object {
-              "color": "#f4333c",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "left",
-            },
-          ]
+          Object {
+            "marginRight": 15,
+          }
         }
       >
-        ×
-      </Text>
-    </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#f4333c",
+                "fontSize": 18,
+                "fontWeight": "200",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          ×
+        </Text>
+      </View>
+    </TouchableWithoutFeedback>
   </View>
   <View
     style={
@@ -859,30 +841,27 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
-      accessible={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "marginRight": 15,
-        }
-      }
+    <TouchableWithoutFeedback
+      onPress={[Function]}
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "#a1a1a1",
+            "marginRight": 15,
           }
         }
       >
-        不再提示
-      </Text>
-    </View>
+        <Text
+          style={
+            Object {
+              "color": "#a1a1a1",
+            }
+          }
+        >
+          不再提示
+        </Text>
+      </View>
+    </TouchableWithoutFeedback>
   </View>
   <View
     style={
@@ -894,112 +873,109 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <View
-    accessible={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fffada",
-          "flexDirection": "row",
-          "height": 36,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
+  <TouchableWithoutFeedback
+    onPress={[Function]}
   >
-    <View
-      style={
-        Object {
-          "marginLeft": 15,
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "#f4333c",
-              "fontFamily": "antoutline",
-              "fontSize": 22,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            undefined,
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
     <View
       style={
         Array [
           Object {
-            "flex": 1,
-            "marginRight": 15,
+            "alignItems": "center",
+            "backgroundColor": "#fffada",
+            "flexDirection": "row",
+            "height": 36,
             "overflow": "hidden",
-            "width": 0,
           },
-          Object {
-            "marginLeft": 5,
-          },
+          undefined,
         ]
       }
     >
       <View
-        onLayout={[Function]}
         style={
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
+            "marginLeft": 15,
           }
         }
       >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#f4333c",
+                "fontFamily": "antoutline",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              undefined,
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "marginRight": 15,
+              "overflow": "hidden",
+              "width": 0,
+            },
+            Object {
+              "marginLeft": 5,
+            },
+          ]
+        }
+      >
         <View
+          onLayout={[Function]}
           style={
             Object {
+              "alignItems": "center",
+              "flex": 1,
               "flexDirection": "row",
-              "left": 0,
-              "width": 1000,
             }
           }
         >
-          <Text
-            ellipsizeMode="tail"
-            numberOfLines={1}
-            onLayout={[Function]}
+          <View
             style={
               Object {
-                "color": "#f4333c",
-                "fontSize": 15,
+                "flexDirection": "row",
+                "left": 0,
+                "width": 1000,
               }
             }
           >
-            Link demo for \`actionText\`.
-          </Text>
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              onLayout={[Function]}
+              style={
+                Object {
+                  "color": "#f4333c",
+                  "fontSize": 15,
+                }
+              }
+            >
+              Link demo for \`actionText\`.
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
-    <View
-      style={
-        Object {
-          "marginRight": 15,
+      <View
+        style={
+          Object {
+            "marginRight": 15,
+          }
         }
-      }
-    >
-      <Text>
-        去看看
-      </Text>
+      >
+        <Text>
+          去看看
+        </Text>
+      </View>
     </View>
-  </View>
+  </TouchableWithoutFeedback>
 </View>
 `;

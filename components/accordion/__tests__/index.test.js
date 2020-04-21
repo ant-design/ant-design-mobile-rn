@@ -1,8 +1,8 @@
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react-native';
 import React from 'react';
-
 import { List } from '../../';
 import Accordion from '../index';
+
 
 const Panel = Accordion.Panel;
 // No need to render Snapshot again, because of `./demo.test.js`
@@ -15,7 +15,7 @@ describe('Accordion', () => {
     handler = jest.fn();
   });
   it('render correctly', () => {
-    wrapper = shallow(
+    wrapper = render(
       <Accordion onChange={handler}>
         <Panel header="Title 1">
           <List>

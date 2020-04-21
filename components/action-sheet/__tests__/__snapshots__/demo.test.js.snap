@@ -17,15 +17,15 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+    <
+      activeOpacity={0.4}
+      disabled={false}
+      onHideUnderlay={[Function]}
+      onPress={[Function]}
+      onPressIn={[Function]}
+      onPressOut={[Function]}
+      onShowUnderlay={[Function]}
+      pressIn={false}
       style={
         Array [
           Object {
@@ -49,6 +49,7 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
           undefined,
         ]
       }
+      underlayColor="#dddddd"
     >
       <View
         style={
@@ -74,7 +75,7 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
           showActionSheet
         </Text>
       </View>
-    </View>
+    </>
   </View>
   <Text
     style={
@@ -97,15 +98,15 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+    <
+      activeOpacity={0.4}
+      disabled={false}
+      onHideUnderlay={[Function]}
+      onPress={[Function]}
+      onPressIn={[Function]}
+      onPressOut={[Function]}
+      onShowUnderlay={[Function]}
+      pressIn={false}
       style={
         Array [
           Object {
@@ -129,6 +130,7 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
           undefined,
         ]
       }
+      underlayColor="#dddddd"
     >
       <View
         style={
@@ -154,7 +156,7 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
           showShareActionSheet
         </Text>
       </View>
-    </View>
+    </>
   </View>
   <Text
     style={

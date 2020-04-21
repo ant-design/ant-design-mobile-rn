@@ -19,16 +19,12 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
       }
     >
       <View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
+        <
+          activeOpacity={0.5}
+          delayLongPress={500}
+          onLongPress={[Function]}
+          onPress={[Function]}
+          underlayColor="#dddddd"
         >
           <View
             style={
@@ -134,19 +130,15 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
               </Text>
             </View>
           </View>
-        </View>
+        </>
       </View>
       <View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={null}
+        <
+          activeOpacity={0.5}
+          delayLongPress={500}
+          onLongPress={[Function]}
+          onPress={[Function]}
+          underlayColor="#dddddd"
         >
           <View
             style={
@@ -252,23 +244,11 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
               </Text>
             </View>
           </View>
-        </View>
+        </>
       </View>
       <View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-            }
-          }
+        <
+          onPress={[Function]}
         >
           <View
             style={
@@ -301,7 +281,7 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
               请选择
             </Text>
           </View>
-        </View>
+        </>
       </View>
       <View
         style={
