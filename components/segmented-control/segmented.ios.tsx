@@ -1,5 +1,6 @@
 import React from 'react';
-import { SegmentedControlIOS, StyleProp, ViewStyle } from 'react-native';
+import SegmentedControlIOS from '@react-native-community/segmented-control';
+import { StyleProp, ViewStyle } from 'react-native';
 import { SegmentedControlPropsType } from './PropsType';
 import { WithTheme } from '../style';
 
