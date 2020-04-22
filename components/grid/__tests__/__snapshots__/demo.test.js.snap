@@ -1,27 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
-<RCTScrollView>
-  <View>
+<ScrollView>
+  <View
+    style={
+      Array [
+        Object {
+          "margin": 10,
+        },
+      ]
+    }
+  >
+    <Text>
+      Simple
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "padding": 10,
+        },
+      ]
+    }
+  >
     <View
       style={
         Array [
           Object {
-            "margin": 10,
+            "alignItems": "center",
+            "flexDirection": "column",
+            "flexWrap": "nowrap",
+            "justifyContent": "flex-start",
           },
-        ]
-      }
-    >
-      <Text>
-        Simple
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "padding": 10,
-          },
+          undefined,
         ]
       }
     >
@@ -30,44 +42,27 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "flexDirection": "column",
+              "flexDirection": "row",
               "flexWrap": "nowrap",
               "justifyContent": "flex-start",
             },
-            undefined,
+            Array [
+              Object {
+                "borderColor": "#dddddd",
+              },
+              Object {
+                "borderBottomWidth": 0,
+                "borderTopWidth": 0,
+              },
+            ],
           ]
         }
       >
-        <View
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "flexWrap": "nowrap",
-                "justifyContent": "flex-start",
-              },
-              Array [
-                Object {
-                  "borderColor": "#dddddd",
-                },
-                Object {
-                  "borderBottomWidth": 0,
-                  "borderTopWidth": 0,
-                },
-              ],
-            ]
-          }
+        <TouchableWithoutFeedback
+          onPress={[Function]}
         >
           <View
-            accessible={true}
             onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -89,918 +84,859 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
               ]
             }
           >
-            <View
-              accessible={true}
+            <TouchableWithoutFeedback
               onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name0
-              </Text>
-            </View>
-          </View>
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {
-                    "borderLeftWidth": 0,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name1
-              </Text>
-            </View>
-          </View>
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {
-                    "borderLeftWidth": 0,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name2
-              </Text>
-            </View>
-          </View>
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {
-                    "borderLeftWidth": 0,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name3
-              </Text>
-            </View>
-          </View>
-        </View>
-        <View
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "flexWrap": "nowrap",
-                "justifyContent": "flex-start",
-              },
-              Array [
-                Object {
-                  "borderColor": "#dddddd",
-                },
-                Object {
-                  "borderBottomWidth": 0,
-                  "borderTopWidth": 0,
-                },
-              ],
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {
-                    "borderLeftWidth": 0,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name4
-              </Text>
-            </View>
-          </View>
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {
-                    "borderLeftWidth": 0,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name5
-              </Text>
-            </View>
-          </View>
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {
-                    "borderLeftWidth": 0,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name6
-              </Text>
-            </View>
-          </View>
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {
-                    "borderLeftWidth": 0,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name7
-              </Text>
-            </View>
-          </View>
-        </View>
-        <View
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "flexWrap": "nowrap",
-                "justifyContent": "flex-start",
-              },
-              Array [
-                Object {
-                  "borderColor": "#dddddd",
-                },
-                Object {
-                  "borderBottomWidth": 0,
-                  "borderTopWidth": 0,
-                },
-              ],
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {
-                    "borderLeftWidth": 0,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              onPress={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "column",
-                    "flexWrap": "nowrap",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "flex": 1,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": 22,
-                    "width": 22,
-                  }
-                }
-              />
-              <Text
-                style={
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 12,
-                    "marginTop": 9,
-                  }
-                }
-              >
-                Name8
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                },
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderRightWidth": 0,
-                    "height": 187.5,
-                  },
-                  Object {},
-                ],
-              ]
-            }
-          />
-        </View>
-      </View>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "margin": 10,
-          },
-        ]
-      }
-    >
-      <Text>
-        Carousel
-      </Text>
-    </View>
-    <View
-      onLayout={[Function]}
-      style={Object {}}
-    >
-      <RCTScrollView
-        automaticallyAdjustContentInsets={false}
-        autoplay={false}
-        autoplayInterval={3000}
-        bounces={true}
-        contentOffset={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        directionalLockEnabled={true}
-        dotActiveStyle={Object {}}
-        dotStyle={Object {}}
-        dots={true}
-        horizontal={true}
-        infinite={false}
-        onMomentumScrollEnd={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        pagination={[Function]}
-        pagingEnabled={true}
-        removeClippedSubviews={false}
-        scrollEventThrottle={100}
-        selectedIndex={0}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        vertical={false}
-      >
-        <View>
-          <View
-            onLayout={[Function]}
-            style={
-              Object {
-                "width": 0,
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "borderColor": "#dddddd",
-                  },
-                  Object {
-                    "borderTopWidth": 0,
-                  },
-                ]
-              }
             >
               <View
+                onPress={[Function]}
                 style={
                   Array [
                     Object {
                       "alignItems": "center",
-                      "flexDirection": "row",
+                      "flexDirection": "column",
                       "flexWrap": "nowrap",
-                      "justifyContent": "flex-start",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name0
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderRightWidth": 0,
+                    "height": 187.5,
+                  },
+                  Object {
+                    "borderLeftWidth": 0,
+                  },
+                  Object {},
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "column",
+                      "flexWrap": "nowrap",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name1
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderRightWidth": 0,
+                    "height": 187.5,
+                  },
+                  Object {
+                    "borderLeftWidth": 0,
+                  },
+                  Object {},
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "column",
+                      "flexWrap": "nowrap",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name2
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderRightWidth": 0,
+                    "height": 187.5,
+                  },
+                  Object {
+                    "borderLeftWidth": 0,
+                  },
+                  Object {},
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "column",
+                      "flexWrap": "nowrap",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name3
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "flex-start",
+            },
+            Array [
+              Object {
+                "borderColor": "#dddddd",
+              },
+              Object {
+                "borderBottomWidth": 0,
+                "borderTopWidth": 0,
+              },
+            ],
+          ]
+        }
+      >
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderRightWidth": 0,
+                    "height": 187.5,
+                  },
+                  Object {
+                    "borderLeftWidth": 0,
+                  },
+                  Object {},
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "column",
+                      "flexWrap": "nowrap",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name4
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderRightWidth": 0,
+                    "height": 187.5,
+                  },
+                  Object {
+                    "borderLeftWidth": 0,
+                  },
+                  Object {},
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "column",
+                      "flexWrap": "nowrap",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name5
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderRightWidth": 0,
+                    "height": 187.5,
+                  },
+                  Object {
+                    "borderLeftWidth": 0,
+                  },
+                  Object {},
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "column",
+                      "flexWrap": "nowrap",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name6
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderRightWidth": 0,
+                    "height": 187.5,
+                  },
+                  Object {
+                    "borderLeftWidth": 0,
+                  },
+                  Object {},
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "column",
+                      "flexWrap": "nowrap",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name7
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "flex-start",
+            },
+            Array [
+              Object {
+                "borderColor": "#dddddd",
+              },
+              Object {
+                "borderBottomWidth": 0,
+                "borderTopWidth": 0,
+              },
+            ],
+          ]
+        }
+      >
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderRightWidth": 0,
+                    "height": 187.5,
+                  },
+                  Object {
+                    "borderLeftWidth": 0,
+                  },
+                  Object {},
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "column",
+                      "flexWrap": "nowrap",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "flex": 1,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 22,
+                      "width": 22,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 12,
+                      "marginTop": 9,
+                    }
+                  }
+                >
+                  Name8
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0,
+                  "height": 187.5,
+                },
+                Object {},
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0,
+                  "height": 187.5,
+                },
+                Object {},
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0,
+                  "height": 187.5,
+                },
+                Object {},
+              ],
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "margin": 10,
+        },
+      ]
+    }
+  >
+    <Text>
+      Carousel
+    </Text>
+  </View>
+  <View
+    onLayout={[Function]}
+    style={Object {}}
+  >
+    <ScrollView
+      automaticallyAdjustContentInsets={false}
+      autoplay={false}
+      autoplayInterval={3000}
+      bounces={true}
+      contentOffset={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      directionalLockEnabled={true}
+      dotActiveStyle={Object {}}
+      dotStyle={Object {}}
+      dots={true}
+      horizontal={true}
+      infinite={false}
+      onMomentumScrollEnd={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      pagination={[Function]}
+      pagingEnabled={true}
+      removeClippedSubviews={false}
+      scrollEventThrottle={100}
+      selectedIndex={0}
+      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
+      vertical={false}
+    >
+      <View
+        onLayout={[Function]}
+        style={
+          Object {
+            "width": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderColor": "#dddddd",
+              },
+              Object {
+                "borderTopWidth": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "flexWrap": "nowrap",
+                  "justifyContent": "flex-start",
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderBottomWidth": 0.5,
+                    "borderTopWidth": 0.5,
+                  },
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
                     },
                     Array [
                       Object {
                         "borderColor": "#dddddd",
                       },
                       Object {
-                        "borderBottomWidth": 0.5,
-                        "borderTopWidth": 0.5,
+                        "borderRightWidth": 0.5,
+                        "height": 250,
                       },
+                      Object {
+                        "borderLeftWidth": 0.5,
+                      },
+                      Object {},
                     ],
                   ]
                 }
               >
-                <View
-                  accessible={true}
+                <TouchableWithoutFeedback
                   onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                      },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0.5,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1040,46 +976,40 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name0
                     </Text>
                   </View>
-                </View>
-                <View
-                  accessible={true}
-                  onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
+                </TouchableWithoutFeedback>
+              </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                    },
                     Array [
                       Object {
-                        "flex": 1,
+                        "borderColor": "#dddddd",
                       },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
+                      Object {
+                        "borderRightWidth": 0.5,
+                        "height": 250,
+                      },
+                      Object {
+                        "borderLeftWidth": 0,
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                <TouchableWithoutFeedback
+                  onPress={[Function]}
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1119,46 +1049,40 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name1
                     </Text>
                   </View>
-                </View>
-                <View
-                  accessible={true}
-                  onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
+                </TouchableWithoutFeedback>
+              </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                    },
                     Array [
                       Object {
-                        "flex": 1,
+                        "borderColor": "#dddddd",
                       },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
+                      Object {
+                        "borderRightWidth": 0.5,
+                        "height": 250,
+                      },
+                      Object {
+                        "borderLeftWidth": 0,
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                <TouchableWithoutFeedback
+                  onPress={[Function]}
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1198,68 +1122,62 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name2
                     </Text>
                   </View>
-                </View>
+                </TouchableWithoutFeedback>
               </View>
+            </TouchableWithoutFeedback>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "flexWrap": "nowrap",
+                  "justifyContent": "flex-start",
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderBottomWidth": 0.5,
+                    "borderTopWidth": 0,
+                  },
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
               <View
+                onPress={[Function]}
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "flexWrap": "nowrap",
-                      "justifyContent": "flex-start",
+                      "flex": 1,
                     },
                     Array [
                       Object {
                         "borderColor": "#dddddd",
                       },
                       Object {
-                        "borderBottomWidth": 0.5,
-                        "borderTopWidth": 0,
+                        "borderRightWidth": 0.5,
+                        "height": 250,
                       },
+                      Object {
+                        "borderLeftWidth": 0.5,
+                      },
+                      Object {},
                     ],
                   ]
                 }
               >
-                <View
-                  accessible={true}
+                <TouchableWithoutFeedback
                   onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                      },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0.5,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1299,46 +1217,40 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name3
                     </Text>
                   </View>
-                </View>
-                <View
-                  accessible={true}
-                  onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
+                </TouchableWithoutFeedback>
+              </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                    },
                     Array [
                       Object {
-                        "flex": 1,
+                        "borderColor": "#dddddd",
                       },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
+                      Object {
+                        "borderRightWidth": 0.5,
+                        "height": 250,
+                      },
+                      Object {
+                        "borderLeftWidth": 0,
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                <TouchableWithoutFeedback
+                  onPress={[Function]}
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1378,46 +1290,40 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name4
                     </Text>
                   </View>
-                </View>
-                <View
-                  accessible={true}
-                  onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
+                </TouchableWithoutFeedback>
+              </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                    },
                     Array [
                       Object {
-                        "flex": 1,
+                        "borderColor": "#dddddd",
                       },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
+                      Object {
+                        "borderRightWidth": 0.5,
+                        "height": 250,
+                      },
+                      Object {
+                        "borderLeftWidth": 0,
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                <TouchableWithoutFeedback
+                  onPress={[Function]}
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1457,90 +1363,84 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name5
                     </Text>
                   </View>
-                </View>
+                </TouchableWithoutFeedback>
               </View>
-            </View>
+            </TouchableWithoutFeedback>
           </View>
-          <View
-            onLayout={[Function]}
-            style={
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Object {
+            "width": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
               Object {
-                "width": 0,
-              }
-            }
-          >
-            <View
-              style={
+                "borderColor": "#dddddd",
+              },
+              Object {
+                "borderTopWidth": 0.5,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "flexWrap": "nowrap",
+                  "justifyContent": "flex-start",
+                },
                 Array [
                   Object {
                     "borderColor": "#dddddd",
                   },
                   Object {
-                    "borderTopWidth": 0.5,
+                    "borderBottomWidth": 0.5,
+                    "borderTopWidth": 0,
                   },
-                ]
-              }
+                ],
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
             >
               <View
+                onPress={[Function]}
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "flexWrap": "nowrap",
-                      "justifyContent": "flex-start",
+                      "flex": 1,
                     },
                     Array [
                       Object {
                         "borderColor": "#dddddd",
                       },
                       Object {
-                        "borderBottomWidth": 0.5,
-                        "borderTopWidth": 0,
+                        "borderRightWidth": 0.5,
+                        "height": 250,
                       },
+                      Object {
+                        "borderLeftWidth": 0.5,
+                      },
+                      Object {},
                     ],
                   ]
                 }
               >
-                <View
-                  accessible={true}
+                <TouchableWithoutFeedback
                   onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                      },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0.5,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1580,46 +1480,40 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name6
                     </Text>
                   </View>
-                </View>
-                <View
-                  accessible={true}
-                  onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
+                </TouchableWithoutFeedback>
+              </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                    },
                     Array [
                       Object {
-                        "flex": 1,
+                        "borderColor": "#dddddd",
                       },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
+                      Object {
+                        "borderRightWidth": 0.5,
+                        "height": 250,
+                      },
+                      Object {
+                        "borderLeftWidth": 0,
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                <TouchableWithoutFeedback
+                  onPress={[Function]}
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1659,46 +1553,40 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name7
                     </Text>
                   </View>
-                </View>
-                <View
-                  accessible={true}
-                  onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
+                </TouchableWithoutFeedback>
+              </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <View
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                    },
                     Array [
                       Object {
-                        "flex": 1,
+                        "borderColor": "#dddddd",
                       },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                        Object {
-                          "borderLeftWidth": 0,
-                        },
-                        Object {},
-                      ],
-                    ]
-                  }
+                      Object {
+                        "borderRightWidth": 0.5,
+                        "height": 250,
+                      },
+                      Object {
+                        "borderLeftWidth": 0,
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                <TouchableWithoutFeedback
+                  onPress={[Function]}
                 >
                   <View
-                    accessible={true}
                     onPress={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -1738,208 +1626,455 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
                       Name8
                     </Text>
                   </View>
-                </View>
+                </TouchableWithoutFeedback>
               </View>
-              <View
-                style={
+            </TouchableWithoutFeedback>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "flexWrap": "nowrap",
+                  "justifyContent": "flex-start",
+                },
+                Array [
+                  Object {
+                    "borderColor": "#dddddd",
+                  },
+                  Object {
+                    "borderBottomWidth": 0.5,
+                  },
+                ],
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                  },
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "flexWrap": "nowrap",
-                      "justifyContent": "flex-start",
+                      "borderColor": "#dddddd",
                     },
-                    Array [
-                      Object {
-                        "borderColor": "#dddddd",
-                      },
-                      Object {
-                        "borderBottomWidth": 0.5,
-                      },
-                    ],
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                      },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                      ],
-                    ]
-                  }
-                />
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                      },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                      ],
-                    ]
-                  }
-                />
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                      },
-                      Array [
-                        Object {
-                          "borderColor": "#dddddd",
-                        },
-                        Object {
-                          "borderRightWidth": 0.5,
-                          "height": 250,
-                        },
-                      ],
-                    ]
-                  }
-                />
-              </View>
-            </View>
+                    Object {
+                      "borderRightWidth": 0.5,
+                      "height": 250,
+                    },
+                  ],
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                  },
+                  Array [
+                    Object {
+                      "borderColor": "#dddddd",
+                    },
+                    Object {
+                      "borderRightWidth": 0.5,
+                      "height": 250,
+                    },
+                  ],
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                  },
+                  Array [
+                    Object {
+                      "borderColor": "#dddddd",
+                    },
+                    Object {
+                      "borderRightWidth": 0.5,
+                      "height": 250,
+                    },
+                  ],
+                ]
+              }
+            />
           </View>
         </View>
-      </RCTScrollView>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "position": "absolute",
-            },
-            Object {
-              "bottom": 10,
-              "left": 0,
-              "right": 0,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                Object {
-                  "backgroundColor": "#888",
-                },
-                Object {},
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                false,
-                false,
-              ]
-            }
-          />
-        </View>
       </View>
-    </View>
+    </ScrollView>
     <View
       style={
         Array [
           Object {
-            "margin": 10,
+            "alignItems": "center",
+            "position": "absolute",
+          },
+          Object {
+            "bottom": 10,
+            "left": 0,
+            "right": 0,
           },
         ]
       }
     >
-      <Text>
-        Custom GridCell Style
-      </Text>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#cccccc",
+                "borderRadius": 8,
+                "height": 8,
+                "width": 8,
+              },
+              Object {
+                "marginHorizontal": 2.5,
+                "marginVertical": 3,
+              },
+              Object {},
+              Object {
+                "backgroundColor": "#888",
+              },
+              Object {},
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#cccccc",
+                "borderRadius": 8,
+                "height": 8,
+                "width": 8,
+              },
+              Object {
+                "marginHorizontal": 2.5,
+                "marginVertical": 3,
+              },
+              Object {},
+              false,
+              false,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "margin": 10,
+        },
+      ]
+    }
+  >
+    <Text>
+      Custom GridCell Style
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "column",
+          "flexWrap": "nowrap",
+          "justifyContent": "flex-start",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "justifyContent": "flex-start",
+          },
+          Array [
+            Object {
+              "borderColor": "#dddddd",
+            },
+            Object {
+              "borderBottomWidth": 0.5,
+              "borderTopWidth": 0.5,
+            },
+          ],
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0.5,
+                  "height": 250,
+                },
+                Object {
+                  "borderLeftWidth": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#ffff00",
+                  "height": 150,
+                },
+              ],
+            ]
+          }
+        >
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name0
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0.5,
+                  "height": 250,
+                },
+                Object {
+                  "borderLeftWidth": 0,
+                },
+                Object {
+                  "backgroundColor": "#ffff00",
+                  "height": 150,
+                },
+              ],
+            ]
+          }
+        >
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name1
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0.5,
+                  "height": 250,
+                },
+                Object {
+                  "borderLeftWidth": 0,
+                },
+                Object {
+                  "backgroundColor": "#ffff00",
+                  "height": 150,
+                },
+              ],
+            ]
+          }
+        >
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name2
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
     </View>
     <View
       style={
         Array [
           Object {
             "alignItems": "center",
-            "flexDirection": "column",
+            "flexDirection": "row",
             "flexWrap": "nowrap",
             "justifyContent": "flex-start",
           },
-          undefined,
+          Array [
+            Object {
+              "borderColor": "#dddddd",
+            },
+            Object {
+              "borderBottomWidth": 0.5,
+              "borderTopWidth": 0,
+            },
+          ],
         ]
       }
     >
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-              "flexWrap": "nowrap",
-              "justifyContent": "flex-start",
-            },
-            Array [
-              Object {
-                "borderColor": "#dddddd",
-              },
-              Object {
-                "borderBottomWidth": 0.5,
-                "borderTopWidth": 0.5,
-              },
-            ],
-          ]
-        }
+      <TouchableWithoutFeedback
+        onPress={[Function]}
       >
         <View
-          accessible={true}
           onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
@@ -1964,250 +2099,232 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <View
-            accessible={true}
+          <TouchableWithoutFeedback
             onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
           >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
+            <View
+              onPress={[Function]}
               style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
               }
             >
-              Name0
-            </Text>
-          </View>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name3
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
-        <View
-          accessible={true}
-          onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              Object {
-                "flex": 1,
-              },
-              Array [
-                Object {
-                  "borderColor": "#dddddd",
-                },
-                Object {
-                  "borderRightWidth": 0.5,
-                  "height": 250,
-                },
-                Object {
-                  "borderLeftWidth": 0,
-                },
-                Object {
-                  "backgroundColor": "#ffff00",
-                  "height": 150,
-                },
-              ],
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
-          >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
-              style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
-              }
-            >
-              Name1
-            </Text>
-          </View>
-        </View>
-        <View
-          accessible={true}
-          onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              Object {
-                "flex": 1,
-              },
-              Array [
-                Object {
-                  "borderColor": "#dddddd",
-                },
-                Object {
-                  "borderRightWidth": 0.5,
-                  "height": 250,
-                },
-                Object {
-                  "borderLeftWidth": 0,
-                },
-                Object {
-                  "backgroundColor": "#ffff00",
-                  "height": 150,
-                },
-              ],
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
-          >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
-              style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
-              }
-            >
-              Name2
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-              "flexWrap": "nowrap",
-              "justifyContent": "flex-start",
-            },
-            Array [
-              Object {
-                "borderColor": "#dddddd",
-              },
-              Object {
-                "borderBottomWidth": 0.5,
-                "borderTopWidth": 0,
-              },
-            ],
-          ]
-        }
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
       >
         <View
-          accessible={true}
           onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0.5,
+                  "height": 250,
+                },
+                Object {
+                  "borderLeftWidth": 0,
+                },
+                Object {
+                  "backgroundColor": "#ffff00",
+                  "height": 150,
+                },
+              ],
+            ]
+          }
+        >
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name4
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0.5,
+                  "height": 250,
+                },
+                Object {
+                  "borderLeftWidth": 0,
+                },
+                Object {
+                  "backgroundColor": "#ffff00",
+                  "height": 150,
+                },
+              ],
+            ]
+          }
+        >
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name5
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "justifyContent": "flex-start",
+          },
+          Array [
+            Object {
+              "borderColor": "#dddddd",
+            },
+            Object {
+              "borderBottomWidth": 0.5,
+              "borderTopWidth": 0,
+            },
+          ],
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
+          onPress={[Function]}
           style={
             Array [
               Object {
@@ -2232,332 +2349,58 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <View
-            accessible={true}
+          <TouchableWithoutFeedback
             onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
           >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
+            <View
+              onPress={[Function]}
               style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
               }
             >
-              Name3
-            </Text>
-          </View>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name6
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
-        <View
-          accessible={true}
-          onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              Object {
-                "flex": 1,
-              },
-              Array [
-                Object {
-                  "borderColor": "#dddddd",
-                },
-                Object {
-                  "borderRightWidth": 0.5,
-                  "height": 250,
-                },
-                Object {
-                  "borderLeftWidth": 0,
-                },
-                Object {
-                  "backgroundColor": "#ffff00",
-                  "height": 150,
-                },
-              ],
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
-          >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
-              style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
-              }
-            >
-              Name4
-            </Text>
-          </View>
-        </View>
-        <View
-          accessible={true}
-          onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              Object {
-                "flex": 1,
-              },
-              Array [
-                Object {
-                  "borderColor": "#dddddd",
-                },
-                Object {
-                  "borderRightWidth": 0.5,
-                  "height": 250,
-                },
-                Object {
-                  "borderLeftWidth": 0,
-                },
-                Object {
-                  "backgroundColor": "#ffff00",
-                  "height": 150,
-                },
-              ],
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
-          >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
-              style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
-              }
-            >
-              Name5
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-              "flexWrap": "nowrap",
-              "justifyContent": "flex-start",
-            },
-            Array [
-              Object {
-                "borderColor": "#dddddd",
-              },
-              Object {
-                "borderBottomWidth": 0.5,
-                "borderTopWidth": 0,
-              },
-            ],
-          ]
-        }
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
       >
         <View
-          accessible={true}
           onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              Object {
-                "flex": 1,
-              },
-              Array [
-                Object {
-                  "borderColor": "#dddddd",
-                },
-                Object {
-                  "borderRightWidth": 0.5,
-                  "height": 250,
-                },
-                Object {
-                  "borderLeftWidth": 0.5,
-                },
-                Object {
-                  "backgroundColor": "#ffff00",
-                  "height": 150,
-                },
-              ],
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
-          >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
-              style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
-              }
-            >
-              Name6
-            </Text>
-          </View>
-        </View>
-        <View
-          accessible={true}
-          onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
@@ -2582,64 +2425,58 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <View
-            accessible={true}
+          <TouchableWithoutFeedback
             onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
           >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
+            <View
+              onPress={[Function]}
               style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
               }
             >
-              Name7
-            </Text>
-          </View>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name7
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
         <View
-          accessible={true}
           onPress={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
@@ -2664,57 +2501,54 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <View
-            accessible={true}
+          <TouchableWithoutFeedback
             onPress={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "column",
-                  "flexWrap": "nowrap",
-                  "justifyContent": "center",
-                },
-                Object {
-                  "flex": 1,
-                },
-              ]
-            }
           >
-            <Image
-              source={
-                Object {
-                  "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-                }
-              }
+            <View
+              onPress={[Function]}
               style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
-            />
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 12,
-                  "marginTop": 9,
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "column",
+                    "flexWrap": "nowrap",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
               }
             >
-              Name8
-            </Text>
-          </View>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 22,
+                    "width": 22,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "marginTop": 9,
+                  }
+                }
+              >
+                Name8
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     </View>
   </View>
-</RCTScrollView>
+</ScrollView>
 `;

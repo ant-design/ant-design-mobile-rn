@@ -94,15 +94,15 @@ exports[`renders ./components/progress/demo/basic.tsx correctly 1`] = `
       %
     </Text>
   </View>
-  <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+  <
+    activeOpacity={0.4}
+    disabled={false}
+    onHideUnderlay={[Function]}
+    onPress={[Function]}
+    onPressIn={[Function]}
+    onPressOut={[Function]}
+    onShowUnderlay={[Function]}
+    pressIn={false}
     style={
       Array [
         Object {
@@ -129,6 +129,7 @@ exports[`renders ./components/progress/demo/basic.tsx correctly 1`] = `
         },
       ]
     }
+    underlayColor="transparent"
   >
     <View
       style={
@@ -154,7 +155,7 @@ exports[`renders ./components/progress/demo/basic.tsx correctly 1`] = `
         (+-)10
       </Text>
     </View>
-  </View>
+  </>
   <View
     style={
       Array [

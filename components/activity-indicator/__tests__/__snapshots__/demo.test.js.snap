@@ -364,15 +364,15 @@ exports[`renders ./components/activity-indicator/demo/basic.tsx correctly 1`] = 
       ]
     }
   >
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+    <
+      activeOpacity={0.4}
+      disabled={false}
+      onHideUnderlay={[Function]}
+      onPress={[Function]}
+      onPressIn={[Function]}
+      onPressOut={[Function]}
+      onShowUnderlay={[Function]}
+      pressIn={false}
       style={
         Array [
           Object {
@@ -396,6 +396,7 @@ exports[`renders ./components/activity-indicator/demo/basic.tsx correctly 1`] = 
           undefined,
         ]
       }
+      underlayColor="#dddddd"
     >
       <View
         style={
@@ -421,7 +422,7 @@ exports[`renders ./components/activity-indicator/demo/basic.tsx correctly 1`] = 
           Click to show Toast
         </Text>
       </View>
-    </View>
+    </>
   </View>
 </View>
 `;

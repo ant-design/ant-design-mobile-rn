@@ -1,11 +1,13 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import 'react-native-gesture-handler';
 import Provider from '../components/provider';
-// import Home from './components/Home';
 import RnIndex from './components/RnIndex';
 import WebIndex from './components/WebIndex';
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from './demoList';
+
 
 const getOptions = title => ({
   title,
@@ -38,7 +40,8 @@ const scenes = {
   };
 });
 
-const RootNavigator = createStackNavigator(scenes);
+const Stack = createStackNavigator();
+
 class App extends React.Component {
   state = {
     theme: null,
@@ -50,12 +53,19 @@ class App extends React.Component {
   render() {
     const { theme, currentTheme } = this.state;
     return (<Provider theme={theme}>
-      <RootNavigator screenProps={{ changeTheme: this.changeTheme, currentTheme }} />
+      <NavigationContainer screenProps={{ changeTheme: this.changeTheme, currentTheme }} initialRouteName="Home">
+        <Stack.Navigator>
+          {Object.keys(scenes).map(key => (<Stack.Screen name={key}
+            component={scenes[key].screen}
+            options={scenes[key].navigationOptions}
+          />))}
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>);
   }
 }
 
 
-AppRegistry.registerComponent('kitchen-sink', () => App);
+AppRegistry.registerComponent('KitchenSink', () => App);
 
 export default App;

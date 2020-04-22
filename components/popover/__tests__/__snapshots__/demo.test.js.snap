@@ -12,16 +12,10 @@ Array [
         }
       }
     >
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
       >
         <View
           style={
@@ -72,18 +66,11 @@ Array [
               </View>
             </View>
             <View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
                     "paddingHorizontal": 6,
                   }
                 }
@@ -91,7 +78,7 @@ Array [
                 <Text>
                   菜单
                 </Text>
-              </View>
+              </>
               <Modal
                 hardwareAccelerated={false}
                 onDismiss={[Function]}
@@ -122,27 +109,24 @@ Array [
                     ]
                   }
                 >
-                  <View
-                    accessible={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                  <TouchableWithoutFeedback
+                    onPress={[Function]}
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "left": 0,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
                       }
-                    }
-                    useNativeDriver={false}
-                  />
+                      useNativeDriver={false}
+                    />
+                  </TouchableWithoutFeedback>
                   <View
                     style={
                       Object {
@@ -186,120 +170,100 @@ Array [
                       }
                       useNativeDriver={false}
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
+                      <ScrollView>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            1
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            2
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            3
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          disabled={true}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text
                             style={
                               Object {
-                                "opacity": 1,
-                                "padding": 9,
+                                "color": "#ddd",
                               }
                             }
                           >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                            disabled opt
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
                               Object {
-                                "opacity": 1,
                                 "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                              },
                               Object {
                                 "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
+                              },
+                            ]
+                          }
+                        >
+                          <Text>
+                            关闭
+                          </Text>
+                        </>
+                      </ScrollView>
                     </View>
                     <View
                       style={
@@ -335,17 +299,11 @@ Array [
             </View>
           </View>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
+      </>
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
       >
         <View
           style={
@@ -396,18 +354,11 @@ Array [
               </View>
             </View>
             <View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
                     "paddingHorizontal": 6,
                   }
                 }
@@ -415,7 +366,7 @@ Array [
                 <Text>
                   菜单
                 </Text>
-              </View>
+              </>
               <Modal
                 hardwareAccelerated={false}
                 onDismiss={[Function]}
@@ -446,27 +397,24 @@ Array [
                     ]
                   }
                 >
-                  <View
-                    accessible={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                  <TouchableWithoutFeedback
+                    onPress={[Function]}
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "left": 0,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
                       }
-                    }
-                    useNativeDriver={false}
-                  />
+                      useNativeDriver={false}
+                    />
+                  </TouchableWithoutFeedback>
                   <View
                     style={
                       Object {
@@ -510,120 +458,100 @@ Array [
                       }
                       useNativeDriver={false}
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
+                      <ScrollView>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            1
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            2
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            3
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          disabled={true}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text
                             style={
                               Object {
-                                "opacity": 1,
-                                "padding": 9,
+                                "color": "#ddd",
                               }
                             }
                           >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                            disabled opt
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
                               Object {
-                                "opacity": 1,
                                 "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                              },
                               Object {
                                 "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
+                              },
+                            ]
+                          }
+                        >
+                          <Text>
+                            关闭
+                          </Text>
+                        </>
+                      </ScrollView>
                     </View>
                     <View
                       style={
@@ -659,17 +587,11 @@ Array [
             </View>
           </View>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
+      </>
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
       >
         <View
           style={
@@ -720,18 +642,11 @@ Array [
               </View>
             </View>
             <View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
                     "paddingHorizontal": 6,
                   }
                 }
@@ -739,7 +654,7 @@ Array [
                 <Text>
                   菜单
                 </Text>
-              </View>
+              </>
               <Modal
                 hardwareAccelerated={false}
                 onDismiss={[Function]}
@@ -770,27 +685,24 @@ Array [
                     ]
                   }
                 >
-                  <View
-                    accessible={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                  <TouchableWithoutFeedback
+                    onPress={[Function]}
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "left": 0,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
                       }
-                    }
-                    useNativeDriver={false}
-                  />
+                      useNativeDriver={false}
+                    />
+                  </TouchableWithoutFeedback>
                   <View
                     style={
                       Object {
@@ -834,120 +746,100 @@ Array [
                       }
                       useNativeDriver={false}
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
+                      <ScrollView>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            1
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            2
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            3
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          disabled={true}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text
                             style={
                               Object {
-                                "opacity": 1,
-                                "padding": 9,
+                                "color": "#ddd",
                               }
                             }
                           >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                            disabled opt
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
                               Object {
-                                "opacity": 1,
                                 "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                              },
                               Object {
                                 "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
+                              },
+                            ]
+                          }
+                        >
+                          <Text>
+                            关闭
+                          </Text>
+                        </>
+                      </ScrollView>
                     </View>
                     <View
                       style={
@@ -983,17 +875,11 @@ Array [
             </View>
           </View>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
+      </>
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
       >
         <View
           style={
@@ -1044,18 +930,11 @@ Array [
               </View>
             </View>
             <View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
                     "paddingHorizontal": 6,
                   }
                 }
@@ -1063,7 +942,7 @@ Array [
                 <Text>
                   菜单
                 </Text>
-              </View>
+              </>
               <Modal
                 hardwareAccelerated={false}
                 onDismiss={[Function]}
@@ -1094,27 +973,24 @@ Array [
                     ]
                   }
                 >
-                  <View
-                    accessible={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                  <TouchableWithoutFeedback
+                    onPress={[Function]}
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "left": 0,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
                       }
-                    }
-                    useNativeDriver={false}
-                  />
+                      useNativeDriver={false}
+                    />
+                  </TouchableWithoutFeedback>
                   <View
                     style={
                       Object {
@@ -1158,120 +1034,100 @@ Array [
                       }
                       useNativeDriver={false}
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
+                      <ScrollView>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            1
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            2
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            3
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          disabled={true}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text
                             style={
                               Object {
-                                "opacity": 1,
-                                "padding": 9,
+                                "color": "#ddd",
                               }
                             }
                           >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                            disabled opt
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
                               Object {
-                                "opacity": 1,
                                 "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                              },
                               Object {
                                 "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
+                              },
+                            ]
+                          }
+                        >
+                          <Text>
+                            关闭
+                          </Text>
+                        </>
+                      </ScrollView>
                     </View>
                     <View
                       style={
@@ -1307,17 +1163,11 @@ Array [
             </View>
           </View>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
+      </>
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
       >
         <View
           style={
@@ -1368,18 +1218,11 @@ Array [
               </View>
             </View>
             <View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
                     "paddingHorizontal": 6,
                   }
                 }
@@ -1387,7 +1230,7 @@ Array [
                 <Text>
                   菜单
                 </Text>
-              </View>
+              </>
               <Modal
                 hardwareAccelerated={false}
                 onDismiss={[Function]}
@@ -1418,27 +1261,24 @@ Array [
                     ]
                   }
                 >
-                  <View
-                    accessible={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                  <TouchableWithoutFeedback
+                    onPress={[Function]}
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "left": 0,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
                       }
-                    }
-                    useNativeDriver={false}
-                  />
+                      useNativeDriver={false}
+                    />
+                  </TouchableWithoutFeedback>
                   <View
                     style={
                       Object {
@@ -1482,120 +1322,100 @@ Array [
                       }
                       useNativeDriver={false}
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
+                      <ScrollView>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            1
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            2
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            3
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          disabled={true}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text
                             style={
                               Object {
-                                "opacity": 1,
-                                "padding": 9,
+                                "color": "#ddd",
                               }
                             }
                           >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                            disabled opt
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
                               Object {
-                                "opacity": 1,
                                 "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                              },
                               Object {
                                 "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
+                              },
+                            ]
+                          }
+                        >
+                          <Text>
+                            关闭
+                          </Text>
+                        </>
+                      </ScrollView>
                     </View>
                     <View
                       style={
@@ -1631,17 +1451,11 @@ Array [
             </View>
           </View>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
+      </>
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
       >
         <View
           style={
@@ -1692,18 +1506,11 @@ Array [
               </View>
             </View>
             <View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
                     "paddingHorizontal": 6,
                   }
                 }
@@ -1711,7 +1518,7 @@ Array [
                 <Text>
                   菜单
                 </Text>
-              </View>
+              </>
               <Modal
                 hardwareAccelerated={false}
                 onDismiss={[Function]}
@@ -1742,27 +1549,24 @@ Array [
                     ]
                   }
                 >
-                  <View
-                    accessible={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                  <TouchableWithoutFeedback
+                    onPress={[Function]}
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "left": 0,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
                       }
-                    }
-                    useNativeDriver={false}
-                  />
+                      useNativeDriver={false}
+                    />
+                  </TouchableWithoutFeedback>
                   <View
                     style={
                       Object {
@@ -1806,120 +1610,100 @@ Array [
                       }
                       useNativeDriver={false}
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
+                      <ScrollView>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            1
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            2
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            3
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          disabled={true}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text
                             style={
                               Object {
-                                "opacity": 1,
-                                "padding": 9,
+                                "color": "#ddd",
                               }
                             }
                           >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                            disabled opt
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
                               Object {
-                                "opacity": 1,
                                 "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                              },
                               Object {
                                 "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
+                              },
+                            ]
+                          }
+                        >
+                          <Text>
+                            关闭
+                          </Text>
+                        </>
+                      </ScrollView>
                     </View>
                     <View
                       style={
@@ -1955,17 +1739,11 @@ Array [
             </View>
           </View>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
+      </>
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
       >
         <View
           style={
@@ -2016,18 +1794,11 @@ Array [
               </View>
             </View>
             <View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
                     "paddingHorizontal": 6,
                   }
                 }
@@ -2035,7 +1806,7 @@ Array [
                 <Text>
                   菜单
                 </Text>
-              </View>
+              </>
               <Modal
                 hardwareAccelerated={false}
                 onDismiss={[Function]}
@@ -2066,27 +1837,24 @@ Array [
                     ]
                   }
                 >
-                  <View
-                    accessible={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                  <TouchableWithoutFeedback
+                    onPress={[Function]}
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "left": 0,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
                       }
-                    }
-                    useNativeDriver={false}
-                  />
+                      useNativeDriver={false}
+                    />
+                  </TouchableWithoutFeedback>
                   <View
                     style={
                       Object {
@@ -2130,120 +1898,100 @@ Array [
                       }
                       useNativeDriver={false}
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
+                      <ScrollView>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            1
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            2
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            3
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          disabled={true}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text
                             style={
                               Object {
-                                "opacity": 1,
-                                "padding": 9,
+                                "color": "#ddd",
                               }
                             }
                           >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                            disabled opt
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
                               Object {
-                                "opacity": 1,
                                 "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                              },
                               Object {
                                 "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
+                              },
+                            ]
+                          }
+                        >
+                          <Text>
+                            关闭
+                          </Text>
+                        </>
+                      </ScrollView>
                     </View>
                     <View
                       style={
@@ -2279,17 +2027,11 @@ Array [
             </View>
           </View>
         </View>
-      </View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
+      </>
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
       >
         <View
           style={
@@ -2340,18 +2082,11 @@ Array [
               </View>
             </View>
             <View>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
                     "paddingHorizontal": 6,
                   }
                 }
@@ -2359,7 +2094,7 @@ Array [
                 <Text>
                   菜单
                 </Text>
-              </View>
+              </>
               <Modal
                 hardwareAccelerated={false}
                 onDismiss={[Function]}
@@ -2390,27 +2125,24 @@ Array [
                     ]
                   }
                 >
-                  <View
-                    accessible={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                  <TouchableWithoutFeedback
+                    onPress={[Function]}
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "left": 0,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
                       }
-                    }
-                    useNativeDriver={false}
-                  />
+                      useNativeDriver={false}
+                    />
+                  </TouchableWithoutFeedback>
                   <View
                     style={
                       Object {
@@ -2454,120 +2186,100 @@ Array [
                       }
                       useNativeDriver={false}
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
+                      <ScrollView>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            1
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            2
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text>
+                            option 
+                            3
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          disabled={true}
+                          onPress={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "padding": 9,
+                              },
+                              undefined,
+                            ]
+                          }
+                        >
+                          <Text
                             style={
                               Object {
-                                "opacity": 1,
-                                "padding": 9,
+                                "color": "#ddd",
                               }
                             }
                           >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                            disabled opt
+                          </Text>
+                        </>
+                        <
+                          activeOpacity={0.75}
+                          onPress={[Function]}
+                          style={
+                            Array [
                               Object {
-                                "opacity": 1,
                                 "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            isTVSelectable={true}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
+                              },
                               Object {
                                 "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
+                              },
+                            ]
+                          }
+                        >
+                          <Text>
+                            关闭
+                          </Text>
+                        </>
+                      </ScrollView>
                     </View>
                     <View
                       style={
@@ -2603,7 +2315,7 @@ Array [
             </View>
           </View>
         </View>
-      </View>
+      </>
       <View
         style={
           Array [
@@ -2623,20 +2335,9 @@ Array [
     </View>
   </View>,
   <View>
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
+    <
+      activeOpacity={0.75}
+      onPress={[Function]}
     >
       <Text
         style={
@@ -2647,7 +2348,7 @@ Array [
       >
         自定义组件
       </Text>
-    </View>
+    </>
     <Modal
       hardwareAccelerated={false}
       onDismiss={[Function]}
@@ -2678,27 +2379,24 @@ Array [
           ]
         }
       >
-        <View
-          accessible={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "bottom": 0,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "bottom": 0,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
             }
-          }
-          useNativeDriver={false}
-        />
+            useNativeDriver={false}
+          />
+        </TouchableWithoutFeedback>
         <View
           style={
             Object {
@@ -2755,26 +2453,22 @@ Array [
               >
                 我是自定义组件title
               </Text>
-              <View
-                accessible={true}
-                isTVSelectable={true}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
                 style={
-                  Object {
-                    "opacity": 1,
-                    "padding": 9,
-                  }
+                  Array [
+                    Object {
+                      "padding": 9,
+                    },
+                    undefined,
+                  ]
                 }
               >
                 <Text>
                   自定义组件 x
                 </Text>
-              </View>
+              </>
             </View>
           </View>
           <View
@@ -2827,20 +2521,9 @@ Array [
       如果你设置了 placement 属性请确保你的内容够位置显示，默认是 auto 自动计算位置
     </Text>
     <View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
+      <
+        activeOpacity={0.75}
+        onPress={[Function]}
       >
         <Text
           style={
@@ -2851,7 +2534,7 @@ Array [
         >
           left
         </Text>
-      </View>
+      </>
       <Modal
         hardwareAccelerated={false}
         onDismiss={[Function]}
@@ -2882,27 +2565,24 @@ Array [
             ]
           }
         >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "opacity": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
               }
-            }
-            useNativeDriver={false}
-          />
+              useNativeDriver={false}
+            />
+          </TouchableWithoutFeedback>
           <View
             style={
               Object {
@@ -2946,31 +2626,25 @@ Array [
               }
               useNativeDriver={false}
             >
-              <RCTScrollView>
-                <View>
-                  <View
-                    accessible={true}
-                    isTVSelectable={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
+              <ScrollView>
+                <
+                  activeOpacity={0.75}
+                  onPress={[Function]}
+                  style={
+                    Array [
                       Object {
-                        "opacity": 1,
                         "padding": 9,
-                      }
-                    }
-                  >
-                    <Text>
-                      自定义组件 
-                      left
-                    </Text>
-                  </View>
-                </View>
-              </RCTScrollView>
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text>
+                    自定义组件 
+                    left
+                  </Text>
+                </>
+              </ScrollView>
             </View>
             <View
               style={
@@ -3005,20 +2679,9 @@ Array [
       </Modal>
     </View>
     <View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
+      <
+        activeOpacity={0.75}
+        onPress={[Function]}
       >
         <Text
           style={
@@ -3029,7 +2692,7 @@ Array [
         >
           right
         </Text>
-      </View>
+      </>
       <Modal
         hardwareAccelerated={false}
         onDismiss={[Function]}
@@ -3060,27 +2723,24 @@ Array [
             ]
           }
         >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "opacity": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
               }
-            }
-            useNativeDriver={false}
-          />
+              useNativeDriver={false}
+            />
+          </TouchableWithoutFeedback>
           <View
             style={
               Object {
@@ -3124,31 +2784,25 @@ Array [
               }
               useNativeDriver={false}
             >
-              <RCTScrollView>
-                <View>
-                  <View
-                    accessible={true}
-                    isTVSelectable={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
+              <ScrollView>
+                <
+                  activeOpacity={0.75}
+                  onPress={[Function]}
+                  style={
+                    Array [
                       Object {
-                        "opacity": 1,
                         "padding": 9,
-                      }
-                    }
-                  >
-                    <Text>
-                      自定义组件 
-                      right
-                    </Text>
-                  </View>
-                </View>
-              </RCTScrollView>
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text>
+                    自定义组件 
+                    right
+                  </Text>
+                </>
+              </ScrollView>
             </View>
             <View
               style={
@@ -3183,20 +2837,9 @@ Array [
       </Modal>
     </View>
     <View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
+      <
+        activeOpacity={0.75}
+        onPress={[Function]}
       >
         <Text
           style={
@@ -3207,7 +2850,7 @@ Array [
         >
           top
         </Text>
-      </View>
+      </>
       <Modal
         hardwareAccelerated={false}
         onDismiss={[Function]}
@@ -3238,27 +2881,24 @@ Array [
             ]
           }
         >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "opacity": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
               }
-            }
-            useNativeDriver={false}
-          />
+              useNativeDriver={false}
+            />
+          </TouchableWithoutFeedback>
           <View
             style={
               Object {
@@ -3302,31 +2942,25 @@ Array [
               }
               useNativeDriver={false}
             >
-              <RCTScrollView>
-                <View>
-                  <View
-                    accessible={true}
-                    isTVSelectable={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
+              <ScrollView>
+                <
+                  activeOpacity={0.75}
+                  onPress={[Function]}
+                  style={
+                    Array [
                       Object {
-                        "opacity": 1,
                         "padding": 9,
-                      }
-                    }
-                  >
-                    <Text>
-                      自定义组件 
-                      top
-                    </Text>
-                  </View>
-                </View>
-              </RCTScrollView>
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text>
+                    自定义组件 
+                    top
+                  </Text>
+                </>
+              </ScrollView>
             </View>
             <View
               style={
@@ -3361,20 +2995,9 @@ Array [
       </Modal>
     </View>
     <View>
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
+      <
+        activeOpacity={0.75}
+        onPress={[Function]}
       >
         <Text
           style={
@@ -3385,7 +3008,7 @@ Array [
         >
           bottom
         </Text>
-      </View>
+      </>
       <Modal
         hardwareAccelerated={false}
         onDismiss={[Function]}
@@ -3416,27 +3039,24 @@ Array [
             ]
           }
         >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+          <TouchableWithoutFeedback
+            onPress={[Function]}
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "opacity": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
               }
-            }
-            useNativeDriver={false}
-          />
+              useNativeDriver={false}
+            />
+          </TouchableWithoutFeedback>
           <View
             style={
               Object {
@@ -3480,31 +3100,25 @@ Array [
               }
               useNativeDriver={false}
             >
-              <RCTScrollView>
-                <View>
-                  <View
-                    accessible={true}
-                    isTVSelectable={true}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
+              <ScrollView>
+                <
+                  activeOpacity={0.75}
+                  onPress={[Function]}
+                  style={
+                    Array [
                       Object {
-                        "opacity": 1,
                         "padding": 9,
-                      }
-                    }
-                  >
-                    <Text>
-                      自定义组件 
-                      bottom
-                    </Text>
-                  </View>
-                </View>
-              </RCTScrollView>
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text>
+                    自定义组件 
+                    bottom
+                  </Text>
+                </>
+              </ScrollView>
             </View>
             <View
               style={

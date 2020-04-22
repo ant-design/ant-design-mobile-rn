@@ -13,16 +13,12 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
   }
 >
   <View>
-    <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
+    <
+      activeOpacity={0.5}
+      delayLongPress={500}
+      onLongPress={[Function]}
+      onPress={[Function]}
+      underlayColor="#dddddd"
     >
       <View
         style={
@@ -128,7 +124,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
           </Text>
         </View>
       </View>
-    </View>
+    </>
   </View>
   <View
     style={
@@ -175,15 +171,15 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+          <
+            activeOpacity={0.4}
+            disabled={true}
+            onHideUnderlay={[Function]}
+            onPress={[Function]}
+            onPressIn={[Function]}
+            onPressOut={[Function]}
+            onShowUnderlay={[Function]}
+            pressIn={false}
             style={
               Array [
                 Object {
@@ -210,6 +206,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 undefined,
               ]
             }
+            underlayColor="#dddddd"
           >
             <View
               style={
@@ -237,7 +234,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 Prev
               </Text>
             </View>
-          </View>
+          </>
         </View>
         <View
           style={
@@ -296,15 +293,15 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+          <
+            activeOpacity={0.4}
+            disabled={false}
+            onHideUnderlay={[Function]}
+            onPress={[Function]}
+            onPressIn={[Function]}
+            onPressOut={[Function]}
+            onShowUnderlay={[Function]}
+            pressIn={false}
             style={
               Array [
                 Object {
@@ -328,6 +325,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 undefined,
               ]
             }
+            underlayColor="#dddddd"
           >
             <View
               style={
@@ -353,7 +351,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 Next
               </Text>
             </View>
-          </View>
+          </>
         </View>
       </View>
     </View>
@@ -384,16 +382,12 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
         }
       >
         <View>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={null}
+          <
+            activeOpacity={0.5}
+            delayLongPress={500}
+            onLongPress={[Function]}
+            onPress={[Function]}
+            underlayColor="#dddddd"
           >
             <View
               style={
@@ -499,19 +493,15 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 </Text>
               </View>
             </View>
-          </View>
+          </>
         </View>
         <View>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={null}
+          <
+            activeOpacity={0.5}
+            delayLongPress={500}
+            onLongPress={[Function]}
+            onPress={[Function]}
+            underlayColor="#dddddd"
           >
             <View
               style={
@@ -617,7 +607,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 </Text>
               </View>
             </View>
-          </View>
+          </>
         </View>
         <View
           style={
@@ -660,6 +650,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
               onSubmit={[Function]}
               onSubmitEditing={[Function]}
               placeholder="Search"
+              rejectResponderTermination={true}
               style={
                 Array [
                   Object {

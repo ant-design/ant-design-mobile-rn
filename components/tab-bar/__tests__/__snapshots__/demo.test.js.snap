@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
-<View
-  forceInset={
-    Object {
-      "bottom": "always",
-      "top": "never",
-    }
-  }
+<SafeAreaView
   style={
     Array [
       Object {
@@ -91,6 +85,7 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
                 onSubmit={[Function]}
                 onSubmitEditing={[Function]}
                 placeholder="Search"
+                rejectResponderTermination={true}
                 style={
                   Array [
                     Object {
@@ -187,248 +182,236 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
         ]
       }
     >
-      <View
-        accessible={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "justifyContent": "center",
-            },
-            null,
-          ]
-        }
+      <TouchableWithoutFeedback
+        onPress={[Function]}
       >
-        <View>
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#949494",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                undefined,
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
-        <Text
+        <View
           style={
             Array [
               Object {
-                "fontSize": 10,
-                "marginTop": 2,
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
               },
-              Object {
-                "color": "#949494",
-              },
+              null,
             ]
           }
         >
-          Life
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "justifyContent": "center",
-            },
-            Object {},
-          ]
-        }
-      >
-        <View>
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#33A3F4",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                undefined,
-              ]
-            }
-          >
-            
-          </Text>
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#ff5b05",
-                  "borderRadius": 10,
-                  "height": 20,
-                  "left": 20,
-                  "minWidth": 20,
-                  "paddingHorizontal": 5,
-                  "position": "absolute",
-                  "top": 0,
-                },
-              ]
-            }
-          >
+          <View>
             <Text
               style={
                 Array [
                   Object {
-                    "color": "white",
-                    "textAlign": "center",
+                    "color": "#949494",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 10,
+                  "marginTop": 2,
+                },
+                Object {
+                  "color": "#949494",
+                },
+              ]
+            }
+          >
+            Life
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
+              },
+              Object {},
+            ]
+          }
+        >
+          <View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#33A3F4",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#ff5b05",
+                    "borderRadius": 10,
+                    "height": 20,
+                    "left": 20,
+                    "minWidth": 20,
+                    "paddingHorizontal": 5,
+                    "position": "absolute",
+                    "top": 0,
                   },
                 ]
               }
             >
-              2
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "white",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                2
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 10,
+                  "marginTop": 2,
+                },
+                Object {
+                  "color": "#33A3F4",
+                },
+              ]
+            }
+          >
+            Koubei
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
+              },
+              null,
+            ]
+          }
+        >
+          <View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#949494",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              
             </Text>
           </View>
-        </View>
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 10,
-                "marginTop": 2,
-              },
-              Object {
-                "color": "#33A3F4",
-              },
-            ]
-          }
-        >
-          Koubei
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "justifyContent": "center",
-            },
-            null,
-          ]
-        }
-      >
-        <View>
           <Text
             style={
               Array [
                 Object {
-                  "color": "#949494",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
+                  "fontSize": 10,
+                  "marginTop": 2,
                 },
-                undefined,
+                Object {
+                  "color": "#949494",
+                },
               ]
             }
           >
-            
+            Friend
           </Text>
         </View>
-        <Text
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
           style={
             Array [
               Object {
-                "fontSize": 10,
-                "marginTop": 2,
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
               },
-              Object {
-                "color": "#949494",
-              },
+              null,
             ]
           }
         >
-          Friend
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "justifyContent": "center",
-            },
-            null,
-          ]
-        }
-      >
-        <View>
+          <View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#949494",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
           <Text
             style={
               Array [
                 Object {
-                  "color": "#949494",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
+                  "fontSize": 10,
+                  "marginTop": 2,
                 },
-                undefined,
+                Object {
+                  "color": "#949494",
+                },
               ]
             }
           >
-            
+            My
           </Text>
         </View>
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 10,
-                "marginTop": 2,
-              },
-              Object {
-                "color": "#949494",
-              },
-            ]
-          }
-        >
-          My
-        </Text>
-      </View>
+      </TouchableWithoutFeedback>
     </View>
   </View>
-</View>
+</SafeAreaView>
 `;

@@ -1,6 +1,6 @@
+import ViewPager from '@react-native-community/viewpager';
 import React from 'react';
-import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, Platform, ScrollView } from 'react-native';
-import ViewPagerAndroid from '@react-native-community/viewpager';
+import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
 import View from '../view';
 import { DefaultTabBar } from './DefaultTabBar';
@@ -32,8 +32,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
   };
   static DefaultTabBar = DefaultTabBar;
 
-  scrollView: { _component: ScrollView };
-  viewPager: ViewPagerAndroid | null;
+  viewPager: ViewPager | null;
 
   protected instanceId: number;
   protected prevCurrentTab: number;
@@ -65,17 +64,11 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     });
   }
 
-  setScrollView = (sv: any) => {
-    this.scrollView = sv;
-    this.scrollTo(this.state.currentTab);
-  };
-
   renderContent = (getSubElements = this.getSubElements()) => {
     const {
       tabs,
       usePaged,
       destroyInactiveTab,
-      keyboardShouldPersistTaps,
     } = this.props;
     const { currentTab = 0, containerWidth = 0 } = this.state;
     const content = tabs.map((tab, index) => {
@@ -98,9 +91,8 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
         </View>
       );
     });
-    if (Platform.OS === 'android') {
       return (
-        <ViewPagerAndroid
+        <ViewPager
           key="$content"
           keyboardDismissMode="on-drag"
           initialPage={currentTab}
@@ -127,39 +119,9 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
           ref={ref => (this.viewPager = ref)}
         >
           {content}
-        </ViewPagerAndroid>
+        </ViewPager>
       );
-    }
-    return (
-      <Animated.ScrollView
-        key="$content"
-        horizontal
-        pagingEnabled={usePaged}
-        automaticallyAdjustContentInsets={false}
-        ref={this.setScrollView}
-        onScroll={Animated.event(
-          [
-            {
-              nativeEvent: {
-                contentOffset: { x: this.state.scrollX },
-              },
-            },
-          ],
-          { useNativeDriver: true }, // <-- Add this
-        )}
-        onMomentumScrollEnd={this.onMomentumScrollEnd}
-        scrollEventThrottle={16}
-        scrollsToTop={false}
-        showsHorizontalScrollIndicator={false}
-        scrollEnabled={this.props.swipeable}
-        directionalLockEnabled
-        alwaysBounceVertical={false}
-        keyboardDismissMode="on-drag"
-        keyboardShouldPersistTaps={keyboardShouldPersistTaps}
-      >
-        {content}
-      </Animated.ScrollView>
-    );
+
   };
 
   onMomentumScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -181,8 +143,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
   };
 
   scrollTo = (index: number, animated = true) => {
-    if (Platform.OS === 'android') {
-      if (this.viewPager) {
+    if (this.viewPager) {
         if (animated) {
           this.viewPager.setPage(index);
         } else {
@@ -190,16 +151,6 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
         }
         return;
       }
-    }
-    const { containerWidth } = this.state;
-    if (containerWidth) {
-      const offset = index * containerWidth;
-      if (this.scrollView && this.scrollView._component) {
-        const { scrollTo } = this.scrollView._component;
-        // tslint:disable-next-line:no-unused-expression
-        scrollTo && scrollTo.call(this.scrollView._component, { x: offset, animated });
-      }
-    }
   };
 
   render() {

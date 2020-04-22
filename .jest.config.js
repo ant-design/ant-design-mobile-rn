@@ -9,14 +9,18 @@ const transformPackages = [
   'react-native-swipeout',
   'react-native-camera-roll-picker',
   '@bang88/react-native-ultimate-listview',
-  'react-native-safe-area-view',
   '@react-native-community/cameraroll',
+  '@react-native-community/viewpager'
 ];
 
 module.exports = {
   // ...tsjPreset,
-  preset: 'react-native',
-  setupFiles: ['./tests/setup.js'],
+  preset: '@testing-library/react-native',
+  setupFiles: ["@testing-library/react-native/jest-preset",],
+  // setupFilesAfterEnv: [
+  //   '@testing-library/react-native/cleanup-after-each',
+  //   // ... other setup files ...
+  // ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testPathIgnorePatterns: ['/node_modules/', '_site', 'site'],
   transform: {

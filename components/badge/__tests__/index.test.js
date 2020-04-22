@@ -1,6 +1,5 @@
 // import React from 'react';
-// // import { shallow } from 'enzyme';
-// import Badge from '../index';
+// // import Badge from '../index';
 
 // No need to render Snapshot again, because of `./demo.test.js`
 

@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Animated,
-  Easing,
-  LayoutChangeEvent,
-  StyleProp,
-  Text,
-  TextStyle,
-  View,
-} from 'react-native';
+import { Animated, Easing, LayoutChangeEvent, StyleProp, Text, TextStyle, View } from 'react-native';
 
 export interface MarqueeProps {
   text?: React.ReactNode;
@@ -84,6 +76,7 @@ class Marquee extends React.PureComponent<MarqueeProps, any> {
       easing: Easing.linear,
       delay: props.leading,
       isInteraction: false,
+      useNativeDriver: true,
     }).start(() => {
       if (loop) {
         this.moveToHeader();
@@ -97,6 +90,7 @@ class Marquee extends React.PureComponent<MarqueeProps, any> {
       duration: 0,
       delay: this.props.trailing,
       isInteraction: false,
+      useNativeDriver: true,
     }).start(() => {
       this.startMove();
     });

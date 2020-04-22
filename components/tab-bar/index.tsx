@@ -1,6 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
-import SafeAreaView from 'react-native-safe-area-view';
+import { SafeAreaView, View } from 'react-native';
 import { WithTheme } from '../style';
 import { TabBarProps } from './PropsType';
 import TabBarStyles, { TabBarStyle } from './style/index';
@@ -63,7 +62,6 @@ class TabBar extends React.Component<TabBarNativeProps, any> {
     const style = { backgroundColor: this.props.barTintColor };
     return (
       <SafeAreaView
-        forceInset={{ bottom: 'always', top: 'never' }}
         style={[{ flex: 1 }, style]}
       >
         <WithTheme styles={this.props.styles} themeStyles={TabBarStyles}>
