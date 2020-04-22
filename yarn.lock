@@ -1144,6 +1144,21 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.9.tgz#383aca2fb053e3e14405c99cce2d5805df730821"
   integrity sha512-nUtzbiLeXU0K9oVed6rc/WVrjGJwDSL4q1RTDkpZYU4j0FeovfuzcNUIDesD2r728LYfIop+uAgQdm+6qBOCug==
 
+"@react-native-community/picker@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.npm.taobao.org/@react-native-community/picker/download/@react-native-community/picker-1.3.0.tgz#74be7dd93c54426677ddd68080ca253906a57e07"
+  integrity sha1-dL592TxUQmZ33daAgMolOQalfgc=
+
+"@react-native-community/segmented-control@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npm.taobao.org/@react-native-community/segmented-control/download/@react-native-community/segmented-control-1.4.0.tgz#16e449c76b2ea85784bc89cad2604a0bd5c42b42"
+  integrity sha1-FuRJx2suqFeEvInK0mBKC9XEK0I=
+
+"@react-native-community/slider@^2.0.9":
+  version "2.0.9"
+  resolved "https://registry.npm.taobao.org/@react-native-community/slider/download/@react-native-community/slider-2.0.9.tgz#bf74045c96f1fb22e3ec961e321300c230c63990"
+  integrity sha1-v3QEXJbx+yLj7JYeMhMAwjDGOZA=
+
 "@react-native-community/viewpager@^3.3.0":
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/viewpager/-/viewpager-3.3.0.tgz#e613747a43a31a6f3278f817ba96fdaaa7941f23"
