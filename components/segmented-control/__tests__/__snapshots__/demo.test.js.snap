@@ -12,7 +12,7 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
   <Text>
     Disabled
   </Text>
-  <RCTSegmentedControl
+  <RNCSegmentedControl
     enabled={false}
     onChange={[Function]}
     selectedIndex={0}
@@ -45,7 +45,7 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
   <Text>
     TintColor and Style
   </Text>
-  <RCTSegmentedControl
+  <RNCSegmentedControl
     enabled={true}
     onChange={[Function]}
     selectedIndex={0}
@@ -82,7 +82,7 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
   <Text>
     SelectedIndex
   </Text>
-  <RCTSegmentedControl
+  <RNCSegmentedControl
     enabled={true}
     onChange={[Function]}
     selectedIndex={1}
@@ -116,9 +116,10 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
   <Text>
     onChange/onValueChange
   </Text>
-  <RCTSegmentedControl
+  <RNCSegmentedControl
     enabled={true}
     onChange={[Function]}
+    onValueChange={[Function]}
     selectedIndex={0}
     style={
       Array [

@@ -1,6 +1,0 @@
-module Pods_KitchenSink {
-  umbrella header "Pods-KitchenSink-umbrella.h"
-
-  export *
-  module * { export * }
-}
