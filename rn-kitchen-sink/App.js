@@ -4,8 +4,7 @@ import React from 'react';
 import { AppRegistry } from 'react-native';
 import 'react-native-gesture-handler';
 import Provider from '../components/provider';
-import RnIndex from './components/RnIndex';
-import WebIndex from './components/WebIndex';
+import RnIndex from './components/index';
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from './demoList';
 
 const getOptions = title => ({
@@ -17,17 +16,9 @@ const getOptions = title => ({
 });
 
 const scenes = {
-  // Home: {
-  //   screen: Home,
-  //   navigationOptions: getOptions('Ant Design Mobile'),
-  // },
   native: {
     screen: RnIndex,
     navigationOptions: getOptions('Ant Design'),
-  },
-  web: {
-    screen: WebIndex,
-    navigationOptions: getOptions('Antm Web Component'),
   },
 };
 
