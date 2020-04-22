@@ -108,7 +108,7 @@
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.5.0",
-    "react-test-renderer": "16.11.0",
+    "react-test-renderer": "16.13.1",
     "regenerator-runtime": "^0.13.1",
     "ts-jest": "^25.4.0",
     "typescript": "^3.2.2"
