@@ -38,9 +38,20 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 
 ## 演示
 
-<img width="250" src="https://user-images.githubusercontent.com/1698185/27175806-f0a8a7f0-51f2-11e7-85fb-4b7ea9f89e5b.png" />
+```bash
+# clone
+git clone git@github.com:ant-design/ant-design-mobile-rn.git
 
-请先安装 expo app： https://expo.io/tools
+# go to ant rn folder
+cd ant-design-mobile-rn
+
+# install dependencies
+yarn
+
+# start ios simulator or android
+yarn ios # or yarn android
+
+```
 
 ## 安装 & 使用
 
@@ -57,7 +68,7 @@ yarn add @ant-design/react-native
 ### 链接字体图标
 
 ```bash
-react-native link @ant-design/icons-react-native
+react-native link @ant-design/react-native
 ```
 
 [介绍](docs/react/introduce.zh-CN.md#安装)

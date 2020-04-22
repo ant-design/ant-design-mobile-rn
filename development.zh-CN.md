@@ -3,7 +3,7 @@
 ## 环境
 
 ```
-node = 6+
+node = 10+
 npm = 3+
 ```
 
@@ -16,6 +16,7 @@ $ npm run lint
 ```
 
 ### 目录结构
+
 ```
 ├── AUTHORS.txt             作者
 ├── CHANGELOG.xxx.md        变更记录文档
@@ -41,7 +42,6 @@ $ npm run lint
 3. antd 也没有的, 发 issue 讨论。
 
 组件名以 `-` 分割, 例如 `date-picker`，文件后缀名统一为 `.tsx`。
-
 
 ### 组件实现
 
@@ -70,11 +70,7 @@ const styles = StyleSheet.create({
 
 class Button extends React.Component {
   render() {
-    return (
-      <View style={[styles.button]}>
-        {this.props.children}
-      </View>
-    );
+    return <View style={[styles.button]}>{this.props.children}</View>;
   }
 }
 
@@ -90,7 +86,11 @@ import { Text, View } from 'react-native';
 
 class BasicButtonExample extends React.Component {
   render() {
-    return <Button><Text>basic button</Text></Button>;
+    return (
+      <Button>
+        <Text>basic button</Text>
+      </Button>
+    );
   }
 }
 

@@ -39,9 +39,20 @@ The new version `3.x` has been released, please see the installation upgrade gui
 
 ## Demo
 
-<img width="250" src="https://user-images.githubusercontent.com/433259/50051494-1c934080-014e-11e9-82b2-b18c6b727443.png" />
+```bash
+# clone
+git clone git@github.com:ant-design/ant-design-mobile-rn.git
 
-install expo app: https://expo.io/tools
+# go to ant rn folder
+cd ant-design-mobile-rn
+
+# install dependencies
+yarn
+
+# start ios simulator or android
+yarn ios # or yarn android
+
+```
 
 ## Install & Usage
 

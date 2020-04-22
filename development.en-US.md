@@ -3,7 +3,7 @@
 ## Environment
 
 ```
-node = 6+
+node = 10+
 npm = 3+
 ```
 
@@ -16,6 +16,7 @@ $ npm run lint
 ```
 
 ### Directory Structure
+
 ```
 ├── AUTHORS.txt             authors
 ├── CHANGELOG.xxx.md        changelog document
@@ -41,7 +42,6 @@ Basic principles:
 3. components which totally new, please open a issue and we will discuss about it.
 
 component name separate with `-`, such as `date-picker`，and file Extensions should be `.tsx`。
-
 
 ### Components Implementation
 
@@ -70,11 +70,7 @@ const styles = StyleSheet.create({
 
 class Button extends React.Component {
   render() {
-    return (
-      <View style={[styles.button]}>
-        {this.props.children}
-      </View>
-    );
+    return <View style={[styles.button]}>{this.props.children}</View>;
   }
 }
 
@@ -90,7 +86,11 @@ import { Text, View } from 'react-native';
 
 class BasicButtonExample extends React.Component {
   render() {
-    return <Button><Text>basic button</Text></Button>;
+    return (
+      <Button>
+        <Text>basic button</Text>
+      </Button>
+    );
   }
 }
 
