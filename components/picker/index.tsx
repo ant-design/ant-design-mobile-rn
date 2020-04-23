@@ -224,6 +224,7 @@ export default class Picker extends React.Component<PickerProps, any> {
         <MultiPicker
           style={{ flexDirection: 'row', alignItems: 'center' }}
           onScrollChange={this.setScrollValue}
+          onValueChange={this.onPickerChange}
         >
           {this.getPickerCol()}
         </MultiPicker>
