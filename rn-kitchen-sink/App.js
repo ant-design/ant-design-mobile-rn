@@ -67,3 +67,10 @@ class App extends React.Component {
 AppRegistry.registerComponent('KitchenSink', () => App);
 
 export default App;
+
+//global catch error to avoid crash
+global.ErrorUtils.setGlobalHandler(function(e, isFatal){
+  if (isFatal) {
+    alert(`${e.name}: ${e.message}`);
+  }
+});
