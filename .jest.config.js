@@ -16,6 +16,7 @@ module.exports = {
   // ...tsjPreset,
   preset: '@testing-library/react-native',
   setupFiles: ["@testing-library/react-native/jest-preset",],
+  setupFilesAfterEnv: ['./enzyme.setup.js'],
   // setupFilesAfterEnv: [
   //   '@testing-library/react-native/cleanup-after-each',
   //   // ... other setup files ...

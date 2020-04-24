@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Picker test cascade props when cascade={true} should be render MultiPicker 1`] = `
+Array [
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <Text
+        extra="请选择"
+        onPress={[Function]}
+        testID="button"
+      >
+        省市选择
+      </Text>
+    </View>
+  </View>,
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "zIndex": 1000,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "flex": 1,
+          },
+          Object {
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "flex-end",
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        onPress={[Function]}
+      >
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "backgroundColor": "black",
+                  "opacity": 0.5,
+                },
+              ]
+            }
+          />
+        </View>
+      </TouchableWithoutFeedback>
+      <View
+        style={
+          Object {
+            "backgroundColor": "white",
+            "transform": Array [
+              Object {
+                "translateY": 1334,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderBottomColor": "#e7e7e7",
+                "borderBottomWidth": 1,
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "height": 44,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <
+            activeOpacity={1}
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "height": 44,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+            underlayColor="#ddd"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#0ae",
+                    "fontSize": 18,
+                    "textAlign": "center",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              取消
+            </Text>
+          </>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "height": 44,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#666",
+                    "fontSize": 18,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+          <
+            activeOpacity={1}
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "height": 44,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+            underlayColor="#ddd"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#0ae",
+                    "fontSize": 18,
+                    "textAlign": "center",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              确定
+            </Text>
+          </>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <RNCPicker
+              items={
+                Array [
+                  Object {
+                    "label": "北京市",
+                    "textColor": undefined,
+                    "value": "11",
+                  },
+                ]
+              }
+              onChange={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <RNCPicker
+              items={
+                Array [
+                  Object {
+                    "label": "市辖区",
+                    "textColor": undefined,
+                    "value": "1101",
+                  },
+                ]
+              }
+              onChange={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <RNCPicker
+              items={
+                Array [
+                  Object {
+                    "label": "东城区",
+                    "textColor": undefined,
+                    "value": "110101",
+                  },
+                  Object {
+                    "label": "西城区",
+                    "textColor": undefined,
+                    "value": "110102",
+                  },
+                ]
+              }
+              onChange={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>,
+]
+`;
