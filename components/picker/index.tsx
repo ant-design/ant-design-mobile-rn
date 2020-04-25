@@ -66,7 +66,7 @@ export default class Picker extends React.Component<PickerProps, any> {
   getPickerCol = () => {
     const { data, itemStyle, indicatorStyle } = this.props;
 
-    return (data as PickerData[][]).map((col, index) => {
+    return ((Array.isArray(data[0]) ? data : [data]) as PickerData[][]).map((col, index) => {
       return (
         <RMCPicker
           key={index}
@@ -211,7 +211,7 @@ export default class Picker extends React.Component<PickerProps, any> {
     if (cascade) {
       cascader = (
         <RMCCascader
-          data={data as PickerData[]}
+          data={(Array.isArray(data[0]) ? data[0] : data) as PickerData[]}
           cols={cols}
           onChange={this.onPickerChange}
           onScrollChange={this.setCasecadeScrollValue}
@@ -224,6 +224,7 @@ export default class Picker extends React.Component<PickerProps, any> {
         <MultiPicker
           style={{ flexDirection: 'row', alignItems: 'center' }}
           onScrollChange={this.setScrollValue}
+          onValueChange={this.onPickerChange}
         >
           {this.getPickerCol()}
         </MultiPicker>
