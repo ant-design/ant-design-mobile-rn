@@ -237,7 +237,7 @@ export default class InputItem extends React.Component<
                   onPress={this.onInputClear}
                   hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
                 >
-                  <Icon name="close" color={'white'} />
+                  <Icon name="close" color={'white'} size={'xxs'}/>
                 </TouchableOpacity>
               ) : null}
               {extra ? (
