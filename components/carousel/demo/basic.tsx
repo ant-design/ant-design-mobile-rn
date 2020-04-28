@@ -46,9 +46,9 @@ export default class BasicCarouselExample extends React.Component<any, any> {
           <Text>vertical</Text>
           <Carousel
             style={styles.wrapper}
-            selectedIndex={2}
+            selectedIndex={1}
             autoplay
-            infinite
+            infinite={false}
             afterChange={this.onVerticalSelectedIndexChange}
             vertical
           >

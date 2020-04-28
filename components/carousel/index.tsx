@@ -32,18 +32,10 @@ export interface CarouselProps extends CarouselPropsType {
   pagination?: (props: PaginationProps) => React.ReactNode;
   afterChange?: (index: number) => void;
 }
-export interface CarouselOffset {
-  x: number;
-  y: number;
-}
+
 export interface CarouselState {
-  width: number;
-  height: number;
   selectedIndex: number;
   isScrolling: boolean;
-  autoplayEnd: boolean;
-  loopJump: boolean;
-  offset: CarouselOffset;
 }
 
 export interface PaginationProps {
@@ -97,7 +89,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   viewPager = React.createRef<typeof ViewPager>();
 
   private autoplayTimer: number;
-  private scrollEndTimter: number;
 
   constructor(props: CarouselProps) {
     super(props);
@@ -105,13 +96,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     const count = this.getChildrenCount(children);
     const index = count > 1 ? Math.min(selectedIndex as number, count - 1) : 0;
     this.state = {
-      width: 0,
-      height: 0,
       isScrolling: false,
-      autoplayEnd: false,
-      loopJump: false,
       selectedIndex: index,
-      offset: { x: 0, y: 0 },
     };
   }
   getChildrenCount = (children: React.ReactNode) => {
@@ -124,19 +110,17 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
   componentWillUnmount() {
     clearTimeout(this.autoplayTimer);
-    clearTimeout(this.scrollEndTimter);
   }
 
   autoplay = (stop = false) => {
     if (stop) {
       clearTimeout(this.autoplayTimer);
-
       return;
     }
-    const { children, autoplay, autoplayInterval } = this.props;
-    const { isScrolling, autoplayEnd, selectedIndex } = this.state;
+    const { children, autoplay,infinite, autoplayInterval } = this.props;
+    const { isScrolling, selectedIndex } = this.state;
     const count = this.getChildrenCount(children);
-    if (!Array.isArray(children) || !autoplay || isScrolling || autoplayEnd) {
+    if (!Array.isArray(children) || !autoplay || isScrolling) {
       return;
     }
 
@@ -144,10 +128,12 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
     this.autoplayTimer = setTimeout(() => {
       let newIndex = selectedIndex < count ? selectedIndex + 1 : 0;
-
       if (selectedIndex === count - 1) {
-        // !infinite && last one, autoplay end
         newIndex = 0;
+        if(!infinite){
+          clearTimeout(this.autoplayTimer);
+          return
+        }
       }
       this.setState({ selectedIndex: newIndex });
       // @ts-ignore
@@ -184,7 +170,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   };
 
   render() {
-    const { width, selectedIndex } = this.state;
+    const { selectedIndex } = this.state;
     const { dots, children, vertical } = this.props;
 
     if (!children) {
@@ -195,7 +181,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       );
     }
 
-    const pageStyle = { width };
     const count = this.getChildrenCount(children);
     let pages: React.ReactFragment;
 
@@ -205,14 +190,14 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       pages = childrenArray.map((page, i) => {
         return (
           // when vertical, use the height of the first child as the height of the Carousel
-          <View style={pageStyle} key={i} collapsable={false}>
+          <View key={i} collapsable={false}>
             {page}
           </View>
         );
       });
     } else {
       pages = (
-        <View style={pageStyle} collapsable={false}>
+        <View collapsable={false}>
           {children}
         </View>
       );
