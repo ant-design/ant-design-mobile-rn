@@ -847,9 +847,7 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
         collapsable={false}
         style={
           Array [
-            Object {
-              "width": 0,
-            },
+            undefined,
             Object {
               "bottom": 0,
               "height": undefined,
@@ -1362,9 +1360,7 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
         collapsable={false}
         style={
           Array [
-            Object {
-              "width": 0,
-            },
+            undefined,
             Object {
               "bottom": 0,
               "height": undefined,

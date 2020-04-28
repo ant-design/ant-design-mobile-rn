@@ -20,6 +20,4 @@ subtitle: 走马灯
 | afterChange  | 切换面板后的回调函数 | (current: number): void  | 无 |
 | dotStyle  | 指示点样式 | Object | 无 |
 | dotActiveStyle  | 当前激活的指示点样式 | Object | 无 |
-| onScrollBeginDrag | 见 react-native scrollView onScrollBeginDrag | (): void | 无 |
-| bounces | 见 react-native scrollView bounces | Boolean | true |
 | pagination | 自定义 pagination | (props) => React.ReactNode  |  |

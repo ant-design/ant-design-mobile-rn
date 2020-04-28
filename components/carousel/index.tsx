@@ -1,6 +1,6 @@
 import ViewPager, { ViewPagerProps } from '@react-native-community/viewpager';
 import React from 'react';
-import { NativeScrollEvent, NativeSyntheticEvent, StyleProp, Text, View, ViewStyle } from 'react-native';
+import { StyleProp, Text, View, ViewStyle } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
 import CarouselStyles, { CarouselStyle } from './style/index';
 
@@ -15,17 +15,6 @@ export interface CarouselPropsType extends WithThemeStyles<CarouselStyle> {
 }
 
 export interface CarouselProps extends CarouselPropsType {
-  bounces?: boolean;
-  onScrollBeginDrag?: (
-    event: NativeSyntheticEvent<NativeScrollEvent>,
-    state: CarouselState,
-    carousel: Carousel,
-  ) => void;
-  onMomentumScrollEnd?: (
-    event: NativeSyntheticEvent<NativeScrollEvent>,
-    state: CarouselState,
-    carousel: Carousel,
-  ) => void;
   style?: StyleProp<ViewStyle>;
   dotStyle?: StyleProp<ViewStyle>;
   dotActiveStyle?: StyleProp<ViewStyle>;
@@ -75,7 +64,6 @@ const defaultPagination = (props: PaginationProps) => {
 
 class Carousel extends React.Component<CarouselProps, CarouselState> {
   static defaultProps: CarouselProps = {
-    bounces: true,
     infinite: false,
     dots: true,
     autoplay: false,
@@ -204,13 +192,14 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     }
     const vpProps: ViewPagerProps = {
       initialPage: selectedIndex,
-
       showPageIndicator: false,
-
       style: this.props.style,
       onPageSelected: e => {
         this.setState({ selectedIndex: e.nativeEvent.position });
         this.autoplay();
+        if(this.props.afterChange){
+          this.props.afterChange(e.nativeEvent.position)
+        }
       },
       onPageScrollStateChanged: e => {
         switch (e.nativeEvent.pageScrollState) {
