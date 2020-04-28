@@ -84,6 +84,8 @@ const styles = StyleSheet.create<{
 }>({
   wrapper: {
     backgroundColor: '#fff',
+    width:'100%',
+    height: 150,
   },
   containerHorizontal: {
     flexGrow: 1,

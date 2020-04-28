@@ -18,84 +18,41 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
     <Text>
       horizontal
     </Text>
-    <View
-      onLayout={[Function]}
-      style={Object {}}
-    >
-      <ScrollView
-        afterChange={[Function]}
-        automaticallyAdjustContentInsets={false}
-        autoplay={true}
-        autoplayInterval={3000}
-        bounces={true}
-        contentContainerStyle={
-          Object {
-            "backgroundColor": "#fff",
-          }
-        }
-        contentOffset={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        directionalLockEnabled={true}
-        dotActiveStyle={Object {}}
-        dotStyle={Object {}}
-        dots={true}
-        horizontal={true}
-        infinite={true}
-        onMomentumScrollEnd={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        pagination={[Function]}
-        pagingEnabled={true}
-        removeClippedSubviews={false}
-        scrollEventThrottle={100}
-        selectedIndex={2}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
+    <View>
+      <RNCViewPager
+        initialPage={2}
+        onMoveShouldSetResponderCapture={[Function]}
+        onPageScroll={[Function]}
+        onPageScrollStateChanged={[Function]}
+        onPageSelected={[Function]}
+        orientation="horizontal"
+        showPageIndicator={false}
         style={
           Object {
             "backgroundColor": "#fff",
+            "height": 150,
+            "width": "100%",
           }
         }
-        vertical={false}
+        transitionStyle="scroll"
       >
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexGrow": 1,
-                  "height": 150,
-                  "justifyContent": "center",
-                },
-                Object {
-                  "backgroundColor": "fuchsia",
-                },
-              ]
-            }
-          >
-            <Text>
-              Carousel 5
-            </Text>
-          </View>
-        </View>
-        <View
-          onLayout={[Function]}
-          style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -119,11 +76,22 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -147,11 +115,22 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -175,11 +154,22 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -203,11 +193,22 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -230,35 +231,7 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
             </Text>
           </View>
         </View>
-        <View
-          onLayout={[Function]}
-          style={
-            Object {
-              "width": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexGrow": 1,
-                  "height": 150,
-                  "justifyContent": "center",
-                },
-                Object {
-                  "backgroundColor": "red",
-                },
-              ]
-            }
-          >
-            <Text>
-              Carousel 1
-            </Text>
-          </View>
-        </View>
-      </ScrollView>
+      </RNCViewPager>
       <View
         style={
           Array [
@@ -398,84 +371,41 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
     <Text>
       vertical
     </Text>
-    <View
-      onLayout={[Function]}
-      style={Object {}}
-    >
-      <ScrollView
-        afterChange={[Function]}
-        automaticallyAdjustContentInsets={false}
-        autoplay={true}
-        autoplayInterval={3000}
-        bounces={true}
-        contentContainerStyle={
-          Object {
-            "backgroundColor": "#fff",
-          }
-        }
-        contentOffset={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        directionalLockEnabled={true}
-        dotActiveStyle={Object {}}
-        dotStyle={Object {}}
-        dots={true}
-        horizontal={false}
-        infinite={true}
-        onMomentumScrollEnd={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        pagination={[Function]}
-        pagingEnabled={true}
-        removeClippedSubviews={false}
-        scrollEventThrottle={100}
-        selectedIndex={2}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
+    <View>
+      <RNCViewPager
+        initialPage={2}
+        onMoveShouldSetResponderCapture={[Function]}
+        onPageScroll={[Function]}
+        onPageScrollStateChanged={[Function]}
+        onPageSelected={[Function]}
+        orientation="vertical"
+        showPageIndicator={false}
         style={
           Object {
             "backgroundColor": "#fff",
+            "height": 150,
+            "width": "100%",
           }
         }
-        vertical={true}
+        transitionStyle="scroll"
       >
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexGrow": 1,
-                  "height": 150,
-                  "justifyContent": "center",
-                },
-                Object {
-                  "backgroundColor": "fuchsia",
-                },
-              ]
-            }
-          >
-            <Text>
-              Carousel 5
-            </Text>
-          </View>
-        </View>
-        <View
-          onLayout={[Function]}
-          style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -499,11 +429,22 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -527,11 +468,22 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -555,11 +507,22 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -583,11 +546,22 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          onLayout={[Function]}
+          collapsable={false}
           style={
-            Object {
-              "width": 0,
-            }
+            Array [
+              Object {
+                "width": 0,
+              },
+              Object {
+                "bottom": 0,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              },
+            ]
           }
         >
           <View
@@ -610,35 +584,7 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
             </Text>
           </View>
         </View>
-        <View
-          onLayout={[Function]}
-          style={
-            Object {
-              "width": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "flexGrow": 1,
-                  "height": 150,
-                  "justifyContent": "center",
-                },
-                Object {
-                  "backgroundColor": "red",
-                },
-              ]
-            }
-          >
-            <Text>
-              Carousel 1
-            </Text>
-          </View>
-        </View>
-      </ScrollView>
+      </RNCViewPager>
       <View
         style={
           Array [
