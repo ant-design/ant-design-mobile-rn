@@ -68,9 +68,10 @@ AppRegistry.registerComponent('KitchenSink', () => App);
 
 export default App;
 
-//global catch error to avoid crash
-global.ErrorUtils.setGlobalHandler(function(e, isFatal){
+// global catch error to avoid crash
+global.ErrorUtils.setGlobalHandler((e, isFatal) => {
   if (isFatal) {
+    // eslint-disable-next-line no-alert
     alert(`${e.name}: ${e.message}`);
   }
 });

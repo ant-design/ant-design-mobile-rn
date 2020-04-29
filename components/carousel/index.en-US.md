@@ -17,6 +17,4 @@ Properties | Descrition | Type | Default
 | afterChange  | callback to be called after a slide is changed | (current: number): void | |
 | dotStyle  | style of dots | Object | |
 | dotActiveStyle  | style of active dot | Object  | |
-| onScrollBeginDrag | as same as react-native scrollView `onScrollBeginDrag` | (): void | - |
-| bounces | as same as react-native scrollView `bounces` | Boolean | true |
 | pagination | A generator function which could be used to customized pagination. | (props) => React.ReactNode  | |
