@@ -11,7 +11,6 @@ export interface CarouselPropsType extends WithThemeStyles<CarouselStyle> {
   autoplay?: boolean;
   autoplayInterval?: number;
   infinite?: boolean;
-  initialSlideWidth?: number;
 }
 
 export interface CarouselProps extends CarouselPropsType {
