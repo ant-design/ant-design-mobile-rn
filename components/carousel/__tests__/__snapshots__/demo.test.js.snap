@@ -18,7 +18,13 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
     <Text>
       horizontal
     </Text>
-    <View>
+    <View
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    >
       <RNCViewPager
         initialPage={2}
         onMoveShouldSetResponderCapture={[Function]}
@@ -344,12 +350,65 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
         </View>
       </View>
     </View>
-    <Text>
-      Carousel will adjust height based on content
-    </Text>
-    <Text>
-      0
-    </Text>
+    <
+      activeOpacity={0.4}
+      disabled={false}
+      onHideUnderlay={[Function]}
+      onPress={[Function]}
+      onPressIn={[Function]}
+      onPressOut={[Function]}
+      onShowUnderlay={[Function]}
+      pressIn={false}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "justifyContent": "center",
+          },
+          Object {
+            "height": 47,
+            "paddingLeft": 15,
+            "paddingRight": 15,
+          },
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#dddddd",
+          },
+          false,
+          false,
+          undefined,
+          undefined,
+        ]
+      }
+      underlayColor="#dddddd"
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 18,
+              },
+              Object {
+                "color": "#000000",
+              },
+              false,
+              false,
+            ]
+          }
+        >
+          Go to 0
+        </Text>
+      </View>
+    </>
   </View>
   <View
     style={
@@ -361,7 +420,13 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
     <Text>
       vertical
     </Text>
-    <View>
+    <View
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    >
       <RNCViewPager
         initialPage={1}
         onMoveShouldSetResponderCapture={[Function]}
@@ -687,12 +752,66 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
         </View>
       </View>
     </View>
-    <Text>
-      Use the height of the first child as the height of the Carousel
-    </Text>
-    <Text>
-      0
-    </Text>
+    <
+      activeOpacity={0.4}
+      disabled={false}
+      onHideUnderlay={[Function]}
+      onPress={[Function]}
+      onPressIn={[Function]}
+      onPressOut={[Function]}
+      onShowUnderlay={[Function]}
+      pressIn={false}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "justifyContent": "center",
+          },
+          Object {
+            "height": 47,
+            "paddingLeft": 15,
+            "paddingRight": 15,
+          },
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#dddddd",
+          },
+          false,
+          false,
+          undefined,
+          undefined,
+        ]
+      }
+      underlayColor="#dddddd"
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 18,
+              },
+              Object {
+                "color": "#000000",
+              },
+              false,
+              false,
+            ]
+          }
+        >
+          Toggle autoplay 
+          true
+        </Text>
+      </View>
+    </>
   </View>
 </View>
 `;

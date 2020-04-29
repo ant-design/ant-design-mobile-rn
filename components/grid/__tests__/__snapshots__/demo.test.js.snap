@@ -832,7 +832,13 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
       Carousel
     </Text>
   </View>
-  <View>
+  <View
+    style={
+      Object {
+        "overflow": "hidden",
+      }
+    }
+  >
     <RNCViewPager
       initialPage={0}
       onMoveShouldSetResponderCapture={[Function]}

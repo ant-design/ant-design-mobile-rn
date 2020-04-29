@@ -133,18 +133,15 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       pages = childrenArray.map((page, i) => {
         return (
           // when vertical, use the height of the first child as the height of the Carousel
-          <View key={i} collapsable={false}>
-            {page}
-          </View>
+          <View key={i}>{page}</View>
         );
       });
     } else {
-      pages = <View collapsable={false}>{children}</View>;
+      pages = <View>{children}</View>;
     }
     const vpProps: ViewPagerProps = {
       initialPage: selectedIndex,
       showPageIndicator: false,
-      style: this.props.style,
       onPageSelected: e => {
         this.setState({ selectedIndex: e.nativeEvent.position });
         this.autoplay();
@@ -169,9 +166,14 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       },
     };
     return (
-      <View>
+      <View
+        style={{
+          overflow: 'hidden',
+        }}
+      >
         <ViewPager
           {...vpProps}
+          style={this.props.style}
           // Lib does not support dynamically orientation change
           orientation={vertical ? 'vertical' : 'horizontal'}
           // Lib does not support dynamically transitionStyle change
