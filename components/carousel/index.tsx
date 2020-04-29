@@ -88,10 +88,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       selectedIndex: index,
     };
   }
-  getChildrenCount = (children: React.ReactNode) => {
-    const count = children ? React.Children.count(children) || 1 : 0;
-    return count;
-  };
   componentDidMount() {
     this.autoplay();
   }
@@ -99,63 +95,15 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   componentWillUnmount() {
     clearTimeout(this.autoplayTimer);
   }
-
-  autoplay = (stop = false) => {
-    if (stop) {
-      clearTimeout(this.autoplayTimer);
-      return;
-    }
-    const { children, autoplay,infinite, autoplayInterval } = this.props;
-    const { isScrolling, selectedIndex } = this.state;
-    const count = this.getChildrenCount(children);
-    if (!Array.isArray(children) || !autoplay || isScrolling) {
-      return;
-    }
-
-    clearTimeout(this.autoplayTimer);
-
-    this.autoplayTimer = setTimeout(() => {
-      let newIndex = selectedIndex < count ? selectedIndex + 1 : 0;
-      if (selectedIndex === count - 1) {
-        newIndex = 0;
-        if(!infinite){
-          clearTimeout(this.autoplayTimer);
-          return
-        }
-      }
-      this.setState({ selectedIndex: newIndex });
-      // @ts-ignore
-      this.viewPager.current.setPage(newIndex);
-    }, autoplayInterval);
-  };
-
-  renderDots = (index: number) => {
-    const {
-      children,
-      vertical,
-      pagination,
-      dotStyle,
-      dotActiveStyle,
-    } = this.props;
-    if (!pagination) {
-      return null;
-    }
-    const count = this.getChildrenCount(children);
-    return (
-      <WithTheme themeStyles={CarouselStyles} styles={this.props.styles}>
-        {styles => {
-          return pagination({
-            styles,
-            vertical,
-            current: index,
-            count,
-            dotStyle,
-            dotActiveStyle,
-          });
-        }}
-      </WithTheme>
-    );
-  };
+  /**
+   * go to index
+   * @param index
+   */
+  public goTo(index: number) {
+    this.setState({ selectedIndex: index });
+    // @ts-ignore
+    this.viewPager.current.setPage(index);
+  }
 
   render() {
     const { selectedIndex } = this.state;
@@ -184,11 +132,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         );
       });
     } else {
-      pages = (
-        <View collapsable={false}>
-          {children}
-        </View>
-      );
+      pages = <View collapsable={false}>{children}</View>;
     }
     const vpProps: ViewPagerProps = {
       initialPage: selectedIndex,
@@ -197,8 +141,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       onPageSelected: e => {
         this.setState({ selectedIndex: e.nativeEvent.position });
         this.autoplay();
-        if(this.props.afterChange){
-          this.props.afterChange(e.nativeEvent.position)
+        if (this.props.afterChange) {
+          this.props.afterChange(e.nativeEvent.position);
         }
       },
       onPageScrollStateChanged: e => {
@@ -219,33 +163,79 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     };
     return (
       <View>
-        {vertical ? (
-          <ViewPager
-            {...vpProps}
-            // Lib does not support dynamically orientation change
-            orientation="vertical"
-            // Lib does not support dynamically transitionStyle change
-            transitionStyle="scroll"
-            ref={this.viewPager as any}
-          >
-            {pages}
-          </ViewPager>
-        ) : (
-          <ViewPager
-            {...vpProps}
-            // Lib does not support dynamically orientation change
-            orientation="horizontal"
-            // Lib does not support dynamically transitionStyle change
-            transitionStyle="scroll"
-            ref={this.viewPager as any}
-          >
-            {pages}
-          </ViewPager>
-        )}
+        <ViewPager
+          {...vpProps}
+          // Lib does not support dynamically orientation change
+          orientation={vertical ? "vertical" : 'horizontal'}
+          // Lib does not support dynamically transitionStyle change
+          transitionStyle="scroll"
+          ref={this.viewPager as any}
+        >
+          {pages}
+        </ViewPager>
         {dots && this.renderDots(selectedIndex)}
       </View>
     );
   }
+  private getChildrenCount = (children: React.ReactNode) => {
+    const count = children ? React.Children.count(children) || 1 : 0;
+    return count;
+  };
+
+  private autoplay = (stop = false) => {
+    if (stop) {
+      clearTimeout(this.autoplayTimer);
+      return;
+    }
+    const { children, autoplay, infinite, autoplayInterval } = this.props;
+    const { isScrolling, selectedIndex } = this.state;
+    const count = this.getChildrenCount(children);
+    if (!Array.isArray(children) || !autoplay || isScrolling) {
+      return;
+    }
+
+    clearTimeout(this.autoplayTimer);
+
+    this.autoplayTimer = setTimeout(() => {
+      let newIndex = selectedIndex < count ? selectedIndex + 1 : 0;
+      if (selectedIndex === count - 1) {
+        newIndex = 0;
+        if (!infinite) {
+          clearTimeout(this.autoplayTimer);
+          return;
+        }
+      }
+      this.goTo(newIndex);
+    }, autoplayInterval);
+  };
+
+  private renderDots = (index: number) => {
+    const {
+      children,
+      vertical,
+      pagination,
+      dotStyle,
+      dotActiveStyle,
+    } = this.props;
+    if (!pagination) {
+      return null;
+    }
+    const count = this.getChildrenCount(children);
+    return (
+      <WithTheme themeStyles={CarouselStyles} styles={this.props.styles}>
+        {styles => {
+          return pagination({
+            styles,
+            vertical,
+            current: index,
+            count,
+            dotStyle,
+            dotActiveStyle,
+          });
+        }}
+      </WithTheme>
+    );
+  };
 }
 
 export default Carousel;
