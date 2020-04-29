@@ -94,6 +94,14 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   componentWillUnmount() {
     clearTimeout(this.autoplayTimer);
   }
+  componentDidUpdate(prevProps: CarouselProps) {
+    if (
+      prevProps.autoplay !== undefined &&
+      prevProps.autoplay !== this.props.autoplay
+    ) {
+      this.autoplay(!this.props.autoplay);
+    }
+  }
   /**
    * go to index
    * @param index
@@ -165,7 +173,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         <ViewPager
           {...vpProps}
           // Lib does not support dynamically orientation change
-          orientation={vertical ? "vertical" : 'horizontal'}
+          orientation={vertical ? 'vertical' : 'horizontal'}
           // Lib does not support dynamically transitionStyle change
           transitionStyle="scroll"
           ref={this.viewPager as any}

@@ -8,13 +8,14 @@ export default class BasicCarouselExample extends React.Component<any, any> {
     super(props);
     this.state = {
       selectedIndex: 2,
+      autoplay: true,
     };
   }
   onHorizontalSelectedIndexChange = (index: number) => {
     /* tslint:disable: no-console */
     console.log('horizontal change to', index);
-    this.setState({selectedIndex: index})
-  }
+    this.setState({ selectedIndex: index });
+  };
   onVerticalSelectedIndexChange(index: number) {
     /* tslint:disable: no-console */
     console.log('vertical change to', index);
@@ -30,7 +31,7 @@ export default class BasicCarouselExample extends React.Component<any, any> {
             autoplay
             infinite
             afterChange={this.onHorizontalSelectedIndexChange}
-            ref={ref=> this.carousel = ref}
+            ref={ref => (this.carousel = ref)}
           >
             <View
               style={[styles.containerHorizontal, { backgroundColor: 'red' }]}
@@ -73,8 +74,8 @@ export default class BasicCarouselExample extends React.Component<any, any> {
           <Carousel
             style={styles.wrapper}
             selectedIndex={1}
-            autoplay
-            infinite={false}
+            autoplay={this.state.autoplay}
+            infinite
             afterChange={this.onVerticalSelectedIndexChange}
             vertical
           >
@@ -104,10 +105,11 @@ export default class BasicCarouselExample extends React.Component<any, any> {
               <Text>Carousel 5</Text>
             </View>
           </Carousel>
-          <Text>
-            Use the height of the first child as the height of the Carousel
-          </Text>
-          <Text>{React.Children.count(this.props.children)}</Text>
+          <Button
+            onPress={() => this.setState({ autoplay: !this.state.autoplay })}
+          >
+            Toggle autoplay {this.state.autoplay ? 'true' : 'false'}
+          </Button>
         </View>
       </View>
     );
