@@ -18,7 +18,6 @@
 
 Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的移动规范的 React 实现，服务于蚂蚁及口碑无线业务。
 
-
 ## 特性
 
 - 基于 Ant Design 移动设计规范。
@@ -56,10 +55,25 @@ or
 yarn add @ant-design/react-native
 ```
 
-### 链接字体图标
+**4.0.0** 以后要单独安装 peer 依赖
 
 ```bash
-react-native link @ant-design/react-native
+ npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+or
+
+```bash
+ yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+> 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理
+
+### 链接字体图标以及自动链接
+
+```bash
+# 手动链接字体图标
+npx react-native link
 ```
 
 [介绍](docs/react/introduce.zh-CN.md#安装)
