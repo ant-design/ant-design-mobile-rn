@@ -18,18 +18,6 @@ English | [简体中文](./README.zh-CN.md)
 
 A configurable Mobile UI specification and React-based implementation.
 
-## Announcement
-
-~~Thank you all for trusting us and using antd-mobile-rn. Due to limited application secnarios and development resouces, we regret to annouce antd-mobile-rn will not be officially mainained and updated. If anyone in the community is interested to continue to maintain this project, please contact us in private.~~
-
-If you found a bug you can file an issue directly and `PR` are always welcome.
-
-By the way. you can support this project via Star star sta st s... ⭐️ ⭐️ ⭐️ ⭐️ ⭐️.
-
-~~Discussion: [The new plan](https://github.com/ant-design/ant-design-mobile-rn/issues/119)~~
-
-The new version `3.x` has been released, please see the installation upgrade guide.[Changelog](https://rn.mobile.ant.design/changelog)
-
 ## Features
 
 - Follow Ant Design Mobile UI specification.
