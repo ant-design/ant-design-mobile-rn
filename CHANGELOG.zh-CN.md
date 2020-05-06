@@ -14,6 +14,18 @@ toc: false
 
 ---
 
+### 4.0.0
+
+`2020-05-10`
+
+- 完善`TypeScript` 类型定义
+- 添加`pt_BR` 本地化支持 [pull/802](https://github.com/ant-design/ant-design-mobile-rn/pull/802)
+- 修复`UNSAFE_` 警告 [commit](https://github.com/ant-design/ant-design-mobile-rn/commit/8fe842d57609cfc9de55453d15f26b907d0814f7)
+- 使用`@react-native-community/*`替换`React-Native` 内置组件 [pull/828](https://github.com/ant-design/ant-design-mobile-rn/pull/828) （不兼容改动，需要 linking 或者 auto linking）
+- 重构`Carousel` [pull/841](https://github.com/ant-design/ant-design-mobile-rn/pull/841)
+- 更新`react-native`到`0.62.0`
+- 其他`bug`修复
+
 ### 3.3.0
 
 `2020-03-08`

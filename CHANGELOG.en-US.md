@@ -14,6 +14,18 @@ toc: false
 
 ---
 
+### 4.0.0
+
+`2020-05-10`
+
+- Update `TypeScript` definitions
+- Added `pt_BR` locale [pull/802](https://github.com/ant-design/ant-design-mobile-rn/pull/802)
+- Fixes `UNSAFE_` warning [commit](https://github.com/ant-design/ant-design-mobile-rn/commit/8fe842d57609cfc9de55453d15f26b907d0814f7)
+- Replace `React-Native` components with `@react-native-community/*` [pull/828](https://github.com/ant-design/ant-design-mobile-rn/pull/828) （Breaking changes. Needs linking or auto linking）
+- refactor `Carousel` [pull/841](https://github.com/ant-design/ant-design-mobile-rn/pull/841)
+- Upgrade `react-native` to `0.62.0`
+- `bug` fixes
+
 ### 3.3.0
 
 `2020-03-08`
