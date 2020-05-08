@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { NativeSyntheticEvent, StyleProp, Text, TextInput, TextInputFocusEventData, TextStyle, View } from 'react-native';
+import { NativeSyntheticEvent, StyleProp, Text, TextInput, TextInputFocusEventData, TextInputProps, TextStyle, View } from 'react-native';
 import Icon from '../icon';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
@@ -9,7 +9,8 @@ import SearchBarStyles, { SearchBarStyle } from './style/index';
 
 export interface SearchBarProps
   extends SearchBarPropsType,
-    WithThemeStyles<SearchBarStyle> {
+    WithThemeStyles<SearchBarStyle>,
+    Omit<TextInputProps, 'onChange'> {
   onChangeText?: (text: string) => void;
   onSubmitEditing?: (event: { nativeEvent: { text: string } }) => void;
   style?: StyleProp<TextStyle>;
