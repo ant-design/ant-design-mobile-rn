@@ -77,7 +77,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
         ]
       }
     >
-      
+      
     </Text>
   </View>
   <View
@@ -173,7 +173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -249,7 +249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -325,7 +325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -423,7 +423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -499,7 +499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -575,7 +575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -673,7 +673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -749,7 +749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -825,7 +825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -923,7 +923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -999,7 +999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1075,7 +1075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1173,7 +1173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1249,7 +1249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1325,7 +1325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1423,7 +1423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1499,7 +1499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1575,7 +1575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1673,7 +1673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1749,7 +1749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1825,7 +1825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1923,7 +1923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -1999,7 +1999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2075,7 +2075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2173,7 +2173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2249,7 +2249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2325,7 +2325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2423,7 +2423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2499,7 +2499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2575,7 +2575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2673,7 +2673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2749,7 +2749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2825,7 +2825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2923,7 +2923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -2999,7 +2999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3075,7 +3075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3173,7 +3173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3249,7 +3249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3325,7 +3325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3423,7 +3423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3499,7 +3499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3575,7 +3575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3673,7 +3673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3749,7 +3749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3825,7 +3825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3923,7 +3923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -3999,7 +3999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4075,7 +4075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4173,7 +4173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4249,7 +4249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4325,7 +4325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4423,7 +4423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4499,7 +4499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4575,7 +4575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4673,7 +4673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4749,7 +4749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4825,7 +4825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4923,7 +4923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -4999,7 +4999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5075,7 +5075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5173,7 +5173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5249,7 +5249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5325,7 +5325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5423,7 +5423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5499,7 +5499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5575,7 +5575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5673,7 +5673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5749,7 +5749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5825,7 +5825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5923,7 +5923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -5999,7 +5999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6075,7 +6075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6173,7 +6173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6249,7 +6249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6325,7 +6325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6423,7 +6423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6499,7 +6499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6575,7 +6575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6673,7 +6673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6749,7 +6749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6825,7 +6825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6923,7 +6923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -6999,7 +6999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7075,7 +7075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7173,7 +7173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7249,7 +7249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7325,7 +7325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7423,7 +7423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7499,7 +7499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7575,7 +7575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7673,7 +7673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7749,7 +7749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7825,7 +7825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7923,7 +7923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -7999,7 +7999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8075,7 +8075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8173,7 +8173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8249,7 +8249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8325,7 +8325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8423,7 +8423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8499,7 +8499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8575,7 +8575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8673,7 +8673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8749,7 +8749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8825,7 +8825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8923,7 +8923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -8999,7 +8999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9075,7 +9075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9173,7 +9173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9249,7 +9249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9325,7 +9325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9423,7 +9423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9499,7 +9499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9575,7 +9575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9673,7 +9673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9749,7 +9749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9825,7 +9825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9923,7 +9923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -9999,7 +9999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10075,7 +10075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10173,7 +10173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10249,7 +10249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10325,7 +10325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10423,7 +10423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10499,7 +10499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10575,7 +10575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10673,7 +10673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10749,7 +10749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10825,7 +10825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10923,7 +10923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -10999,7 +10999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11075,7 +11075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11173,7 +11173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11249,7 +11249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11325,7 +11325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11423,7 +11423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11499,7 +11499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11575,7 +11575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11673,7 +11673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11749,7 +11749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11825,7 +11825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11923,7 +11923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -11999,7 +11999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12075,7 +12075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12173,7 +12173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12249,7 +12249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12325,7 +12325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12423,7 +12423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12499,7 +12499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12575,7 +12575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12673,7 +12673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12749,7 +12749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12825,7 +12825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12923,7 +12923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -12999,7 +12999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13075,7 +13075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13173,7 +13173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13249,7 +13249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13325,7 +13325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13423,7 +13423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13499,7 +13499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13575,7 +13575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13673,7 +13673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13749,7 +13749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13825,7 +13825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13923,7 +13923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -13999,7 +13999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14075,7 +14075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14173,7 +14173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14249,7 +14249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14325,7 +14325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14423,7 +14423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14499,7 +14499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14575,7 +14575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14673,7 +14673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14749,7 +14749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14825,7 +14825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14923,7 +14923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -14999,7 +14999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15075,7 +15075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15173,7 +15173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15249,7 +15249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15325,7 +15325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15423,7 +15423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15499,7 +15499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15575,7 +15575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15673,7 +15673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15749,7 +15749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15825,7 +15825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15923,7 +15923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -15999,7 +15999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16075,7 +16075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16173,7 +16173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16249,7 +16249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16325,7 +16325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16423,7 +16423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16499,7 +16499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16575,7 +16575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16673,7 +16673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16749,7 +16749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16825,7 +16825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16923,7 +16923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -16999,7 +16999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17075,7 +17075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17173,7 +17173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17249,7 +17249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17325,7 +17325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17423,7 +17423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17499,7 +17499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17575,7 +17575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17673,7 +17673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17749,7 +17749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17825,7 +17825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17923,7 +17923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -17999,7 +17999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18075,7 +18075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18173,7 +18173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18249,7 +18249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18325,7 +18325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18423,7 +18423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18499,7 +18499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18575,7 +18575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18673,7 +18673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18749,7 +18749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18825,7 +18825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18923,7 +18923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -18999,7 +18999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19075,7 +19075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19173,7 +19173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19249,7 +19249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19325,7 +19325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19423,7 +19423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19499,7 +19499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19575,7 +19575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19673,7 +19673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19749,7 +19749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19825,7 +19825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19923,7 +19923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -19999,7 +19999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20075,7 +20075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20173,7 +20173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20249,7 +20249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20325,7 +20325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20423,7 +20423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20499,7 +20499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20575,7 +20575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20673,7 +20673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20749,7 +20749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20825,7 +20825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20923,7 +20923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -20999,7 +20999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21075,7 +21075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21173,7 +21173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21249,7 +21249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21325,7 +21325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21423,7 +21423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21499,7 +21499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21575,7 +21575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21673,7 +21673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21749,7 +21749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21825,7 +21825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21923,7 +21923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -21999,7 +21999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22075,7 +22075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22173,7 +22173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22249,7 +22249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22325,7 +22325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22423,7 +22423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22499,7 +22499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22575,7 +22575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22673,7 +22673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22749,7 +22749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22825,7 +22825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22923,7 +22923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -22999,7 +22999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23075,7 +23075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23173,7 +23173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23249,7 +23249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23325,7 +23325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23423,7 +23423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23499,7 +23499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23575,7 +23575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23673,7 +23673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23749,7 +23749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23825,7 +23825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23923,7 +23923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -23999,7 +23999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24075,7 +24075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24173,7 +24173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24249,7 +24249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24325,7 +24325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24423,7 +24423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24499,7 +24499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24575,7 +24575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24673,7 +24673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24749,7 +24749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24825,7 +24825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24923,7 +24923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -24999,7 +24999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25075,7 +25075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25173,7 +25173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25249,7 +25249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25325,7 +25325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25423,7 +25423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25499,7 +25499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25575,7 +25575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25673,7 +25673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25749,7 +25749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25825,7 +25825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25923,7 +25923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -25999,7 +25999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26075,7 +26075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26173,7 +26173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26249,7 +26249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26325,7 +26325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26423,7 +26423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26499,7 +26499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26575,7 +26575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26673,7 +26673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26749,7 +26749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26825,7 +26825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26923,7 +26923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -26999,7 +26999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27075,7 +27075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27173,7 +27173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27249,7 +27249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27325,7 +27325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27423,7 +27423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27499,7 +27499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27575,7 +27575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27673,7 +27673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27749,7 +27749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27825,7 +27825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27923,7 +27923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -27999,7 +27999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28075,7 +28075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28173,7 +28173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28249,7 +28249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28325,7 +28325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28423,7 +28423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28499,7 +28499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28575,7 +28575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28673,7 +28673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28749,7 +28749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28825,7 +28825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28923,7 +28923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -28999,7 +28999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29075,7 +29075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29173,7 +29173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29249,7 +29249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29325,7 +29325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29423,7 +29423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29499,7 +29499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29575,7 +29575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29673,7 +29673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29749,7 +29749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29825,7 +29825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29923,7 +29923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -29999,7 +29999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30075,7 +30075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30173,7 +30173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30249,7 +30249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30325,7 +30325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30423,7 +30423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30499,7 +30499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30575,7 +30575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30673,7 +30673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30749,7 +30749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30825,7 +30825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30923,7 +30923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -30999,7 +30999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31075,7 +31075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31173,7 +31173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31249,7 +31249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31325,7 +31325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31423,7 +31423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31499,7 +31499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31575,7 +31575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31673,7 +31673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31749,7 +31749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31825,7 +31825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31923,7 +31923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -31999,7 +31999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32075,7 +32075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32173,7 +32173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32249,7 +32249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32325,7 +32325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32423,7 +32423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32499,7 +32499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32575,7 +32575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32673,7 +32673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32749,7 +32749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32825,7 +32825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32923,7 +32923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -32999,7 +32999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33075,7 +33075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33173,7 +33173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33249,7 +33249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33325,7 +33325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33423,7 +33423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33499,7 +33499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33575,7 +33575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33673,7 +33673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33749,7 +33749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33825,7 +33825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33923,7 +33923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -33999,7 +33999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34075,7 +34075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34173,7 +34173,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34249,7 +34249,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34325,7 +34325,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34423,7 +34423,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34499,7 +34499,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34575,7 +34575,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34673,7 +34673,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34749,7 +34749,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34825,7 +34825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34923,7 +34923,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -34999,7 +34999,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={
@@ -35075,7 +35075,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
               <Text
                 style={

@@ -445,7 +445,7 @@ exports[`renders ./components/textarea-item/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </TouchableWithoutFeedback>

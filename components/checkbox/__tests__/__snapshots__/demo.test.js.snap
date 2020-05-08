@@ -44,7 +44,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </TouchableWithoutFeedback>
@@ -91,7 +91,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
         <Text
           style={
@@ -147,7 +147,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </TouchableWithoutFeedback>
@@ -194,7 +194,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </TouchableWithoutFeedback>
@@ -262,7 +262,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               ]
             }
           >
-            
+            
           </Text>
         </View>
       </TouchableWithoutFeedback>
@@ -344,7 +344,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               ]
             }
           >
-            
+            
           </Text>
         </View>
       </TouchableWithoutFeedback>
@@ -424,7 +424,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               ]
             }
           >
-            
+            
           </Text>
         </View>
       </TouchableWithoutFeedback>
@@ -504,7 +504,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               ]
             }
           >
-            
+            
           </Text>
         </View>
       </TouchableWithoutFeedback>
@@ -606,7 +606,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
           </TouchableWithoutFeedback>
@@ -716,7 +716,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
           </TouchableWithoutFeedback>
@@ -824,7 +824,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
           </TouchableWithoutFeedback>
@@ -932,7 +932,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
           </TouchableWithoutFeedback>

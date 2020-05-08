@@ -43,7 +43,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
         <Text>
           Support
@@ -204,7 +204,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
             </TouchableWithoutFeedback>
@@ -467,7 +467,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
             </TouchableWithoutFeedback>

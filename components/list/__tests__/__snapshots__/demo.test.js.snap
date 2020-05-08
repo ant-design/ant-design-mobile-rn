@@ -274,7 +274,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>
@@ -385,7 +385,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>
@@ -496,7 +496,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>
@@ -995,7 +995,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>
@@ -1344,7 +1344,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>
@@ -1441,7 +1441,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>

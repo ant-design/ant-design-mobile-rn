@@ -129,7 +129,7 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <View
               style={
@@ -212,7 +212,7 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
           <Text
@@ -262,7 +262,7 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <View
               style={
@@ -341,7 +341,7 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
           <Text
@@ -391,7 +391,7 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
           <Text
