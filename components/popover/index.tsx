@@ -12,6 +12,10 @@ export interface PopoverProps extends WithThemeStyles<PopoverStyle> {
   disabled?: boolean;
   renderOverlayComponent?: (node: React.ReactNode) => React.ReactNode;
   placement?: Placement | 'auto';
+  duration?: number;
+  easing?: (show: boolean) => (value: number) => number;
+  useNativeDriver?: boolean;
+  onDismiss?: () => void;
 }
 export interface PopoverItemProps {
   value: any;
@@ -77,7 +81,7 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
     return <ScrollView>{items}</ScrollView>;
   };
   render() {
-    const { children, disabled, triggerStyle, styles, placement } = this.props;
+    const { children, disabled, triggerStyle, styles, placement, duration, easing, useNativeDriver, onDismiss } = this.props;
 
     return (
       <WithTheme themeStyles={PopoverStyles} styles={styles}>
@@ -109,6 +113,10 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
                   fromRect={popoverAnchorRect}
                   supportedOrientations={['portrait', 'landscape']}
                   placement={placement}
+                  duration={duration}
+                  easing={easing}
+                  useNativeDriver={useNativeDriver}
+                  onDismiss={onDismiss}
                 >
                   {this.renderOverlay(closePopover)}
                 </Pop>

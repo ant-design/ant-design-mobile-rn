@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Easing, StyleSheet, Text, View } from 'react-native';
 import { List, Popover } from '../../';
 
 const Item = Popover.Item;
@@ -65,6 +65,20 @@ export default class PopoverExample extends React.Component<any, any> {
             }}
           >
             自定义组件
+          </Text>
+        </Popover>
+        <Popover
+          overlay={overlay}
+          useNativeDriver
+          duration={200}
+          easing={(show) => show ? Easing.in(Easing.ease) : Easing.step0}
+        >
+          <Text
+            style={{
+              margin: 16,
+            }}
+          >
+            自定义动画
           </Text>
         </Popover>
         <View style={{ alignItems: 'center' }}>
