@@ -19,6 +19,10 @@ subtitle: 气泡
 | onSelect   | 选中某选项时的回调函数    | (value: any): void |  -   |
 | triggerStyle  | 触发元素外围容器样式    | ViewStyle |  -   |
 | renderOverlayComponent  | 自定义弹出层的外围组件，默认是`ScrollView`，示例`(nodes) => <View>{nodes}</View>`  | (node: React.ReactNode) => React.ReactNode |  -   |
+| duration | 动画时长 | number | 300 |
+| easing | 动画效果 | (show: boolean) => (value: number) => number | show => show ? Easing.out(Easing.back(1.70158)) : Easing.inOut(Easing.quad) |
+| useNativeDriver | 动画是否使用 Native Driver | boolean | false |
+| onDismiss | Popover 关闭后的回调函数 | function | - |
 
 
 ### Popover.Item

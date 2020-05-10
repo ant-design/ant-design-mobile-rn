@@ -18,7 +18,10 @@ Properties | Descrition | Type | Default
 | onSelect   | when an option is selected    | (value: any): void |  -   |
 | triggerStyle  | trigger style  | ViewStyle |  -   |
 | renderOverlayComponent  | A function that renders takes in the MenuOptions element and renders a container element that contains the options. Default function wraps options with a `ScrollView`. e.g. `(nodes) => <View>{nodes}</View>`  | (node: React.ReactNode) => React.ReactNode |  -   |
-
+| duration | Animation duration | number | 300 |
+| easing | Function that returns easing function for show or hide animation, depending on `show` argument | (show: boolean) => (value: number) => number | show => show ? Easing.out(Easing.back(1.70158)) : Easing.inOut(Easing.quad) |
+| useNativeDriver | Defines if animations should use native driver | boolean | false |
+| onDismiss | Callback to be fired after the popup closes | function | - |
 
 ### Popover.Item
 
