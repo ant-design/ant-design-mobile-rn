@@ -2503,6 +2503,239 @@ Array [
       </View>
     </Modal>
   </View>,
+  <View>
+    <
+      activeOpacity={0.75}
+      onPress={[Function]}
+    >
+      <Text
+        style={
+          Object {
+            "margin": 16,
+          }
+        }
+      >
+        自定义动画
+      </Text>
+    </>
+    <Modal
+      hardwareAccelerated={false}
+      onDismiss={[Function]}
+      onOrientationChange={[Function]}
+      onRequestClose={[Function]}
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
+      }
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            false,
+          ]
+        }
+      >
+        <TouchableWithoutFeedback
+          onPress={[Function]}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "bottom": 0,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+            useNativeDriver={true}
+          />
+        </TouchableWithoutFeedback>
+        <View
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "left": 0,
+              "position": "absolute",
+              "shadowColor": "black",
+              "shadowOffset": Object {
+                "height": 2,
+                "width": 0,
+              },
+              "shadowOpacity": 0.4,
+              "shadowRadius": 2,
+              "top": 0,
+            }
+          }
+          useNativeDriver={true}
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderRadius": 3,
+                "elevation": 3,
+                "flexDirection": "column",
+                "padding": 0,
+                "position": "absolute",
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
+                  },
+                  Object {
+                    "scale": 0,
+                  },
+                ],
+              }
+            }
+            useNativeDriver={true}
+          >
+            <ScrollView>
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "padding": 9,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text>
+                  option 
+                  1
+                </Text>
+              </>
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "padding": 9,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text>
+                  option 
+                  2
+                </Text>
+              </>
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "padding": 9,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text>
+                  option 
+                  3
+                </Text>
+              </>
+              <
+                activeOpacity={0.75}
+                disabled={true}
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "padding": 9,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#ddd",
+                    }
+                  }
+                >
+                  disabled opt
+                </Text>
+              </>
+              <
+                activeOpacity={0.75}
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "padding": 9,
+                    },
+                    Object {
+                      "backgroundColor": "#efeff4",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  关闭
+                </Text>
+              </>
+            </ScrollView>
+          </View>
+          <View
+            style={
+              Object {
+                "borderBottomColor": "transparent",
+                "borderBottomWidth": 9,
+                "borderLeftColor": "transparent",
+                "borderLeftWidth": 9,
+                "borderRightColor": "transparent",
+                "borderRightWidth": 9,
+                "borderTopColor": "transparent",
+                "borderTopWidth": 9,
+                "height": 18,
+                "left": -9,
+                "position": "absolute",
+                "top": -9,
+                "transform": Array [
+                  Object {
+                    "rotate": "0deg",
+                  },
+                  Object {
+                    "scale": 0,
+                  },
+                ],
+                "width": 18,
+              }
+            }
+            useNativeDriver={true}
+          />
+        </View>
+      </View>
+    </Modal>
+  </View>,
   <View
     style={
       Object {
