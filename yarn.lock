@@ -1150,9 +1150,9 @@
   integrity sha1-dL592TxUQmZ33daAgMolOQalfgc=
 
 "@react-native-community/segmented-control@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.npm.taobao.org/@react-native-community/segmented-control/download/@react-native-community/segmented-control-1.4.0.tgz#16e449c76b2ea85784bc89cad2604a0bd5c42b42"
-  integrity sha1-FuRJx2suqFeEvInK0mBKC9XEK0I=
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/segmented-control/-/segmented-control-1.6.1.tgz#47c5eb20664376e390c3412d9a7242c2df35cdb0"
+  integrity sha512-6TCrkDHgchKU2RA0r+V49Uwvv9mMhLKCwx7sf6Jkj0D4RYs+qmxYFjoM82bOcaH2kOVF+cvRvABRn0Ai0my5LA==
 
 "@react-native-community/slider@^2.0.9":
   version "2.0.9"
