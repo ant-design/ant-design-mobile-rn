@@ -1023,9 +1023,9 @@
     chalk "^3.0.0"
 
 "@react-native-community/cameraroll@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@react-native-community/cameraroll/-/cameraroll-1.5.2.tgz#6db66bd39816ef19051e024e44f31f4a8de5b3c1"
-  integrity sha512-xrkrmcI5V8IzWoGQOqycs2YZRmGqASqZMDkjOzFFg6bCy95+OMquPnCmGdaUx1ONO1x6tsQSCv87xM/oL+9m/A==
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cameraroll/-/cameraroll-1.6.2.tgz#a4dedcf8ba7bc938f805dd07dd43a275edb1f411"
+  integrity sha512-5R/2Tpi7APoNBDmRV23OcRIN9YiaRMJAHrXkGDpj7jVo2yQpJCCrARnZ9qhJ9dYEMybdP/XhXI1vVjuad5xqNQ==
 
 "@react-native-community/cli-debugger-ui@^4.7.0":
   version "4.7.0"
