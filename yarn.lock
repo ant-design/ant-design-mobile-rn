@@ -1149,10 +1149,10 @@
   resolved "https://registry.npm.taobao.org/@react-native-community/picker/download/@react-native-community/picker-1.3.0.tgz#74be7dd93c54426677ddd68080ca253906a57e07"
   integrity sha1-dL592TxUQmZ33daAgMolOQalfgc=
 
-"@react-native-community/segmented-control@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.npm.taobao.org/@react-native-community/segmented-control/download/@react-native-community/segmented-control-1.4.0.tgz#16e449c76b2ea85784bc89cad2604a0bd5c42b42"
-  integrity sha1-FuRJx2suqFeEvInK0mBKC9XEK0I=
+"@react-native-community/segmented-control@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/segmented-control/-/segmented-control-2.0.0.tgz#260b40a3b9caa6104885e46276ebb8d7c751db68"
+  integrity sha512-3UEAhwbTeVN+vpr7GTg+FQbNbKqxNFLrfhNYaCrA/vhreMYxjNwF5YP7BscqwX/RqZZ+TatM3gJ4APRg9Ae6Gg==
 
 "@react-native-community/slider@^2.0.9":
   version "2.0.9"
