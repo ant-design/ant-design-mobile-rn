@@ -13,8 +13,10 @@ interface IToastProps extends IToastConfigurable {
   content: string;
 }
 
+const SHORT = 3;
+
 const defaultConfig: IToastConfigurable = {
-  duration: 2,
+  duration: SHORT,
   onClose: () => {},
   mask: true,
   stackable: true,
@@ -75,7 +77,7 @@ function notice(
 }
 
 export default {
-  SHORT: 3,
+  SHORT,
   LONG: 8,
   defaultConfig,
   getConfig: () => {
