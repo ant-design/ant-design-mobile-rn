@@ -9,11 +9,191 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         "marginRight": 15,
       },
       Object {
-        "marginTop": 80,
+        "marginTop": 20,
       },
     ]
   }
 >
+  <View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderTopColor": "#dddddd",
+          "borderTopWidth": 0.5,
+        }
+      }
+    >
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
+                }
+              >
+                Enable Mask
+              </Text>
+            </View>
+            <Switch
+              disabled={false}
+              onValueChange={[Function]}
+              trackColor={
+                Object {
+                  "false": "",
+                  "true": "#4dd865",
+                }
+              }
+              value={true}
+            />
+          </View>
+        </View>
+      </>
+      <
+        activeOpacity={1}
+        delayLongPress={500}
+        onLongPress={[Function]}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "paddingLeft": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingRight": 15,
+                  "paddingVertical": 6,
+                },
+                false,
+                false,
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
+                }
+              >
+                Enable Stack
+              </Text>
+            </View>
+            <Switch
+              disabled={false}
+              onValueChange={[Function]}
+              trackColor={
+                Object {
+                  "false": "",
+                  "true": "#4dd865",
+                }
+              }
+              value={true}
+            />
+          </View>
+        </View>
+      </>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -80,6 +260,75 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         }
       >
         Without mask
+      </Text>
+    </View>
+  </>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <
+    activeOpacity={0.4}
+    disabled={false}
+    onHideUnderlay={[Function]}
+    onPress={[Function]}
+    onPressIn={[Function]}
+    onPressOut={[Function]}
+    onShowUnderlay={[Function]}
+    pressIn={false}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 47,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#dddddd",
+        },
+        false,
+        false,
+        undefined,
+        undefined,
+      ]
+    }
+    underlayColor="#dddddd"
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 18,
+            },
+            Object {
+              "color": "#000000",
+            },
+            false,
+            false,
+          ]
+        }
+      >
+        Stackable toast
       </Text>
     </View>
   </>
@@ -493,19 +742,9 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
           ]
         }
       >
-        Toast width duration = 0
+        Toast with duration = 0
       </Text>
     </View>
   </>
-  <View
-    style={
-      Array [
-        Object {
-          "height": 9,
-        },
-        undefined,
-      ]
-    }
-  />
 </View>
 `;
