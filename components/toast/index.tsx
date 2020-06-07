@@ -89,9 +89,19 @@ export default {
       ...props,
     }
   },
+  /**
+   * @deprecated
+   */
   show(content: string | IToastProps, duration?: number, mask?: boolean) {
     return notice(content, 'info', duration, () => {}, mask);
   },
+  /**
+   *
+   * @param content
+   * @deprecated @param duration
+   * @deprecated @param onClose
+   * @deprecated @param mask
+   */
   info(
     content: string | IToastProps,
     duration?: number,
@@ -100,6 +110,13 @@ export default {
   ) {
     return notice(content, 'info', duration, onClose, mask);
   },
+  /**
+   *
+   * @param content
+   * @deprecated @param duration
+   * @deprecated @param onClose
+   * @deprecated @param mask
+   */
   success(
     content: string | IToastProps,
     duration?: number,
@@ -108,6 +125,13 @@ export default {
   ) {
     return notice(content, 'success', duration, onClose, mask);
   },
+  /**
+   *
+   * @param content
+   * @deprecated @param duration
+   * @deprecated @param onClose
+   * @deprecated @param mask
+   */
   fail(
     content: string | IToastProps,
     duration?: number,
@@ -116,6 +140,13 @@ export default {
   ) {
     return notice(content, 'fail', duration, onClose, mask);
   },
+  /**
+   *
+   * @param content
+   * @deprecated @param duration
+   * @deprecated @param onClose
+   * @deprecated @param mask
+   */
   offline(
     content: string | IToastProps,
     duration?: number,
@@ -124,6 +155,13 @@ export default {
   ) {
     return notice(content, 'offline', duration, onClose, mask);
   },
+  /**
+   *
+   * @param content
+   * @deprecated @param duration
+   * @deprecated @param onClose
+   * @deprecated @param mask
+   */
   loading(
     content: string | IToastProps,
     duration?: number,
