@@ -90,85 +90,85 @@ export default {
     }
   },
   /**
-   * @deprecated
+   * @deprecated use Toast.info instead
    */
-  show(content: string | IToastProps, duration?: number, mask?: boolean) {
-    return notice(content, 'info', duration, () => {}, mask);
+  show(props: string | IToastProps, duration?: number, mask?: boolean) {
+    return notice(props, 'info', duration, () => {}, mask);
   },
   /**
    *
-   * @param content
-   * @deprecated @param duration
-   * @deprecated @param onClose
-   * @deprecated @param mask
+   * @param props: toast props
+   * @deprecated duration: use props instead
+   * @deprecated onClose: use props instead
+   * @deprecated mask: use props instead
    */
   info(
-    content: string | IToastProps,
+    props: string | IToastProps,
     duration?: number,
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(content, 'info', duration, onClose, mask);
+    return notice(props, 'info', duration, onClose, mask);
   },
   /**
    *
-   * @param content
-   * @deprecated @param duration
-   * @deprecated @param onClose
-   * @deprecated @param mask
+   * @param props: toast props
+   * @deprecated duration: use props instead
+   * @deprecated onClose: use props instead
+   * @deprecated mask: use props instead
    */
   success(
-    content: string | IToastProps,
+    props: string | IToastProps,
     duration?: number,
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(content, 'success', duration, onClose, mask);
+    return notice(props, 'success', duration, onClose, mask);
   },
   /**
    *
-   * @param content
-   * @deprecated @param duration
-   * @deprecated @param onClose
-   * @deprecated @param mask
+   * @param props: toast props
+   * @deprecated duration: use props instead
+   * @deprecated onClose: use props instead
+   * @deprecated mask: use props instead
    */
   fail(
-    content: string | IToastProps,
+    props: string | IToastProps,
     duration?: number,
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(content, 'fail', duration, onClose, mask);
+    return notice(props, 'fail', duration, onClose, mask);
   },
   /**
    *
-   * @param content
-   * @deprecated @param duration
-   * @deprecated @param onClose
-   * @deprecated @param mask
+   * @param props: toast props
+   * @deprecated duration: use props instead
+   * @deprecated onClose: use props instead
+   * @deprecated mask: use props instead
    */
   offline(
-    content: string | IToastProps,
+    props: string | IToastProps,
     duration?: number,
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(content, 'offline', duration, onClose, mask);
+    return notice(props, 'offline', duration, onClose, mask);
   },
   /**
    *
-   * @param content
-   * @deprecated @param duration
-   * @deprecated @param onClose
-   * @deprecated @param mask
+   * @param props: toast props
+   * @deprecated duration: use props instead
+   * @deprecated onClose: use props instead
+   * @deprecated mask: use props instead
    */
   loading(
-    content: string | IToastProps,
+    props: string | IToastProps,
     duration?: number,
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(content, 'loading', duration, onClose, mask);
+    return notice(props, 'loading', duration, onClose, mask);
   },
   remove(key: number) {
     Portal.remove(key);
