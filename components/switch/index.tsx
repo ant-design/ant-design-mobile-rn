@@ -20,7 +20,7 @@ const AntmSwitch = (props: AntmSwitchProps) => {
       disabled={disabled}
       trackColor={{
         true: color,
-        false: color,
+        false: '',
       }}
     />
   );
