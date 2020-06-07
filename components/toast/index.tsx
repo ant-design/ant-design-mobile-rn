@@ -26,6 +26,10 @@ let defaultProps = {
 
 const toastKeyMap: { [key: number]: 1 } = {};
 
+function removeAll() {
+  Object.keys(toastKeyMap).forEach((_key) => Portal.remove(Number.parseInt(_key, 10)));
+}
+
 function notice(
   content: string | IToastProps,
   type: string,
@@ -50,7 +54,7 @@ function notice(
   }
 
   if (!props.stackable) {
-    Object.keys(toastKeyMap).forEach((_key) => Portal.remove(Number.parseInt(_key, 10)));
+    removeAll();
   }
 
   const key = Portal.add(
@@ -126,4 +130,8 @@ export default {
   ) {
     return notice(content, 'loading', duration, onClose, mask);
   },
+  remove(key: number) {
+    Portal.remove(key);
+  },
+  removeAll,
 };
