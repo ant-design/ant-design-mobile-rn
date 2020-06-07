@@ -7,33 +7,36 @@ title: Toast
 A lightweight feedback or tips, used to display content that does not interrupt user operations. Suitable for page transitions, data interaction and other scenes.
 
 ### Rules
-- Only one Toast is allowed at a time.
-- Toast with Icon, 4-6 words is recommended.; Toast without Icon, the number of words should not exceed 14.
+- Toast with Icon, 4-6 words is recommended; Toast without Icon, the number of words should not exceed 14.
 
 ## API
 
-- `Toast.success(content, duration, onClose, mask)`
-- `Toast.fail(content, duration, onClose, mask)`
-- `Toast.info(content, duration, onClose, mask)`
-- `Toast.loading(content, duration, onClose, mask)`
-- `Toast.offline(content, duration, onClose, mask)`
+- `Toast.success(props)`
+- `Toast.fail(props)`
+- `Toast.info(props)`
+- `Toast.loading(props)`
+- `Toast.offline(props)`
 
-The component provide several static methods：
+Props has these fields:
 
-| Properties | Descrition                                                                           | Type                    | Default |
-| ---------- | ------------------------------------------------------------------------------------ | ----------------------- | ------- |
-| content    | Toast content                                                                        | React.Element or String | -       |
-| duration   | Delay time to close, which units is second                                           | number                  | 3       |
-| onClose    | A callback function Triggered when the Toast is closed                               | Function                | -       |
-| mask       | Whether to show a transparent mask, which will prevent touch event of the whole page | Boolean                 | true    |
+| Properties | Descrition                                                                           | Type                |  Required  | Default |
+| ---------- | ------------------------------------------------------------------------------------ | ----------------------- | ------- | ------- |
+| content    | Toast content                                                                        | String | Yes | -       |
+| duration   | Delay time to close, which units is second                                           | number                  |  No  | 3       |
+| onClose    | A callback function Triggered when the Toast is closed                               | Function                |  No  | -       |
+| mask       | Whether to show a transparent mask, which will prevent touch event of the whole page | Boolean                 |  No  | true    |
+| stackable |  Whether to allow toast overlay       | Boolean  |  No   |   true  |
 
 > **Notice：** OnClose is invalid and Toast does not hide, If set duration = 0, toast will not auto hide, you have to manually do it.
 
-
-> 3.0.0 began to remove the previous `Toast.hide` method, `Toast.xxx` now returns a `key` to manually close the prompt using `Portal.remove(key)`
-
 ```js
-  import { Portal, Toast } from '@ant-design/react-native'
-  const key Toast.loading('messsage')
-  Portal.remove(key)
+import { Toast } from '@ant-design/react-native';
+
+const key = Toast.loading('message');
+Toast.remove(key);
 ```
+
+### Configuration
+
+- `Toast.getConfig()` - get current config
+- `Toast.config(props)` - customize default value for NOT required parameters

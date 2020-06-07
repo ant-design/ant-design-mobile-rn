@@ -8,33 +8,36 @@ subtitle: 轻提示
 一种轻量级反馈/提示，可以用来显示不会打断用户操作的内容，适合用于页面转场、数据交互的等场景中。
 
 ### 规则
-- 一次只显示一个 toast。
 - 有 Icon 的 Toast，字数为 4-6 个；没有 Icon 的 Toast，字数不宜超过 14 个。
 
 ## API
 
-- `Toast.success(content, duration, onClose, mask)`
-- `Toast.fail(content, duration, onClose, mask)`
-- `Toast.info(content, duration, onClose, mask)`
-- `Toast.loading(content, duration, onClose, mask)`
-- `Toast.offline(content, duration, onClose, mask)`
+- `Toast.success(props)`
+- `Toast.fail(props)`
+- `Toast.info(props)`
+- `Toast.loading(props)`
+- `Toast.offline(props)`
 
-组件提供了五个静态方法，参数如下：
+Props 参数如下：
 
-| 属性     | 说明                           | 类型                    | 默认值 |
-| -------- | ------------------------------ | ----------------------- | ------ |
-| content  | 提示内容                       | React.Element or String | 无     |
-| duration | 自动关闭的延时，单位秒         | number                  | 3      |
-| onClose  | 关闭后回调                     | Function                | 无     |
-| mask     | 是否显示透明蒙层，防止触摸穿透 | Boolean                 | true   |
+|    属性    | 说明                           | 类型      | 必填 | 默认值 |
+| --------  | ------------------------------ | -------- | --- | ------ |
+| content   | 提示内容                        | String   | 是   |  -     |
+| duration  | 自动关闭的延时，单位秒            | number   |  否  |  3       |
+| onClose   | 关闭后回调                      | Function  |  否  | - |
+| mask      | 是否显示透明蒙层，防止触摸穿透     | Boolean   |  否   |   true  |
+| stackable | 是否允许叠加显示                 | Boolean  |  否   |   true  |
 
-> **注：**  duration = 0 时，onClose 无效，toast 不会消失；隐藏 toast 需要手动调用 hide
-
-
-> 3.0.0 开始移除了 之前的`Toast.hide`方法，`Toast.xxx` 现在返回一个`key`可以使用`Portal.remove(key)`手动关闭提示
+> **注：**  duration = 0 时，onClose 无效，toast 不会消失，隐藏 toast 需要手动调用 remove
 
 ```js
-  import { Portal, Toast } from '@ant-design/react-native'
-  const key Toast.loading('messsage')
-  Portal.remove(key)
+import { Toast } from '@ant-design/react-native';
+
+const key = Toast.loading('message');
+Toast.remove(key);
 ```
+
+### 自定义配置
+
+- `Toast.getConfig()` - 获取当前配置
+- `Toast.config(props)` - 配置非必填项的默认值

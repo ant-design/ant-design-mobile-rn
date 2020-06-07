@@ -81,7 +81,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
           </View>
           <Switch
             disabled={false}
-            onTintColor="#4dd865"
+            trackColor={
+              Object {
+                "false": "",
+                "true": "#4dd865",
+              }
+            }
             value={true}
           />
         </View>
@@ -151,7 +156,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
           </View>
           <Switch
             disabled={false}
-            onTintColor="#4dd865"
+            trackColor={
+              Object {
+                "false": "",
+                "true": "#4dd865",
+              }
+            }
             value={false}
           />
         </View>
@@ -235,8 +245,13 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
           </View>
           <Switch
             disabled={false}
-            onTintColor="#4dd865"
             onValueChange={[Function]}
+            trackColor={
+              Object {
+                "false": "",
+                "true": "#4dd865",
+              }
+            }
             value={false}
           />
         </View>
@@ -306,7 +321,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
           </View>
           <Switch
             disabled={true}
-            onTintColor="#4dd865"
+            trackColor={
+              Object {
+                "false": "",
+                "true": "#4dd865",
+              }
+            }
             value={false}
           />
         </View>
@@ -376,7 +396,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
           </View>
           <Switch
             disabled={false}
-            onTintColor="red"
+            trackColor={
+              Object {
+                "false": "",
+                "true": "red",
+              }
+            }
             value={true}
           />
         </View>

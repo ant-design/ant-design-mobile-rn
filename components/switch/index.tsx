@@ -18,7 +18,10 @@ const AntmSwitch = (props: AntmSwitchProps) => {
       onValueChange={onChange}
       value={checked}
       disabled={disabled}
-      onTintColor={color}
+      trackColor={{
+        true: color,
+        false: '',
+      }}
     />
   );
 };
