@@ -5,6 +5,29 @@ title: 升级指南
 
 此处着重列出升级中的不兼容变化和推荐改动。所有变动请见 [Changelog](/changelog)。
 
+### 4.0.0
+
+> 升级到4.0.0+需要安装peer依赖然后link
+
+```bash
+npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+or
+
+```bash
+yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+> 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理
+
+### 链接字体图标
+
+```bash
+# 手动链接字体图标
+npx react-native link
+```
+
 ### 3.0.0
 
 **3.0.0**开始需要安装 `react-native@0.57.x`
@@ -50,7 +73,7 @@ title: 升级指南
   react-native link @ant-design/icons-react-native
   ```
 
-  如果你使用的是 react-native@0.60.x 会自动link，如需手动link请使用
+  如果你使用的是 react-native@0.60.x 会自动 link，如需手动 link 请使用
 
   ```sh
   react-native link @ant-design/react-native

@@ -5,6 +5,28 @@ title: Upgrade
 
 Here list some of main incompatible changes and recommended changes in the upgrade. See [Changelog](/changelog) for all changes.
 
+### 4.0.0
+
+> Installing peer dependencies
+
+```bash
+npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+or
+
+```bash
+yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+> You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
+
+### Link icon fonts
+
+```bash
+npx react-native link
+```
+
 ### 3.0.0
 
 **3.0.0** needs to install `react-native@0.57.x`
@@ -50,14 +72,13 @@ Here list some of main incompatible changes and recommended changes in the upgra
   react-native link @ant-design/icons-react-native
   ```
 
+If you are at react-native@0.60.x after you install the package it will link automatically.
 
-  If you are at react-native@0.60.x after you install the package it will link automatically.
+or if you want link it manually.
 
-  or if you want link it manually.
-
-  ```sh
-  react-native link @ant-design/react-native
-  ```
+```sh
+react-native link @ant-design/react-native
+```
 
 ### 2.1.11 and before
 
