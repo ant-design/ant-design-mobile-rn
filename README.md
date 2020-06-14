@@ -55,16 +55,16 @@ or
 yarn add @ant-design/react-native
 ```
 
-**4.0.0**: Installing peer dependencies
+### Installing peer dependencies (4.0.0+)
 
 ```bash
- npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
 ```
 
 or
 
 ```bash
- yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
 ```
 
 > You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
