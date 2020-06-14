@@ -1,8 +1,8 @@
 export default {
-  done: 'Loaded',
-  loading: 'Loading',
-  refreshableTitlePull: 'Pull down refresh',
-  refreshableTitleRelease: 'Release loading',
-  refreshableTitleRefreshing: 'Loading...',
-  noData: 'No data yet',
+  done: 'Finalizado',
+  loading: 'Cargando',
+  refreshableTitlePull: 'Desliza para actualizar',
+  refreshableTitleRelease: 'Suelta para actualizar',
+  refreshableTitleRefreshing: 'Cargando...',
+  noData: 'Aún no hay datos',
 };
