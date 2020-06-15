@@ -95,7 +95,7 @@
     "jsonml.js": "^0.1.0",
     "lint-staged": "^8.0.4",
     "metro-react-native-babel-preset": "^0.58.0",
-    "mockdate": "^2.0.1",
+    "mockdate": "^3.0.2",
     "pre-commit": "1.x",
     "qrcode.react": "^0.8.0",
     "raf": "^3.4.0",
