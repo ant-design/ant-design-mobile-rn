@@ -47,6 +47,7 @@
     "@ant-design/bisheng-plugin": "^2.3.0",
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
+    "@bang88/china-city-data": "^1.0.0",
     "@react-native-community/cameraroll": "^1.5.2",
     "@react-native-community/eslint-config": "^0.0.5",
     "@react-native-community/masked-view": "^0.1.9",

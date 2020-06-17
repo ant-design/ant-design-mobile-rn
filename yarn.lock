@@ -1699,6 +1699,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bang88/china-city-data@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@bang88/china-city-data/-/china-city-data-1.0.0.tgz#d4a6bef624fa1b20a3593b6a2aab3816cbef0ffe"
+  integrity sha512-tmy521ZhQQW3d3SgUt9z2hdcvk3z7MfdKf8z96guy0fwdN5z0MUQe+20VnR6Tyd9x5P332oKBDegEWulfkiBNg==
+
 "@bang88/react-native-drawer-layout@^2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@bang88/react-native-drawer-layout/-/react-native-drawer-layout-2.0.3.tgz#a93abd5a9c6d1fc4c0924a9f21c2cd7d1deea88d"

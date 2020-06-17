@@ -5,7 +5,6 @@ import React, { Children, cloneElement } from 'react';
 import DocumentTitle from 'react-document-title';
 import * as utils from '../../../utils';
 
-
 const { TabPane } = Tabs;
 
 export default class Article extends React.Component {
@@ -13,12 +12,14 @@ export default class Article extends React.Component {
     this.componentDidUpdate();
 
     setTimeout(() => {
+      // eslint-disable-next-line react/destructuring-assignment
       const linkTo = this.props.location.hash.replace('#', '');
       if (linkTo) {
         document.getElementById(linkTo).scrollIntoView();
       }
     }, 500);
   }
+
   componentDidUpdate() {
     const links = document.querySelectorAll('.outside-link.internal');
     if (links.length === 0) {
@@ -27,18 +28,19 @@ export default class Article extends React.Component {
     const checkImgUrl = 'http://alipay-rmsdeploy-dev-image.oss-cn-hangzhou-zmf.aliyuncs.com/rmsportal/JdVaTbZzPxEldUi.png';
     utils.ping(checkImgUrl, (status) => {
       if (status === 'responded') {
-        links.forEach(link => (link.style.display = 'block'));
+        links.forEach((link) => (link.style.display = 'block'));
       }
     });
   }
+
   tryToRenderIntroducePageTab = (article) => {
     if (window.location.href.indexOf('introduce') === -1) {
       return article;
     }
     const allChildren = [].slice.call(article.props.children);
 
-    const webIndex = allChildren.findIndex(item => item.type === 'h4' && item.props.id.includes('Web'));
-    const RnIndex = allChildren.findIndex(item => item.type === 'h4' && item.props.id.includes('React-Native'));
+    const webIndex = allChildren.findIndex((item) => item.type === 'h4' && item.props.id.includes('Web'));
+    const RnIndex = allChildren.findIndex((item) => item.type === 'h4' && item.props.id.includes('React-Native'));
     if (webIndex === -1 || RnIndex === -1) {
       return article;
     }
@@ -61,6 +63,7 @@ export default class Article extends React.Component {
     article = React.cloneElement(article, {}, newChildren);
     return article;
   }
+
   getArticle = (article) => {
     // Todo: right now just hack it, wait move to bisheng-plugin-antd
     article = this.tryToRenderIntroducePageTab(article);
@@ -82,6 +85,7 @@ export default class Article extends React.Component {
       children: <Timeline>{timelineItems}</Timeline>,
     });
   }
+
   render() {
     const { props } = this;
     const { content } = props;
@@ -100,13 +104,13 @@ export default class Article extends React.Component {
             }
           </h1>
           {
-            !description ? null :
-              props.utils.toReactComponent(['section', { className: 'markdown' }].concat(getChildren(description)))
+            !description ? null
+              : props.utils.toReactComponent(['section', { className: 'markdown' }].concat(getChildren(description)))
           }
           {
-            (!content.toc || content.toc.length <= 1 || meta.toc === false) ?
-              null :
-              <section className="toc">{props.utils.toReactComponent(content.toc)}</section>
+            (!content.toc || content.toc.length <= 1 || meta.toc === false)
+              ? null
+              : <section className="toc">{props.utils.toReactComponent(content.toc)}</section>
           }
           {
             this.getArticle(props.utils.toReactComponent(['section', { className: 'markdown' }].concat(getChildren(content.content))))
