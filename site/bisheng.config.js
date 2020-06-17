@@ -36,6 +36,17 @@ const preactAlias = {
 const prodExternals = useReact ? reactExternals : preactExternals;
 
 module.exports = {
+  port: 8003,
+  source: {
+    components: './components',
+    docs: './docs',
+    changelog: [
+      'CHANGELOG.zh-CN.md',
+      'CHANGELOG.en-US.md',
+    ],
+  },
+  theme: './site/theme',
+  htmlTemplate: path.join(__dirname, './theme/static/template.html'),
   filePathMapper(filePath) {
     if (filePath === '/index.html') {
       return ['/index.html', '/index-cn.html'];
@@ -48,11 +59,14 @@ module.exports = {
     }
     return filePath;
   },
+  doraConfig: {
+    verbose: true,
+  },
   webpackConfig(config) {
-    config.externals = {
-      history: 'History',
-      'babel-polyfill': 'this', // hack babel-polyfill has no exports
-    };
+    // config.externals = {
+    //   history: 'History',
+    //   'babel-polyfill': 'this', // hack babel-polyfill has no exports
+    // };
     // dev 环境下统一不 external
     // 因为 preact/devtools 未提供 umd
     if (!isDev) {
@@ -123,5 +137,8 @@ module.exports = {
   },
   devServerConfig: {
     disableHostCheck: true,
+  },
+  lessConfig: {
+    javascriptEnabled: true,
   },
 };

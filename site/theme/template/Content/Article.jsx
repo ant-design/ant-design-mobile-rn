@@ -1,10 +1,10 @@
+import Tabs from 'antd/lib/tabs';
+import Timeline from 'antd/lib/timeline';
+import { getChildren } from 'jsonml.js/lib/utils';
 import React, { Children, cloneElement } from 'react';
 import DocumentTitle from 'react-document-title';
-import { getChildren } from 'jsonml.js/lib/utils';
-import Timeline from 'antd/lib/timeline';
-import Tabs from 'antd/lib/tabs';
+import * as utils from '../../../utils';
 
-import * as utils from '../../../../utils';
 
 const { TabPane } = Tabs;
 

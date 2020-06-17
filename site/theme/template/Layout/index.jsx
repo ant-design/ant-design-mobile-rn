@@ -1,12 +1,12 @@
-import React, { cloneElement } from 'react';
 import PropTypes from 'prop-types';
+import React, { cloneElement } from 'react';
 import ReactDOM from 'react-dom';
 import { addLocaleData, IntlProvider } from 'react-intl';
-import Header from './Header';
-import Footer from './Footer';
+import * as utils from '../../../utils';
 import enLocale from '../../en-US';
 import cnLocale from '../../zh-CN';
-import * as utils from '../../../../utils';
+import Footer from './Footer';
+import Header from './Header';
 
 if (typeof window !== 'undefined') {
   /* eslint-disable global-require */

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { FormattedMessage } from 'react-intl';
-import { ping } from '../../../../utils';
+import { ping } from '../../../utils';
 import getSandboxParameters from './Sandbox';
 
 export default class Demo extends React.Component {

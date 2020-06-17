@@ -1,6 +1,6 @@
 import collect from 'bisheng/collect';
+import * as utils from '../../../utils';
 import MainContent from './MainContent';
-import * as utils from '../../../../utils';
 
 function isChangelog(pathname) {
   return pathname.indexOf('changelog') >= 0;

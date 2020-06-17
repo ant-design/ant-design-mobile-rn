@@ -1,11 +1,11 @@
-import 'react-github-button/assets/style.css';
+import { /* Popover, */ Button, Col, Row } from 'antd';
+import { Link } from 'bisheng/router';
 import React from 'react';
 import DocumentTitle from 'react-document-title';
-import { Link } from 'bisheng/router';
 import GitHubButton from 'react-github-button';
+import 'react-github-button/assets/style.css';
 import { injectIntl } from 'react-intl';
-import { /* Popover, */ Button, Row, Col } from 'antd';
-import * as utils from '../../../../utils';
+import * as utils from '../../../utils';
 
 function getStyle() {
   return `

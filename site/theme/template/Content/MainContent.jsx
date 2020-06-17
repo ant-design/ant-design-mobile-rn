@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'bisheng/router';
+import Col from 'antd/lib/col';
 import Menu from 'antd/lib/menu';
 import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
+import { Link } from 'bisheng/router';
+import PropTypes from 'prop-types';
+import React from 'react';
+import * as utils from '../../../utils';
 import Article from './Article';
 import ComponentDoc from './ComponentDoc';
-import * as utils from '../../../../utils';
 
 const SubMenu = Menu.SubMenu;
 

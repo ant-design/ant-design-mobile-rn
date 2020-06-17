@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import * as utils from '../../../../utils';
+import * as utils from '../../../utils';
 
 const { Option } = AutoComplete;
 const searchEngine = 'Google';
