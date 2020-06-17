@@ -267,7 +267,6 @@ export default class Demo extends React.Component {
     return (
       <section className={codeBoxClass} id={meta.id} onClick={this.handleClick}>
         <Modal
-          ref="modal"
           visible={state.fullscreen}
           title={localizedTitle}
           onCancel={this.handleCancel}

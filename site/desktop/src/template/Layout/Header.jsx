@@ -1,5 +1,5 @@
 import { version as antdVersion } from '@ant-design/react-native/package.json';
-import { AutoComplete, Button, Col, Icon, Input, Menu, Popover, Row, Select } from 'antd';
+import { AutoComplete, Button, Col, Icon, Input, Menu, Popover, Row, Tag } from 'antd';
 import { Link } from 'bisheng/router';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -103,9 +103,7 @@ export default class Header extends React.Component {
     const {
       location, picked, isFirstScreen, themeConfig,
     } = this.props;
-    const docVersions = { ...themeConfig.docVersions, [antdVersion]: antdVersion };
-    const versionOptions = Object.keys(docVersions)
-      .map(version => <Option value={docVersions[version]} key={version}>{version}</Option>);
+
     const { components } = picked;
     const module = location.pathname.replace(/(^\/|\/$)/g, '').split('/').slice(0, -1).join('/');
     let activeMenuItem = module || 'home';
@@ -144,17 +142,12 @@ export default class Header extends React.Component {
       <Button ghost size="small" onClick={this.handleLangChange} className="header-lang-button" key="lang-button">
         <FormattedMessage id="app.header.lang" />
       </Button>,
-      <Select
+      <Tag
         key="version"
         className="version"
-        size="small"
-        dropdownMatchSelectWidth={false}
-        defaultValue={antdVersion}
-        onChange={this.handleVersionChange}
-        getPopupContainer={trigger => trigger.parentNode}
       >
-        {versionOptions}
-      </Select>,
+        {antdVersion}
+      </Tag>,
       <Menu className="menu-site" mode={menuMode} selectedKeys={[activeMenuItem]} id="nav" key="nav">
         <Menu.Item key="home">
           <Link to={utils.getLocalizedPathname('/', isZhCN)}>

@@ -118,11 +118,7 @@ module.exports = {
       Other: '其他',
     },
     docVersions: {
-      '0.7.x': 'http://07x.mobile.ant.design',
-      '0.8.x': 'http://08x.mobile.ant.design',
-      '0.9.x': 'http://09x.mobile.ant.design',
-      '1.x': 'http://1x.mobile.ant.design',
-      '2.x': 'http://2x.rn.mobile.ant.design',
+      // '2.x': 'http://2x.rn.mobile.ant.design',
     },
   },
   devServerConfig: {
