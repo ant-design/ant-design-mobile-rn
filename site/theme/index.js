@@ -31,8 +31,8 @@ module.exports = {
   pick: {
     components(markdownData) {
       const { filename } = markdownData.meta;
-      if (!/^components/.test(filename) ||
-          /\/demo$/.test(path.dirname(filename))) return;
+      if (!/^components/.test(filename)
+          || /\/demo$/.test(path.dirname(filename))) return;
       /* eslint-disable consistent-return */
       return {
         meta: markdownData.meta,
@@ -53,7 +53,7 @@ module.exports = {
   plugins: [
     'bisheng-plugin-description',
     'bisheng-plugin-toc?maxDepth=2&keepElem',
-    '@ant-design/bisheng-plugin?injectProvider',
+    'bisheng-plugin-antd?noPreview',
     'bisheng-plugin-react?lang=__react',
   ],
   routes: {

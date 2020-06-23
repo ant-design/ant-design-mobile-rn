@@ -17,9 +17,7 @@ function alertBabelConfig(rules) {
 }
 
 const reactExternals = {
-  react: 'React',
-  'react-dom': 'ReactDOM',
-  'react-router': 'ReactRouter',
+
 };
 
 const preactExternals = {
@@ -61,8 +59,6 @@ module.exports = {
   },
   webpackConfig(config) {
     config.externals = {
-      history: 'History',
-      'babel-polyfill': 'this', // hack babel-polyfill has no exports
     };
     // dev 环境下统一不 external
     // 因为 preact/devtools 未提供 umd

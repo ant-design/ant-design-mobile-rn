@@ -28,6 +28,29 @@ toc: false
 - 完善`TypeScript` 类型定义
 - 其他`bug`修复
 
+
+
+> 升级到4.0.0+需要安装peer依赖然后link
+
+```bash
+npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+or
+
+```bash
+yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+> 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理
+
+### 链接字体图标
+
+```bash
+# 手动链接字体图标
+npx react-native link
+```
+
 ### 3.3.0
 
 `2020-03-08`

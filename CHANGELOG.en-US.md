@@ -28,6 +28,25 @@ toc: false
 - Upgrade `react-native` to `0.62.0`
 - `bug` fixes
 
+> Installing peer dependencies
+
+```bash
+npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+or
+
+```bash
+yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+```
+
+> You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
+
+### Link icon fonts
+
+```bash
+npx react-native link
+```
 ### 3.3.0
 
 `2020-03-08`
