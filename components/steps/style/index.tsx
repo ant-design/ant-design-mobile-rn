@@ -88,7 +88,7 @@ export default (theme: Theme) =>
     },
     tail_default_s: {
       width: theme.border_width_lg,
-      height: 30,
+      flex: 1,
       marginLeft: 2 * grid,
     },
     tail_default_s_h: {
