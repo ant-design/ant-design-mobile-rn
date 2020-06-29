@@ -1723,10 +1723,10 @@ ant-design-palettes@^1.1.3:
   dependencies:
     tinycolor2 "^1.4.1"
 
-antd-mobile-demo-data@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/antd-mobile-demo-data/-/antd-mobile-demo-data-0.2.0.tgz#049731dc3c48c42603185e4338724879224c8442"
-  integrity sha512-WomThl/ihX2dKM5BmWB0RkL+if8hzX6uy88g7EI/yayWrBrx9Iqp6aiLICznaQhIfJQWJfBb6Dh5osb+1scH3A==
+antd-mobile-demo-data@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/antd-mobile-demo-data/-/antd-mobile-demo-data-0.3.0.tgz#f275250bebdad308af481672635f8b90def34aed"
+  integrity sha512-fdjcFSqlHxroAH+hJPQNvviJw4YbftXUWI7+y/A/BlzVagNg/caKu1uwUuwubp5Ik4+aAGvOXXb0xo3q8fkHrQ==
 
 antd-tools@^5.2.6:
   version "5.2.7"
