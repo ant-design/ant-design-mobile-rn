@@ -25,6 +25,12 @@ export default class BasicGridExample extends React.Component<any, any> {
           data={data}
           columnNum={3}
           isCarousel
+          carouselProps={{
+            style: {
+              width: '100%',
+              height: 320,
+            },
+          }}
           onPress={(_el: any, index: any) => alert(index)}
         />
         <View style={[{ margin: 10 }]}>
