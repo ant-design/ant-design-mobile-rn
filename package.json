@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/react-native",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
   "keywords": [
     "ant",
@@ -33,7 +33,7 @@
   "dependencies": {
     "@ant-design/icons-react-native": "^2.2.1",
     "@bang88/react-native-drawer-layout": "^2.0.3",
-    "@bang88/react-native-ultimate-listview": "^3.3.1",
+    "@bang88/react-native-ultimate-listview": "^3.3.2",
     "array-tree-filter": "~2.1.0",
     "babel-runtime": "^6.x",
     "deepmerge": "^4.2.2",
