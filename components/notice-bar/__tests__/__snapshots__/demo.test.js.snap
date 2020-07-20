@@ -88,7 +88,11 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
             style={
               Object {
                 "flexDirection": "row",
-                "left": 0,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                ],
                 "width": 1000,
               }
             }
@@ -188,7 +192,11 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
           style={
             Object {
               "flexDirection": "row",
-              "left": 0,
+              "transform": Array [
+                Object {
+                  "translateX": 0,
+                },
+              ],
               "width": 1000,
             }
           }
@@ -310,7 +318,11 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
           style={
             Object {
               "flexDirection": "row",
-              "left": 0,
+              "transform": Array [
+                Object {
+                  "translateX": 0,
+                },
+              ],
               "width": 1000,
             }
           }
@@ -438,7 +450,11 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
             style={
               Object {
                 "flexDirection": "row",
-                "left": 0,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                ],
                 "width": 1000,
               }
             }
@@ -568,7 +584,11 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
             style={
               Object {
                 "flexDirection": "row",
-                "left": 0,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                ],
                 "width": 1000,
               }
             }
@@ -695,7 +715,11 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
           style={
             Object {
               "flexDirection": "row",
-              "left": 0,
+              "transform": Array [
+                Object {
+                  "translateX": 0,
+                },
+              ],
               "width": 1000,
             }
           }
@@ -820,7 +844,11 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
           style={
             Object {
               "flexDirection": "row",
-              "left": 0,
+              "transform": Array [
+                Object {
+                  "translateX": 0,
+                },
+              ],
               "width": 1000,
             }
           }
@@ -943,7 +971,11 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
             style={
               Object {
                 "flexDirection": "row",
-                "left": 0,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                ],
                 "width": 1000,
               }
             }
