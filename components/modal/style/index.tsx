@@ -30,7 +30,6 @@ export default (theme: Theme) =>
       zIndex: theme.modal_zindex,
     },
     wrap: {
-      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: 'transparent',
