@@ -1343,10 +1343,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@^0.62.2":
-  version "0.62.2"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.62.2.tgz#f3e150f308c27089cefbcbfa3eb6cc14db279b2f"
-  integrity sha512-oIUIbqZNN9vRnGKWHYbTVp/GyTqdaM5mfy1s4zsi6BYvHAaFOPZ32IrhIHno/A5XOv4wuGfE7g5fliDk/H0+/Q==
+"@types/react-native@^0.63.7":
+  version "0.63.7"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.7.tgz#7ae612bbd4f6c43991dc6538dcd72503f96e4363"
+  integrity sha512-TrtH69+HuWVxTERhoDDP2YtpznfH/Ra3/Fu2dCrssy+CkBZjvDlEESfWiAJWlOto3QtUzkTA7RT/S2jrO4WKkw==
   dependencies:
     "@types/react" "*"
 
