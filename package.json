@@ -33,7 +33,7 @@
   "dependencies": {
     "@ant-design/icons-react-native": "^2.2.1",
     "@bang88/react-native-drawer-layout": "^2.0.3",
-    "@bang88/react-native-ultimate-listview": "^3.3.3",
+    "@bang88/react-native-ultimate-listview": "^3.3.4",
     "array-tree-filter": "~2.1.0",
     "babel-runtime": "^6.x",
     "deepmerge": "^4.2.2",
@@ -46,6 +46,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
+    "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/cameraroll": "^1.5.2",
     "@react-native-community/eslint-config": "^0.0.5",
     "@react-native-community/masked-view": "^0.1.9",
@@ -117,6 +118,7 @@
     "typescript": "^3.2.2"
   },
   "peerDependencies": {
+    "@react-native-community/async-storage": ">= 1.11.0",
     "@react-native-community/cameraroll": ">= 1.5.2",
     "@react-native-community/picker": ">= 1.2.0",
     "@react-native-community/segmented-control": ">= 1.4.0",
