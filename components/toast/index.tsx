@@ -28,6 +28,11 @@ let defaultProps = {
 
 const toastKeyMap: { [key: number]: 1 } = {};
 
+function remove(key: number) {
+  Portal.remove(key);
+  delete toastKeyMap[key];
+}
+
 function removeAll() {
   Object.keys(toastKeyMap).forEach((_key) => Portal.remove(Number.parseInt(_key, 10)));
 }
@@ -67,8 +72,7 @@ function notice(
       type={props.type}
       mask={props.mask}
       onAnimationEnd={() => {
-        Portal.remove(key);
-        delete toastKeyMap[key];
+        remove(key);
       }}
     />,
   );
@@ -170,8 +174,6 @@ export default {
   ) {
     return notice(props, 'loading', duration, onClose, mask);
   },
-  remove(key: number) {
-    Portal.remove(key);
-  },
+  remove,
   removeAll,
 };
