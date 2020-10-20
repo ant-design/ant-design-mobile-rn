@@ -102,9 +102,6 @@ export default {
   /**
    *
    * @param props: toast props
-   * @deprecated duration: use props instead
-   * @deprecated onClose: use props instead
-   * @deprecated mask: use props instead
    */
   info(
     props: string | IToastProps,
@@ -117,9 +114,6 @@ export default {
   /**
    *
    * @param props: toast props
-   * @deprecated duration: use props instead
-   * @deprecated onClose: use props instead
-   * @deprecated mask: use props instead
    */
   success(
     props: string | IToastProps,
@@ -132,9 +126,6 @@ export default {
   /**
    *
    * @param props: toast props
-   * @deprecated duration: use props instead
-   * @deprecated onClose: use props instead
-   * @deprecated mask: use props instead
    */
   fail(
     props: string | IToastProps,
@@ -147,9 +138,6 @@ export default {
   /**
    *
    * @param props: toast props
-   * @deprecated duration: use props instead
-   * @deprecated onClose: use props instead
-   * @deprecated mask: use props instead
    */
   offline(
     props: string | IToastProps,
@@ -162,9 +150,6 @@ export default {
   /**
    *
    * @param props: toast props
-   * @deprecated duration: use props instead
-   * @deprecated onClose: use props instead
-   * @deprecated mask: use props instead
    */
   loading(
     props: string | IToastProps,
