@@ -1,6 +1,4 @@
-
 import treeFilter from 'array-tree-filter';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
@@ -10,6 +8,8 @@ import MultiPicker from './MultiPicker';
 import RMCPicker from './Picker';
 import { PickerData, PickerPropsType } from './PropsType';
 import PickerStyles, { PickerStyle } from './style';
+import { LocaleContext } from "../locale-provider";
+
 export interface PickerProps
   extends PickerPropsType,
     WithThemeStyles<PickerStyle> {
@@ -34,9 +34,7 @@ export function getDefaultProps() {
 }
 
 export default class Picker extends React.Component<PickerProps, any> {
-  static contextTypes = {
-    antLocale: PropTypes.object,
-  };
+  static contextType = LocaleContext;
   static defaultProps = getDefaultProps();
   protected popupProps: {};
   private scrollValue: any;

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Dimensions, LayoutChangeEvent, StyleProp, StyleSheet, Text, TextStyle, TouchableHighlight, TouchableWithoutFeedback, View, ViewStyle, KeyboardAvoidingView, Platform } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
@@ -10,6 +9,7 @@ import operation from './operation';
 import prompt from './prompt';
 import { CallbackOnBackHandler, ModalPropsType } from './PropsType';
 import modalStyles, { ModalStyle } from './style/index';
+import { LocaleContext } from "../locale-provider";
 
 const maxHeight = StyleSheet.create({
   maxHeight: {
@@ -44,9 +44,7 @@ class AntmModal extends React.Component<ModalProps, any> {
   static operation: typeof operation;
   static prompt: typeof prompt;
 
-  static contextTypes = {
-    antLocale: PropTypes.object,
-  };
+  static contextType = LocaleContext;
 
   root: View | null;
 

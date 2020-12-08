@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { StyleProp, Text, View, ViewStyle } from 'react-native';
 import Button from '../button/index';
@@ -8,6 +7,7 @@ import { getComponentLocale } from '../_util/getLocale';
 import zh_CN from './locale/zh_CN';
 import { PaginationPropsType, PaginationState } from './PropsType';
 import PaginationStyles, { PaginationStyle } from './style/index';
+import { LocaleContext } from "../locale-provider";
 
 export interface PaginationNativeProps
   extends PaginationPropsType,
@@ -33,9 +33,7 @@ export default class Pagination extends React.Component<
     indicatorStyle: null,
   };
 
-  static contextTypes = {
-    antLocale: PropTypes.object,
-  };
+  static contextType = LocaleContext;
 
   constructor(props: PaginationNativeProps) {
     super(props);

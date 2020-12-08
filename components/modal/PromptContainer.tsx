@@ -1,5 +1,3 @@
-
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Text, TextInput, TextStyle, View } from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
@@ -8,6 +6,7 @@ import zh_CN from './locale/zh_CN';
 import Modal from './Modal';
 import { CallbackOnBackHandler, CallbackOrActions } from './PropsType';
 import promptStyles, { PromptStyle } from './style/prompt';
+import { LocaleContext } from "../locale-provider";
 
 export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
   title: React.ReactNode;
@@ -29,9 +28,7 @@ export default class PropmptContainer extends React.Component<
     defaultValue: '',
   };
 
-  static contextTypes = {
-    antLocale: PropTypes.object,
-  };
+  static contextType = LocaleContext;
 
   constructor(props: PropmptContainerProps) {
     super(props);

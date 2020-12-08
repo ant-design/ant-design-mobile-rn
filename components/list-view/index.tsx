@@ -1,10 +1,10 @@
 import { UltimateListView } from '@bang88/react-native-ultimate-listview';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { ActivityIndicator, Platform, Text, View } from 'react-native';
 import Icon from '../icon';
 import { getComponentLocale } from '../_util/getLocale';
 import zh_CN from './locale/zh_CN';
+import { LocaleContext } from "../locale-provider";
 
 type UltimateListViewProps = {
   initialNumToRender?: any;
@@ -69,9 +69,7 @@ export interface ListViewProps<T> extends UltimateListViewProps {
 }
 export interface ListViewState {}
 class ListView<T> extends React.PureComponent<ListViewProps<T>, ListViewState> {
-  static contextTypes = {
-    antLocale: PropTypes.object,
-  };
+  static contextType = LocaleContext;
   ulv: { refresh: () => void };
 
   refresh = () => {
