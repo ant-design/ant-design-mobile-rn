@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { NativeSyntheticEvent, StyleProp, Text, TextInput, TextInputFocusEventData, TextInputProps, TextStyle, View } from 'react-native';
 import Icon from '../icon';
@@ -6,6 +5,7 @@ import { WithTheme, WithThemeStyles } from '../style';
 import { getComponentLocale } from '../_util/getLocale';
 import { defaultProps, SearchBarPropsType, SearchBarState } from './PropsType';
 import SearchBarStyles, { SearchBarStyle } from './style/index';
+import { LocaleContext } from "../locale-provider";
 
 export interface SearchBarProps
   extends SearchBarPropsType,
@@ -24,9 +24,7 @@ export default class SearchBar extends React.Component<
     ...defaultProps,
   };
 
-  static contextTypes = {
-    antLocale: PropTypes.object,
-  };
+  static contextType = LocaleContext;
 
   inputRef: TextInput | null;
 

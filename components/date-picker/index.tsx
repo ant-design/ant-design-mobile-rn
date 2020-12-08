@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import PickerStyles, { PickerStyle } from '../picker/style/index';
 import { WithTheme, WithThemeStyles } from '../style';
@@ -7,6 +6,7 @@ import AntDatePicker from './datepicker';
 import PopupDatePicker from './datepicker/Popup';
 import { DatePickerPropsType } from './PropsType';
 import { formatProps } from './utils';
+import { LocaleContext } from "../locale-provider";
 
 export interface DatePickerProps
   extends DatePickerPropsType,
@@ -20,9 +20,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
     triggerType: 'onPress',
     minuteStep: 1,
   };
-  static contextTypes = {
-    antLocale: PropTypes.object,
-  };
+  static contextType = LocaleContext;
   render() {
     const { children, value, defaultDate, itemStyle, ...restProps } = this.props;
     const locale = getComponentLocale(

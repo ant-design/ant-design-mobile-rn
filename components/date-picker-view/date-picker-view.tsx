@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import RCDatePicker from '../date-picker/datepicker';
 import { getComponentLocale } from '../_util/getLocale';
 import { DatePickerProps } from './PropsType';
+import { LocaleContext } from "../locale-provider";
 export default class DatePickerView extends React.Component<
   DatePickerProps,
   any
@@ -14,9 +14,7 @@ export default class DatePickerView extends React.Component<
     use12Hours: false,
   };
 
-  static contextTypes = {
-    antLocale: PropTypes.object,
-  };
+  static contextType = LocaleContext;
 
   render() {
     // tslint:disable-next-line:no-this-assignment
