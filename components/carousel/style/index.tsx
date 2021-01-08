@@ -8,6 +8,7 @@ export interface CarouselStyle {
   pointStyle: ViewStyle;
   pointActiveStyle: ViewStyle;
   spaceStyle: ViewStyle;
+  wrapperStyle: ViewStyle;
 }
 export default (theme: Theme) =>
   StyleSheet.create<CarouselStyle>({
@@ -37,5 +38,8 @@ export default (theme: Theme) =>
     spaceStyle: {
       marginHorizontal: theme.h_spacing_sm / 2,
       marginVertical: theme.v_spacing_sm / 2,
+    },
+    wrapperStyle: {
+      overflow: 'hidden',
     },
   });
