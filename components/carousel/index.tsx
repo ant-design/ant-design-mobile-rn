@@ -166,24 +166,28 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       },
     };
     return (
-      <View
-        style={{
-          overflow: 'hidden',
-        }}
-      >
-        <ViewPager
-          {...vpProps}
-          style={this.props.style}
-          // Lib does not support dynamically orientation change
-          orientation={vertical ? 'vertical' : 'horizontal'}
-          // Lib does not support dynamically transitionStyle change
-          transitionStyle="scroll"
-          ref={this.viewPager as any}
-        >
-          {pages}
-        </ViewPager>
-        {dots && this.renderDots(selectedIndex)}
-      </View>
+      <WithTheme themeStyles={CarouselStyles} styles={this.props.styles}>
+        {
+          styles => (
+            <View
+              style={[styles.wrapperStyle]}
+            >
+              <ViewPager
+                {...vpProps}
+                style={this.props.style}
+                // Lib does not support dynamically orientation change
+                orientation={vertical ? 'vertical' : 'horizontal'}
+                // Lib does not support dynamically transitionStyle change
+                transitionStyle="scroll"
+                ref={this.viewPager as any}
+              >
+                {pages}
+              </ViewPager>
+              {dots && this.renderDots(selectedIndex)}
+            </View>
+          )
+        }
+      </WithTheme>
     );
   }
   private getChildrenCount = (children: React.ReactNode) => {
