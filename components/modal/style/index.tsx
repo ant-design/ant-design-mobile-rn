@@ -49,15 +49,7 @@ export default (theme: Theme) =>
       overflow: 'hidden',
       backgroundColor: theme.fill_base,
     },
-    // fix android borderRadius
-    footer: {
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      borderBottomLeftRadius: theme.radius_md,
-      borderBottomRightRadius: theme.radius_md,
-    },
+    footer: {},
     header: {
       fontSize: theme.modal_font_size_heading,
       color: theme.color_text_base,
