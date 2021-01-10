@@ -20,14 +20,6 @@ export default class Stepper extends React.Component<StepProps, any> {
   };
 
   render() {
-    const inputAndroidStyle =
-      Platform.OS === 'android'
-        ? {
-            top: 6,
-            paddingTop: 0,
-            height: 26,
-          }
-        : {};
     const { inputStyle, ...restProps } = this.props;
     const keyboardType =
       Platform.OS === 'android' ? 'numeric' : 'numbers-and-punctuation';
@@ -39,7 +31,7 @@ export default class Stepper extends React.Component<StepProps, any> {
             {...restProps}
             styles={styles}
             keyboardType={keyboardType}
-            inputStyle={[inputAndroidStyle, inputStyle]}
+            inputStyle={inputStyle}
           />
         )}
       </WithTheme>

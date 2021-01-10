@@ -152,10 +152,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       "textAlign": "center",
                     },
                     null,
-                    Array [
-                      Object {},
-                      Object {},
-                    ],
+                    Object {},
                   ]
                 }
                 underlineColorAndroid="transparent"
@@ -343,10 +340,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       "textAlign": "center",
                     },
                     null,
-                    Array [
-                      Object {},
-                      Object {},
-                    ],
+                    Object {},
                   ]
                 }
                 underlineColorAndroid="transparent"
@@ -536,10 +530,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                     Object {
                       "color": "#bbbbbb",
                     },
-                    Array [
-                      Object {},
-                      Object {},
-                    ],
+                    Object {},
                   ]
                 }
                 underlineColorAndroid="transparent"
