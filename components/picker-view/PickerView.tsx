@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle, ViewStyle } from 'react-native';
 import RMCCascader from '../picker/cascader';
 import MultiPicker from '../picker/MultiPicker';
 import RMCPicker from '../picker/Picker';
@@ -24,7 +24,7 @@ export interface PickerViewProps {
   onChange?: (value?: any) => void;
   onScrollChange?: (value?: any) => void;
   indicatorStyle?: StyleProp<ViewStyle>;
-  itemStyle?: StyleProp<ViewStyle>;
+  itemStyle?: StyleProp<TextStyle>;
 }
 
 export default class PickerView extends React.Component<PickerViewProps, any> {

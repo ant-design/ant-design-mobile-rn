@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, TextStyle, ViewStyle } from "react-native";
 
 interface DatePickerProps {
   date?: any;
@@ -13,7 +13,7 @@ interface DatePickerProps {
   formatDay?: (day: number, date?: any) => any;
   onDateChange?: (date: any) => void;
   onValueChange?: (vals: any, index: number) => void;
-  itemStyle?: StyleProp<ViewStyle>;
+  itemStyle?: StyleProp<TextStyle>;
   style?: StyleProp<ViewStyle>;
   onScrollChange?: (date: any, vals: any, index: number) => void;
   rootNativeProps?: {};

@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle, ViewStyle } from 'react-native';
 import { Omit } from 'utility-types';
 import { CascaderValue } from './cascader/CascaderTypes';
 import { PopupPickerProps } from './PopupPickerTypes';
@@ -16,6 +16,6 @@ export interface PickerPropsType extends Omit<PopupPickerProps, 'styles'> {
   extra?: string;
   onChange?: (date?: CascaderValue) => void;
   onPickerChange?: (value: CascaderValue) => void;
-  itemStyle?: StyleProp<ViewStyle>;
+  itemStyle?: StyleProp<TextStyle>;
   indicatorStyle?: StyleProp<ViewStyle>;
 }

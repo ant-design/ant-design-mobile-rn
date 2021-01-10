@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle, ViewStyle } from 'react-native';
 
 export type CascaderOneValue = string | number;
 export type CascaderValue = CascaderOneValue[];
@@ -18,7 +18,7 @@ export interface CascaderProps {
   cols?: number;
   disabled?: boolean;
   rootNativeProps?: {};
-  pickerItemStyle?: StyleProp<ViewStyle>;
+  pickerItemStyle?: StyleProp<TextStyle>;
   indicatorStyle?: StyleProp<ViewStyle>;
   style?: StyleProp<ViewStyle>;
   onScrollChange?: (value: CascaderValue) => void;
