@@ -20,9 +20,11 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
     </Text>
     <View
       style={
-        Object {
-          "overflow": "hidden",
-        }
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+        ]
       }
     >
       <RNCViewPager
@@ -422,9 +424,11 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
     </Text>
     <View
       style={
-        Object {
-          "overflow": "hidden",
-        }
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+        ]
       }
     >
       <RNCViewPager

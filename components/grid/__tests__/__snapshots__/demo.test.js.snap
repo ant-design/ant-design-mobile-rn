@@ -834,9 +834,11 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
   </View>
   <View
     style={
-      Object {
-        "overflow": "hidden",
-      }
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+      ]
     }
   >
     <RNCViewPager
