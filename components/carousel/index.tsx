@@ -168,6 +168,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
           case 'settling':
             this.autoplay();
             this.setState({ isScrolling: false });
+            break;
+
           default:
             break;
         }
