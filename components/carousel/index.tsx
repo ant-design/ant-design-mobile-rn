@@ -157,6 +157,14 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
             break;
 
           case 'idle':
+            this.setState({
+              isScrolling: false,
+            }, () => {
+              this.autoplay();
+              this.setState({ isScrolling: false });
+            });
+            break;
+
           case 'settling':
             this.autoplay();
             this.setState({ isScrolling: false });
