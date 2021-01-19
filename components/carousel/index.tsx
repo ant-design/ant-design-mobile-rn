@@ -99,7 +99,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       (prevProps.autoplay !== undefined && prevProps.autoplay !== this.props.autoplay) ||
       (prevProps.infinite !== undefined && prevProps.infinite !== this.props.infinite)
     ) {
-      this.autoplay(!this.props.autoplay)
+      this.autoplay(!this.props.autoplay);
     }
   }
   /**
