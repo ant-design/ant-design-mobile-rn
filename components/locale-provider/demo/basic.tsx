@@ -34,7 +34,7 @@ const seasons = [
   ],
 ];
 
-const Page = () => (
+const Page = React.memo(() => (
   <View>
     <Pagination total={5} current={1} />
     <WhiteSpace />
@@ -54,7 +54,7 @@ const Page = () => (
       <SearchBar placeholder="Search" showCancelButton />
     </List>
   </View>
-);
+));
 
 export default class LocaleProviderExample extends React.Component<any, any> {
   constructor(props: any) {
