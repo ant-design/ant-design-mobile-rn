@@ -41,6 +41,7 @@
     "react-native-collapsible": "^1.5.2",
     "react-native-modal-popover": "^0.0.12",
     "react-native-swipeout": "^2.3.6",
+    "shallowequal": "^1.1.0",
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
