@@ -1156,10 +1156,10 @@
   resolved "https://registry.npm.taobao.org/@react-native-community/segmented-control/download/@react-native-community/segmented-control-1.4.0.tgz#16e449c76b2ea85784bc89cad2604a0bd5c42b42"
   integrity sha1-FuRJx2suqFeEvInK0mBKC9XEK0I=
 
-"@react-native-community/slider@^2.0.9":
-  version "2.0.9"
-  resolved "https://registry.npm.taobao.org/@react-native-community/slider/download/@react-native-community/slider-2.0.9.tgz#bf74045c96f1fb22e3ec961e321300c230c63990"
-  integrity sha1-v3QEXJbx+yLj7JYeMhMAwjDGOZA=
+"@react-native-community/slider@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
+  integrity sha512-8IeHfDwJ9/CTUwFs6x90VlobV3BfuPgNLjTgC6dRZovfCWigaZwVNIFFJnHBakK3pW2xErAPwhdvNR4JeNoYbw==
 
 "@react-native-community/viewpager@^3.3.0":
   version "3.3.0"
