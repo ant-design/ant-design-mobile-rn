@@ -9,7 +9,8 @@ const transformPackages = [
   'react-native-swipeout',
   'react-native-camera-roll-picker',
   '@bang88/react-native-ultimate-listview',
-  '@react-native-community'
+  '@react-native-community',
+  '@react-native-picker/picker',
 ];
 
 module.exports = {

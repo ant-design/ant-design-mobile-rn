@@ -1151,11 +1151,6 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.9.tgz#383aca2fb053e3e14405c99cce2d5805df730821"
   integrity sha512-nUtzbiLeXU0K9oVed6rc/WVrjGJwDSL4q1RTDkpZYU4j0FeovfuzcNUIDesD2r728LYfIop+uAgQdm+6qBOCug==
 
-"@react-native-community/picker@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.npm.taobao.org/@react-native-community/picker/download/@react-native-community/picker-1.3.0.tgz#74be7dd93c54426677ddd68080ca253906a57e07"
-  integrity sha1-dL592TxUQmZ33daAgMolOQalfgc=
-
 "@react-native-community/segmented-control@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/@react-native-community/segmented-control/download/@react-native-community/segmented-control-1.4.0.tgz#16e449c76b2ea85784bc89cad2604a0bd5c42b42"
@@ -1170,6 +1165,11 @@
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/viewpager/-/viewpager-3.3.0.tgz#e613747a43a31a6f3278f817ba96fdaaa7941f23"
   integrity sha512-tyzh79l4t/hxiyS9QD3LRmWMs8KVkZzjrkQ8U8+8To1wmvVCBtp8BenvNsDLTBO7CpO/YmiThpmIdEZMr1WuVw==
+
+"@react-native-picker/picker@^1.9.10":
+  version "1.9.11"
+  resolved "https://registry.npm.taobao.org/@react-native-picker/picker/download/@react-native-picker/picker-1.9.11.tgz#490c752417c17d687e2941659b3c0bff9cb79b83"
+  integrity sha1-SQx1JBfBfWh+KUFlmzwL/5y3m4M=
 
 "@react-navigation/core@^5.3.4":
   version "5.3.4"

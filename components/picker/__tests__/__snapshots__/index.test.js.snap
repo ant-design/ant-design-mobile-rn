@@ -224,6 +224,7 @@ Array [
                 Array [
                   Object {
                     "label": "北京市",
+                    "testID": undefined,
                     "textColor": undefined,
                     "value": "11",
                   },
@@ -253,6 +254,7 @@ Array [
                 Array [
                   Object {
                     "label": "市辖区",
+                    "testID": undefined,
                     "textColor": undefined,
                     "value": "1101",
                   },
@@ -282,11 +284,13 @@ Array [
                 Array [
                   Object {
                     "label": "东城区",
+                    "testID": undefined,
                     "textColor": undefined,
                     "value": "110101",
                   },
                   Object {
                     "label": "西城区",
+                    "testID": undefined,
                     "textColor": undefined,
                     "value": "110102",
                   },
