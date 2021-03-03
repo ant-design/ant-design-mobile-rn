@@ -96,8 +96,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
   componentDidUpdate(prevProps: CarouselProps) {
     if (
-      prevProps.autoplay !== undefined &&
-      prevProps.autoplay !== this.props.autoplay
+      (prevProps.autoplay !== undefined && prevProps.autoplay !== this.props.autoplay) ||
+      (prevProps.infinite !== undefined && prevProps.infinite !== this.props.infinite)
     ) {
       this.autoplay(!this.props.autoplay);
     }
