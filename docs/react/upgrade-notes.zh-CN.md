@@ -5,18 +5,18 @@ title: 升级指南
 
 此处着重列出升级中的不兼容变化和推荐改动。所有变动请见 [Changelog](/changelog)。
 
-### 4.0.0
+### 4.1.0
 
 > 升级到4.0.0+需要安装peer依赖然后link
 
 ```bash
-npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view
 ```
 
 or
 
 ```bash
-yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view
 ```
 
 > 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理

@@ -11,6 +11,7 @@ const transformPackages = [
   '@bang88/react-native-ultimate-listview',
   '@react-native-community',
   '@react-native-picker/picker',
+  'react-native-pager-view'
 ];
 
 module.exports = {

@@ -1,6 +1,6 @@
-import ViewPager, { ViewPagerProps } from '@react-native-community/viewpager';
 import React from 'react';
 import { StyleProp, Text, View, ViewStyle } from 'react-native';
+import ViewPager, { PagerViewProps } from 'react-native-pager-view';
 import { WithTheme, WithThemeStyles } from '../style';
 import CarouselStyles, { CarouselStyle } from './style/index';
 
@@ -139,9 +139,10 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     } else {
       pages = <View>{children}</View>;
     }
-    const vpProps: ViewPagerProps = {
+    const vpProps: PagerViewProps = {
       initialPage: selectedIndex,
       showPageIndicator: false,
+      children: pages,
       onPageSelected: e => {
         this.setState({ selectedIndex: e.nativeEvent.position });
         this.autoplay();
@@ -167,26 +168,22 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     };
     return (
       <WithTheme themeStyles={CarouselStyles} styles={this.props.styles}>
-        {
-          styles => (
-            <View
-              style={[styles.wrapperStyle]}
+        {styles => (
+          <View style={[styles.wrapperStyle]}>
+            <ViewPager
+              {...vpProps}
+              style={this.props.style}
+              // Lib does not support dynamically orientation change
+              orientation={vertical ? 'vertical' : 'horizontal'}
+              // Lib does not support dynamically transitionStyle change
+              transitionStyle="scroll"
+              ref={this.viewPager as any}
             >
-              <ViewPager
-                {...vpProps}
-                style={this.props.style}
-                // Lib does not support dynamically orientation change
-                orientation={vertical ? 'vertical' : 'horizontal'}
-                // Lib does not support dynamically transitionStyle change
-                transitionStyle="scroll"
-                ref={this.viewPager as any}
-              >
-                {pages}
-              </ViewPager>
-              {dots && this.renderDots(selectedIndex)}
-            </View>
-          )
-        }
+              {pages}
+            </ViewPager>
+            {dots && this.renderDots(selectedIndex)}
+          </View>
+        )}
       </WithTheme>
     );
   }

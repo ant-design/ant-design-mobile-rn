@@ -1,6 +1,6 @@
-import ViewPager from '@react-native-community/viewpager';
 import React from 'react';
 import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
+import ViewPager from 'react-native-pager-view';
 import { WithTheme, WithThemeStyles } from '../style';
 import View from '../view';
 import { DefaultTabBar } from './DefaultTabBar';
