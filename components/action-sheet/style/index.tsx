@@ -44,7 +44,6 @@ export default (theme: Theme) => StyleSheet.create<ActionSheetStyle>({
   title: {
     flex: 1,
     alignItems: 'center',
-    // justifyContent: 'center',
     marginTop: theme.h_spacing_lg,
     marginBottom: theme.h_spacing_lg,
   },
@@ -55,7 +54,6 @@ export default (theme: Theme) => StyleSheet.create<ActionSheetStyle>({
   message: {
     flex: 1,
     alignItems: 'center',
-    // justifyContent: 'center',
     marginBottom: theme.h_spacing_lg,
   },
   btn: {
@@ -66,7 +64,6 @@ export default (theme: Theme) => StyleSheet.create<ActionSheetStyle>({
     borderStyle: 'solid',
     borderTopWidth: 1,
     borderTopColor: theme.border_color_base,
-    // backgroundColor: 'white',
   },
   btnText: {
     color: theme.color_text_base,
