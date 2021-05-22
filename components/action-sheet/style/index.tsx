@@ -10,6 +10,7 @@ export interface ActionSheetStyle {
   titleText: TextStyle;
   message: ViewStyle;
   btn: ViewStyle;
+  btnText: TextStyle;
   cancelBtn: ViewStyle;
   cancelBtnMask: ViewStyle;
   destructiveBtn: TextStyle;
@@ -49,6 +50,7 @@ export default (theme: Theme) => StyleSheet.create<ActionSheetStyle>({
   },
   titleText: {
     fontWeight: '500',
+    color: theme.color_text_base,
   },
   message: {
     flex: 1,
@@ -64,7 +66,10 @@ export default (theme: Theme) => StyleSheet.create<ActionSheetStyle>({
     borderStyle: 'solid',
     borderTopWidth: 1,
     borderTopColor: theme.border_color_base,
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
+  },
+  btnText: {
+    color: theme.color_text_base,
   },
   cancelBtn: {
     marginTop: theme.v_spacing_md,
