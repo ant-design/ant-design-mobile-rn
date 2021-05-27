@@ -114,7 +114,6 @@
 				76ACEE6B377EFCFB93A79461 /* Pods-KitchenSink-KitchenSinkTests.debug.xcconfig */,
 				8A2C5F44184FDC39630CF620 /* Pods-KitchenSink-KitchenSinkTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -263,7 +262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "set -e\n\nexport NODE_BINARY=node\n../../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		3B95CD293C4B5B6561023981 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
