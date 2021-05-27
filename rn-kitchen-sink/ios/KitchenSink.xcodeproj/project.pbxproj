@@ -12,6 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1FF542FBF67A0C1B81543E21 /* libPods-KitchenSink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098679CE2C26DFE58012A46 /* libPods-KitchenSink.a */; };
+		2C2E0FBA265F345600CBF747 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E0FB8265F345600CBF747 /* antoutline.ttf */; };
+		2C2E0FBB265F345600CBF747 /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E0FB9265F345600CBF747 /* antfill.ttf */; };
 		7F2A298695D6D2B9D5390D8B /* libPods-KitchenSink-KitchenSinkTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC8C25A995D2A60102320EB /* libPods-KitchenSink-KitchenSinkTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KitchenSink/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KitchenSink/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KitchenSink/main.m; sourceTree = "<group>"; };
+		2C2E0FB8265F345600CBF747 /* antoutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = antoutline.ttf; path = "../../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; };
+		2C2E0FB9265F345600CBF747 /* antfill.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = antfill.ttf; path = "../../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; };
 		75AECD5CB4CD1403992B2A71 /* Pods-KitchenSink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSink.debug.xcconfig"; path = "Target Support Files/Pods-KitchenSink/Pods-KitchenSink.debug.xcconfig"; sourceTree = "<group>"; };
 		76ACEE6B377EFCFB93A79461 /* Pods-KitchenSink-KitchenSinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSink-KitchenSinkTests.debug.xcconfig"; path = "Target Support Files/Pods-KitchenSink-KitchenSinkTests/Pods-KitchenSink-KitchenSinkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = KitchenSink/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2C2E0FB9265F345600CBF747 /* antfill.ttf */,
+				2C2E0FB8265F345600CBF747 /* antoutline.ttf */,
 				13B07FAE1A68108700A75B9A /* KitchenSink */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* KitchenSinkTests */,
@@ -243,6 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				2C2E0FBB265F345600CBF747 /* antfill.ttf in Resources */,
+				2C2E0FBA265F345600CBF747 /* antoutline.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
