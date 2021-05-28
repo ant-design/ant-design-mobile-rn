@@ -53,40 +53,45 @@ Array [
         ]
       }
     >
-      <TouchableWithoutFeedback
-        onPress={[Function]}
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
       >
         <View
           style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "backgroundColor": "black",
+                "opacity": 0.5,
+              },
+            ]
           }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "bottom": 0,
-                  "left": 0,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 0,
-                },
-                Object {
-                  "backgroundColor": "black",
-                  "opacity": 0.5,
-                },
-              ]
-            }
-          />
-        </View>
-      </TouchableWithoutFeedback>
+        />
+      </View>
       <View
         style={
           Object {
@@ -114,9 +119,16 @@ Array [
             ]
           }
         >
-          <
-            activeOpacity={1}
-            onPress={[Function]}
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -127,7 +139,6 @@ Array [
                 },
               ]
             }
-            underlayColor="#ddd"
           >
             <Text
               style={
@@ -143,7 +154,7 @@ Array [
             >
               取消
             </Text>
-          </>
+          </View>
           <View
             style={
               Array [
@@ -170,9 +181,16 @@ Array [
               
             </Text>
           </View>
-          <
-            activeOpacity={1}
-            onPress={[Function]}
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -183,7 +201,6 @@ Array [
                 },
               ]
             }
-            underlayColor="#ddd"
           >
             <Text
               style={
@@ -199,7 +216,7 @@ Array [
             >
               确定
             </Text>
-          </>
+          </View>
         </View>
         <View
           style={

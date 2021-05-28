@@ -17,10 +17,16 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
       }
     }
   >
-    <
-      activeOpacity={1}
-      delayLongPress={500}
-      onLongPress={[Function]}
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
     >
       <View
         style={
@@ -79,23 +85,35 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               On(controlled)
             </Text>
           </View>
-          <Switch
+          <RCTSwitch
+            accessibilityRole="switch"
             disabled={false}
-            trackColor={
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onTintColor="#4dd865"
+            style={
               Object {
-                "false": "",
-                "true": "#4dd865",
+                "height": 31,
+                "width": 51,
               }
             }
+            tintColor=""
             value={true}
           />
         </View>
       </View>
-    </>
-    <
-      activeOpacity={1}
-      delayLongPress={500}
-      onLongPress={[Function]}
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
     >
       <View
         style={
@@ -154,23 +172,35 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               Off(controlled)
             </Text>
           </View>
-          <Switch
+          <RCTSwitch
+            accessibilityRole="switch"
             disabled={false}
-            trackColor={
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onTintColor="#4dd865"
+            style={
               Object {
-                "false": "",
-                "true": "#4dd865",
+                "height": 31,
+                "width": 51,
               }
             }
+            tintColor=""
             value={false}
           />
         </View>
       </View>
-    </>
-    <
-      activeOpacity={1}
-      delayLongPress={500}
-      onLongPress={[Function]}
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
     >
       <View
         style={
@@ -243,24 +273,35 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               close
             </Text>
           </View>
-          <Switch
+          <RCTSwitch
+            accessibilityRole="switch"
             disabled={false}
-            onValueChange={[Function]}
-            trackColor={
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onTintColor="#4dd865"
+            style={
               Object {
-                "false": "",
-                "true": "#4dd865",
+                "height": 31,
+                "width": 51,
               }
             }
+            tintColor=""
             value={false}
           />
         </View>
       </View>
-    </>
-    <
-      activeOpacity={1}
-      delayLongPress={500}
-      onLongPress={[Function]}
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
     >
       <View
         style={
@@ -319,23 +360,35 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               disabled
             </Text>
           </View>
-          <Switch
+          <RCTSwitch
+            accessibilityRole="switch"
             disabled={true}
-            trackColor={
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onTintColor="#4dd865"
+            style={
               Object {
-                "false": "",
-                "true": "#4dd865",
+                "height": 31,
+                "width": 51,
               }
             }
+            tintColor=""
             value={false}
           />
         </View>
       </View>
-    </>
-    <
-      activeOpacity={1}
-      delayLongPress={500}
-      onLongPress={[Function]}
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
     >
       <View
         style={
@@ -394,19 +447,25 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               color
             </Text>
           </View>
-          <Switch
+          <RCTSwitch
+            accessibilityRole="switch"
             disabled={false}
-            trackColor={
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onTintColor="red"
+            style={
               Object {
-                "false": "",
-                "true": "red",
+                "height": 31,
+                "width": 51,
               }
             }
+            tintColor=""
             value={true}
           />
         </View>
       </View>
-    </>
+    </View>
     <View
       style={
         Array [
