@@ -38,7 +38,7 @@
     "deepmerge": "^4.2.2",
     "normalize-css-color": "^1.0.2",
     "react-native-collapsible": "^1.6.0",
-    "react-native-modal-popover": "^0.0.12",
+    "react-native-modal-popover": "^2.0.0",
     "shallowequal": "^1.1.0",
     "utility-types": "^3.10.0"
   },
