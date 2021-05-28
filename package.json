@@ -115,6 +115,7 @@
     "react-native-screens": "^3.3.0",
     "react-test-renderer": "17.0.1",
     "regenerator-runtime": "^0.13.1",
+    "shell-utils": "^1.0.10",
     "ts-jest": "^25.4.0",
     "typescript": "^3.2.2"
   },
