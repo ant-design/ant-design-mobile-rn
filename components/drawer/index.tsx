@@ -1,12 +1,12 @@
 
-import DrawerLayout from '@bang88/react-native-drawer-layout';
 import React from 'react';
+import DrawerLayout, { DrawerLayoutProps } from 'react-native-gesture-handler/DrawerLayout';
 import { DrawerProps } from './PropsType';
-
-export interface DrawerNativeProps extends DrawerProps {
+export interface DrawerNativeProps extends Partial<DrawerLayoutProps>, DrawerProps {
   drawerRef?: (el: DrawerLayout | null) => void;
   drawerWidth?: number;
   drawerBackgroundColor?: string;
+  children?: React.ReactNode
 }
 export default class Drawer extends React.Component<DrawerNativeProps, any> {
   static defaultProps = {
@@ -54,11 +54,7 @@ export default class Drawer extends React.Component<DrawerNativeProps, any> {
         delete (restProps as any)[prop];
       }
     });
-    // tslint:disable-next-line:variable-name
-    let _position = (DrawerLayout as any).positions.Left;
-    if (position === 'right') {
-      _position = (DrawerLayout as any).positions.Right;
-    }
+
     return (
       <DrawerLayout
         ref={el => {
@@ -68,7 +64,7 @@ export default class Drawer extends React.Component<DrawerNativeProps, any> {
           this.drawer = el;
         }}
         renderNavigationView={() => sidebar}
-        drawerPosition={_position}
+        drawerPosition={position}
         onDrawerOpen={() => this.onOpenChange(true)}
         onDrawerClose={() => this.onOpenChange(false)}
         keyboardDismissMode="on-drag"

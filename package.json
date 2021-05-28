@@ -32,7 +32,6 @@
   "module": "es/index.js",
   "dependencies": {
     "@ant-design/icons-react-native": "^2.2.1",
-    "@bang88/react-native-drawer-layout": "^2.0.3",
     "@bang88/react-native-ultimate-listview": "^4.0.0",
     "array-tree-filter": "~2.1.0",
     "babel-runtime": "^6.x",
