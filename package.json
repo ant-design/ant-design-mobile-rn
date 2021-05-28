@@ -40,7 +40,6 @@
     "normalize-css-color": "^1.0.2",
     "react-native-collapsible": "^1.6.0",
     "react-native-modal-popover": "^0.0.12",
-    "react-native-swipeout": "^2.3.6",
     "shallowequal": "^1.1.0",
     "utility-types": "^3.10.0"
   },
@@ -124,6 +123,7 @@
     "@react-native-community/segmented-control": ">= 1.4.0",
     "@react-native-community/slider": ">= 2.0.0",
     "@react-native-picker/picker": "^1.9.10",
+    "react-native-gesture-handler": "^1.10.3",
     "react-native-pager-view": "^5.1.3"
   },
   "scripts": {

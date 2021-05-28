@@ -216,7 +216,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         }
       }
       this.goTo(newIndex);
-    }, autoplayInterval);
+    }, autoplayInterval) as any;
   };
 
   private renderDots = (index: number) => {

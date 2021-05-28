@@ -25,6 +25,11 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
         style={Object {}}
       >
         <View
+          accessibilityState={
+            Object {
+              "expanded": true,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -356,6 +361,11 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
         style={Object {}}
       >
         <View
+          accessibilityState={
+            Object {
+              "expanded": false,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -472,6 +482,11 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
         style={Object {}}
       >
         <View
+          accessibilityState={
+            Object {
+              "expanded": true,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}

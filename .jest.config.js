@@ -7,18 +7,18 @@ const transformPackages = [
   'react-native-modal-popover',
   'react-native-tab-view',
   'react-native-collapsible',
-  'react-native-swipeout',
   'react-native-camera-roll-picker',
   '@bang88/react-native-ultimate-listview',
   '@react-native-community',
   '@react-native-picker/picker',
-  'react-native-pager-view'
+  'react-native-pager-view',
+  'react-native-gesture-handler'
 ];
 
 module.exports = {
   "preset": "react-native",
   "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"],
-
+  "setupFiles": ["./node_modules/react-native-gesture-handler/jestSetup.js"],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testPathIgnorePatterns: ['/node_modules/', '_site', 'site'],
   transform: {
