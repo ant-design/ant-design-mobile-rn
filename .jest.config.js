@@ -2,6 +2,7 @@ const libDir = process.env.LIB_DIR;
 const { defaults: tsjPreset } = require('ts-jest/presets');
 
 const transformPackages = [
+  '@react-native',
   'react-native',
   'react-native-modal-popover',
   'react-native-tab-view',
@@ -15,20 +16,13 @@ const transformPackages = [
 ];
 
 module.exports = {
-  // ...tsjPreset,
-  preset: '@testing-library/react-native',
-  setupFiles: ["@testing-library/react-native/jest-preset",],
-  // setupFilesAfterEnv: [
-  //   '@testing-library/react-native/cleanup-after-each',
-  //   // ... other setup files ...
-  // ],
+  "preset": "react-native",
+  "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"],
+
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testPathIgnorePatterns: ['/node_modules/', '_site', 'site'],
   transform: {
-    // '\\.tsx?$': 'ts-jest',
     ...tsjPreset.transform,
-    // '\\.tsx?$': './node_modules/antd-tools/lib/jest/codePreprocessor',
-    // '\\.js$': './node_modules/antd-tools/lib/jest/codePreprocessor',
     '^.+\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
     '\\.png': '<rootDir>/tests/imageStub.js',
   },
