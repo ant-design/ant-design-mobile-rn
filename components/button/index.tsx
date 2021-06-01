@@ -1,6 +1,15 @@
 // tslint:disable:no-empty
 import React from 'react';
-import { ActivityIndicator, StyleProp, StyleSheet, Text, TouchableHighlight, TouchableHighlightProperties, View, ViewStyle } from 'react-native';
+import {
+  ActivityIndicator,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableHighlightProps,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { WithTheme, WithThemeStyles } from '../style';
 import { ButtonPropsType } from './PropsType';
 import buttonStyles, { ButtonStyles } from './style/index';
@@ -8,9 +17,8 @@ import buttonStyles, { ButtonStyles } from './style/index';
 export interface ButtonProps
   extends ButtonPropsType,
     WithThemeStyles<ButtonStyles>,
-    TouchableHighlightProperties {
+    TouchableHighlightProps {
   activeStyle?: StyleProp<ViewStyle>;
-  onPress?: (_?: any) => void;
 }
 
 export default class Button extends React.Component<ButtonProps, any> {
@@ -60,7 +68,6 @@ export default class Button extends React.Component<ButtonProps, any> {
   };
 
   render() {
-    // TODO: replace `TouchableHighlight` with `TouchableWithoutFeedback` in version 1.1.0
     // for using setNativeProps to improve performance
     const {
       size = 'large',
@@ -110,7 +117,7 @@ export default class Button extends React.Component<ButtonProps, any> {
               style={wrapperStyle}
               disabled={disabled}
               underlayColor={underlayColor}
-              onPress={(e?: any) => onPress && onPress(e)}
+              onPress={e => onPress && onPress(e)}
               onPressIn={this.onPressIn}
               onPressOut={this.onPressOut}
               onShowUnderlay={this.onShowUnderlay}
