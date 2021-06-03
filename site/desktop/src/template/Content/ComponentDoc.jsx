@@ -74,8 +74,12 @@ export default class ComponentDoc extends React.Component {
     const { props } = this;
     const { doc, location } = props;
     const { content, meta } = doc;
+    // TODO: 新版bisheng返回的数据结构变了，但要保留原来数据结构
     const demos = Object.keys(props.demos)
-      .map(key => props.demos[key])
+      .map(key => ({ ...props.demos[key],
+        content: props.demos[key].content.filter(a => (Array.isArray(a) && a[0] !== 'pre')),
+        highlightedCode: props.demos[key].content[2],
+      }))
       .filter(demoData => !demoData.meta.hidden);
 
     const leftChildren = [];
@@ -121,6 +125,9 @@ export default class ComponentDoc extends React.Component {
       'demo-code-container-fixed': this.state.inFixedDemoMode,
     });
 
+    // TODO: 代码插入到 #API前面（保留原来样式）
+    const codeIndex = content.findIndex(a => String(a) === 'h2,API');
+
     return (
       <DocumentTitle title={`${subtitle || chinese || ''} ${title || english} - Ant Design`}>
         <article>
@@ -133,7 +140,7 @@ export default class ComponentDoc extends React.Component {
             </h1>
             {
               props.utils.toReactComponent(['section', { className: 'markdown' }]
-                .concat(getChildren(content)))
+                .concat(getChildren(content.slice(0, codeIndex))))
             }
 
             <section id="demoTitle" className="demo-title-wrapper">
@@ -141,13 +148,17 @@ export default class ComponentDoc extends React.Component {
                 <FormattedMessage id="app.ComponentDoc.codeTitle" />
               </h2>
             </section>
-          </section>
-
-          <div id="demo-code" className={codeContainerCls}>
-            <div style={{ width: '100%', float: 'left' }}>
-              {leftChildren}
+            <div id="demo-code" className={codeContainerCls}>
+              <div style={{ width: '100%', float: 'left' }}>
+                {leftChildren}
+              </div>
             </div>
-          </div>
+
+            {
+              props.utils.toReactComponent(['section', { className: 'markdown' }]
+                .concat(getChildren(content.filter((a, i) => (i === 0 || i >= codeIndex)))))
+            }
+          </section>
 
           {
             props.utils.toReactComponent(['section', {

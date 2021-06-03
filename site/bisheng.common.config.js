@@ -1,7 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
-const CSSSplitWebpackPlugin = require('css-split-webpack-plugin').default;
-const replaceLib = require('antd-tools/lib/replaceLib');
+const replaceLib = require('@ant-design/tools/lib/replaceLib');
+const getWebpackConfig = require('@ant-design/tools/lib/getWebpackConfig');
+
+const { webpack } = getWebpackConfig;
 
 const useReact = process.env.DEMO_ENV === 'react';
 const isDev = process.env.NODE_ENV === 'development';
@@ -58,7 +59,6 @@ module.exports = {
     }
 
     alertBabelConfig(config.module.rules);
-    config.plugins.push(new CSSSplitWebpackPlugin({ size: 4000 }));
 
     config.resolve.alias = {
       '@ant-design/react-native/lib': path.join(process.cwd(), 'components'),
@@ -84,6 +84,9 @@ module.exports = {
       loader: 'babel-loader',
     });
     return config;
+  },
+  lessConfig: {
+    javascriptEnabled: true,
   },
   htmlTemplateExtraData: {
     isDev,
