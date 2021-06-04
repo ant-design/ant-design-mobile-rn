@@ -51,7 +51,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             style={
               Object {
                 "flexDirection": "row",
-                "width": 100,
+                "width": 120,
               }
             }
           >
@@ -130,7 +130,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                   "flex": 1,
                   "transform": Array [
                     Object {
-                      "translateX": -50,
+                      "translateX": -60,
                     },
                   ],
                 }
@@ -219,7 +219,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             style={
               Object {
                 "flexDirection": "row",
-                "width": 100,
+                "width": 120,
               }
             }
           >
@@ -229,7 +229,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                   "flex": 1,
                   "transform": Array [
                     Object {
-                      "translateX": 100,
+                      "translateX": 120,
                     },
                   ],
                 }
@@ -298,7 +298,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                   "flex": 1,
                   "transform": Array [
                     Object {
-                      "translateX": 50,
+                      "translateX": 60,
                     },
                   ],
                 }

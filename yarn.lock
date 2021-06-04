@@ -12617,10 +12617,10 @@ react-native-mocker@^0.0.12:
     react-timer-mixin "^0.13.3"
     warning "^2.1.0"
 
-react-native-modal-popover@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-modal-popover/-/react-native-modal-popover-2.0.0.tgz#b0e620147fe37f52bc366d5008641001ac555d4e"
-  integrity sha512-VCBs3xIM5I97deEfh7dyatPWnmOi1lhJ3Hu844L0fb3WJh+IyYBTVU7aI/hGWNPz3eVk5FiJqqcfybb4WSvg9A==
+react-native-modal-popover@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-modal-popover/-/react-native-modal-popover-2.0.1.tgz#119fb04606a205ffff41fc56666ea4c0cc833aa6"
+  integrity sha512-4aqjeNf3TNSUH4tK0t9ADNGqNQmY/xb0XKGtdNGhhdSZDp0oME36dj92AKxoFeU3AzfQdmd0ehOXvYUu7aaj8g==
   dependencies:
     lodash "^4.17.20"
     prop-types "^15.7.2"

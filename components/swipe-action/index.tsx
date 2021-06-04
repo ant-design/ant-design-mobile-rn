@@ -99,7 +99,7 @@ class SwipeAction extends React.Component<SwipeActionProps> {
     _dragAnimatedValue: Animated.AnimatedInterpolation,
     isLeft = false,
   ) => {
-    const { right,left, buttonWidth = 50 } = this.props
+    const { right,left, buttonWidth = 60 } = this.props
     const buttons = isLeft ? left: right
     if (!buttons) {
       return null
