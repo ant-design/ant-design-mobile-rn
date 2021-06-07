@@ -68,14 +68,16 @@ module.exports = {
     if (!useReact) {
       config.resolve.alias = Object.assign(config.resolve.alias, preactAlias);
     }
+    config.output.jsonpFunction = 'antd_rn_jsonp';
 
-
-    config.plugins.push(new webpack.DefinePlugin({
-      PREACT_DEVTOOLS: isDev && !useReact,
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      },
-    }));
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        PREACT_DEVTOOLS: isDev && !useReact,
+        'process.env': {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        },
+      }),
+    );
 
     // fix webpack-dev-server "SyntaxError: Use of const in strict mode." ref https://github.com/mrdulin/blog/issues/35
     // https://github.com/webpack/webpack/issues/2031#issuecomment-339336830
