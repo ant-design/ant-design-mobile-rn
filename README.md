@@ -64,7 +64,7 @@ npm install @react-native-community/cameraroll @react-native-picker/picker @reac
 or
 
 ```bash
-yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view
+yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view react-native-gesture-handler
 ```
 
 > You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.

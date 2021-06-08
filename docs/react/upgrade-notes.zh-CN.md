@@ -5,9 +5,23 @@ title: 升级指南
 
 此处着重列出升级中的不兼容变化和推荐改动。所有变动请见 [Changelog](/changelog)。
 
+### 4.2.0
+
+> 安装 peer 依赖
+
+```bash
+npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view react-native-gesture-handler
+```
+
+or
+
+```bash
+yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view react-native-gesture-handler
+```
+
 ### 4.1.0
 
-> 升级到4.0.0+需要安装peer依赖然后link
+> 升级到 4.0.0+需要安装 peer 依赖然后 link
 
 ```bash
 npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view

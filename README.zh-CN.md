@@ -64,7 +64,7 @@ npm install @react-native-community/cameraroll @react-native-picker/picker @reac
 or
 
 ```bash
-yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view
+yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view  react-native-gesture-handler
 ```
 
 > 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理
