@@ -10,6 +10,7 @@ export interface ActionSheetStyle {
   titleText: TextStyle;
   message: ViewStyle;
   btn: ViewStyle;
+  btnText: TextStyle;
   cancelBtn: ViewStyle;
   cancelBtnMask: ViewStyle;
   destructiveBtn: TextStyle;
@@ -43,17 +44,16 @@ export default (theme: Theme) => StyleSheet.create<ActionSheetStyle>({
   title: {
     flex: 1,
     alignItems: 'center',
-    // justifyContent: 'center',
     marginTop: theme.h_spacing_lg,
     marginBottom: theme.h_spacing_lg,
   },
   titleText: {
     fontWeight: '500',
+    color: theme.color_text_base,
   },
   message: {
     flex: 1,
     alignItems: 'center',
-    // justifyContent: 'center',
     marginBottom: theme.h_spacing_lg,
   },
   btn: {
@@ -64,7 +64,9 @@ export default (theme: Theme) => StyleSheet.create<ActionSheetStyle>({
     borderStyle: 'solid',
     borderTopWidth: 1,
     borderTopColor: theme.border_color_base,
-    backgroundColor: 'white',
+  },
+  btnText: {
+    color: theme.color_text_base,
   },
   cancelBtn: {
     marginTop: theme.v_spacing_md,

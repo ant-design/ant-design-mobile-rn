@@ -129,7 +129,7 @@ class Picker extends React.Component<IPickerProp & PickerProps, any> {
     this.scrollBuffer = setTimeout(() => {
       this.clearScrollBuffer();
       this.props.doScrollingComplete(y, this.itemHeight, this.fireValueChange);
-    }, 50);
+    }, 50) as any;
   };
 
   render() {

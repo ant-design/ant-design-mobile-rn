@@ -9,47 +9,52 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
       }
     }
   >
-    <TouchableWithoutFeedback
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "alignItems": "center",
-              "flexDirection": "row",
+              "color": "#108ee9",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
             },
+            Array [
+              Object {},
+              Object {
+                "borderColor": "#999",
+                "borderWidth": 1,
+                "margin": 10,
+              },
+            ],
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#108ee9",
-                "fontFamily": "antoutline",
-                "fontSize": 22,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Array [
-                Object {},
-                Object {
-                  "borderColor": "#999",
-                  "borderWidth": 1,
-                  "margin": 10,
-                },
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-        <Text>
-          Support
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        
+      </Text>
+      <Text>
+        Support
+      </Text>
+    </View>
     <View
       style={
         Array [
@@ -60,20 +65,25 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         ]
       }
     />
-    <TouchableWithoutFeedback
-      onPress={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            },
-          ]
-        }
-      />
-    </TouchableWithoutFeedback>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+        ]
+      }
+    />
     <View
       style={
         Array [
@@ -110,12 +120,16 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
       >
         Form radio, radio in general list.
       </Text>
-      <
-        activeOpacity={0.5}
-        delayLongPress={500}
-        onLongPress={[Function]}
-        onPress={[Function]}
-        underlayColor="#dddddd"
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -174,49 +188,58 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 Use Ant Design Component
               </Text>
             </View>
-            <TouchableWithoutFeedback
-              onPress={[Function]}
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
             >
-              <View
+              <Text
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
+                      "color": "#108ee9",
+                      "fontFamily": "antoutline",
+                      "fontSize": 22,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
                     },
-                  ]
-                }
-              >
-                <Text
-                  style={
                     Array [
-                      Object {
-                        "color": "#108ee9",
-                        "fontFamily": "antoutline",
-                        "fontSize": 22,
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      Array [
-                        Object {},
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </TouchableWithoutFeedback>
+                      Object {},
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
           </View>
         </View>
-      </>
-      <
-        activeOpacity={0.5}
-        delayLongPress={500}
-        onLongPress={[Function]}
-        onPress={[Function]}
-        underlayColor="#dddddd"
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -275,27 +298,38 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 Use Ant Design Component
               </Text>
             </View>
-            <TouchableWithoutFeedback
-              onPress={[Function]}
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                    },
-                  ]
-                }
-              />
-            </TouchableWithoutFeedback>
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            />
           </View>
         </View>
-      </>
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -356,27 +390,38 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 Set disabled
               </Text>
             </View>
-            <TouchableWithoutFeedback
-              onPress={[Function]}
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                    },
-                  ]
-                }
-              />
-            </TouchableWithoutFeedback>
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            />
           </View>
         </View>
-      </>
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -437,43 +482,48 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 Set disabled
               </Text>
             </View>
-            <TouchableWithoutFeedback
-              onPress={[Function]}
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
             >
-              <View
+              <Text
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
+                      "color": "#cccccc",
+                      "fontFamily": "antoutline",
+                      "fontSize": 22,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
                     },
+                    Array [
+                      Object {},
+                      undefined,
+                    ],
                   ]
                 }
               >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#cccccc",
-                        "fontFamily": "antoutline",
-                        "fontSize": 22,
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      Array [
-                        Object {},
-                        undefined,
-                      ],
-                    ]
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </TouchableWithoutFeedback>
+                
+              </Text>
+            </View>
           </View>
         </View>
-      </>
+      </View>
       <View
         style={
           Array [

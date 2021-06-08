@@ -1,7 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
-const CSSSplitWebpackPlugin = require('css-split-webpack-plugin').default;
-const replaceLib = require('antd-tools/lib/replaceLib');
+const replaceLib = require('@ant-design/tools/lib/replaceLib');
+const getWebpackConfig = require('@ant-design/tools/lib/getWebpackConfig');
+
+const { webpack } = getWebpackConfig;
 
 const useReact = process.env.DEMO_ENV === 'react';
 const isDev = process.env.NODE_ENV === 'development';
@@ -58,7 +59,6 @@ module.exports = {
     }
 
     alertBabelConfig(config.module.rules);
-    config.plugins.push(new CSSSplitWebpackPlugin({ size: 4000 }));
 
     config.resolve.alias = {
       '@ant-design/react-native/lib': path.join(process.cwd(), 'components'),
@@ -68,14 +68,16 @@ module.exports = {
     if (!useReact) {
       config.resolve.alias = Object.assign(config.resolve.alias, preactAlias);
     }
+    config.output.jsonpFunction = 'antd_rn_jsonp';
 
-
-    config.plugins.push(new webpack.DefinePlugin({
-      PREACT_DEVTOOLS: isDev && !useReact,
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      },
-    }));
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        PREACT_DEVTOOLS: isDev && !useReact,
+        'process.env': {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        },
+      }),
+    );
 
     // fix webpack-dev-server "SyntaxError: Use of const in strict mode." ref https://github.com/mrdulin/blog/issues/35
     // https://github.com/webpack/webpack/issues/2031#issuecomment-339336830
@@ -84,6 +86,9 @@ module.exports = {
       loader: 'babel-loader',
     });
     return config;
+  },
+  lessConfig: {
+    javascriptEnabled: true,
   },
   htmlTemplateExtraData: {
     isDev,
