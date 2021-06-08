@@ -31,9 +31,9 @@ export interface InputNumberProps {
   disabled?: boolean;
   onFocus?: (e?: any) => void;
   onBlur?: (e: any, ...rest: any[]) => void;
-  max?: number;
-  min?: number;
-  step?: string | number;
+  max: number;
+  min: number;
+  step: string | number;
   parser?: (v: any) => void;
   precision?: number;
   value?: number;
@@ -452,10 +452,8 @@ export default class InputNumber<
           }
           accessible
           accessibilityLabel="Decrease Value"
-          accessibilityComponentType="button"
-          accessibilityTraits={
-            editable && !downDisabledStyle ? 'button' : 'disabled'
-          }
+          accessibilityRole="button"
+          accessibilityState={{disabled:!editable || !!downDisabledStyle}}
         >
           <View
             ref={component => (this._stepDown = component)}
@@ -489,10 +487,8 @@ export default class InputNumber<
           }
           accessible
           accessibilityLabel="Increase Value"
-          accessibilityComponentType="button"
-          accessibilityTraits={
-            editable && !upDisabledStyle ? 'button' : 'disabled'
-          }
+          accessibilityRole="button"
+          accessibilityState={{disabled:!editable || !!downDisabledStyle}}
         >
           <View
             ref={component => (this._stepUp = component)}

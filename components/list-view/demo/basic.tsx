@@ -7,7 +7,7 @@ export default class BasicListExample extends React.Component<any, any> {
     layout: 'list',
   };
   sleep = (time: any) =>
-    new Promise(resolve => setTimeout(() => resolve(), time));
+    new Promise(resolve => setTimeout(() => resolve(''), time));
   onFetch = async (
     page = 1,
     startFetch: (arg0: string[], arg1: number) => void,

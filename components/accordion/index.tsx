@@ -87,12 +87,12 @@ class Accordion<T extends AccordionHeader> extends React.Component<
           <View style={[s.container, style]}>
             <RNAccordion
               underlayColor="transparent"
+              duration={0}
+              {...rest as AccordionProps<T>} // TODO: props可被覆盖
               renderHeader={this.renderHeader(s)}
               renderContent={this.renderContent(s)}
-              duration={0}
               sections={headers}
               activeSections={activeSections}
-              {...rest as AccordionProps<T>}
             />
           </View>
         )}

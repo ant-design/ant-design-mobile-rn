@@ -1,14 +1,14 @@
 import React from 'react';
 import {
   Animated,
+  BackHandler,
   Dimensions,
   Easing,
   StyleProp,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
-  ViewStyle,
-  BackHandler,
+  ViewStyle
 } from 'react-native';
 import Portal from '../portal';
 import { CallbackOnBackHandler } from "./PropsType";

@@ -177,7 +177,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
         activeOpacity={1}
         key={`${tab.title}_${index}`}
         accessible
-        accessibilityTraits="button"
+        accessibilityRole="button"
         onPress={() => this.onPress(index)}
         onLayout={onLayoutHandler}
       >
@@ -303,7 +303,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
                   {renderUnderline ? (
                     renderUnderline(underlineProps.style)
                   ) : (
-                    <Animated.View {...underlineProps} />
+                    <Animated.View {...underlineProps.style}></Animated.View>
                   )}
                 </View>
               </ScrollView>
