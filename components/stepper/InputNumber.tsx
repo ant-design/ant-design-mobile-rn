@@ -1,59 +1,67 @@
-import React from 'react';
-import { StyleProp, Text, TextInput, TextStyle, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
-import StepperStyles from './style';
+import React from 'react'
+import {
+  StyleProp,
+  Text,
+  TextInput,
+  TextStyle,
+  TouchableWithoutFeedback,
+  View,
+  ViewStyle,
+} from 'react-native'
+import StepperStyles from './style'
 
 function noop() {}
 
 function defaultParser(input: string) {
-  return input.replace(/[^\w\.-]+/g, '');
+  return input.replace(/[^\w\.-]+/g, '')
 }
 
 /**
  * When click and hold on a button - the speed of auto changin the value.
  */
-const SPEED = 200;
+const SPEED = 200
 
 /**
  * When click and hold on a button - the delay before auto changin the value.
  */
-const DELAY = 600;
+const DELAY = 600
 
 /**
  * Max Safe Integer -- on IE this is not available, so manually set the number in that case.
  * The reason this is used, instead of Infinity is because numbers above the MSI are unstable
  */
-const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
+const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1
 
 export interface InputNumberProps {
-  style?: StyleProp<ViewStyle>;
-  onChange?: (e: any) => void;
-  readOnly?: boolean;
-  disabled?: boolean;
-  onFocus?: (e?: any) => void;
-  onBlur?: (e: any, ...rest: any[]) => void;
-  max: number;
-  min: number;
-  step: string | number;
-  parser?: (v: any) => void;
-  precision?: number;
-  value?: number;
-  defaultValue?: number;
-  autoFocus?: boolean;
-  styles: ReturnType<typeof StepperStyles>;
-  upStyle?: StyleProp<ViewStyle>;
-  downStyle?: StyleProp<ViewStyle>;
-  inputStyle?: StyleProp<TextStyle>;
-  keyboardType?: any;
+  style?: StyleProp<ViewStyle>
+  onChange?: (e: any) => void
+  readOnly?: boolean
+  disabled?: boolean
+  onFocus?: (e?: any) => void
+  onBlur?: (e: any, ...rest: any[]) => void
+  max: number
+  min: number
+  step: string | number
+  parser?: (v: any) => void
+  precision?: number
+  value?: number
+  defaultValue?: number
+  autoFocus?: boolean
+  styles: ReturnType<typeof StepperStyles>
+  upStyle?: StyleProp<ViewStyle>
+  downStyle?: StyleProp<ViewStyle>
+  inputStyle?: StyleProp<TextStyle>
+  keyboardType?: any
 }
 export interface InputNumberState {
-  value: number;
-  inputValue?: number;
-  focused?: boolean;
+  value: number
+  inputValue?: number
+  focused?: boolean
 }
 
 export default class InputNumber<
   P extends InputNumberProps = InputNumberProps,
-  S extends InputNumberState = InputNumberState
+  S extends InputNumberState = InputNumberState,
 > extends React.Component<P, S> {
   static defaultProps = {
     max: MAX_SAFE_INTEGER,
@@ -64,112 +72,112 @@ export default class InputNumber<
     onFocus: noop,
     onBlur: noop,
     parser: defaultParser,
-  };
+  }
 
-  autoStepTimer: any;
-  _stepDown: any;
-  _stepDownText: any;
-  _stepUp: any;
-  _stepUpText: any;
+  autoStepTimer: any
+  _stepDown: any
+  _stepDownText: any
+  _stepUp: any
+  _stepUpText: any
 
   constructor(props: P) {
-    super(props as P);
+    super(props as P)
 
-    let value;
+    let value
     if ('value' in props) {
-      value = props.value;
+      value = props.value
     } else {
-      value = props.defaultValue;
+      value = props.defaultValue
     }
-    value = this.toNumber(value);
+    value = this.toNumber(value)
     this.state = {
       inputValue: this.toPrecisionAsStep(value),
       value,
       focused: props.autoFocus,
-    } as S;
+    } as S
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: P) {
     if ('value' in nextProps) {
       const value = this.state.focused
         ? nextProps.value
-        : this.getValidValue(nextProps.value);
+        : this.getValidValue(nextProps.value)
       this.setState({
         value,
         inputValue: value,
-      });
+      })
     }
   }
 
   componentWillUnmount() {
-    this.stop();
+    this.stop()
   }
 
   onChange = (e: any) => {
-    const { parser, onChange } = this.props;
-    const input = parser && parser(this.getValueFromEvent(e).trim());
-    this.setState({ inputValue: input } as S);
+    const { parser, onChange } = this.props
+    const input = parser && parser(this.getValueFromEvent(e).trim())
+    this.setState({ inputValue: input } as S)
     // tslint:disable-next-line:no-unused-expression
-    onChange && onChange(this.toNumberWhenUserInput(input)); // valid number or invalid string
-  };
+    onChange && onChange(this.toNumberWhenUserInput(input)) // valid number or invalid string
+  }
 
   onFocus = (...args: any[]) => {
     this.setState({
       focused: true,
-    });
-    const { onFocus } = this.props;
+    })
+    const { onFocus } = this.props
     // tslint:disable-next-line:no-unused-expression
-    onFocus && onFocus(...args);
-  };
+    onFocus && onFocus(...args)
+  }
 
   onBlur = (e: any, ...args: any[]) => {
     this.setState({
       focused: false,
-    });
-    const value = this.getCurrentValidValue(this.state.inputValue);
-    e.persist(); // fix https://github.com/react-component/input-number/issues/51
+    })
+    const value = this.getCurrentValidValue(this.state.inputValue)
+    e.persist() // fix https://github.com/react-component/input-number/issues/51
     this.setValue(value, () => {
-      const { onBlur } = this.props;
+      const { onBlur } = this.props
       // tslint:disable-next-line:no-unused-expression
-      onBlur && onBlur(e, ...args);
-    });
-  };
+      onBlur && onBlur(e, ...args)
+    })
+  }
 
   getCurrentValidValue = (value: any) => {
-    let val = value;
+    let val = value
     if (val === '') {
-      val = '';
+      val = ''
     } else if (!this.isNotCompleteNumber(val)) {
-      val = this.getValidValue(val);
+      val = this.getValidValue(val)
     } else {
-      val = this.state.value;
+      val = this.state.value
     }
-    return this.toNumber(val);
-  };
+    return this.toNumber(val)
+  }
 
   getValidValue = (value: any) => {
-    let val = parseFloat(value);
+    let val = parseFloat(value)
     // https://github.com/ant-design/ant-design/issues/7358
     if (isNaN(val)) {
-      return value;
+      return value
     }
     if (val < this.props.min) {
-      val = this.props.min as number;
+      val = this.props.min as number
     }
     if (val > this.props.max) {
-      val = this.props.max as number;
+      val = this.props.max as number
     }
-    return val;
-  };
+    return val
+  }
 
   setValue = (v: any, callback?: any) => {
     // trigger onChange
     const newValue = this.isNotCompleteNumber(parseFloat(v))
       ? undefined
-      : parseFloat(v);
+      : parseFloat(v)
     const changed =
       newValue !== this.state.value ||
-      `${newValue}` !== `${this.state.inputValue}`; // https://github.com/ant-design/ant-design/issues/7363
+      `${newValue}` !== `${this.state.inputValue}` // https://github.com/ant-design/ant-design/issues/7363
     if (!('value' in this.props)) {
       this.setState(
         {
@@ -177,7 +185,7 @@ export default class InputNumber<
           inputValue: this.toPrecisionAsStep(v),
         } as S,
         callback,
-      );
+      )
     } else {
       // always set input value same as value
       this.setState(
@@ -185,29 +193,29 @@ export default class InputNumber<
           inputValue: this.toPrecisionAsStep(this.state.value),
         },
         callback,
-      );
+      )
     }
     if (changed) {
-      const { onChange } = this.props;
+      const { onChange } = this.props
       // tslint:disable-next-line:no-unused-expression
-      onChange && onChange(newValue);
+      onChange && onChange(newValue)
     }
-  };
+  }
 
   getPrecision = (value: any) => {
     if ('precision' in this.props) {
-      return this.props.precision as number;
+      return this.props.precision as number
     }
-    const valueString = value.toString();
+    const valueString = value.toString()
     if (valueString.indexOf('e-') >= 0) {
-      return parseInt(valueString.slice(valueString.indexOf('e-') + 2), 10);
+      return parseInt(valueString.slice(valueString.indexOf('e-') + 2), 10)
     }
-    let precision = 0;
+    let precision = 0
     if (valueString.indexOf('.') >= 0) {
-      precision = valueString.length - valueString.indexOf('.') - 1;
+      precision = valueString.length - valueString.indexOf('.') - 1
     }
-    return precision;
-  };
+    return precision
+  }
 
   // step={1.0} value={1.51}
   // press +
@@ -216,33 +224,33 @@ export default class InputNumber<
   // https://github.com/react-component/input-number/issues/39
   getMaxPrecision = (currentValue: any, ratio = 1) => {
     if ('precision' in this.props) {
-      return this.props.precision as number;
+      return this.props.precision as number
     }
-    const { step } = this.props;
-    const ratioPrecision = this.getPrecision(ratio);
-    const stepPrecision = this.getPrecision(step);
-    const currentValuePrecision = this.getPrecision(currentValue);
+    const { step } = this.props
+    const ratioPrecision = this.getPrecision(ratio)
+    const stepPrecision = this.getPrecision(step)
+    const currentValuePrecision = this.getPrecision(currentValue)
     if (!currentValue) {
-      return ratioPrecision + stepPrecision;
+      return ratioPrecision + stepPrecision
     }
-    return Math.max(currentValuePrecision, ratioPrecision + stepPrecision);
-  };
+    return Math.max(currentValuePrecision, ratioPrecision + stepPrecision)
+  }
 
   getPrecisionFactor = (currentValue: any, ratio = 1) => {
-    const precision = this.getMaxPrecision(currentValue, ratio);
-    return Math.pow(10, precision as number);
-  };
+    const precision = this.getMaxPrecision(currentValue, ratio)
+    return Math.pow(10, precision as number)
+  }
 
   toPrecisionAsStep = (num: any) => {
     if (this.isNotCompleteNumber(num) || num === '') {
-      return num;
+      return num
     }
-    const precision = Math.abs(this.getMaxPrecision(num));
+    const precision = Math.abs(this.getMaxPrecision(num))
     if (!isNaN(precision)) {
-      return Number(num).toFixed(precision);
+      return Number(num).toFixed(precision)
     }
-    return num.toString();
-  };
+    return num.toString()
+  }
 
   // '1.' '1x' 'xx' '' => are not complete numbers
   isNotCompleteNumber = (num: any) => {
@@ -251,194 +259,194 @@ export default class InputNumber<
       num === '' ||
       num === null ||
       (num && num.toString().indexOf('.') === num.toString().length - 1)
-    );
-  };
+    )
+  }
 
   toNumber = (num: any) => {
     if (this.isNotCompleteNumber(num)) {
-      return num;
+      return num
     }
     if ('precision' in this.props) {
-      return Number(Number(num).toFixed(this.props.precision));
+      return Number(Number(num).toFixed(this.props.precision))
     }
-    return Number(num);
-  };
+    return Number(num)
+  }
 
   // '1.0' '1.00'  => may be a inputing number
   toNumberWhenUserInput = (num: any) => {
     // num.length > 16 => prevent input large number will became Infinity
     if ((/\.\d*0$/.test(num) || num.length > 16) && this.state.focused) {
-      return num;
+      return num
     }
-    return this.toNumber(num);
-  };
+    return this.toNumber(num)
+  }
 
   stepCompute = (type: 'up' | 'down', val: any, rat: any) => {
-    const { step, min } = this.props;
-    const precisionFactor = this.getPrecisionFactor(val, rat);
-    const precision = Math.abs(this.getMaxPrecision(val, rat));
-    let result;
-    const direct = type === 'up' ? 1 : -1;
+    const { step, min } = this.props
+    const precisionFactor = this.getPrecisionFactor(val, rat)
+    const precision = Math.abs(this.getMaxPrecision(val, rat))
+    let result
+    const direct = type === 'up' ? 1 : -1
     if (typeof val === 'number') {
       result = (
         (precisionFactor * val + direct * precisionFactor * +step * rat) /
         precisionFactor
-      ).toFixed(precision);
+      ).toFixed(precision)
     } else {
-      result = min === -Infinity ? direct * +step : min;
+      result = min === -Infinity ? direct * +step : min
     }
-    return this.toNumber(result);
-  };
+    return this.toNumber(result)
+  }
 
   step = (type: 'up' | 'down', e: any, ratio = 1) => {
     if (e) {
-      e.preventDefault();
+      e.preventDefault()
     }
-    const props = this.props;
+    const props = this.props
     if (props.disabled) {
-      return false;
+      return false
     }
-    const value = this.getCurrentValidValue(this.state.inputValue) || 0;
+    const value = this.getCurrentValidValue(this.state.inputValue) || 0
     if (this.isNotCompleteNumber(value)) {
-      return false;
+      return false
     }
-    let val = this.stepCompute(type, value, ratio);
-    const outOfRange = val > props.max || val < props.min;
+    let val = this.stepCompute(type, value, ratio)
+    const outOfRange = val > props.max || val < props.min
     if (val > props.max) {
-      val = props.max;
+      val = props.max
     } else if (val < props.min) {
-      val = props.min;
+      val = props.min
     }
-    this.setValue(val);
+    this.setValue(val)
     this.setState({
       focused: true,
-    });
-    return !outOfRange;
-  };
+    })
+    return !outOfRange
+  }
 
   stop = () => {
     if (this.autoStepTimer) {
-      clearTimeout(this.autoStepTimer);
+      clearTimeout(this.autoStepTimer)
     }
-  };
+  }
 
   action = (type: 'up' | 'down', e: any, ratio?: any, recursive?: any) => {
     if (e.persist) {
-      e.persist();
+      e.persist()
     }
-    this.stop();
+    this.stop()
     if (this.step(type, e, ratio)) {
       this.autoStepTimer = setTimeout(
         () => {
-          this.action(type, e, ratio, true);
+          this.action(type, e, ratio, true)
         },
         recursive ? SPEED : DELAY,
-      );
+      )
     }
-  };
+  }
 
   down = (e: any, ratio?: any, recursive?: any) => {
-    this.action('down', e, ratio, recursive);
-  };
+    this.action('down', e, ratio, recursive)
+  }
 
   up = (e: any, ratio?: any, recursive?: any) => {
-    this.action('up', e, ratio, recursive);
-  };
+    this.action('up', e, ratio, recursive)
+  }
 
   onPressIn(type: string) {
     if (this.props.disabled) {
-      return;
+      return
     }
-    const { styles } = this.props;
-    (this as any)[type].setNativeProps({
+    const { styles } = this.props
+    ;(this as any)[type].setNativeProps({
       style: [styles.stepWrap, styles.highlightStepBorderColor],
-    });
-    (this as any)[`${type}Text`].setNativeProps({
+    })
+    ;(this as any)[`${type}Text`].setNativeProps({
       style: [styles.stepText, styles.highlightStepTextColor],
-    });
+    })
   }
 
   onPressOut(type: any) {
     if (this.props.disabled) {
-      return;
+      return
     }
-    const { styles } = this.props;
-    (this as any)[type].setNativeProps({
+    const { styles } = this.props
+    ;(this as any)[type].setNativeProps({
       style: [styles.stepWrap],
-    });
-    (this as any)[`${type}Text`].setNativeProps({
+    })
+    ;(this as any)[`${type}Text`].setNativeProps({
       style: [styles.stepText],
-    });
+    })
   }
 
   onPressInDown = (e: any) => {
-    this.onPressIn('_stepDown');
-    this.down(e, true);
-  };
+    this.onPressIn('_stepDown')
+    this.down(e, true)
+  }
   onPressOutDown = () => {
-    this.onPressOut('_stepDown');
-    this.stop();
-  };
+    this.onPressOut('_stepDown')
+    this.stop()
+  }
 
   onPressInUp = (e: any) => {
-    this.onPressIn('_stepUp');
-    this.up(e, true);
-  };
+    this.onPressIn('_stepUp')
+    this.up(e, true)
+  }
 
   onPressOutUp = () => {
-    this.onPressOut('_stepUp');
-    this.stop();
-  };
+    this.onPressOut('_stepUp')
+    this.stop()
+  }
 
   getValueFromEvent(e: any) {
-    return e.nativeEvent.text;
+    return e.nativeEvent.text
   }
 
   render() {
-    const { props, state } = this;
-    const { style, upStyle, downStyle, inputStyle, styles } = this.props;
-    const editable = !this.props.readOnly && !this.props.disabled;
+    const { props, state } = this
+    const { style, upStyle, downStyle, inputStyle, styles } = this.props
+    const editable = !this.props.readOnly && !this.props.disabled
 
-    let upDisabledStyle = null;
-    let downDisabledStyle = null;
-    let upDisabledTextStyle = null;
-    let downDisabledTextStyle = null;
-    const value = +state.value;
+    let upDisabledStyle = null
+    let downDisabledStyle = null
+    let upDisabledTextStyle = null
+    let downDisabledTextStyle = null
+    const value = +state.value
     if (!isNaN(value)) {
-      const val = Number(value);
+      const val = Number(value)
       if (val >= (props.max as number)) {
-        upDisabledStyle = styles.stepDisabled;
-        upDisabledTextStyle = styles.disabledStepTextColor;
+        upDisabledStyle = styles.stepDisabled
+        upDisabledTextStyle = styles.disabledStepTextColor
       }
       if (val <= (props.min as number)) {
-        downDisabledStyle = styles.stepDisabled;
-        downDisabledTextStyle = styles.disabledStepTextColor;
+        downDisabledStyle = styles.stepDisabled
+        downDisabledTextStyle = styles.disabledStepTextColor
       }
     } else {
-      upDisabledStyle = styles.stepDisabled;
-      downDisabledStyle = styles.stepDisabled;
-      upDisabledTextStyle = styles.disabledStepTextColor;
-      downDisabledTextStyle = styles.disabledStepTextColor;
+      upDisabledStyle = styles.stepDisabled
+      downDisabledStyle = styles.stepDisabled
+      upDisabledTextStyle = styles.disabledStepTextColor
+      downDisabledTextStyle = styles.disabledStepTextColor
     }
 
-    let inputDisabledStyle = null;
+    let inputDisabledStyle = null
     if (props.disabled) {
-      upDisabledStyle = styles.stepDisabled;
-      downDisabledStyle = styles.stepDisabled;
-      upDisabledTextStyle = styles.disabledStepTextColor;
-      downDisabledTextStyle = styles.disabledStepTextColor;
-      inputDisabledStyle = styles.disabledStepTextColor;
+      upDisabledStyle = styles.stepDisabled
+      downDisabledStyle = styles.stepDisabled
+      upDisabledTextStyle = styles.disabledStepTextColor
+      downDisabledTextStyle = styles.disabledStepTextColor
+      inputDisabledStyle = styles.disabledStepTextColor
     }
 
-    let inputDisplayValue;
+    let inputDisplayValue
     if (state.focused) {
-      inputDisplayValue = `${state.inputValue}`;
+      inputDisplayValue = `${state.inputValue}`
     } else {
-      inputDisplayValue = `${state.value}`;
+      inputDisplayValue = `${state.value}`
     }
 
     if (inputDisplayValue === undefined) {
-      inputDisplayValue = '';
+      inputDisplayValue = ''
     }
 
     return (
@@ -453,16 +461,13 @@ export default class InputNumber<
           accessible
           accessibilityLabel="Decrease Value"
           accessibilityRole="button"
-          accessibilityState={{disabled:!editable || !!downDisabledStyle}}
-        >
+          accessibilityState={{ disabled: !editable || !!downDisabledStyle }}>
           <View
-            ref={component => (this._stepDown = component)}
-            style={[styles.stepWrap, downDisabledStyle, downStyle]}
-          >
+            ref={(component) => (this._stepDown = component)}
+            style={[styles.stepWrap, downDisabledStyle, downStyle]}>
             <Text
-              ref={component => (this._stepDownText = component)}
-              style={[styles.stepText, downDisabledTextStyle]}
-            >
+              ref={(component) => (this._stepDownText = component)}
+              style={[styles.stepText, downDisabledTextStyle]}>
               -
             </Text>
           </View>
@@ -488,21 +493,18 @@ export default class InputNumber<
           accessible
           accessibilityLabel="Increase Value"
           accessibilityRole="button"
-          accessibilityState={{disabled:!editable || !!downDisabledStyle}}
-        >
+          accessibilityState={{ disabled: !editable || !!downDisabledStyle }}>
           <View
-            ref={component => (this._stepUp = component)}
-            style={[styles.stepWrap, upDisabledStyle, upStyle]}
-          >
+            ref={(component) => (this._stepUp = component)}
+            style={[styles.stepWrap, upDisabledStyle, upStyle]}>
             <Text
-              ref={component => (this._stepUpText = component)}
-              style={[styles.stepText, upDisabledTextStyle]}
-            >
+              ref={(component) => (this._stepUpText = component)}
+              style={[styles.stepText, upDisabledTextStyle]}>
               +
             </Text>
           </View>
         </TouchableWithoutFeedback>
       </View>
-    );
+    )
   }
 }

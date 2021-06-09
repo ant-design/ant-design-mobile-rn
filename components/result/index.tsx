@@ -1,19 +1,24 @@
-
-import React from 'react';
-import { Image, ImageURISource, StyleProp, Text, View, ViewStyle } from 'react-native';
-import Button from '../button/index';
-import { WithTheme, WithThemeStyles } from '../style';
-import { ResultPropsType } from './PropsType';
-import ResultStyles, { ResultStyle } from './style/index';
+import React from 'react'
+import {
+  Image,
+  ImageURISource,
+  StyleProp,
+  Text,
+  View,
+  ViewStyle,
+} from 'react-native'
+import Button from '../button/index'
+import { WithTheme, WithThemeStyles } from '../style'
+import { ResultPropsType } from './PropsType'
+import ResultStyles, { ResultStyle } from './style/index'
 
 export interface ResultNativeProps
   extends ResultPropsType,
     WithThemeStyles<ResultStyle> {
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>
 }
 
 export default class Result extends React.Component<ResultNativeProps, any> {
-
   render() {
     const {
       style,
@@ -24,13 +29,13 @@ export default class Result extends React.Component<ResultNativeProps, any> {
       buttonText,
       onButtonClick,
       buttonType,
-    } = this.props;
+    } = this.props
     return (
       <WithTheme styles={this.props.styles} themeStyles={ResultStyles}>
-        {styles => {
-          let imgContent: JSX.Element | null = null;
+        {(styles) => {
+          let imgContent: React.ReactNode | null = null
           if (img) {
-            imgContent = <View style={styles.imgWrap}>{img}</View>;
+            imgContent = <View style={styles.imgWrap}>{img}</View>
           } else if (imgUrl) {
             imgContent = (
               <View style={styles.imgWrap}>
@@ -39,7 +44,7 @@ export default class Result extends React.Component<ResultNativeProps, any> {
                   style={styles.img}
                 />
               </View>
-            );
+            )
           }
 
           return (
@@ -68,16 +73,15 @@ export default class Result extends React.Component<ResultNativeProps, any> {
                   <Button
                     style={styles.button}
                     type={buttonType}
-                    onPress={onButtonClick}
-                  >
+                    onPress={onButtonClick}>
                     {buttonText}
                   </Button>
                 </View>
               ) : null}
             </View>
-          );
+          )
         }}
       </WithTheme>
-    );
+    )
   }
 }

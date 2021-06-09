@@ -1,4 +1,3 @@
-import rnDemoTest from '../../../tests/shared/demoTest';
+import rnDemoTest from '../../../tests/shared/demoTest'
 
-
-rnDemoTest('tab-bar');
+rnDemoTest('tab-bar')

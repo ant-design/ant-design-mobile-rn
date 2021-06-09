@@ -1,20 +1,20 @@
-import React from 'react';
-import { View } from 'react-native';
-import Slider from '@react-native-community/slider';
-import { WithTheme } from '../style';
+import React from 'react'
+import { View } from 'react-native'
+import Slider from '@react-native-community/slider'
+import { WithTheme } from '../style'
 
 export interface SliderProps {
-  maximumTrackTintColor?: string;
-  minimumTrackTintColor?: string;
-  onChange?: (value?: number) => void;
-  onAfterChange?: (value?: number) => void;
-  defaultValue?: number;
-  tipFormatter?: (value?: string) => React.ReactNode;
-  value?: number;
-  min?: number;
-  max?: number;
-  step?: number;
-  disabled?: boolean;
+  maximumTrackTintColor?: string
+  minimumTrackTintColor?: string
+  onChange?: (value?: number) => void
+  onAfterChange?: (value?: number) => void
+  defaultValue?: number
+  tipFormatter?: (value?: string) => React.ReactNode
+  value?: number
+  min?: number
+  max?: number
+  step?: number
+  disabled?: boolean
 }
 
 export default class SliderAntm extends React.Component<SliderProps, any> {
@@ -23,7 +23,7 @@ export default class SliderAntm extends React.Component<SliderProps, any> {
     onAfterChange() {},
     defaultValue: 0,
     disabled: false,
-  };
+  }
 
   render() {
     const {
@@ -37,7 +37,7 @@ export default class SliderAntm extends React.Component<SliderProps, any> {
       onAfterChange,
       maximumTrackTintColor,
       minimumTrackTintColor,
-    } = this.props;
+    } = this.props
     return (
       <WithTheme>
         {(_, theme) => (
@@ -60,6 +60,6 @@ export default class SliderAntm extends React.Component<SliderProps, any> {
           </View>
         )}
       </WithTheme>
-    );
+    )
   }
 }

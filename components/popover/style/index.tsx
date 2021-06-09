@@ -1,10 +1,10 @@
-import { StyleSheet, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface PopoverStyle {
-  content: ViewStyle;
-  arrow: ViewStyle;
-  background: ViewStyle;
+  content: ViewStyle
+  arrow: ViewStyle
+  background: ViewStyle
 }
 
 export default (theme: Theme) =>
@@ -21,4 +21,4 @@ export default (theme: Theme) =>
     background: {
       backgroundColor: 'transparent',
     },
-  });
+  })

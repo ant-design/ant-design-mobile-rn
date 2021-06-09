@@ -1,49 +1,49 @@
 /* tslint:disable:no-console */
-import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
-import { Button, Modal, Toast, WhiteSpace, WingBlank } from '../../';
+import React from 'react'
+import { ScrollView, Text, View } from 'react-native'
+import { Button, Modal, Toast, WhiteSpace, WingBlank } from '../../'
 
 export default class BasicModalExample extends React.Component<any, any> {
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       visible: false,
       visible1: false,
       visible2: false,
-    };
+    }
   }
 
   onClose = () => {
     this.setState({
       visible: false,
-    });
-  };
+    })
+  }
 
   onClose1 = () => {
     this.setState({
       visible1: false,
-    });
-  };
+    })
+  }
 
   onClose2 = () => {
     this.setState({
       visible2: false,
-    });
-  };
+    })
+  }
 
   onButtonClick = () => {
     Modal.alert('Title', 'alert content', [
       { text: 'Cancel', onPress: () => console.log('cancel'), style: 'cancel' },
       { text: 'OK', onPress: () => console.log('ok') },
-    ]);
-  };
+    ])
+  }
 
   onButtonClick2 = () => {
     Modal.operation([
       { text: '标为未读', onPress: () => console.log('标为未读被点击了') },
       { text: '置顶聊天', onPress: () => console.log('置顶聊天被点击了') },
-    ]);
-  };
+    ])
+  }
 
   onButtonClick3 = () => {
     Modal.prompt(
@@ -54,8 +54,8 @@ export default class BasicModalExample extends React.Component<any, any> {
       'login-password',
       '',
       ['Please input name', 'Please input password'],
-    );
-  };
+    )
+  }
 
   onButtonClick4 = () => {
     Modal.prompt(
@@ -64,8 +64,8 @@ export default class BasicModalExample extends React.Component<any, any> {
       (password: any) => console.log(`password: ${password}`),
       'secure-text',
       'defaultValue',
-    );
-  };
+    )
+  }
 
   onButtonClick5 = () => {
     Modal.prompt(
@@ -75,23 +75,26 @@ export default class BasicModalExample extends React.Component<any, any> {
       'default',
       '',
       ['please input name'],
-    );
-  };
+    )
+  }
 
   onButtonClick6 = () => {
-    Modal.operation([
-      { text: '标为未读', onPress: () => console.log('标为未读被点击了') },
-      { text: '置顶聊天', onPress: () => console.log('置顶聊天被点击了') },
-    ], () => {
-      console.log('返回键点击');
-      return false;
-    });
-  };
+    Modal.operation(
+      [
+        { text: '标为未读', onPress: () => console.log('标为未读被点击了') },
+        { text: '置顶聊天', onPress: () => console.log('置顶聊天被点击了') },
+      ],
+      () => {
+        console.log('返回键点击')
+        return false
+      },
+    )
+  }
   render() {
     const footerButtons = [
       { text: 'Cancel', onPress: () => console.log('cancel') },
       { text: 'Ok', onPress: () => console.log('ok') },
-    ];
+    ]
     return (
       <ScrollView style={{ marginTop: 20 }}>
         <WingBlank>
@@ -111,7 +114,9 @@ export default class BasicModalExample extends React.Component<any, any> {
           <WhiteSpace />
           <Button onPress={this.onButtonClick2}>Modal.opertation</Button>
           <WhiteSpace />
-          <Button onPress={this.onButtonClick6}>Modal.opertation (onBackHandler)</Button>
+          <Button onPress={this.onButtonClick6}>
+            Modal.opertation (onBackHandler)
+          </Button>
           <WhiteSpace />
           <Button onPress={this.onButtonClick5}>Modal.prompt (default)</Button>
           <WhiteSpace />
@@ -130,8 +135,7 @@ export default class BasicModalExample extends React.Component<any, any> {
           maskClosable
           visible={this.state.visible}
           closable
-          footer={footerButtons}
-        >
+          footer={footerButtons}>
           <View style={{ paddingVertical: 20 }}>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
@@ -144,16 +148,14 @@ export default class BasicModalExample extends React.Component<any, any> {
           transparent={false}
           visible={this.state.visible1}
           animationType="slide-up"
-          onClose={this.onClose1}
-        >
+          onClose={this.onClose1}>
           <View style={{ paddingVertical: 220 }}>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
           </View>
           <Button
             type="primary"
-            onPress={() => Toast.info('Hello Toast in Modal now works')}
-          >
+            onPress={() => Toast.info('Hello Toast in Modal now works')}>
             Hello Toast in Modal now works
           </Button>
           <Button type="primary" onPress={this.onClose1}>
@@ -164,8 +166,7 @@ export default class BasicModalExample extends React.Component<any, any> {
           popup
           visible={this.state.visible2}
           animationType="slide-up"
-          onClose={this.onClose2}
-        >
+          onClose={this.onClose2}>
           <View style={{ paddingVertical: 20, paddingHorizontal: 20 }}>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
             <Text style={{ textAlign: 'center' }}>Content...</Text>
@@ -175,6 +176,6 @@ export default class BasicModalExample extends React.Component<any, any> {
           </Button>
         </Modal>
       </ScrollView>
-    );
+    )
   }
 }

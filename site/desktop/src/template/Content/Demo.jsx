@@ -1,17 +1,17 @@
 /* eslint react/no-danger: 0 */
-import { Button, Icon, Modal, Radio, Tooltip } from 'antd';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import React from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
-import { FormattedMessage } from 'react-intl';
-import { ping } from '../../../../utils';
-import getSandboxParameters from './Sandbox';
+import { Button, Icon, Modal, Radio, Tooltip } from 'antd'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import CopyToClipboard from 'react-copy-to-clipboard'
+import { FormattedMessage } from 'react-intl'
+import { ping } from '../../../../utils'
+import getSandboxParameters from './Sandbox'
 
 export default class Demo extends React.Component {
   static contextTypes = {
     intl: PropTypes.object,
-  };
+  }
 
   state = {
     fullscreen: false,
@@ -19,30 +19,30 @@ export default class Demo extends React.Component {
     copied: false,
     sourceCode: '',
     showRiddleButton: false,
-  };
+  }
 
   saveAnchor = (anchor) => {
-    this.anchor = anchor;
-  };
+    this.anchor = anchor
+  }
 
   componentDidMount() {
-    const { meta } = this.props;
+    const { meta } = this.props
     if (meta.id === window.location.hash.slice(1)) {
-      this.anchor.click();
+      this.anchor.click()
     }
-    this.componentWillReceiveProps(this.props);
+    this.componentWillReceiveProps(this.props)
 
     this.pingTimer = ping((status) => {
       if (status !== 'timeout' && status !== 'error') {
         this.setState({
           showRiddleButton: true,
-        });
+        })
       }
-    });
+    })
   }
 
   handleClick = (e) => {
-    const { togglePreview, index, currentIndex, meta } = this.props;
+    const { togglePreview, index, currentIndex, meta } = this.props
 
     if (
       index !== currentIndex &&
@@ -51,52 +51,52 @@ export default class Demo extends React.Component {
     ) {
       togglePreview({
         index,
-      });
+      })
     }
 
-    window.location.hash = meta.id;
-  };
+    window.location.hash = meta.id
+  }
 
   viewFullscreen = (e) => {
-    e.stopPropagation();
+    e.stopPropagation()
     this.setState({
       fullscreen: true,
-    });
-  };
+    })
+  }
 
   handleCancel = () => {
     this.setState({
       fullscreen: false,
-    });
-  };
+    })
+  }
 
   handleCodeCopied = () => {
-    this.setState({ copied: true });
-  };
+    this.setState({ copied: true })
+  }
 
   onCopyTooltipVisibleChange = (visible) => {
     if (visible) {
       this.setState({
         copyTooltipVisible: visible,
         copied: false,
-      });
-      return;
+      })
+      return
     }
     this.setState({
       copyTooltipVisible: visible,
-    });
-  };
+    })
+  }
 
   handleProgrammingLangChange = (e) => {
-    this.setState({ lang: e.target.value });
-  };
+    this.setState({ lang: e.target.value })
+  }
 
   sandbox = async () => {
-    const { sourceCode } = this.state;
+    const { sourceCode } = this.state
     if (!sourceCode) {
-      return null;
+      return null
     }
-    const parameters = getSandboxParameters(sourceCode, this.props.doc);
+    const parameters = getSandboxParameters(sourceCode, this.props.doc)
     const data = await fetch(
       'https://codesandbox.io/api/v1/sandboxes/define?json=1',
       {
@@ -107,17 +107,17 @@ export default class Demo extends React.Component {
         },
         body: JSON.stringify(parameters),
       },
-    ).then(x => x.json());
+    ).then((x) => x.json())
 
     if (data) {
-      this.setState({ sandbox_id: data.sandbox_id });
+      this.setState({ sandbox_id: data.sandbox_id })
     }
-    return data;
-  };
+    return data
+  }
   rendeSandbox = () => {
-    const { sandbox_id: id } = this.state;
+    const { sandbox_id: id } = this.state
     if (!id) {
-      return null;
+      return null
     }
     return (
       <iframe
@@ -132,16 +132,18 @@ export default class Demo extends React.Component {
         }}
         sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
       />
-    );
-  };
+    )
+  }
   /* eslint-disable react/jsx-indent */
   renderDemoCode = (highlightedCode, inModal) => {
-    const { meta, style } = this.props;
-    const { lang, sourceCode } = this.state;
-    const { locale } = this.context.intl;
-    const localizedTitle = meta.title[locale] || meta.title;
-    const prefillStyle = `@import 'antd-mobile@2/dist/antd-mobile.min.css';\n\n${style ||
-      ''}`.replace(new RegExp(`#${meta.id}\\s*`, 'g'), '');
+    const { meta, style } = this.props
+    const { lang, sourceCode } = this.state
+    const { locale } = this.context.intl
+    const localizedTitle = meta.title[locale] || meta.title
+    const prefillStyle =
+      `@import 'antd-mobile@2/dist/antd-mobile.min.css';\n\n${
+        style || ''
+      }`.replace(new RegExp(`#${meta.id}\\s*`, 'g'), '')
 
     const riddlePrefillConfig = {
       title: `${localizedTitle} - Ant Design Mobile RN Demo`,
@@ -150,7 +152,7 @@ export default class Demo extends React.Component {
         "from '@ant-design/react-native'",
       ),
       css: prefillStyle.replace("'antd-mobile/", "'antd-mobile/"),
-    };
+    }
     return Array.isArray(highlightedCode) ? (
       <div className="highlight">
         <div className="code-box-actions">
@@ -158,8 +160,7 @@ export default class Demo extends React.Component {
             <form
               action="//riddle.alibaba-inc.com/riddles/define"
               method="POST"
-              target="_blank"
-            >
+              target="_blank">
               <input
                 type="hidden"
                 name="data"
@@ -176,8 +177,7 @@ export default class Demo extends React.Component {
           ) : null}
           <CopyToClipboard
             text={this.state.sourceCode}
-            onCopy={this.handleCodeCopied}
-          >
+            onCopy={this.handleCodeCopied}>
             <Tooltip
               title={
                 <FormattedMessage
@@ -185,12 +185,10 @@ export default class Demo extends React.Component {
                 />
               }
               visible={this.state.copyTooltipVisible}
-              onVisibleChange={this.onCopyTooltipVisibleChange}
-            >
+              onVisibleChange={this.onCopyTooltipVisibleChange}>
               <span
                 className="code-box-code-copy"
-                onClick={e => e.stopPropagation()}
-              >
+                onClick={(e) => e.stopPropagation()}>
                 <Icon
                   type={
                     this.state.copied && this.state.copyTooltipVisible
@@ -216,22 +214,22 @@ export default class Demo extends React.Component {
           <code dangerouslySetInnerHTML={{ __html: highlightedCode[lang] }} />
         </pre>
       </div>
-    );
-  };
+    )
+  }
   componentWillReceiveProps(nextProps) {
-    const { highlightedCode } = nextProps;
-    const div = document.createElement('div');
-    div.innerHTML = highlightedCode[1].highlighted;
+    const { highlightedCode } = nextProps
+    const div = document.createElement('div')
+    div.innerHTML = highlightedCode[1].highlighted
     this.setState(
       {
         sourceCode: this.replaceLibName(div.textContent),
       },
       () => this.sandbox(),
-    );
+    )
   }
-  replaceLibName = code => code.replace('../../', '@ant-design/react-native');
+  replaceLibName = (code) => code.replace('../../', '@ant-design/react-native')
   render() {
-    const { props, state } = this;
+    const { props, state } = this
     const {
       meta,
       content,
@@ -239,17 +237,17 @@ export default class Demo extends React.Component {
       highlightedStyle,
       className,
       utils,
-    } = props;
+    } = props
 
     const codeBoxClass = classNames({
       'code-box': true,
       [className]: className,
-    });
+    })
 
-    const locale = this.context.intl.locale;
-    const localizedTitle = meta.title[locale] || meta.title;
-    const localizeIntro = content[locale] || content;
-    const introChildren = utils.toReactComponent(['div'].concat(localizeIntro));
+    const locale = this.context.intl.locale
+    const localizedTitle = meta.title[locale] || meta.title
+    const localizeIntro = content[locale] || content
+    const introChildren = utils.toReactComponent(['div'].concat(localizeIntro))
 
     const hsNode = highlightedStyle ? (
       <div key="style" className="highlight">
@@ -262,7 +260,7 @@ export default class Demo extends React.Component {
           />
         </pre>
       </div>
-    ) : null;
+    ) : null
 
     return (
       <section className={codeBoxClass} id={meta.id} onClick={this.handleClick}>
@@ -276,12 +274,10 @@ export default class Demo extends React.Component {
               key="back"
               type="ghost"
               size="large"
-              onClick={this.handleCancel}
-            >
+              onClick={this.handleCancel}>
               <FormattedMessage id="app.ComponentDoc.Modal.return" />
             </Button>,
-          ]}
-        >
+          ]}>
           {this.renderDemoCode(highlightedCode, true)}
           {hsNode}
         </Modal>
@@ -303,8 +299,7 @@ export default class Demo extends React.Component {
           {!Array.isArray(highlightedCode) && (
             <Radio.Group
               value={state.lang}
-              onChange={this.handleProgrammingLangChange}
-            >
+              onChange={this.handleProgrammingLangChange}>
               <Radio.Button value="es6">ES2016</Radio.Button>
               <Radio.Button value="ts">TypeScript</Radio.Button>
             </Radio.Group>
@@ -317,6 +312,6 @@ export default class Demo extends React.Component {
         </section> */}
         {this.rendeSandbox()}
       </section>
-    );
+    )
   }
 }

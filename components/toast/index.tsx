@@ -1,19 +1,19 @@
-import React from 'react';
-import Portal from '../portal';
-import ToastContainer from './ToastContainer';
+import React from 'react'
+import Portal from '../portal'
+import ToastContainer from './ToastContainer'
 
 interface IToastConfigurable {
-  duration?: number;
-  onClose?: () => void,
-  mask?: boolean;
-  stackable?: boolean;
+  duration?: number
+  onClose?: () => void
+  mask?: boolean
+  stackable?: boolean
 }
 
 interface IToastProps extends IToastConfigurable {
-  content: string;
+  content: string
 }
 
-const SHORT = 3;
+const SHORT = 3
 
 const defaultConfig: IToastConfigurable = {
   duration: SHORT,
@@ -26,15 +26,17 @@ let defaultProps = {
   ...defaultConfig,
 }
 
-const toastKeyMap: { [key: number]: 1 } = {};
+const toastKeyMap: { [key: number]: 1 } = {}
 
 function remove(key: number) {
-  Portal.remove(key);
-  delete toastKeyMap[key];
+  Portal.remove(key)
+  delete toastKeyMap[key]
 }
 
 function removeAll() {
-  Object.keys(toastKeyMap).forEach((_key) => Portal.remove(Number.parseInt(_key, 10)));
+  Object.keys(toastKeyMap).forEach((_key) =>
+    Portal.remove(Number.parseInt(_key, 10)),
+  )
 }
 
 function notice(
@@ -61,7 +63,7 @@ function notice(
   }
 
   if (!props.stackable) {
-    removeAll();
+    removeAll()
   }
 
   const key = Portal.add(
@@ -72,12 +74,12 @@ function notice(
       type={props.type}
       mask={props.mask}
       onAnimationEnd={() => {
-        remove(key);
+        remove(key)
       }}
     />,
-  );
-  toastKeyMap[key] = 1;
-  return key;
+  )
+  toastKeyMap[key] = 1
+  return key
 }
 
 export default {
@@ -85,7 +87,7 @@ export default {
   LONG: 8,
   defaultConfig,
   getConfig: () => {
-    return {...defaultProps};
+    return { ...defaultProps }
   },
   config(props: IToastConfigurable) {
     defaultProps = {
@@ -97,7 +99,7 @@ export default {
    * @deprecated use Toast.info instead
    */
   show(props: string | IToastProps, duration?: number, mask?: boolean) {
-    return notice(props, 'info', duration, () => {}, mask);
+    return notice(props, 'info', duration, () => {}, mask)
   },
   /**
    *
@@ -109,7 +111,7 @@ export default {
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(props, 'info', duration, onClose, mask);
+    return notice(props, 'info', duration, onClose, mask)
   },
   /**
    *
@@ -121,7 +123,7 @@ export default {
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(props, 'success', duration, onClose, mask);
+    return notice(props, 'success', duration, onClose, mask)
   },
   /**
    *
@@ -133,7 +135,7 @@ export default {
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(props, 'fail', duration, onClose, mask);
+    return notice(props, 'fail', duration, onClose, mask)
   },
   /**
    *
@@ -145,7 +147,7 @@ export default {
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(props, 'offline', duration, onClose, mask);
+    return notice(props, 'offline', duration, onClose, mask)
   },
   /**
    *
@@ -157,8 +159,8 @@ export default {
     onClose?: () => void,
     mask?: boolean,
   ) {
-    return notice(props, 'loading', duration, onClose, mask);
+    return notice(props, 'loading', duration, onClose, mask)
   },
   remove,
   removeAll,
-};
+}

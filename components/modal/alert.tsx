@@ -1,7 +1,7 @@
-import React from 'react';
-import Portal from '../portal';
-import AlertContainer from './AlertContainer';
-import { Action, CallbackOnBackHandler } from './PropsType';
+import React from 'react'
+import Portal from '../portal'
+import AlertContainer from './AlertContainer'
+import { Action, CallbackOnBackHandler } from './PropsType'
 
 export default function a(
   title: React.ReactNode,
@@ -16,11 +16,11 @@ export default function a(
       actions={actions}
       onAnimationEnd={(visible: boolean) => {
         if (!visible) {
-          Portal.remove(key);
+          Portal.remove(key)
         }
       }}
       onBackHandler={onBackHandler}
     />,
-  );
-  return key;
+  )
+  return key
 }

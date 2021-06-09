@@ -1,15 +1,14 @@
+import React from 'react'
+import { ScrollView, Text } from 'react-native'
+import { Button, InputItem, List } from '../../'
 
-import React from 'react';
-import { ScrollView, Text } from 'react-native';
-import { Button, InputItem, List } from '../../';
-
-declare var jest: any;
+declare var jest: any
 
 export default class BasicInputItemExample extends React.Component<any, any> {
-  inputRef: any;
+  inputRef: any
 
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       value: '',
       value1: '',
@@ -24,7 +23,7 @@ export default class BasicInputItemExample extends React.Component<any, any> {
       phone: '',
       password: '',
       number: '',
-    };
+    }
   }
 
   render() {
@@ -34,8 +33,7 @@ export default class BasicInputItemExample extends React.Component<any, any> {
         automaticallyAdjustContentInsets={false}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps={'handled'}
-      >
+        keyboardShouldPersistTaps={'handled'}>
         <List renderHeader={'基本'}>
           <InputItem
             clear
@@ -44,11 +42,10 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 value,
-              });
+              })
             }}
             extra="元"
-            placeholder="有标签"
-          >
+            placeholder="有标签">
             输入框
           </InputItem>
           <InputItem
@@ -57,12 +54,11 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 value,
-              });
+              })
             }}
             extra={<Text>元</Text>}
             placeholder="不可编辑"
-            editable={false}
-          >
+            editable={false}>
             输入框
           </InputItem>
           <InputItem
@@ -71,12 +67,11 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 value,
-              });
+              })
             }}
             extra={<Text>元</Text>}
             placeholder="disabled"
-            disabled
-          >
+            disabled>
             输入框
           </InputItem>
           <InputItem
@@ -85,7 +80,7 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 value1: value,
-              });
+              })
             }}
             placeholder="无标签"
           />
@@ -96,24 +91,21 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             autoFocus={
               /* TODO: https://github.com/facebook/jest/issues/3707  */ typeof jest ===
               'undefined'
-            }
-          >
+            }>
             标题
           </InputItem>
           <InputItem
             clear
             placeholder="点击下方按钮该输入框会获取光标"
-            ref={(el: any) => (this.inputRef = el)}
-          >
+            ref={(el: any) => (this.inputRef = el)}>
             标题
           </InputItem>
           <List.Item>
             <Button
               onPress={() => {
-                this.inputRef.focus();
+                this.inputRef.focus()
               }}
-              type="primary"
-            >
+              type="primary">
               点击获取光标
             </Button>
           </List.Item>
@@ -125,11 +117,10 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 labelnum1: value,
-              });
+              })
             }}
             labelNumber={2}
-            placeholder="两个字标签"
-          >
+            placeholder="两个字标签">
             姓名
           </InputItem>
           <InputItem
@@ -138,11 +129,10 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 labelnum2: value,
-              });
+              })
             }}
             labelNumber={3}
-            placeholder="三个字标签"
-          >
+            placeholder="三个字标签">
             校验码
           </InputItem>
           <InputItem
@@ -151,11 +141,10 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 labelnum3: value,
-              });
+              })
             }}
             labelNumber={4}
-            placeholder="四个字标签（默认）"
-          >
+            placeholder="四个字标签（默认）">
             四字标签
           </InputItem>
         </List>
@@ -167,10 +156,9 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 text: value,
-              });
+              })
             }}
-            placeholder="text"
-          >
+            placeholder="text">
             文本输入
           </InputItem>
           <InputItem
@@ -180,10 +168,9 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 bankcard: value,
-              });
+              })
             }}
-            placeholder="bankCard"
-          >
+            placeholder="bankCard">
             银行卡
           </InputItem>
           <InputItem
@@ -193,10 +180,9 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 phone: value,
-              });
+              })
             }}
-            placeholder="phone"
-          >
+            placeholder="phone">
             手机号
           </InputItem>
           <InputItem
@@ -206,10 +192,9 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 password: value,
-              });
+              })
             }}
-            placeholder="password"
-          >
+            placeholder="password">
             密码
           </InputItem>
           <InputItem
@@ -219,14 +204,13 @@ export default class BasicInputItemExample extends React.Component<any, any> {
             onChange={(value: any) => {
               this.setState({
                 number: value,
-              });
+              })
             }}
-            placeholder="number"
-          >
+            placeholder="number">
             数字
           </InputItem>
         </List>
       </ScrollView>
-    );
+    )
   }
 }

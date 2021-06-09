@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Animated,
   BackHandler,
@@ -8,10 +8,10 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   View,
-  ViewStyle
-} from 'react-native';
-import Portal from '../portal';
-import { CallbackOnBackHandler } from "./PropsType";
+  ViewStyle,
+} from 'react-native'
+import Portal from '../portal'
+import { CallbackOnBackHandler } from './PropsType'
 
 const styles = StyleSheet.create({
   wrap: {
@@ -32,22 +32,22 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
   },
-});
+})
 
-const screen = Dimensions.get('window');
+const screen = Dimensions.get('window')
 
 export interface IModalPropTypes {
-  wrapStyle?: StyleProp<ViewStyle>;
-  maskStyle?: StyleProp<ViewStyle>;
-  style?: {};
-  animationType: 'none' | 'fade' | 'slide-up' | 'slide-down';
-  animationDuration?: number;
-  visible: boolean;
-  maskClosable?: boolean;
-  animateAppear?: boolean;
-  onClose?: () => void;                        // onDismiss
-  onAnimationEnd?: (visible: boolean) => void; // onShow
-  onRequestClose?: CallbackOnBackHandler;
+  wrapStyle?: StyleProp<ViewStyle>
+  maskStyle?: StyleProp<ViewStyle>
+  style?: {}
+  animationType: 'none' | 'fade' | 'slide-up' | 'slide-down'
+  animationDuration?: number
+  visible: boolean
+  maskClosable?: boolean
+  animateAppear?: boolean
+  onClose?: () => void // onDismiss
+  onAnimationEnd?: (visible: boolean) => void // onShow
+  onRequestClose?: CallbackOnBackHandler
 }
 
 export default class RCModal extends React.Component<IModalPropTypes, any> {
@@ -61,101 +61,101 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
     maskClosable: true,
     onClose() {},
     onAnimationEnd(_visible: boolean) {},
-  } as IModalPropTypes;
+  } as IModalPropTypes
 
-  animMask: any;
-  animDialog: any;
+  animMask: any
+  animDialog: any
   constructor(props: IModalPropTypes) {
-    super(props);
-    const { visible } = props;
+    super(props)
+    const { visible } = props
     this.state = {
       position: new Animated.Value(this.getPosition(visible)),
       scale: new Animated.Value(this.getScale(visible)),
       opacity: new Animated.Value(this.getOpacity(visible)),
       modalVisible: visible,
-    };
+    }
   }
   UNSAFE_componentWillReceiveProps(nextProps: IModalPropTypes) {
     if (this.shouldComponentUpdate(nextProps, null)) {
       this.setState({
         modalVisible: true,
-      });
+      })
     }
   }
   shouldComponentUpdate(nextProps: IModalPropTypes, nextState: any) {
     if (this.props.visible || this.props.visible !== nextProps.visible) {
-      return true;
+      return true
     }
     if (nextState) {
       if (nextState.modalVisible !== this.state.modalVisible) {
-        return true;
+        return true
       }
     }
-    return false;
+    return false
   }
   componentDidMount() {
     if (this.props.animateAppear && this.props.animationType !== 'none') {
-      BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
-      this.componentDidUpdate({} as IModalPropTypes);
+      BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid)
+      this.componentDidUpdate({} as IModalPropTypes)
     }
   }
   componentDidUpdate(prevProps: IModalPropTypes) {
-    const { props } = this;
+    const { props } = this
     if (prevProps.visible !== props.visible) {
-      this.animateDialog(props.visible);
+      this.animateDialog(props.visible)
     }
   }
   componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
-    this.stopDialogAnim();
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid)
+    this.stopDialogAnim()
   }
   onBackAndroid = () => {
-    const { onRequestClose } = this.props;
+    const { onRequestClose } = this.props
     if (typeof onRequestClose === 'function') {
-      return onRequestClose();
+      return onRequestClose()
     }
     // the default is false for compatible the old version & not required in android
-    return false;
-  };
+    return false
+  }
   animateMask = (visible: boolean) => {
-    this.stopMaskAnim();
-    this.state.opacity.setValue(this.getOpacity(!visible));
+    this.stopMaskAnim()
+    this.state.opacity.setValue(this.getOpacity(!visible))
     this.animMask = Animated.timing(this.state.opacity, {
       toValue: this.getOpacity(visible),
       duration: this.props.animationDuration,
       useNativeDriver: true,
-    });
+    })
     this.animMask.start(() => {
-      this.animMask = null;
-    });
-  };
+      this.animMask = null
+    })
+  }
   stopMaskAnim = () => {
     if (this.animMask) {
-      this.animMask.stop();
-      this.animMask = null;
+      this.animMask.stop()
+      this.animMask = null
     }
-  };
+  }
   stopDialogAnim = () => {
     if (this.animDialog) {
-      this.animDialog.stop();
-      this.animDialog = null;
+      this.animDialog.stop()
+      this.animDialog = null
     }
-  };
+  }
   animateDialog = (visible: boolean) => {
-    this.stopDialogAnim();
-    this.animateMask(visible);
+    this.stopDialogAnim()
+    this.animateMask(visible)
 
-    let { animationType, animationDuration } = this.props;
-    animationDuration = animationDuration!;
+    let { animationType, animationDuration } = this.props
+    animationDuration = animationDuration!
     if (animationType !== 'none') {
       if (animationType === 'slide-up' || animationType === 'slide-down') {
-        this.state.position.setValue(this.getPosition(!visible));
+        this.state.position.setValue(this.getPosition(!visible))
         this.animDialog = Animated.timing(this.state.position, {
           toValue: this.getPosition(visible),
           duration: animationDuration,
           easing: (visible ? Easing.elastic(0.8) : undefined) as any,
           useNativeDriver: true,
-        });
+        })
       } else if (animationType === 'fade') {
         this.animDialog = Animated.parallel([
           Animated.timing(this.state.opacity, {
@@ -168,57 +168,60 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
             toValue: this.getScale(visible),
             useNativeDriver: true,
           }),
-        ]);
+        ])
       }
 
       this.animDialog.start(() => {
-        this.animDialog = null;
+        this.animDialog = null
         if (!visible) {
           this.setState({
             modalVisible: false,
-          });
-          BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+          })
+          BackHandler.removeEventListener(
+            'hardwareBackPress',
+            this.onBackAndroid,
+          )
         }
         if (this.props.onAnimationEnd) {
-          this.props.onAnimationEnd(visible);
+          this.props.onAnimationEnd(visible)
         }
-      });
+      })
     } else {
       if (!visible) {
         this.setState({
           modalVisible: false,
-        });
-        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+        })
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid)
       }
     }
-  };
+  }
   close = () => {
-    this.animateDialog(false);
-  };
+    this.animateDialog(false)
+  }
   onMaskClose = () => {
     if (this.props.maskClosable && this.props.onClose) {
-      this.props.onClose();
-      BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+      this.props.onClose()
+      BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid)
     }
-  };
+  }
   getPosition = (visible: boolean) => {
     if (visible) {
-      return 0;
+      return 0
     }
     return this.props.animationType === 'slide-down'
       ? -screen.height
-      : screen.height;
-  };
+      : screen.height
+  }
   getScale = (visible: boolean) => {
-    return visible ? 1 : 1.05;
-  };
+    return visible ? 1 : 1.05
+  }
   getOpacity = (visible: boolean) => {
-    return visible ? 1 : 0;
-  };
+    return visible ? 1 : 0
+  }
   render() {
-    const { props } = this;
+    const { props } = this
     if (!this.state.modalVisible) {
-      return null as any;
+      return null as any
     }
     const animationStyleMap = {
       none: {},
@@ -228,15 +231,14 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
         transform: [{ scale: this.state.scale }],
         opacity: this.state.opacity,
       },
-    };
+    }
 
     return (
       <Portal>
         <View style={[styles.wrap, props.wrapStyle]}>
           <TouchableWithoutFeedback onPress={this.onMaskClose}>
             <Animated.View
-              style={[styles.absolute, { opacity: this.state.opacity }]}
-            >
+              style={[styles.absolute, { opacity: this.state.opacity }]}>
               <View style={[styles.absolute, props.maskStyle]} />
             </Animated.View>
           </TouchableWithoutFeedback>
@@ -245,12 +247,11 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
               styles.content,
               props.style,
               animationStyleMap[props.animationType],
-            ]}
-          >
+            ]}>
             {this.props.children}
           </Animated.View>
         </View>
       </Portal>
-    );
+    )
   }
 }

@@ -1,19 +1,28 @@
-import React from 'react';
-import { NativeSyntheticEvent, StyleProp, Text, TextInput, TextInputFocusEventData, TextInputProps, TextStyle, View } from 'react-native';
-import Icon from '../icon';
-import { WithTheme, WithThemeStyles } from '../style';
-import { getComponentLocale } from '../_util/getLocale';
-import { defaultProps, SearchBarPropsType, SearchBarState } from './PropsType';
-import SearchBarStyles, { SearchBarStyle } from './style/index';
-import { LocaleContext } from "../locale-provider";
+import React from 'react'
+import {
+  NativeSyntheticEvent,
+  StyleProp,
+  Text,
+  TextInput,
+  TextInputFocusEventData,
+  TextInputProps,
+  TextStyle,
+  View,
+} from 'react-native'
+import Icon from '../icon'
+import { WithTheme, WithThemeStyles } from '../style'
+import { getComponentLocale } from '../_util/getLocale'
+import { defaultProps, SearchBarPropsType, SearchBarState } from './PropsType'
+import SearchBarStyles, { SearchBarStyle } from './style/index'
+import { LocaleContext } from '../locale-provider'
 
 export interface SearchBarProps
   extends SearchBarPropsType,
     WithThemeStyles<SearchBarStyle>,
     Omit<TextInputProps, 'onChange'> {
-  onChangeText?: (text: string) => void;
-  onSubmitEditing?: (event: { nativeEvent: { text: string } }) => void;
-  style?: StyleProp<TextStyle>;
+  onChangeText?: (text: string) => void
+  onSubmitEditing?: (event: { nativeEvent: { text: string } }) => void
+  style?: StyleProp<TextStyle>
 }
 
 export default class SearchBar extends React.Component<
@@ -22,74 +31,74 @@ export default class SearchBar extends React.Component<
 > {
   static defaultProps = {
     ...defaultProps,
-  };
+  }
 
-  static contextType = LocaleContext;
+  static contextType = LocaleContext
 
-  inputRef: TextInput | null;
+  inputRef: TextInput | null
 
   constructor(props: SearchBarProps) {
-    super(props);
-    let value;
+    super(props)
+    let value
     if ('value' in props) {
-      value = props.value;
+      value = props.value
     } else if ('defaultValue' in props) {
-      value = props.defaultValue;
+      value = props.defaultValue
     } else {
-      value = '';
+      value = ''
     }
     this.state = {
       value,
       focus: false,
-    };
+    }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: SearchBarProps) {
     if ('value' in nextProps) {
       this.setState({
         value: nextProps.value,
-      });
+      })
     }
   }
 
   onSubmit = (_: { nativeEvent: { text: string } }) => {
     if (this.props.onSubmit) {
-      this.props.onSubmit(this.state.value || '');
+      this.props.onSubmit(this.state.value || '')
     }
-  };
+  }
 
   onChangeText = (value: string) => {
     if (!('value' in this.props)) {
-      this.setState({ value });
+      this.setState({ value })
     }
     if (this.props.onChange) {
-      this.props.onChange(value);
+      this.props.onChange(value)
     }
-  };
+  }
 
   onCancel = () => {
     if (this.props.onCancel) {
-      this.props.onCancel(this.state.value || '');
+      this.props.onCancel(this.state.value || '')
     }
-  };
+  }
 
   onFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     this.setState({
       focus: true,
-    });
+    })
     if (this.props.onFocus) {
-      this.props.onFocus(e);
+      this.props.onFocus(e)
     }
-  };
+  }
 
   onBlur = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     this.setState({
       focus: false,
-    });
+    })
     if (this.props.onBlur) {
-      this.props.onBlur(e);
+      this.props.onBlur(e)
     }
-  };
+  }
   render() {
     const {
       showCancelButton,
@@ -101,7 +110,7 @@ export default class SearchBar extends React.Component<
       disabled,
       style,
       ...restProps
-    } = this.props;
+    } = this.props
 
     // tslint:disable-next-line:variable-name
     const _locale = getComponentLocale(
@@ -109,14 +118,14 @@ export default class SearchBar extends React.Component<
       (this as any).context,
       'SearchBar',
       () => require('./locale/zh_CN'),
-    );
+    )
 
-    const { value, focus } = this.state;
+    const { value, focus } = this.state
     // tslint:disable-next-line:variable-name
-    const _showCancelButton = showCancelButton || focus;
+    const _showCancelButton = showCancelButton || focus
     return (
       <WithTheme styles={styles} themeStyles={SearchBarStyles}>
-        {_styles => (
+        {(_styles) => (
           <View style={_styles.wrapper}>
             <View style={_styles.inputWrapper}>
               <TextInput
@@ -125,7 +134,7 @@ export default class SearchBar extends React.Component<
                 editable={!disabled}
                 {...restProps}
                 style={[_styles.input, style]}
-                ref={el => ((this.inputRef as any) = el)}
+                ref={(el) => ((this.inputRef as any) = el)}
                 value={value}
                 onChangeText={this.onChangeText}
                 onSubmitEditing={this.onSubmit}
@@ -144,6 +153,6 @@ export default class SearchBar extends React.Component<
           </View>
         )}
       </WithTheme>
-    );
+    )
   }
 }

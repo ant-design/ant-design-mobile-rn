@@ -1,11 +1,10 @@
-
 /* tslint:disable:no-console */
-import React from 'react';
-import { View } from 'react-native';
-import { Tag, WhiteSpace } from '../../';
+import React from 'react'
+import { View } from 'react-native'
+import { Tag, WhiteSpace } from '../../'
 
 function onChange(selected: any) {
-  console.log(`tag selected: ${selected}`);
+  console.log(`tag selected: ${selected}`)
 }
 
 export default class BasicTagExample extends React.Component<any, any> {
@@ -23,12 +22,11 @@ export default class BasicTagExample extends React.Component<any, any> {
         <Tag
           closable
           onClose={() => {
-            console.log('onClose');
+            console.log('onClose')
           }}
           afterClose={() => {
-            console.log('afterClose');
-          }}
-        >
+            console.log('afterClose')
+          }}>
           Closable
         </Tag>
         <WhiteSpace />
@@ -36,12 +34,11 @@ export default class BasicTagExample extends React.Component<any, any> {
         <WhiteSpace />
         <Tag
           onLongPress={() => {
-            console.log('onLongPress');
-          }}
-        >
+            console.log('onLongPress')
+          }}>
           LongPress
         </Tag>
       </View>
-    );
+    )
   }
 }

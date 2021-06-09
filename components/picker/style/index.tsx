@@ -1,13 +1,13 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 export interface PickerStyle {
-  modal: ViewStyle;
-  header: ViewStyle;
-  headerItem: ViewStyle;
-  actionText: TextStyle;
-  title: TextStyle;
-  okText: TextStyle;
-  dismissText: TextStyle;
+  modal: ViewStyle
+  header: ViewStyle
+  headerItem: ViewStyle
+  actionText: TextStyle
+  title: TextStyle
+  okText: TextStyle
+  dismissText: TextStyle
 }
 
 export default () =>
@@ -44,4 +44,4 @@ export default () =>
       fontSize: 18,
       textAlign: 'center',
     },
-  });
+  })

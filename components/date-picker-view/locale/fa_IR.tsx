@@ -1,3 +1,3 @@
-import DatePickerLocale from '../../date-picker/datepicker/locale/fa_IR';
+import DatePickerLocale from '../../date-picker/datepicker/locale/fa_IR'
 
-export default DatePickerLocale;
+export default DatePickerLocale

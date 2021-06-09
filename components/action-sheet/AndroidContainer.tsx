@@ -1,16 +1,20 @@
-
-import React from 'react';
-import { ActionSheetIOSOptions, Text, TouchableHighlight, View } from 'react-native';
-import Modal from '../modal/ModalView';
-import { WithTheme, WithThemeStyles } from '../style';
-import ActionSheetStyles, { ActionSheetStyle } from './style/index';
+import React from 'react'
+import {
+  ActionSheetIOSOptions,
+  Text,
+  TouchableHighlight,
+  View,
+} from 'react-native'
+import Modal from '../modal/ModalView'
+import { WithTheme, WithThemeStyles } from '../style'
+import ActionSheetStyles, { ActionSheetStyle } from './style/index'
 
 export interface ActionSheetNativeProps
   extends WithThemeStyles<ActionSheetStyle> {
-  onAnimationEnd?: (visible: boolean) => void;
-  visible?: boolean;
-  config: ActionSheetIOSOptions;
-  callback?: (index: number) => void;
+  onAnimationEnd?: (visible: boolean) => void
+  visible?: boolean
+  config: ActionSheetIOSOptions
+  callback?: (index: number) => void
 }
 
 class ActionSheetAndroid extends React.PureComponent<
@@ -18,35 +22,35 @@ class ActionSheetAndroid extends React.PureComponent<
   any
 > {
   constructor(props: ActionSheetNativeProps) {
-    super(props);
+    super(props)
     this.state = {
       visible: this.props.visible || false,
-    };
+    }
   }
 
   confirm(index: number) {
-    const { callback } = this.props;
+    const { callback } = this.props
     if (callback) {
-      callback(index);
+      callback(index)
     }
     this.setState({
       visible: false,
-    });
+    })
   }
   close = () => {
     this.setState({
       visible: false,
-    });
-  };
+    })
+  }
   render() {
-    const { config, onAnimationEnd } = this.props;
+    const { config, onAnimationEnd } = this.props
     const {
       title,
       message,
       options,
       destructiveButtonIndex,
       cancelButtonIndex,
-    } = config;
+    } = config
 
     return (
       <WithTheme themeStyles={ActionSheetStyles} styles={this.props.styles}>
@@ -55,27 +59,24 @@ class ActionSheetAndroid extends React.PureComponent<
             <View style={styles.title} key="0">
               <Text style={styles.titleText}>{title}</Text>
             </View>
-          );
+          )
           const content = (options as string[]).map((item, index) => (
             <View
               key={index}
               style={[
                 cancelButtonIndex === index ? styles.cancelBtn : undefined,
-              ]}
-            >
+              ]}>
               <TouchableHighlight
                 style={[styles.btn]}
                 underlayColor={theme.fill_tap}
-                onPress={() => this.confirm(index)}
-              >
+                onPress={() => this.confirm(index)}>
                 <Text
                   style={[
                     styles.btnText,
                     destructiveButtonIndex === index
                       ? styles.destructiveBtn
                       : undefined,
-                  ]}
-                >
+                  ]}>
                   {item}
                 </Text>
               </TouchableHighlight>
@@ -83,7 +84,7 @@ class ActionSheetAndroid extends React.PureComponent<
                 <View style={styles.cancelBtnMask} />
               ) : null}
             </View>
-          ));
+          ))
           return (
             <View style={styles.container}>
               <Modal
@@ -94,8 +95,7 @@ class ActionSheetAndroid extends React.PureComponent<
                 style={styles.content}
                 animationType="slide-up"
                 maskClosable
-                onClose={() => this.confirm(cancelButtonIndex || -1)}
-              >
+                onClose={() => this.confirm(cancelButtonIndex || -1)}>
                 <View>
                   {titleMsg}
                   {!!message && (
@@ -107,11 +107,11 @@ class ActionSheetAndroid extends React.PureComponent<
                 </View>
               </Modal>
             </View>
-          );
+          )
         }}
       </WithTheme>
-    );
+    )
   }
 }
 
-export default ActionSheetAndroid;
+export default ActionSheetAndroid

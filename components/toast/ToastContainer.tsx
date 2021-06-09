@@ -1,16 +1,16 @@
-import React from 'react';
-import { ActivityIndicator, Animated, Text, View } from 'react-native';
-import Icon, { IconNames } from '../icon';
-import { WithTheme, WithThemeStyles } from '../style';
-import ToastStyles, { ToastStyle } from './style/index';
+import React from 'react'
+import { ActivityIndicator, Animated, Text, View } from 'react-native'
+import Icon, { IconNames } from '../icon'
+import { WithTheme, WithThemeStyles } from '../style'
+import ToastStyles, { ToastStyle } from './style/index'
 
 export interface ToastProps extends WithThemeStyles<ToastStyle> {
-  content: string;
-  duration?: number;
-  onClose?: () => void;
-  mask?: boolean;
-  type?: string;
-  onAnimationEnd?: () => void;
+  content: string
+  duration?: number
+  onClose?: () => void
+  mask?: boolean
+  type?: string
+  onAnimationEnd?: () => void
 }
 
 export default class ToastContainer extends React.Component<ToastProps, any> {
@@ -18,23 +18,23 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
     duration: 3,
     mask: true,
     onClose() {},
-  };
+  }
 
-  anim: Animated.CompositeAnimation | null;
+  anim: Animated.CompositeAnimation | null
 
   constructor(props: ToastProps) {
-    super(props);
+    super(props)
     this.state = {
       fadeAnim: new Animated.Value(0),
-    };
+    }
   }
 
   componentDidMount() {
-    const { onClose, onAnimationEnd } = this.props;
-    const duration = this.props.duration as number;
-    const timing = Animated.timing;
+    const { onClose, onAnimationEnd } = this.props
+    const duration = this.props.duration as number
+    const timing = Animated.timing
     if (this.anim) {
-      this.anim = null;
+      this.anim = null
     }
     const animArr = [
       timing(this.state.fadeAnim, {
@@ -43,7 +43,7 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
         useNativeDriver: true,
       }),
       Animated.delay(duration * 1000),
-    ];
+    ]
     if (duration > 0) {
       animArr.push(
         timing(this.state.fadeAnim, {
@@ -51,43 +51,43 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
           duration: 200,
           useNativeDriver: true,
         }),
-      );
+      )
     }
-    this.anim = Animated.sequence(animArr);
+    this.anim = Animated.sequence(animArr)
     this.anim.start(() => {
       if (duration > 0) {
-        this.anim = null;
+        this.anim = null
         if (onClose) {
-          onClose();
+          onClose()
         }
         if (onAnimationEnd) {
-          onAnimationEnd();
+          onAnimationEnd()
         }
       }
-    });
+    })
   }
 
   componentWillUnmount() {
     if (this.anim) {
-      this.anim.stop();
-      this.anim = null;
+      this.anim.stop()
+      this.anim = null
     }
   }
 
   render() {
-    const { type = '', content, mask } = this.props;
+    const { type = '', content, mask } = this.props
     return (
       <WithTheme styles={this.props.styles} themeStyles={ToastStyles}>
-        {styles => {
+        {(styles) => {
           const iconType: {
-            [key: string]: IconNames;
+            [key: string]: IconNames
           } = {
             success: 'check-circle',
             fail: 'close-circle',
             offline: 'frown',
-          };
+          }
 
-          let iconDom: React.ReactElement<any> | null = null;
+          let iconDom: React.ReactElement<any> | null = null
           if (type === 'loading') {
             iconDom = (
               <ActivityIndicator
@@ -96,9 +96,9 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
                 color="white"
                 size="large"
               />
-            );
+            )
           } else if (type === 'info') {
-            iconDom = null;
+            iconDom = null
           } else {
             iconDom = (
               <Icon
@@ -107,31 +107,29 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
                 color="white"
                 size={36}
               />
-            );
+            )
           }
 
           return (
             <View
               style={[styles.container]}
-              pointerEvents={mask ? undefined : 'box-none'}
-            >
+              pointerEvents={mask ? undefined : 'box-none'}>
               <View style={[styles.innerContainer]}>
                 <Animated.View style={{ opacity: this.state.fadeAnim }}>
                   <View
                     style={[
                       styles.innerWrap,
                       iconDom ? styles.iconToast : styles.textToast,
-                    ]}
-                  >
+                    ]}>
                     {iconDom}
                     <Text style={styles.content}>{content}</Text>
                   </View>
                 </Animated.View>
               </View>
             </View>
-          );
+          )
         }}
       </WithTheme>
-    );
+    )
   }
 }

@@ -1,17 +1,17 @@
-import React from 'react';
-import PickerStyles, { PickerStyle } from '../picker/style/index';
-import { WithTheme, WithThemeStyles } from '../style';
-import { getComponentLocale } from '../_util/getLocale';
-import AntDatePicker from './datepicker';
-import PopupDatePicker from './datepicker/Popup';
-import { DatePickerPropsType } from './PropsType';
-import { formatProps } from './utils';
-import { LocaleContext } from "../locale-provider";
+import React from 'react'
+import PickerStyles, { PickerStyle } from '../picker/style/index'
+import { WithTheme, WithThemeStyles } from '../style'
+import { getComponentLocale } from '../_util/getLocale'
+import AntDatePicker from './datepicker'
+import PopupDatePicker from './datepicker/Popup'
+import { DatePickerPropsType } from './PropsType'
+import { formatProps } from './utils'
+import { LocaleContext } from '../locale-provider'
 
 export interface DatePickerProps
   extends DatePickerPropsType,
     WithThemeStyles<PickerStyle> {
-  triggerTypes?: string;
+  triggerTypes?: string
 }
 
 export default class DatePicker extends React.Component<DatePickerProps> {
@@ -19,18 +19,18 @@ export default class DatePicker extends React.Component<DatePickerProps> {
     mode: 'datetime',
     triggerType: 'onPress',
     minuteStep: 1,
-  };
-  static contextType = LocaleContext;
+  }
+  static contextType = LocaleContext
   render() {
-    const { children, value, defaultDate, itemStyle, ...restProps } = this.props;
+    const { children, value, defaultDate, itemStyle, ...restProps } = this.props
     const locale = getComponentLocale(
       this.props,
       (this as any).context,
       'DatePicker',
       () => require('./locale/zh_CN'),
-    );
+    )
 
-    const { okText, dismissText, extra, DatePickerLocale } = locale;
+    const { okText, dismissText, extra, DatePickerLocale } = locale
 
     const dataPicker = (
       <AntDatePicker
@@ -44,19 +44,18 @@ export default class DatePicker extends React.Component<DatePickerProps> {
         onValueChange={this.props.onValueChange}
         itemStyle={itemStyle}
       />
-    );
+    )
 
     return (
       <WithTheme styles={restProps.styles} themeStyles={PickerStyles}>
-        {styles => (
+        {(styles) => (
           <PopupDatePicker
             datePicker={dataPicker}
-            {...restProps as any}
+            {...(restProps as any)}
             styles={styles}
             date={value}
             dismissText={this.props.dismissText || dismissText}
-            okText={this.props.okText || okText}
-          >
+            okText={this.props.okText || okText}>
             {children &&
               React.isValidElement(children) &&
               React.cloneElement<object, any>(children as any, {
@@ -67,6 +66,6 @@ export default class DatePicker extends React.Component<DatePickerProps> {
           </PopupDatePicker>
         )}
       </WithTheme>
-    );
+    )
   }
 }

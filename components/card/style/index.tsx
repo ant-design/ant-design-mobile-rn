@@ -1,20 +1,20 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface CardStyle {
-  card: ViewStyle;
-  full: ViewStyle;
-  headerWrap: ViewStyle;
-  headerTitle: ViewStyle;
-  headerImage: ImageStyle;
-  headerContentWrap: ViewStyle;
-  headerContent: TextStyle;
-  headerExtraWrap: ViewStyle;
-  headerExtra: TextStyle;
-  body: ViewStyle;
-  footerWrap: ViewStyle;
-  footerContent: TextStyle;
-  footerExtra: TextStyle;
+  card: ViewStyle
+  full: ViewStyle
+  headerWrap: ViewStyle
+  headerTitle: ViewStyle
+  headerImage: ImageStyle
+  headerContentWrap: ViewStyle
+  headerContent: TextStyle
+  headerExtraWrap: ViewStyle
+  headerExtra: TextStyle
+  body: ViewStyle
+  footerWrap: ViewStyle
+  footerContent: TextStyle
+  footerExtra: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -85,4 +85,4 @@ export default (theme: Theme) =>
       fontSize: theme.font_size_base,
       color: theme.color_text_caption,
     },
-  });
+  })

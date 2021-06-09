@@ -1,13 +1,13 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface TextareaItemStyle {
-  container: ViewStyle;
-  input: TextStyle;
-  icon: ViewStyle;
-  errorIcon: ViewStyle;
-  count: ViewStyle;
-  countText: TextStyle;
+  container: ViewStyle
+  input: TextStyle
+  icon: ViewStyle
+  errorIcon: ViewStyle
+  count: ViewStyle
+  countText: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -40,4 +40,4 @@ export default (theme: Theme) =>
       bottom: theme.h_spacing_md,
     },
     countText: {},
-  });
+  })

@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
-import React from 'react';
-import { DeviceEventEmitter } from 'react-native';
-import { Button, List, Switch, Toast, WhiteSpace, WingBlank } from '../../';
+import React from 'react'
+import { DeviceEventEmitter } from 'react-native'
+import { Button, List, Switch, Toast, WhiteSpace, WingBlank } from '../../'
 
 function showToastStack() {
   // multiple toast
@@ -9,42 +9,42 @@ function showToastStack() {
     content: 'This is a toast tips 1 !!!',
     duration: 3,
     stackable: true,
-  });
+  })
   Toast.success({
     content: 'This is a toast tips 2 !!!',
     duration: 2,
     stackable: true,
-  });
+  })
   Toast.info({
     content: 'This is a toast tips 3 !!!',
     duration: 1,
     stackable: true,
-  });
+  })
 }
 
 function infoToast() {
   Toast.info({
     content: 'Text toast',
-  });
+  })
 }
 
 function successToast() {
-  Toast.success('Load success !!!', 1);
+  Toast.success('Load success !!!', 1)
 }
 
 function showToastNoMask() {
   Toast.info({
     content: 'Toast without mask',
     mask: false,
-  });
+  })
 }
 
 function failToast() {
-  Toast.fail('Load failed !!!');
+  Toast.fail('Load failed !!!')
 }
 
 function offline() {
-  Toast.offline('Network connection failed !!!');
+  Toast.offline('Network connection failed !!!')
 }
 
 function loadingToast() {
@@ -56,7 +56,7 @@ function loadingToast() {
 }
 
 export default class ToastExample extends React.Component<any, any> {
-  timer: any;
+  timer: any
 
   state = {
     enableMask: Toast.getConfig().mask,
@@ -64,10 +64,10 @@ export default class ToastExample extends React.Component<any, any> {
   }
 
   componentWillUnmount() {
-    (DeviceEventEmitter as any).removeAllListeners('navigatorBack');
+    DeviceEventEmitter.removeAllListeners('navigatorBack')
     if (this.timer) {
-      clearTimeout(this.timer);
-      this.timer = null;
+      clearTimeout(this.timer)
+      this.timer = null
     }
   }
 
@@ -75,11 +75,11 @@ export default class ToastExample extends React.Component<any, any> {
     const key = Toast.info({
       content: 'Toast with duration = 0, removed by timer',
       duration: 0,
-    });
+    })
     this.timer = setTimeout(() => {
-      Toast.remove(key);
-    }, 5000);
-  };
+      Toast.remove(key)
+    }, 5000)
+  }
 
   render() {
     return (
@@ -89,26 +89,24 @@ export default class ToastExample extends React.Component<any, any> {
             extra={
               <Switch
                 checked={this.state.enableMask}
-                onChange={mask => {
-                  Toast.config({ mask });
-                  this.setState({ enableMask: Toast.getConfig().mask });
+                onChange={(mask) => {
+                  Toast.config({ mask })
+                  this.setState({ enableMask: Toast.getConfig().mask })
                 }}
               />
-            }
-          >
+            }>
             Enable Mask
           </List.Item>
           <List.Item
             extra={
               <Switch
                 checked={this.state.enableStack}
-                onChange={stackable => {
-                  Toast.config({ stackable });
-                  this.setState({ enableStack: Toast.getConfig().stackable });
+                onChange={(stackable) => {
+                  Toast.config({ stackable })
+                  this.setState({ enableStack: Toast.getConfig().stackable })
                 }}
               />
-            }
-          >
+            }>
             Enable Stack
           </List.Item>
         </List>
@@ -129,6 +127,6 @@ export default class ToastExample extends React.Component<any, any> {
         <WhiteSpace />
         <Button onPress={this.alwaysShowToast}>Toast with duration = 0</Button>
       </WingBlank>
-    );
+    )
   }
 }

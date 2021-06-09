@@ -1,84 +1,84 @@
-import { UltimateListView } from '@bang88/react-native-ultimate-listview';
-import React from 'react';
-import { ActivityIndicator, Platform, Text, View } from 'react-native';
-import Icon from '../icon';
-import { getComponentLocale } from '../_util/getLocale';
-import zh_CN from './locale/zh_CN';
-import { LocaleContext } from "../locale-provider";
+import { UltimateListView } from '@bang88/react-native-ultimate-listview'
+import React from 'react'
+import { ActivityIndicator, Platform, Text, View } from 'react-native'
+import Icon from '../icon'
+import { getComponentLocale } from '../_util/getLocale'
+import zh_CN from './locale/zh_CN'
+import { LocaleContext } from '../locale-provider'
 
 type UltimateListViewProps = {
-  initialNumToRender?: any;
-  horizontal?: any;
-  firstLoader?: any;
-  scrollEnabled?: any;
-  enableEmptySections?: any;
-  header?: any;
-  paginationFetchingView?: any;
-  paginationAllLoadedView?: any;
-  paginationWaitingView?: any;
-  emptyView?: any;
-  separator?: any;
-  refreshable?: any;
-  refreshableMode?: any;
-  refreshableTitle?: any;
-  refreshableColors?: any;
-  refreshableProgressBackgroundColor?: any;
-  refreshableSize?: any;
-  refreshableTintColor?: any;
-  customRefreshControl?: any;
-  refreshableTitlePull?: any;
-  refreshableTitleRefreshing?: any;
-  refreshableTitleRelease?: any;
-  customRefreshView?: any;
-  displayDate?: any;
-  dateFormat?: any;
-  dateTitle?: any;
-  arrowImageSource?: any;
-  arrowImageStyle?: any;
-  refreshViewStyle?: any;
-  dateStyle?: any;
-  refreshViewHeight?: any;
-  pagination?: any;
-  autoPagination?: any;
-  allLoadedText?: any;
-  spinnerColor?: any;
-  fetchingSpinnerSize?: any;
-  waitingSpinnerSize?: any;
-  waitingSpinnerText?: any;
-  paginationBtnText?: any;
-  numColumns?: any;
-};
+  initialNumToRender?: any
+  horizontal?: any
+  firstLoader?: any
+  scrollEnabled?: any
+  enableEmptySections?: any
+  header?: any
+  paginationFetchingView?: any
+  paginationAllLoadedView?: any
+  paginationWaitingView?: any
+  emptyView?: any
+  separator?: any
+  refreshable?: any
+  refreshableMode?: any
+  refreshableTitle?: any
+  refreshableColors?: any
+  refreshableProgressBackgroundColor?: any
+  refreshableSize?: any
+  refreshableTintColor?: any
+  customRefreshControl?: any
+  refreshableTitlePull?: any
+  refreshableTitleRefreshing?: any
+  refreshableTitleRelease?: any
+  customRefreshView?: any
+  displayDate?: any
+  dateFormat?: any
+  dateTitle?: any
+  arrowImageSource?: any
+  arrowImageStyle?: any
+  refreshViewStyle?: any
+  dateStyle?: any
+  refreshViewHeight?: any
+  pagination?: any
+  autoPagination?: any
+  allLoadedText?: any
+  spinnerColor?: any
+  fetchingSpinnerSize?: any
+  waitingSpinnerSize?: any
+  waitingSpinnerText?: any
+  paginationBtnText?: any
+  numColumns?: any
+}
 export interface ListViewProps<T> extends UltimateListViewProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode
   onFetch: (
     currentPage: number,
     startFetch: () => any,
     abortFetch: () => void,
-  ) => void;
+  ) => void
   renderItem: (
     item: T,
     index: number,
     separators: {
-      highlight: () => void;
-      unhighlight: () => void;
-      updateProps: (select: 'leading' | 'trailing', newProps: any) => void;
+      highlight: () => void
+      unhighlight: () => void
+      updateProps: (select: 'leading' | 'trailing', newProps: any) => void
     },
-  ) => React.ReactElement<any> | null;
-  numColumns?: number;
-  keyExtractor?: (item: T, index: number) => string;
+  ) => React.ReactElement<any> | null
+  numColumns?: number
+  keyExtractor?: (item: T, index: number) => string
 }
 export interface ListViewState {}
 class ListView<T> extends React.PureComponent<ListViewProps<T>, ListViewState> {
-  static contextType = LocaleContext;
-  ulv: { refresh: () => void };
+  static contextType = LocaleContext
+  ulv: { refresh: () => void }
 
   refresh = () => {
     if (this.ulv) {
-      this.ulv.refresh();
+      this.ulv.refresh()
     }
-  };
+  }
   render() {
-    const { renderItem, ...props } = this.props;
+    const { renderItem, ...props } = this.props
 
     // tslint:disable-next-line:variable-name
     const locale = getComponentLocale(
@@ -86,7 +86,7 @@ class ListView<T> extends React.PureComponent<ListViewProps<T>, ListViewState> {
       (this as any).context,
       'ListView',
       () => zh_CN,
-    );
+    )
 
     return (
       <UltimateListView
@@ -108,13 +108,12 @@ class ListView<T> extends React.PureComponent<ListViewProps<T>, ListViewState> {
                 flex: 1,
                 alignItems: 'center',
                 justifyContent: 'center',
-              }}
-            >
+              }}>
               <Text style={{ textAlign: 'center', padding: '10%' }}>
                 {locale.noData}
               </Text>
             </View>
-          );
+          )
         }}
         customRefreshView={(status: number) => {
           return (
@@ -135,14 +134,14 @@ class ListView<T> extends React.PureComponent<ListViewProps<T>, ListViewState> {
                   : locale.refreshableTitleRefreshing}
               </Text>
             </View>
-          );
+          )
         }}
         {...props}
         item={renderItem}
         ref={(ref: { refresh: () => void }) => (this.ulv = ref)}
       />
-    );
+    )
   }
 }
 
-export default ListView;
+export default ListView

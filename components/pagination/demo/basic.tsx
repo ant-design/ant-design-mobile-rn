@@ -1,10 +1,10 @@
-import React from 'react';
-import { Pagination, WhiteSpace, WingBlank } from '../../';
+import React from 'react'
+import { Pagination, WhiteSpace, WingBlank } from '../../'
 
 const locale = {
   prevText: '上一步',
   nextText: '下一步',
-};
+}
 
 export default class BasicPaginationExample extends React.Component<any, any> {
   render() {
@@ -22,6 +22,6 @@ export default class BasicPaginationExample extends React.Component<any, any> {
         <WhiteSpace size="lg" />
         <Pagination mode="pointer" total={5} current={2} />
       </WingBlank>
-    );
+    )
   }
 }

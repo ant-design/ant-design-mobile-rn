@@ -1,13 +1,13 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface CheckboxStyle {
-  wrapper: ViewStyle;
-  icon: TextStyle;
-  iconRight: TextStyle;
-  agreeItem: ViewStyle;
-  agreeItemCheckbox: TextStyle;
-  checkboxItemCheckbox: TextStyle;
+  wrapper: ViewStyle
+  icon: TextStyle
+  iconRight: TextStyle
+  agreeItem: ViewStyle
+  agreeItemCheckbox: TextStyle
+  checkboxItemCheckbox: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -35,4 +35,4 @@ export default (theme: Theme) =>
       marginRight: theme.h_spacing_md,
       alignSelf: 'center',
     },
-  });
+  })

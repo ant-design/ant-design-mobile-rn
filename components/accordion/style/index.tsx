@@ -1,14 +1,14 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface AccordionStyle {
-  container: ViewStyle;
-  header: ViewStyle;
-  arrow: TextStyle;
-  headerWrap: ViewStyle;
-  headerText: TextStyle;
-  content: ViewStyle;
-  contentText: TextStyle;
+  container: ViewStyle
+  header: ViewStyle
+  arrow: TextStyle
+  headerWrap: ViewStyle
+  headerText: TextStyle
+  content: ViewStyle
+  contentText: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -48,4 +48,4 @@ export default (theme: Theme) =>
       fontSize: theme.font_size_subhead,
       color: theme.color_text_paragraph,
     },
-  });
+  })

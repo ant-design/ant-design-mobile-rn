@@ -1,27 +1,41 @@
-import React from 'react';
+import React from 'react'
 import {
-  Animated, I18nManager, StyleProp, StyleSheet, Text, TextStyle, View, ViewStyle,
-} from 'react-native';
-import { PanGestureHandlerProps, RectButton } from 'react-native-gesture-handler';
-import Swipeable from 'react-native-gesture-handler/Swipeable';
+  Animated,
+  I18nManager,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
+  View,
+  ViewStyle,
+} from 'react-native'
+import {
+  PanGestureHandlerProps,
+  RectButton,
+} from 'react-native-gesture-handler'
+import Swipeable from 'react-native-gesture-handler/Swipeable'
 
-declare type SwipeableExcludes = Exclude<keyof PanGestureHandlerProps, 'onGestureEvent' | 'onHandlerStateChange'>;
-interface SwipeableProps extends Pick<PanGestureHandlerProps, SwipeableExcludes> {
-  enableTrackpadTwoFingerGesture?: boolean;
-  friction?: number;
-  leftThreshold?: number;
-  rightThreshold?: number;
-  overshootLeft?: boolean;
-  overshootRight?: boolean;
-  overshootFriction?: number;
-  onSwipeableLeftOpen?: () => void;
-  onSwipeableRightOpen?: () => void;
-  onSwipeableOpen?: () => void;
-  onSwipeableClose?: () => void;
-  onSwipeableLeftWillOpen?: () => void;
-  onSwipeableRightWillOpen?: () => void;
-  onSwipeableWillOpen?: () => void;
-  onSwipeableWillClose?: () => void;
+declare type SwipeableExcludes = Exclude<
+  keyof PanGestureHandlerProps,
+  'onGestureEvent' | 'onHandlerStateChange'
+>
+interface SwipeableProps
+  extends Pick<PanGestureHandlerProps, SwipeableExcludes> {
+  enableTrackpadTwoFingerGesture?: boolean
+  friction?: number
+  leftThreshold?: number
+  rightThreshold?: number
+  overshootLeft?: boolean
+  overshootRight?: boolean
+  overshootFriction?: number
+  onSwipeableLeftOpen?: () => void
+  onSwipeableRightOpen?: () => void
+  onSwipeableOpen?: () => void
+  onSwipeableClose?: () => void
+  onSwipeableLeftWillOpen?: () => void
+  onSwipeableRightWillOpen?: () => void
+  onSwipeableWillOpen?: () => void
+  onSwipeableWillClose?: () => void
   /**
    *
    * This map describes the values to use as inputRange for extra interpolation:
@@ -32,7 +46,10 @@ interface SwipeableProps extends Pick<PanGestureHandlerProps, SwipeableExcludes>
    *
    * To support `rtl` flexbox layouts use `flexDirection` styling.
    * */
-  renderLeftActions?: (progressAnimatedValue: Animated.AnimatedInterpolation, dragAnimatedValue: Animated.AnimatedInterpolation) => React.ReactNode;
+  renderLeftActions?: (
+    progressAnimatedValue: Animated.AnimatedInterpolation,
+    dragAnimatedValue: Animated.AnimatedInterpolation,
+  ) => React.ReactNode
   /**
    *
    * This map describes the values to use as inputRange for extra interpolation:
@@ -43,64 +60,64 @@ interface SwipeableProps extends Pick<PanGestureHandlerProps, SwipeableExcludes>
    *
    * To support `rtl` flexbox layouts use `flexDirection` styling.
    * */
-  renderRightActions?: (progressAnimatedValue: Animated.AnimatedInterpolation, dragAnimatedValue: Animated.AnimatedInterpolation) => React.ReactNode;
-  useNativeAnimations?: boolean;
-  animationOptions?: Record<string, unknown>;
-  containerStyle?: StyleProp<ViewStyle>;
-  childrenContainerStyle?: StyleProp<ViewStyle>;
+  renderRightActions?: (
+    progressAnimatedValue: Animated.AnimatedInterpolation,
+    dragAnimatedValue: Animated.AnimatedInterpolation,
+  ) => React.ReactNode
+  useNativeAnimations?: boolean
+  animationOptions?: Record<string, unknown>
+  containerStyle?: StyleProp<ViewStyle>
+  childrenContainerStyle?: StyleProp<ViewStyle>
 }
 
 export interface SwipeActionProps extends SwipeableProps {
-  left?: SwipeoutButtonProps[];
-  right?: SwipeoutButtonProps[];
+  left?: SwipeoutButtonProps[]
+  right?: SwipeoutButtonProps[]
   buttonWidth?: number
 }
 export interface SwipeoutButtonProps {
   style?: StyleProp<TextStyle>
-  backgroundColor?: string;
-  color?: string;
-  text?: React.ReactNode;
-  disabled?: boolean;
-  onPress?(): void;
+  backgroundColor?: string
+  color?: string
+  text?: React.ReactNode
+  disabled?: boolean
+  onPress?(): void
 }
 class SwipeAction extends React.Component<SwipeActionProps> {
-
-   swipeableRow?: Swipeable;
+  swipeableRow?: Swipeable
 
   render() {
-    const {
-      left,
-      right,
-      children,
-      ...restProps
-    } = this.props;
+    const { left, right, children, ...restProps } = this.props
 
-    return <Swipeable
-      ref={this.updateRef}
-      friction={2}
-      enableTrackpadTwoFingerGesture
-      leftThreshold={30}
-      rightThreshold={40}
-      renderLeftActions={(v,d)=> this.renderActions(v,d,true)}
-      renderRightActions={this.renderActions} {...restProps}>
-      {children}
-    </Swipeable>
+    return (
+      <Swipeable
+        ref={this.updateRef}
+        friction={2}
+        enableTrackpadTwoFingerGesture
+        leftThreshold={30}
+        rightThreshold={40}
+        renderLeftActions={(v, d) => this.renderActions(v, d, true)}
+        renderRightActions={this.renderActions}
+        {...restProps}>
+        {children}
+      </Swipeable>
+    )
   }
 
-   updateRef = (ref: Swipeable) => {
-    this.swipeableRow = ref;
-  };
-   close = () => {
-    this.swipeableRow?.close();
-  };
+  updateRef = (ref: Swipeable) => {
+    this.swipeableRow = ref
+  }
+  close = () => {
+    this.swipeableRow?.close()
+  }
 
-   renderActions = (
+  renderActions = (
     progress: Animated.AnimatedInterpolation,
     _dragAnimatedValue: Animated.AnimatedInterpolation,
     isLeft = false,
   ) => {
-    const { right,left, buttonWidth = 60 } = this.props
-    const buttons = isLeft ? left: right
+    const { right, left, buttonWidth = 60 } = this.props
+    const buttons = isLeft ? left : right
     if (!buttons) {
       return null
     }
@@ -112,45 +129,54 @@ class SwipeAction extends React.Component<SwipeActionProps> {
           width,
           flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
         }}>
-        {
-          buttons.map((button, i) => {
-            const x = isLeft ?  -i * buttonWidth:  (len - i) * buttonWidth
-            const trans = progress.interpolate({
-              inputRange: [0, 1],
-              outputRange: [x , 0],
-              extrapolate: 'clamp',
-            });
-            const pressHandler = () => {
-              if (button.disabled) {
-                return
-              }
-              this.close();
-              if (button.onPress) {
-                button.onPress()
-              }
-            };
-            return (
-              <Animated.View key={i} style={{ flex: 1, transform: [{ translateX: trans }] }}>
-                <RectButton
-                  style={[styles.rightAction, { backgroundColor: button.backgroundColor }]}
-                  onPress={pressHandler}>
-                  {React.isValidElement(button.text) ? (
-                    button.text
-                  ) : (
-                    <Text style={[styles.actionText, button.style, { color: button.color }]}>{button.text}</Text>
-                  )}
-
-                </RectButton>
-              </Animated.View>
-            );
+        {buttons.map((button, i) => {
+          const x = isLeft ? -i * buttonWidth : (len - i) * buttonWidth
+          const trans = progress.interpolate({
+            inputRange: [0, 1],
+            outputRange: [x, 0],
+            extrapolate: 'clamp',
           })
-        }
+          const pressHandler = () => {
+            if (button.disabled) {
+              return
+            }
+            this.close()
+            if (button.onPress) {
+              button.onPress()
+            }
+          }
+          return (
+            <Animated.View
+              key={i}
+              style={{ flex: 1, transform: [{ translateX: trans }] }}>
+              <RectButton
+                style={[
+                  styles.rightAction,
+                  { backgroundColor: button.backgroundColor },
+                ]}
+                onPress={pressHandler}>
+                {React.isValidElement(button.text) ? (
+                  button.text
+                ) : (
+                  <Text
+                    style={[
+                      styles.actionText,
+                      button.style,
+                      { color: button.color },
+                    ]}>
+                    {button.text}
+                  </Text>
+                )}
+              </RectButton>
+            </Animated.View>
+          )
+        })}
       </View>
-    );
+    )
   }
 }
 
-export default SwipeAction;
+export default SwipeAction
 
 const styles = StyleSheet.create({
   actionText: {
@@ -164,4 +190,4 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-});
+})

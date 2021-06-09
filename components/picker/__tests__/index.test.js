@@ -1,36 +1,51 @@
 /**
  * @jest-environment jsdom
  */
-import React from 'react';
-import { Text } from 'react-native';
-import renderer from 'react-test-renderer';
-import { Picker, Provider } from '../../';
+import React from 'react'
+import { Text } from 'react-native'
+import renderer from 'react-test-renderer'
+import { Picker, Provider } from '../../'
 
 jest.mock('@react-navigation/stack', () => ({
   generateKey: jest.fn(() => 123),
-}));
+}))
 describe('Picker', () => {
   describe('test cascade props', () => {
     it('when cascade={true} should be render MultiPicker', () => {
-      const onChange = jest.fn();
-      const onPress = jest.fn();
+      const onChange = jest.fn()
+      const onPress = jest.fn()
 
       // I cant resolve :(, same issue as https://github.com/enzymejs/enzyme/issues/1990 when:
       // const wrapper = mount(<TouchableHighlight><Text>1</Text></TouchableHighlight>)
 
-      const data = [{ label: '北京市', value: '11', children: [{ label: '市辖区', value: '1101', children: [{ label: '东城区', value: '110101' }, { label: '西城区', value: '110102' }] }] }];
-      const wrapper = renderer.create(<Provider>
-        <Picker
-          data={data}
-          cols={3}
-          onChange={onChange}
-        >
-          <Text onPress={onPress} testID={'button'}>省市选择</Text>
-        </Picker>
-      </Provider>);
-      wrapper.root.findByType(Text).props.onPress();
-      expect(wrapper).toMatchSnapshot();
-    });
+      const data = [
+        {
+          label: '北京市',
+          value: '11',
+          children: [
+            {
+              label: '市辖区',
+              value: '1101',
+              children: [
+                { label: '东城区', value: '110101' },
+                { label: '西城区', value: '110102' },
+              ],
+            },
+          ],
+        },
+      ]
+      const wrapper = renderer.create(
+        <Provider>
+          <Picker data={data} cols={3} onChange={onChange}>
+            <Text onPress={onPress} testID={'button'}>
+              省市选择
+            </Text>
+          </Picker>
+        </Provider>,
+      )
+      wrapper.root.findByType(Text).props.onPress()
+      expect(wrapper).toMatchSnapshot()
+    })
 
     // it('when cascade={false} should be render MultiPicker', () => {
     //   const seasons = [
@@ -62,7 +77,7 @@ describe('Picker', () => {
     //   debug();
     //   expect(container.getByDisplayValue('MultiPicker')).toBe(true);
     // });
-  });
+  })
 
   // describe('test some events', () => {
   //   // fix: https://github.com/ant-design/ant-design-mobile-rn/issues/734
@@ -92,4 +107,4 @@ describe('Picker', () => {
   //     expect(onPickerChange).toBeCalledWith(dataFromIssue[0][0]);
   //   });
   // });
-});
+})

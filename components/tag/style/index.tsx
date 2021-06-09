@@ -1,23 +1,23 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface TagStyle {
-  tag: ViewStyle;
-  wrap: ViewStyle;
-  wrapSmall: ViewStyle;
-  text: TextStyle;
-  textSmall: TextStyle;
-  normalWrap: ViewStyle;
-  normalText: TextStyle;
-  activeWrap: ViewStyle;
-  activeText: TextStyle;
-  disabledWrap: ViewStyle;
-  disabledText: TextStyle;
-  close: ViewStyle;
-  closeIOS: ViewStyle;
-  closeAndroid: ViewStyle;
-  closeText: TextStyle;
-  closeTransform: ViewStyle;
+  tag: ViewStyle
+  wrap: ViewStyle
+  wrapSmall: ViewStyle
+  text: TextStyle
+  textSmall: TextStyle
+  normalWrap: ViewStyle
+  normalText: TextStyle
+  activeWrap: ViewStyle
+  activeText: TextStyle
+  disabledWrap: ViewStyle
+  disabledText: TextStyle
+  close: ViewStyle
+  closeIOS: ViewStyle
+  closeAndroid: ViewStyle
+  closeText: TextStyle
+  closeTransform: ViewStyle
 }
 
 export default (theme: Theme) =>
@@ -104,4 +104,4 @@ export default (theme: Theme) =>
         },
       ],
     },
-  });
+  })

@@ -1,3 +1,3 @@
-import DatePickerView from './date-picker-view';
+import DatePickerView from './date-picker-view'
 
-export default DatePickerView;
+export default DatePickerView

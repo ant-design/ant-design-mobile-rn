@@ -1,35 +1,35 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
-const grid = 4;
+const grid = 4
 
 export interface StepsStyle {
-  head_default_s: ViewStyle;
-  head_blue_s: ViewStyle;
-  head_gray_s: ViewStyle;
-  head_red_s: ViewStyle;
-  icon_s: TextStyle;
+  head_default_s: ViewStyle
+  head_blue_s: ViewStyle
+  head_gray_s: ViewStyle
+  head_red_s: ViewStyle
+  icon_s: TextStyle
 
-  head_default_l: ViewStyle;
-  head_blue_l: ViewStyle;
-  head_gray_l: ViewStyle;
-  head_red_l: ViewStyle;
-  tail_default_l: ViewStyle;
-  icon_l: TextStyle;
+  head_default_l: ViewStyle
+  head_blue_l: ViewStyle
+  head_gray_l: ViewStyle
+  head_red_l: ViewStyle
+  tail_default_l: ViewStyle
+  icon_l: TextStyle
 
-  tail_default_s: ViewStyle;
-  tail_default_s_h: ViewStyle;
-  tail_gray: ViewStyle;
-  tail_blue: ViewStyle;
-  tail_error: ViewStyle;
-  tail_last: ViewStyle;
-  content_s: ViewStyle;
-  content_s_h: ViewStyle;
-  content_l: ViewStyle;
-  title_s: TextStyle;
-  description_s: TextStyle;
-  title_l: TextStyle;
-  description_l: TextStyle;
+  tail_default_s: ViewStyle
+  tail_default_s_h: ViewStyle
+  tail_gray: ViewStyle
+  tail_blue: ViewStyle
+  tail_error: ViewStyle
+  tail_last: ViewStyle
+  content_s: ViewStyle
+  content_s_h: ViewStyle
+  content_l: ViewStyle
+  title_s: TextStyle
+  description_s: TextStyle
+  title_l: TextStyle
+  description_l: TextStyle
 }
 export default (theme: Theme) =>
   StyleSheet.create<StepsStyle>({
@@ -137,4 +137,4 @@ export default (theme: Theme) =>
       fontSize: theme.font_size_subhead,
       color: theme.color_text_base,
     },
-  });
+  })

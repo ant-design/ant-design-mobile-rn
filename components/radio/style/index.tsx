@@ -1,13 +1,13 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface RadioStyle {
-  wrapper: ViewStyle;
-  icon: ImageStyle;
-  radioItem: ViewStyle;
-  radioItemRadio: ViewStyle;
-  radioItemContent: TextStyle;
-  radioItemContentDisable: TextStyle;
+  wrapper: ViewStyle
+  icon: ImageStyle
+  radioItem: ViewStyle
+  radioItemRadio: ViewStyle
+  radioItemContent: TextStyle
+  radioItemContentDisable: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -35,4 +35,4 @@ export default (theme: Theme) =>
     radioItemContentDisable: {
       color: theme.color_text_disabled,
     },
-  });
+  })

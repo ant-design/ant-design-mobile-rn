@@ -6,4 +6,4 @@ export default {
   minute: 'دقیقه',
   am: 'صبح',
   pm: 'بعد از ظهر',
-};
+}

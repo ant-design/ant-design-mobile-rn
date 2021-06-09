@@ -1,15 +1,23 @@
-import React from 'react';
-import { View } from 'react-native';
-import LocaleProvider from '..';
-import { DatePicker, List, Pagination, Picker, SearchBar, WhiteSpace, WingBlank } from '../../';
-import enUS from '../en_US';
-import esES from '../es_ES';
-import ptBR from '../pt_BR';
-import ruRU from '../ru_RU';
-import zhCN from '../zh_CN';
+import React from 'react'
+import { View } from 'react-native'
+import LocaleProvider from '..'
+import {
+  DatePicker,
+  List,
+  Pagination,
+  Picker,
+  SearchBar,
+  WhiteSpace,
+  WingBlank,
+} from '../../'
+import enUS from '../en_US'
+import esES from '../es_ES'
+import ptBR from '../pt_BR'
+import ruRU from '../ru_RU'
+import zhCN from '../zh_CN'
 
-const maxDate = new Date(2018, 11, 3, 22, 0);
-const minDate = new Date(2015, 7, 6, 8, 30);
+const maxDate = new Date(2018, 11, 3, 22, 0)
+const minDate = new Date(2015, 7, 6, 8, 30)
 
 const seasons = [
   [
@@ -32,7 +40,7 @@ const seasons = [
       value: '夏',
     },
   ],
-];
+]
 
 const Page = React.memo(() => (
   <View>
@@ -43,8 +51,7 @@ const Page = React.memo(() => (
         mode="date"
         title="Select date"
         minDate={minDate}
-        maxDate={maxDate}
-      >
+        maxDate={maxDate}>
         <List.Item arrow="horizontal">DatePicker</List.Item>
       </DatePicker>
       <Picker data={seasons} cascade={false}>
@@ -54,24 +61,24 @@ const Page = React.memo(() => (
       <SearchBar placeholder="Search" showCancelButton />
     </List>
   </View>
-));
+))
 
 export default class LocaleProviderExample extends React.Component<any, any> {
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       locale: 'English',
-    };
+    }
   }
 
   onChange = (value: any) => {
     this.setState({
       locale: value[0],
-    });
+    })
   }
 
   render() {
-    const { locale } = this.state;
+    const { locale } = this.state
     const languages: Array<any> = [
       {
         value: '中国',
@@ -98,8 +105,10 @@ export default class LocaleProviderExample extends React.Component<any, any> {
         label: 'Português - BR',
         language: ptBR,
       },
-    ];
-    const currentLocale = languages.find(item => item.value === locale).language;
+    ]
+    const currentLocale = languages.find(
+      (item) => item.value === locale,
+    ).language
 
     return (
       <WingBlank>
@@ -107,8 +116,7 @@ export default class LocaleProviderExample extends React.Component<any, any> {
           data={languages}
           onChange={this.onChange}
           cols={1}
-          value={[locale]}
-        >
+          value={[locale]}>
           <List.Item arrow="horizontal">Choose language</List.Item>
         </Picker>
         <WhiteSpace />
@@ -116,6 +124,6 @@ export default class LocaleProviderExample extends React.Component<any, any> {
           <Page />
         </LocaleProvider>
       </WingBlank>
-    );
+    )
   }
 }

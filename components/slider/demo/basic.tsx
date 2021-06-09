@@ -1,34 +1,34 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import { Slider } from '../../';
+import React from 'react'
+import { Text, View } from 'react-native'
+import { Slider } from '../../'
 
 export default class BasicSliderExample extends React.Component<any, any> {
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       changingValue: 0.25,
       changedValue: 0.15,
       minMaxValue: 0,
       slideCompletionCount: 0,
-    };
+    }
   }
 
   handleChange = (value: any) => {
     this.setState({
       changingValue: value,
-    });
+    })
   }
 
   onAfterChange = (value: any) => {
     this.setState({
       changedValue: value,
-    });
+    })
   }
 
   minMaxChange = (value: any) => {
     this.setState({
       minMaxValue: value,
-    });
+    })
   }
 
   render() {
@@ -88,6 +88,6 @@ export default class BasicSliderExample extends React.Component<any, any> {
           />
         </View>
       </View>
-    );
+    )
   }
 }

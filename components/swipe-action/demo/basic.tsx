@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
-import React from 'react';
-import { View } from 'react-native';
-import { List, SwipeAction } from '../../';
+import React from 'react'
+import { View } from 'react-native'
+import { List, SwipeAction } from '../../'
 
 export default class BasicSwipeActionExample extends React.Component<any, any> {
   render() {
@@ -18,7 +18,7 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
         backgroundColor: 'red',
         color: 'white',
       },
-    ];
+    ]
     const left = [
       {
         text: 'Read',
@@ -32,7 +32,7 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
         backgroundColor: 'green',
         color: 'white',
       },
-    ];
+    ]
 
     return (
       <View style={{ paddingTop: 30 }}>
@@ -41,14 +41,13 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
             right={right}
             left={left}
             onSwipeableOpen={() => console.log('open')}
-            onSwipeableClose={() => console.log('close')}
-          >
+            onSwipeableClose={() => console.log('close')}>
             <List.Item extra="extra content">
               Simple example: left and right buttons
             </List.Item>
           </SwipeAction>
         </List>
       </View>
-    );
+    )
   }
 }

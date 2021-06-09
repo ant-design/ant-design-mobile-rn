@@ -1,21 +1,21 @@
-import React from 'react';
-import { Text, View, ViewStyle } from 'react-native';
-import { Button, Progress, WhiteSpace } from '../../';
+import React from 'react'
+import { Text, View, ViewStyle } from 'react-native'
+import { Button, Progress, WhiteSpace } from '../../'
 
 export default class BasicProgressExample extends React.Component<any, any> {
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       percent: 40,
-    };
+    }
   }
 
   onAdd = () => {
-    let p = this.state.percent + 10;
+    let p = this.state.percent + 10
     if (this.state.percent >= 100) {
-      p = 0;
+      p = 0
     }
-    this.setState({ percent: p });
+    this.setState({ percent: p })
   }
 
   render() {
@@ -24,7 +24,7 @@ export default class BasicProgressExample extends React.Component<any, any> {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-    };
+    }
     return (
       <View>
         <Progress percent={90} position="fixed" />
@@ -39,14 +39,13 @@ export default class BasicProgressExample extends React.Component<any, any> {
           style={{ width: 50, marginLeft: 10 }}
           type="ghost"
           size="small"
-          onPress={this.onAdd}
-        >
+          onPress={this.onAdd}>
           (+-)10
         </Button>
 
         <WhiteSpace />
         <Progress percent={5} />
       </View>
-    );
+    )
   }
 }

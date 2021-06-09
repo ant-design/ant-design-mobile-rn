@@ -1,14 +1,14 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 export interface StepperStyle {
-  container: ViewStyle;
-  input: TextStyle;
-  stepWrap: ViewStyle;
-  stepText: TextStyle;
-  stepDisabled: ViewStyle;
-  disabledStepTextColor: TextStyle;
-  highlightStepTextColor: TextStyle;
-  highlightStepBorderColor: ViewStyle;
+  container: ViewStyle
+  input: TextStyle
+  stepWrap: ViewStyle
+  stepText: TextStyle
+  stepDisabled: ViewStyle
+  disabledStepTextColor: TextStyle
+  highlightStepTextColor: TextStyle
+  highlightStepBorderColor: ViewStyle
 }
 export default (theme: Theme) =>
   StyleSheet.create<StepperStyle>({
@@ -52,4 +52,4 @@ export default (theme: Theme) =>
     highlightStepBorderColor: {
       borderColor: theme.brand_primary,
     },
-  });
+  })
