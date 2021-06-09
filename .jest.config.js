@@ -18,7 +18,7 @@ const transformPackages = [
 module.exports = {
   "preset": "react-native",
   "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"],
-  "setupFiles": ["./node_modules/react-native-gesture-handler/jestSetup.js"],
+  "setupFiles": ["./jestSetup.js"],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testPathIgnorePatterns: ['/node_modules/', '_site', 'site'],
   transform: {

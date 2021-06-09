@@ -108,7 +108,7 @@ describe('Button', () => {
     })
 
     it.only('pressIn not change pressIn state', () => {
-      wrapper.root.findByType(TouchableHighlight).props.onPressIn()
+      wrapper.root.findByType(Button).props.onPressIn()
       expect(onPressIn).toBeCalledWith()
     })
 
