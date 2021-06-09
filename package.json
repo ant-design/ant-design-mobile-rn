@@ -31,7 +31,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "dependencies": {
-    "@ant-design/icons-react-native": "^2.3.0",
+    "@ant-design/icons-react-native": "^2.3.1",
     "@bang88/react-native-ultimate-listview": "^4.0.0",
     "@types/shallowequal": "^1.1.1",
     "array-tree-filter": "~2.1.0",
