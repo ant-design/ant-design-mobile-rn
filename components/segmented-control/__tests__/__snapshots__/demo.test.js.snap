@@ -19,7 +19,7 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 28,
+          "height": 32,
         },
         undefined,
       ]
@@ -52,7 +52,7 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 28,
+          "height": 32,
         },
         Object {
           "height": 40,
@@ -89,7 +89,7 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 28,
+          "height": 32,
         },
         undefined,
       ]
@@ -124,7 +124,7 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 28,
+          "height": 32,
         },
         undefined,
       ]
