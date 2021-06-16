@@ -68,7 +68,6 @@ module.exports = {
     if (!useReact) {
       config.resolve.alias = Object.assign(config.resolve.alias, preactAlias)
     }
-    config.output.jsonpFunction = 'antd_rn_jsonp'
 
     config.plugins.push(
       new webpack.DefinePlugin({
