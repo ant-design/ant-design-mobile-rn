@@ -35,7 +35,8 @@ rn-kitchen-sink/android/.gradle
 rn-kitchen-sink/android/app/build
 rn-kitchen-sink/android/build
 rn-kitchen-sink/android/local.properties
-rn-kitchen-sink/android/app/src/main/res/drawable*
+rn-kitchen-sink/android/app/src/main/res/drawable/*
+!rn-kitchen-sink/android/app/src/main/res/drawable/ic_launcher_background.png
 rn-kitchen-sink/app/*.ipa
 rn-kitchen-sink/app/*.apk
 xcuserdata
