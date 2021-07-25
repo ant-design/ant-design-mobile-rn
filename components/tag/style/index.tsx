@@ -14,30 +14,28 @@ export interface TagStyle {
   disabledWrap: ViewStyle
   disabledText: TextStyle
   close: ViewStyle
-  closeIOS: ViewStyle
-  closeAndroid: ViewStyle
-  closeText: TextStyle
-  closeTransform: ViewStyle
 }
 
 export default (theme: Theme) =>
   StyleSheet.create<TagStyle>({
     tag: {
-      borderRadius: theme.radius_sm,
-      backgroundColor: 'transparent',
+      position: 'relative',
       flexDirection: 'row',
       overflow: 'visible',
     },
     wrap: {
-      overflow: 'hidden',
+      height: theme.tag_height,
+      // lineHeight: theme.tag_height, // doest work in RN
+      justifyContent: 'center',
       borderRadius: theme.radius_sm,
       borderWidth: theme.border_width_sm,
       borderStyle: 'solid',
-      paddingVertical: theme.v_spacing_sm,
+      paddingVertical: 0,
       paddingHorizontal: theme.h_spacing_lg,
     },
     wrapSmall: {
-      paddingVertical: 1.5,
+      height: theme.tag_height_sm,
+      paddingVertical: 0,
       paddingHorizontal: theme.h_spacing_sm,
     },
     text: {
@@ -63,45 +61,17 @@ export default (theme: Theme) =>
     },
     disabledWrap: {
       backgroundColor: theme.fill_disabled,
-      borderWidth: 0,
+      borderColor: theme.fill_disabled,
     },
     disabledText: {
       color: theme.color_text_disabled,
     },
     close: {
       position: 'absolute',
-      backgroundColor: theme.color_text_placeholder,
-    },
-    closeIOS: {
-      borderRadius: 8,
-      width: 16,
-      height: 16,
-      left: -5,
-      top: -4,
-      overflow: 'hidden',
-    },
-    closeAndroid: {
-      width: 16,
-      height: 32,
-      left: -2,
-      top: -10,
-      transform: [
-        {
-          rotate: '45deg',
-        },
-      ],
-    },
-    closeText: {
-      color: theme.color_text_base_inverse,
-      textAlign: 'center',
-      fontSize: 20,
-      lineHeight: 18,
-    },
-    closeTransform: {
-      transform: [
-        {
-          rotate: '-45deg',
-        },
-      ],
+      top: -9,
+      left: -10,
+      color: theme.color_text_placeholder,
+      backgroundColor: '#fff',
+      borderRadius: 999,
     },
   })
