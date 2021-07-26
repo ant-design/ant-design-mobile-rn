@@ -116,7 +116,6 @@
     "prepublish": "antd-tools run guard",
     "prepare": "antd-tools run guard",
     "prepublishOnly": "antd-tools run guard",
-    "postinstall" : "pod install --project-directory=./rn-kitchen-sink/ios",
     "test": "jest --config .jest.config.js",
     "test:all": "./scripts/test-all.sh",
     "compile": "cross-env BABEL_ENV=dist antd-tools run compile",
