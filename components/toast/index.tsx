@@ -39,7 +39,7 @@ function removeAll(callback?: () => {}) {
   Object.keys(toastKeyMap).forEach((_key) =>
     Portal.remove(Number.parseInt(_key, 10)),
   )
-   callback?.()
+  callback?.()
 }
 
 function notice(
