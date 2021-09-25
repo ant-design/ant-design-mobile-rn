@@ -17,7 +17,8 @@ const SHORT = 3
 
 const defaultConfig: IToastConfigurable = {
   duration: SHORT,
-  onClose: () => {},
+  onClose: () => {
+  },
   mask: true,
   stackable: true,
 }
@@ -28,15 +29,17 @@ let defaultProps = {
 
 const toastKeyMap: { [key: number]: 1 } = {}
 
-function remove(key: number) {
+function remove(key: number, callback?: () => {}) {
   Portal.remove(key)
   delete toastKeyMap[key]
+  callback?.()
 }
 
-function removeAll() {
+function removeAll(callback?: () => {}) {
   Object.keys(toastKeyMap).forEach((_key) =>
     Portal.remove(Number.parseInt(_key, 10)),
   )
+   callback?.()
 }
 
 function notice(
@@ -87,7 +90,7 @@ export default {
   LONG: 8,
   defaultConfig,
   getConfig: () => {
-    return { ...defaultProps }
+    return {...defaultProps}
   },
   config(props: IToastConfigurable) {
     defaultProps = {
@@ -99,7 +102,8 @@ export default {
    * @deprecated use Toast.info instead
    */
   show(props: string | IToastProps, duration?: number, mask?: boolean) {
-    return notice(props, 'info', duration, () => {}, mask)
+    return notice(props, 'info', duration, () => {
+    }, mask)
   },
   /**
    *
