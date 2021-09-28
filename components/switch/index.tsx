@@ -1,29 +1,3 @@
-import React from 'react'
-import { StyleProp, Switch, ViewStyle } from 'react-native'
-import { SwitchPropsType } from './PropsType'
-export interface AntmSwitchProps extends SwitchPropsType {
-  style?: StyleProp<ViewStyle>
-}
-const AntmSwitch = (props: AntmSwitchProps) => {
-  const {
-    style,
-    onChange,
-    checked = false,
-    disabled = false,
-    color = '#4dd865',
-  } = props
-  return (
-    <Switch
-      style={style}
-      onValueChange={onChange}
-      value={checked}
-      disabled={disabled}
-      trackColor={{
-        true: color,
-        false: '',
-      }}
-    />
-  )
-}
+import Switch from './Switch'
 
-export default AntmSwitch
+export default Switch
