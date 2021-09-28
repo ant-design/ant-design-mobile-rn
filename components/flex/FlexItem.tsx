@@ -23,7 +23,7 @@ export default class FlexItem extends React.Component<FlexItemProps, any> {
   render() {
     const { style, children, flex, ...restProps } = this.props
     const flexItemStyle = {
-      flex: flex || 1,
+      flex: flex ?? 1,
     }
     // support other touchablewithoutfeedback props
     // TODO  support TouchableHighlight
