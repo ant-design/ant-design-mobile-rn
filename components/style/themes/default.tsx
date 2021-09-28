@@ -166,7 +166,10 @@ export default {
   notice_bar_height: 36,
 
   // switch
-  switch_fill: '#4dd865',
+  switch_fill: '#1890ff',
+  switch_unchecked: '#cccccc',
+  switch_unchecked_disabled: '#cccccc66', // switch_fill的40%透明度
+  switch_checked_disabled: '#1890ff66', // switch_unchecked的40%透明度
 
   // tag
   tag_height: 25,
