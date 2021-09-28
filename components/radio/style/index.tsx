@@ -1,36 +1,25 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Theme } from '../../style'
 
-export interface RadioStyle {
-  wrapper: ViewStyle
-  icon: ImageStyle
-  radioItem: ViewStyle
-  radioItemRadio: ViewStyle
-  radioItemContent: TextStyle
-  radioItemContentDisable: TextStyle
-}
-
 export default (theme: Theme) =>
-  StyleSheet.create<RadioStyle>({
-    wrapper: {
-      flexDirection: 'row',
-      alignItems: 'center',
+  StyleSheet.create({
+    checkbox_wave: { borderRadius: 999 },
+    checkbox: { borderRadius: 999 },
+    checkbox_inner: { width: 0, height: 0 },
+    checkbox_inner_after: {
+      width: 8,
+      height: 8,
+      borderRadius: 999,
+      backgroundColor: theme.checkbox_fill,
+      borderWidth: 0,
     },
-    icon: {
-      // width: variables.icon_size_xxs,
-      // height: variables.icon_size_xxs * 0.8,
-    },
-    radioItem: {
-      flexDirection: 'row',
-      alignItems: 'center',
-    },
-    radioItemRadio: {
-      marginLeft: theme.h_spacing_lg,
-      marginRight: theme.h_spacing_md,
+    checkbox_inner_after_disabled: {
+      backgroundColor: '#0003',
     },
     radioItemContent: {
       color: theme.color_text_base,
-      fontSize: theme.font_size_heading,
+      marginRight: theme.h_spacing_md,
+      marginLeft: theme.h_spacing_md,
     },
     radioItemContentDisable: {
       color: theme.color_text_disabled,

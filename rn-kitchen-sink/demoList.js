@@ -122,7 +122,7 @@ module.exports = {
     {
       title: 'Checkbox', // 必须
       description: '复选框',
-      icon: 'https://os.alipayobjects.com/rmsportal/dWPGltvdjaanrRd.png',
+      icon: 'https://os.alipayobjects.com/rmsportal/MJszdVSBKhtGmIP.png',
       module: require('../components/checkbox/demo/basic'), // 必须
     },
     {
@@ -176,7 +176,7 @@ module.exports = {
     {
       title: 'Radio',
       description: '单选框',
-      icon: 'https://os.alipayobjects.com/rmsportal/MJszdVSBKhtGmIP.png',
+      icon: 'https://os.alipayobjects.com/rmsportal/dWPGltvdjaanrRd.png',
       module: require('../components/radio/demo/basic'), // 必须
     },
     {
