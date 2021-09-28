@@ -1,15 +1,21 @@
 import React from 'react'
-import { ActivityIndicator, Text, View } from 'react-native'
+import {
+  ActivityIndicator,
+  Text,
+  View,
+  StyleProp,
+  ViewStyle,
+} from 'react-native'
 import { WithTheme, WithThemeStyles } from '../style'
 import ActivityIndicatorStyles, { ActivityIndicatorStyle } from './style/index'
 
 export interface ActivityIndicatorNativeProps
   extends WithThemeStyles<ActivityIndicatorStyle> {
-  styles?: ActivityIndicatorStyle
+  styles?: { [key: string]: StyleProp<ViewStyle> }
   color?: string
   animating?: boolean
   toast?: boolean
-  size?: 'large' | 'small'
+  size?: number | 'large' | 'small'
   text?: string
 }
 
