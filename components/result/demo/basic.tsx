@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { Image, ScrollView, Text } from 'react-native';
-import { Result } from '../../';
+import React from 'react'
+import { Image, ScrollView, Text } from 'react-native'
+import { Result } from '../../'
 
 export default class ResultExample extends React.Component<any, any> {
   render() {
@@ -10,8 +9,7 @@ export default class ResultExample extends React.Component<any, any> {
         <Text style={{ margin: 10, color: '#999' }}>URI 图片</Text>
         <Result
           imgUrl={{
-            uri:
-              'https://zos.alipayobjects.com/rmsportal/GcBguhrOdlYvGfnsXgrE.png',
+            uri: 'https://zos.alipayobjects.com/rmsportal/GcBguhrOdlYvGfnsXgrE.png',
           }}
           title="验证成功"
           message="所提交内容已成功完成验证"
@@ -51,6 +49,6 @@ export default class ResultExample extends React.Component<any, any> {
           onButtonClick={(e: any) => alert(e.toString())}
         />
       </ScrollView>
-    );
+    )
   }
 }

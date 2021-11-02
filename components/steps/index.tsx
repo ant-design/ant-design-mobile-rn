@@ -1,56 +1,54 @@
-
-import React from 'react';
-import { LayoutChangeEvent, View } from 'react-native';
-import { WithTheme, WithThemeStyles } from '../style';
-import StepsItem from './StepsItem';
-import StepsStyles, { StepsStyle } from './style/index';
+import React from 'react'
+import { LayoutChangeEvent, View } from 'react-native'
+import { WithTheme, WithThemeStyles } from '../style'
+import StepsItem from './StepsItem'
+import StepsStyles, { StepsStyle } from './style/index'
 
 export interface StepsProps extends WithThemeStyles<StepsStyle> {
-  direction?: 'vertical' | 'horizontal';
-  size?: string;
-  finishIcon?: string;
-  children: React.ReactElement<any>[];
-  current?: number;
+  direction?: 'vertical' | 'horizontal'
+  size?: string
+  finishIcon?: string
+  children: React.ReactElement<any>[]
+  current?: number
 }
 
 export default class Steps extends React.Component<StepsProps, any> {
-  static Step: typeof StepsItem;
+  static Step: typeof StepsItem
 
   static defaultProps = {
     direction: '',
-  };
+  }
 
   constructor(props: StepsProps) {
-    super(props);
+    super(props)
     this.state = {
       wrapWidth: 0,
-    };
+    }
   }
 
   onLayout = (e: LayoutChangeEvent) => {
     this.setState({
       wrapWidth: e.nativeEvent.layout.width,
-    });
-  };
+    })
+  }
 
   render() {
-    const children = this.props.children;
-    const direction = this.props.direction === 'horizontal' ? 'row' : 'column';
+    const children = this.props.children
+    const direction = this.props.direction === 'horizontal' ? 'row' : 'column'
     return (
       <WithTheme styles={this.props.styles} themeStyles={StepsStyles}>
-        {styles => (
+        {(styles) => (
           <View
             style={{ flexDirection: direction }}
-            onLayout={e => {
-              this.onLayout(e);
-            }}
-          >
+            onLayout={(e) => {
+              this.onLayout(e)
+            }}>
             {React.Children.map(children, (ele, idx) => {
-              let errorTail = -1;
+              let errorTail = -1
               if (idx < children.length - 1) {
-                const status = children[idx + 1].props.status;
+                const status = children[idx + 1].props.status
                 if (status === 'error') {
-                  errorTail = idx;
+                  errorTail = idx
                 }
               }
               return React.cloneElement(ele as any, {
@@ -64,13 +62,13 @@ export default class Steps extends React.Component<StepsProps, any> {
                 finishIcon: this.props.finishIcon,
                 errorTail,
                 styles,
-              });
+              })
             })}
           </View>
         )}
       </WithTheme>
-    );
+    )
   }
 }
 
-Steps.Step = StepsItem;
+Steps.Step = StepsItem

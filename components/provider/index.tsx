@@ -1,10 +1,10 @@
-import * as React from 'react';
-import LocaleProvider, { Locale } from '../locale-provider';
-import Portal from '../portal';
-import { Theme, ThemeProvider } from '../style';
+import * as React from 'react'
+import LocaleProvider, { Locale } from '../locale-provider'
+import Portal from '../portal'
+import { Theme, ThemeProvider } from '../style'
 export interface ProviderProps {
-  locale?: Partial<Locale>;
-  theme?: Partial<Theme>;
+  locale?: Partial<Locale>
+  theme?: Partial<Theme>
 }
 export default class Provider extends React.Component<ProviderProps> {
   render() {
@@ -14,6 +14,6 @@ export default class Provider extends React.Component<ProviderProps> {
           <Portal.Host>{this.props.children}</Portal.Host>
         </ThemeProvider>
       </LocaleProvider>
-    );
+    )
   }
 }

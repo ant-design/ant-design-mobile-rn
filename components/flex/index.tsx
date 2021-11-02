@@ -1,6 +1,6 @@
-import Flex from './Flex';
-import FlexItem from './FlexItem';
+import Flex from './Flex'
+import FlexItem from './FlexItem'
 
-Flex.Item = FlexItem;
+Flex.Item = FlexItem
 
-export default Flex;
+export default Flex

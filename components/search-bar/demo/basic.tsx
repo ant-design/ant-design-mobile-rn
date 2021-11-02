@@ -1,18 +1,18 @@
-import React from 'react';
-import { Alert, View } from 'react-native';
-import { SearchBar } from '../../';
+import React from 'react'
+import { Alert, View } from 'react-native'
+import { SearchBar } from '../../'
 
 export default class SearchBarDemo extends React.Component<any, any> {
   state = {
     value: '美食',
-  };
+  }
 
   onChange = (value: any) => {
-    this.setState({ value });
+    this.setState({ value })
   }
 
   clear = () => {
-    this.setState({ value: '' });
+    this.setState({ value: '' })
   }
 
   render() {
@@ -28,6 +28,6 @@ export default class SearchBarDemo extends React.Component<any, any> {
           showCancelButton
         />
       </View>
-    );
+    )
   }
 }

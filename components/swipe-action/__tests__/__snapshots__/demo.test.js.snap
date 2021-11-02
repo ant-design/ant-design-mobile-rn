@@ -19,49 +19,379 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
       }
     >
       <View
+        collapsable={false}
+        forwardedRef={[Function]}
+        onGestureHandlerEvent={[Function]}
+        onGestureHandlerStateChange={[Function]}
+        onLayout={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "#dbddde",
-              "overflow": "hidden",
-            },
-            Object {
-              "backgroundColor": "transparent",
-            },
-          ]
+          Object {
+            "overflow": "hidden",
+          }
         }
       >
         <View
-          onLayout={[Function]}
-          onMoveShouldSetResponder={[Function]}
-          onMoveShouldSetResponderCapture={[Function]}
-          onResponderEnd={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderReject={[Function]}
-          onResponderRelease={[Function]}
-          onResponderStart={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onStartShouldSetResponderCapture={[Function]}
           style={
-            Array [
-              Object {},
-              Object {
-                "transform": Array [
-                  Object {
-                    "translateX": 0,
-                  },
-                ],
-              },
-            ]
+            Object {
+              "bottom": 0,
+              "flexDirection": "row",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "translateX": -10000,
+                },
+              ],
+            }
           }
         >
-          <
-            activeOpacity={1}
-            delayLongPress={500}
-            onLongPress={[Function]}
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "width": 120,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "transform": Array [
+                    Object {
+                      "translateX": -0,
+                    },
+                  ],
+                }
+              }
+            >
+              <RNGestureHandlerButton
+                activeOpacity={0.105}
+                collapsable={false}
+                onActiveStateChange={[Function]}
+                onGestureEvent={[Function]}
+                onGestureHandlerEvent={[Function]}
+                onGestureHandlerStateChange={[Function]}
+                onHandlerStateChange={[Function]}
+                onPress={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "blue",
+                    "flex": 1,
+                    "justifyContent": "center",
+                  }
+                }
+                underlayColor="black"
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "black",
+                      "borderBottomLeftRadius": undefined,
+                      "borderBottomRightRadius": undefined,
+                      "borderRadius": undefined,
+                      "borderTopLeftRadius": undefined,
+                      "borderTopRightRadius": undefined,
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "white",
+                        "fontSize": 16,
+                        "padding": 10,
+                      },
+                      undefined,
+                      Object {
+                        "color": "white",
+                      },
+                    ]
+                  }
+                >
+                  Read
+                </Text>
+              </RNGestureHandlerButton>
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "transform": Array [
+                    Object {
+                      "translateX": -60,
+                    },
+                  ],
+                }
+              }
+            >
+              <RNGestureHandlerButton
+                activeOpacity={0.105}
+                collapsable={false}
+                onActiveStateChange={[Function]}
+                onGestureEvent={[Function]}
+                onGestureHandlerEvent={[Function]}
+                onGestureHandlerStateChange={[Function]}
+                onHandlerStateChange={[Function]}
+                onPress={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "green",
+                    "flex": 1,
+                    "justifyContent": "center",
+                  }
+                }
+                underlayColor="black"
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "black",
+                      "borderBottomLeftRadius": undefined,
+                      "borderBottomRightRadius": undefined,
+                      "borderRadius": undefined,
+                      "borderTopLeftRadius": undefined,
+                      "borderTopRightRadius": undefined,
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "white",
+                        "fontSize": 16,
+                        "padding": 10,
+                      },
+                      undefined,
+                      Object {
+                        "color": "white",
+                      },
+                    ]
+                  }
+                >
+                  Reply
+                </Text>
+              </RNGestureHandlerButton>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "flexDirection": "row-reverse",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "translateX": -10000,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "width": 120,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "transform": Array [
+                    Object {
+                      "translateX": 120,
+                    },
+                  ],
+                }
+              }
+            >
+              <RNGestureHandlerButton
+                activeOpacity={0.105}
+                collapsable={false}
+                onActiveStateChange={[Function]}
+                onGestureEvent={[Function]}
+                onGestureHandlerEvent={[Function]}
+                onGestureHandlerStateChange={[Function]}
+                onHandlerStateChange={[Function]}
+                onPress={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "flex": 1,
+                    "justifyContent": "center",
+                  }
+                }
+                underlayColor="black"
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "black",
+                      "borderBottomLeftRadius": undefined,
+                      "borderBottomRightRadius": undefined,
+                      "borderRadius": undefined,
+                      "borderTopLeftRadius": undefined,
+                      "borderTopRightRadius": undefined,
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "white",
+                        "fontSize": 16,
+                        "padding": 10,
+                      },
+                      undefined,
+                      Object {
+                        "color": "white",
+                      },
+                    ]
+                  }
+                >
+                  More
+                </Text>
+              </RNGestureHandlerButton>
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "transform": Array [
+                    Object {
+                      "translateX": 60,
+                    },
+                  ],
+                }
+              }
+            >
+              <RNGestureHandlerButton
+                activeOpacity={0.105}
+                collapsable={false}
+                onActiveStateChange={[Function]}
+                onGestureEvent={[Function]}
+                onGestureHandlerEvent={[Function]}
+                onGestureHandlerStateChange={[Function]}
+                onHandlerStateChange={[Function]}
+                onPress={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "red",
+                    "flex": 1,
+                    "justifyContent": "center",
+                  }
+                }
+                underlayColor="black"
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "black",
+                      "borderBottomLeftRadius": undefined,
+                      "borderBottomRightRadius": undefined,
+                      "borderRadius": undefined,
+                      "borderTopLeftRadius": undefined,
+                      "borderTopRightRadius": undefined,
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "white",
+                        "fontSize": 16,
+                        "padding": 10,
+                      },
+                      undefined,
+                      Object {
+                        "color": "white",
+                      },
+                    ]
+                  }
+                >
+                  Delete
+                </Text>
+              </RNGestureHandlerButton>
+            </View>
+          </View>
+          <View
+            onLayout={[Function]}
+          />
+        </View>
+        <View
+          collapsable={false}
+          forwardedRef={[Function]}
+          onGestureHandlerEvent={[Function]}
+          onGestureHandlerStateChange={[Function]}
+          pointerEvents="auto"
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "translateX": -0,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
           >
             <View
               style={
@@ -148,10 +478,8 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 </View>
               </View>
             </View>
-          </>
+          </View>
         </View>
-        <View />
-        <View />
       </View>
       <View
         style={

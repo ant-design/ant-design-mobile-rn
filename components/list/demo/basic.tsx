@@ -1,11 +1,10 @@
-
 // tslint:disable:no-empty
-import React from 'react';
-import { Image, ScrollView, View } from 'react-native';
-import { List } from '../../';
+import React from 'react'
+import { Image, ScrollView, View } from 'react-native'
+import { List } from '../../'
 
-const Item = List.Item;
-const Brief = Item.Brief;
+const Item = List.Item
+const Brief = Item.Brief
 
 export default class BasicListExample extends React.Component<any, any> {
   render() {
@@ -14,8 +13,7 @@ export default class BasicListExample extends React.Component<any, any> {
         style={{ flex: 1, backgroundColor: '#f5f5f9' }}
         automaticallyAdjustContentInsets={false}
         showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-      >
+        showsVerticalScrollIndicator={false}>
         <List renderHeader={'basic'}>
           <Item data-seed="logId">
             标题文字点击无反馈，文字超长则隐藏，文字超长则隐藏
@@ -42,8 +40,7 @@ export default class BasicListExample extends React.Component<any, any> {
                 <Brief style={{ textAlign: 'right' }}>辅助文字内容</Brief>
               </View>
             }
-            multipleLine
-          >
+            multipleLine>
             垂直居中对齐
           </Item>
           <Item extra="内容内容" multipleLine>
@@ -54,8 +51,7 @@ export default class BasicListExample extends React.Component<any, any> {
             extra="文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行"
             multipleLine
             align="top"
-            arrow="horizontal"
-          >
+            arrow="horizontal">
             顶部对齐
             <Brief>辅助文字内容辅助文字内容辅助文字内容辅助文字内容</Brief>
             <Brief>辅助文字内容</Brief>
@@ -68,8 +64,7 @@ export default class BasicListExample extends React.Component<any, any> {
               </View>
             }
             multipleLine
-            align="bottom"
-          >
+            align="bottom">
             底部对齐
           </Item>
         </List>
@@ -79,29 +74,26 @@ export default class BasicListExample extends React.Component<any, any> {
           </Item>
           <Item
             thumb="https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png"
-            arrow="horizontal"
-          >
+            arrow="horizontal">
             thumb
           </Item>
           <Item
             extra={
               <Image
                 source={{
-                  uri:
-                    'https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png',
+                  uri: 'https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png',
                 }}
                 style={{ width: 29, height: 29 }}
               />
             }
-            arrow="horizontal"
-          >
+            arrow="horizontal">
             extra为Image
           </Item>
         </List>
       </ScrollView>
-    );
+    )
   }
 }
 
-export const title = 'List';
-export const description = 'List Example';
+export const title = 'List'
+export const description = 'List Example'

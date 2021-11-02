@@ -1,17 +1,17 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import varibles from '../../style/themes/default';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import varibles from '../../style/themes/default'
 
 export interface ImagePickerStyle {
-  container: ViewStyle;
-  size: ImageStyle;
-  item: ViewStyle;
-  image: ImageStyle;
-  closeWrap: ViewStyle;
-  closeText: TextStyle;
-  plusWrap: ViewStyle;
-  plusWrapNormal: ViewStyle;
-  plusWrapHighlight: ViewStyle;
-  plusText: TextStyle;
+  container: ViewStyle
+  size: ImageStyle
+  item: ViewStyle
+  image: ImageStyle
+  closeWrap: ViewStyle
+  closeText: TextStyle
+  plusWrap: ViewStyle
+  plusWrapNormal: ViewStyle
+  plusWrapHighlight: ViewStyle
+  plusText: TextStyle
 }
 
 export default () =>
@@ -73,4 +73,4 @@ export default () =>
       fontWeight: '100',
       color: varibles.color_text_caption,
     },
-  });
+  })

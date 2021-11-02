@@ -1,15 +1,15 @@
 /* tslint:disable:no-console */
-import React from 'react';
-import { Text, View } from 'react-native';
-import { SegmentedControl, WhiteSpace } from '../../';
+import React from 'react'
+import { Text, View } from 'react-native'
+import { SegmentedControl, WhiteSpace } from '../../'
 
 export default class BasicTagExample extends React.Component<any, any> {
   onChange = (e: any) => {
-    console.log(`selectedIndex:${e.nativeEvent.selectedSegmentIndex}`);
+    console.log(`selectedIndex:${e.nativeEvent.selectedSegmentIndex}`)
   }
 
   onValueChange = (value: any) => {
-    console.log(value);
+    console.log(value)
   }
 
   render() {
@@ -38,6 +38,6 @@ export default class BasicTagExample extends React.Component<any, any> {
           onValueChange={this.onValueChange}
         />
       </View>
-    );
+    )
   }
 }

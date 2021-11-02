@@ -1,8 +1,8 @@
-import { StyleSheet, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 export interface ProgressStyle {
-  progressOuter: ViewStyle;
-  progressBar: ViewStyle;
+  progressOuter: ViewStyle
+  progressBar: ViewStyle
 }
 export default (theme: Theme) =>
   StyleSheet.create<ProgressStyle>({
@@ -15,4 +15,4 @@ export default (theme: Theme) =>
       borderStyle: 'solid',
       borderColor: theme.brand_primary,
     },
-  });
+  })

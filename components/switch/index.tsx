@@ -1,8 +1,8 @@
-import React from 'react';
-import { StyleProp, Switch, ViewStyle } from 'react-native';
-import { SwitchPropsType } from './PropsType';
+import React from 'react'
+import { StyleProp, Switch, ViewStyle } from 'react-native'
+import { SwitchPropsType } from './PropsType'
 export interface AntmSwitchProps extends SwitchPropsType {
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>
 }
 const AntmSwitch = (props: AntmSwitchProps) => {
   const {
@@ -11,7 +11,7 @@ const AntmSwitch = (props: AntmSwitchProps) => {
     checked = false,
     disabled = false,
     color = '#4dd865',
-  } = props;
+  } = props
   return (
     <Switch
       style={style}
@@ -23,7 +23,7 @@ const AntmSwitch = (props: AntmSwitchProps) => {
         false: '',
       }}
     />
-  );
-};
+  )
+}
 
-export default AntmSwitch;
+export default AntmSwitch

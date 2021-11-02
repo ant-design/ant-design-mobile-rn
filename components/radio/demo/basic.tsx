@@ -1,14 +1,13 @@
-
-import React from 'react';
-import { Text, View } from 'react-native';
-import { List, Radio, WhiteSpace } from '../../';
-const RadioItem = Radio.RadioItem;
+import React from 'react'
+import { Text, View } from 'react-native'
+import { List, Radio, WhiteSpace } from '../../'
+const RadioItem = Radio.RadioItem
 
 export default class BasicRadioExample extends React.Component<any, any> {
   state = {
     part1Value: 1,
     part2Value: 1,
-  };
+  }
 
   render() {
     return (
@@ -18,11 +17,10 @@ export default class BasicRadioExample extends React.Component<any, any> {
             checked={this.state.part1Value === 1}
             onChange={(event: any) => {
               if (event.target.checked) {
-                this.setState({ part1Value: 1 });
+                this.setState({ part1Value: 1 })
               }
             }}
-            style={{ borderWidth: 1, borderColor: '#999', margin: 10 }}
-          >
+            style={{ borderWidth: 1, borderColor: '#999', margin: 10 }}>
             Support
           </Radio>
           <WhiteSpace />
@@ -30,7 +28,7 @@ export default class BasicRadioExample extends React.Component<any, any> {
             checked={this.state.part1Value === 2}
             onChange={(event: any) => {
               if (event.target.checked) {
-                this.setState({ part1Value: 2 });
+                this.setState({ part1Value: 2 })
               }
             }}
             style={{ borderWidth: 1, borderColor: '#999', margin: 10 }}
@@ -46,20 +44,18 @@ export default class BasicRadioExample extends React.Component<any, any> {
             checked={this.state.part2Value === 1}
             onChange={(event: any) => {
               if (event.target.checked) {
-                this.setState({ part2Value: 1 });
+                this.setState({ part2Value: 1 })
               }
-            }}
-          >
+            }}>
             Use Ant Design Component
           </RadioItem>
           <RadioItem
             checked={this.state.part2Value === 2}
             onChange={(event: any) => {
               if (event.target.checked) {
-                this.setState({ part2Value: 2 });
+                this.setState({ part2Value: 2 })
               }
-            }}
-          >
+            }}>
             Use Ant Design Component
           </RadioItem>
           <RadioItem disabled>Set disabled</RadioItem>
@@ -68,6 +64,6 @@ export default class BasicRadioExample extends React.Component<any, any> {
           </RadioItem>
         </List>
       </View>
-    );
+    )
   }
 }

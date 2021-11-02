@@ -1,5 +1,5 @@
-const brandPrimary = '#108ee9';
-const brandPrimaryTap = '#1284d6';
+const brandPrimary = '#108ee9'
+const brandPrimaryTap = '#1284d6'
 
 export default {
   // 支付宝钱包默认主题
@@ -10,26 +10,26 @@ export default {
   // 8-digit-hex to 4-digit hex https://css-tricks.com/8-digit-hex-codes/
   // https://www.chromestatus.com/feature/5685348285808640 chrome will support `#RGBA`
   // 文字色
-  color_text_base: '#000000',                  // 基本
-  color_text_base_inverse: '#ffffff',          // 基本 _ 反色
-  color_text_secondary: '#a4a9b0',          // 辅助色
-  color_text_placeholder: '#bbbbbb',           // 文本框提示
-  color_text_disabled: '#bbbbbb',              // 失效
-  color_text_caption: '#888888',               // 辅助描述
-  color_text_paragraph: '#333333',             // 段落
-  color_link: brandPrimary,                 // 链接
+  color_text_base: '#000000', // 基本
+  color_text_base_inverse: '#ffffff', // 基本 _ 反色
+  color_text_secondary: '#a4a9b0', // 辅助色
+  color_text_placeholder: '#bbbbbb', // 文本框提示
+  color_text_disabled: '#bbbbbb', // 失效
+  color_text_caption: '#888888', // 辅助描述
+  color_text_paragraph: '#333333', // 段落
+  color_link: brandPrimary, // 链接
 
   // 背景色
-  fill_base: '#ffffff',                           // 组件默认背景
-  fill_body: '#f5f5f9',                        // 页面背景
-  fill_tap: '#dddddd',                            // 组件默认背景 _ 按下
-  fill_disabled: '#dddddd',                       // 通用失效背景
-  fill_mask: 'rgba(0, 0, 0, .4)',              // 遮罩背景
-  color_icon_base: '#cccccc',                     // 许多小图标的背景，比如一些小圆点，加减号
+  fill_base: '#ffffff', // 组件默认背景
+  fill_body: '#f5f5f9', // 页面背景
+  fill_tap: '#dddddd', // 组件默认背景 _ 按下
+  fill_disabled: '#dddddd', // 通用失效背景
+  fill_mask: 'rgba(0, 0, 0, .4)', // 遮罩背景
+  color_icon_base: '#cccccc', // 许多小图标的背景，比如一些小圆点，加减号
   fill_grey: '#f7f7f7',
 
   // 透明度
-  opacity_disabled: '0.3',   // switch checkbox radio 等组件禁用的透明度
+  opacity_disabled: '0.3', // switch checkbox radio 等组件禁用的透明度
 
   // 全局/品牌色
   brand_primary: brandPrimary,
@@ -37,7 +37,7 @@ export default {
   brand_success: '#6abf47',
   brand_warning: '#f4333c',
   brand_error: '#f4333c',
-  brand_important: '#ff5b05',  // 用于小红点
+  brand_important: '#ff5b05', // 用于小红点
   brand_wait: '#108ee9',
 
   // 边框色
@@ -81,15 +81,15 @@ export default {
 
   // 高度
   // ---
-  line_height_base: 1,           // 单行行高
-  line_height_paragraph: 1.5,    // 多行行高
+  line_height_base: 1, // 单行行高
+  line_height_paragraph: 1.5, // 多行行高
 
   // 图标尺寸
   // ---
   icon_size_xxs: 15,
   icon_size_xs: 18,
   icon_size_sm: 21,
-  icon_size_md: 22,       // 导航条上的图标
+  icon_size_md: 22, // 导航条上的图标
   icon_size_lg: 36,
 
   // 动画缓动
@@ -112,7 +112,7 @@ export default {
   primary_button_fill: brandPrimary,
   primary_button_fill_tap: '#0e80d2',
 
-  ghost_button_color: brandPrimary,    // 同时应用于背景、文字颜色、边框色
+  ghost_button_color: brandPrimary, // 同时应用于背景、文字颜色、边框色
   ghost_button_fill_tap: `${brandPrimary}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
 
   warning_button_fill: '#e94f4f',
@@ -132,7 +132,7 @@ export default {
   list_item_height: 44,
 
   // input
-  input_label_width: 17,       // InputItem、TextareaItem 文字长度基础值
+  input_label_width: 17, // InputItem、TextareaItem 文字长度基础值
   input_font_size: 17,
   input_color_icon: '#cccccc',
   input_color_icon_tap: brandPrimary,
@@ -143,7 +143,7 @@ export default {
   tabs_font_size_heading: 15,
 
   // segmented_control
-  segmented_control_color: brandPrimary,  // 同时应用于背景、文字颜色、边框色
+  segmented_control_color: brandPrimary, // 同时应用于背景、文字颜色、边框色
   segmented_control_height: 27,
   segmented_control_fill_tap: `${brandPrimary}10`,
 
@@ -173,10 +173,10 @@ export default {
   tag_small_height: 15,
 
   // picker
-  option_height: 42,            // picker 标题的高度
+  option_height: 42, // picker 标题的高度
 
   toast_zindex: 1999,
   action_sheet_zindex: 1000,
   popup_zindex: 999,
   modal_zindex: 999,
-};
+}

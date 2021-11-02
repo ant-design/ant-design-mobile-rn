@@ -9,45 +9,50 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       }
     }
   >
-    <TouchableWithoutFeedback
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "alignItems": "center",
-              "flexDirection": "row",
+              "color": "#108ee9",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
             },
+            Array [
+              Object {
+                "height": 21,
+                "width": 21,
+              },
+              Object {
+                "color": "#f00",
+              },
+            ],
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#108ee9",
-                "fontFamily": "antoutline",
-                "fontSize": 22,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Array [
-                Object {
-                  "height": 21,
-                  "width": 21,
-                },
-                Object {
-                  "color": "#f00",
-                },
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        
+      </Text>
+    </View>
     <View
       style={
         Array [
@@ -58,52 +63,57 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         ]
       }
     />
-    <TouchableWithoutFeedback
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "alignItems": "center",
-              "flexDirection": "row",
+              "color": "#108ee9",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
             },
+            Array [
+              Object {
+                "height": 21,
+                "width": 21,
+              },
+              undefined,
+            ],
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#108ee9",
-                "fontFamily": "antoutline",
-                "fontSize": 22,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Array [
-                Object {
-                  "height": 21,
-                  "width": 21,
-                },
-                undefined,
-              ],
-            ]
+        
+      </Text>
+      <Text
+        style={
+          Object {
+            "marginLeft": 8,
           }
-        >
-          
-        </Text>
-        <Text
-          style={
-            Object {
-              "marginLeft": 8,
-            }
-          }
-        >
-          Checkbox
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        }
+      >
+        Checkbox
+      </Text>
+    </View>
     <View
       style={
         Array [
@@ -114,43 +124,48 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         ]
       }
     />
-    <TouchableWithoutFeedback
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "alignItems": "center",
-              "flexDirection": "row",
+              "color": "#cccccc",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
             },
+            Array [
+              Object {
+                "height": 21,
+                "width": 21,
+              },
+              undefined,
+            ],
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#cccccc",
-                "fontFamily": "antoutline",
-                "fontSize": 22,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Array [
-                Object {
-                  "height": 21,
-                  "width": 21,
-                },
-                undefined,
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        
+      </Text>
+    </View>
     <View
       style={
         Array [
@@ -161,43 +176,48 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         ]
       }
     />
-    <TouchableWithoutFeedback
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "alignItems": "center",
-              "flexDirection": "row",
+              "color": "#cccccc",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
             },
+            Array [
+              Object {
+                "height": 21,
+                "width": 21,
+              },
+              undefined,
+            ],
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#cccccc",
-                "fontFamily": "antoutline",
-                "fontSize": 22,
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Array [
-                Object {
-                  "height": 21,
-                  "width": 21,
-                },
-                undefined,
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        
+      </Text>
+    </View>
   </View>
   <View
     style={
@@ -209,76 +229,86 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <TouchableWithoutFeedback
-    onPress={[Function]}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }
   >
     <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Array [
           Object {
             "alignItems": "center",
             "flexDirection": "row",
           },
-          undefined,
         ]
       }
     >
-      <TouchableWithoutFeedback
-        onPress={[Function]}
-      >
-        <View
-          style={
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#108ee9",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
             Array [
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "height": 21,
+                "width": 21,
               },
-            ]
-          }
-        >
-          <Text
-            style={
               Array [
                 Object {
-                  "color": "#108ee9",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
+                  "marginLeft": 15,
+                  "marginRight": 8,
                 },
-                Array [
-                  Object {
-                    "height": 21,
-                    "width": 21,
-                  },
-                  Array [
-                    Object {
-                      "marginLeft": 15,
-                      "marginRight": 8,
-                    },
-                    undefined,
-                  ],
-                ],
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <View
-        style={
-          Object {
-            "flex": 1,
-          }
+                undefined,
+              ],
+            ],
+          ]
         }
       >
-        <Text>
-          Agree agreement agreement agreement agreement agreement agreement agreement
-        </Text>
-      </View>
+        
+      </Text>
     </View>
-  </TouchableWithoutFeedback>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text>
+        Agree agreement agreement agreement agreement agreement agreement agreement
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -289,78 +319,88 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <TouchableWithoutFeedback
-    onPress={[Function]}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }
   >
     <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Array [
           Object {
             "alignItems": "center",
             "flexDirection": "row",
           },
-          undefined,
         ]
       }
     >
-      <TouchableWithoutFeedback
-        onPress={[Function]}
-      >
-        <View
-          style={
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#108ee9",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
             Array [
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "height": 21,
+                "width": 21,
               },
-            ]
-          }
-        >
-          <Text
-            style={
               Array [
                 Object {
-                  "color": "#108ee9",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
+                  "marginLeft": 15,
+                  "marginRight": 8,
                 },
-                Array [
-                  Object {
-                    "height": 21,
-                    "width": 21,
-                  },
-                  Array [
-                    Object {
-                      "marginLeft": 15,
-                      "marginRight": 8,
-                    },
-                    Object {
-                      "color": "#f00",
-                    },
-                  ],
-                ],
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <View
-        style={
-          Object {
-            "flex": 1,
-          }
+                Object {
+                  "color": "#f00",
+                },
+              ],
+            ],
+          ]
         }
       >
-        <Text>
-          Agree agreement
-        </Text>
-      </View>
+        
+      </Text>
     </View>
-  </TouchableWithoutFeedback>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text>
+        Agree agreement
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -371,76 +411,86 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <TouchableWithoutFeedback
-    onPress={[Function]}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }
   >
     <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Array [
           Object {
             "alignItems": "center",
             "flexDirection": "row",
           },
-          undefined,
         ]
       }
     >
-      <TouchableWithoutFeedback
-        onPress={[Function]}
-      >
-        <View
-          style={
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#cccccc",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
             Array [
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "height": 21,
+                "width": 21,
               },
-            ]
-          }
-        >
-          <Text
-            style={
               Array [
                 Object {
-                  "color": "#cccccc",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
+                  "marginLeft": 15,
+                  "marginRight": 8,
                 },
-                Array [
-                  Object {
-                    "height": 21,
-                    "width": 21,
-                  },
-                  Array [
-                    Object {
-                      "marginLeft": 15,
-                      "marginRight": 8,
-                    },
-                    undefined,
-                  ],
-                ],
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <View
-        style={
-          Object {
-            "flex": 1,
-          }
+                undefined,
+              ],
+            ],
+          ]
         }
       >
-        <Text>
-          Not selected. Not editable
-        </Text>
-      </View>
+        
+      </Text>
     </View>
-  </TouchableWithoutFeedback>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text>
+        Not selected. Not editable
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -451,76 +501,86 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <TouchableWithoutFeedback
-    onPress={[Function]}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }
   >
     <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Array [
           Object {
             "alignItems": "center",
             "flexDirection": "row",
           },
-          undefined,
         ]
       }
     >
-      <TouchableWithoutFeedback
-        onPress={[Function]}
-      >
-        <View
-          style={
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#cccccc",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
             Array [
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "height": 21,
+                "width": 21,
               },
-            ]
-          }
-        >
-          <Text
-            style={
               Array [
                 Object {
-                  "color": "#cccccc",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
+                  "marginLeft": 15,
+                  "marginRight": 8,
                 },
-                Array [
-                  Object {
-                    "height": 21,
-                    "width": 21,
-                  },
-                  Array [
-                    Object {
-                      "marginLeft": 15,
-                      "marginRight": 8,
-                    },
-                    undefined,
-                  ],
-                ],
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <View
-        style={
-          Object {
-            "flex": 1,
-          }
+                undefined,
+              ],
+            ],
+          ]
         }
       >
-        <Text>
-          Force selected. Not editable
-        </Text>
-      </View>
+        
+      </Text>
     </View>
-  </TouchableWithoutFeedback>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text>
+        Force selected. Not editable
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {
@@ -546,12 +606,16 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
       >
         Multiple options
       </Text>
-      <
-        activeOpacity={0.5}
-        delayLongPress={500}
-        onLongPress={[Function]}
-        onPress={[Function]}
-        underlayColor="#dddddd"
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -567,49 +631,54 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <TouchableWithoutFeedback
-            onPress={[Function]}
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+              ]
+            }
           >
-            <View
+            <Text
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
+                    "color": "#108ee9",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
                   },
-                ]
-              }
-            >
-              <Text
-                style={
                   Array [
                     Object {
-                      "color": "#108ee9",
-                      "fontFamily": "antoutline",
-                      "fontSize": 22,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "height": 21,
+                      "width": 21,
                     },
                     Array [
                       Object {
-                        "height": 21,
-                        "width": 21,
+                        "alignSelf": "center",
+                        "marginRight": 8,
                       },
-                      Array [
-                        Object {
-                          "alignSelf": "center",
-                          "marginRight": 8,
-                        },
-                        undefined,
-                      ],
+                      undefined,
                     ],
-                  ]
-                }
-              >
-                
-              </Text>
-            </View>
-          </TouchableWithoutFeedback>
+                  ],
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
           <View
             style={
               Array [
@@ -655,13 +724,17 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
         </View>
-      </>
-      <
-        activeOpacity={0.5}
-        delayLongPress={500}
-        onLongPress={[Function]}
-        onPress={[Function]}
-        underlayColor="#dddddd"
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -677,49 +750,54 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <TouchableWithoutFeedback
-            onPress={[Function]}
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+              ]
+            }
           >
-            <View
+            <Text
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
+                    "color": "#108ee9",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
                   },
-                ]
-              }
-            >
-              <Text
-                style={
                   Array [
                     Object {
-                      "color": "#108ee9",
-                      "fontFamily": "antoutline",
-                      "fontSize": 22,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "height": 21,
+                      "width": 21,
                     },
                     Array [
                       Object {
-                        "height": 21,
-                        "width": 21,
+                        "alignSelf": "center",
+                        "marginRight": 8,
                       },
-                      Array [
-                        Object {
-                          "alignSelf": "center",
-                          "marginRight": 8,
-                        },
-                        undefined,
-                      ],
+                      undefined,
                     ],
-                  ]
-                }
-              >
-                
-              </Text>
-            </View>
-          </TouchableWithoutFeedback>
+                  ],
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
           <View
             style={
               Array [
@@ -765,11 +843,17 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
         </View>
-      </>
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -785,49 +869,54 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <TouchableWithoutFeedback
-            onPress={[Function]}
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+              ]
+            }
           >
-            <View
+            <Text
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
+                    "color": "#cccccc",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
                   },
-                ]
-              }
-            >
-              <Text
-                style={
                   Array [
                     Object {
-                      "color": "#cccccc",
-                      "fontFamily": "antoutline",
-                      "fontSize": 22,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "height": 21,
+                      "width": 21,
                     },
                     Array [
                       Object {
-                        "height": 21,
-                        "width": 21,
+                        "alignSelf": "center",
+                        "marginRight": 8,
                       },
-                      Array [
-                        Object {
-                          "alignSelf": "center",
-                          "marginRight": 8,
-                        },
-                        undefined,
-                      ],
+                      undefined,
                     ],
-                  ]
-                }
-              >
-                
-              </Text>
-            </View>
-          </TouchableWithoutFeedback>
+                  ],
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
           <View
             style={
               Array [
@@ -873,11 +962,17 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
         </View>
-      </>
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -893,49 +988,54 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          <TouchableWithoutFeedback
-            onPress={[Function]}
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+              ]
+            }
           >
-            <View
+            <Text
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
+                    "color": "#cccccc",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
                   },
-                ]
-              }
-            >
-              <Text
-                style={
                   Array [
                     Object {
-                      "color": "#cccccc",
-                      "fontFamily": "antoutline",
-                      "fontSize": 22,
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
+                      "height": 21,
+                      "width": 21,
                     },
                     Array [
                       Object {
-                        "height": 21,
-                        "width": 21,
+                        "alignSelf": "center",
+                        "marginRight": 8,
                       },
-                      Array [
-                        Object {
-                          "alignSelf": "center",
-                          "marginRight": 8,
-                        },
-                        undefined,
-                      ],
+                      undefined,
                     ],
-                  ]
-                }
-              >
-                
-              </Text>
-            </View>
-          </TouchableWithoutFeedback>
+                  ],
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
           <View
             style={
               Array [
@@ -981,7 +1081,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
         </View>
-      </>
+      </View>
       <View
         style={
           Array [

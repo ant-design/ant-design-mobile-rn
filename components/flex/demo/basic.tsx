@@ -1,19 +1,18 @@
-
-import React from 'react';
-import { ScrollView, Text, TouchableWithoutFeedback, View } from 'react-native';
-import { Button, Flex, WhiteSpace, WingBlank } from '../../';
+import React from 'react'
+import { ScrollView, Text, TouchableWithoutFeedback, View } from 'react-native'
+import { Button, Flex, WhiteSpace, WingBlank } from '../../'
 
 const Circle = (props: any) => {
-  const size = props.size || 20;
+  const size = props.size || 20
   const style = {
     borderRadius: size / 2,
     backgroundColor: '#527fe4',
     width: size,
     height: size,
     margin: 1,
-  };
-  return <View style={style} />;
-};
+  }
+  return <View style={style} />
+}
 
 export default class FlexExample extends React.Component<any, any> {
   render() {
@@ -22,8 +21,7 @@ export default class FlexExample extends React.Component<any, any> {
         style={{ flex: 1 }}
         automaticallyAdjustContentInsets={false}
         showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-      >
+        showsVerticalScrollIndicator={false}>
         <WingBlank style={{ marginTop: 20, marginBottom: 5 }}>
           <Text style={{ marginBottom: 10 }}>项目的排列方向</Text>
           <Text>direction="row":主轴为水平方向，起点在左端</Text>
@@ -134,8 +132,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -144,8 +141,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -154,8 +150,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -164,8 +159,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
           </Flex>
@@ -181,8 +175,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -191,8 +184,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -201,8 +193,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -211,8 +202,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
           </Flex>
@@ -228,8 +218,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -238,8 +227,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -248,8 +236,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
             <Text
@@ -258,8 +245,7 @@ export default class FlexExample extends React.Component<any, any> {
                 borderWidth: 1,
                 borderStyle: 'solid',
                 borderColor: '#527fe4',
-              }}
-            >
+              }}>
               兜兜
             </Text>
           </Flex>
@@ -278,8 +264,7 @@ export default class FlexExample extends React.Component<any, any> {
                   borderWidth: 1,
                   borderStyle: 'solid',
                   borderColor: '#527fe4',
-                }}
-              >
+                }}>
                 兜兜
               </Text>
               <Text
@@ -288,8 +273,7 @@ export default class FlexExample extends React.Component<any, any> {
                   borderWidth: 1,
                   borderStyle: 'solid',
                   borderColor: '#527fe4',
-                }}
-              >
+                }}>
                 兜兜
               </Text>
               <Text
@@ -298,8 +282,7 @@ export default class FlexExample extends React.Component<any, any> {
                   borderWidth: 1,
                   borderStyle: 'solid',
                   borderColor: '#527fe4',
-                }}
-              >
+                }}>
                 兜兜
               </Text>
               <Text
@@ -308,8 +291,7 @@ export default class FlexExample extends React.Component<any, any> {
                   borderWidth: 1,
                   borderStyle: 'solid',
                   borderColor: '#527fe4',
-                }}
-              >
+                }}>
                 兜兜
               </Text>
             </Flex>
@@ -322,9 +304,9 @@ export default class FlexExample extends React.Component<any, any> {
         <WingBlank style={{ marginBottom: 5 }}>
           <TouchableWithoutFeedback onPress={() => ({})}>
             <Flex wrap="wrap">
-              {'ooooooooooooooooooooooooooooo'
-                .split('')
-                .map((char, i) => <Circle key={`${i}-${char}`} />)}
+              {'ooooooooooooooooooooooooooooo'.split('').map((char, i) => (
+                <Circle key={`${i}-${char}`} />
+              ))}
             </Flex>
           </TouchableWithoutFeedback>
         </WingBlank>
@@ -333,15 +315,15 @@ export default class FlexExample extends React.Component<any, any> {
         </WingBlank>
         <WingBlank style={{ marginBottom: 5 }}>
           <Flex wrap="nowrap" onPress={() => ({})}>
-            {'ooooooooooooooooooooooooooooo'
-              .split('')
-              .map((char, i) => <Circle key={`${i}-${char}`} />)}
+            {'ooooooooooooooooooooooooooooo'.split('').map((char, i) => (
+              <Circle key={`${i}-${char}`} />
+            ))}
           </Flex>
         </WingBlank>
         <WhiteSpace />
         <WhiteSpace />
         <WhiteSpace />
       </ScrollView>
-    );
+    )
   }
 }

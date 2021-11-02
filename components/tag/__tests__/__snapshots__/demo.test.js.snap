@@ -21,48 +21,52 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <TouchableWithoutFeedback
-      onLongPress={[Function]}
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 15,
+            "paddingVertical": 6,
+          },
+          Object {},
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#dddddd",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "borderRadius": 3,
-              "borderStyle": "solid",
-              "borderWidth": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 15,
-              "paddingVertical": 6,
+              "fontSize": 12,
+              "textAlign": "center",
             },
             Object {},
             Object {
-              "backgroundColor": "#ffffff",
-              "borderColor": "#dddddd",
+              "color": "#888888",
             },
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 12,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "color": "#888888",
-              },
-            ]
-          }
-        >
-          Basic
-           
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        Basic
+         
+      </Text>
+    </View>
   </View>
   <View
     style={
@@ -87,48 +91,52 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <TouchableWithoutFeedback
-      onLongPress={[Function]}
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 15,
+            "paddingVertical": 6,
+          },
+          Object {},
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#108ee9",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "borderRadius": 3,
-              "borderStyle": "solid",
-              "borderWidth": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 15,
-              "paddingVertical": 6,
+              "fontSize": 12,
+              "textAlign": "center",
             },
             Object {},
             Object {
-              "backgroundColor": "#ffffff",
-              "borderColor": "#108ee9",
+              "color": "#108ee9",
             },
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 12,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "color": "#108ee9",
-              },
-            ]
-          }
-        >
-          Selected
-           
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        Selected
+         
+      </Text>
+    </View>
   </View>
   <View
     style={
@@ -153,48 +161,52 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <TouchableWithoutFeedback
-      onLongPress={[Function]}
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 15,
+            "paddingVertical": 6,
+          },
+          Object {},
+          Object {
+            "backgroundColor": "#dddddd",
+            "borderWidth": 0,
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "borderRadius": 3,
-              "borderStyle": "solid",
-              "borderWidth": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 15,
-              "paddingVertical": 6,
+              "fontSize": 12,
+              "textAlign": "center",
             },
             Object {},
             Object {
-              "backgroundColor": "#dddddd",
-              "borderWidth": 0,
+              "color": "#bbbbbb",
             },
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 12,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "color": "#bbbbbb",
-              },
-            ]
-          }
-        >
-          Disabled
-           
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        Disabled
+         
+      </Text>
+    </View>
   </View>
   <View
     style={
@@ -219,48 +231,52 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <TouchableWithoutFeedback
-      onLongPress={[Function]}
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 15,
+            "paddingVertical": 6,
+          },
+          Object {},
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#dddddd",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "borderRadius": 3,
-              "borderStyle": "solid",
-              "borderWidth": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 15,
-              "paddingVertical": 6,
+              "fontSize": 12,
+              "textAlign": "center",
             },
             Object {},
             Object {
-              "backgroundColor": "#ffffff",
-              "borderColor": "#dddddd",
+              "color": "#888888",
             },
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 12,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "color": "#888888",
-              },
-            ]
-          }
-        >
-          Callback
-           
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        Callback
+         
+      </Text>
+    </View>
   </View>
   <View
     style={
@@ -285,88 +301,95 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <TouchableWithoutFeedback
-      onLongPress={[Function]}
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 15,
+            "paddingVertical": 6,
+          },
+          Object {},
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#dddddd",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "borderRadius": 3,
-              "borderStyle": "solid",
-              "borderWidth": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 15,
-              "paddingVertical": 6,
+              "fontSize": 12,
+              "textAlign": "center",
             },
             Object {},
             Object {
-              "backgroundColor": "#ffffff",
-              "borderColor": "#dddddd",
+              "color": "#888888",
             },
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 12,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "color": "#888888",
-              },
-            ]
-          }
-        >
-          Closable
-           
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
-    <TouchableWithoutFeedback
-      onPress={[Function]}
-      onPressIn={[Function]}
-      onPressOut={[Function]}
+        Closable
+         
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#bbbbbb",
+            "position": "absolute",
+          },
+          Object {
+            "borderRadius": 8,
+            "height": 16,
+            "left": -5,
+            "overflow": "hidden",
+            "top": -4,
+            "width": 16,
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "backgroundColor": "#bbbbbb",
-              "position": "absolute",
+              "color": "#ffffff",
+              "fontSize": 20,
+              "lineHeight": 18,
+              "textAlign": "center",
             },
-            Object {
-              "borderRadius": 8,
-              "height": 16,
-              "left": -5,
-              "overflow": "hidden",
-              "top": -4,
-              "width": 16,
-            },
+            Object {},
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#ffffff",
-                "fontSize": 20,
-                "lineHeight": 18,
-                "textAlign": "center",
-              },
-              Object {},
-            ]
-          }
-        >
-          ×
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        ×
+      </Text>
+    </View>
   </View>
   <View
     style={
@@ -391,53 +414,57 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <TouchableWithoutFeedback
-      onLongPress={[Function]}
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 15,
+            "paddingVertical": 6,
+          },
+          Object {
+            "paddingHorizontal": 5,
+            "paddingVertical": 1.5,
+          },
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#dddddd",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "borderRadius": 3,
-              "borderStyle": "solid",
-              "borderWidth": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 15,
-              "paddingVertical": 6,
+              "fontSize": 12,
+              "textAlign": "center",
             },
             Object {
-              "paddingHorizontal": 5,
-              "paddingVertical": 1.5,
+              "fontSize": 10,
             },
             Object {
-              "backgroundColor": "#ffffff",
-              "borderColor": "#dddddd",
+              "color": "#888888",
             },
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 12,
-                "textAlign": "center",
-              },
-              Object {
-                "fontSize": 10,
-              },
-              Object {
-                "color": "#888888",
-              },
-            ]
-          }
-        >
-          Small and Readonly
-           
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        Small and Readonly
+         
+      </Text>
+    </View>
   </View>
   <View
     style={
@@ -462,48 +489,52 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
       ]
     }
   >
-    <TouchableWithoutFeedback
-      onLongPress={[Function]}
-      onPress={[Function]}
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 15,
+            "paddingVertical": 6,
+          },
+          Object {},
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#dddddd",
+          },
+        ]
+      }
     >
-      <View
+      <Text
         style={
           Array [
             Object {
-              "borderRadius": 3,
-              "borderStyle": "solid",
-              "borderWidth": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 15,
-              "paddingVertical": 6,
+              "fontSize": 12,
+              "textAlign": "center",
             },
             Object {},
             Object {
-              "backgroundColor": "#ffffff",
-              "borderColor": "#dddddd",
+              "color": "#888888",
             },
           ]
         }
       >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 12,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "color": "#888888",
-              },
-            ]
-          }
-        >
-          LongPress
-           
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
+        LongPress
+         
+      </Text>
+    </View>
   </View>
 </View>
 `;

@@ -14,6 +14,18 @@ toc: false
 
 ---
 
+### 4.2.0
+
+`2021-06-16`
+
+- `react-native-gesture-handler` now is a peerDependencies.
+- Refactor(eslint): now using eslint directly
+- Upgrade rn-kitchen-sink to the latest version
+- Refactor(swipe-action): using react-native-gesture-handler close #931
+- Refactor(drawer): using react-native-gesture-handler/DrawerLayout close #1164
+- Fixes: action-sheet for Android respects theme (#1176) by https://github.com/KusStar
+- Refactor(jest): tests by https://github.com/1uokun
+
 ### 4.0.0
 
 `2020-06-14`

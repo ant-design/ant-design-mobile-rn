@@ -1,16 +1,16 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface ResultStyle {
-  result: ViewStyle;
-  imgWrap: ViewStyle;
-  img: ImageStyle;
-  title: ViewStyle;
-  titleText: TextStyle;
-  message: ViewStyle;
-  messageText: TextStyle;
-  buttonWrap: ViewStyle;
-  button: ViewStyle;
+  result: ViewStyle
+  imgWrap: ViewStyle
+  img: ImageStyle
+  title: ViewStyle
+  titleText: TextStyle
+  message: ViewStyle
+  messageText: TextStyle
+  buttonWrap: ViewStyle
+  button: ViewStyle
 }
 
 export default (theme: Theme) =>
@@ -52,4 +52,4 @@ export default (theme: Theme) =>
     button: {
       flex: 1,
     },
-  });
+  })

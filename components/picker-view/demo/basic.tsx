@@ -1,5 +1,5 @@
-import React from 'react';
-import { PickerView } from '../../';
+import React from 'react'
+import { PickerView } from '../../'
 
 const seasons = [
   [
@@ -22,16 +22,16 @@ const seasons = [
       value: '夏',
     },
   ],
-];
+]
 
 export default class PickerViewExample extends React.Component {
   state = {
     value: undefined,
-  };
+  }
   onChange = (value: any) => {
     this.setState({
       value,
-    });
+    })
   }
   render() {
     return (
@@ -41,6 +41,6 @@ export default class PickerViewExample extends React.Component {
         data={seasons}
         cascade={false}
       />
-    );
+    )
   }
 }

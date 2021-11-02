@@ -5,4 +5,4 @@ export default {
   refreshableTitleRelease: '释放加载',
   refreshableTitleRefreshing: '加载中...',
   noData: '暂无数据',
-};
+}

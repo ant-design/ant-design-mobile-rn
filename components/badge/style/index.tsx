@@ -1,18 +1,18 @@
-import { Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface BadgeStyle {
-  wrap: ViewStyle;
-  textCornerWrap: ViewStyle;
-  dot: ViewStyle;
-  dotSizelarge: ViewStyle;
-  textDom: ViewStyle;
-  textCorner: ViewStyle;
-  textCornerlarge: ViewStyle;
-  text: TextStyle;
+  wrap: ViewStyle
+  textCornerWrap: ViewStyle
+  dot: ViewStyle
+  dotSizelarge: ViewStyle
+  textDom: ViewStyle
+  textCorner: ViewStyle
+  textCornerlarge: ViewStyle
+  text: TextStyle
 }
 
-const grid = 4;
+const grid = 4
 
 export default (theme: Theme) =>
   StyleSheet.create<BadgeStyle>({
@@ -65,4 +65,4 @@ export default (theme: Theme) =>
       color: theme.color_text_base_inverse,
       textAlign: 'center',
     },
-  });
+  })

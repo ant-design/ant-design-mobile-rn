@@ -1,115 +1,112 @@
-import React from 'react';
+import React from 'react'
 export interface Locale {
   /** zh_CN */
-  locale: string;
+  locale: string
   DatePicker: {
     /** 确定 */
-    okText: string;
+    okText: string
     /** 取消 */
-    dismissText: string;
+    dismissText: string
     /** 请选择 */
-    extra: string;
+    extra: string
     DatePickerLocale: {
       /** 年 */
-      year: string;
+      year: string
       /** 月 */
-      month: string;
+      month: string
       /** 日 */
-      day: string;
+      day: string
       /** 时 */
-      hour: string;
+      hour: string
       /** 分 */
-      minute: string;
+      minute: string
       /** 上午 */
-      am: string;
+      am: string
       /** 下午 */
-      pm: string;
-    };
-  };
+      pm: string
+    }
+  }
   DatePickerView: {
     /** 年 */
-    year: string;
+    year: string
     /** 月 */
-    month: string;
+    month: string
     /** 日 */
-    day: string;
+    day: string
     /** 时 */
-    hour: string;
+    hour: string
     /** 分 */
-    minute: string;
+    minute: string
     /** 上午 */
-    am: string;
+    am: string
     /** 下午 */
-    pm: string;
-  };
+    pm: string
+  }
   InputItem: {
     /** 确定 */
-    confirmLabel: string;
+    confirmLabel: string
     /** 退格 */
-    backspaceLabel: string;
+    backspaceLabel: string
     /** 收起键盘 */
-    cancelKeyboardLabel: string;
-  };
+    cancelKeyboardLabel: string
+  }
   Modal: {
     /** 确定 */
-    okText: string;
+    okText: string
     /** 取消 */
-    cancelText: string;
+    cancelText: string
     /** 按钮 */
-    buttonText: string;
-  };
+    buttonText: string
+  }
   Pagination: {
     /** 上一页 */
-    prevText: string;
+    prevText: string
     /** 下一页 */
-    nextText: string;
-  };
+    nextText: string
+  }
   Picker: {
     /** 确定 */
-    okText: string;
+    okText: string
     /** 取消 */
-    dismissText: string;
+    dismissText: string
     /** 请选择 */
-    extra: string;
-  };
+    extra: string
+  }
   SearchBar: {
     /** 取消 */
-    cancelText: string;
-  };
+    cancelText: string
+  }
   ListView: {
     /** 已加载完 */
-    done: string;
+    done: string
     /** 加载中... */
-    loading: string;
+    loading: string
     /** 下拉刷新 */
-    refreshableTitlePull: string;
+    refreshableTitlePull: string
     /** 释放加载 */
-    refreshableTitleRelease: string;
+    refreshableTitleRelease: string
     /** 加载中... */
-    refreshableTitleRefreshing: string;
+    refreshableTitleRefreshing: string
     /** 暂无数据 */
-    noData: string;
-  };
+    noData: string
+  }
 }
 export interface LocaleProviderProps {
-  locale?: Partial<Locale>;
-  children?: React.ReactNode;
+  locale?: Partial<Locale>
+  children?: React.ReactNode
 }
 
-export const LocaleContext = React.createContext({});
+export const LocaleContext = React.createContext({})
 
 const LocaleProvider = function (props: LocaleProviderProps) {
-  const locale = React.useMemo(
-    () => {
-      return {antLocale: {...props.locale, exist: true}}
-    },
-    [props.locale],
-  );
+  const locale = React.useMemo(() => {
+    return { antLocale: { ...props.locale, exist: true } }
+  }, [props.locale])
   return (
     <LocaleContext.Provider value={locale}>
       {props.children}
     </LocaleContext.Provider>
   )
-};
+}
 
 export default React.memo(LocaleProvider)

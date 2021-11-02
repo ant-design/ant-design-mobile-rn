@@ -1,14 +1,21 @@
-
-import React from 'react';
-import { Platform, StyleProp, Text, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
-import { WithTheme, WithThemeStyles } from '../style';
-import { TagPropsType } from './PropsType';
-import TagStyles, { TagStyle } from './style/index';
+import classnames from 'classnames'
+import React from 'react'
+import {
+  StyleProp,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+  ViewStyle,
+} from 'react-native'
+import Icon from '../icon'
+import { WithTheme, WithThemeStyles } from '../style'
+import { TagPropsType } from './PropsType'
+import TagStyles, { TagStyle } from './style/index'
 
 export interface TagNativeProps
   extends TagPropsType,
     WithThemeStyles<TagStyle> {
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>
 }
 
 export default class Tag extends React.Component<TagNativeProps, any> {
@@ -21,162 +28,117 @@ export default class Tag extends React.Component<TagNativeProps, any> {
     afterClose() {},
     onChange() {},
     onLongPress() {},
-  };
-
-  closeDom: View | null;
+  }
 
   constructor(props: TagNativeProps) {
-    super(props);
+    super(props)
 
     this.state = {
       selected: props.selected,
       closed: false,
-    };
+    }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: TagNativeProps) {
     if (this.props.selected !== nextProps.selected) {
       this.setState({
         selected: nextProps.selected,
-      });
+      })
     }
   }
 
   onPress = () => {
-    const { disabled, onChange } = this.props;
+    const { disabled, onChange } = this.props
     if (disabled) {
-      return;
+      return
     }
-    const isSelect: boolean = this.state.selected;
+    const isSelect: boolean = this.state.selected
     this.setState(
       {
         selected: !isSelect,
       },
       () => {
         if (onChange) {
-          onChange(!isSelect);
+          onChange(!isSelect)
         }
       },
-    );
-  };
+    )
+  }
 
   handleLongPress = () => {
-    const { disabled, onLongPress } = this.props;
+    const { disabled, onLongPress } = this.props
     if (disabled) {
-      return;
+      return
     }
     if (onLongPress) {
-      onLongPress();
+      onLongPress()
     }
-  };
+  }
 
   onTagClose = () => {
     if (this.props.onClose) {
-      this.props.onClose();
+      this.props.onClose()
     }
     this.setState(
       {
         closed: true,
       },
       this.props.afterClose,
-    );
-  };
-
-  onPressIn = (styles: ReturnType<typeof TagStyles>) => () => {
-    if (this.closeDom) {
-      this.closeDom.setNativeProps({
-        style: [
-          styles.close,
-          Platform.OS === 'ios' ? styles.closeIOS : styles.closeAndroid,
-          {
-            backgroundColor: '#888',
-          },
-        ],
-      });
-    }
-  };
-
-  onPressOut = (styles: ReturnType<typeof TagStyles>) => () => {
-    if (this.closeDom) {
-      this.closeDom.setNativeProps({
-        style: [
-          styles.close,
-          Platform.OS === 'ios' ? styles.closeIOS : styles.closeAndroid,
-        ],
-      });
-    }
-  };
+    )
+  }
 
   render() {
-    const { children, disabled, small, closable, style } = this.props;
-    const selected = this.state.selected;
+    const { children, disabled, small, closable, style } = this.props
 
     return (
       <WithTheme styles={this.props.styles} themeStyles={TagStyles}>
-        {styles => {
-          let wrapStyle;
-          let textStyle;
-          if (!selected && !disabled) {
-            wrapStyle = styles.normalWrap;
-            textStyle = styles.normalText;
-          }
-          if (selected && !disabled) {
-            wrapStyle = styles.activeWrap;
-            textStyle = styles.activeText;
-          }
-          if (disabled) {
-            wrapStyle = styles.disabledWrap;
-            textStyle = styles.disabledText;
-          }
+        {(styles) => {
+          const wrapCls = classnames({
+            normalWrap:
+              !disabled && (!this.state.selected || small || closable),
+            wrapSmall: small,
+            activeWrap: this.state.selected && !disabled && !small && !closable,
+            disabledWrap: disabled,
+          })
+            .split(' ')
+            .map((a) => styles[a])
 
-          const sizeWrapStyle = small ? styles.wrapSmall : {};
-          const sizeTextStyle = small ? styles.textSmall : {};
+          const textCls = classnames({
+            normalText:
+              !disabled && (!this.state.selected || small || closable),
+            smallText: small,
+            activeText: this.state.selected && !disabled && !small && !closable,
+            disabledText: disabled,
+          })
+            .split(' ')
+            .map((a) => styles[a])
 
           const closableDom =
-            closable && !small && !disabled ? (
-              <TouchableWithoutFeedback
-                onPressIn={this.onPressIn(styles)}
-                onPressOut={this.onPressOut(styles)}
+            closable && !disabled && !small ? (
+              <Icon
                 onPress={this.onTagClose}
-              >
-                <View
-                  ref={(component: any) => ((this.closeDom as any) = component)}
-                  style={[
-                    styles.close,
-                    Platform.OS === 'ios'
-                      ? styles.closeIOS
-                      : styles.closeAndroid,
-                  ]}
-                >
-                  <Text
-                    style={[
-                      styles.closeText,
-                      Platform.OS === 'android' ? styles.closeTransform : {},
-                    ]}
-                  >
-                    ×
-                  </Text>
-                </View>
-              </TouchableWithoutFeedback>
-            ) : null;
-
+                name="close-circle"
+                style={styles.close}
+              />
+            ) : null
           return !this.state.closed ? (
             <View style={[styles.tag, style]}>
               <TouchableWithoutFeedback
                 onPress={this.onPress}
-                onLongPress={this.handleLongPress}
-              >
-                <View style={[styles.wrap, sizeWrapStyle, wrapStyle]}>
-                  <Text style={[styles.text, sizeTextStyle, textStyle]}>
-                    {children}{' '}
-                  </Text>
+                onLongPress={this.handleLongPress}>
+                <View style={[styles.wrap, wrapCls]}>
+                  {React.isValidElement(children) ? (
+                    children
+                  ) : (
+                    <Text style={[styles.text, textCls]}>{children}</Text>
+                  )}
                 </View>
               </TouchableWithoutFeedback>
               {closableDom}
             </View>
-          ) : null;
+          ) : null
         }}
       </WithTheme>
-    );
+    )
   }
 }

@@ -1,16 +1,25 @@
 // tslint:disable:no-empty
-import React from 'react';
-import { ActivityIndicator, StyleProp, StyleSheet, Text, TouchableHighlight, TouchableHighlightProperties, View, ViewStyle } from 'react-native';
-import { WithTheme, WithThemeStyles } from '../style';
-import { ButtonPropsType } from './PropsType';
-import buttonStyles, { ButtonStyles } from './style/index';
+import React from 'react'
+import {
+  ActivityIndicator,
+  GestureResponderEvent,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableHighlightProps,
+  View,
+  ViewStyle,
+} from 'react-native'
+import { WithTheme, WithThemeStyles } from '../style'
+import { ButtonPropsType } from './PropsType'
+import buttonStyles, { ButtonStyles } from './style/index'
 
 export interface ButtonProps
   extends ButtonPropsType,
     WithThemeStyles<ButtonStyles>,
-    TouchableHighlightProperties {
-  activeStyle?: StyleProp<ViewStyle>;
-  onPress?: (_?: any) => void;
+    TouchableHighlightProps {
+  activeStyle?: StyleProp<ViewStyle>
 }
 
 export default class Button extends React.Component<ButtonProps, any> {
@@ -24,43 +33,42 @@ export default class Button extends React.Component<ButtonProps, any> {
     onPressOut: (_?: any) => {},
     onShowUnderlay: (_?: any) => {},
     onHideUnderlay: (_?: any) => {},
-  };
+  }
 
   constructor(props: ButtonProps) {
-    super(props);
+    super(props)
     this.state = {
       pressIn: false,
       touchIt: false,
-    };
+    }
   }
 
-  onPressIn = (...arg: any[]) => {
-    this.setState({ pressIn: true });
+  onPressIn = (event: GestureResponderEvent) => {
+    this.setState({ pressIn: true })
     if (this.props.onPressIn) {
-      (this.props.onPressIn as any)(...arg);
+      this.props.onPressIn(event)
     }
-  };
-  onPressOut = (...arg: any[]) => {
-    this.setState({ pressIn: false });
+  }
+  onPressOut = (event: GestureResponderEvent) => {
+    this.setState({ pressIn: false })
     if (this.props.onPressOut) {
-      (this.props.onPressOut as any)(...arg);
+      this.props.onPressOut(event)
     }
-  };
-  onShowUnderlay = (...arg: any[]) => {
-    this.setState({ touchIt: true });
+  }
+  onShowUnderlay = () => {
+    this.setState({ touchIt: true })
     if (this.props.onShowUnderlay) {
-      (this.props.onShowUnderlay as any)(...arg);
+      this.props.onShowUnderlay()
     }
-  };
-  onHideUnderlay = (...arg: any[]) => {
-    this.setState({ touchIt: false });
+  }
+  onHideUnderlay = () => {
+    this.setState({ touchIt: false })
     if (this.props.onHideUnderlay) {
-      (this.props.onHideUnderlay as any)(...arg);
+      this.props.onHideUnderlay()
     }
-  };
+  }
 
   render() {
-    // TODO: replace `TouchableHighlight` with `TouchableWithoutFeedback` in version 1.1.0
     // for using setNativeProps to improve performance
     const {
       size = 'large',
@@ -72,16 +80,16 @@ export default class Button extends React.Component<ButtonProps, any> {
       styles,
       loading,
       ...restProps
-    } = this.props;
+    } = this.props
     return (
       <WithTheme themeStyles={buttonStyles} styles={styles}>
-        {_styles => {
+        {(_styles) => {
           const textStyle = [
             _styles[`${size}RawText`],
             _styles[`${type}RawText`],
             disabled && _styles[`${type}DisabledRawText`],
             this.state.pressIn && _styles[`${type}HighlightText`],
-          ];
+          ]
 
           const wrapperStyle = [
             _styles.wrapperStyle,
@@ -91,17 +99,21 @@ export default class Button extends React.Component<ButtonProps, any> {
             this.state.pressIn && activeStyle && _styles[`${type}Highlight`],
             activeStyle && this.state.touchIt && activeStyle,
             style,
-          ];
+          ]
 
-          const underlayColor = (StyleSheet.flatten(
-            activeStyle ? activeStyle : _styles[`${type}Highlight`],
-          ) as any).backgroundColor;
+          const underlayColor = (
+            StyleSheet.flatten(
+              activeStyle ? activeStyle : _styles[`${type}Highlight`],
+            ) as any
+          ).backgroundColor
 
-          const indicatorColor = (StyleSheet.flatten(
-            this.state.pressIn
-              ? _styles[`${type}HighlightText`]
-              : _styles[`${type}RawText`],
-          ) as any).color;
+          const indicatorColor = (
+            StyleSheet.flatten(
+              this.state.pressIn
+                ? _styles[`${type}HighlightText`]
+                : _styles[`${type}RawText`],
+            ) as any
+          ).color
 
           return (
             <TouchableHighlight
@@ -110,12 +122,11 @@ export default class Button extends React.Component<ButtonProps, any> {
               style={wrapperStyle}
               disabled={disabled}
               underlayColor={underlayColor}
-              onPress={(e?: any) => onPress && onPress(e)}
+              onPress={(e) => onPress && onPress(e)}
               onPressIn={this.onPressIn}
               onPressOut={this.onPressOut}
               onShowUnderlay={this.onShowUnderlay}
-              onHideUnderlay={this.onHideUnderlay}
-            >
+              onHideUnderlay={this.onHideUnderlay}>
               <View style={_styles.container}>
                 {loading ? (
                   // tslint:disable-next-line:jsx-no-multiline-js
@@ -129,9 +140,9 @@ export default class Button extends React.Component<ButtonProps, any> {
                 <Text style={textStyle}>{this.props.children}</Text>
               </View>
             </TouchableHighlight>
-          );
+          )
         }}
       </WithTheme>
-    );
+    )
   }
 }

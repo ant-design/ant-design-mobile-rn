@@ -1,8 +1,8 @@
-const data = require('./data.json');
-import { district } from 'antd-mobile-demo-data';
-import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import { List, Picker } from '../../';
+const data = require('./data.json')
+import { district } from 'antd-mobile-demo-data'
+import React from 'react'
+import { Text, TouchableOpacity, View } from 'react-native'
+import { List, Picker } from '../../'
 
 const CustomChildren = (props: any) => (
   <TouchableOpacity onPress={props.onPress}>
@@ -12,35 +12,34 @@ const CustomChildren = (props: any) => (
         paddingLeft: 15,
         flexDirection: 'row',
         alignItems: 'center',
-      }}
-    >
+      }}>
       <Text style={{ flex: 1 }}>{props.children}</Text>
       <Text style={{ textAlign: 'right', color: '#888', marginRight: 15 }}>
         {props.extra}
       </Text>
     </View>
   </TouchableOpacity>
-);
+)
 
 export default class PopupExample extends React.Component<any, any> {
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       data: [],
       value: [],
       pickerValue: [],
-    };
+    }
   }
   onPress = () => {
     setTimeout(() => {
       this.setState({
         data: district,
-      });
-    }, 500);
-  };
+      })
+    }, 500)
+  }
   onChange = (value: any) => {
-    this.setState({ value });
-  };
+    this.setState({ value })
+  }
   render() {
     return (
       <View style={{ marginTop: 30 }}>
@@ -49,16 +48,14 @@ export default class PopupExample extends React.Component<any, any> {
             data={data}
             cols={3}
             value={this.state.value}
-            onChange={this.onChange}
-          >
+            onChange={this.onChange}>
             <List.Item arrow="horizontal">省市选择</List.Item>
           </Picker>
           <Picker
             data={this.state.data}
             cols={2}
             value={this.state.value}
-            onChange={this.onChange}
-          >
+            onChange={this.onChange}>
             <List.Item arrow="horizontal" onPress={this.onPress}>
               省市选择(异步加载)
             </List.Item>
@@ -69,12 +66,11 @@ export default class PopupExample extends React.Component<any, any> {
             cols={2}
             value={this.state.pickerValue}
             onChange={(v: any) => this.setState({ pickerValue: v })}
-            onOk={(v: any) => this.setState({ pickerValue: v })}
-          >
+            onOk={(v: any) => this.setState({ pickerValue: v })}>
             <CustomChildren>Customized children</CustomChildren>
           </Picker>
         </List>
       </View>
-    );
+    )
   }
 }

@@ -5,4 +5,4 @@ export default {
   refreshableTitleRelease: 'لغو بارگذاری',
   refreshableTitleRefreshing: 'در حال بار گذاری ...',
   noData: 'داده ای موجود نیست',
-};
+}

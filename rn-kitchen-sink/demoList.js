@@ -266,4 +266,4 @@ module.exports = {
       module: require('../components/wing-blank/demo/basic'),
     },
   ],
-};
+}

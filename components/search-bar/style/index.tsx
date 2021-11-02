@@ -1,13 +1,13 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface SearchBarStyle {
-  input: TextStyle;
-  inputWrapper: ViewStyle;
-  wrapper: ViewStyle;
-  cancelTextContainer: ViewStyle;
-  cancelText: TextStyle;
-  search: TextStyle;
+  input: TextStyle
+  inputWrapper: ViewStyle
+  wrapper: ViewStyle
+  cancelTextContainer: ViewStyle
+  cancelText: TextStyle
+  search: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -25,13 +25,9 @@ export default (theme: Theme) =>
       color: theme.color_text_base,
       fontSize: theme.font_size_base,
       paddingLeft:
-        theme.h_spacing_lg +
-        theme.icon_size_xxs +
-        theme.h_spacing_sm,
+        theme.h_spacing_lg + theme.icon_size_xxs + theme.h_spacing_sm,
       paddingRight:
-        theme.h_spacing_lg +
-        theme.icon_size_xxs +
-        theme.h_spacing_sm,
+        theme.h_spacing_lg + theme.icon_size_xxs + theme.h_spacing_sm,
       flex: 1,
       paddingTop: 0,
       paddingBottom: 0,
@@ -61,4 +57,4 @@ export default (theme: Theme) =>
       top: (theme.search_bar_height - theme.icon_size_xxs) / 2,
       fontSize: theme.icon_size_xxs,
     },
-  });
+  })

@@ -1,18 +1,18 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface TabBarStyle {
-  tabbar: ViewStyle;
-  content: ViewStyle;
-  tabs: ViewStyle;
-  barItem: ViewStyle;
-  barIcon: ImageStyle;
-  barItemSelected: ViewStyle;
-  barItemTitle: TextStyle;
-  contentItem: ViewStyle;
-  contentItemSelected: ViewStyle;
-  badge: ViewStyle;
-  badgeText: TextStyle;
+  tabbar: ViewStyle
+  content: ViewStyle
+  tabs: ViewStyle
+  barItem: ViewStyle
+  barIcon: ImageStyle
+  barItemSelected: ViewStyle
+  barItemTitle: TextStyle
+  contentItem: ViewStyle
+  contentItemSelected: ViewStyle
+  badge: ViewStyle
+  badgeText: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -71,4 +71,4 @@ export default (theme: Theme) =>
       textAlign: 'center',
       color: 'white',
     },
-  });
+  })

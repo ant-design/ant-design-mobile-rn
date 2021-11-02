@@ -24,10 +24,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -86,24 +92,35 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                 Enable Mask
               </Text>
             </View>
-            <Switch
+            <RCTSwitch
+              accessibilityRole="switch"
               disabled={false}
-              onValueChange={[Function]}
-              trackColor={
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onTintColor="#4dd865"
+              style={
                 Object {
-                  "false": "",
-                  "true": "#4dd865",
+                  "height": 31,
+                  "width": 51,
                 }
               }
+              tintColor=""
               value={true}
             />
           </View>
         </View>
-      </>
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -162,20 +179,25 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                 Enable Stack
               </Text>
             </View>
-            <Switch
+            <RCTSwitch
+              accessibilityRole="switch"
               disabled={false}
-              onValueChange={[Function]}
-              trackColor={
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onTintColor="#4dd865"
+              style={
                 Object {
-                  "false": "",
-                  "true": "#4dd865",
+                  "height": 31,
+                  "width": 51,
                 }
               }
+              tintColor=""
               value={true}
             />
           </View>
         </View>
-      </>
+      </View>
       <View
         style={
           Array [
@@ -204,15 +226,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <
-    activeOpacity={0.4}
-    disabled={false}
-    onHideUnderlay={[Function]}
-    onPress={[Function]}
-    onPressIn={[Function]}
-    onPressOut={[Function]}
-    onShowUnderlay={[Function]}
-    pressIn={false}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -236,7 +259,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         undefined,
       ]
     }
-    underlayColor="#dddddd"
   >
     <View
       style={
@@ -262,7 +284,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         Without mask
       </Text>
     </View>
-  </>
+  </View>
   <View
     style={
       Array [
@@ -273,15 +295,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <
-    activeOpacity={0.4}
-    disabled={false}
-    onHideUnderlay={[Function]}
-    onPress={[Function]}
-    onPressIn={[Function]}
-    onPressOut={[Function]}
-    onShowUnderlay={[Function]}
-    pressIn={false}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -305,7 +328,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         undefined,
       ]
     }
-    underlayColor="#dddddd"
   >
     <View
       style={
@@ -331,7 +353,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         Stackable toast
       </Text>
     </View>
-  </>
+  </View>
   <View
     style={
       Array [
@@ -342,15 +364,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <
-    activeOpacity={0.4}
-    disabled={false}
-    onHideUnderlay={[Function]}
-    onPress={[Function]}
-    onPressIn={[Function]}
-    onPressOut={[Function]}
-    onShowUnderlay={[Function]}
-    pressIn={false}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -374,7 +397,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         undefined,
       ]
     }
-    underlayColor="#dddddd"
   >
     <View
       style={
@@ -400,7 +422,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         Text toast
       </Text>
     </View>
-  </>
+  </View>
   <View
     style={
       Array [
@@ -411,15 +433,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <
-    activeOpacity={0.4}
-    disabled={false}
-    onHideUnderlay={[Function]}
-    onPress={[Function]}
-    onPressIn={[Function]}
-    onPressOut={[Function]}
-    onShowUnderlay={[Function]}
-    pressIn={false}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -443,7 +466,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         undefined,
       ]
     }
-    underlayColor="#dddddd"
   >
     <View
       style={
@@ -469,7 +491,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         Success toast
       </Text>
     </View>
-  </>
+  </View>
   <View
     style={
       Array [
@@ -480,15 +502,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <
-    activeOpacity={0.4}
-    disabled={false}
-    onHideUnderlay={[Function]}
-    onPress={[Function]}
-    onPressIn={[Function]}
-    onPressOut={[Function]}
-    onShowUnderlay={[Function]}
-    pressIn={false}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -512,7 +535,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         undefined,
       ]
     }
-    underlayColor="#dddddd"
   >
     <View
       style={
@@ -538,7 +560,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         Failed toast
       </Text>
     </View>
-  </>
+  </View>
   <View
     style={
       Array [
@@ -549,15 +571,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <
-    activeOpacity={0.4}
-    disabled={false}
-    onHideUnderlay={[Function]}
-    onPress={[Function]}
-    onPressIn={[Function]}
-    onPressOut={[Function]}
-    onShowUnderlay={[Function]}
-    pressIn={false}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -581,7 +604,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         undefined,
       ]
     }
-    underlayColor="#dddddd"
   >
     <View
       style={
@@ -607,7 +629,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         Network failure toast
       </Text>
     </View>
-  </>
+  </View>
   <View
     style={
       Array [
@@ -618,15 +640,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <
-    activeOpacity={0.4}
-    disabled={false}
-    onHideUnderlay={[Function]}
-    onPress={[Function]}
-    onPressIn={[Function]}
-    onPressOut={[Function]}
-    onShowUnderlay={[Function]}
-    pressIn={false}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -650,7 +673,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         undefined,
       ]
     }
-    underlayColor="#dddddd"
   >
     <View
       style={
@@ -676,7 +698,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         Loading toast
       </Text>
     </View>
-  </>
+  </View>
   <View
     style={
       Array [
@@ -687,15 +709,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
       ]
     }
   />
-  <
-    activeOpacity={0.4}
-    disabled={false}
-    onHideUnderlay={[Function]}
-    onPress={[Function]}
-    onPressIn={[Function]}
-    onPressOut={[Function]}
-    onShowUnderlay={[Function]}
-    pressIn={false}
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -719,7 +742,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         undefined,
       ]
     }
-    underlayColor="#dddddd"
   >
     <View
       style={
@@ -745,6 +767,6 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         Toast with duration = 0
       </Text>
     </View>
-  </>
+  </View>
 </View>
 `;

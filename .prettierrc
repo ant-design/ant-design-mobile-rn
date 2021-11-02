@@ -1,5 +1,7 @@
 {
-  "trailingComma": "all",
+  "jsxBracketSameLine": true,
   "singleQuote": true,
-  "semi": true
+  "semi": false,
+  "trailingComma": "all",
+  "endOfLine": "auto"
 }

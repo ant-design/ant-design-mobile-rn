@@ -1,18 +1,17 @@
-
-import React from 'react';
-import { Text, View } from 'react-native';
-import { Checkbox, List, WhiteSpace } from '../../';
-const AgreeItem = Checkbox.AgreeItem;
-const CheckboxItem = Checkbox.CheckboxItem;
+import React from 'react'
+import { Text, View } from 'react-native'
+import { Checkbox, List, WhiteSpace } from '../../'
+const AgreeItem = Checkbox.AgreeItem
+const CheckboxItem = Checkbox.CheckboxItem
 
 export default class BasicCheckboxExample extends React.Component<any, any> {
   constructor(props: any, context: any) {
-    super(props, context);
+    super(props, context)
     this.state = {
       checkBox1: true,
       agreeItem1: true,
       checkboxItem1: true,
-    };
+    }
   }
 
   render() {
@@ -23,7 +22,7 @@ export default class BasicCheckboxExample extends React.Component<any, any> {
             checked={this.state.checkBox1}
             style={{ color: '#f00' }}
             onChange={(event: any) => {
-              this.setState({ checkBox1: event.target.checked });
+              this.setState({ checkBox1: event.target.checked })
             }}
           />
           <WhiteSpace />
@@ -44,9 +43,8 @@ export default class BasicCheckboxExample extends React.Component<any, any> {
           checked={this.state.agreeItem1}
           checkboxStyle={{ color: '#f00' }}
           onChange={(event: any) => {
-            this.setState({ agreeItem1: event.target.checked });
-          }}
-        >
+            this.setState({ agreeItem1: event.target.checked })
+          }}>
           Agree agreement
         </AgreeItem>
         <WhiteSpace />
@@ -61,9 +59,8 @@ export default class BasicCheckboxExample extends React.Component<any, any> {
           <CheckboxItem
             checked={this.state.checkboxItem1}
             onChange={(event: any) => {
-              this.setState({ checkboxItem1: event.target.checked });
-            }}
-          >
+              this.setState({ checkboxItem1: event.target.checked })
+            }}>
             Option 1
           </CheckboxItem>
           <CheckboxItem>Option 2</CheckboxItem>
@@ -73,6 +70,6 @@ export default class BasicCheckboxExample extends React.Component<any, any> {
           </CheckboxItem>
         </List>
       </View>
-    );
+    )
   }
 }

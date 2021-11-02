@@ -1,33 +1,33 @@
-import React from 'react';
-import { StyleProp, TextStyle, ViewStyle } from 'react-native';
-import List from '../list/index';
-import { WithTheme, WithThemeStyles } from '../style';
-import Checkbox from './Checkbox';
-import { CheckboxItemPropsType } from './PropsType';
-import CheckboxItemStyles, { CheckboxStyle } from './style/index';
+import React from 'react'
+import { StyleProp, TextStyle, ViewStyle } from 'react-native'
+import List from '../list/index'
+import { WithTheme, WithThemeStyles } from '../style'
+import Checkbox from './Checkbox'
+import { CheckboxItemPropsType } from './PropsType'
+import CheckboxItemStyles, { CheckboxStyle } from './style/index'
 
-const ListItem = List.Item;
+const ListItem = List.Item
 
 export interface CheckboxItemProps
   extends CheckboxItemPropsType,
     WithThemeStyles<CheckboxStyle> {
-  checkboxStyle?: StyleProp<TextStyle>;
-  style?: StyleProp<ViewStyle>;
+  checkboxStyle?: StyleProp<TextStyle>
+  style?: StyleProp<ViewStyle>
 }
 
 export default class CheckboxItem extends React.Component<
   CheckboxItemProps,
   any
 > {
-  checkbox: Checkbox | null;
+  checkbox: Checkbox | null
   handleClick = () => {
     if (this.checkbox) {
-      this.checkbox.handleClick();
+      this.checkbox.handleClick()
     }
     if (this.props.onPress) {
-      this.props.onPress();
+      this.props.onPress()
     }
-  };
+  }
 
   render() {
     const {
@@ -39,13 +39,13 @@ export default class CheckboxItem extends React.Component<
       children,
       extra,
       onChange,
-    } = this.props;
+    } = this.props
 
     const thumbNode = (
       <WithTheme styles={this.props.styles} themeStyles={CheckboxItemStyles}>
-        {styles => (
+        {(styles) => (
           <Checkbox
-            ref={ref => (this.checkbox = ref)}
+            ref={(ref) => (this.checkbox = ref)}
             style={[styles.checkboxItemCheckbox, checkboxStyle]}
             defaultChecked={defaultChecked}
             checked={checked}
@@ -54,16 +54,15 @@ export default class CheckboxItem extends React.Component<
           />
         )}
       </WithTheme>
-    );
+    )
     return (
       <ListItem
         style={style}
         onPress={disabled ? undefined : this.handleClick}
         extra={extra}
-        thumb={thumbNode}
-      >
+        thumb={thumbNode}>
         {children}
       </ListItem>
-    );
+    )
   }
 }

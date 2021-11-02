@@ -1,16 +1,16 @@
-import React from 'react';
-import { ActivityIndicator, Text, View } from 'react-native';
-import { WithTheme, WithThemeStyles } from '../style';
-import ActivityIndicatorStyles, { ActivityIndicatorStyle } from './style/index';
+import React from 'react'
+import { ActivityIndicator, Text, View } from 'react-native'
+import { WithTheme, WithThemeStyles } from '../style'
+import ActivityIndicatorStyles, { ActivityIndicatorStyle } from './style/index'
 
 export interface ActivityIndicatorNativeProps
   extends WithThemeStyles<ActivityIndicatorStyle> {
-  styles?: ActivityIndicatorStyle;
-  color?: string;
-  animating?: boolean;
-  toast?: boolean;
-  size?: 'large' | 'small';
-  text?: string;
+  styles?: ActivityIndicatorStyle
+  color?: string
+  animating?: boolean
+  toast?: boolean
+  size?: 'large' | 'small'
+  text?: string
 }
 
 export default class RNActivityIndicator extends React.Component<
@@ -22,17 +22,16 @@ export default class RNActivityIndicator extends React.Component<
     color: 'gray',
     size: 'small',
     toast: false,
-  };
+  }
 
   _renderToast() {
-    const { color = 'white', size = 'large' } = this.props;
+    const { color = 'white', size = 'large' } = this.props
 
     return (
       <WithTheme
         styles={this.props.styles}
-        themeStyles={ActivityIndicatorStyles}
-      >
-        {styles => (
+        themeStyles={ActivityIndicatorStyles}>
+        {(styles) => (
           <View style={[styles.container]}>
             <View style={[styles.innerContainer, { height: 89 }]}>
               <View style={[styles.wrapper]}>
@@ -45,30 +44,29 @@ export default class RNActivityIndicator extends React.Component<
           </View>
         )}
       </WithTheme>
-    );
+    )
   }
 
   _renderSpinner() {
-    const { color, size, text } = this.props;
+    const { color, size, text } = this.props
     return (
       <WithTheme
         styles={this.props.styles}
-        themeStyles={ActivityIndicatorStyles}
-      >
-        {styles => (
+        themeStyles={ActivityIndicatorStyles}>
+        {(styles) => (
           <View style={styles.spinner}>
             <ActivityIndicator color={color} size={size} />
             {text && <Text style={[styles.tip]}>{text}</Text>}
           </View>
         )}
       </WithTheme>
-    );
+    )
   }
 
   render() {
     if (this.props.animating) {
-      return this.props.toast ? this._renderToast() : this._renderSpinner();
+      return this.props.toast ? this._renderToast() : this._renderSpinner()
     }
-    return null;
+    return null
   }
 }

@@ -1,3 +1,3 @@
-import PickerView from './PickerView';
+import PickerView from './PickerView'
 
-export default PickerView;
+export default PickerView

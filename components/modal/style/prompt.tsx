@@ -1,13 +1,13 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface PromptStyle {
-  message: TextStyle;
-  inputGroup: ViewStyle;
-  inputWrapper: ViewStyle;
-  input: TextStyle;
-  inputFirst: ViewStyle;
-  inputLast: ViewStyle;
+  message: TextStyle
+  inputGroup: ViewStyle
+  inputWrapper: ViewStyle
+  input: TextStyle
+  inputFirst: ViewStyle
+  inputLast: ViewStyle
 }
 
 export default (variables: Theme) =>
@@ -42,4 +42,4 @@ export default (variables: Theme) =>
       borderBottomLeftRadius: variables.radius_sm,
       borderBottomRightRadius: variables.radius_sm,
     },
-  });
+  })

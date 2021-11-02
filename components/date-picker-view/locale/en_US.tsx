@@ -1,3 +1,3 @@
-import DatePickerLocale from '../../date-picker/datepicker/locale/en_US';
+import DatePickerLocale from '../../date-picker/datepicker/locale/en_US'
 
-export default DatePickerLocale;
+export default DatePickerLocale

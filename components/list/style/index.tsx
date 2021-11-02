@@ -1,23 +1,23 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 export interface ListStyle {
-  underlayColor: ViewStyle;
-  Header: TextStyle;
-  Footer: TextStyle;
-  Body: ViewStyle;
-  BodyBottomLine: ViewStyle;
-  Item: ViewStyle;
-  Line: ViewStyle;
-  Thumb: ImageStyle;
-  Content: TextStyle;
-  Extra: TextStyle;
-  Brief: ViewStyle;
-  BriefText: TextStyle;
-  Arrow: TextStyle;
-  ArrowV: TextStyle;
-  multipleLine: ViewStyle;
-  multipleThumb: ImageStyle;
-  column: ViewStyle;
+  underlayColor: ViewStyle
+  Header: TextStyle
+  Footer: TextStyle
+  Body: ViewStyle
+  BodyBottomLine: ViewStyle
+  Item: ViewStyle
+  Line: ViewStyle
+  Thumb: ImageStyle
+  Content: TextStyle
+  Extra: TextStyle
+  Brief: ViewStyle
+  BriefText: TextStyle
+  Arrow: TextStyle
+  ArrowV: TextStyle
+  multipleLine: ViewStyle
+  multipleThumb: ImageStyle
+  column: ViewStyle
 }
 export default (variables: Theme) =>
   StyleSheet.create<ListStyle>({
@@ -114,4 +114,4 @@ export default (variables: Theme) =>
       flex: 1,
       flexDirection: 'column',
     },
-  });
+  })

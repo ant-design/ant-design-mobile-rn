@@ -1,13 +1,13 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface ActivityIndicatorStyle {
-  container: ViewStyle;
-  innerContainer: ViewStyle;
-  wrapper: ViewStyle;
-  tip: TextStyle;
-  toast: TextStyle;
-  spinner: ViewStyle;
+  container: ViewStyle
+  innerContainer: ViewStyle
+  wrapper: ViewStyle
+  tip: TextStyle
+  toast: TextStyle
+  spinner: ViewStyle
 }
 
 export default (theme: Theme) =>
@@ -50,4 +50,4 @@ export default (theme: Theme) =>
       justifyContent: 'center',
       alignItems: 'center',
     },
-  });
+  })

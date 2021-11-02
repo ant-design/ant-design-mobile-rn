@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { Text, View } from 'react-native';
-import { WhiteSpace } from '../../';
+import React from 'react'
+import { Text, View } from 'react-native'
+import { WhiteSpace } from '../../'
 
 const PlaceHolder = (props: any) => (
   <View
@@ -11,11 +10,10 @@ const PlaceHolder = (props: any) => (
       alignItems: 'center',
       justifyContent: 'center',
     }}
-    {...props}
-  >
+    {...props}>
     <Text style={{ color: '#bbb' }}>Block</Text>
   </View>
-);
+)
 
 export default class WhiteSpaceExample extends React.Component<any, any> {
   render() {
@@ -36,6 +34,6 @@ export default class WhiteSpaceExample extends React.Component<any, any> {
         <WhiteSpace size="xl" />
         <PlaceHolder />
       </View>
-    );
+    )
   }
 }

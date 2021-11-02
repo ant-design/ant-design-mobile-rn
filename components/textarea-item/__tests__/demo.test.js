@@ -1,3 +1,3 @@
-import rnDemoTest from '../../../tests/shared/demoTest';
+import rnDemoTest from '../../../tests/shared/demoTest'
 
-rnDemoTest('textarea-item');
+rnDemoTest('textarea-item')

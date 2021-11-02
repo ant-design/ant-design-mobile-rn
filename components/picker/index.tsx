@@ -1,26 +1,26 @@
-import treeFilter from 'array-tree-filter';
-import React from 'react';
-import { WithTheme, WithThemeStyles } from '../style';
-import { getComponentLocale } from '../_util/getLocale';
-import RMCCascader from './cascader';
-import RMCPopupCascader from './cascader/Popup';
-import MultiPicker from './MultiPicker';
-import RMCPicker from './Picker';
-import { PickerData, PickerPropsType } from './PropsType';
-import PickerStyles, { PickerStyle } from './style';
-import { LocaleContext } from "../locale-provider";
+import treeFilter from 'array-tree-filter'
+import React from 'react'
+import { LocaleContext } from '../locale-provider'
+import { WithTheme, WithThemeStyles } from '../style'
+import { getComponentLocale } from '../_util/getLocale'
+import RMCCascader from './cascader'
+import RMCPopupCascader from './cascader/Popup'
+import MultiPicker from './MultiPicker'
+import RMCPicker from './Picker'
+import { PickerData, PickerPropsType } from './PropsType'
+import PickerStyles, { PickerStyle } from './style'
 
 export interface PickerProps
   extends PickerPropsType,
     WithThemeStyles<PickerStyle> {
-  pickerPrefixCls?: string;
-  popupPrefixCls?: string;
+  pickerPrefixCls?: string
+  popupPrefixCls?: string
 }
 
 export function getDefaultProps() {
   const defaultFormat = (values: string[]) => {
-    return values.join(',');
-  };
+    return values.join(',')
+  }
   return {
     triggerType: 'onPress',
     prefixCls: 'am-picker',
@@ -30,110 +30,111 @@ export function getDefaultProps() {
     cols: 3,
     cascade: true,
     title: '',
-  };
+  }
 }
 
 export default class Picker extends React.Component<PickerProps, any> {
-  static contextType = LocaleContext;
-  static defaultProps = getDefaultProps();
-  protected popupProps: {};
-  private scrollValue: any;
+  static contextType = LocaleContext
+  static defaultProps = getDefaultProps()
+  protected popupProps: {}
+  private scrollValue: any
   getSel = () => {
-    const value = this.props.value || [];
-    let treeChildren: PickerData[];
-    const { data } = this.props;
+    const value = this.props.value || []
+    let treeChildren: PickerData[]
+    const { data } = this.props
     if (this.props.cascade) {
       treeChildren = treeFilter(data as PickerData[], (c: any, level: any) => {
-        return c.value === value[level];
-      });
+        return c.value === value[level]
+      })
     } else {
       treeChildren = value.map((v, i) => {
-        return (data as PickerData[][])[i].filter(d => d.value === v)[0];
-      });
+        return (data as PickerData[][])[i].filter((d) => d.value === v)[0]
+      })
     }
     return (
       this.props.format &&
       this.props.format(
-        treeChildren.map(v => {
-          return v.label;
+        treeChildren.map((v) => {
+          return v.label
         }),
       )
-    );
-  };
+    )
+  }
 
   getPickerCol = () => {
-    const { data, itemStyle, indicatorStyle } = this.props;
+    const { data, itemStyle, indicatorStyle } = this.props
 
-    return ((Array.isArray(data[0]) ? data : [data]) as PickerData[][]).map((col, index) => {
-      return (
-        <RMCPicker
-          key={index}
-          style={{ flex: 1 }}
-          itemStyle={itemStyle}
-          indicatorStyle={indicatorStyle}
-        >
-          {col.map(item => {
-            return (
-              <RMCPicker.Item key={item.value} value={item.value}>
-                {item.label}
-              </RMCPicker.Item>
-            );
-          })}
-        </RMCPicker>
-      );
-    });
-  };
+    return ((Array.isArray(data[0]) ? data : [data]) as PickerData[][]).map(
+      (col, index) => {
+        return (
+          <RMCPicker
+            key={index}
+            style={{ flex: 1 }}
+            itemStyle={itemStyle}
+            indicatorStyle={indicatorStyle}>
+            {col.map((item) => {
+              return (
+                <RMCPicker.Item key={item.value} value={item.value}>
+                  {item.label}
+                </RMCPicker.Item>
+              )
+            })}
+          </RMCPicker>
+        )
+      },
+    )
+  }
 
   onOk = (v: any) => {
     if (this.scrollValue !== undefined) {
-      v = this.scrollValue;
+      v = this.scrollValue
     }
     if (this.props.onChange) {
-      this.props.onChange(v);
+      this.props.onChange(v)
     }
     if (this.props.onOk) {
-      this.props.onOk(v);
+      this.props.onOk(v)
     }
-  };
+  }
 
   setScrollValue = (v: any) => {
-    this.scrollValue = v;
-  };
+    this.scrollValue = v
+  }
 
   setCasecadeScrollValue = (v: any) => {
     // 级联情况下保证数据正确性，滚动过程中只有当最后一级变化时才变更数据
     if (v && this.scrollValue) {
-      const length = this.scrollValue.length;
+      const length = this.scrollValue.length
       if (
         length === v.length &&
         this.scrollValue[length - 1] === v[length - 1]
       ) {
-        return;
+        return
       }
     }
-    this.setScrollValue(v);
-  };
+    this.setScrollValue(v)
+  }
 
   fixOnOk = (cascader: any) => {
     if (cascader && cascader.onOk !== this.onOk) {
-      cascader.onOk = this.onOk;
-      cascader.forceUpdate();
+      cascader.onOk = this.onOk
+      cascader.forceUpdate()
     }
-  };
+  }
 
   onPickerChange = (v: any) => {
-    this.setScrollValue(v);
+    this.setScrollValue(v)
     if (this.props.onPickerChange) {
-      this.props.onPickerChange(v);
+      this.props.onPickerChange(v)
     }
-  };
+  }
 
   onVisibleChange = (visible: boolean) => {
-    this.setScrollValue(undefined);
+    this.setScrollValue(undefined)
     if (this.props.onVisibleChange) {
-      this.props.onVisibleChange(visible);
+      this.props.onVisibleChange(visible)
     }
-  };
+  }
 
   render() {
     const {
@@ -150,7 +151,7 @@ export default class Picker extends React.Component<PickerProps, any> {
       cols,
       onOk,
       ...restProps
-    } = this.props;
+    } = this.props
 
     // tslint:disable-next-line:variable-name
     const _locale = getComponentLocale(
@@ -158,21 +159,13 @@ export default class Picker extends React.Component<PickerProps, any> {
       (this as any).context,
       'Picker',
       () => require('./locale/zh_CN'),
-    );
+    )
 
-    const {
-      cascader,
-      popupMoreProps,
-    }: { cascader: JSX.Element; popupMoreProps: {} } = this.getCascade(
-      cascade,
-      data,
-      cols,
-      itemStyle,
-      indicatorStyle,
-    );
+    const { cascader, popupMoreProps }: { cascader: any; popupMoreProps: {} } =
+      this.getCascade(cascade, data, cols, itemStyle, indicatorStyle)
     return (
       <WithTheme styles={restProps.styles} themeStyles={PickerStyles}>
-        {styles => (
+        {(styles) => (
           <RMCPopupCascader
             cascader={cascader}
             {...this.popupProps}
@@ -183,8 +176,7 @@ export default class Picker extends React.Component<PickerProps, any> {
             okText={okText || _locale.okText}
             {...popupMoreProps}
             ref={this.fixOnOk}
-            onVisibleChange={this.onVisibleChange}
-          >
+            onVisibleChange={this.onVisibleChange}>
             {children &&
               typeof children !== 'string' &&
               React.isValidElement(children) &&
@@ -194,7 +186,7 @@ export default class Picker extends React.Component<PickerProps, any> {
           </RMCPopupCascader>
         )}
       </WithTheme>
-    );
+    )
   }
 
   getCascade = (
@@ -204,8 +196,8 @@ export default class Picker extends React.Component<PickerProps, any> {
     itemStyle: any,
     indicatorStyle: any,
   ) => {
-    let cascader: JSX.Element;
-    let popupMoreProps = {};
+    let cascader: React.ReactNode
+    let popupMoreProps = {}
     if (cascade) {
       cascader = (
         <RMCCascader
@@ -216,22 +208,21 @@ export default class Picker extends React.Component<PickerProps, any> {
           pickerItemStyle={itemStyle}
           indicatorStyle={indicatorStyle}
         />
-      );
+      )
     } else {
       cascader = (
         <MultiPicker
           style={{ flexDirection: 'row', alignItems: 'center' }}
           onScrollChange={this.setScrollValue}
-          onValueChange={this.onPickerChange}
-        >
+          onValueChange={this.onPickerChange}>
           {this.getPickerCol()}
         </MultiPicker>
-      );
+      )
       popupMoreProps = {
         pickerValueProp: 'selectedValue',
         pickerValueChangeProp: 'onValueChange',
-      };
+      }
     }
-    return { cascader, popupMoreProps };
-  };
+    return { cascader, popupMoreProps }
+  }
 }
