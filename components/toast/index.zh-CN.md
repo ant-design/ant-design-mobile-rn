@@ -22,7 +22,7 @@ Props 参数如下：
 
 |    属性    | 说明                           | 类型      | 必填 | 默认值 |
 | --------  | ------------------------------ | -------- | --- | ------ |
-| content   | 提示内容                        | String   | 是   |  -     |
+| content   | 提示内容                        | `String | React.ReactNode`   | 是   |  -     |
 | duration  | 自动关闭的延时，单位秒            | number   |  否  |  3       |
 | onClose   | 关闭后回调                      | Function  |  否  | - |
 | mask      | 是否显示透明蒙层，防止触摸穿透     | Boolean   |  否   |   true  |

@@ -21,7 +21,7 @@ Props has these fields:
 
 | Properties | Descrition                                                                           | Type                |  Required  | Default |
 | ---------- | ------------------------------------------------------------------------------------ | ----------------------- | ------- | ------- |
-| content    | Toast content                                                                        | String | Yes | -       |
+| content    | Toast content                                                                        | `String | React.ReactNode` | Yes | -       |
 | duration   | Delay time to close, which units is second                                           | number                  |  No  | 3       |
 | onClose    | A callback function Triggered when the Toast is closed                               | Function                |  No  | -       |
 | mask       | Whether to show a transparent mask, which will prevent touch event of the whole page | Boolean                 |  No  | true    |

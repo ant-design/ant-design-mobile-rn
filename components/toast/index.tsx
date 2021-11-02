@@ -10,7 +10,7 @@ interface IToastConfigurable {
 }
 
 interface IToastProps extends IToastConfigurable {
-  content: string
+  content: string | React.ReactNode;
 }
 
 const SHORT = 3
