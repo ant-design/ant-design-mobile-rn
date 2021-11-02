@@ -124,10 +124,10 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
                     ]}
                   >
                     {iconDom}
-                    {typeof content === 'string' ? (
-                      <Text style={styles.content}>{content}</Text>
-                    ) : (
+                    {React.isValidElement(content) ? (
                       content
+                    ) : (
+                      <Text style={styles.content}>{content}</Text>
                     )}
                   </View>
                 </Animated.View>
