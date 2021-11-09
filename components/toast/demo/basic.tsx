@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import React from 'react'
-import { DeviceEventEmitter } from 'react-native'
+import { DeviceEventEmitter, Text } from 'react-native'
 import { Button, List, Switch, Toast, WhiteSpace, WingBlank } from '../../'
 
 function showToastStack() {
@@ -73,6 +73,19 @@ function alwaysShowToastLoading() {
   }, 3000)
 }
 
+function showCustomViewToast() {
+  Toast.info(
+    { content: <Text style={{ color: 'red' }}>Toast Custom View</Text> },
+    2,
+  )
+  setTimeout(() => {
+    Toast.success(
+      { content: <Text style={{ color: 'red' }}>Toast Custom View</Text> },
+      2,
+    )
+  }, 2500)
+}
+
 export default class ToastExample extends React.Component<any, any> {
   timer: any
 
@@ -140,6 +153,8 @@ export default class ToastExample extends React.Component<any, any> {
         <Button onPress={alwaysShowToastLoading}>
           Toast.loading with duration = 0
         </Button>
+        <WhiteSpace />
+        <Button onPress={showCustomViewToast}>Toast with custom view</Button>
       </WingBlank>
     )
   }

@@ -10,7 +10,7 @@ interface IToastConfigurable {
 }
 
 interface IToastProps extends IToastConfigurable {
-  content: string | React.ReactNode;
+  content: string | React.ReactNode
 }
 
 const SHORT = 3
@@ -48,7 +48,7 @@ function notice(
 ) {
   let props = {
     ...defaultProps,
-    content: content as string,
+    content: content as string | React.ReactNode,
     type,
     duration,
     onClose,
