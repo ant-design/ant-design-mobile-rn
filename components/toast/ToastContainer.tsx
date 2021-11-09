@@ -5,7 +5,7 @@ import { WithTheme, WithThemeStyles } from '../style'
 import ToastStyles, { ToastStyle } from './style/index'
 
 export interface ToastProps extends WithThemeStyles<ToastStyle> {
-  content: string
+  content: string | React.ReactNode
   duration?: number
   onClose?: () => void
   mask?: boolean
