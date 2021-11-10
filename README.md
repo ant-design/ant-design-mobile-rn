@@ -18,6 +18,8 @@ English | [简体中文](./README.zh-CN.md)
 
 A configurable Mobile UI specification and React-based implementation.
 
+> If you only care about the style you may give [[Tanjun]](https://github.com/bang88/Tanjun) a try. 
+
 ## Features
 
 - Follow Ant Design Mobile UI specification.
