@@ -5,7 +5,7 @@ import { WithTheme, WithThemeStyles } from '../style'
 import ToastStyles, { ToastStyle } from './style/index'
 
 export interface ToastProps extends WithThemeStyles<ToastStyle> {
-  content: string
+  content: string | React.ReactNode
   duration?: number
   onClose?: () => void
   mask?: boolean
@@ -30,7 +30,7 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
   }
 
   componentDidMount() {
-    const { onClose, onAnimationEnd } = this.props
+    const { onAnimationEnd } = this.props
     const duration = this.props.duration as number
     const timing = Animated.timing
     if (this.anim) {
@@ -57,9 +57,6 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
     this.anim.start(() => {
       if (duration > 0) {
         this.anim = null
-        if (onClose) {
-          onClose()
-        }
         if (onAnimationEnd) {
           onAnimationEnd()
         }
@@ -71,6 +68,11 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
     if (this.anim) {
       this.anim.stop()
       this.anim = null
+    }
+
+    const { onClose } = this.props
+    if (onClose) {
+      onClose()
     }
   }
 
@@ -122,7 +124,11 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
                       iconDom ? styles.iconToast : styles.textToast,
                     ]}>
                     {iconDom}
-                    <Text style={styles.content}>{content}</Text>
+                    {React.isValidElement(content) ? (
+                      content
+                    ) : (
+                      <Text style={styles.content}>{content}</Text>
+                    )}
                   </View>
                 </Animated.View>
               </View>

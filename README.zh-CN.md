@@ -37,10 +37,12 @@ cd ant-design-mobile-rn
 # install dependencies
 yarn
 
-# start ios simulator or android
-# cd rn-kitchen-sink/ios && pod install
-yarn ios # or yarn android
+# start ios
+cd rn-kitchen-sink/ios && pod install
+yarn ios
 
+# start android
+yarn android
 ```
 
 ## 安装 & 使用

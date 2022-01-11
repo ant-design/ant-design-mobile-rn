@@ -11,6 +11,7 @@ export interface DatePickerPropsType extends AntDatePickerProps {
   visible?: boolean
   use12Hours?: boolean
   onDismiss?: () => void
+  onOk?: () => void
   locale?: {
     okText: string
     dismissText: string

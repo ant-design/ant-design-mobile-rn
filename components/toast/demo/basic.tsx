@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import React from 'react'
-import { DeviceEventEmitter } from 'react-native'
+import { DeviceEventEmitter, Text } from 'react-native'
 import { Button, List, Switch, Toast, WhiteSpace, WingBlank } from '../../'
 
 function showToastStack() {
@@ -55,6 +55,37 @@ function loadingToast() {
   })
 }
 
+function alwaysShowToastInfo() {
+  const key = Toast.info('Toast with duration = 0, removed by timer', 0, () => {
+    Toast.info('Toast.info onClose callback called!')
+  })
+  setTimeout(() => {
+    Toast.remove(key)
+  }, 3000)
+}
+
+function alwaysShowToastLoading() {
+  Toast.loading('Loading...', 0, () => {
+    Toast.info('Toast.loading onClose callback called!')
+  })
+  setTimeout(() => {
+    Toast.removeAll()
+  }, 3000)
+}
+
+function showCustomViewToast() {
+  Toast.info(
+    { content: <Text style={{ color: 'red' }}>Toast Custom View</Text> },
+    2,
+  )
+  setTimeout(() => {
+    Toast.success(
+      { content: <Text style={{ color: 'red' }}>Toast Custom View</Text> },
+      2,
+    )
+  }, 2500)
+}
+
 export default class ToastExample extends React.Component<any, any> {
   timer: any
 
@@ -69,16 +100,6 @@ export default class ToastExample extends React.Component<any, any> {
       clearTimeout(this.timer)
       this.timer = null
     }
-  }
-
-  alwaysShowToast = () => {
-    const key = Toast.info({
-      content: 'Toast with duration = 0, removed by timer',
-      duration: 0,
-    })
-    this.timer = setTimeout(() => {
-      Toast.remove(key)
-    }, 5000)
   }
 
   render() {
@@ -125,7 +146,15 @@ export default class ToastExample extends React.Component<any, any> {
         <WhiteSpace />
         <Button onPress={loadingToast}>Loading toast</Button>
         <WhiteSpace />
-        <Button onPress={this.alwaysShowToast}>Toast with duration = 0</Button>
+        <Button onPress={alwaysShowToastInfo}>
+          Toast.info with duration = 0
+        </Button>
+        <WhiteSpace />
+        <Button onPress={alwaysShowToastLoading}>
+          Toast.loading with duration = 0
+        </Button>
+        <WhiteSpace />
+        <Button onPress={showCustomViewToast}>Toast with custom view</Button>
       </WingBlank>
     )
   }
