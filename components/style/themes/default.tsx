@@ -165,6 +165,12 @@ export default {
   notice_bar_fill: '#fffada',
   notice_bar_height: 36,
 
+  // checkbox
+  checkbox_fill: '#1890ff',
+  checkbox_fill_disabled: '#f5f5f5',
+  checkbox_border: '#d9d9d9',
+  checkbox_border_disabled: '#b9b9b9',
+
   // switch
   switch_fill: '#1890ff',
   switch_unchecked: '#cccccc',
