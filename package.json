@@ -36,7 +36,6 @@
     "@types/shallowequal": "^1.1.1",
     "array-tree-filter": "~2.1.0",
     "babel-runtime": "^6.x",
-    "deepmerge": "^4.2.2",
     "normalize-css-color": "^1.0.2",
     "react-native-codegen": "^0.0.7",
     "react-native-collapsible": "^1.6.0",

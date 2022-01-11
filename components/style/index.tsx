@@ -1,5 +1,4 @@
 import React from 'react'
-import deepmerge from 'deepmerge'
 import shallowequal from 'shallowequal'
 import defaultTheme from './themes/default'
 
@@ -25,7 +24,7 @@ export const useTheme = (props: UseThemeContextProps = {}) => {
 
 export interface WithThemeProps<T, S> {
   themeStyles?: (theme: Theme) => T
-  styles?: S
+  styles?: S & { [key: string]: any }
   children: (
     // fix: styles[`${size}RawText`]
     styles: T & { [key: string]: any },
@@ -54,7 +53,12 @@ export function WithTheme<T, S>(props: WithThemeProps<T, S>) {
       if (styles && !shallowequal(stylesRef.current, styles)) {
         stylesRef.current = styles
         // merge styles from user defined
-        cache.current = deepmerge<T>(cache.current, styles)
+        styles &&
+          Object.keys(styles).forEach((key) => {
+            if (cache.current[key]) {
+              cache.current[key] = [cache.current[key], styles[key]]
+            }
+          })
       }
 
       return cache.current || {}
