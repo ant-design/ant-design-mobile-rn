@@ -15,7 +15,7 @@ export interface PaginationStyle {
 export default (theme: Theme) =>
   StyleSheet.create<PaginationStyle>({
     container: {
-      alignItems: 'center',
+      flex:1,
       justifyContent: 'center',
     },
     numberStyle: {
@@ -32,6 +32,7 @@ export default (theme: Theme) =>
     },
     indicatorStyle: {
       flexDirection: 'row',
+      alignSelf:'center'
     },
     pointStyle: {
       width: 8,
