@@ -1,14 +1,9 @@
 import classNames from 'classnames'
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import * as React from 'react'
-import {
-  Animated,
-  Easing,
-  Platform,
-  TouchableNativeFeedback,
-  View,
-} from 'react-native'
+import { Animated, Easing, View } from 'react-native'
 import RNActivityIndicator from '../activity-indicator'
+import ButtonWave from '../button/ButtonWave'
 import { WithTheme } from '../style'
 import AntmView from '../view/index'
 import devWarning from '../_util/devWarning'
@@ -158,14 +153,9 @@ const AntmSwitch = ({
 
         return (
           <View style={[styles[prefixCls], { padding: 1 }]}>
-            <TouchableNativeFeedback
+            <ButtonWave
               {...restProps}
-              background={
-                Platform.Version >= 21
-                  ? TouchableNativeFeedback.Ripple(Color, true)
-                  : TouchableNativeFeedback.SelectableBackground()
-              }
-              useForeground={false}
+              Color={Color}
               disabled={disabled}
               onPressIn={onPressIn}
               onPressOut={onPressOut}
@@ -193,7 +183,7 @@ const AntmSwitch = ({
                   {innerChecked ? checkedChildren : unCheckedChildren}
                 </AnimatedView>
               </View>
-            </TouchableNativeFeedback>
+            </ButtonWave>
           </View>
         )
       }}
