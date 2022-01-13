@@ -4,13 +4,12 @@ import * as React from 'react'
 import {
   Animated,
   Easing,
-  Platform,
   Pressable,
   StyleProp,
-  TouchableNativeFeedback,
   View,
   ViewStyle,
 } from 'react-native'
+import ButtonWave from '../button/ButtonWave'
 import { WithTheme, WithThemeStyles } from '../style'
 import AntmView from '../view/index'
 import devWarning from '../_util/devWarning'
@@ -142,13 +141,8 @@ const InternalCheckbox = (
             return (
               <View style={[_styles[`${prefixCls}_wrapper`], style]}>
                 <View style={_styles.checkbox_wave}>
-                  <TouchableNativeFeedback
-                    background={
-                      Platform.Version >= 21
-                        ? TouchableNativeFeedback.Ripple(Color || '', true, 13)
-                        : TouchableNativeFeedback.SelectableBackground()
-                    }
-                    useForeground={true}
+                  <ButtonWave
+                    Color={Color}
                     disabled={disabled}
                     onPress={this.onPress}>
                     <View style={antd_checkbox}>
@@ -159,7 +153,7 @@ const InternalCheckbox = (
                         style={[transitionTransform, antd_checkbox_inner_after]}
                       />
                     </View>
-                  </TouchableNativeFeedback>
+                  </ButtonWave>
                 </View>
                 <Pressable disabled={disabled} onPress={this.onPress}>
                   <AntmView style={antd_checlbox_label}>{children}</AntmView>
