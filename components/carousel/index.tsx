@@ -3,6 +3,7 @@ import {
   LayoutRectangle,
   NativeScrollEvent,
   NativeSyntheticEvent,
+  Platform,
   ScrollView,
   ScrollViewProps,
   StyleProp,
@@ -47,6 +48,7 @@ export interface CarouselState {
   width: number
   selectedIndex: number
   isScrolling: boolean
+  scrollStatus: string
   offset: NativeScrollPoint
   loopJump: boolean
 }
@@ -114,6 +116,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     this.state = {
       width: 0,
       isScrolling: false,
+      scrollStatus: '',
       selectedIndex: index,
       offset: { x: 0, y: 0 },
       loopJump: false,
@@ -189,13 +192,14 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   onScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     this.setState({ isScrolling: false })
     // android hack
-    // if (!e.nativeEvent.contentOffset) {
-    //   const { position } = e.nativeEvent
-    //   e.nativeEvent.contentOffset = {
-    //     x: position * this.state.width,
-    //     y: 0,
-    //   }
-    // }
+    if (!e.nativeEvent.contentOffset) {
+      //@ts-ignore
+      const { position } = e.nativeEvent
+      e.nativeEvent.contentOffset = {
+        x: position * this.state.width,
+        y: 0,
+      }
+    }
     this.updateIndex(e.nativeEvent.contentOffset)
     this.scrollEndTimter = setTimeout(() => {
       this.autoplay()
@@ -223,6 +227,24 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     }
   }
 
+  onTouchStartForWeb = () => {
+    this.setState({ scrollStatus: 'start', isScrolling: true })
+  }
+
+  onTouchEndForWeb = () => {
+    if (this.state.scrollStatus === 'start') {
+      this.setState({ scrollStatus: 'end', isScrolling: false })
+    }
+  }
+
+  onScrollForWeb = (e: any) => {
+    if (this.state.scrollStatus === 'start') {
+    } else if (this.state.scrollStatus === 'end') {
+      this.setState({ scrollStatus: '' })
+      this.onScrollEnd(JSON.parse(JSON.stringify(e)))
+    }
+  }
+
   onLayout = (
     e: NativeSyntheticEvent<TargetedEvent & { layout: LayoutRectangle }>,
   ) => {
@@ -231,10 +253,17 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       this.count > 1 ? Math.min(selectedIndex as number, this.count - 1) : 0
     const { width } = e.nativeEvent.layout
     const offset = width * (scrollIndex + (infinite ? 1 : 0))
-    this.setState({
-      width,
-      offset: { x: offset, y: 0 },
-    })
+    this.setState(
+      {
+        width,
+        offset: { x: offset, y: 0 },
+      },
+      () => {
+        // web
+        this.scrollview &&
+          this.scrollview.scrollTo({ x: offset, y: 0, animated: false })
+      },
+    )
   }
 
   updateIndex = (currentOffset: NativeScrollPoint) => {
@@ -254,15 +283,40 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         selectedIndex = 0
         paramOffset.x = width
       }
+      if (paramOffset.x === width) {
+        this.scrollToStart()
+      } else if (paramOffset.x === this.count * width) {
+        this.scrollToEnd()
+      }
     }
+
     this.setState({
       selectedIndex,
       offset: paramOffset,
       loopJump,
+      scrollStatus: 'end',
     })
     if (this.props.afterChange) {
       this.props.afterChange(selectedIndex)
     }
+  }
+
+  scrollToStart = () => {
+    this.scrollview &&
+      this.scrollview.scrollTo({
+        x: this.state.width,
+        y: 0,
+        animated: false,
+      })
+  }
+
+  scrollToEnd = () => {
+    this.scrollview &&
+      this.scrollview.scrollTo({
+        x: this.state.width * this.count,
+        y: 0,
+        animated: false,
+      })
   }
 
   scrollNextPage = () => {
@@ -274,16 +328,18 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     this.scrollview && this.scrollview.scrollTo({ x: offsetX, y: 0 })
     this.setState({
       isScrolling: true,
+      scrollStatus: 'end',
     })
-    // if (Platform.OS === 'android') {
-    //   this.androidScrollEndTimer = setTimeout(() => {
-    //     this.onScrollEnd({
-    //       nativeEvent: {
-    //         position: diff,
-    //       },
-    //     })
-    //   }, 0)
-    // }
+    if (Platform.OS === 'android') {
+      this.androidScrollEndTimer = setTimeout(() => {
+        this.onScrollEnd({
+          nativeEvent: {
+            // @ts-ignore
+            position: diff,
+          },
+        })
+      }, 0)
+    }
   }
 
   autoplay = () => {
@@ -318,7 +374,15 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         contentOffset={this.state.offset}
         onScrollBeginDrag={this.onScrollBegin}
         onMomentumScrollEnd={this.onScrollEnd}
-        onScrollEndDrag={this.onScrollEndDrag}>
+        onScrollEndDrag={this.onScrollEndDrag}
+        {...(Platform.OS === 'web'
+          ? {
+              onTouchStart: this.onTouchStartForWeb,
+              onTouchEnd: this.onTouchEndForWeb,
+              onScroll: this.onScrollForWeb,
+              scrollEventThrottle: 0,
+            }
+          : {})}>
         {pages}
       </ScrollView>
     )
