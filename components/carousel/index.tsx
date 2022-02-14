@@ -46,6 +46,7 @@ interface TargetedEvent {
 
 export interface CarouselState {
   width: number
+  height: number
   selectedIndex: number
   isScrolling: boolean
   scrollStatus: string
@@ -115,6 +116,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       this.count > 1 ? Math.min(selectedIndex as number, this.count - 1) : 0
     this.state = {
       width: 0,
+      height: 0,
       isScrolling: false,
       scrollStatus: '',
       selectedIndex: index,
@@ -128,24 +130,28 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   componentWillReceiveProps(nextProps: CarouselProps) {
-    const { children, infinite, selectedIndex } = nextProps
-    const { width } = this.state
+    const { children, infinite, selectedIndex, vertical } = nextProps
+    const { width, height } = this.state
     if (selectedIndex !== this.state.selectedIndex) {
       const index =
         this.count > 1 ? Math.min(selectedIndex as number, this.count - 1) : 0
-      const changeOffset = width * (index + (infinite ? 1 : 0))
+      const changeOffset = vertical
+        ? { x: 0, y: height * (index + (infinite ? 1 : 0)) }
+        : { x: width * (index + (infinite ? 1 : 0)), y: 0 }
       this.setState({
         selectedIndex: index,
-        offset: { x: changeOffset, y: 0 },
+        offset: changeOffset,
       })
     }
     if (children && React.Children.count(children) === this.count) return
     this.count = React.Children.count(children) || 1
-    const offset = width * (infinite ? 1 : 0)
+    const offset = vertical
+      ? { x: 0, y: height * (infinite ? 1 : 0) }
+      : { x: width * (infinite ? 1 : 0), y: 0 }
     this.setState({
       isScrolling: false,
       selectedIndex: 0,
-      offset: { x: offset, y: 0 },
+      offset: offset,
     })
   }
 
@@ -196,8 +202,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       //@ts-ignore
       const { position } = e.nativeEvent
       e.nativeEvent.contentOffset = {
-        x: position * this.state.width,
-        y: 0,
+        x: this.props.vertical ? 0 : position * this.state.width,
+        y: this.props.vertical ? position * this.state.height : 0,
       }
     }
     this.updateIndex(e.nativeEvent.contentOffset)
@@ -212,10 +218,12 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
   onScrollEndDrag = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     const { offset, selectedIndex } = this.state
-    const previousOffset = offset.x
-    const newOffset = e.nativeEvent.contentOffset.x
+    const previousOffset = offset
+    const newOffset = e.nativeEvent.contentOffset
     if (
-      previousOffset === newOffset &&
+      (this.props.vertical
+        ? previousOffset.y === newOffset.y
+        : previousOffset.x === newOffset.x) &&
       (selectedIndex === 0 || selectedIndex === this.count - 1)
     ) {
       this.setState({
@@ -248,45 +256,73 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   onLayout = (
     e: NativeSyntheticEvent<TargetedEvent & { layout: LayoutRectangle }>,
   ) => {
-    const { selectedIndex, infinite } = this.props
+    const { selectedIndex, infinite, vertical } = this.props
     const scrollIndex =
       this.count > 1 ? Math.min(selectedIndex as number, this.count - 1) : 0
-    const { width } = e.nativeEvent.layout
-    const offset = width * (scrollIndex + (infinite ? 1 : 0))
+    const { width, height } = e.nativeEvent.layout
+    const offset = vertical
+      ? { x: 0, y: height * (scrollIndex + (infinite ? 1 : 0)) }
+      : { x: width * (scrollIndex + (infinite ? 1 : 0)), y: 0 }
     this.setState(
       {
         width,
-        offset: { x: offset, y: 0 },
+        height,
+        offset,
       },
       () => {
         // web
         this.scrollview &&
-          this.scrollview.scrollTo({ x: offset, y: 0, animated: false })
+          this.scrollview.scrollTo({
+            ...offset,
+            animated: false,
+          })
       },
     )
   }
 
   updateIndex = (currentOffset: NativeScrollPoint) => {
     const paramOffset = currentOffset
+
     let { selectedIndex } = this.state
-    const { offset, width } = this.state
-    const diff = currentOffset.x - offset.x
+    const { offset, width, height } = this.state
+
+    const diff = this.props.vertical
+      ? paramOffset.y - offset.y
+      : paramOffset.x - offset.x
+
     if (!diff) return
-    selectedIndex += Math.round(diff / width)
+    selectedIndex += Math.round(diff / (this.props.vertical ? height : width))
     let loopJump = false
     if (this.props.infinite) {
       loopJump = true
       if (selectedIndex <= -1) {
         selectedIndex = this.count - 1
-        paramOffset.x = width * this.count
+        if (this.props.vertical) {
+          paramOffset.y = height * this.count
+        } else {
+          paramOffset.x = width * this.count
+        }
       } else if (selectedIndex >= this.count) {
         selectedIndex = 0
-        paramOffset.x = width
+        if (this.props.vertical) {
+          paramOffset.y = height
+        } else {
+          paramOffset.x = width
+        }
       }
-      if (paramOffset.x === width) {
-        this.scrollToStart()
-      } else if (paramOffset.x === this.count * width) {
-        this.scrollToEnd()
+
+      if (this.props.vertical) {
+        if (paramOffset.y === height) {
+          this.scrollToStart()
+        } else if (paramOffset.y === this.count * height) {
+          this.scrollToEnd()
+        }
+      } else {
+        if (paramOffset.x === width) {
+          this.scrollToStart()
+        } else if (paramOffset.x === this.count * width) {
+          this.scrollToEnd()
+        }
       }
     }
 
@@ -304,8 +340,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   scrollToStart = () => {
     this.scrollview &&
       this.scrollview.scrollTo({
-        x: this.state.width,
-        y: 0,
+        x: this.props.vertical ? 0 : this.state.width,
+        y: this.props.vertical ? this.state.height : 0,
         animated: false,
       })
   }
@@ -313,19 +349,19 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   scrollToEnd = () => {
     this.scrollview &&
       this.scrollview.scrollTo({
-        x: this.state.width * this.count,
-        y: 0,
+        x: this.props.vertical ? 0 : this.state.width * this.count,
+        y: this.props.vertical ? this.state.height * this.count : 0,
         animated: false,
       })
   }
 
   scrollNextPage = () => {
-    const { selectedIndex, isScrolling, width } = this.state
+    const { selectedIndex, isScrolling } = this.state
     if (isScrolling || this.count < 2) return
     const diff = selectedIndex + 1 + (this.props.infinite ? 1 : 0)
-    const offsetX = diff * width
+    // const offsetX = diff * width
 
-    this.scrollview && this.scrollview.scrollTo({ x: offsetX, y: 0 })
+    // this.scrollview && this.scrollview.scrollTo({ x: offsetX, y: 0 })
     this.setState({
       isScrolling: true,
       scrollStatus: 'end',
