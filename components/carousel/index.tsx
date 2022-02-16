@@ -88,7 +88,7 @@ const defaultPagination = (props: PaginationProps) => {
     </View>
   )
 }
-class Carousel extends React.Component<CarouselProps, CarouselState> {
+class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   static defaultProps: CarouselProps = {
     accessibilityLabel: 'Carousel',
     pageStyle: {},
@@ -129,20 +129,18 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     this.autoplay()
   }
 
-  componentWillReceiveProps(nextProps: CarouselProps) {
-    const { children, infinite, selectedIndex, vertical } = nextProps
+  UNSAFE_componentWillReceiveProps(nextProps: CarouselProps) {
+    const { autoplay, children, infinite, vertical } = nextProps
     const { width, height } = this.state
-    if (selectedIndex !== this.state.selectedIndex) {
-      const index =
-        this.count > 1 ? Math.min(selectedIndex as number, this.count - 1) : 0
-      const changeOffset = vertical
-        ? { x: 0, y: height * (index + (infinite ? 1 : 0)) }
-        : { x: width * (index + (infinite ? 1 : 0)), y: 0 }
-      this.setState({
-        selectedIndex: index,
-        offset: changeOffset,
-      })
+    if (autoplay !== this.props.autoplay) {
+      if (autoplay) {
+        this.autoplay()
+      } else {
+        this.autoplayTimer && clearTimeout(this.autoplayTimer)
+      }
     }
+    // selectedIndex only take effect once
+    // ...
     if (children && React.Children.count(children) === this.count) return
     this.count = React.Children.count(children) || 1
     const offset = vertical
@@ -191,27 +189,25 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   // TODO: 给android专门定一个onAndroidScrollEnd方法
   onScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     e.persist?.()
-    this.setState({ isScrolling: false }, () => {
-      // android/web hack
-      if (!e.nativeEvent.contentOffset) {
-        //@ts-ignore
-        const { position } = e.nativeEvent
-        e.nativeEvent.contentOffset = {
-          x: this.props.vertical ? 0 : position * this.state.width,
-          y: this.props.vertical ? position * this.state.height : 0,
-        }
+    // android/web hack
+    if (!e.nativeEvent.contentOffset) {
+      //@ts-ignore
+      const { position } = e.nativeEvent
+      e.nativeEvent.contentOffset = {
+        x: this.props.vertical ? 0 : position * this.state.width,
+        y: this.props.vertical ? position * this.state.height : 0,
       }
-      this.autoplay()
-      clearTimeout(this.scrollEndTimter)
-      this.scrollEndTimter = setTimeout(() => {
-        this.updateIndex(e.nativeEvent.contentOffset)
+    }
+    this.autoplay()
+    clearTimeout(this.scrollEndTimter)
+    this.scrollEndTimter = setTimeout(() => {
+      this.updateIndex(e.nativeEvent.contentOffset)
 
-        if (this.props.onMomentumScrollEnd) {
-          // this.props.onMomentumScrollEnd(e, this.state)
-          this.props.onMomentumScrollEnd(e)
-        }
-      }, 50) //idle time
-    })
+      if (this.props.onMomentumScrollEnd) {
+        // this.props.onMomentumScrollEnd(e, this.state)
+        this.props.onMomentumScrollEnd(e)
+      }
+    }, 50) //idle time
   }
 
   onScrollEndDrag = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -377,16 +373,18 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   autoplay = () => {
-    const { children, autoplay, autoplayInterval, infinite } = this.props
-    const { isScrolling, selectedIndex } = this.state
-    if (!Array.isArray(children) || !autoplay || isScrolling) return
-    clearTimeout(this.autoplayTimer)
-    this.autoplayTimer = setTimeout(() => {
-      if (!infinite && selectedIndex === this.count - 1) {
-        return
-      }
-      this.scrollNextPage()
-    }, autoplayInterval)
+    this.setState({ isScrolling: false }, () => {
+      const { children, autoplay, autoplayInterval, infinite } = this.props
+      const { isScrolling, selectedIndex } = this.state
+      if (!Array.isArray(children) || !autoplay || isScrolling) return
+      clearTimeout(this.autoplayTimer)
+      this.autoplayTimer = setTimeout(() => {
+        if (!infinite && selectedIndex === this.count - 1) {
+          return
+        }
+        this.scrollNextPage()
+      }, autoplayInterval)
+    })
   }
 
   _renderScroll = (pages: React.ReactNode) => {
@@ -427,7 +425,10 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       this.props
     if (!children) return null
     let pages
-    const pageWidth = [pageStyle, { width: this.state.width }]
+    const pageWidth = [
+      pageStyle,
+      { width: this.state.width, height: this.state.height },
+    ]
     if (this.count > 1) {
       const childrenArray = React.Children.toArray(children)
       if (infinite) {
