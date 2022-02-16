@@ -105,7 +105,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   private count: number
-  scrollview: any
+  scrollview = React.createRef<ScrollView>()
   viewPager = React.createRef<typeof ScrollView>()
 
   constructor(props: CarouselProps) {
@@ -156,17 +156,11 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   private autoplayTimer: NodeJS.Timeout
-  private androidScrollEndTimer: NodeJS.Timeout
   private scrollEndTimter: NodeJS.Timeout
-  private firstScrollTimer: NodeJS.Timeout
-  private loopJumpTimer: NodeJS.Timeout
 
   componentWillUnmount() {
     this.autoplayTimer && clearTimeout(this.autoplayTimer)
-    this.androidScrollEndTimer && clearTimeout(this.androidScrollEndTimer)
     this.scrollEndTimter && clearTimeout(this.scrollEndTimter)
-    this.firstScrollTimer && clearTimeout(this.firstScrollTimer)
-    this.loopJumpTimer && clearTimeout(this.loopJumpTimer)
   }
 
   /**
@@ -196,27 +190,32 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
   // TODO: 给android专门定一个onAndroidScrollEnd方法
   onScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    this.setState({ isScrolling: false })
-    // android hack
-    if (!e.nativeEvent.contentOffset) {
-      //@ts-ignore
-      const { position } = e.nativeEvent
-      e.nativeEvent.contentOffset = {
-        x: this.props.vertical ? 0 : position * this.state.width,
-        y: this.props.vertical ? position * this.state.height : 0,
+    e.persist?.()
+    this.setState({ isScrolling: false }, () => {
+      // android/web hack
+      if (!e.nativeEvent.contentOffset) {
+        //@ts-ignore
+        const { position } = e.nativeEvent
+        e.nativeEvent.contentOffset = {
+          x: this.props.vertical ? 0 : position * this.state.width,
+          y: this.props.vertical ? position * this.state.height : 0,
+        }
       }
-    }
-    this.updateIndex(e.nativeEvent.contentOffset)
-    this.scrollEndTimter = setTimeout(() => {
       this.autoplay()
-      if (this.props.onMomentumScrollEnd) {
-        // this.props.onMomentumScrollEnd(e, this.state)
-        this.props.onMomentumScrollEnd(e)
-      }
+      clearTimeout(this.scrollEndTimter)
+      this.scrollEndTimter = setTimeout(() => {
+        this.updateIndex(e.nativeEvent.contentOffset)
+
+        if (this.props.onMomentumScrollEnd) {
+          // this.props.onMomentumScrollEnd(e, this.state)
+          this.props.onMomentumScrollEnd(e)
+        }
+      }, 50) //idle time
     })
   }
 
   onScrollEndDrag = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    e.persist?.()
     const { offset, selectedIndex } = this.state
     const previousOffset = offset
     const newOffset = e.nativeEvent.contentOffset
@@ -246,10 +245,10 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   onScrollForWeb = (e: any) => {
-    if (this.state.scrollStatus === 'start') {
-    } else if (this.state.scrollStatus === 'end') {
-      this.setState({ scrollStatus: '' })
-      this.onScrollEnd(JSON.parse(JSON.stringify(e)))
+    if (this.state.scrollStatus === 'end') {
+      this.setState({ scrollStatus: '' }, () => {
+        this.onScrollEnd(JSON.parse(JSON.stringify(e)))
+      })
     }
   }
 
@@ -271,11 +270,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       },
       () => {
         // web
-        this.scrollview &&
-          this.scrollview.scrollTo({
-            ...offset,
-            animated: false,
-          })
+        this.scrollview?.current?.scrollTo({ ...offset, animated: false })
       },
     )
   }
@@ -338,44 +333,47 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   scrollToStart = () => {
-    this.scrollview &&
-      this.scrollview.scrollTo({
-        x: this.props.vertical ? 0 : this.state.width,
-        y: this.props.vertical ? this.state.height : 0,
-        animated: false,
-      })
+    this.scrollview?.current?.scrollTo({
+      x: this.props.vertical ? 0 : this.state.width,
+      y: this.props.vertical ? this.state.height : 0,
+      animated: false,
+    })
   }
 
   scrollToEnd = () => {
-    this.scrollview &&
-      this.scrollview.scrollTo({
-        x: this.props.vertical ? 0 : this.state.width * this.count,
-        y: this.props.vertical ? this.state.height * this.count : 0,
-        animated: false,
-      })
+    this.scrollview?.current?.scrollTo({
+      x: this.props.vertical ? 0 : this.state.width * this.count,
+      y: this.props.vertical ? this.state.height * this.count : 0,
+      animated: false,
+    })
   }
 
   scrollNextPage = () => {
-    const { selectedIndex, isScrolling } = this.state
+    const { selectedIndex, isScrolling, width, height } = this.state
     if (isScrolling || this.count < 2) return
     const diff = selectedIndex + 1 + (this.props.infinite ? 1 : 0)
-    // const offsetX = diff * width
+    this.scrollview?.current?.scrollTo(
+      this.props.vertical
+        ? { x: 0, y: diff * height }
+        : { x: diff * width, y: 0 },
+    )
 
-    // this.scrollview && this.scrollview.scrollTo({ x: offsetX, y: 0 })
-    this.setState({
-      isScrolling: true,
-      scrollStatus: 'end',
-    })
-    if (Platform.OS === 'android') {
-      this.androidScrollEndTimer = setTimeout(() => {
-        this.onScrollEnd({
-          nativeEvent: {
-            // @ts-ignore
-            position: diff,
-          },
-        })
-      }, 0)
-    }
+    this.setState(
+      {
+        isScrolling: true,
+        scrollStatus: 'end',
+      },
+      () => {
+        if (Platform.OS !== 'ios') {
+          this.onScrollEnd({
+            nativeEvent: {
+              // @ts-ignore
+              position: diff,
+            },
+          })
+        }
+      },
+    )
   }
 
   autoplay = () => {
@@ -396,11 +394,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       <ScrollView
         {...this.props}
         horizontal={!this.props.vertical}
-        ref={
-          /* istanbul ignore next */ (ref) => {
-            this.scrollview = ref
-          }
-        }
+        ref={this.scrollview as any}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         pagingEnabled={true}
