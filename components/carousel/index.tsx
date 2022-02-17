@@ -10,7 +10,8 @@ import {
   View,
   ViewStyle,
 } from 'react-native'
-import { WithThemeStyles } from '../style'
+import { WithTheme, WithThemeStyles } from '../style'
+import devWarning from '../_util/devWarning'
 import CarouselStyles, { CarouselStyle } from './style/index'
 
 export interface CarouselPropsType
@@ -51,7 +52,6 @@ export interface CarouselState {
   isScrolling: boolean
   scrollStatus: string
   offset: NativeScrollPoint
-  loopJump: boolean
 }
 
 export interface PaginationProps {
@@ -105,15 +105,14 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   }
 
   private count: number
-  scrollview = React.createRef<ScrollView>()
-  viewPager = React.createRef<typeof ScrollView>()
+  private scrollview = React.createRef<ScrollView>()
 
   constructor(props: CarouselProps) {
     super(props)
     const { children, selectedIndex } = this.props
     this.count = children ? React.Children.count(children) : 0
     const index =
-      this.count > 1 ? Math.min(selectedIndex as number, this.count - 1) : 0
+      (this.count > 1 && Math.min(selectedIndex as number, this.count - 1)) || 0
     this.state = {
       width: 0,
       height: 0,
@@ -121,7 +120,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       scrollStatus: '',
       selectedIndex: index,
       offset: { x: 0, y: 0 },
-      loopJump: false,
     }
   }
 
@@ -153,23 +151,12 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     })
   }
 
-  private autoplayTimer: NodeJS.Timeout
-  private scrollEndTimter: NodeJS.Timeout
+  private autoplayTimer: ReturnType<typeof setTimeout>
+  private scrollEndTimter: ReturnType<typeof setTimeout>
 
   componentWillUnmount() {
     this.autoplayTimer && clearTimeout(this.autoplayTimer)
     this.scrollEndTimter && clearTimeout(this.scrollEndTimter)
-  }
-
-  /**
-   * go to index
-   * @param index
-   */
-  public goTo(index: number) {
-    this.scrollNextPage()
-    this.setState({ selectedIndex: index })
-    // @ts-ignore
-    this.viewPager.current.setPage(index)
   }
 
   onScrollBegin = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -179,7 +166,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       },
       () => {
         if (this.props.onScrollBeginDrag) {
-          // this.props.onScrollBeginDrag(e, this.state)
           this.props.onScrollBeginDrag(e)
         }
       },
@@ -204,7 +190,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       this.updateIndex(e.nativeEvent.contentOffset)
 
       if (this.props.onMomentumScrollEnd) {
-        // this.props.onMomentumScrollEnd(e, this.state)
         this.props.onMomentumScrollEnd(e)
       }
     }, 50) //idle time
@@ -253,7 +238,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   ) => {
     const { selectedIndex, infinite, vertical } = this.props
     const scrollIndex =
-      this.count > 1 ? Math.min(selectedIndex as number, this.count - 1) : 0
+      (this.count > 1 && Math.min(selectedIndex as number, this.count - 1)) || 0
     const { width, height } = e.nativeEvent.layout
     const offset = vertical
       ? { x: 0, y: height * (scrollIndex + (infinite ? 1 : 0)) }
@@ -283,9 +268,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
 
     if (!diff) return
     selectedIndex += Math.round(diff / (this.props.vertical ? height : width))
-    let loopJump = false
     if (this.props.infinite) {
-      loopJump = true
       if (selectedIndex <= -1) {
         selectedIndex = this.count - 1
         if (this.props.vertical) {
@@ -320,7 +303,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     this.setState({
       selectedIndex,
       offset: paramOffset,
-      loopJump,
       scrollStatus: 'end',
     })
     if (this.props.afterChange) {
@@ -372,11 +354,84 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     )
   }
 
-  autoplay = () => {
+  /**
+   * go to index
+   * @param index
+   */
+  public goTo(index: number) {
+    const { width, height } = this.state
+
+    const count = this.props.infinite ? this.count - 1 : this.count
+    if (typeof index !== 'number' || index < 0 || index > count) {
+      return devWarning(
+        false,
+        'Carousel',
+        `function goTo(index): ${'`index`'} must be between 0 - ${count} numbers`,
+      )
+    }
+
+    if (this.props.infinite) {
+      this.setState(
+        {
+          isScrolling: true,
+          scrollStatus: 'end',
+        },
+        () => {
+          this.scrollview?.current?.scrollTo(
+            this.props.vertical
+              ? { x: 0, y: (index + 1) * height }
+              : { x: (index + 1) * width, y: 0 },
+          )
+        },
+      )
+    } else {
+      const offset = this.props.vertical
+        ? { x: 0, y: index * height }
+        : { x: index * width, y: 0 }
+      this.scrollview?.current?.scrollTo(offset)
+      this.updateIndex(offset)
+    }
+
+    this.autoplay()
+  }
+
+  render() {
+    const { children, dots, infinite, accessibilityLabel, pageStyle } =
+      this.props
+    const { width, height, selectedIndex } = this.state
+    if (!children) return null
+    let pages
+    const pageWidth = [pageStyle, { width, height }]
+    if (this.count > 1) {
+      const childrenArray = React.Children.toArray(children)
+      if (infinite) {
+        childrenArray.unshift(childrenArray[this.count - 1])
+        childrenArray.push(childrenArray[1])
+      }
+      pages = childrenArray.map((child, index) => (
+        <View
+          key={`carousel_${index}`}
+          accessibilityLabel={`${accessibilityLabel}_${index}`}
+          style={pageWidth}>
+          {child}
+        </View>
+      ))
+    } else {
+      pages = <View style={pageWidth}>{children}</View>
+    }
+    return (
+      <View onLayout={this.onLayout}>
+        {this.renderScroll(pages)}
+        {dots && this.renderDots(selectedIndex)}
+      </View>
+    )
+  }
+
+  private autoplay = () => {
     this.setState({ isScrolling: false }, () => {
       const { children, autoplay, autoplayInterval, infinite } = this.props
-      const { isScrolling, selectedIndex } = this.state
-      if (!Array.isArray(children) || !autoplay || isScrolling) return
+      const { selectedIndex } = this.state
+      if (!Array.isArray(children) || !autoplay) return
       clearTimeout(this.autoplayTimer)
       this.autoplayTimer = setTimeout(() => {
         if (!infinite && selectedIndex === this.count - 1) {
@@ -387,7 +442,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     })
   }
 
-  _renderScroll = (pages: React.ReactNode) => {
+  private renderScroll = (pages: React.ReactNode) => {
     return (
       <ScrollView
         {...this.props}
@@ -416,41 +471,24 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     )
   }
 
-  _renderDots = () => {
-    return null
-  }
-
-  render() {
-    const { children, dots, infinite, accessibilityLabel, pageStyle } =
-      this.props
-    if (!children) return null
-    let pages
-    const pageWidth = [
-      pageStyle,
-      { width: this.state.width, height: this.state.height },
-    ]
-    if (this.count > 1) {
-      const childrenArray = React.Children.toArray(children)
-      if (infinite) {
-        childrenArray.unshift(childrenArray[this.count - 1])
-        childrenArray.push(childrenArray[1])
-      }
-      pages = childrenArray.map((child, index) => (
-        <View
-          key={`carousel_${index}`}
-          accessibilityLabel={`${accessibilityLabel}_${index}`}
-          style={pageWidth}>
-          {child}
-        </View>
-      ))
-    } else {
-      pages = <View style={pageWidth}>{children}</View>
+  private renderDots = (index: number) => {
+    const { vertical, pagination, dotStyle, dotActiveStyle } = this.props
+    if (!pagination) {
+      return null
     }
     return (
-      <View onLayout={this.onLayout}>
-        {this._renderScroll(pages)}
-        {dots && this._renderDots()}
-      </View>
+      <WithTheme themeStyles={CarouselStyles} styles={this.props.styles}>
+        {(styles) => {
+          return pagination({
+            styles,
+            vertical,
+            current: index,
+            count: this.count,
+            dotStyle,
+            dotActiveStyle,
+          })
+        }}
+      </WithTheme>
     )
   }
 }
