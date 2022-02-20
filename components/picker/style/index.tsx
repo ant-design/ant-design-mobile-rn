@@ -2,6 +2,7 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 export interface PickerStyle {
   modal: ViewStyle
+  container: ViewStyle
   header: ViewStyle
   headerItem: ViewStyle
   actionText: TextStyle
@@ -17,8 +18,10 @@ export default () =>
       flexDirection: 'column',
       justifyContent: 'flex-end',
     },
+    container:{
+      flexGrow:0.5,
+    },
     header: {
-      flexGrow: 1,
       height: 44,
       alignItems: 'center',
       flexDirection: 'row',
