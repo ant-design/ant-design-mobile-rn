@@ -49,8 +49,8 @@ export interface CarouselState {
   width: number
   height: number
   selectedIndex: number
+  afterSelectedIndex: number
   isScrolling: boolean
-  scrollStatus: string
   offset: NativeScrollPoint
 }
 
@@ -117,8 +117,8 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       width: 0,
       height: 0,
       isScrolling: false,
-      scrollStatus: '',
       selectedIndex: index,
+      afterSelectedIndex: 0,
       offset: { x: 0, y: 0 },
     }
   }
@@ -145,7 +145,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       ? { x: 0, y: height * (infinite ? 1 : 0) }
       : { x: width * (infinite ? 1 : 0), y: 0 }
     this.setState({
-      isScrolling: false,
       selectedIndex: 0,
       offset: offset,
     })
@@ -216,21 +215,15 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   }
 
   onTouchStartForWeb = () => {
-    this.setState({ scrollStatus: 'start', isScrolling: true })
+    this.setState({ isScrolling: true })
   }
 
   onTouchEndForWeb = () => {
-    if (this.state.scrollStatus === 'start') {
-      this.setState({ scrollStatus: 'end', isScrolling: false })
-    }
+    this.autoplay()
   }
 
   onScrollForWeb = (e: any) => {
-    if (this.state.scrollStatus === 'end') {
-      this.setState({ scrollStatus: '' }, () => {
-        this.onScrollEnd(JSON.parse(JSON.stringify(e)))
-      })
-    }
+    this.onScrollEnd(JSON.parse(JSON.stringify(e)))
   }
 
   onLayout = (
@@ -300,14 +293,22 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       }
     }
 
-    this.setState({
-      selectedIndex,
-      offset: paramOffset,
-      scrollStatus: 'end',
-    })
-    if (this.props.afterChange) {
-      this.props.afterChange(selectedIndex)
-    }
+    this.setState(
+      {
+        selectedIndex,
+        offset: paramOffset,
+      },
+      () => {
+        if (
+          this.props.afterChange &&
+          this.state.selectedIndex !== this.state.afterSelectedIndex
+        ) {
+          this.setState({ afterSelectedIndex: selectedIndex }, () => {
+            this.props.afterChange?.(selectedIndex)
+          })
+        }
+      },
+    )
   }
 
   scrollToStart = () => {
@@ -339,7 +340,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     this.setState(
       {
         isScrolling: true,
-        scrollStatus: 'end',
       },
       () => {
         if (Platform.OS !== 'ios') {
@@ -370,29 +370,11 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       )
     }
 
-    if (this.props.infinite) {
-      this.setState(
-        {
-          isScrolling: true,
-          scrollStatus: 'end',
-        },
-        () => {
-          this.scrollview?.current?.scrollTo(
-            this.props.vertical
-              ? { x: 0, y: (index + 1) * height }
-              : { x: (index + 1) * width, y: 0 },
-          )
-        },
-      )
-    } else {
-      const offset = this.props.vertical
-        ? { x: 0, y: index * height }
-        : { x: index * width, y: 0 }
-      this.scrollview?.current?.scrollTo(offset)
-      this.updateIndex(offset)
-    }
-
-    this.autoplay()
+    this.scrollview?.current?.scrollTo(
+      this.props.vertical
+        ? { x: 0, y: (index + (this.props.infinite ? 1 : 0)) * height }
+        : { x: (index + (this.props.infinite ? 1 : 0)) * width, y: 0 },
+    )
   }
 
   render() {
