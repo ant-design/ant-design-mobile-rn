@@ -118,7 +118,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       height: 0,
       isScrolling: false,
       selectedIndex: index,
-      afterSelectedIndex: 0,
+      afterSelectedIndex: -1,
       offset: { x: 0, y: 0 },
     }
   }
@@ -357,8 +357,9 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   /**
    * go to index
    * @param index
+   * @param animated
    */
-  public goTo(index: number) {
+  public goTo(index: number, animated?: boolean) {
     const { width, height } = this.state
 
     const count = this.props.infinite ? this.count - 1 : this.count
@@ -370,11 +371,15 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       )
     }
 
-    this.scrollview?.current?.scrollTo(
-      this.props.vertical
-        ? { x: 0, y: (index + (this.props.infinite ? 1 : 0)) * height }
-        : { x: (index + (this.props.infinite ? 1 : 0)) * width, y: 0 },
-    )
+    this.scrollview?.current?.scrollTo({
+      x: this.props.vertical
+        ? 0
+        : (index + (this.props.infinite ? 1 : 0)) * width,
+      y: this.props.vertical
+        ? (index + (this.props.infinite ? 1 : 0)) * height
+        : 0,
+      animated,
+    })
   }
 
   render() {

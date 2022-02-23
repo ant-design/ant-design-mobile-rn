@@ -1,12 +1,6 @@
 import React from 'react'
-import {
-  Animated,
-  Dimensions,
-  LayoutChangeEvent,
-  NativeScrollEvent,
-  NativeSyntheticEvent,
-} from 'react-native'
-import ViewPager from 'react-native-pager-view'
+import { Animated, Dimensions, LayoutChangeEvent } from 'react-native'
+import Carousel from '../carousel/index'
 import { WithTheme, WithThemeStyles } from '../style'
 import View from '../view'
 import { DefaultTabBar } from './DefaultTabBar'
@@ -18,6 +12,8 @@ export interface StateType {
   scrollX: Animated.Value
   scrollValue: Animated.Value
   containerWidth: number
+  containerHeight: number
+  selectedIndex: number
 }
 
 let instanceId: number = 0
@@ -38,14 +34,11 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
   }
   static DefaultTabBar = DefaultTabBar
 
-  viewPager: ViewPager | null
+  carousel: Carousel | null
 
   protected instanceId: number
   protected prevCurrentTab: number
   protected tabCache: { [index: number]: React.ReactNode } = {}
-
-  /** compatible for different between react and preact in `setState`. */
-  private nextCurrentTab: number
 
   constructor(props: PropsType) {
     super(props)
@@ -57,8 +50,9 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       scrollX: new Animated.Value(pageIndex * width),
       scrollValue: new Animated.Value(pageIndex),
       containerWidth: width,
+      containerHeight: 0,
+      selectedIndex: 0,
     }
-    this.nextCurrentTab = this.state.currentTab
     this.instanceId = instanceId++
   }
 
@@ -72,7 +66,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
 
   renderContent = (getSubElements = this.getSubElements()) => {
     const { tabs, usePaged, destroyInactiveTab } = this.props
-    const { currentTab = 0, containerWidth = 0 } = this.state
+    const { containerHeight = 0, containerWidth = 0, currentTab } = this.state
     const content = tabs.map((tab, index) => {
       const key = tab.key || `tab_${index}`
 
@@ -86,52 +80,47 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       return (
         <View
           key={key}
-          // active={currentTab === index}
-          style={{ width: containerWidth }}>
+          style={[
+            { width: containerWidth },
+            containerHeight ? { height: containerHeight } : { flex: 1 },
+          ]}>
           {this.tabCache[index]}
         </View>
       )
     })
+
     return (
-      <ViewPager
+      <Carousel
         key="$content"
         keyboardDismissMode="on-drag"
-        initialPage={currentTab}
+        pagination={() => null}
+        selectedIndex={currentTab}
+        afterChange={(index: number) => {
+          this.setState({ currentTab: index }, () => {
+            this.state.scrollX.setValue(index * this.state.containerWidth)
+          })
+        }}
         scrollEnabled={this.props.swipeable || usePaged}
-        onPageScroll={(e) => {
-          this.state.scrollX.setValue(
-            e.nativeEvent.position * this.state.containerWidth,
-          )
+        style={{
+          height: containerHeight,
+          width: containerWidth,
         }}
-        style={{ flex: 1 }}
-        onPageSelected={(e) => {
-          const index = e.nativeEvent.position
-          this.setState(
-            {
-              currentTab: index,
-            },
-            () => {
-              // tslint:disable-next-line:no-unused-expression
-              this.props.onChange && this.props.onChange(tabs[index], index)
-            },
-          )
-          this.nextCurrentTab = index
-        }}
-        ref={(ref) => (this.viewPager = ref)}>
+        ref={(ref) => (this.carousel = ref)}>
         {content}
-      </ViewPager>
+      </Carousel>
     )
   }
 
-  onMomentumScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const offsetX = e.nativeEvent.contentOffset.x
-    const page = this.getOffsetIndex(offsetX, this.state.containerWidth)
-    if (this.state.currentTab !== page) {
-      this.goToTab(page)
-    }
+  // 在ScrollView下会拿不到正确高度
+  // 所以先展示第一个拿到高度后再以第一个高度为基准渲染整个Carousel
+  handleLayout1 = (e: LayoutChangeEvent) => {
+    const { height } = e.nativeEvent.layout
+    requestAnimationFrame(() => {
+      this.setState({ containerHeight: height })
+    })
   }
 
-  handleLayout = (e: LayoutChangeEvent) => {
+  handleLayout2 = (e: LayoutChangeEvent) => {
     const { width } = e.nativeEvent.layout
     requestAnimationFrame(() => {
       this.scrollTo(this.state.currentTab, false)
@@ -142,22 +131,19 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
   }
 
   scrollTo = (index: number, animated = true) => {
-    if (this.viewPager) {
-      if (animated) {
-        this.viewPager.setPage(index)
-      } else {
-        this.viewPager.setPageWithoutAnimation(index)
-      }
-      return
+    if (this.carousel) {
+      this.carousel.goTo(index, animated)
     }
   }
 
   render() {
-    const { tabBarPosition, noRenderContent, keyboardShouldPersistTaps } =
-      this.props
-    const { scrollX, scrollValue, containerWidth } = this.state
-    // let overlayTabs = (this.props.tabBarPosition === 'overlayTop' || this.props.tabBarPosition === 'overlayBottom');
-    const overlayTabs = false
+    const {
+      children,
+      tabBarPosition,
+      noRenderContent,
+      keyboardShouldPersistTaps,
+    } = this.props
+    const { scrollX, scrollValue, containerWidth, containerHeight } = this.state
 
     const tabBarProps = {
       ...this.getTabBarBaseProps(),
@@ -168,14 +154,6 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       containerWidth: containerWidth,
     }
 
-    if (overlayTabs) {
-      // tabBarProps.style = {
-      //     position: 'absolute',
-      //     left: 0,
-      //     right: 0,
-      //     [this.props.tabBarPosition === 'overlayTop' ? 'top' : 'bottom']: 0,
-      // };
-    }
     return (
       <WithTheme styles={this.props.styles} themeStyles={TabsStyles}>
         {(styles) => {
@@ -192,10 +170,24 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
             !noRenderContent && this.renderContent(),
           ]
 
+          if (containerHeight === 0 && Array.isArray(children)) {
+            return (
+              <View
+                style={[
+                  { flexDirection: 'row' },
+                  styles.container,
+                  this.props.style,
+                ]}
+                onLayout={this.handleLayout1}>
+                {React.Children.toArray(children)[0]}
+              </View>
+            )
+          }
+
           return (
             <View
               style={[styles.container, this.props.style]}
-              onLayout={this.handleLayout}>
+              onLayout={this.handleLayout2}>
               {tabBarPosition === 'top' ? content : content.reverse()}
             </View>
           )
@@ -235,7 +227,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
 
   UNSAFE_componentWillReceiveProps(nextProps: PropsType) {
     if (this.props.page !== nextProps.page && nextProps.page !== undefined) {
-      this.goToTab(this.getTabIndex(nextProps), true)
+      this.goToTab(this.getTabIndex(nextProps))
     }
   }
 
@@ -261,31 +253,11 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     }
   }
 
-  goToTab(index: number, force = false, newState: any = {}) {
-    if (!force && this.nextCurrentTab === index) {
-      return false
+  goToTab(index: number) {
+    if (this.carousel) {
+      this.carousel.goTo(index)
     }
-    this.nextCurrentTab = index
-    const { tabs, onChange } = this.props as PropsType
-    if (index >= 0 && index < tabs.length) {
-      if (!force) {
-        // tslint:disable-next-line:no-unused-expression
-        onChange && onChange(tabs[index], index)
-      }
-      this.setState(
-        {
-          currentTab: index,
-          ...newState,
-        },
-        () => {
-          requestAnimationFrame(() => {
-            this.scrollTo(this.state.currentTab, this.props.animated)
-          })
-        },
-      )
-    }
-
-    return true
+    this.state.scrollX.setValue(index * this.state.containerWidth)
   }
 
   tabClickGoToTab(index: number) {
@@ -326,7 +298,6 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     }
   }
 
-  // tslint:disable-next-line:no-shadowed-variable
   renderTabBar(tabBarProps: any, DefaultTabBar: React.ComponentClass) {
     const { renderTabBar } = this.props
     if (renderTabBar === false) {
@@ -342,7 +313,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     const { children } = this.props
     const subElements: { [key: string]: React.ReactNode } = {}
 
-    return (defaultPrefix: string = '$i$-', allPrefix: string = '$ALL$') => {
+    return (defaultPrefix: string = '$i$-') => {
       if (Array.isArray(children)) {
         children.forEach((child: any, index) => {
           if (child.key) {
@@ -350,8 +321,6 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
           }
           subElements[`${defaultPrefix}${index}`] = child
         })
-      } else if (children) {
-        subElements[allPrefix] = children
       }
       return subElements
     }
