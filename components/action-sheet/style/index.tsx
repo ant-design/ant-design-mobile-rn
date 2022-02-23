@@ -58,7 +58,6 @@ export default (theme: Theme) =>
       marginBottom: theme.h_spacing_lg,
     },
     btn: {
-      flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
       height: theme.actionsheet_item_height,
