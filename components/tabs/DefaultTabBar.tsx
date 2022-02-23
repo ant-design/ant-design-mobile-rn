@@ -23,8 +23,6 @@ export interface PropsType
   scrollValue?: any
   tabStyle?: ViewStyle
   tabsContainerStyle?: ViewStyle
-  /** default: false */
-  dynamicTabUnderlineWidth?: boolean
   keyboardShouldPersistTaps?: boolean
 }
 
@@ -46,13 +44,13 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     tabBarActiveTextColor: '',
     tabBarInactiveTextColor: '',
     tabBarTextStyle: {},
-    dynamicTabUnderlineWidth: false,
   }
 
   _tabsMeasurements: any[] = []
   _tabContainerMeasurements: any
   _containerMeasurements: any
   _scrollView: ScrollView
+  _newLineLeft: number
 
   constructor(props: PropsType) {
     super(props)
@@ -115,40 +113,36 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     newScrollX = newScrollX >= 0 ? newScrollX : 0
 
     if (Platform.OS === 'android') {
-      this._scrollView.scrollTo({ x: newScrollX, y: 0, animated: false })
+      this._scrollView?.scrollTo({ x: newScrollX, y: 0 })
     } else {
       const rightBoundScroll =
         this._tabContainerMeasurements.width - this._containerMeasurements.width
       newScrollX = newScrollX > rightBoundScroll ? rightBoundScroll : newScrollX
-      this._scrollView.scrollTo({ x: newScrollX, y: 0, animated: false })
+      this._scrollView?.scrollTo({ x: newScrollX, y: 0 })
     }
   }
 
   updateTabUnderline(position: number, pageOffset: number, tabCount: number) {
-    const { dynamicTabUnderlineWidth } = this.props
-
     if (position >= 0 && position <= tabCount - 1) {
-      if (dynamicTabUnderlineWidth) {
-        const nowLeft = this._tabsMeasurements[position].left
-        const nowRight = this._tabsMeasurements[position].right
-        const nextTabLeft = this._tabsMeasurements[position + 1].left
-        const nextTabRight = this._tabsMeasurements[position + 1].right
+      const nowLeft = this._tabsMeasurements[position].left
+      const nowRight = this._tabsMeasurements[position].right
+      const nextTabLeft = this._tabsMeasurements[position + 1]?.left || 0
+      const nextTabRight = this._tabsMeasurements[position + 1]?.right || 0
 
-        const newLineLeft =
-          pageOffset * nextTabLeft + (1 - pageOffset) * nowLeft
-        const newLineRight =
-          pageOffset * nextTabRight + (1 - pageOffset) * nowRight
+      const newLineLeft = pageOffset * nextTabLeft + (1 - pageOffset) * nowLeft
+      const newLineRight =
+        pageOffset * nextTabRight + (1 - pageOffset) * nowRight
 
-        this.state._leftTabUnderline.setValue(newLineLeft)
-        this.state._widthTabUnderline.setValue(newLineRight - newLineLeft)
-      } else {
-        const nowLeft = (position * this.state._tabContainerWidth) / tabCount
-        const nextTabLeft =
-          ((position + 1) * this.state._tabContainerWidth) / tabCount
-        const newLineLeft =
-          pageOffset * nextTabLeft + (1 - pageOffset) * nowLeft
-        this.state._leftTabUnderline.setValue(newLineLeft)
-      }
+      if (this._newLineLeft === newLineLeft) return
+      this._newLineLeft = newLineLeft
+      Animated.timing(this.state._leftTabUnderline, {
+        toValue: newLineLeft,
+        useNativeDriver: false,
+      }).start()
+      Animated.timing(this.state._widthTabUnderline, {
+        toValue: newLineRight - newLineLeft,
+        useNativeDriver: false,
+      }).start()
     }
   }
 
@@ -191,8 +185,8 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
         <View
           style={{
             ...StyleSheet.flatten(styles.tab),
+            minWidth: width,
             ...this.props.tabStyle,
-            width,
           }}>
           {renderTab ? (
             renderTab(tab)
@@ -221,45 +215,69 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     this.updateView({ value: this.props.scrollValue._value })
   }
 
+  getTabs = (styles: TabBarStyle, theme: Theme) => {
+    const { tabs, page = 0 } = this.props
+    return tabs.map((name, index) => {
+      let tab = { title: name } as TabData
+      if (tabs.length - 1 >= index) {
+        tab = tabs[index]
+      }
+      const tabWidth = this.state._containerWidth / Math.min(page, tabs.length)
+
+      return this.renderTab(
+        tab,
+        index,
+        tabWidth,
+        this.measureTab.bind(this, index),
+        styles,
+        theme,
+      )
+    })
+  }
+
+  getUnderLine = (styles: TabBarStyle) => {
+    const { tabBarUnderlineStyle, renderUnderline } = this.props
+
+    const tabUnderlineStyle = {
+      position: 'absolute',
+      bottom: 0,
+      ...StyleSheet.flatten(styles.underline),
+      ...StyleSheet.flatten(tabBarUnderlineStyle),
+    }
+
+    const dynamicTabUnderline = {
+      left: this.state._leftTabUnderline,
+      width: this.state._widthTabUnderline,
+    }
+    const underlineProps = {
+      style: {
+        ...dynamicTabUnderline,
+        ...tabUnderlineStyle,
+      },
+    }
+    return renderUnderline ? (
+      renderUnderline(underlineProps.style)
+    ) : (
+      //@ts-ignore
+      <Animated.View {...underlineProps} />
+    )
+  }
+
   render() {
     const {
       tabs,
       page = 0,
-      tabBarUnderlineStyle,
       tabBarBackgroundColor,
       tabsContainerStyle,
-      renderUnderline,
       keyboardShouldPersistTaps,
     } = this.props
     return (
       <WithTheme styles={this.props.styles} themeStyles={TabBarStyles}>
         {(styles, theme) => {
-          const tabUnderlineStyle = {
-            position: 'absolute',
-            bottom: 0,
-            ...StyleSheet.flatten(styles.underline),
-            ...StyleSheet.flatten(tabBarUnderlineStyle),
-          }
-
-          const dynamicTabUnderline = {
-            left: this.state._leftTabUnderline,
-            width: this.state._widthTabUnderline,
-          }
-
-          const tabWidth =
-            this.state._containerWidth / Math.min(page, tabs.length)
-          const underlineProps = {
-            style: {
-              ...dynamicTabUnderline,
-              ...tabUnderlineStyle,
-            },
-          }
-
           return (
             <View
               style={[
                 styles.container,
-
                 {
                   backgroundColor: tabBarBackgroundColor,
                 },
@@ -281,32 +299,12 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
                 <View
                   style={[
                     styles.tabs,
-
-                    {
-                      ...tabsContainerStyle,
-                      backgroundColor: tabBarBackgroundColor,
-                    },
+                    tabsContainerStyle,
+                    { backgroundColor: tabBarBackgroundColor },
                   ]}
                   onLayout={this.onTabContainerLayout}>
-                  {tabs.map((name, index) => {
-                    let tab = { title: name } as TabData
-                    if (tabs.length - 1 >= index) {
-                      tab = tabs[index]
-                    }
-                    return this.renderTab(
-                      tab,
-                      index,
-                      tabWidth,
-                      this.measureTab.bind(this, index),
-                      styles,
-                      theme,
-                    )
-                  })}
-                  {renderUnderline ? (
-                    renderUnderline(underlineProps.style)
-                  ) : (
-                    <Animated.View {...underlineProps.style} />
-                  )}
+                  {this.getTabs(styles, theme)}
+                  {this.getUnderLine(styles)}
                 </View>
               </ScrollView>
             </View>
@@ -324,9 +322,6 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     // width = WINDOW_WIDTH;
     // }
     this.setState({ _tabContainerWidth: width })
-    if (!this.props.dynamicTabUnderlineWidth) {
-      this.state._widthTabUnderline.setValue(width / this.props.tabs.length)
-    }
     this.updateView({ value: this.props.scrollValue._value })
   }
 

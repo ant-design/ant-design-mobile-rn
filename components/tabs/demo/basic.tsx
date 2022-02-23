@@ -20,7 +20,11 @@ const renderContent = (tab: any, index: any) => {
       </View>
     )
   })
-  return <ScrollView style={{ backgroundColor: '#fff' }}>{content}</ScrollView>
+  return (
+    <ScrollView key={index} style={{ backgroundColor: '#fff' }}>
+      {content}
+    </ScrollView>
+  )
 }
 
 export default class BasicTabsExample extends React.Component<any, any> {
@@ -109,7 +113,7 @@ export default class BasicTabsExample extends React.Component<any, any> {
         </Tabs>
         <View style={{ flex: 2 }}>
           <Tabs tabs={tabs2} initialPage={1} tabBarPosition="top">
-            {renderContent}
+            {tabs2.map((tab, index) => renderContent(tab, index))}
           </Tabs>
         </View>
       </View>
