@@ -1,4 +1,12 @@
 {
   "name": "antd_mobile_rn",
-  "displayName": "antd_mobile_rn"
+  "displayName": "antd_mobile_rn",
+  "expo": {
+    "name": "@ant-design/react-native",
+    "slug": "ant-design-mobile-rn",
+    "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
+    "icon": "./rn-kitchen-sink/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "version": "5.0.0",
+    "entryPoint": "./expo/App.js"
+  }
 }

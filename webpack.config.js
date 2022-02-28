@@ -1,4 +1,7 @@
-const getWebpackConfig = require('@ant-design/tools/lib/getWebpackConfig.js')
-const webpackConfig = getWebpackConfig(false)
+const createExpoWebpackConfigAsync = require('@expo/webpack-config')
 
-module.exports = webpackConfig
+module.exports = async function (env, argv) {
+  const config = await createExpoWebpackConfigAsync(env, argv)
+  // Customize the config before returning it.
+  return config
+}
