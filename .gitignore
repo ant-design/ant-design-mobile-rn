@@ -52,3 +52,5 @@ coverage
 package-lock.json
 .cdnkey
 .jest
+.expo/
+web-build/
