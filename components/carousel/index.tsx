@@ -249,8 +249,14 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       (this.count > 1 && Math.min(selectedIndex as number, this.count - 1)) || 0
     const { width, height } = e.nativeEvent.layout
     const offset = vertical
-      ? { x: 0, y: height * (scrollIndex + (infinite ? 1 : 0)) }
-      : { x: width * (scrollIndex + (infinite ? 1 : 0)), y: 0 }
+      ? {
+          x: 0,
+          y: height * (scrollIndex + (infinite && this.count > 1 ? 1 : 0)),
+        }
+      : {
+          x: width * (scrollIndex + (infinite && this.count > 1 ? 1 : 0)),
+          y: 0,
+        }
     this.setState(
       {
         width,
