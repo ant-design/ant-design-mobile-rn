@@ -139,15 +139,30 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     }
     // selectedIndex only take effect once
     // ...
-    if (children && React.Children.count(children) === this.count) return
+
+    if (
+      children &&
+      React.Children.count(children) === this.count &&
+      infinite === this.props.infinite
+    ) {
+      return
+    }
     this.count = React.Children.count(children) || 1
     const offset = vertical
       ? { x: 0, y: height * (infinite ? 1 : 0) }
       : { x: width * (infinite ? 1 : 0), y: 0 }
-    this.setState({
-      selectedIndex: 0,
-      offset: offset,
-    })
+    this.setState(
+      {
+        isScrolling: false,
+        afterSelectedIndex: -1,
+        selectedIndex: 0,
+        offset: offset,
+      },
+      () => {
+        this.scrollview?.current?.scrollTo(offset)
+        this.autoplay()
+      },
+    )
   }
 
   private autoplayTimer: ReturnType<typeof setTimeout>
@@ -245,6 +260,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       () => {
         // web
         this.scrollview?.current?.scrollTo({ ...offset, animated: false })
+        this.autoplay()
       },
     )
   }
@@ -421,7 +437,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       if (!Array.isArray(children) || !autoplay) return
       clearTimeout(this.autoplayTimer)
       this.autoplayTimer = setTimeout(() => {
-        if (!infinite && selectedIndex === this.count - 1) {
+        if (!infinite && selectedIndex + 1 === this.count - 1) {
           return
         }
         this.scrollNextPage()
