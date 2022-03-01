@@ -44,6 +44,11 @@ const InternalRadio = (
     <WithTheme themeStyles={RadioStyle} styles={styles}>
       {(_styles) => (
         <Checkbox
+          accessibilityRole="radio"
+          accessibilityState={{
+            checked: restProps.checked,
+            disabled: restProps.disabled,
+          }}
           {...restProps}
           ref={ref}
           indeterminate={false}

@@ -20,8 +20,8 @@ export default (theme: Theme) =>
   StyleSheet.create<SwitchStyle>({
     switch: {
       position: 'relative',
-      minWidth: 44,
-      minHeight: 22,
+      minWidth: 50,
+      minHeight: 25,
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
@@ -34,8 +34,8 @@ export default (theme: Theme) =>
     // handle
     switch_handle: {
       position: 'absolute',
-      width: 18,
-      height: 18,
+      width: 22,
+      height: 22,
       borderRadius: 999,
       backgroundColor: '#ffffff',
     },

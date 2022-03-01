@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import * as React from 'react'
 import {
+  AccessibilityProps,
   Animated,
   Easing,
   Pressable,
@@ -19,7 +20,8 @@ import CheckboxStyles, { CheckboxStyle } from './style/index'
 
 export interface CheckboxProps
   extends CheckboxPropsType,
-    WithThemeStyles<CheckboxStyle> {
+    WithThemeStyles<CheckboxStyle>,
+    AccessibilityProps {
   style?: StyleProp<ViewStyle>
 }
 //TODO: ref interface
@@ -139,20 +141,22 @@ const InternalCheckbox = (
               ? _styles.checkbox_checked?.borderColor
               : _styles.checkbox?.borderColor
             return (
-              <View style={[_styles[`${prefixCls}_wrapper`], style]}>
+              <View
+                accessibilityRole="checkbox"
+                accessibilityState={{ checked: innerChecked, disabled }}
+                style={[_styles[`${prefixCls}_wrapper`], style]}>
                 <View style={_styles.checkbox_wave}>
                   <ButtonWave
+                    style={antd_checkbox}
                     Color={Color}
                     disabled={disabled}
                     onPress={this.onPress}>
-                    <View style={antd_checkbox}>
-                      <Animated.View
-                        style={[antd_checkbox_inner, transitionOpacity]}
-                      />
-                      <Animated.View
-                        style={[transitionTransform, antd_checkbox_inner_after]}
-                      />
-                    </View>
+                    <Animated.View
+                      style={[antd_checkbox_inner, transitionOpacity]}
+                    />
+                    <Animated.View
+                      style={[transitionTransform, antd_checkbox_inner_after]}
+                    />
                   </ButtonWave>
                 </View>
                 <Pressable disabled={disabled} onPress={this.onPress}>
