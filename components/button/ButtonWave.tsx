@@ -16,8 +16,13 @@ interface ButtonWaveProps extends TouchableNativeFeedbackProps {
 
 export default (props: ButtonWaveProps) => {
   const { Color, ...restProps } = props
+  const accessibilityState = {
+    disabled: !!props.disabled,
+  }
   return IS_ANDROID ? (
     <TouchableNativeFeedback
+      accessibilityRole="button"
+      accessibilityState={accessibilityState}
       background={
         Platform.Version >= 21
           ? TouchableNativeFeedback.Ripple(Color || '', true, 13)
@@ -25,9 +30,14 @@ export default (props: ButtonWaveProps) => {
       }
       useForeground={true}
       {...restProps}>
-      {props.children}
+      <>{props.children}</>
     </TouchableNativeFeedback>
   ) : (
-    <Pressable {...restProps}>{props.children}</Pressable>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityState={accessibilityState}
+      {...restProps}>
+      {props.children}
+    </Pressable>
   )
 }

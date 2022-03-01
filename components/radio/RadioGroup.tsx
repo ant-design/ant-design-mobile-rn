@@ -75,7 +75,11 @@ const RadioGroup = React.forwardRef<any, RadioGroupProps>(
       }
 
       return (
-        <View style={style} ref={ref}>
+        <View
+          accessibilityRole="radiogroup"
+          accessibilityState={{ checked: value, disabled }}
+          style={style}
+          ref={ref}>
           <RadioGroupContextProvider
             value={{
               onChange: onRadioChange,

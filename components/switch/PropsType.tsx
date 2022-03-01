@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleProp, ViewStyle } from 'react-native'
+import { ColorValue, StyleProp, ViewStyle } from 'react-native'
 
 export type SwitchChangeEventHandler = (checked: boolean) => void
 export type SwitchClickEventHandler = SwitchChangeEventHandler
@@ -9,6 +9,9 @@ export interface SwitchPropsType {
   checked?: boolean
   defaultChecked?: boolean
   color?: string
+  trackColor?: { false?: ColorValue; true?: ColorValue }
+  thumbColor?: ColorValue
+  thumbTintColor?: ColorValue
   disabled?: boolean
   loading?: boolean
   styles?: { [key: string]: StyleProp<ViewStyle> }

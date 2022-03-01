@@ -117,6 +117,8 @@ export default class Button extends React.Component<ButtonProps, any> {
 
           return (
             <TouchableHighlight
+              accessibilityRole="button"
+              accessibilityState={{ disabled: !!disabled }}
               activeOpacity={0.4}
               {...restProps}
               style={wrapperStyle}

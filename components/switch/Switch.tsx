@@ -23,6 +23,9 @@ const AntmSwitch = ({
   unCheckedChildren,
   onPress,
   onChange,
+  trackColor,
+  thumbColor,
+  thumbTintColor,
   ...restProps
 }: SwitchPropsType) => {
   devWarning(
@@ -61,7 +64,7 @@ const AntmSwitch = ({
   const transitionWidth = {
     width: animatedValue2.interpolate({
       inputRange: [0, 1],
-      outputRange: [18, 24],
+      outputRange: [22, 28],
     }),
     left: !innerChecked
       ? animatedValue.interpolate({
@@ -143,16 +146,33 @@ const AntmSwitch = ({
           .map((a) => styles[a])
 
         // color props
-        const SwitchCheckedColor = {
-          backgroundColor: color,
-          borderColor: color,
-        }
         const Color = innerChecked
-          ? color || theme.switch_fill
-          : theme.switch_unchecked
+          ? color || trackColor?.true || theme.switch_fill
+          : trackColor?.false || theme.switch_unchecked
+
+        const SwitchTrackColor = {
+          backgroundColor: Color,
+          borderColor: Color,
+          opacity: Color ? (disabled ? 0.6 : 1) : 1,
+        }
+
+        const SwitchThumbColor = JSON.parse(
+          JSON.stringify({
+            backgroundColor: innerChecked ? thumbTintColor : thumbColor,
+          }),
+        )
+
+        const accessibilityState = {
+          checked: innerChecked,
+          disabled,
+          busy: loading,
+        }
 
         return (
-          <View style={[styles[prefixCls], { padding: 1 }]}>
+          <View
+            accessibilityRole="switch"
+            accessibilityState={accessibilityState}
+            style={[styles[prefixCls], { padding: 1 }]}>
             <ButtonWave
               {...restProps}
               Color={Color}
@@ -163,9 +183,14 @@ const AntmSwitch = ({
               <View
                 style={[
                   ant_switch,
-                  Boolean(color && innerChecked) && SwitchCheckedColor,
+                  Boolean(trackColor || color) && SwitchTrackColor,
                 ]}>
-                <Animated.View style={[ant_switch_handle, transitionWidth]}>
+                <Animated.View
+                  style={[
+                    ant_switch_handle,
+                    SwitchThumbColor,
+                    transitionWidth,
+                  ]}>
                   {loading && (
                     <RNActivityIndicator
                       color={Color}
