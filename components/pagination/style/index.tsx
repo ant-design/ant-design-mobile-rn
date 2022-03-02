@@ -1,21 +1,21 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface PaginationStyle {
-  container: ViewStyle;
-  numberStyle: ViewStyle;
-  totalStyle: TextStyle;
-  activeTextStyle: TextStyle;
-  indicatorStyle: ViewStyle;
-  pointStyle: ViewStyle;
-  pointActiveStyle: ViewStyle;
-  spaceStyle: ViewStyle;
+  container: ViewStyle
+  numberStyle: ViewStyle
+  totalStyle: TextStyle
+  activeTextStyle: TextStyle
+  indicatorStyle: ViewStyle
+  pointStyle: ViewStyle
+  pointActiveStyle: ViewStyle
+  spaceStyle: ViewStyle
 }
 
 export default (theme: Theme) =>
   StyleSheet.create<PaginationStyle>({
     container: {
-      alignItems: 'center',
+      flex:1,
       justifyContent: 'center',
     },
     numberStyle: {
@@ -32,6 +32,7 @@ export default (theme: Theme) =>
     },
     indicatorStyle: {
       flexDirection: 'row',
+      alignSelf:'center'
     },
     pointStyle: {
       width: 8,
@@ -46,4 +47,4 @@ export default (theme: Theme) =>
       marginHorizontal: theme.h_spacing_sm / 2,
       marginVertical: theme.v_spacing_sm / 2,
     },
-  });
+  })

@@ -1,11 +1,11 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 export interface TabBarStyle {
-  container: ViewStyle;
-  tabs: ViewStyle;
-  tab: ViewStyle;
-  underline: ViewStyle;
-  textStyle: TextStyle;
+  container: ViewStyle
+  tabs: ViewStyle
+  tab: ViewStyle
+  underline: ViewStyle
+  textStyle: TextStyle
 }
 export default (theme: Theme) =>
   StyleSheet.create<TabBarStyle>({
@@ -33,4 +33,4 @@ export default (theme: Theme) =>
     textStyle: {
       fontSize: 15,
     },
-  });
+  })

@@ -1,102 +1,103 @@
-import { StyleProp, TextStyle, ViewStyle } from 'react-native';
+import React from 'react'
+import { StyleProp, TextStyle, ViewStyle } from 'react-native'
 
 export interface TabData {
-  key?: string;
-  title: React.ReactNode;
+  key?: string
+  title: React.ReactNode
   /** for user's custom extends */
-  [key: string]: any;
+  [key: string]: any
 }
 export interface TabBarPropsType {
   /** call this function to switch tab */
-  goToTab: (index: number) => void;
+  goToTab: (index: number) => void
   /** tabs data */
-  tabs: TabData[];
+  tabs: TabData[]
   /** current active tab */
-  activeTab: number;
+  activeTab: number
   /** use animate | default: true */
-  animated: boolean;
+  animated: boolean
   /** render the tab of tabbar */
-  renderTab?: (tab: TabData) => React.ReactNode;
+  renderTab?: (tab: TabData) => React.ReactNode
   /** render the underline of tabbar */
-  renderUnderline?: (style: any) => React.ReactNode;
+  renderUnderline?: (style: any) => React.ReactNode
   /** page size of tabbar's tab | default: 5 */
-  page?: number;
+  page?: number
   /** on tab click */
-  onTabClick?: (tab: TabData, index: number) => void;
+  onTabClick?: (tab: TabData, index: number) => void
   /** tabBar's position | defualt: top */
-  tabBarPosition?: 'top' | 'bottom' | 'left' | 'right';
+  tabBarPosition?: 'top' | 'bottom' | 'left' | 'right'
 
   // TabBar shortcut settings.
   /** tabBar underline style */
-  tabBarUnderlineStyle?: StyleProp<ViewStyle>;
+  tabBarUnderlineStyle?: StyleProp<ViewStyle>
   /** tabBar background color */
-  tabBarBackgroundColor?: string;
+  tabBarBackgroundColor?: string
   /** tabBar active text color */
-  tabBarActiveTextColor?: string;
+  tabBarActiveTextColor?: string
   /** tabBar inactive text color */
-  tabBarInactiveTextColor?: string;
+  tabBarInactiveTextColor?: string
   /** tabBar text style */
-  tabBarTextStyle?: StyleProp<TextStyle>;
+  tabBarTextStyle?: StyleProp<TextStyle>
 
-  instanceId: number;
+  instanceId: number
 }
 
 export interface PropsType {
   /** tabs data */
-  tabs: TabData[];
+  tabs: TabData[]
   /** TabBar's position | default: top */
-  tabBarPosition?: 'top' | 'bottom';
+  tabBarPosition?: 'top' | 'bottom'
   /** render the tab of tabbar */
-  renderTab?: (tab: TabData) => React.ReactNode;
+  renderTab?: (tab: TabData) => React.ReactNode
   /** render the underline of tabbar */
-  renderUnderline?: (style: any) => React.ReactNode;
+  renderUnderline?: (style: any) => React.ReactNode
   /** render for TabBar */
-  renderTabBar?: ((props: TabBarPropsType) => React.ReactNode) | false;
+  renderTabBar?: ((props: TabBarPropsType) => React.ReactNode) | false
   /** initial Tab, index or key */
-  initialPage?: number | string;
+  initialPage?: number | string
   /** current tab, index or key */
-  page?: number | string;
+  page?: number | string
   /**
    * whether to switch tabs with swipe gestrue in the content | default: true
    */
-  swipeable?: boolean;
+  swipeable?: boolean
   /** use scroll follow pan | default: true */
-  useOnPan?: boolean;
+  useOnPan?: boolean
   /**
    * pre-render nearby # sibling, Infinity: render all the siblings, 0: render
    * current page | default: 1
    */
-  prerenderingSiblingsNumber?: number;
+  prerenderingSiblingsNumber?: number
   /** whether to change tabs with animation | default: true */
-  animated?: boolean;
+  animated?: boolean
   /** callback when tab is switched */
-  onChange?: (tab: TabData, index: number) => void;
+  onChange?: (tab: TabData, index: number) => void
   /** on tab click */
-  onTabClick?: (tab: TabData, index: number) => void;
+  onTabClick?: (tab: TabData, index: number) => void
   /** destroy inactive tab | default: false */
-  destroyInactiveTab?: boolean;
+  destroyInactiveTab?: boolean
   /** distance to change tab, width ratio | default: 0.3 */
-  distanceToChangeTab?: number;
+  distanceToChangeTab?: number
   /** use paged | default: true */
-  usePaged?: boolean;
+  usePaged?: boolean
   /** tab paging direction | default: horizontal */
-  tabDirection?: 'horizontal' | 'vertical';
+  tabDirection?: 'horizontal' | 'vertical'
 
   // TabBar shortcut settings.
   /** tabBar underline style */
-  tabBarUnderlineStyle?: StyleProp<ViewStyle>;
+  tabBarUnderlineStyle?: StyleProp<ViewStyle>
   /** tabBar background color */
-  tabBarBackgroundColor?: string;
+  tabBarBackgroundColor?: string
   /** tabBar active text color */
-  tabBarActiveTextColor?: string;
+  tabBarActiveTextColor?: string
   /** tabBar inactive text color */
-  tabBarInactiveTextColor?: string;
+  tabBarInactiveTextColor?: string
   /** tabBar text style */
-  tabBarTextStyle?: StyleProp<TextStyle>;
+  tabBarTextStyle?: StyleProp<TextStyle>
   /** can't render content | default: false */
-  noRenderContent?: boolean;
+  noRenderContent?: boolean
   /** use left instead of transform | default: false */
-  useLeftInsteadTransform?: boolean;
-  style?: StyleProp<ViewStyle>;
-  keyboardShouldPersistTaps?: boolean;
+  useLeftInsteadTransform?: boolean
+  style?: StyleProp<ViewStyle>
+  keyboardShouldPersistTaps?: boolean
 }

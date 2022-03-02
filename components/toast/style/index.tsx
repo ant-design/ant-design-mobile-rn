@@ -1,15 +1,15 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface ToastStyle {
-  container: ViewStyle;
-  innerContainer: ViewStyle;
-  innerWrap: ViewStyle;
-  iconToast: ViewStyle;
-  textToast: ViewStyle;
-  content: TextStyle;
-  image: TextStyle;
-  centering: ViewStyle;
+  container: ViewStyle
+  innerContainer: ViewStyle
+  innerWrap: ViewStyle
+  iconToast: ViewStyle
+  textToast: ViewStyle
+  content: TextStyle
+  image: TextStyle
+  centering: ViewStyle
 }
 
 export default (theme: Theme) =>
@@ -54,4 +54,4 @@ export default (theme: Theme) =>
       justifyContent: 'center',
       padding: theme.v_spacing_md,
     },
-  });
+  })

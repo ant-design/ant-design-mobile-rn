@@ -7,6 +7,6 @@
 describe('Progress', () => {
   it('trigger event correctly', () => {
     // todos: write test!
-    expect(true).toBe(true);
-  });
-});
+    expect(true).toBe(true)
+  })
+})

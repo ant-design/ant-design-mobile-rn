@@ -18,10 +18,16 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -93,47 +99,54 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <TouchableWithoutFeedback
-                accessibilityComponentType="button"
+              <View
                 accessibilityLabel="Decrease Value"
-                accessibilityTraits="button"
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
-                onPressIn={[Function]}
-                onPressOut={[Function]}
+                focusable={false}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
+                      "borderWidth": 1,
+                      "height": 28,
+                      "width": 28,
+                    },
+                    null,
+                    undefined,
+                  ]
+                }
               >
-                <View
+                <Text
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#dddddd",
-                        "borderRadius": 5,
-                        "borderWidth": 1,
-                        "height": 28,
-                        "width": 28,
+                        "backgroundColor": "transparent",
+                        "color": "#bbbbbb",
+                        "fontSize": 20,
+                        "textAlign": "center",
                       },
                       null,
-                      undefined,
                     ]
                   }
                 >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#bbbbbb",
-                          "fontSize": 20,
-                          "textAlign": "center",
-                        },
-                        null,
-                      ]
-                    }
-                  >
-                    -
-                  </Text>
-                </View>
-              </TouchableWithoutFeedback>
+                  -
+                </Text>
+              </View>
               <TextInput
                 allowFontScaling={true}
                 editable={true}
@@ -152,64 +165,74 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       "textAlign": "center",
                     },
                     null,
-                    Array [
-                      Object {},
-                      Object {},
-                    ],
+                    Object {},
                   ]
                 }
                 underlineColorAndroid="transparent"
                 value="3"
               />
-              <TouchableWithoutFeedback
-                accessibilityComponentType="button"
+              <View
                 accessibilityLabel="Increase Value"
-                accessibilityTraits="button"
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
-                onPressIn={[Function]}
-                onPressOut={[Function]}
+                focusable={false}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
+                      "borderWidth": 1,
+                      "height": 28,
+                      "width": 28,
+                    },
+                    null,
+                    undefined,
+                  ]
+                }
               >
-                <View
+                <Text
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#dddddd",
-                        "borderRadius": 5,
-                        "borderWidth": 1,
-                        "height": 28,
-                        "width": 28,
+                        "backgroundColor": "transparent",
+                        "color": "#bbbbbb",
+                        "fontSize": 20,
+                        "textAlign": "center",
                       },
                       null,
-                      undefined,
                     ]
                   }
                 >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#bbbbbb",
-                          "fontSize": 20,
-                          "textAlign": "center",
-                        },
-                        null,
-                      ]
-                    }
-                  >
-                    +
-                  </Text>
-                </View>
-              </TouchableWithoutFeedback>
+                  +
+                </Text>
+              </View>
             </View>
           </View>
         </View>
-      </>
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -281,50 +304,59 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <TouchableWithoutFeedback
-                accessibilityComponentType="button"
+              <View
                 accessibilityLabel="Decrease Value"
-                accessibilityTraits="disabled"
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "disabled": true,
+                  }
+                }
                 accessible={true}
+                focusable={false}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
+                      "borderWidth": 1,
+                      "height": 28,
+                      "width": 28,
+                    },
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "borderColor": "#bbbbbb",
+                    },
+                    undefined,
+                  ]
+                }
               >
-                <View
+                <Text
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#dddddd",
-                        "borderRadius": 5,
-                        "borderWidth": 1,
-                        "height": 28,
-                        "width": 28,
+                        "backgroundColor": "transparent",
+                        "color": "#bbbbbb",
+                        "fontSize": 20,
+                        "textAlign": "center",
                       },
                       Object {
-                        "backgroundColor": "#dddddd",
-                        "borderColor": "#bbbbbb",
+                        "color": "#bbbbbb",
                       },
-                      undefined,
                     ]
                   }
                 >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#bbbbbb",
-                          "fontSize": 20,
-                          "textAlign": "center",
-                        },
-                        Object {
-                          "color": "#bbbbbb",
-                        },
-                      ]
-                    }
-                  >
-                    -
-                  </Text>
-                </View>
-              </TouchableWithoutFeedback>
+                  -
+                </Text>
+              </View>
               <TextInput
                 allowFontScaling={true}
                 editable={true}
@@ -343,64 +375,74 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       "textAlign": "center",
                     },
                     null,
-                    Array [
-                      Object {},
-                      Object {},
-                    ],
+                    Object {},
                   ]
                 }
                 underlineColorAndroid="transparent"
                 value="1"
               />
-              <TouchableWithoutFeedback
-                accessibilityComponentType="button"
+              <View
                 accessibilityLabel="Increase Value"
-                accessibilityTraits="button"
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "disabled": true,
+                  }
+                }
                 accessible={true}
-                onPressIn={[Function]}
-                onPressOut={[Function]}
+                focusable={false}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
+                      "borderWidth": 1,
+                      "height": 28,
+                      "width": 28,
+                    },
+                    null,
+                    undefined,
+                  ]
+                }
               >
-                <View
+                <Text
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#dddddd",
-                        "borderRadius": 5,
-                        "borderWidth": 1,
-                        "height": 28,
-                        "width": 28,
+                        "backgroundColor": "transparent",
+                        "color": "#bbbbbb",
+                        "fontSize": 20,
+                        "textAlign": "center",
                       },
                       null,
-                      undefined,
                     ]
                   }
                 >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#bbbbbb",
-                          "fontSize": 20,
-                          "textAlign": "center",
-                        },
-                        null,
-                      ]
-                    }
-                  >
-                    +
-                  </Text>
-                </View>
-              </TouchableWithoutFeedback>
+                  +
+                </Text>
+              </View>
             </View>
           </View>
         </View>
-      </>
-      <
-        activeOpacity={1}
-        delayLongPress={500}
-        onLongPress={[Function]}
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
       >
         <View
           style={
@@ -472,50 +514,59 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <TouchableWithoutFeedback
-                accessibilityComponentType="button"
+              <View
                 accessibilityLabel="Decrease Value"
-                accessibilityTraits="disabled"
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "disabled": true,
+                  }
+                }
                 accessible={true}
+                focusable={false}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
+                      "borderWidth": 1,
+                      "height": 28,
+                      "width": 28,
+                    },
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "borderColor": "#bbbbbb",
+                    },
+                    undefined,
+                  ]
+                }
               >
-                <View
+                <Text
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#dddddd",
-                        "borderRadius": 5,
-                        "borderWidth": 1,
-                        "height": 28,
-                        "width": 28,
+                        "backgroundColor": "transparent",
+                        "color": "#bbbbbb",
+                        "fontSize": 20,
+                        "textAlign": "center",
                       },
                       Object {
-                        "backgroundColor": "#dddddd",
-                        "borderColor": "#bbbbbb",
+                        "color": "#bbbbbb",
                       },
-                      undefined,
                     ]
                   }
                 >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#bbbbbb",
-                          "fontSize": 20,
-                          "textAlign": "center",
-                        },
-                        Object {
-                          "color": "#bbbbbb",
-                        },
-                      ]
-                    }
-                  >
-                    -
-                  </Text>
-                </View>
-              </TouchableWithoutFeedback>
+                  -
+                </Text>
+              </View>
               <TextInput
                 allowFontScaling={true}
                 editable={false}
@@ -536,63 +587,69 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                     Object {
                       "color": "#bbbbbb",
                     },
-                    Array [
-                      Object {},
-                      Object {},
-                    ],
+                    Object {},
                   ]
                 }
                 underlineColorAndroid="transparent"
                 value="3"
               />
-              <TouchableWithoutFeedback
-                accessibilityComponentType="button"
+              <View
                 accessibilityLabel="Increase Value"
-                accessibilityTraits="disabled"
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "disabled": true,
+                  }
+                }
                 accessible={true}
+                focusable={false}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "#dddddd",
+                      "borderRadius": 5,
+                      "borderWidth": 1,
+                      "height": 28,
+                      "width": 28,
+                    },
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "borderColor": "#bbbbbb",
+                    },
+                    undefined,
+                  ]
+                }
               >
-                <View
+                <Text
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#dddddd",
-                        "borderRadius": 5,
-                        "borderWidth": 1,
-                        "height": 28,
-                        "width": 28,
+                        "backgroundColor": "transparent",
+                        "color": "#bbbbbb",
+                        "fontSize": 20,
+                        "textAlign": "center",
                       },
                       Object {
-                        "backgroundColor": "#dddddd",
-                        "borderColor": "#bbbbbb",
+                        "color": "#bbbbbb",
                       },
-                      undefined,
                     ]
                   }
                 >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#bbbbbb",
-                          "fontSize": 20,
-                          "textAlign": "center",
-                        },
-                        Object {
-                          "color": "#bbbbbb",
-                        },
-                      ]
-                    }
-                  >
-                    +
-                  </Text>
-                </View>
-              </TouchableWithoutFeedback>
+                  +
+                </Text>
+              </View>
             </View>
           </View>
         </View>
-      </>
+      </View>
       <View
         style={
           Array [

@@ -1,11 +1,11 @@
-import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
-import { Icon, Steps, WingBlank } from '../../';
-const Step = Steps.Step;
+import React from 'react'
+import { ScrollView, Text, View } from 'react-native'
+import { Icon, Steps, WingBlank } from '../../'
+const Step = Steps.Step
 
 export default class BasicTimelineExample extends React.Component<any, any> {
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       steps1: [
         { title: 'Finished', description: 'This is description' },
@@ -34,7 +34,7 @@ export default class BasicTimelineExample extends React.Component<any, any> {
           status: 'wait',
         },
       ],
-    };
+    }
   }
   render() {
     return (
@@ -42,8 +42,7 @@ export default class BasicTimelineExample extends React.Component<any, any> {
         style={{ flex: 1 }}
         automaticallyAdjustContentInsets={false}
         showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-      >
+        showsVerticalScrollIndicator={false}>
         <View style={{ marginTop: 60 }}>
           <WingBlank size="lg">
             <Steps size="small" current={1} direction="horizontal">
@@ -159,15 +158,15 @@ export default class BasicTimelineExample extends React.Component<any, any> {
                 description="This is description"
                 status="finish"
                 renderIcon={({ starting, waiting, error }) => {
-                  let icon;
+                  let icon
                   if (starting) {
-                    icon = <Icon name="home" />;
+                    icon = <Icon name="home" />
                   } else if (waiting) {
-                    icon = <Icon name="user" />;
+                    icon = <Icon name="user" />
                   } else if (error) {
-                    icon = <Icon name="star" />;
+                    icon = <Icon name="star" />
                   }
-                  return icon;
+                  return icon
                 }}
               />
               <Step
@@ -176,15 +175,15 @@ export default class BasicTimelineExample extends React.Component<any, any> {
                 description="This is description"
                 status="progress"
                 renderIcon={({ starting, waiting, error }) => {
-                  let icon;
+                  let icon
                   if (starting) {
-                    icon = <Icon name="home" />;
+                    icon = <Icon name="home" />
                   } else if (waiting) {
-                    icon = <Icon name="user" />;
+                    icon = <Icon name="user" />
                   } else if (error) {
-                    icon = <Icon name="star" />;
+                    icon = <Icon name="star" />
                   }
-                  return icon;
+                  return icon
                 }}
               />
               <Step
@@ -193,15 +192,15 @@ export default class BasicTimelineExample extends React.Component<any, any> {
                 description="This is description"
                 status="wait"
                 renderIcon={({ starting, waiting, error }) => {
-                  let icon;
+                  let icon
                   if (starting) {
-                    icon = <Icon name="home" />;
+                    icon = <Icon name="home" />
                   } else if (waiting) {
-                    icon = <Icon name="user" />;
+                    icon = <Icon name="user" />
                   } else if (error) {
-                    icon = <Icon name="star" />;
+                    icon = <Icon name="star" />
                   }
-                  return icon;
+                  return icon
                 }}
               />
               <Step
@@ -210,21 +209,21 @@ export default class BasicTimelineExample extends React.Component<any, any> {
                 description="This is description"
                 status="error"
                 renderIcon={({ starting, waiting, error }) => {
-                  let icon;
+                  let icon
                   if (starting) {
-                    icon = <Icon name="home" />;
+                    icon = <Icon name="home" />
                   } else if (waiting) {
-                    icon = <Icon name="user" />;
+                    icon = <Icon name="user" />
                   } else if (error) {
-                    icon = <Icon name="star" />;
+                    icon = <Icon name="star" />
                   }
-                  return icon;
+                  return icon
                 }}
               />
             </Steps>
           </WingBlank>
         </View>
       </ScrollView>
-    );
+    )
   }
 }

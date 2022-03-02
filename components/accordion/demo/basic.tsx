@@ -1,22 +1,21 @@
 /* tslint:disable:no-console */
-import React from 'react';
-import { View } from 'react-native';
-import { Accordion, List } from '../../';
+import React from 'react'
+import { View } from 'react-native'
+import { Accordion, List } from '../../'
 
 export default class AccordionExmple extends React.Component<any, any> {
   state = {
     activeSections: [2, 0],
-  };
+  }
   onChange = (activeSections: number[]) => {
-    this.setState({ activeSections });
-  };
+    this.setState({ activeSections })
+  }
   render() {
     return (
       <View style={{ marginTop: 80, marginBottom: 10 }}>
         <Accordion
           onChange={this.onChange}
-          activeSections={this.state.activeSections}
-        >
+          activeSections={this.state.activeSections}>
           <Accordion.Panel header="Title 1">
             <List>
               <List.Item>Content 1</List.Item>
@@ -33,6 +32,6 @@ export default class AccordionExmple extends React.Component<any, any> {
           </Accordion.Panel>
         </Accordion>
       </View>
-    );
+    )
   }
 }

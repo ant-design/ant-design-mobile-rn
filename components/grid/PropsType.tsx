@@ -1,20 +1,20 @@
-import React from 'react';
+import React from 'react'
 
 export interface DataItem {
-  icon?: any;
-  text?: any;
-  [key: string]: any;
+  icon?: any
+  text?: any
+  [key: string]: any
 }
 
 export interface GridPropsType {
-  data?: Array<DataItem | undefined>;
-  hasLine?: boolean;
-  columnNum: number;
-  isCarousel?: boolean;
-  carouselMaxRow: number;
-  onPress?: (dataItem: DataItem | undefined, itemIndex: number) => void;
+  data?: Array<DataItem | undefined>
+  hasLine?: boolean
+  columnNum: number
+  isCarousel?: boolean
+  carouselMaxRow: number
+  onPress?: (dataItem: DataItem | undefined, itemIndex: number) => void
   renderItem?: (
     dataItem: DataItem | undefined,
     itemIndex: number,
-  ) => React.ReactElement<any>;
+  ) => React.ReactElement<any>
 }

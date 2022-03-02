@@ -6,7 +6,7 @@
     ],
     "strictNullChecks": true,
     "moduleResolution": "node",
-    "jsx": "preserve",
+    "jsx": "react",
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,

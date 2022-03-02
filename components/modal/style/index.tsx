@@ -1,27 +1,27 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface ModalStyle {
-  container: ViewStyle;
-  wrap: ViewStyle;
-  popupContainer: ViewStyle;
-  innerContainer: ViewStyle;
-  popupSlideUp: ViewStyle;
-  popupSlideDown: ViewStyle;
-  footer: ViewStyle;
-  header: TextStyle;
-  body: ViewStyle;
-  maskClosable: ViewStyle;
-  closeWrap: ViewStyle;
-  close: TextStyle;
-  buttonGroupH: ViewStyle;
-  buttonGroupV: ViewStyle;
-  buttonWrapH: ViewStyle;
-  buttonWrapV: ViewStyle;
-  buttonText: TextStyle;
-  operationContainer: ViewStyle;
-  operationBody: ViewStyle;
-  buttonTextOperation: TextStyle;
+  container: ViewStyle
+  wrap: ViewStyle
+  popupContainer: ViewStyle
+  innerContainer: ViewStyle
+  popupSlideUp: ViewStyle
+  popupSlideDown: ViewStyle
+  footer: ViewStyle
+  header: TextStyle
+  body: ViewStyle
+  maskClosable: ViewStyle
+  closeWrap: ViewStyle
+  close: TextStyle
+  buttonGroupH: ViewStyle
+  buttonGroupV: ViewStyle
+  buttonWrapH: ViewStyle
+  buttonWrapV: ViewStyle
+  buttonText: TextStyle
+  operationContainer: ViewStyle
+  operationBody: ViewStyle
+  buttonTextOperation: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -49,15 +49,7 @@ export default (theme: Theme) =>
       overflow: 'hidden',
       backgroundColor: theme.fill_base,
     },
-    // fix android borderRadius
-    footer: {
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      borderBottomLeftRadius: theme.radius_md,
-      borderBottomRightRadius: theme.radius_md,
-    },
+    footer: {},
     header: {
       fontSize: theme.modal_font_size_heading,
       color: theme.color_text_base,
@@ -129,4 +121,4 @@ export default (theme: Theme) =>
       textAlign: 'left',
       paddingHorizontal: 15,
     },
-  });
+  })

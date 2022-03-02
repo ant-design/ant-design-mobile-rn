@@ -1,20 +1,22 @@
-import ViewPager from '@react-native-community/viewpager';
-import React from 'react';
-import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
-import { WithTheme, WithThemeStyles } from '../style';
-import View from '../view';
-import { DefaultTabBar } from './DefaultTabBar';
-import { PropsType, TabData } from './PropsType';
-import TabsStyles, { TabsStyle } from './style/tabs';
+import React from 'react'
+import { Animated, Dimensions, LayoutChangeEvent } from 'react-native'
+import Carousel from '../carousel/index'
+import { WithTheme, WithThemeStyles } from '../style'
+import View from '../view'
+import { DefaultTabBar } from './DefaultTabBar'
+import { PropsType, TabData } from './PropsType'
+import TabsStyles, { TabsStyle } from './style/tabs'
 
 export interface StateType {
-  currentTab: number;
-  scrollX: Animated.Value;
-  scrollValue: Animated.Value;
-  containerWidth: number;
+  currentTab: number
+  scrollX: Animated.Value
+  scrollValue: Animated.Value
+  containerWidth: number
+  containerHeight: number
+  selectedIndex: number
 }
 
-let instanceId: number = 0;
+let instanceId: number = 0
 export interface TabsProps extends PropsType, WithThemeStyles<TabsStyle> {}
 export class Tabs extends React.PureComponent<TabsProps, StateType> {
   static defaultProps: PropsType = {
@@ -29,139 +31,119 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     tabDirection: 'horizontal',
     distanceToChangeTab: 0.3,
     style: {},
-  };
-  static DefaultTabBar = DefaultTabBar;
+  }
+  static DefaultTabBar = DefaultTabBar
 
-  viewPager: ViewPager | null;
+  carousel: Carousel | null
 
-  protected instanceId: number;
-  protected prevCurrentTab: number;
-  protected tabCache: { [index: number]: React.ReactNode } = {};
-
-  /** compatible for different between react and preact in `setState`. */
-  private nextCurrentTab: number;
+  protected instanceId: number
+  protected prevCurrentTab: number
+  protected tabCache: { [index: number]: React.ReactNode } = {}
 
   constructor(props: PropsType) {
-    super(props);
+    super(props)
 
-    const width = Dimensions.get('window').width;
-    const pageIndex = this.getTabIndex(props);
+    const width = Dimensions.get('window').width
+    const pageIndex = this.getTabIndex(props)
     this.state = {
       currentTab: pageIndex,
       scrollX: new Animated.Value(pageIndex * width),
       scrollValue: new Animated.Value(pageIndex),
       containerWidth: width,
-    };
-    this.nextCurrentTab = this.state.currentTab;
-    this.instanceId = instanceId++;
+      containerHeight: 0,
+      selectedIndex: 0,
+    }
+    this.instanceId = instanceId++
   }
 
   componentDidMount() {
-    this.prevCurrentTab = this.state.currentTab;
+    this.prevCurrentTab = this.state.currentTab
     this.state.scrollX.addListener(({ value }) => {
-      const scrollValue = value / this.state.containerWidth;
-      this.state.scrollValue.setValue(scrollValue);
-    });
+      const scrollValue = value / this.state.containerWidth
+      this.state.scrollValue.setValue(scrollValue)
+    })
   }
 
   renderContent = (getSubElements = this.getSubElements()) => {
-    const {
-      tabs,
-      usePaged,
-      destroyInactiveTab,
-    } = this.props;
-    const { currentTab = 0, containerWidth = 0 } = this.state;
+    const { tabs, usePaged, destroyInactiveTab } = this.props
+    const { containerHeight = 0, containerWidth = 0, currentTab } = this.state
     const content = tabs.map((tab, index) => {
-      const key = tab.key || `tab_${index}`;
+      const key = tab.key || `tab_${index}`
 
       // update tab cache
       if (this.shouldRenderTab(index)) {
-        this.tabCache[index] = this.getSubElement(tab, index, getSubElements);
+        this.tabCache[index] = this.getSubElement(tab, index, getSubElements)
       } else if (destroyInactiveTab) {
-        this.tabCache[index] = undefined;
+        this.tabCache[index] = undefined
       }
 
       return (
         <View
           key={key}
-          // active={currentTab === index}
-          style={{ width: containerWidth }}
-        >
+          style={[
+            { width: containerWidth },
+            containerHeight ? { height: containerHeight } : { flex: 1 },
+          ]}>
           {this.tabCache[index]}
         </View>
-      );
-    });
-      return (
-        <ViewPager
-          key="$content"
-          keyboardDismissMode="on-drag"
-          initialPage={currentTab}
-          scrollEnabled={this.props.swipeable || usePaged}
-          onPageScroll={e => {
-            this.state.scrollX.setValue(
-              e.nativeEvent.position * this.state.containerWidth,
-            );
-          }}
-          style={{ flex: 1 }}
-          onPageSelected={e => {
-            const index = e.nativeEvent.position;
-            this.setState(
-              {
-                currentTab: index,
-              },
-              () => {
-                // tslint:disable-next-line:no-unused-expression
-                this.props.onChange && this.props.onChange(tabs[index], index);
-              },
-            );
-            this.nextCurrentTab = index;
-          }}
-          ref={ref => (this.viewPager = ref)}
-        >
-          {content}
-        </ViewPager>
-      );
+      )
+    })
 
-  };
+    return (
+      <Carousel
+        key="$content"
+        keyboardDismissMode="on-drag"
+        pagination={() => null}
+        selectedIndex={currentTab}
+        afterChange={(index: number) => {
+          this.setState({ currentTab: index }, () => {
+            this.state.scrollX.setValue(index * this.state.containerWidth)
+          })
+        }}
+        scrollEnabled={this.props.swipeable || usePaged}
+        style={{
+          height: containerHeight,
+          width: containerWidth,
+        }}
+        ref={(ref) => (this.carousel = ref)}>
+        {content}
+      </Carousel>
+    )
+  }
 
-  onMomentumScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const offsetX = e.nativeEvent.contentOffset.x;
-    const page = this.getOffsetIndex(offsetX, this.state.containerWidth);
-    if (this.state.currentTab !== page) {
-      this.goToTab(page);
-    }
-  };
-
-  handleLayout = (e: LayoutChangeEvent) => {
-    const { width } = e.nativeEvent.layout;
+  // 在ScrollView下会拿不到正确高度
+  // 所以先展示第一个拿到高度后再以第一个高度为基准渲染整个Carousel
+  handleLayout1 = (e: LayoutChangeEvent) => {
+    const { height } = e.nativeEvent.layout
     requestAnimationFrame(() => {
-      this.scrollTo(this.state.currentTab, false);
-    });
+      this.setState({ containerHeight: height })
+    })
+  }
+
+  handleLayout2 = (e: LayoutChangeEvent) => {
+    const { width } = e.nativeEvent.layout
+    requestAnimationFrame(() => {
+      this.scrollTo(this.state.currentTab, false)
+    })
     if (Math.round(width) !== Math.round(this.state.containerWidth)) {
-      this.setState({ containerWidth: width });
+      this.setState({ containerWidth: width })
     }
-  };
+  }
 
   scrollTo = (index: number, animated = true) => {
-    if (this.viewPager) {
-        if (animated) {
-          this.viewPager.setPage(index);
-        } else {
-          this.viewPager.setPageWithoutAnimation(index);
-        }
-        return;
-      }
-  };
+    if (this.carousel) {
+      this.carousel.goTo(index, animated)
+    }
+  }
 
   render() {
     const {
+      children,
       tabBarPosition,
       noRenderContent,
       keyboardShouldPersistTaps,
-    } = this.props;
-    const { scrollX, scrollValue, containerWidth } = this.state;
-    // let overlayTabs = (this.props.tabBarPosition === 'overlayTop' || this.props.tabBarPosition === 'overlayBottom');
-    const overlayTabs = false;
+    } = this.props
+    const { scrollX, scrollValue, containerWidth, containerHeight } = this.state
 
     const tabBarProps = {
       ...this.getTabBarBaseProps(),
@@ -170,19 +152,11 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       scrollX: scrollX,
       scrollValue: scrollValue,
       containerWidth: containerWidth,
-    };
-
-    if (overlayTabs) {
-      // tabBarProps.style = {
-      //     position: 'absolute',
-      //     left: 0,
-      //     right: 0,
-      //     [this.props.tabBarPosition === 'overlayTop' ? 'top' : 'bottom']: 0,
-      // };
     }
+
     return (
       <WithTheme styles={this.props.styles} themeStyles={TabsStyles}>
-        {styles => {
+        {(styles) => {
           const content = [
             <View
               key="$tabbar"
@@ -190,63 +164,75 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
                 tabBarPosition === 'top'
                   ? styles.topTabBarSplitLine
                   : styles.bottomTabBarSplitLine
-              }
-            >
+              }>
               {this.renderTabBar(tabBarProps, DefaultTabBar)}
             </View>,
             !noRenderContent && this.renderContent(),
-          ];
+          ]
+
+          if (containerHeight === 0 && Array.isArray(children)) {
+            return (
+              <View
+                style={[
+                  { flexDirection: 'row' },
+                  styles.container,
+                  this.props.style,
+                ]}
+                onLayout={this.handleLayout1}>
+                {React.Children.toArray(children)[0]}
+              </View>
+            )
+          }
 
           return (
             <View
               style={[styles.container, this.props.style]}
-              onLayout={this.handleLayout}
-            >
+              onLayout={this.handleLayout2}>
               {tabBarPosition === 'top' ? content : content.reverse()}
             </View>
-          );
+          )
         }}
       </WithTheme>
-    );
+    )
   }
   getTabIndex(props: PropsType) {
-    const { page, initialPage, tabs } = props;
-    const param = (page !== undefined ? page : initialPage) || 0;
+    const { page, initialPage, tabs } = props
+    const param = (page !== undefined ? page : initialPage) || 0
 
-    let index = 0;
+    let index = 0
     if (typeof (param as any) === 'string') {
       tabs.forEach((t, i) => {
         if (t.key === param) {
-          index = i;
+          index = i
         }
-      });
+      })
     } else {
-      index = (param as number) || 0;
+      index = (param as number) || 0
     }
-    return index < 0 ? 0 : index;
+    return index < 0 ? 0 : index
   }
 
   isTabVertical = (direction = this.props.tabDirection) =>
-    direction === 'vertical';
+    direction === 'vertical'
 
   shouldRenderTab = (idx: number) => {
-    const { prerenderingSiblingsNumber = 0 } = this.props;
-    const { currentTab = 0 } = this.state;
+    const { prerenderingSiblingsNumber = 0 } = this.props
+    const { currentTab = 0 } = this.state
 
     return (
       currentTab - prerenderingSiblingsNumber <= idx &&
       idx <= currentTab + prerenderingSiblingsNumber
-    );
-  };
+    )
+  }
 
   UNSAFE_componentWillReceiveProps(nextProps: PropsType) {
     if (this.props.page !== nextProps.page && nextProps.page !== undefined) {
-      this.goToTab(this.getTabIndex(nextProps), true);
+      this.goToTab(this.getTabIndex(nextProps))
     }
   }
 
   componentDidUpdate() {
-    this.prevCurrentTab = this.state.currentTab;
+    this.prevCurrentTab = this.state.currentTab
   }
 
   getOffsetIndex = (
@@ -254,52 +240,32 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     width: number,
     threshold = this.props.distanceToChangeTab || 0,
   ) => {
-    const ratio = Math.abs(current / width);
-    const direction = ratio > this.state.currentTab ? '<' : '>';
-    const index = Math.floor(ratio);
+    const ratio = Math.abs(current / width)
+    const direction = ratio > this.state.currentTab ? '<' : '>'
+    const index = Math.floor(ratio)
     switch (direction) {
       case '<':
-        return ratio - index > threshold ? index + 1 : index;
+        return ratio - index > threshold ? index + 1 : index
       case '>':
-        return 1 - ratio + index > threshold ? index : index + 1;
+        return 1 - ratio + index > threshold ? index : index + 1
       default:
-        return Math.round(ratio);
+        return Math.round(ratio)
     }
-  };
+  }
 
-  goToTab(index: number, force = false, newState: any = {}) {
-    if (!force && this.nextCurrentTab === index) {
-      return false;
+  goToTab(index: number) {
+    if (this.carousel) {
+      this.carousel.goTo(index)
     }
-    this.nextCurrentTab = index;
-    const { tabs, onChange } = this.props as PropsType;
-    if (index >= 0 && index < tabs.length) {
-      if (!force) {
-        // tslint:disable-next-line:no-unused-expression
-        onChange && onChange(tabs[index], index);
-      }
-      this.setState(
-        {
-          currentTab: index,
-          ...newState,
-        },
-        () => {
-          requestAnimationFrame(() => {
-            this.scrollTo(this.state.currentTab, this.props.animated);
-          });
-        },
-      );
-    }
-
-    return true;
+    this.state.scrollX.setValue(index * this.state.containerWidth)
   }
 
   tabClickGoToTab(index: number) {
-    this.goToTab(index);
+    this.goToTab(index)
   }
 
   getTabBarBaseProps() {
-    const { currentTab } = this.state;
+    const { currentTab } = this.state
 
     const {
       animated,
@@ -313,7 +279,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       renderTab,
       renderUnderline,
       tabs,
-    } = this.props;
+    } = this.props
     return {
       activeTab: currentTab,
       animated: !!animated,
@@ -329,39 +295,36 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       renderUnderline,
       tabs,
       instanceId: this.instanceId,
-    };
+    }
   }
 
-  // tslint:disable-next-line:no-shadowed-variable
   renderTabBar(tabBarProps: any, DefaultTabBar: React.ComponentClass) {
-    const { renderTabBar } = this.props;
+    const { renderTabBar } = this.props
     if (renderTabBar === false) {
-      return null;
+      return null
     } else if (renderTabBar) {
-      return renderTabBar(tabBarProps);
+      return renderTabBar(tabBarProps)
     } else {
-      return <DefaultTabBar {...tabBarProps} />;
+      return <DefaultTabBar {...tabBarProps} />
     }
   }
 
   getSubElements = () => {
-    const { children } = this.props;
-    const subElements: { [key: string]: React.ReactNode } = {};
+    const { children } = this.props
+    const subElements: { [key: string]: React.ReactNode } = {}
 
-    return (defaultPrefix: string = '$i$-', allPrefix: string = '$ALL$') => {
+    return (defaultPrefix: string = '$i$-') => {
       if (Array.isArray(children)) {
         children.forEach((child: any, index) => {
           if (child.key) {
-            subElements[child.key] = child;
+            subElements[child.key] = child
           }
-          subElements[`${defaultPrefix}${index}`] = child;
-        });
-      } else if (children) {
-        subElements[allPrefix] = children;
+          subElements[`${defaultPrefix}${index}`] = child
+        })
       }
-      return subElements;
-    };
-  };
+      return subElements
+    }
+  }
 
   getSubElement(
     tab: TabData,
@@ -373,12 +336,12 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     defaultPrefix: string = '$i$-',
     allPrefix: string = '$ALL$',
   ) {
-    const key = tab.key || `${defaultPrefix}${index}`;
-    const elements = subElements(defaultPrefix, allPrefix);
-    let component = elements[key] || elements[allPrefix];
+    const key = tab.key || `${defaultPrefix}${index}`
+    const elements = subElements(defaultPrefix, allPrefix)
+    let component = elements[key] || elements[allPrefix]
     if (component instanceof Function) {
-      component = component(tab, index);
+      component = component(tab, index)
     }
-    return component || null;
+    return component || null
   }
 }

@@ -1,8 +1,7 @@
-
 /* tslint:disable:no-console */
-import React from 'react';
-import { ScrollView, View } from 'react-native';
-import { Badge, WhiteSpace } from '../../';
+import React from 'react'
+import { ScrollView, View } from 'react-native'
+import { Badge, WhiteSpace } from '../../'
 
 export default class BasicTagExample extends React.Component<any, any> {
   render() {
@@ -11,8 +10,7 @@ export default class BasicTagExample extends React.Component<any, any> {
         style={{ flex: 1 }}
         automaticallyAdjustContentInsets={false}
         showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-      >
+        showsVerticalScrollIndicator={false}>
         <View style={{ padding: 20 }}>
           <Badge text={9}>
             <View
@@ -85,6 +83,6 @@ export default class BasicTagExample extends React.Component<any, any> {
           </Badge>
         </View>
       </ScrollView>
-    );
+    )
   }
 }

@@ -1,15 +1,15 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface NoticeBarStyle {
-  notice: ViewStyle;
-  container: ViewStyle;
-  content: TextStyle;
-  left6: ViewStyle;
-  left15: ViewStyle;
-  actionWrap: ViewStyle;
-  close: TextStyle;
-  link: TextStyle;
+  notice: ViewStyle
+  container: ViewStyle
+  content: TextStyle
+  left6: ViewStyle
+  left15: ViewStyle
+  actionWrap: ViewStyle
+  close: TextStyle
+  link: TextStyle
 }
 
 export default (variables: Theme) =>
@@ -53,4 +53,4 @@ export default (variables: Theme) =>
       fontWeight: '500',
       textAlign: 'left',
     },
-  });
+  })

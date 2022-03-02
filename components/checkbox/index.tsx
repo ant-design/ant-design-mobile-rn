@@ -1,8 +1,19 @@
-import AgreeItem from './AgreeItem';
-import Checkbox from './Checkbox';
-import CheckboxItem from './CheckboxItem';
+import * as React from 'react'
+import AgreeItem from './AgreeItem'
+import InternalCheckbox, { CheckboxProps } from './Checkbox'
+import CheckboxItem from './CheckboxItem'
 
-Checkbox.AgreeItem = AgreeItem;
-Checkbox.CheckboxItem = CheckboxItem;
+export interface CompoundedComponent
+  extends React.ForwardRefExoticComponent<CheckboxProps> {
+  AgreeItem: typeof AgreeItem
+  CheckboxItem: typeof CheckboxItem
+  __ANTM_CHECKBOX: boolean
+}
 
-export default Checkbox;
+const Checkbox = InternalCheckbox as CompoundedComponent
+
+Checkbox.AgreeItem = AgreeItem
+Checkbox.CheckboxItem = CheckboxItem
+Checkbox.__ANTM_CHECKBOX = true
+
+export default Checkbox

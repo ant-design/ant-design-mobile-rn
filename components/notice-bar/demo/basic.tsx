@@ -1,8 +1,7 @@
-
 /* tslint:disable:no-console */
-import React from 'react';
-import { Image, Text, View } from 'react-native';
-import { NoticeBar, WhiteSpace } from '../../';
+import React from 'react'
+import { Image, Text, View } from 'react-native'
+import { NoticeBar, WhiteSpace } from '../../'
 
 export default class NoticeBarExample extends React.Component<any, any> {
   render() {
@@ -14,7 +13,7 @@ export default class NoticeBarExample extends React.Component<any, any> {
         }}
         style={{ width: 12, height: 12 }}
       />
-    );
+    )
 
     return (
       <View style={{ marginTop: 10 }}>
@@ -22,8 +21,7 @@ export default class NoticeBarExample extends React.Component<any, any> {
         {/* marqueeProps.style only support text style props*/}
         <NoticeBar
           onPress={() => alert('click')}
-          marqueeProps={{ loop: true, style: { fontSize: 12, color: 'red' } }}
-        >
+          marqueeProps={{ loop: true, style: { fontSize: 12, color: 'red' } }}>
           Notice: The arrival time of incomes and transfers of Yu 'E Bao will be
           delayed during National Day.
         </NoticeBar>
@@ -53,8 +51,7 @@ export default class NoticeBarExample extends React.Component<any, any> {
         <WhiteSpace size="lg" />
         <NoticeBar
           mode="closable"
-          action={<Text style={{ color: '#a1a1a1' }}>不再提示</Text>}
-        >
+          action={<Text style={{ color: '#a1a1a1' }}>不再提示</Text>}>
           Closable demo for `actionText`.
         </NoticeBar>
         <WhiteSpace size="lg" />
@@ -62,6 +59,6 @@ export default class NoticeBarExample extends React.Component<any, any> {
           Link demo for `actionText`.
         </NoticeBar>
       </View>
-    );
+    )
   }
 }

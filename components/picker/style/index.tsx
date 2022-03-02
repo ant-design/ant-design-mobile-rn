@@ -1,13 +1,14 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 export interface PickerStyle {
-  modal: ViewStyle;
-  header: ViewStyle;
-  headerItem: ViewStyle;
-  actionText: TextStyle;
-  title: TextStyle;
-  okText: TextStyle;
-  dismissText: TextStyle;
+  modal: ViewStyle
+  container: ViewStyle
+  header: ViewStyle
+  headerItem: ViewStyle
+  actionText: TextStyle
+  title: TextStyle
+  okText: TextStyle
+  dismissText: TextStyle
 }
 
 export default () =>
@@ -17,8 +18,10 @@ export default () =>
       flexDirection: 'column',
       justifyContent: 'flex-end',
     },
+    container:{
+      flexGrow:0.5,
+    },
     header: {
-      flexGrow: 1,
       height: 44,
       alignItems: 'center',
       flexDirection: 'row',
@@ -44,4 +47,4 @@ export default () =>
       fontSize: 18,
       textAlign: 'center',
     },
-  });
+  })

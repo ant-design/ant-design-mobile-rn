@@ -24,9 +24,21 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
       <View
         style={Object {}}
       >
-        <
-          onPress={[Function]}
-          underlayColor="transparent"
+        <View
+          accessibilityState={
+            Object {
+              "expanded": true,
+            }
+          }
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
         >
           <View
             style={
@@ -91,10 +103,10 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
               </Text>
             </View>
           </View>
-        </>
+        </View>
         <View
           pointerEvents="auto"
-          style={false}
+          style={Object {}}
         >
           <View
             forwardedRef={[Function]}
@@ -111,10 +123,16 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
                   }
                 }
               >
-                <
-                  activeOpacity={1}
-                  delayLongPress={500}
-                  onLongPress={[Function]}
+                <View
+                  accessible={true}
+                  focusable={false}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                 >
                   <View
                     style={
@@ -175,11 +193,17 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                   </View>
-                </>
-                <
-                  activeOpacity={1}
-                  delayLongPress={500}
-                  onLongPress={[Function]}
+                </View>
+                <View
+                  accessible={true}
+                  focusable={false}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                 >
                   <View
                     style={
@@ -240,11 +264,17 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                   </View>
-                </>
-                <
-                  activeOpacity={1}
-                  delayLongPress={500}
-                  onLongPress={[Function]}
+                </View>
+                <View
+                  accessible={true}
+                  focusable={false}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                 >
                   <View
                     style={
@@ -305,7 +335,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                   </View>
-                </>
+                </View>
                 <View
                   style={
                     Array [
@@ -330,9 +360,21 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
       <View
         style={Object {}}
       >
-        <
-          onPress={[Function]}
-          underlayColor="transparent"
+        <View
+          accessibilityState={
+            Object {
+              "expanded": false,
+            }
+          }
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
         >
           <View
             style={
@@ -397,7 +439,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
               </Text>
             </View>
           </View>
-        </>
+        </View>
         <View
           pointerEvents="none"
           style={
@@ -439,9 +481,21 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
       <View
         style={Object {}}
       >
-        <
-          onPress={[Function]}
-          underlayColor="transparent"
+        <View
+          accessibilityState={
+            Object {
+              "expanded": true,
+            }
+          }
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
         >
           <View
             style={
@@ -506,10 +560,10 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
               </Text>
             </View>
           </View>
-        </>
+        </View>
         <View
           pointerEvents="auto"
-          style={false}
+          style={Object {}}
         >
           <View
             forwardedRef={[Function]}

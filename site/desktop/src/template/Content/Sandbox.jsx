@@ -1,5 +1,5 @@
 export default (sourceCode, doc) => {
-  const sandboxName = `${doc.meta.title}`;
+  const sandboxName = `${doc.meta.title}`
   const parameters = {
     files: {
       'public/index.html': {
@@ -91,6 +91,6 @@ rootTag: document.getElementById("root")
         },
       },
     },
-  };
-  return parameters;
-};
+  }
+  return parameters
+}

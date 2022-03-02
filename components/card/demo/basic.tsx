@@ -1,6 +1,6 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import { Card, WhiteSpace, WingBlank } from '../../';
+import React from 'react'
+import { Text, View } from 'react-native'
+import { Card, WhiteSpace, WingBlank } from '../../'
 
 export default class BasicCardExample extends React.Component<any, any> {
   render() {
@@ -41,6 +41,6 @@ export default class BasicCardExample extends React.Component<any, any> {
           <Card.Footer content="footer content" extra="footer extra content" />
         </Card>
       </View>
-    );
+    )
   }
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import { WhiteSpace, WingBlank } from '../../';
+import React from 'react'
+import { Text, View } from 'react-native'
+import { WhiteSpace, WingBlank } from '../../'
 
 const PlaceHolder = (props: any) => (
   <View
@@ -10,11 +10,10 @@ const PlaceHolder = (props: any) => (
       alignItems: 'center',
       justifyContent: 'center',
     }}
-    {...props}
-  >
+    {...props}>
     <Text style={{ color: '#bbb' }}>Block</Text>
   </View>
-);
+)
 
 export default class WingBlankExample extends React.Component<any, any> {
   render() {
@@ -35,6 +34,6 @@ export default class WingBlankExample extends React.Component<any, any> {
           <PlaceHolder />
         </WingBlank>
       </View>
-    );
+    )
   }
 }

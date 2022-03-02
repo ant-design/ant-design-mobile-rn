@@ -1,41 +1,41 @@
-import React, { isValidElement } from 'react';
+import React, { isValidElement } from 'react'
 import {
   ScrollView,
   StyleProp,
   TouchableOpacity,
   View,
   ViewStyle,
-} from 'react-native';
-import { Popover as Pop, PopoverController } from 'react-native-modal-popover';
-import { Placement } from 'react-native-modal-popover/lib/PopoverGeometry';
-import { WithTheme, WithThemeStyles } from '../style';
-import PopoverStyles, { PopoverStyle } from './style';
+} from 'react-native'
+import { Popover as Pop, PopoverController } from 'react-native-modal-popover'
+import { Placement } from 'react-native-modal-popover/lib/PopoverGeometry'
+import { WithTheme, WithThemeStyles } from '../style'
+import PopoverStyles, { PopoverStyle } from './style'
 
 export interface PopoverProps extends WithThemeStyles<PopoverStyle> {
-  triggerStyle?: StyleProp<ViewStyle>;
-  onSelect?: (node: any, index?: number) => void;
-  overlay: React.ReactNode;
-  disabled?: boolean;
+  triggerStyle?: StyleProp<ViewStyle>
+  onSelect?: (node: any, index?: number) => void
+  overlay: React.ReactNode
+  disabled?: boolean
   renderOverlayComponent?: (
     node: React.ReactNode,
     closePopover: () => void,
-  ) => React.ReactNode;
-  placement?: Placement | 'auto';
-  duration?: number;
-  easing?: (show: boolean) => (value: number) => number;
-  useNativeDriver?: boolean;
-  onDismiss?: () => void;
+  ) => React.ReactNode
+  placement?: Placement | 'auto'
+  duration?: number
+  easing?: (show: boolean) => (value: number) => number
+  useNativeDriver?: boolean
+  onDismiss?: () => void
 }
 export interface PopoverItemProps {
-  value: any;
-  [key: string]: any;
-  disabled?: boolean;
-  style?: StyleProp<ViewStyle>;
+  value: any
+  [key: string]: any
+  disabled?: boolean
+  style?: StyleProp<ViewStyle>
 }
 export class PopoverItem extends React.PureComponent<PopoverItemProps> {
-  static displayName: 'PopoverItem';
+  static displayName: 'PopoverItem'
   render() {
-    const { value, disabled, children, onSelect, style } = this.props;
+    const { value, disabled, children, onSelect, style } = this.props
     return (
       <WithTheme>
         {(_, theme) => (
@@ -44,7 +44,7 @@ export class PopoverItem extends React.PureComponent<PopoverItemProps> {
             disabled={disabled}
             onPress={() => {
               if (typeof onSelect === 'function') {
-                onSelect(value);
+                onSelect(value)
               }
             }}
             style={[
@@ -52,43 +52,42 @@ export class PopoverItem extends React.PureComponent<PopoverItemProps> {
                 padding: theme.v_spacing_md,
               },
               style,
-            ]}
-          >
+            ]}>
             {children}
           </TouchableOpacity>
         )}
       </WithTheme>
-    );
+    )
   }
 }
 export default class Popover extends React.PureComponent<PopoverProps, any> {
   static defaultProps = {
     onSelect: () => {},
-  };
+  }
 
-  static Item = PopoverItem;
+  static Item = PopoverItem
   onSelect = (value: any, closePopover: any) => {
-    const { onSelect } = this.props;
+    const { onSelect } = this.props
     if (onSelect) {
-      onSelect(value);
+      onSelect(value)
     }
-    closePopover();
-  };
+    closePopover()
+  }
   renderOverlay = (closePopover: any) => {
-    const { overlay, renderOverlayComponent } = this.props;
-    const items = React.Children.map(overlay, child => {
+    const { overlay, renderOverlayComponent } = this.props
+    const items = React.Children.map(overlay, (child) => {
       if (!isValidElement(child)) {
-        return child;
+        return child
       }
       return React.cloneElement(child, {
         onSelect: (v: any) => this.onSelect(v, closePopover),
-      } as any);
-    });
+      } as any)
+    })
     if (typeof renderOverlayComponent === 'function') {
-      return renderOverlayComponent(items, closePopover);
+      return renderOverlayComponent(items, closePopover)
     }
-    return <ScrollView>{items}</ScrollView>;
-  };
+    return <ScrollView>{items}</ScrollView>
+  }
   render() {
     const {
       children,
@@ -100,11 +99,11 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
       easing,
       useNativeDriver,
       onDismiss,
-    } = this.props;
+    } = this.props
 
     return (
       <WithTheme themeStyles={PopoverStyles} styles={styles}>
-        {s => (
+        {(s) => (
           <PopoverController>
             {({
               openPopover,
@@ -119,8 +118,7 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
                   onPress={openPopover}
                   style={triggerStyle}
                   disabled={disabled}
-                  activeOpacity={0.75}
-                >
+                  activeOpacity={0.75}>
                   {children}
                 </TouchableOpacity>
                 <Pop
@@ -135,8 +133,7 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
                   duration={duration}
                   easing={easing}
                   useNativeDriver={useNativeDriver}
-                  onDismiss={onDismiss}
-                >
+                  onDismiss={onDismiss}>
                   {this.renderOverlay(closePopover)}
                 </Pop>
               </View>
@@ -144,6 +141,6 @@ export default class Popover extends React.PureComponent<PopoverProps, any> {
           </PopoverController>
         )}
       </WithTheme>
-    );
+    )
   }
 }

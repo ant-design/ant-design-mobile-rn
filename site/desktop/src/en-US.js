@@ -1,4 +1,4 @@
-const appLocaleData = require('react-intl/locale-data/en');
+const appLocaleData = require('react-intl/locale-data/en')
 
 module.exports = {
   locale: 'en-US',
@@ -18,17 +18,22 @@ module.exports = {
     'app.home.qrtip': 'Scan QR Code',
     'app.home.s2_title': 'Understand what you need',
     'app.home.s2_des1': 'Rich Components | Full Featured',
-    'app.home.s2_des10': 'Provides 40+ basic components, covering all kinds of scenarios, component features rich to meet the needs of various functional Requirements.',
+    'app.home.s2_des10':
+      'Provides 40+ basic components, covering all kinds of scenarios, component features rich to meet the needs of various functional Requirements.',
     'app.home.s2_des2': 'One Step To Get Start | Loaded on demand',
-    'app.home.s2_des20': 'Simple enough to get started, you can load all the code at a time or only load some of the components used in the code to avoid redundancy.',
+    'app.home.s2_des20':
+      'Simple enough to get started, you can load all the code at a time or only load some of the components used in the code to avoid redundancy.',
     'app.home.s2_des3': 'Small Size | Outstanding Performance',
-    'app.home.s2_des30': 'On the basis of not losing the features, as far as possible to ensure a single component of the smallest, best performance.',
+    'app.home.s2_des30':
+      'On the basis of not losing the features, as far as possible to ensure a single component of the smallest, best performance.',
     'app.home.s2_des4': 'Easy To Customize | Many Styles',
-    'app.home.s2_des40': 'Support flexible style customization, easy to generate a variety of styles to meet the needs of personalized products.',
+    'app.home.s2_des40':
+      'Support flexible style customization, easy to generate a variety of styles to meet the needs of personalized products.',
     'app.home.s3_title': 'Sketch UI Kit',
-    'app.home.s3_des': 'We provide you with a rich resource of Sketch symbolized components, which you can use to quickly design your application.',
+    'app.home.s3_des':
+      'We provide you with a rich resource of Sketch symbolized components, which you can use to quickly design your application.',
     'app.home.s3_btn': 'Download Immediately',
-    'app.home.s4_title': 'Who\'s using',
+    'app.home.s4_title': "Who's using",
     'app.footer.links': 'Links',
     'app.footer.motion': 'Motion Solution',
     'app.footer.antux': 'Sitemap Template',
@@ -53,4 +58,4 @@ module.exports = {
     'app.demo.codepen': 'Open in CodePen',
     'app.demo.riddle': 'Open in Riddle',
   },
-};
+}

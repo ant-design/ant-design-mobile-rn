@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 const textStyle = {
   color: '#0ae',
   fontSize: 18,
   textAlign: 'center',
-};
+}
 
 const styles = StyleSheet.create<any>({
   modal: {
@@ -34,6 +34,6 @@ const styles = StyleSheet.create<any>({
     ...textStyle,
     color: '#666',
   },
-});
+})
 
-export default styles;
+export default styles

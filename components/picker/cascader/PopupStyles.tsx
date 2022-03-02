@@ -1,1 +1,1 @@
-export { default } from '../PopupStyles';
+export { default } from '../PopupStyles'

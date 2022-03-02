@@ -5,7 +5,7 @@ import { WithTheme } from '../style';
 import { SegmentedControlPropsType } from './PropsType';
 
 export interface SegmentedControlProps extends SegmentedControlPropsType {
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>
 }
 
 export default class SegmentedControl extends React.Component<
@@ -14,7 +14,7 @@ export default class SegmentedControl extends React.Component<
 > {
   static defaultProps = {
     selectedIndex: 0,
-  };
+  }
 
   render() {
     const { tintColor, disabled, selectedIndex, selectedTextColor, ...restProps } = this.props;
@@ -22,7 +22,7 @@ export default class SegmentedControl extends React.Component<
       <WithTheme>
         {(_, theme) => (
           <SegmentedControlIOS
-            tintColor={tintColor||theme.segmented_control_color}
+            tintColor={tintColor || theme.segmented_control_color}
             selectedIndex={selectedIndex}
             activeFontStyle={{color: selectedTextColor}}
             {...restProps}
@@ -30,6 +30,6 @@ export default class SegmentedControl extends React.Component<
           />
         )}
       </WithTheme>
-    );
+    )
   }
 }

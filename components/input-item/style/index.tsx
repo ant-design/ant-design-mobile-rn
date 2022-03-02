@@ -1,14 +1,14 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 export interface InputItemStyle {
-  container: ViewStyle;
-  text: TextStyle;
-  input: TextStyle;
-  inputDisabled: TextStyle;
-  inputErrorColor: TextStyle;
-  clear: ViewStyle;
-  extra: TextStyle;
-  errorIcon: ViewStyle;
+  container: ViewStyle
+  text: TextStyle
+  input: TextStyle
+  inputDisabled: TextStyle
+  inputErrorColor: TextStyle
+  clear: ViewStyle
+  extra: TextStyle
+  errorIcon: ViewStyle
 }
 export default (theme: Theme) =>
   StyleSheet.create<InputItemStyle>({
@@ -58,4 +58,4 @@ export default (theme: Theme) =>
       width: theme.icon_size_sm,
       height: theme.icon_size_sm,
     },
-  });
+  })

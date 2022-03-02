@@ -1,5 +1,5 @@
 export default {
-	confirmLabel: 'OK',
-	backspaceLabel: 'Retroceso',
-	cancelKeyboardLabel: 'Cancelar Teclado',
-};
+  confirmLabel: 'OK',
+  backspaceLabel: 'Retroceso',
+  cancelKeyboardLabel: 'Cancelar Teclado',
+}

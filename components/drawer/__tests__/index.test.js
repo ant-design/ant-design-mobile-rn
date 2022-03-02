@@ -6,6 +6,6 @@
 describe('Drawer', () => {
   it('trigger correctly', () => {
     // todos: write test!
-    expect(true).toBe(true);
-  });
-});
+    expect(true).toBe(true)
+  })
+})

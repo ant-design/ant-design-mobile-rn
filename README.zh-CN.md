@@ -37,10 +37,12 @@ cd ant-design-mobile-rn
 # install dependencies
 yarn
 
-# start ios simulator or android
-# cd rn-kitchen-sink/ios && pod install
-yarn ios # or yarn android
+# start ios
+cd rn-kitchen-sink/ios && pod install
+yarn ios
 
+# start android
+yarn android
 ```
 
 ## 安装 & 使用
@@ -55,16 +57,16 @@ or
 yarn add @ant-design/react-native
 ```
 
-### 安装peer依赖(4.0.0+)
+### 安装peer依赖
 
 ```bash
-npm install @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view
 ```
 
 or
 
 ```bash
-yarn add @react-native-community/cameraroll @react-native-community/picker @react-native-community/segmented-control @react-native-community/slider @react-native-community/viewpager
+yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view  react-native-gesture-handler
 ```
 
 > 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理

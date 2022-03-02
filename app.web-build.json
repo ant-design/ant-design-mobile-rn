@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "@ant-design/react-native",
+    "slug": "@ant-design/react-native",
+    "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
+    "privacy": "public",
+    "sdkVersion": "34.0.0",
+    "platforms": ["web"],
+    "version": "5.0.0",
+    "primaryColor": "#cccccc",
+    "web": {
+      "publicPath": "/ant-design-mobile-rn/app"
+    }
+  }
+}

@@ -5,4 +5,4 @@ export default {
   refreshableTitleRelease: 'Iniciado carregamento',
   refreshableTitleRefreshing: 'Carregando...',
   noData: 'Sem dados',
-};
+}

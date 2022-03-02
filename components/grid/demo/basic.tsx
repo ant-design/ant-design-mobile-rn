@@ -1,11 +1,11 @@
-import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
-import { Grid } from '../../';
+import React from 'react'
+import { ScrollView, Text, View } from 'react-native'
+import { Grid } from '../../'
 
 const data = Array.from(new Array(9)).map((_val, i) => ({
   icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
   text: `Name${i}`,
-}));
+}))
 
 export default class BasicGridExample extends React.Component<any, any> {
   render() {
@@ -42,6 +42,6 @@ export default class BasicGridExample extends React.Component<any, any> {
           itemStyle={{ height: 150, backgroundColor: '#ffff00' }}
         />
       </ScrollView>
-    );
+    )
   }
 }

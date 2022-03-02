@@ -1,24 +1,24 @@
-import React from 'react';
-import { StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native';
-import { Button, Carousel } from '../../';
+import React from 'react'
+import { StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native'
+import { Button, Carousel } from '../../'
 
 export default class BasicCarouselExample extends React.Component<any, any> {
-  carousel: null | Carousel;
+  carousel: null | Carousel
   constructor(props: any) {
-    super(props);
+    super(props)
     this.state = {
       selectedIndex: 2,
       autoplay: true,
-    };
+    }
   }
   onHorizontalSelectedIndexChange = (index: number) => {
     /* tslint:disable: no-console */
-    console.log('horizontal change to', index);
-    this.setState({ selectedIndex: index });
-  };
+    console.log('horizontal change to', index)
+    this.setState({ selectedIndex: index })
+  }
   onVerticalSelectedIndexChange(index: number) {
     /* tslint:disable: no-console */
-    console.log('vertical change to', index);
+    console.log('vertical change to', index)
   }
   render() {
     return (
@@ -31,37 +31,31 @@ export default class BasicCarouselExample extends React.Component<any, any> {
             autoplay
             infinite
             afterChange={this.onHorizontalSelectedIndexChange}
-            ref={ref => (this.carousel = ref)}
-          >
+            ref={(ref) => (this.carousel = ref)}>
             <View
-              style={[styles.containerHorizontal, { backgroundColor: 'red' }]}
-            >
+              style={[styles.containerHorizontal, { backgroundColor: 'red' }]}>
               <Text>Carousel 1</Text>
             </View>
             <View
-              style={[styles.containerHorizontal, { backgroundColor: 'blue' }]}
-            >
+              style={[styles.containerHorizontal, { backgroundColor: 'blue' }]}>
               <Text>Carousel 2</Text>
             </View>
             <View
               style={[
                 styles.containerHorizontal,
                 { backgroundColor: 'yellow' },
-              ]}
-            >
+              ]}>
               <Text>Carousel 3</Text>
             </View>
             <View
-              style={[styles.containerHorizontal, { backgroundColor: 'aqua' }]}
-            >
+              style={[styles.containerHorizontal, { backgroundColor: 'aqua' }]}>
               <Text>Carousel 4</Text>
             </View>
             <View
               style={[
                 styles.containerHorizontal,
                 { backgroundColor: 'fuchsia' },
-              ]}
-            >
+              ]}>
               <Text>Carousel 5</Text>
             </View>
           </Carousel>
@@ -77,50 +71,46 @@ export default class BasicCarouselExample extends React.Component<any, any> {
             autoplay={this.state.autoplay}
             infinite
             afterChange={this.onVerticalSelectedIndexChange}
-            vertical
-          >
+            vertical>
             <View
-              style={[styles.containerVertical, { backgroundColor: 'red' }]}
-            >
+              style={[styles.containerVertical, { backgroundColor: 'red' }]}>
               <Text>Carousel 1</Text>
             </View>
             <View
-              style={[styles.containerVertical, { backgroundColor: 'blue' }]}
-            >
+              style={[styles.containerVertical, { backgroundColor: 'blue' }]}>
               <Text>Carousel 2</Text>
             </View>
             <View
-              style={[styles.containerVertical, { backgroundColor: 'yellow' }]}
-            >
+              style={[styles.containerVertical, { backgroundColor: 'yellow' }]}>
               <Text>Carousel 3</Text>
             </View>
             <View
-              style={[styles.containerVertical, { backgroundColor: 'aqua' }]}
-            >
+              style={[styles.containerVertical, { backgroundColor: 'aqua' }]}>
               <Text>Carousel 4</Text>
             </View>
             <View
-              style={[styles.containerVertical, { backgroundColor: 'fuchsia' }]}
-            >
+              style={[
+                styles.containerVertical,
+                { backgroundColor: 'fuchsia' },
+              ]}>
               <Text>Carousel 5</Text>
             </View>
           </Carousel>
           <Button
-            onPress={() => this.setState({ autoplay: !this.state.autoplay })}
-          >
+            onPress={() => this.setState({ autoplay: !this.state.autoplay })}>
             Toggle autoplay {this.state.autoplay ? 'true' : 'false'}
           </Button>
         </View>
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create<{
-  wrapper: ViewStyle;
-  containerHorizontal: ViewStyle;
-  containerVertical: ViewStyle;
-  text: TextStyle;
+  wrapper: ViewStyle
+  containerHorizontal: ViewStyle
+  containerVertical: ViewStyle
+  text: TextStyle
 }>({
   wrapper: {
     backgroundColor: '#fff',
@@ -143,4 +133,4 @@ const styles = StyleSheet.create<{
     color: '#fff',
     fontSize: 36,
   },
-});
+})

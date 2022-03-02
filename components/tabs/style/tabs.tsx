@@ -1,9 +1,9 @@
-import { StyleSheet, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { StyleSheet, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 export interface TabsStyle {
-  container: ViewStyle;
-  topTabBarSplitLine: ViewStyle;
-  bottomTabBarSplitLine: ViewStyle;
+  container: ViewStyle
+  topTabBarSplitLine: ViewStyle
+  bottomTabBarSplitLine: ViewStyle
 }
 export default (theme: Theme) =>
   StyleSheet.create<TabsStyle>({
@@ -18,4 +18,4 @@ export default (theme: Theme) =>
       borderTopColor: theme.border_color_base,
       borderTopWidth: 1,
     },
-  });
+  })

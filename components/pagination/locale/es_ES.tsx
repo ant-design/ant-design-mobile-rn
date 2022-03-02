@@ -1,4 +1,4 @@
 export default {
-	prevText: 'Ant',
-	nextText: 'Sig',
-};
+  prevText: 'Ant',
+  nextText: 'Sig',
+}

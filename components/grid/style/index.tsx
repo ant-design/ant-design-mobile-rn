@@ -1,9 +1,9 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Theme } from '../../style';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 export interface GridStyle {
-  grayBorderBox: ViewStyle;
-  icon: ImageStyle;
-  text: TextStyle;
+  grayBorderBox: ViewStyle
+  icon: ImageStyle
+  text: TextStyle
 }
 export default (theme: Theme) =>
   StyleSheet.create<GridStyle>({
@@ -19,4 +19,4 @@ export default (theme: Theme) =>
       color: theme.color_text_base,
       marginTop: theme.v_spacing_md,
     },
-  });
+  })

@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
-import React from 'react';
-import { Button, WhiteSpace, WingBlank } from '../../';
+import React from 'react'
+import { Button, WhiteSpace, WingBlank } from '../../'
 
 /* tslint:disable:no-console */
 export default () => (
@@ -41,8 +41,7 @@ export default () => (
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-      }}
-    >
+      }}>
       <Button type="ghost">ghost</Button>
       <Button type="ghost" disabled>
         ghost disabled
@@ -52,4 +51,4 @@ export default () => (
       </Button>
     </WingBlank>
   </WingBlank>
-);
+)
