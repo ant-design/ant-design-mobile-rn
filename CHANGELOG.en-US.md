@@ -14,6 +14,30 @@ toc: false
 
 ---
 
+### 5.0.0
+
+`2022-03-08`
+
+- 🔥 **`Expo`** and **`react-native-web`** support [#1220](https://github.com/ant-design/ant-design-mobile-rn/pull/1220)
+- **Checkbox** & **Radio**
+  - 💄 Refactor Checkbox Use pure style replace to `Icon` button [~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/3bec0d3d6d56b72a82830a8cd747fe4290a43e74#r68109623)
+  - ⚡️ Broken `styles` change [~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/3bec0d3d6d56b72a82830a8cd747fe4290a43e74#r68109821)
+  - 💄 Radio Refactor extends by Checkbox
+  - 🆕 Radio add `Radio.Group` component
+- Refactor **Switch**
+  - 🆕 Switch add (`loading` `checkedChildren` `unCheckedChildren`) new props
+  - 🆕 Switch support (`trackColor` `thumbColor` `thumbTintColor`) native props [#507](https://github.com/ant-design/ant-design-mobile-rn/pull/507)
+  - 🆕 Switch support `styles` prop to custom style
+- **Toast**
+  - 🆕 `content`'s type support `React.ReactNode` [@iShawnWang](https://github.com/iShawnWang)
+  - 🐞 Fix the `onClose` callback not called when removeAll [@erichua23](https://github.com/erichua23)
+- **Carousel**
+  - 🔥 Refactor Carousel with remove dependence `react-native-pager-view` [@1uokun](https://github.com/1uokun)
+  - 💄 Carousel extends by `ScrollView {pagingEnabled}` to support web
+- 🔥 Refactor **Tabs** with remove dependence `react-native-pager-view` and extends by `Carousel`
+- 💄 ActionSheet create `index.native.tsx` to differentiate `web` and `native` Platform [#1219](https://github.com/ant-design/ant-design-mobile-rn/pull/1219)
+- 🐞 Fix **Flex** support `flex` value 0 in `Flex.Item`  [@laoxubuer](https://github.com/laoxubuer)
+
 ### 4.2.0
 
 `2021-06-16`

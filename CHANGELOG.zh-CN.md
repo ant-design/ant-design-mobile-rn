@@ -14,6 +14,30 @@ toc: false
 
 ---
 
+### 5.0.0
+
+`2022-03-08`
+
+- 🔥 全面支持 **`Expo`** 和 **`react-native-web`** [#1220](https://github.com/ant-design/ant-design-mobile-rn/pull/1220)
+- 重构 **Checkbox** & **Radio**
+  - 💄 重构Checkbox 使用纯样式代码替换`Icon`按钮 [~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/3bec0d3d6d56b72a82830a8cd747fe4290a43e74#r68109623)
+  - ⚡️ 缺点是破坏性的`styles`属性改变 [~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/3bec0d3d6d56b72a82830a8cd747fe4290a43e74#r68109821)
+  - 💄 重构Radio 基于 Checkbox 开发
+  - 🆕 Radio 新增  `Radio.Group` 组件
+- 重构 **Switch**
+  - 🆕 Switch新增 (`loading` `checkedChildren` `unCheckedChildren`) 属性支持
+  - 🆕 Switch新增 (`trackColor` `thumbColor` `thumbTintColor`) 原生属性支持 [#507](https://github.com/ant-design/ant-design-mobile-rn/pull/507)
+  - 🆕 Switch 新增 `styles` 属性已自定义样式
+- **Toast**
+  - 🆕 Toast `content` 属性类型新增 `React.ReactNode` [@iShawnWang](https://github.com/iShawnWang)
+  - 🐞 修复 `Toast.removeAll` 调用后无法回调 `onClose` bug [@erichua23](https://github.com/erichua23)
+- **Carousel**
+  - 🔥 重构Carousel，移除 `react-native-pager-view` 依赖 [@1uokun](https://github.com/1uokun)
+  - 💄 Carousel基于 `ScrollView {pagingEnabled}` 开发以支持`web`端
+- 🔥 重构**Tabs**，移除 `react-native-pager-view` 依赖，基于`Carousel`开发
+- 💄 ActionSheet 创建`index.native.tsx`文件以此区分 `web` 端和 `native` 端 [#1219](https://github.com/ant-design/ant-design-mobile-rn/pull/1219)
+- 🐞 修复 **Flex** `Flex.Item` 组件 `flex` 属性不能为 0 bug   [@laoxubuer](https://github.com/laoxubuer)
+
 ### 4.2.0
 
 `2021-06-16`
