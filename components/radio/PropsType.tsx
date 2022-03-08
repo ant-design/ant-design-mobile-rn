@@ -1,42 +1,40 @@
 import React from 'react'
-import { CheckboxPropsType, OnChangeParams } from '../checkbox/PropsType'
+import { CheckboxPropsType, CheckboxItemPropsType } from '../checkbox/PropsType'
+
+export type RadioValue = string | number | undefined
+
+export interface OnGroupChangeParams {
+  target: {
+    value: RadioValue
+  }
+}
 
 export interface RadioPropsType extends CheckboxPropsType {
   name?: string
-  value?: any
+  value?: RadioValue
 }
 
-export interface RadioItemPropsType extends RadioPropsType {
-  onPress?: () => any
-}
+export interface RadioItemPropsType
+  extends CheckboxItemPropsType,
+    RadioPropsType {}
 
-export type RadioValueType = string | number | boolean
 export interface RadioOptionType {
   label: React.ReactNode
-  value: RadioValueType
-  style?: React.CSSProperties
+  value: RadioValue
   disabled?: boolean
-  onChange?: (_e: OnChangeParams) => void
 }
-export interface OnGroupChangeParams {
-  target: {
-    value: any
-  }
-}
+
 export interface RadioGroupPropsType {
   children?: React.ReactNode
-  defaultValue?: any
-  value?: any
+  defaultValue?: RadioValue
+  value?: RadioValue
   onChange?: (_e: OnGroupChangeParams) => void
-  options?: Array<RadioOptionType | string>
+  options?: Array<RadioOptionType | RadioValue>
   disabled?: boolean
 }
 export interface RadioGroupContextProps {
-  onChange: (_e: RadioChangeEvent) => void
-  value: any
+  onChange: (_e: OnGroupChangeParams) => void
+  value?: RadioValue
   disabled?: boolean
-  name?: string
-}
-export interface RadioChangeEvent {
-  target: { value: any }
+  // name?: string
 }

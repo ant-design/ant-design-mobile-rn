@@ -1,3 +1,4 @@
+import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import * as React from 'react'
 import { StyleProp, ViewStyle } from 'react-native'
 import Checkbox from '../checkbox/Checkbox'
@@ -26,9 +27,17 @@ const InternalRadio = (
     'Radio',
     '`value` is always used with Radio.Group., do you mean `checked`?',
   )
+
+  const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
+    value: restProps.checked,
+    defaultValue: restProps.defaultChecked,
+  })
+
   if (context) {
     restProps.checked = value === context.value
     restProps.disabled = restProps.disabled || context.disabled
+  } else {
+    restProps.checked = innerChecked
   }
 
   const onInternalChange = (e: OnChangeParams) => {
@@ -36,6 +45,7 @@ const InternalRadio = (
   }
 
   function triggerChange(newChecked: boolean) {
+    setInnerChecked(newChecked)
     onChange?.({ target: { checked: newChecked } })
     context?.onChange?.({ target: { value } })
   }
