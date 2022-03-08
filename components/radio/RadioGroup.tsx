@@ -4,7 +4,7 @@ import { StyleProp, ViewStyle } from 'react-native'
 import { CheckboxStyle } from '../checkbox/style'
 import { WithThemeStyles } from '../style'
 import View from '../view'
-import { RadioGroupPropsType } from './PropsType'
+import { OnGroupChangeParams, RadioGroupPropsType } from './PropsType'
 import Radio from './Radio'
 import { RadioGroupContextProvider } from './RadioContext'
 
@@ -30,7 +30,7 @@ const RadioGroup = React.forwardRef<any, RadioGroupProps>(
       value: restProps.value,
     })
 
-    const onRadioChange = (ev: any) => {
+    const onRadioGroupChange = (ev: OnGroupChangeParams) => {
       const lastValue = value
       const val = ev.target.value
       if (!('value' in restProps)) {
@@ -54,8 +54,7 @@ const RadioGroup = React.forwardRef<any, RadioGroupProps>(
                 {...restProps}
                 disabled={disabled}
                 value={option}
-                checked={value === option}
-                onChange={onRadioChange}>
+                checked={value === option}>
                 {option}
               </Radio>
             )
@@ -77,12 +76,12 @@ const RadioGroup = React.forwardRef<any, RadioGroupProps>(
       return (
         <View
           accessibilityRole="radiogroup"
-          accessibilityState={{ checked: value, disabled }}
+          accessibilityState={{ disabled }}
           style={style}
           ref={ref}>
           <RadioGroupContextProvider
             value={{
-              onChange: onRadioChange,
+              onChange: onRadioGroupChange,
               value,
               disabled: disabled,
             }}>

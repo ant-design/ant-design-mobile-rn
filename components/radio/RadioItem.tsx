@@ -13,8 +13,6 @@ const ListItem = List.Item
 export interface RadioItemProps
   extends RadioItemPropsType,
     WithThemeStyles<CheckboxStyle> {
-  right?: boolean
-  left?: boolean
   style?: StyleProp<ViewStyle>
 }
 

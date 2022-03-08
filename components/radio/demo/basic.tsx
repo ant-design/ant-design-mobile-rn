@@ -3,15 +3,20 @@ import { ScrollView } from 'react-native'
 import { Button, Flex, List, Radio, WhiteSpace, WingBlank } from '../../'
 const RadioItem = Radio.RadioItem
 
+type RadioValue = string | number
+interface EventRadioGroup {
+  target: { value: RadioValue }
+}
+
+interface EventRadioItem {
+  target: { checked: boolean }
+}
 export default class BasicRadioExample extends React.Component<any, any> {
-  constructor(props: any, context: any) {
-    super(props, context)
-    this.state = {
-      disabled: false,
-      part1Value: 1,
-      part2Value: 1,
-      part3Value: 1,
-    }
+  state = {
+    disabled: false,
+    part1Value: 1,
+    part2Value: 1,
+    part3Value: 1,
   }
 
   toggleDisabled = () => {
@@ -20,13 +25,19 @@ export default class BasicRadioExample extends React.Component<any, any> {
     })
   }
 
-  onChange2 = (e: { target: { value: any } }) => {
+  onChange = (part1Value: any, e: EventRadioItem) => {
+    if (e.target.checked) {
+      this.setState({ part1Value })
+    }
+  }
+
+  onGroupChange2 = (e: EventRadioGroup) => {
     this.setState({
       part2Value: e.target.value,
     })
   }
 
-  onChange3 = (e: { target: { value: any } }) => {
+  onGroupChange3 = (e: EventRadioGroup) => {
     this.setState({
       part3Value: e.target.value,
     })
@@ -59,27 +70,19 @@ export default class BasicRadioExample extends React.Component<any, any> {
           <RadioItem
             right
             checked={this.state.part1Value === 1}
-            onChange={(event) => {
-              if (event.target.checked) {
-                this.setState({ part1Value: 1 })
-              }
-            }}>
+            onChange={this.onChange.bind(this, 1)}>
             Use Ant Design Component
           </RadioItem>
           <RadioItem
             right
             checked={this.state.part1Value === 2}
-            onChange={(event) => {
-              if (event.target.checked) {
-                this.setState({ part1Value: 2 })
-              }
-            }}>
+            onChange={this.onChange.bind(this, 2)}>
             Use Ant Design Component
           </RadioItem>
         </List>
         <List renderHeader={'单选组合 RadioGroup\n一组互斥的 Radio 配合使用'}>
           <Radio.Group
-            onChange={this.onChange2}
+            onChange={this.onGroupChange2}
             value={this.state.part2Value}
             style={{
               flexDirection: 'row',
@@ -96,7 +99,9 @@ export default class BasicRadioExample extends React.Component<any, any> {
           renderHeader={
             'Radio.Group 垂直\n垂直的 Radio.Group，配合更多输入框选项'
           }>
-          <Radio.Group onChange={this.onChange3} value={this.state.part3Value}>
+          <Radio.Group
+            onChange={this.onGroupChange3}
+            value={this.state.part3Value}>
             <RadioItem value={1}>Option A</RadioItem>
             <RadioItem value={2}>Option B</RadioItem>
             <RadioItem value={3}>Option C</RadioItem>
@@ -105,7 +110,7 @@ export default class BasicRadioExample extends React.Component<any, any> {
         </List>
         <List
           renderHeader={
-            'Radio.Group 组合 - 配置方式\n通过配置 options 参数来渲染单选框。也可通过 optionType 参数来设置 Radio 类型。'
+            'Radio.Group 组合 - 配置方式\n可通过配置 options 参数来渲染单选框。'
           }>
           <RadioGroupExample />
         </List>
@@ -131,39 +136,31 @@ class RadioGroupExample extends React.Component {
     value1: 'Apple',
     value2: 'Apple',
     value3: 'Apple',
-    value4: 'Apple',
   }
 
-  onChange1 = (e: any) => {
+  onChange1 = (e: EventRadioGroup) => {
     console.log('radio1 checked', e.target.value)
     this.setState({
       value1: e.target.value,
     })
   }
 
-  onChange2 = (e: any) => {
+  onChange2 = (e: EventRadioGroup) => {
     console.log('radio2 checked', e.target.value)
     this.setState({
       value2: e.target.value,
     })
   }
 
-  onChange3 = (e: any) => {
+  onChange3 = (e: EventRadioGroup) => {
     console.log('radio3 checked', e.target.value)
     this.setState({
       value3: e.target.value,
     })
   }
 
-  onChange4 = (e: any) => {
-    console.log('radio4 checked', e.target.value)
-    this.setState({
-      value4: e.target.value,
-    })
-  }
-
   render() {
-    const { value1, value2, value3, value4 } = this.state
+    const { value1, value2, value3 } = this.state
     return (
       <WingBlank>
         <WhiteSpace />
@@ -175,23 +172,16 @@ class RadioGroupExample extends React.Component {
         <WhiteSpace />
         <WhiteSpace />
         <Radio.Group
-          options={optionsWithDisabled}
+          options={options}
           onChange={this.onChange2}
           value={value2}
         />
         <WhiteSpace />
         <WhiteSpace />
         <Radio.Group
-          options={options}
+          options={optionsWithDisabled}
           onChange={this.onChange3}
           value={value3}
-        />
-        <WhiteSpace />
-        <WhiteSpace />
-        <Radio.Group
-          options={optionsWithDisabled}
-          onChange={this.onChange4}
-          value={value4}
         />
         <WhiteSpace />
       </WingBlank>
