@@ -30,8 +30,8 @@ export default class RadioItem extends React.Component<RadioItemProps> {
       style,
       disabled,
       children,
-      right,
-      left = !right,
+      left,
+      right = !left,
       ...restProps
     } = this.props
 
