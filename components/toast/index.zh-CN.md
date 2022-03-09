@@ -35,6 +35,9 @@ import { Toast } from '@ant-design/react-native';
 
 const key = Toast.loading('message');
 Toast.remove(key);
+
+// 或者强制关闭所有Toast
+Toast.removeAll()
 ```
 
 ### 自定义配置

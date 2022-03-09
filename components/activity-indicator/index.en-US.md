@@ -28,7 +28,7 @@ title: ActivityIndicator
 Properties | Descrition | Type | Default
 -----------|------------|------|--------
 |  animating  | Whether to show the indicator (true, the default) or hide it (false). | boolean  | true  |
-|  size  | Size of the indicator (`small`/`large`) | string  | small  |
+|  size  | Size of the indicator (`small`/`large` or number [android only]) | string\|number  | small  |
 |  toast  | Whether to use toast style | boolean  | false  |
 |  text  | loading text behind the indicator | string |  -   |
 |  color | The foreground color of the spinner (default is gray). | string  | gray  |
