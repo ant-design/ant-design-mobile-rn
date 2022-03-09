@@ -1,6 +1,6 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { Button, Flex, List, Radio, WhiteSpace, WingBlank } from '../../'
+import { Button, Flex, List, Radio, WingBlank } from '../../'
 const RadioItem = Radio.RadioItem
 
 type RadioValue = string | number
@@ -68,13 +68,11 @@ export default class BasicRadioExample extends React.Component<any, any> {
         </List>
         <List renderHeader="RadioItem">
           <RadioItem
-            right
             checked={this.state.part1Value === 1}
             onChange={this.onChange.bind(this, 1)}>
             Use Ant Design Component
           </RadioItem>
           <RadioItem
-            right
             checked={this.state.part1Value === 2}
             onChange={this.onChange.bind(this, 2)}>
             Use Ant Design Component
@@ -105,7 +103,9 @@ export default class BasicRadioExample extends React.Component<any, any> {
             <RadioItem value={1}>Option A</RadioItem>
             <RadioItem value={2}>Option B</RadioItem>
             <RadioItem value={3}>Option C</RadioItem>
-            <RadioItem value={4}>More...</RadioItem>
+            <RadioItem value={4} left>
+              More...
+            </RadioItem>
           </Radio.Group>
         </List>
         <List
@@ -162,29 +162,29 @@ class RadioGroupExample extends React.Component {
   render() {
     const { value1, value2, value3 } = this.state
     return (
-      <WingBlank>
-        <WhiteSpace />
-        <Radio.Group
-          options={plainOptions}
-          onChange={this.onChange1}
-          value={value1}
-        />
-        <WhiteSpace />
-        <WhiteSpace />
-        <Radio.Group
-          options={options}
-          onChange={this.onChange2}
-          value={value2}
-        />
-        <WhiteSpace />
-        <WhiteSpace />
-        <Radio.Group
-          options={optionsWithDisabled}
-          onChange={this.onChange3}
-          value={value3}
-        />
-        <WhiteSpace />
-      </WingBlank>
+      <>
+        <List renderHeader="PlainOptions">
+          <Radio.Group
+            options={plainOptions}
+            onChange={this.onChange1}
+            value={value1}
+          />
+        </List>
+        <List renderHeader="Options">
+          <Radio.Group
+            options={options}
+            onChange={this.onChange2}
+            value={value2}
+          />
+        </List>
+        <List renderHeader="OptionsWithDisabled">
+          <Radio.Group
+            options={optionsWithDisabled}
+            onChange={this.onChange3}
+            value={value3}
+          />
+        </List>
+      </>
     )
   }
 }

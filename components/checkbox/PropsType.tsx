@@ -21,3 +21,7 @@ export interface CheckboxItemPropsType extends CheckboxPropsType {
   left?: boolean
   onPress?: () => void
 }
+
+export interface CheckboxForwardedRef {
+  onPress: () => void
+}

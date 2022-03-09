@@ -5,7 +5,7 @@ import { CheckboxStyle } from '../checkbox/style'
 import { WithThemeStyles } from '../style'
 import View from '../view'
 import { OnGroupChangeParams, RadioGroupPropsType } from './PropsType'
-import Radio from './Radio'
+import RadioItem from './RadioItem'
 import { RadioGroupContextProvider } from './RadioContext'
 
 export interface RadioGroupProps
@@ -49,26 +49,26 @@ const RadioGroup = React.forwardRef<any, RadioGroupProps>(
           if (typeof option === 'string') {
             // 此处类型自动推导为 string
             return (
-              <Radio
+              <RadioItem
                 key={option}
                 {...restProps}
                 disabled={disabled}
                 value={option}
                 checked={value === option}>
                 {option}
-              </Radio>
+              </RadioItem>
             )
           }
           // 此处类型自动推导为 { label: string value: string }
           return (
-            <Radio
+            <RadioItem
               key={`radio-group-value-options-${option.value}`}
               {...restProps}
               disabled={option.disabled || disabled}
               value={option.value}
               checked={value === option.value}>
               {option.label}
-            </Radio>
+            </RadioItem>
           )
         })
       }

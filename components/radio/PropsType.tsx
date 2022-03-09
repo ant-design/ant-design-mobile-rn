@@ -1,5 +1,9 @@
 import React from 'react'
-import { CheckboxPropsType, CheckboxItemPropsType } from '../checkbox/PropsType'
+import {
+  CheckboxForwardedRef,
+  CheckboxItemPropsType,
+  CheckboxPropsType,
+} from '../checkbox/PropsType'
 
 export type RadioValue = string | number | undefined
 
@@ -10,7 +14,6 @@ export interface OnGroupChangeParams {
 }
 
 export interface RadioPropsType extends CheckboxPropsType {
-  name?: string
   value?: RadioValue
 }
 
@@ -36,5 +39,6 @@ export interface RadioGroupContextProps {
   onChange: (_e: OnGroupChangeParams) => void
   value?: RadioValue
   disabled?: boolean
-  // name?: string
 }
+
+export interface RadioForwardedRef extends CheckboxForwardedRef {}

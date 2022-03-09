@@ -99,8 +99,8 @@ export default class BasicCheckboxExample extends React.Component<any, any> {
           </CheckboxItem>
           <CheckboxItem>Option 2</CheckboxItem>
           <CheckboxItem disabled>Option 3</CheckboxItem>
-          <CheckboxItem disabled checked>
-            Option 4
+          <CheckboxItem disabled checked right>
+            More...
           </CheckboxItem>
         </List>
         <List
