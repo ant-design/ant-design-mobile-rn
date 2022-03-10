@@ -18,6 +18,13 @@ subtitle: 走马灯
 | autoplayInterval | 自动切换的时间间隔 | Number | 3000 |
 | infinite | 是否循环播放 | Boolean   | false |
 | afterChange  | 切换面板后的回调函数 | (current: number): void  | 无 |
-| dotStyle  | 指示点样式 | Object | 无 |
-| dotActiveStyle  | 当前激活的指示点样式 | Object | 无 |
+| dotStyle  | 指示点样式 | ViewStyle | 无 |
+| dotActiveStyle  | 当前激活的指示点样式 | ViewStyle | 无 |
+| pageStyle | 轮播页样式 | ViewStyle | 无 |
 | pagination | 自定义 pagination | (props) => React.ReactNode  |  |
+
+## Carousel methods
+
+属性 | 说明 | 类型 | 默认值
+----|-----|------|------
+| goTo | 跳转到指定位置 | (index: number, animated?: boolean): void |  -  |
