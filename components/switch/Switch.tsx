@@ -1,15 +1,22 @@
 import classNames from 'classnames'
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import * as React from 'react'
-import { Animated, Easing, View } from 'react-native'
+import { Animated, Easing, StyleProp, View, ViewStyle } from 'react-native'
 import RNActivityIndicator from '../activity-indicator'
 import ButtonWave from '../button/ButtonWave'
-import { WithTheme } from '../style'
+import { WithTheme, WithThemeStyles } from '../style'
 import AntmView from '../view/index'
 import devWarning from '../_util/devWarning'
 import { useAnimatedTiming } from '../_util/hooks/useAnimations'
 import { SwitchPropsType } from './PropsType'
-import SwitchStyles from './style/index'
+import SwitchStyles, { SwitchStyle } from './style/index'
+
+export interface SwitchProps
+  extends SwitchPropsType,
+    WithThemeStyles<SwitchStyle> {
+  style?: StyleProp<ViewStyle>
+  children?: React.ReactNode
+}
 
 const AnimatedView = Animated.createAnimatedComponent(AntmView)
 const AntmSwitch = ({
@@ -27,7 +34,7 @@ const AntmSwitch = ({
   thumbColor,
   thumbTintColor,
   ...restProps
-}: SwitchPropsType) => {
+}: SwitchProps) => {
   devWarning(
     'checked' in restProps || !('value' in restProps),
     'Switch',
