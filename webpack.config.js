@@ -20,5 +20,6 @@ module.exports = async function (env, argv) {
       },
     },
   })
+  config.output.publicPath = './'
   return config
 }
