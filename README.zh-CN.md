@@ -27,6 +27,12 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 
 ## 演示
 
+**可直接预览H5网页版本：**[🔗 链接1](https://1uokun.github.io/ant-design-mobile-rn/index.html)<br>
+**或下载我们的Expo演示应用:** [🔗 链接2](https://expo.dev/@1uokun/ant-design-mobile-rn) <br>
+[<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) <br>
+> 提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
+
+
 ```bash
 # clone
 git clone git@github.com:ant-design/ant-design-mobile-rn.git
@@ -43,6 +49,9 @@ yarn ios
 
 # start android
 yarn android
+
+# start expo
+yarn expo
 ```
 
 ## 安装 & 使用
@@ -60,13 +69,13 @@ yarn add @ant-design/react-native
 ### 安装peer依赖
 
 ```bash
-npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view
+npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
 ```
 
 or
 
 ```bash
-yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view  react-native-gesture-handler
+yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
 ```
 
 > 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理

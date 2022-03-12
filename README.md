@@ -29,6 +29,12 @@ A configurable Mobile UI specification and React-based implementation.
 
 ## Demo
 
+**Preview in [ 🔗 Web Platform](https://1uokun.github.io/ant-design-mobile-rn/index.html)**. or<br>
+**Download our Expo demo app** <br>
+[<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) <br>
+> Open the camera app on your device and scan the code above, <br>
+need install expo app: https://expo.io/tools
+
 ```bash
 # clone
 git clone git@github.com:ant-design/ant-design-mobile-rn.git
@@ -45,6 +51,9 @@ yarn ios
 
 # start android
 yarn android
+
+# start expo
+yarn expo
 ```
 
 ## Install & Usage
@@ -62,13 +71,13 @@ yarn add @ant-design/react-native
 ### Installing peer dependencies
 
 ```bash
-npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view
+npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
 ```
 
 or
 
 ```bash
-yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-pager-view react-native-gesture-handler
+yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
 ```
 
 > You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
