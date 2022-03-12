@@ -1,8 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
-import { ColorValue, StyleProp, ViewStyle } from 'react-native'
-
-export type SwitchChangeEventHandler = (checked: boolean) => void
-export type SwitchClickEventHandler = SwitchChangeEventHandler
+import { ColorValue } from 'react-native'
 
 export interface SwitchPropsType {
   prefixCls?: string
@@ -14,10 +12,9 @@ export interface SwitchPropsType {
   thumbTintColor?: ColorValue
   disabled?: boolean
   loading?: boolean
-  styles?: { [key: string]: StyleProp<ViewStyle> }
   title?: string
-  checkedChildren?: React.ReactNode | React.ReactText
-  unCheckedChildren?: React.ReactNode | React.ReactText
-  onChange?: SwitchChangeEventHandler
-  onPress?: SwitchClickEventHandler
+  checkedChildren?: string | React.ReactNode
+  unCheckedChildren?: string | React.ReactNode
+  onChange?: (checked: boolean) => void
+  onPress?: (checked: boolean) => void
 }
