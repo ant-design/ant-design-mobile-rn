@@ -186,7 +186,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     )
   }
 
-  // TODO: 给android专门定一个onAndroidScrollEnd方法
   onScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     e.persist?.()
     // android/web hack
