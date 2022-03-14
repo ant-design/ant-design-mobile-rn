@@ -34,6 +34,9 @@ import { Toast } from '@ant-design/react-native';
 
 const key = Toast.loading('message');
 Toast.remove(key);
+
+// Or force close all toasts
+Toast.removeAll()
 ```
 
 ### Configuration

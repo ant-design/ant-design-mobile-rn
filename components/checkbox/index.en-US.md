@@ -10,12 +10,17 @@ Checkbox
 
 ### Checkbox
 
+```ts
+type Event = { target: { checked: boolean } }
+```
+
 Properties | Descrition | Type | Default
 -----------|------------|------|--------
 | defaultChecked  |  whether is checked when init  | Boolean   |   |
 | checked         |  whether is checked now (Controlled Mode)   | Boolean  |   |
 | disabled        |  whether is been disabled       | Boolean |  false  |
-| onChange        | callback when check status is changed | (e: Object): void |     |
+| indeterminate   |  The indeterminate checked state of checkbox | Boolean | false |
+| onChange        | callback when check status is changed | (e: `Event`) => void |     |
 
 ### Checkbox.CheckboxItem
 

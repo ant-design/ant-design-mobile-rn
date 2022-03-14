@@ -30,7 +30,7 @@ subtitle: 活动指示器
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 |  animating  | 显隐状态 | boolean  | true  |
-|  size  | spinner大小，可选`small`/`large` | string  | small  |
+|  size  | spinner大小，可选`small`/`large` 或者数字（仅android） | string\|number  | small  |
 |  toast  | loading样式类型 | boolean  | false  |
 |  text  | loading文本 | string |  -   |
 |  color | spinner颜色 | string  | gray  |
