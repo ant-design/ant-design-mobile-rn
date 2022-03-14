@@ -18,9 +18,7 @@ export default () =>
       flexDirection: 'column',
       justifyContent: 'flex-end',
     },
-    container:{
-      flexGrow:0.5,
-    },
+    container: {},
     header: {
       height: 44,
       alignItems: 'center',
