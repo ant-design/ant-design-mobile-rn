@@ -47,6 +47,7 @@ class App extends React.Component {
     return (
       <Provider theme={theme}>
         <NavigationContainer
+          linking={{ enabled: true }}
           screenProps={{ changeTheme: this.changeTheme, currentTheme }}
           initialRouteName="Home">
           <Stack.Navigator>
