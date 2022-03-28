@@ -13,6 +13,11 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
     Disabled
   </Text>
   <RNCSegmentedControl
+    activeFontStyle={
+      Object {
+        "color": undefined,
+      }
+    }
     enabled={false}
     onChange={[Function]}
     selectedIndex={0}
@@ -46,6 +51,11 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
     TintColor and Style
   </Text>
   <RNCSegmentedControl
+    activeFontStyle={
+      Object {
+        "color": undefined,
+      }
+    }
     enabled={true}
     onChange={[Function]}
     selectedIndex={0}
@@ -83,6 +93,11 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
     SelectedIndex
   </Text>
   <RNCSegmentedControl
+    activeFontStyle={
+      Object {
+        "color": undefined,
+      }
+    }
     enabled={true}
     onChange={[Function]}
     selectedIndex={1}
@@ -117,6 +132,11 @@ exports[`renders ./components/segmented-control/demo/basic.tsx correctly 1`] = `
     onChange/onValueChange
   </Text>
   <RNCSegmentedControl
+    activeFontStyle={
+      Object {
+        "color": undefined,
+      }
+    }
     enabled={true}
     onChange={[Function]}
     onValueChange={[Function]}

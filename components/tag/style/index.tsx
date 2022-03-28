@@ -68,10 +68,11 @@ export default (theme: Theme) =>
     },
     close: {
       position: 'absolute',
-      top: -9,
-      left: -10,
+      top: -6,
+      left: -6,
       color: theme.color_text_placeholder,
-      backgroundColor: '#fff',
+      backgroundColor: 'transparent',
       borderRadius: 999,
+      fontSize: 16,
     },
   })

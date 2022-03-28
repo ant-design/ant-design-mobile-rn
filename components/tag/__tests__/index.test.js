@@ -1,7 +1,7 @@
 import React from 'react'
-import { Text, TouchableWithoutFeedback } from 'react-native'
 import renderer from 'react-test-renderer'
 import Tag from '../index'
+import Icon from '../../icon'
 // No need to render Snapshot again, because of `./demo.test.js`
 
 describe('Tag', () => {
@@ -11,9 +11,8 @@ describe('Tag', () => {
         Basic
       </Tag>,
     )
-    inst.root.findAllByType(TouchableWithoutFeedback)
-    expect(inst.root.findAllByType(TouchableWithoutFeedback)).toHaveLength(1)
-    expect(inst.root.findByType(Text).children === 'x').toBeFalsy()
+    inst.root.findAllByType(Icon)
+    expect(inst.root.findAllByType(Icon)).toHaveLength(0)
   })
 
   it('onChange then selected', () => {
@@ -33,13 +32,13 @@ describe('Tag', () => {
         Basic
       </Tag>,
     )
-    expect(inst.root.findAllByType(TouchableWithoutFeedback)).toHaveLength(2)
+    expect(inst.root.findAllByType(Icon)).toHaveLength(1)
     expect(inst.getInstance().state.closed).toEqual(false)
     inst.getInstance().onTagClose()
     expect(onClose).toHaveBeenCalled()
     expect(inst.getInstance().state.closed).toEqual(true)
     expect(afterClose).toHaveBeenCalled()
-    expect(inst.root.findAllByType(TouchableWithoutFeedback)).toHaveLength(0)
+    expect(inst.root.findAllByType(Icon)).toHaveLength(0)
   })
 
   it('onLongPress then callback', () => {

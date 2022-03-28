@@ -117,7 +117,7 @@ export default class Tag extends React.Component<TagNativeProps, any> {
             closable && !disabled && !small ? (
               <Icon
                 onPress={this.onTagClose}
-                name="close-circle"
+                name="close"
                 style={styles.close}
               />
             ) : null

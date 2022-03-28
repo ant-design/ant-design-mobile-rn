@@ -280,7 +280,9 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       ? paramOffset.y - offset.y
       : paramOffset.x - offset.x
 
-    if (!diff) return
+    if (!diff) {
+      return
+    }
     selectedIndex += Math.round(diff / (this.props.vertical ? height : width))
     if (this.props.infinite) {
       if (selectedIndex <= -1) {
@@ -350,7 +352,9 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
 
   scrollNextPage = () => {
     const { selectedIndex, isScrolling, width, height } = this.state
-    if (isScrolling || this.count < 2) return
+    if (isScrolling || this.count < 2) {
+      return
+    }
     const diff = selectedIndex + 1 + (this.props.infinite ? 1 : 0)
     this.scrollview?.current?.scrollTo(
       this.props.vertical
@@ -407,7 +411,9 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     const { children, dots, infinite, accessibilityLabel, pageStyle } =
       this.props
     const { width, height, selectedIndex } = this.state
-    if (!children) return null
+    if (!children) {
+      return null
+    }
     let pages
     const pageWidth = [pageStyle, { width, height }]
     if (this.count > 1) {
@@ -439,7 +445,9 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     this.setState({ isScrolling: false }, () => {
       const { children, autoplay, autoplayInterval, infinite } = this.props
       const { selectedIndex } = this.state
-      if (!Array.isArray(children) || !autoplay) return
+      if (!Array.isArray(children) || !autoplay) {
+        return
+      }
       clearTimeout(this.autoplayTimer)
       this.autoplayTimer = setTimeout(() => {
         if (!infinite && selectedIndex + 1 === this.count - 1) {

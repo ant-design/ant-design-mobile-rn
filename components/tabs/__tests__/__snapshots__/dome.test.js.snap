@@ -13,6 +13,9 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
+          "flexDirection": "row",
+        },
+        Object {
           "flex": 1,
         },
         Object {},
@@ -22,303 +25,17 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
     <View
       style={
         Object {
-          "borderBottomColor": "#dddddd",
-          "borderBottomWidth": 1,
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "height": 150,
+          "justifyContent": "center",
         }
       }
     >
-      <View
-        onLayout={[Function]}
-        style={
-          Array [
-            Object {},
-            Object {
-              "backgroundColor": "#fff",
-            },
-          ]
-        }
-      >
-        <RCTScrollView
-          bounces={false}
-          directionalLockEnabled={true}
-          horizontal={true}
-          renderToHardwareTextureAndroid={true}
-          scrollEnabled={false}
-          scrollsToTop={false}
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-        >
-          <View>
-            <View
-              onLayout={[Function]}
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "#ffffff",
-                    "elevation": 0,
-                    "flex": 1,
-                    "flexDirection": "row",
-                    "justifyContent": "space-around",
-                    "shadowOpacity": 0,
-                    "shadowRadius": 0,
-                  },
-                  Object {
-                    "backgroundColor": "#fff",
-                  },
-                ]
-              }
-            >
-              <View
-                accessibilityRole="button"
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onLayout={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "padding": 0,
-                      "width": 250,
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    First Tab
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityRole="button"
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onLayout={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "padding": 0,
-                      "width": 250,
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    Second Tab
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityRole="button"
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onLayout={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "padding": 0,
-                      "width": 250,
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": undefined,
-                          "fontSize": 15,
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    Third Tab
-                  </Text>
-                </View>
-              </View>
-              <View
-                backgroundColor="#108ee9"
-                bottom={0}
-                height={2}
-                left={0}
-                position="absolute"
-                style={Object {}}
-                width={0}
-              />
-            </View>
-          </View>
-        </RCTScrollView>
-      </View>
+      <Text>
+        Content of First Tab
+      </Text>
     </View>
-    <RNCViewPager
-      initialPage={0}
-      keyboardDismissMode="on-drag"
-      onMoveShouldSetResponderCapture={[Function]}
-      onPageScroll={[Function]}
-      onPageScrollStateChanged={[Function]}
-      onPageSelected={[Function]}
-      scrollEnabled={true}
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
-    >
-      <View
-        collapsable={false}
-        style={
-          Array [
-            Object {
-              "width": 750,
-            },
-            Object {
-              "bottom": 0,
-              "height": undefined,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": undefined,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fff",
-              "height": 150,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <Text>
-            Content of First Tab
-          </Text>
-        </View>
-      </View>
-      <View
-        collapsable={false}
-        style={
-          Array [
-            Object {
-              "width": 750,
-            },
-            Object {
-              "bottom": 0,
-              "height": undefined,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": undefined,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fff",
-              "height": 150,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <Text>
-            Content of Second Tab
-          </Text>
-        </View>
-      </View>
-      <View
-        collapsable={false}
-        style={
-          Array [
-            Object {
-              "width": 750,
-            },
-            Object {
-              "bottom": 0,
-              "height": undefined,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": undefined,
-            },
-          ]
-        }
-      />
-    </RNCViewPager>
   </View>
   <Text
     style={
@@ -334,6 +51,9 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
+          "flexDirection": "row",
+        },
+        Object {
           "flex": 1,
         },
         Object {},
@@ -343,206 +63,17 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
     <View
       style={
         Object {
-          "borderBottomColor": "#dddddd",
-          "borderBottomWidth": 1,
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "height": 150,
+          "justifyContent": "center",
         }
       }
     >
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "space-evenly",
-            "paddingHorizontal": 16,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "padding": 6,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "green",
-              }
-            }
-          >
-            First Tab
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "padding": 6,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-          >
-            Second Tab
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "padding": 6,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-          >
-            Third Tab
-          </Text>
-        </View>
-      </View>
+      <Text>
+        Content of First Tab
+      </Text>
     </View>
-    <RNCViewPager
-      initialPage={0}
-      keyboardDismissMode="on-drag"
-      onMoveShouldSetResponderCapture={[Function]}
-      onPageScroll={[Function]}
-      onPageScrollStateChanged={[Function]}
-      onPageSelected={[Function]}
-      scrollEnabled={true}
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
-    >
-      <View
-        collapsable={false}
-        style={
-          Array [
-            Object {
-              "width": 750,
-            },
-            Object {
-              "bottom": 0,
-              "height": undefined,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": undefined,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fff",
-              "height": 150,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <Text>
-            Content of First Tab
-          </Text>
-        </View>
-      </View>
-      <View
-        collapsable={false}
-        style={
-          Array [
-            Object {
-              "width": 750,
-            },
-            Object {
-              "bottom": 0,
-              "height": undefined,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": undefined,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fff",
-              "height": 150,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <Text>
-            Content of Second Tab
-          </Text>
-        </View>
-      </View>
-      <View
-        collapsable={false}
-        style={
-          Array [
-            Object {
-              "width": 750,
-            },
-            Object {
-              "bottom": 0,
-              "height": undefined,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": undefined,
-            },
-          ]
-        }
-      />
-    </RNCViewPager>
   </View>
   <View
     style={
@@ -556,1107 +87,161 @@ exports[`renders ./components/tabs/demo/basic.tsx correctly 1`] = `
       style={
         Array [
           Object {
+            "flexDirection": "row",
+          },
+          Object {
             "flex": 1,
           },
           Object {},
         ]
       }
     >
-      <View
+      <RCTScrollView
         style={
           Object {
-            "borderBottomColor": "#dddddd",
-            "borderBottomWidth": 1,
+            "backgroundColor": "#fff",
           }
         }
       >
-        <View
-          onLayout={[Function]}
-          style={
-            Array [
-              Object {},
-              Object {
-                "backgroundColor": "#fff",
-              },
-            ]
-          }
-        >
-          <RCTScrollView
-            bounces={false}
-            directionalLockEnabled={true}
-            horizontal={true}
-            renderToHardwareTextureAndroid={true}
-            scrollEnabled={true}
-            scrollsToTop={false}
-            showsHorizontalScrollIndicator={false}
-            showsVerticalScrollIndicator={false}
-          >
-            <View>
-              <View
-                onLayout={[Function]}
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#ffffff",
-                      "elevation": 0,
-                      "flex": 1,
-                      "flexDirection": "row",
-                      "justifyContent": "space-around",
-                      "shadowOpacity": 0,
-                      "shadowRadius": 0,
-                    },
-                    Object {
-                      "backgroundColor": "#fff",
-                    },
-                  ]
-                }
-              >
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      1st Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      2nd Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      3rd Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      4th Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      5th Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      6th Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      7th Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      8th Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  accessibilityRole="button"
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onLayout={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "height": 42,
-                        "justifyContent": "center",
-                        "padding": 0,
-                        "width": 150,
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "color": undefined,
-                            "fontSize": 15,
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      9th Tab
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  backgroundColor="#108ee9"
-                  bottom={0}
-                  height={2}
-                  left={0}
-                  position="absolute"
-                  style={Object {}}
-                  width={0}
-                />
-              </View>
-            </View>
-          </RCTScrollView>
-        </View>
-      </View>
-      <RNCViewPager
-        initialPage={1}
-        keyboardDismissMode="on-drag"
-        onMoveShouldSetResponderCapture={[Function]}
-        onPageScroll={[Function]}
-        onPageScrollStateChanged={[Function]}
-        onPageSelected={[Function]}
-        scrollEnabled={true}
-        style={
-          Object {
-            "flex": 1,
-          }
-        }
-      >
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        >
-          <RCTScrollView
+        <View>
+          <View
             style={
               Object {
-                "backgroundColor": "#fff",
+                "alignItems": "center",
+                "backgroundColor": "#ddd",
+                "justifyContent": "center",
+                "margin": 10,
+                "paddingVertical": 40,
               }
             }
           >
-            <View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  1st Tab
-                   - 
-                  1
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  1st Tab
-                   - 
-                  2
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  1st Tab
-                   - 
-                  3
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  1st Tab
-                   - 
-                  4
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  1st Tab
-                   - 
-                  5
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  1st Tab
-                   - 
-                  6
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  1st Tab
-                   - 
-                  7
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  1st Tab
-                   - 
-                  8
-                </Text>
-              </View>
-            </View>
-          </RCTScrollView>
-        </View>
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        >
-          <RCTScrollView
+            <Text>
+              1st Tab
+               - 
+              1
+            </Text>
+          </View>
+          <View
             style={
               Object {
-                "backgroundColor": "#fff",
+                "alignItems": "center",
+                "backgroundColor": "#ddd",
+                "justifyContent": "center",
+                "margin": 10,
+                "paddingVertical": 40,
               }
             }
           >
-            <View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  2nd Tab
-                   - 
-                  1
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  2nd Tab
-                   - 
-                  2
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  2nd Tab
-                   - 
-                  3
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  2nd Tab
-                   - 
-                  4
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  2nd Tab
-                   - 
-                  5
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  2nd Tab
-                   - 
-                  6
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  2nd Tab
-                   - 
-                  7
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  2nd Tab
-                   - 
-                  8
-                </Text>
-              </View>
-            </View>
-          </RCTScrollView>
-        </View>
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        >
-          <RCTScrollView
+            <Text>
+              1st Tab
+               - 
+              2
+            </Text>
+          </View>
+          <View
             style={
               Object {
-                "backgroundColor": "#fff",
+                "alignItems": "center",
+                "backgroundColor": "#ddd",
+                "justifyContent": "center",
+                "margin": 10,
+                "paddingVertical": 40,
               }
             }
           >
-            <View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  3rd Tab
-                   - 
-                  1
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  3rd Tab
-                   - 
-                  2
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  3rd Tab
-                   - 
-                  3
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  3rd Tab
-                   - 
-                  4
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  3rd Tab
-                   - 
-                  5
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  3rd Tab
-                   - 
-                  6
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  3rd Tab
-                   - 
-                  7
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#ddd",
-                    "justifyContent": "center",
-                    "margin": 10,
-                    "paddingVertical": 40,
-                  }
-                }
-              >
-                <Text>
-                  3rd Tab
-                   - 
-                  8
-                </Text>
-              </View>
-            </View>
-          </RCTScrollView>
+            <Text>
+              1st Tab
+               - 
+              3
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ddd",
+                "justifyContent": "center",
+                "margin": 10,
+                "paddingVertical": 40,
+              }
+            }
+          >
+            <Text>
+              1st Tab
+               - 
+              4
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ddd",
+                "justifyContent": "center",
+                "margin": 10,
+                "paddingVertical": 40,
+              }
+            }
+          >
+            <Text>
+              1st Tab
+               - 
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ddd",
+                "justifyContent": "center",
+                "margin": 10,
+                "paddingVertical": 40,
+              }
+            }
+          >
+            <Text>
+              1st Tab
+               - 
+              6
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ddd",
+                "justifyContent": "center",
+                "margin": 10,
+                "paddingVertical": 40,
+              }
+            }
+          >
+            <Text>
+              1st Tab
+               - 
+              7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ddd",
+                "justifyContent": "center",
+                "margin": 10,
+                "paddingVertical": 40,
+              }
+            }
+          >
+            <Text>
+              1st Tab
+               - 
+              8
+            </Text>
+          </View>
         </View>
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        />
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        />
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        />
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        />
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        />
-        <View
-          collapsable={false}
-          style={
-            Array [
-              Object {
-                "width": 750,
-              },
-              Object {
-                "bottom": 0,
-                "height": undefined,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": undefined,
-              },
-            ]
-          }
-        />
-      </RNCViewPager>
+      </RCTScrollView>
     </View>
   </View>
 </View>

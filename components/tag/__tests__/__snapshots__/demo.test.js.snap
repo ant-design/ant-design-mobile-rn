@@ -12,10 +12,9 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
-          "borderRadius": 3,
           "flexDirection": "row",
           "overflow": "visible",
+          "position": "relative",
         },
         undefined,
       ]
@@ -37,15 +36,17 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
             "borderRadius": 3,
             "borderStyle": "solid",
             "borderWidth": 0.5,
-            "overflow": "hidden",
+            "height": 25,
+            "justifyContent": "center",
             "paddingHorizontal": 15,
-            "paddingVertical": 6,
+            "paddingVertical": 0,
           },
-          Object {},
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderColor": "#dddddd",
-          },
+          Array [
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+          ],
         ]
       }
     >
@@ -56,15 +57,15 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
               "fontSize": 12,
               "textAlign": "center",
             },
-            Object {},
-            Object {
-              "color": "#888888",
-            },
+            Array [
+              Object {
+                "color": "#888888",
+              },
+            ],
           ]
         }
       >
         Basic
-         
       </Text>
     </View>
   </View>
@@ -82,10 +83,9 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
-          "borderRadius": 3,
           "flexDirection": "row",
           "overflow": "visible",
+          "position": "relative",
         },
         undefined,
       ]
@@ -107,15 +107,17 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
             "borderRadius": 3,
             "borderStyle": "solid",
             "borderWidth": 0.5,
-            "overflow": "hidden",
+            "height": 25,
+            "justifyContent": "center",
             "paddingHorizontal": 15,
-            "paddingVertical": 6,
+            "paddingVertical": 0,
           },
-          Object {},
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderColor": "#108ee9",
-          },
+          Array [
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#108ee9",
+            },
+          ],
         ]
       }
     >
@@ -126,15 +128,15 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
               "fontSize": 12,
               "textAlign": "center",
             },
-            Object {},
-            Object {
-              "color": "#108ee9",
-            },
+            Array [
+              Object {
+                "color": "#108ee9",
+              },
+            ],
           ]
         }
       >
         Selected
-         
       </Text>
     </View>
   </View>
@@ -152,10 +154,9 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
-          "borderRadius": 3,
           "flexDirection": "row",
           "overflow": "visible",
+          "position": "relative",
         },
         undefined,
       ]
@@ -177,15 +178,17 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
             "borderRadius": 3,
             "borderStyle": "solid",
             "borderWidth": 0.5,
-            "overflow": "hidden",
+            "height": 25,
+            "justifyContent": "center",
             "paddingHorizontal": 15,
-            "paddingVertical": 6,
+            "paddingVertical": 0,
           },
-          Object {},
-          Object {
-            "backgroundColor": "#dddddd",
-            "borderWidth": 0,
-          },
+          Array [
+            Object {
+              "backgroundColor": "#dddddd",
+              "borderColor": "#dddddd",
+            },
+          ],
         ]
       }
     >
@@ -196,15 +199,15 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
               "fontSize": 12,
               "textAlign": "center",
             },
-            Object {},
-            Object {
-              "color": "#bbbbbb",
-            },
+            Array [
+              Object {
+                "color": "#bbbbbb",
+              },
+            ],
           ]
         }
       >
         Disabled
-         
       </Text>
     </View>
   </View>
@@ -222,10 +225,9 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
-          "borderRadius": 3,
           "flexDirection": "row",
           "overflow": "visible",
+          "position": "relative",
         },
         undefined,
       ]
@@ -247,15 +249,17 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
             "borderRadius": 3,
             "borderStyle": "solid",
             "borderWidth": 0.5,
-            "overflow": "hidden",
+            "height": 25,
+            "justifyContent": "center",
             "paddingHorizontal": 15,
-            "paddingVertical": 6,
+            "paddingVertical": 0,
           },
-          Object {},
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderColor": "#dddddd",
-          },
+          Array [
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+          ],
         ]
       }
     >
@@ -266,15 +270,15 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
               "fontSize": 12,
               "textAlign": "center",
             },
-            Object {},
-            Object {
-              "color": "#888888",
-            },
+            Array [
+              Object {
+                "color": "#888888",
+              },
+            ],
           ]
         }
       >
         Callback
-         
       </Text>
     </View>
   </View>
@@ -292,10 +296,9 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
-          "borderRadius": 3,
           "flexDirection": "row",
           "overflow": "visible",
+          "position": "relative",
         },
         undefined,
       ]
@@ -317,15 +320,17 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
             "borderRadius": 3,
             "borderStyle": "solid",
             "borderWidth": 0.5,
-            "overflow": "hidden",
+            "height": 25,
+            "justifyContent": "center",
             "paddingHorizontal": 15,
-            "paddingVertical": 6,
+            "paddingVertical": 0,
           },
-          Object {},
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderColor": "#dddddd",
-          },
+          Array [
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+          ],
         ]
       }
     >
@@ -336,60 +341,42 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
               "fontSize": 12,
               "textAlign": "center",
             },
-            Object {},
-            Object {
-              "color": "#888888",
-            },
+            Array [
+              Object {
+                "color": "#888888",
+              },
+            ],
           ]
         }
       >
         Closable
-         
       </Text>
     </View>
-    <View
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+    <Text
+      onPress={[Function]}
       style={
         Array [
           Object {
-            "backgroundColor": "#bbbbbb",
-            "position": "absolute",
+            "color": "#cccccc",
+            "fontFamily": "antoutline",
+            "fontSize": 22,
+            "fontStyle": "normal",
+            "fontWeight": "normal",
           },
           Object {
-            "borderRadius": 8,
-            "height": 16,
-            "left": -5,
-            "overflow": "hidden",
-            "top": -4,
-            "width": 16,
+            "backgroundColor": "transparent",
+            "borderRadius": 999,
+            "color": "#bbbbbb",
+            "fontSize": 16,
+            "left": -6,
+            "position": "absolute",
+            "top": -6,
           },
         ]
       }
     >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "#ffffff",
-              "fontSize": 20,
-              "lineHeight": 18,
-              "textAlign": "center",
-            },
-            Object {},
-          ]
-        }
-      >
-        ×
-      </Text>
-    </View>
+      
+    </Text>
   </View>
   <View
     style={
@@ -405,10 +392,9 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
-          "borderRadius": 3,
           "flexDirection": "row",
           "overflow": "visible",
+          "position": "relative",
         },
         undefined,
       ]
@@ -430,18 +416,22 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
             "borderRadius": 3,
             "borderStyle": "solid",
             "borderWidth": 0.5,
-            "overflow": "hidden",
+            "height": 25,
+            "justifyContent": "center",
             "paddingHorizontal": 15,
-            "paddingVertical": 6,
+            "paddingVertical": 0,
           },
-          Object {
-            "paddingHorizontal": 5,
-            "paddingVertical": 1.5,
-          },
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderColor": "#dddddd",
-          },
+          Array [
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            Object {
+              "height": undefined,
+              "paddingHorizontal": 5,
+              "paddingVertical": 0,
+            },
+          ],
         ]
       }
     >
@@ -452,17 +442,16 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
               "fontSize": 12,
               "textAlign": "center",
             },
-            Object {
-              "fontSize": 10,
-            },
-            Object {
-              "color": "#888888",
-            },
+            Array [
+              Object {
+                "color": "#888888",
+              },
+              undefined,
+            ],
           ]
         }
       >
         Small and Readonly
-         
       </Text>
     </View>
   </View>
@@ -480,10 +469,9 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
-          "borderRadius": 3,
           "flexDirection": "row",
           "overflow": "visible",
+          "position": "relative",
         },
         undefined,
       ]
@@ -505,15 +493,17 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
             "borderRadius": 3,
             "borderStyle": "solid",
             "borderWidth": 0.5,
-            "overflow": "hidden",
+            "height": 25,
+            "justifyContent": "center",
             "paddingHorizontal": 15,
-            "paddingVertical": 6,
+            "paddingVertical": 0,
           },
-          Object {},
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderColor": "#dddddd",
-          },
+          Array [
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+          ],
         ]
       }
     >
@@ -524,15 +514,15 @@ exports[`renders ./components/tag/demo/basic.tsx correctly 1`] = `
               "fontSize": 12,
               "textAlign": "center",
             },
-            Object {},
-            Object {
-              "color": "#888888",
-            },
+            Array [
+              Object {
+                "color": "#888888",
+              },
+            ],
           ]
         }
       >
         LongPress
-         
       </Text>
     </View>
   </View>

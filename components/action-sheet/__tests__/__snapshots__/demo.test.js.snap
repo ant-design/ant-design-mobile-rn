@@ -18,6 +18,12 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
       accessible={true}
       focusable={true}
       onClick={[Function]}
@@ -99,6 +105,12 @@ exports[`renders ./components/action-sheet/demo/basic.tsx correctly 1`] = `
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
       accessible={true}
       focusable={true}
       onClick={[Function]}

@@ -133,7 +133,9 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
       const newLineRight =
         pageOffset * nextTabRight + (1 - pageOffset) * nowRight
 
-      if (this._newLineLeft === newLineLeft) return
+      if (this._newLineLeft === newLineLeft) {
+        return
+      }
       this._newLineLeft = newLineLeft
       Animated.timing(this.state._leftTabUnderline, {
         toValue: newLineLeft,

@@ -365,6 +365,12 @@ exports[`renders ./components/activity-indicator/demo/basic.tsx correctly 1`] = 
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
       accessible={true}
       focusable={true}
       onClick={[Function]}

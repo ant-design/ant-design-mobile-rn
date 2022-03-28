@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  ActionSheetIOSOptions
-} from 'react-native'
+import { ActionSheetIOSOptions } from 'react-native'
 import Portal from '../portal'
 import ActionSheetAndroidContainer from './AndroidContainer'
 
@@ -32,18 +30,20 @@ export default {
     failureCallback?: (arg0: any) => void,
     successCallback?: (arg0: boolean, activityType?: string) => void,
   ) {
-
-    try{
-      navigator.share(config).then(() => {
-        if (successCallback) {
-          successCallback(true, '')
-        }
-      }).catch(() => {
-        if (successCallback) {
-          successCallback(false)
-        }
-      })
-    }catch(error){
+    try {
+      navigator
+        .share(config)
+        .then(() => {
+          if (successCallback) {
+            successCallback(true, '')
+          }
+        })
+        .catch(() => {
+          if (successCallback) {
+            successCallback(false)
+          }
+        })
+    } catch (error) {
       if (failureCallback) {
         failureCallback(error)
       }

@@ -98,16 +98,14 @@ const AntmSwitch = ({
   }, [animate, animate2, checkedRef])
 
   function triggerChange(newChecked: boolean) {
-    let mergedChecked = innerChecked
-
     if (!disabled) {
-      mergedChecked = newChecked
-      checkedRef.current = mergedChecked
-      setInnerChecked(mergedChecked)
-      onChange?.(mergedChecked)
+      checkedRef.current = newChecked
+      setInnerChecked(newChecked)
+      onChange?.(newChecked)
+      return newChecked
     }
 
-    return mergedChecked
+    return innerChecked
   }
 
   function onInternalClick() {

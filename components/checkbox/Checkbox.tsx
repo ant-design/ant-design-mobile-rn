@@ -83,19 +83,17 @@ const InternalCheckbox = (
   }, [animate, innerChecked])
 
   function triggerChange(newChecked: boolean) {
-    let mergedChecked = innerChecked
-
     if (!disabled) {
-      mergedChecked = newChecked
-      !('checked' in restProps) && setInnerChecked(mergedChecked)
+      !('checked' in restProps) && setInnerChecked(newChecked)
       onChange?.({
         target: {
-          checked: mergedChecked,
+          checked: newChecked,
         },
       })
+      return newChecked
     }
 
-    return mergedChecked
+    return innerChecked
   }
   const onInternalClick = () => {
     triggerChange(!innerChecked)

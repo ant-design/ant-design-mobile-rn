@@ -21,6 +21,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
       }
     >
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -90,6 +96,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       />
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -159,6 +171,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       />
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -228,6 +246,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       />
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -297,6 +321,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       />
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -366,6 +396,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       />
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -435,6 +471,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       />
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -504,6 +546,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       />
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -573,6 +621,12 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       />
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}

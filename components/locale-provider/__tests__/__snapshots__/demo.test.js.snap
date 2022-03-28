@@ -145,7 +145,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
       style={
         Array [
           Object {
-            "alignItems": "center",
+            "flex": 1,
             "justifyContent": "center",
           },
           undefined,
@@ -176,6 +176,12 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityRole="button"
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -298,6 +304,12 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityRole="button"
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}

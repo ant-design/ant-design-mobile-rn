@@ -92,22 +92,98 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                 Enable Mask
               </Text>
             </View>
-            <RCTSwitch
+            <View
               accessibilityRole="switch"
-              disabled={false}
-              onChange={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              onTintColor="#4dd865"
-              style={
+              accessibilityState={
                 Object {
-                  "height": 31,
-                  "width": 51,
+                  "busy": undefined,
+                  "checked": true,
+                  "disabled": undefined,
                 }
               }
-              tintColor=""
-              value={true}
-            />
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderColor": "transparent",
+                    "borderRadius": 20,
+                    "borderWidth": 1,
+                    "display": "flex",
+                    "flexDirection": "row",
+                    "minHeight": 25,
+                    "minWidth": 50,
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "relative",
+                  },
+                  Object {
+                    "padding": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+              >
+                <View
+                  style={
+                    Array [
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "borderColor": "transparent",
+                          "borderRadius": 20,
+                          "borderWidth": 1,
+                          "display": "flex",
+                          "flexDirection": "row",
+                          "minHeight": 25,
+                          "minWidth": 50,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "relative",
+                        },
+                        Object {
+                          "backgroundColor": "#1890ff",
+                          "borderColor": "#1890ff",
+                        },
+                      ],
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#ffffff",
+                        "borderRadius": 999,
+                        "height": 22,
+                        "left": undefined,
+                        "position": "absolute",
+                        "right": 10,
+                        "width": 22,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -179,22 +255,98 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                 Enable Stack
               </Text>
             </View>
-            <RCTSwitch
+            <View
               accessibilityRole="switch"
-              disabled={false}
-              onChange={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              onTintColor="#4dd865"
-              style={
+              accessibilityState={
                 Object {
-                  "height": 31,
-                  "width": 51,
+                  "busy": undefined,
+                  "checked": true,
+                  "disabled": undefined,
                 }
               }
-              tintColor=""
-              value={true}
-            />
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderColor": "transparent",
+                    "borderRadius": 20,
+                    "borderWidth": 1,
+                    "display": "flex",
+                    "flexDirection": "row",
+                    "minHeight": 25,
+                    "minWidth": 50,
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "relative",
+                  },
+                  Object {
+                    "padding": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+              >
+                <View
+                  style={
+                    Array [
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "borderColor": "transparent",
+                          "borderRadius": 20,
+                          "borderWidth": 1,
+                          "display": "flex",
+                          "flexDirection": "row",
+                          "minHeight": 25,
+                          "minWidth": 50,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "relative",
+                        },
+                        Object {
+                          "backgroundColor": "#1890ff",
+                          "borderColor": "#1890ff",
+                        },
+                      ],
+                      false,
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#ffffff",
+                        "borderRadius": 999,
+                        "height": 22,
+                        "left": undefined,
+                        "position": "absolute",
+                        "right": 10,
+                        "width": 22,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -227,6 +379,12 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
     }
   />
   <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -296,6 +454,12 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
     }
   />
   <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -365,6 +529,12 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
     }
   />
   <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -434,6 +604,12 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
     }
   />
   <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -503,6 +679,12 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
     }
   />
   <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -572,6 +754,12 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
     }
   />
   <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -641,6 +829,12 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
     }
   />
   <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -710,6 +904,12 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
     }
   />
   <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -764,7 +964,157 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
           ]
         }
       >
-        Toast with duration = 0
+        Toast.info with duration = 0
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 47,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#dddddd",
+        },
+        false,
+        false,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 18,
+            },
+            Object {
+              "color": "#000000",
+            },
+            false,
+            false,
+          ]
+        }
+      >
+        Toast.loading with duration = 0
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 47,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#dddddd",
+        },
+        false,
+        false,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 18,
+            },
+            Object {
+              "color": "#000000",
+            },
+            false,
+            false,
+          ]
+        }
+      >
+        Toast with custom view
       </Text>
     </View>
   </View>

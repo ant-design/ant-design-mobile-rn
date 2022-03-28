@@ -112,7 +112,6 @@ Array [
                 "borderBottomColor": "#e7e7e7",
                 "borderBottomWidth": 1,
                 "flexDirection": "row",
-                "flexGrow": 1,
                 "height": 44,
                 "justifyContent": "center",
               },

@@ -13,6 +13,6 @@ describe('Carousel.RN', () => {
       </Carousel>,
     )
     // only has `ScrollView`
-    expect(container.findAll((x) => x.type === 'RNCViewPager')).toHaveLength(1)
+    expect(container.findAll((x) => x.type === 'RNCViewPager')).toHaveLength(0)
   })
 })
