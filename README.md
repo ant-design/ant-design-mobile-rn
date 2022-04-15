@@ -18,7 +18,7 @@ English | [简体中文](./README.zh-CN.md)
 
 A configurable Mobile UI specification and React-based implementation.
 
-> If you only care about the style you may give [[Tanjun]](https://github.com/bang88/Tanjun) a try. 
+> If you only care about the style you may give [[Tanjun]](https://github.com/bang88/Tanjun) a try.
 
 ## Features
 
@@ -47,7 +47,7 @@ yarn
 
 # start ios
 cd rn-kitchen-sink/ios && pod install
-yarn ios 
+yarn ios
 
 # start android
 yarn android
@@ -71,13 +71,13 @@ yarn add @ant-design/react-native
 ### Installing peer dependencies
 
 ```bash
-npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+npm install @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler classnames rc-util
 ```
 
 or
 
 ```bash
-yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+yarn add @react-native-community/cameraroll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler classnames rc-util
 ```
 
 > You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
