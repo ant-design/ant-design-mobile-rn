@@ -1,12 +1,11 @@
 /* eslint react/no-danger: 0 */
-import { Button, Icon, Modal, Radio, Tooltip } from 'antd'
+import { Icon, Radio, Tooltip } from 'antd'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { FormattedMessage } from 'react-intl'
 import { ping } from '../../../../utils'
-import getSandboxParameters from './Sandbox'
 
 export default class Demo extends React.Component {
   static contextTypes = {
@@ -91,38 +90,22 @@ export default class Demo extends React.Component {
     this.setState({ lang: e.target.value })
   }
 
-  sandbox = async () => {
-    const { sourceCode } = this.state
-    if (!sourceCode) {
-      return null
-    }
-    const parameters = getSandboxParameters(sourceCode, this.props.doc)
-    const data = await fetch(
-      'https://codesandbox.io/api/v1/sandboxes/define?json=1',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(parameters),
-      },
-    ).then((x) => x.json())
-
-    if (data) {
-      this.setState({ sandbox_id: data.sandbox_id })
-    }
-    return data
-  }
   rendeSandbox = () => {
-    const { sandbox_id: id } = this.state
-    if (!id) {
-      return null
-    }
+    const { meta } = this.props
+    const { locale } = this.context.intl
+    const localizedTitle = meta.title[locale] || meta.title
     return (
       <iframe
         title="example"
-        src={`https://codesandbox.io/embed/${id}?autoresize=1&codemirror=1`}
+        src={`https://snack.expo.dev/embedded?platform=web&name=${localizedTitle}&dependencies=${encodeURIComponent(
+          '@react-native-picker/picker,' +
+            '@react-native-community/cameraroll,' +
+            '@react-native-community/slider,' +
+            '@react-native-community/segmented-control,' +
+            'react-native-gesture-handler/DrawerLayout,' +
+            'react-native-gesture-handler/Swipeable,' +
+            '@ant-design/react-native@5.0.0',
+        )}&code=${encodeURIComponent(this.state.sourceCode)}&preview=true`}
         style={{
           width: '100%',
           height: '700px',
@@ -143,7 +126,7 @@ export default class Demo extends React.Component {
     const prefillStyle =
       `@import 'antd-mobile@2/dist/antd-mobile.min.css';\n\n${
         style || ''
-      }`.replace(new RegExp(`#${meta.id}\\s*`, 'g'), '')
+      }`.replace(new RegExp(`#${meta.title['en-US']}\\s*`, 'g'), '')
 
     const riddlePrefillConfig = {
       title: `${localizedTitle} - Ant Design Mobile RN Demo`,
@@ -220,12 +203,10 @@ export default class Demo extends React.Component {
     const { highlightedCode } = nextProps
     const div = document.createElement('div')
     div.innerHTML = highlightedCode[1].highlighted
-    this.setState(
-      {
-        sourceCode: this.replaceLibName(div.textContent),
-      },
-      () => this.sandbox(),
-    )
+
+    this.setState({
+      sourceCode: this.replaceLibName(div.textContent),
+    })
   }
   replaceLibName = (code) => code.replace('../../', '@ant-design/react-native')
   render() {
@@ -263,55 +244,56 @@ export default class Demo extends React.Component {
     ) : null
 
     return (
-      <section className={codeBoxClass} id={meta.id} onClick={this.handleClick}>
-        <Modal
-          visible={state.fullscreen}
-          title={localizedTitle}
-          onCancel={this.handleCancel}
-          width={900}
-          footer={[
-            <Button
-              key="back"
-              type="ghost"
-              size="large"
-              onClick={this.handleCancel}>
-              <FormattedMessage id="app.ComponentDoc.Modal.return" />
-            </Button>,
-          ]}>
-          {this.renderDemoCode(highlightedCode, true)}
-          {hsNode}
-        </Modal>
-
-        <section className="code-box-meta markdown">
-          <div className="code-box-title">
-            <a href={`#${meta.id}`} ref={this.saveAnchor}>
-              {localizedTitle}
-            </a>
-            <span
-              className="fullscreen anticon anticon-arrow-salt"
-              onClick={this.viewFullscreen}
-              unselectable="none"
-              style={{ bottom: 'inherit', top: 16 }}
-            />
-          </div>
-          {introChildren}
-
-          {!Array.isArray(highlightedCode) && (
-            <Radio.Group
-              value={state.lang}
-              onChange={this.handleProgrammingLangChange}>
-              <Radio.Button value="es6">ES2016</Radio.Button>
-              <Radio.Button value="ts">TypeScript</Radio.Button>
-            </Radio.Group>
-          )}
-        </section>
-
-        {/* <section className="highlight-wrapper" key="code">
-          {this.renderDemoCode(highlightedCode, false)}
-          {hsNode}
-        </section> */}
+      <section className={codeBoxClass} id={meta.id}>
         {this.rendeSandbox()}
       </section>
     )
+
+    // return (
+    //   <section className={codeBoxClass} id={meta.id} onClick={this.handleClick}>
+    //     <Modal
+    //       visible={state.fullscreen}
+    //       title={localizedTitle}
+    //       onCancel={this.handleCancel}
+    //       width={900}
+    //       footer={[
+    //         <Button
+    //           key="back"
+    //           type="ghost"
+    //           size="large"
+    //           onClick={this.handleCancel}>
+    //           <FormattedMessage id="app.ComponentDoc.Modal.return" />
+    //         </Button>,
+    //       ]}>
+    //       {this.renderDemoCode(highlightedCode, true)}
+    //       {hsNode}
+    //     </Modal>
+
+    //     <section className="code-box-meta markdown">
+    //       <div className="code-box-title">
+    //         <a href={`#${meta.title['en-US']}`} ref={this.saveAnchor}>
+    //           {localizedTitle}
+    //         </a>
+    //         <span
+    //           className="fullscreen anticon anticon-arrow-salt"
+    //           onClick={this.viewFullscreen}
+    //           unselectable="none"
+    //           style={{ bottom: 'inherit', top: 16 }}
+    //         />
+    //       </div>
+    //       {introChildren}
+
+    //       {!Array.isArray(highlightedCode) && (
+    //         <Radio.Group
+    //           value={state.lang}
+    //           onChange={this.handleProgrammingLangChange}>
+    //           <Radio.Button value="es6">ES2016</Radio.Button>
+    //           <Radio.Button value="ts">TypeScript</Radio.Button>
+    //         </Radio.Group>
+    //       )}
+    //     </section>
+    //     {this.rendeSandbox()}
+    //   </section>
+    // )
   }
 }
