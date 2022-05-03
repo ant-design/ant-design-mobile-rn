@@ -21,6 +21,7 @@ subtitle: 动作面板
 | options       | 动作面板配置 | Object |  无  |
 | callback       | 操作成功后调用  | (index:number):void |  无  |
 显示动作面板，`options`对象必须包含以下的一个或者多个：
+
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | options       | 按钮标题列表 (必须) | Array 或 String |  无  |
@@ -29,9 +30,9 @@ subtitle: 动作面板
 | title       | 顶部标题  | String |  无  |
 | message       | 顶部标题下的简要消息  | String 或 React.element |  无  |
 
-
 ### ActionSheet.showShareActionSheetWithOptions(options, failureCallback?, successCallback?)
 `仅支持React-Native,且react-native@version >= 0.39`
+
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | options       | 动作面板配置 | Object |  无  |
@@ -39,6 +40,7 @@ subtitle: 动作面板
 | successCallback       | 分享成功调用（`仅支持iOS`, 详细请查看[react-native/share](https://github.com/facebook/react-native/blob/master/Libraries/Share/Share.js#L80) ） | (completed:Boolean, activityType?:String):void |  无  |
 
 显示分享动作面板，`options`对象必须包含以下的一个或者多个：
+
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | message       | 顶部标题下的简要消息 | String |  无  |
