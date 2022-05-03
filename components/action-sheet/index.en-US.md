@@ -19,7 +19,9 @@ Properties | Descrition | Type | Default
 ----|-----|------|------
 | options       | ActionSheet's options | Object |  -  |
 | callback       | Callback for selected item   | (index:number):void |  -  |
+
 Display a action sheet. The `options` object must contain one or more of:
+
 Properties | Descrition | Type | Default
 ----|-----|------|------
 | options       | a list of button titles (required) | Array or String |  -  |
@@ -29,13 +31,17 @@ Properties | Descrition | Type | Default
 | message       | a message to show below the title  | String or React.element |  -  |
 
 ### ActionSheet.showShareActionSheetWithOptions(options, failureCallback?, successCallback?)
+
 `React-Native Only, react-native@version >= 0.39`
+
 Properties | Descrition | Type | Default
 ----|-----|------|------
 | options       | ShareActionSheet's options | Object |  -  |
 | failureCallback       | Callback for share failed（`iOS Only`, See [react-native/share](https://github.com/facebook/react-native/blob/master/Libraries/Share/Share.js#L80) ） | (error):void |  -  |
 | successCallback       | Callback for share successed（`iOS Only`, See [react-native/share](https://github.com/facebook/react-native/blob/master/Libraries/Share/Share.js#L80) ） | (completed:Boolean, activityType?:String):void |  -  |
+
 Display a shareable action sheet. The `options` object must contain one or more of:
+
 Properties | Descrition | Type | Default
 ----|-----|------|------
 | message       | a message to share | String |  -  |
