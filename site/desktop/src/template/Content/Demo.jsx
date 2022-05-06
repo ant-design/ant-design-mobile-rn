@@ -106,7 +106,7 @@ export default class Demo extends React.Component {
             'react-native-gesture-handler/DrawerLayout,' +
             'react-native-gesture-handler/Swipeable,' +
             '@ant-design/react-native@5.0.0',
-        )}&sourceUrl=${`https://raw.githubusercontent.com/1uokun/ant-design-mobile-rn/feature-doc/components/${this.state.componentName}/demo/basic.tsx`}&preview=true`}
+        )}&sourceUrl=${`https://raw.githubusercontent.com/1uokun/ant-design-mobile-rn/feature-snack-doc/components/${this.state.componentName}/demo/basic.tsx`}&preview=true`}
         style={{
           width: '100%',
           height: '700px',
