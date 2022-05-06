@@ -17,6 +17,7 @@ export default class Demo extends React.Component {
     lang: 'es6',
     copied: false,
     sourceCode: '',
+    componentName: '',
     showRiddleButton: false,
   }
 
@@ -105,7 +106,7 @@ export default class Demo extends React.Component {
             'react-native-gesture-handler/DrawerLayout,' +
             'react-native-gesture-handler/Swipeable,' +
             '@ant-design/react-native@5.0.0',
-        )}&code=${encodeURIComponent(this.state.sourceCode)}&preview=true`}
+        )}&sourceUrl=${`https://raw.githubusercontent.com/1uokun/ant-design-mobile-rn/feature-doc/components/${this.state.componentName}/demo/basic.tsx`}&preview=true`}
         style={{
           width: '100%',
           height: '700px',
@@ -206,6 +207,10 @@ export default class Demo extends React.Component {
 
     this.setState({
       sourceCode: this.replaceLibName(div.textContent),
+      componentName: nextProps.meta.filename.replace(
+        /components\/(.+)\/demo\/basic.md/,
+        '$1',
+      ),
     })
   }
   replaceLibName = (code) => code.replace('../../', '@ant-design/react-native')
