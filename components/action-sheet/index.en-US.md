@@ -14,30 +14,40 @@ The modal box pops up from the bottom, providing more than two actions related t
 
 
 ## API
-
-#### static showActionSheetWithOptions(options: Object, callback: Function)
+### ActionSheet.showActionSheetWithOptions(options, callback)
+Properties | Descrition | Type | Default
+----|-----|------|------
+| options       | ActionSheet's options | Object |  -  |
+| callback       | Callback for selected item   | (index:number):void |  -  |
 
 Display a action sheet. The `options` object must contain one or more of:
 
-- options (array of strings) - a list of button titles (required)
-- cancelButtonIndex (int) - index of cancel button in `options`
-- destructiveButtonIndex (int) - index of destructive button in `options`
-- title (string) - a title to show above the action sheet
-- message (string/React.element) - a message to show below the title
+Properties | Descrition | Type | Default
+----|-----|------|------
+| options       | a list of button titles (required) | Array or String |  -  |
+| cancelButtonIndex       | index of cancel button in `options`  | Number |  -  |
+| destructiveButtonIndex       | index of destructive button in `options`  | Number |  -  |
+| title       | a title to show above the action sheet  | String |  -  |
+| message       | a message to show below the title  | String or React.element |  -  |
 
-#### static showShareActionSheetWithOptions(options: Object, failureCallback: Function, successCallback: Function)
+### ActionSheet.showShareActionSheetWithOptions(options, failureCallback?, successCallback?)
 
-`React-Native only, react-native@version >= 0.39`
+`React-Native Only, react-native@version >= 0.39`
 
-Display shareable action sheet.
+Properties | Descrition | Type | Default
+----|-----|------|------
+| options       | ShareActionSheet's options | Object |  -  |
+| failureCallback       | Callback for share failed（`iOS Only`, See [react-native/share](https://github.com/facebook/react-native/blob/master/Libraries/Share/Share.js#L80) ） | (error):void |  -  |
+| successCallback       | Callback for share successed（`iOS Only`, See [react-native/share](https://github.com/facebook/react-native/blob/master/Libraries/Share/Share.js#L80) ） | (completed:Boolean, activityType?:String):void |  -  |
 
-- **options:**
-  - message(`string`): a message to share
-  - title(`string`): title of the message
-  - url(`string`): an URL to share `iOS only`
-  - excludedActivityTypes(`array`): the activities to exclude from the ActionSheet `iOS only`
-- **Callback**: (`iOS only`, see [react-native/share](https://github.com/facebook/react-native/blob/master/Libraries/Share/Share.js#L80))
-  - failureCallback(error): callback is called if share failed;
-  - successCallback(completed, method): callback is called if share successed;
+Display a shareable action sheet. The `options` object must contain one or more of:
 
-#### static close() - (android only) programmatically close.
+Properties | Descrition | Type | Default
+----|-----|------|------
+| message       | a message to share | String |  -  |
+| title       | title of the message  | String |  -  |
+| url       | an URL to share `iOS Only`  | String |  -  |
+| excludedActivityTypes       | the activities to exclude from the ShareActionSheet `iOS Only`  | Array |  -  |
+
+### ActionSheet.close()
+Close the action sheet.`Android Only`
