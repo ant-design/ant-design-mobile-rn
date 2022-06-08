@@ -1,7 +1,7 @@
 /* eslint no-console:0 */
-import { List, SearchBar } from '@ant-design/react-native'
 import React from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
+import { List, SearchBar } from '../../components'
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from '../demoList'
 import Theme from './Theme'
 
