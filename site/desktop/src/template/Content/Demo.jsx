@@ -91,22 +91,44 @@ export default class Demo extends React.Component {
     this.setState({ lang: e.target.value })
   }
 
-  rendeSandbox = () => {
+  get src() {
     const { meta } = this.props
     const { locale } = this.context.intl
     const localizedTitle = meta.title[locale] || meta.title
+    const componentName = this.state.componentName
+    let dependencies =
+      '@react-native-picker/picker,' +
+      '@react-native-community/cameraroll,' +
+      '@react-native-community/slider,' +
+      '@react-native-community/segmented-control,' +
+      'react-native-gesture-handler/DrawerLayout,' +
+      'react-native-gesture-handler/Swipeable,' +
+      '@ant-design/react-native@5.0.0'
+
+    if (componentName === 'picker') {
+      dependencies +=
+        ',@bang88/china-city-data@1.0.0,' + 'antd-mobile-demo-data@0.2.0'
+    }
+
+    if (componentName === 'locale-provider') {
+      dependencies +=
+        ',@ant-design/react-native/lib/locale-provider/en_US@5.0.0,' +
+        '@ant-design/react-native/lib/locale-provider/es_ES@5.0.0,' +
+        '@ant-design/react-native/lib/locale-provider/pt_BR@5.0.0,' +
+        '@ant-design/react-native/lib/locale-provider/ru_RU@5.0.0,' +
+        '@ant-design/react-native/lib/locale-provider/zh_CN@5.0.0'
+    }
+
+    return `https://snack.expo.dev/embedded?platform=web&name=${localizedTitle}&dependencies=${encodeURIComponent(
+      dependencies,
+    )}&sourceUrl=${`https://raw.githubusercontent.com/1uokun/ant-design-mobile-rn/feature-snack-doc/components/${this.state.componentName}/demo/basic.tsx`}&preview=true`
+  }
+
+  rendeSandbox = () => {
     return (
       <iframe
         title="example"
-        src={`https://snack.expo.dev/embedded?platform=web&name=${localizedTitle}&dependencies=${encodeURIComponent(
-          '@react-native-picker/picker,' +
-            '@react-native-community/cameraroll,' +
-            '@react-native-community/slider,' +
-            '@react-native-community/segmented-control,' +
-            'react-native-gesture-handler/DrawerLayout,' +
-            'react-native-gesture-handler/Swipeable,' +
-            '@ant-design/react-native@5.0.0',
-        )}&sourceUrl=${`https://raw.githubusercontent.com/1uokun/ant-design-mobile-rn/feature-snack-doc/components/${this.state.componentName}/demo/basic.tsx`}&preview=true`}
+        src={this.src}
         style={{
           width: '100%',
           height: '700px',
