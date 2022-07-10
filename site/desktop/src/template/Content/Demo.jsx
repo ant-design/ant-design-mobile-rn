@@ -275,52 +275,5 @@ export default class Demo extends React.Component {
         {this.rendeSandbox()}
       </section>
     )
-
-    // return (
-    //   <section className={codeBoxClass} id={meta.id} onClick={this.handleClick}>
-    //     <Modal
-    //       visible={state.fullscreen}
-    //       title={localizedTitle}
-    //       onCancel={this.handleCancel}
-    //       width={900}
-    //       footer={[
-    //         <Button
-    //           key="back"
-    //           type="ghost"
-    //           size="large"
-    //           onClick={this.handleCancel}>
-    //           <FormattedMessage id="app.ComponentDoc.Modal.return" />
-    //         </Button>,
-    //       ]}>
-    //       {this.renderDemoCode(highlightedCode, true)}
-    //       {hsNode}
-    //     </Modal>
-
-    //     <section className="code-box-meta markdown">
-    //       <div className="code-box-title">
-    //         <a href={`#${meta.title['en-US']}`} ref={this.saveAnchor}>
-    //           {localizedTitle}
-    //         </a>
-    //         <span
-    //           className="fullscreen anticon anticon-arrow-salt"
-    //           onClick={this.viewFullscreen}
-    //           unselectable="none"
-    //           style={{ bottom: 'inherit', top: 16 }}
-    //         />
-    //       </div>
-    //       {introChildren}
-
-    //       {!Array.isArray(highlightedCode) && (
-    //         <Radio.Group
-    //           value={state.lang}
-    //           onChange={this.handleProgrammingLangChange}>
-    //           <Radio.Button value="es6">ES2016</Radio.Button>
-    //           <Radio.Button value="ts">TypeScript</Radio.Button>
-    //         </Radio.Group>
-    //       )}
-    //     </section>
-    //     {this.rendeSandbox()}
-    //   </section>
-    // )
   }
 }
