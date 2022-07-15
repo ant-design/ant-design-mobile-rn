@@ -25,6 +25,7 @@ export interface PopoverProps extends WithThemeStyles<PopoverStyle> {
   easing?: (show: boolean) => (value: number) => number
   useNativeDriver?: boolean
   onDismiss?: () => void
+  children: React.ReactNode
 }
 export interface PopoverItemProps {
   value: any
