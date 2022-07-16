@@ -37,8 +37,7 @@ export default (props: ButtonWaveProps) => {
     <Pressable
       accessibilityRole="button"
       accessibilityState={accessibilityState}
-      {...restProps}>
-      {props.children}
-    </Pressable>
+      {...props}
+    />
   )
 }

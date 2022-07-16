@@ -1,10 +1,9 @@
 {
-  "name": "react-native-elements-app",
-  "version": "1.1.0",
-  "description": "Demo app for React Native Elements UI Library",
-  "author": "Monte Thakkar",
+  "name": "@ant-design/react-native-example",
+  "version": "5.0.0",
+  "description": "Demo app for ant-design mobile RN UI Library",
   "private": true,
-  "homepage": "https://react-native-elements.github.io/react-native-elements-app/",
+  "homepage": "https://github.com/ant-design/ant-design-mobile-rn",
   "main": "./index.js",
   "scripts": {
     "start": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start",
