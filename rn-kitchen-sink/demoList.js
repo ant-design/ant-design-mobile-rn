@@ -254,6 +254,12 @@ module.exports = {
       module: require('../components/locale-provider/demo/basic'),
     },
     {
+      title: 'View',
+      description: '更安全的基础组件',
+      icon: 'https://os.alipayobjects.com/rmsportal/DUkfOYZVcLctGot.png',
+      module: require('../components/view/demo/basic'),
+    },
+    {
       title: 'WhiteSpace',
       description: '上下留白',
       icon: 'https://os.alipayobjects.com/rmsportal/NfomhEsOdhFxEws.png',
