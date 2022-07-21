@@ -96,6 +96,9 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
         pagination={() => null}
         selectedIndex={currentTab}
         afterChange={(index: number) => {
+          typeof this.props.onChange === 'function' &&
+            this.props.onChange(tabs[index], index)
+
           this.setState({ currentTab: index }, () => {
             this.state.scrollX.setValue(index * this.state.containerWidth)
           })
