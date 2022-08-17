@@ -1,4 +1,4 @@
-/* eslint react/no-danger: 0 */
+import { version as antdVersion } from '@ant-design/react-native/package.json'
 import { Icon, Radio, Tooltip } from 'antd'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
@@ -103,7 +103,7 @@ export default class Demo extends React.Component {
       '@react-native-community/segmented-control,' +
       'react-native-gesture-handler/DrawerLayout,' +
       'react-native-gesture-handler/Swipeable,' +
-      '@ant-design/react-native@5.0.0'
+      `@ant-design/react-native@${antdVersion}`
 
     if (componentName === 'picker') {
       dependencies +=
@@ -112,11 +112,11 @@ export default class Demo extends React.Component {
 
     if (componentName === 'locale-provider') {
       dependencies +=
-        ',@ant-design/react-native/lib/locale-provider/en_US@5.0.0,' +
-        '@ant-design/react-native/lib/locale-provider/es_ES@5.0.0,' +
-        '@ant-design/react-native/lib/locale-provider/pt_BR@5.0.0,' +
-        '@ant-design/react-native/lib/locale-provider/ru_RU@5.0.0,' +
-        '@ant-design/react-native/lib/locale-provider/zh_CN@5.0.0'
+        `,@ant-design/react-native/lib/locale-provider/en_US@${antdVersion},` +
+        `@ant-design/react-native/lib/locale-provider/es_ES@${antdVersion},` +
+        `@ant-design/react-native/lib/locale-provider/pt_BR@${antdVersion},` +
+        `@ant-design/react-native/lib/locale-provider/ru_RU@${antdVersion},` +
+        `@ant-design/react-native/lib/locale-provider/zh_CN@${antdVersion},`
     }
 
     return `https://snack.expo.dev/embedded?platform=web&name=${localizedTitle}&dependencies=${encodeURIComponent(
