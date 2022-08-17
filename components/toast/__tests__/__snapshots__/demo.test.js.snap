@@ -123,6 +123,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
+                Color="#1890ff"
                 accessibilityRole="button"
                 accessibilityState={
                   Object {
@@ -178,6 +179,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "right": 10,
                         "width": 22,
+                      }
+                    }
+                  />
+                  <View
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontSize": 12,
+                        "marginLeft": 25,
+                        "marginRight": 7,
                       }
                     }
                   />
@@ -286,6 +297,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
+                Color="#1890ff"
                 accessibilityRole="button"
                 accessibilityState={
                   Object {
@@ -341,6 +353,16 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "right": 10,
                         "width": 22,
+                      }
+                    }
+                  />
+                  <View
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontSize": 12,
+                        "marginLeft": 25,
+                        "marginRight": 7,
                       }
                     }
                   />

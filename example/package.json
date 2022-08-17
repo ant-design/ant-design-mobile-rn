@@ -1,0 +1,33 @@
+{
+  "name": "@ant-design/react-native-example",
+  "version": "5.0.0",
+  "description": "Demo app for ant-design mobile RN UI Library",
+  "private": true,
+  "homepage": "https://github.com/ant-design/ant-design-mobile-rn",
+  "main": "./index.js",
+  "scripts": {
+    "start": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "build:web": "expo build:web --config ./app.web-build.json --polyfill",
+    "deploy": "gh-pages -d web-build",
+    "prettify": "prettier --write .  --config ./.prettierrc",
+    "lint": "eslint --ext js,ts,tsx ."
+  },
+  "dependencies": {
+    "@babel/preset-typescript": "^7.16.7",
+    "expo": "^44.0.6",
+    "expo-app-loading": "~1.3.0",
+    "expo-dev-client": "^0.8.4",
+    "expo-font": "~10.0.4",
+    "react": "17.0.2"
+  },
+  "devDependencies": {
+    "@expo/webpack-config": "~0.16.2",
+    "babel-loader": "^8.2.5",
+    "babel-preset-expo": "9.0.2",
+    "jest-expo": "^44.0.1"
+  }
+}

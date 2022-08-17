@@ -14,6 +14,14 @@ toc: false
 
 ---
 
+### 5.0.01
+`2022-08-11`
+ - fix: Tabs `onChange` no-call [#1241](https://github.com/ant-design/ant-design-mobile-rn/issues/1241)
+ - fix: add libraries required for version 5.0.0 [#1228](https://github.com/ant-design/ant-design-mobile-rn/pull/1228)
+ - fix: Typescript error in react18 [#1242](https://github.com/ant-design/ant-design-mobile-rn/issues/1242)
+ - fix: webpack config [#1243](https://github.com/ant-design/ant-design-mobile-rn/pull/1243)
+ - fix `ButtonWave` on android cause `Checkbox` can't be clicked [#1238](https://github.com/ant-design/ant-design-mobile-rn/pull/1238) [@zs7779](https://github.com/zs7779)
+
 ### 5.0.0
 
 `2022-03-08`

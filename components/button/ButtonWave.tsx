@@ -5,6 +5,7 @@ import {
   Pressable,
   TouchableNativeFeedback,
   TouchableNativeFeedbackProps,
+  View,
 } from 'react-native'
 
 const IS_ANDROID = Platform.OS === 'android'
@@ -15,7 +16,7 @@ interface ButtonWaveProps extends TouchableNativeFeedbackProps {
 }
 
 export default (props: ButtonWaveProps) => {
-  const { Color, ...restProps } = props
+  const { Color, style, ...restProps } = props
   const accessibilityState = {
     disabled: !!props.disabled,
   }
@@ -30,14 +31,13 @@ export default (props: ButtonWaveProps) => {
       }
       useForeground={true}
       {...restProps}>
-      <>{props.children}</>
+      <View style={style}>{props.children}</View>
     </TouchableNativeFeedback>
   ) : (
     <Pressable
       accessibilityRole="button"
       accessibilityState={accessibilityState}
-      {...restProps}>
-      {props.children}
-    </Pressable>
+      {...props}
+    />
   )
 }

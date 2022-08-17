@@ -871,6 +871,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
+                    Color="#1890ff"
                     accessibilityRole="button"
                     accessibilityState={
                       Object {
@@ -963,7 +964,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                />
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1164,7 +1177,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                />
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1267,6 +1292,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
+                Color="#1890ff"
                 accessibilityRole="button"
                 accessibilityState={
                   Object {
@@ -1965,6 +1991,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     }
                   >
                     <View
+                      Color="#1890ff"
                       accessibilityRole="button"
                       accessibilityState={
                         Object {
@@ -2057,7 +2084,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     onResponderTerminate={[Function]}
                     onResponderTerminationRequest={[Function]}
                     onStartShouldSetResponder={[Function]}
-                  />
+                  >
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "marginLeft": 8,
+                            "marginRight": 8,
+                          },
+                        ]
+                      }
+                    />
+                  </View>
                 </View>
               </View>
             </View>
@@ -2258,7 +2297,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     onResponderTerminate={[Function]}
                     onResponderTerminationRequest={[Function]}
                     onStartShouldSetResponder={[Function]}
-                  />
+                  >
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "marginLeft": 8,
+                            "marginRight": 8,
+                          },
+                        ]
+                      }
+                    />
+                  </View>
                 </View>
               </View>
             </View>
@@ -2459,7 +2510,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     onResponderTerminate={[Function]}
                     onResponderTerminationRequest={[Function]}
                     onStartShouldSetResponder={[Function]}
-                  />
+                  >
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "marginLeft": 8,
+                            "marginRight": 8,
+                          },
+                        ]
+                      }
+                    />
+                  </View>
                 </View>
               </View>
             </View>
@@ -2616,7 +2679,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                />
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
+                </View>
               </View>
               <View
                 style={
@@ -2852,6 +2927,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
+                          Color="#1890ff"
                           accessibilityRole="button"
                           accessibilityState={
                             Object {
@@ -2944,7 +3020,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -3145,7 +3233,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -3346,7 +3446,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -3511,6 +3623,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
+                          Color="#1890ff"
                           accessibilityRole="button"
                           accessibilityState={
                             Object {
@@ -3603,7 +3716,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -3804,7 +3929,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -4005,7 +4142,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -4170,6 +4319,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
+                          Color="#1890ff"
                           accessibilityRole="button"
                           accessibilityState={
                             Object {
@@ -4262,7 +4412,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -4463,7 +4625,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -4670,7 +4844,22 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         onResponderTerminate={[Function]}
                         onResponderTerminationRequest={[Function]}
                         onStartShouldSetResponder={[Function]}
-                      />
+                      >
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                              Object {
+                                "color": "#bbbbbb",
+                              },
+                            ]
+                          }
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>

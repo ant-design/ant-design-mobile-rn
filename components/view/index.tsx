@@ -17,10 +17,6 @@ class AntmView extends React.PureComponent<ViewInterface> {
   render() {
     const { children, ...restProps } = this.props
 
-    if (React.isValidElement(children)) {
-      return <View {...restProps} children={children} />
-    }
-
     if (['number', 'string'].includes(typeof children)) {
       return <Text {...restProps} children={children} />
     }
@@ -29,9 +25,12 @@ class AntmView extends React.PureComponent<ViewInterface> {
       if (children.some(React.isValidElement)) {
         return (
           <View {...restProps}>
-            {React.Children.map(children, (child) => (
-              <AntmView children={child} />
-            ))}
+            {React.Children.map(children, (child) => {
+              if (React.isValidElement(child)) {
+                return child
+              }
+              return <AntmView>{child}</AntmView>
+            })}
           </View>
         )
       } else {
@@ -44,7 +43,7 @@ class AntmView extends React.PureComponent<ViewInterface> {
       }
     }
 
-    return null
+    return <View {...this.props} />
   }
 }
 

@@ -8,12 +8,16 @@ import AccordionStyles, { AccordionStyle } from './style/index'
 export interface AccordionPanelProps {
   key?: string
   header: any
+  children: React.ReactNode
 }
 
 export interface AccordionNativeProps<T>
   extends WithThemeStyles<AccordionStyle>,
     Partial<AccordionProps<T>> {
   style?: StyleProp<ViewStyle>
+  children:
+    | React.ReactElement<AccordionPanelProps>
+    | React.ReactElement<AccordionPanelProps>[]
 }
 export interface AccordionHeader {
   title: string
@@ -30,7 +34,7 @@ class Accordion<T extends AccordionHeader> extends React.Component<
   AccordionNativeProps<T>,
   any
 > {
-  static Panel: any
+  static Panel = AccordionPanel
 
   renderHeader =
     (styles: ReturnType<typeof AccordionStyles>) =>

@@ -15,6 +15,7 @@ export interface PickerProps
     WithThemeStyles<PickerStyle> {
   pickerPrefixCls?: string
   popupPrefixCls?: string
+  children: React.ReactNode
 }
 
 export function getDefaultProps() {

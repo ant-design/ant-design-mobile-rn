@@ -41,8 +41,10 @@ Array [
   "TabBar",
   "Tabs",
   "Tag",
+  "Text",
   "TextareaItem",
   "Toast",
+  "View",
   "WhiteSpace",
   "WingBlank",
 ]
