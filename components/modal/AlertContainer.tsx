@@ -48,9 +48,9 @@ export default class AlertContainer extends React.Component<
     const { title, actions, content, onAnimationEnd } = this.props
     const footer = actions.map((button) => {
       // tslint:disable-next-line:only-arrow-functions
-      const orginPress = button.onPress || function () {}
+      const originPress = button.onPress || function () {}
       button.onPress = () => {
-        const res = orginPress()
+        const res = originPress()
         if (res && res.then) {
           res.then(() => {
             this.onClose()
