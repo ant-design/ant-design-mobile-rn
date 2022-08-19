@@ -98,7 +98,7 @@ class AntmModal extends React.Component<ModalProps, any> {
               }
               if (button.style) {
                 buttonStyle = button.style
-                if (typeof buttonStyle === 'string') {
+                if (typeof button.style === 'string') {
                   const styleMap: {
                     [key: string]: object
                   } = {
@@ -107,7 +107,7 @@ class AntmModal extends React.Component<ModalProps, any> {
                     destructive: { color: 'red' },
                     disabled: { color: 'lightgray' },
                   }
-                  buttonStyle = styleMap[buttonStyle] || {}
+                  buttonStyle = styleMap[button.style] || {}
                 }
               }
               const noneBorder =
