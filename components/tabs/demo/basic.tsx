@@ -93,7 +93,7 @@ export default class BasicTabsExample extends React.Component<any, any> {
                   }}>
                   <Text
                     style={{
-                      color: tabProps.activeTab === i ? 'green' : undefined,
+                      color: tabProps.activeTab === i ? 'green' : '#333333',
                     }}>
                     {tab.title}
                   </Text>

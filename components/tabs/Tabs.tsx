@@ -260,7 +260,9 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     if (this.carousel) {
       this.carousel.goTo(index)
     }
-    this.state.scrollX.setValue(index * this.state.containerWidth)
+    this.setState({ currentTab: index }, () => {
+      this.state.scrollX.setValue(index * this.state.containerWidth)
+    })
   }
 
   tabClickGoToTab(index: number) {
