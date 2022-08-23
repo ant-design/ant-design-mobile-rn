@@ -38,6 +38,30 @@ export default class BasicModalExample extends React.Component<any, any> {
     ])
   }
 
+  onButtonClickPromise = () => {
+    Modal.alert('Title', 'promise button', [
+      {
+        text: 'Cancel',
+        onPress: () => {
+          Toast.info('onPress promise resolve', 1)
+          return new Promise((resolve) => {
+            setTimeout(resolve, 1000)
+          })
+        },
+        style: 'cancel',
+      },
+      {
+        text: 'Hold on',
+        onPress: () => {
+          Toast.info('onPress promise reject', 1)
+          return new Promise((_, reject) => {
+            setTimeout(reject, 1000)
+          })
+        },
+      },
+    ])
+  }
+
   onButtonClick2 = () => {
     Modal.operation([
       { text: '标为未读', onPress: () => console.log('标为未读被点击了') },
@@ -111,6 +135,10 @@ export default class BasicModalExample extends React.Component<any, any> {
           </Button>
           <WhiteSpace />
           <Button onPress={this.onButtonClick}>Modal.alert</Button>
+          <WhiteSpace />
+          <Button onPress={this.onButtonClickPromise}>
+            Modal.alert (promise)
+          </Button>
           <WhiteSpace />
           <Button onPress={this.onButtonClick2}>Modal.opertation</Button>
           <WhiteSpace />
