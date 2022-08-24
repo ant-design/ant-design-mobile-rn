@@ -3,7 +3,7 @@
   "version": "5.0.0",
   "description": "Demo app for ant-design mobile RN UI Library",
   "private": true,
-  "homepage": "https://github.com/ant-design/ant-design-mobile-rn",
+  "homepage": ".",
   "main": "./index.js",
   "scripts": {
     "start": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start",
@@ -11,13 +11,12 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "build:web": "expo build:web --config ./app.web-build.json --polyfill",
-    "deploy": "gh-pages -d web-build",
+    "build:web": "expo build:web --config ./app.web-build.json",
+    "publish": "expo publish",
     "prettify": "prettier --write .  --config ./.prettierrc",
     "lint": "eslint --ext js,ts,tsx ."
   },
   "dependencies": {
-    "@babel/preset-typescript": "^7.16.7",
     "expo": "^44.0.6",
     "expo-app-loading": "~1.3.0",
     "expo-dev-client": "^0.8.4",
