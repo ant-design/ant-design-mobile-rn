@@ -48,7 +48,7 @@ export default class AlertContainer extends React.Component<
     const { title, actions, content, onAnimationEnd } = this.props
     const footer = actions.map((button) => {
       // tslint:disable-next-line:only-arrow-functions
-      const originPress = button.onPress || function () {}
+      const originPress = button.onPress ?? function () {}
       const originStyle = button.style
       button.onPress = async () => {
         if (button.style === 'disabled') {
