@@ -55,9 +55,14 @@ export default class AlertContainer extends React.Component<
           return
         }
         button.style = 'disabled'
-        await originPress()
-        button.style = originStyle
-        this.onClose()
+        // developer should handle the errors by themselves,
+        // so we don't need to do anything at here
+        try {
+          await originPress()
+        } finally {
+          button.style = originStyle
+          this.onClose()
+        }
       }
       return button
     })
