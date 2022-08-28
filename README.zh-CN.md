@@ -32,6 +32,7 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) <br>
 > 提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
 
+ - **使用 react-native-cli 运行**
 
 ```bash
 # clone
@@ -49,6 +50,19 @@ yarn ios
 
 # start android
 yarn android
+
+# start expo
+yarn expo
+```
+
+ - **使用 expo-cli 运行**
+
+```bash
+# go to expo example folder
+cd example
+
+# install dependencies
+yarn
 
 # start expo
 yarn expo
