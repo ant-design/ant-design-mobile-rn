@@ -35,6 +35,8 @@ A configurable Mobile UI specification and React-based implementation.
 > Open the camera app on your device and scan the code above, <br>
 need install expo app: https://expo.io/tools
 
+ - **Running On Device**
+
 ```bash
 # clone
 git clone git@github.com:ant-design/ant-design-mobile-rn.git
@@ -51,6 +53,16 @@ yarn ios
 
 # start android
 yarn android
+```
+
+ - **Running On Expo**
+
+```bash
+# go to expo example folder
+cd example
+
+# install dependencies
+yarn
 
 # start expo
 yarn expo
