@@ -10,6 +10,7 @@ export interface BadgeProps extends WithThemeStyles<BadgeStyle> {
   corner?: boolean
   dot?: boolean
   text?: any
+  children?: React.ReactNode
 }
 
 export default class Badge extends React.Component<BadgeProps, any> {
