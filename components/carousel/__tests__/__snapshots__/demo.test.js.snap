@@ -933,8 +933,7 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          Toggle autoplay 
-          true
+          Toggle autoplay true
         </Text>
       </View>
     </View>

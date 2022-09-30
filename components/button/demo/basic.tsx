@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import React from 'react'
-import { Button, WhiteSpace, WingBlank } from '../../'
+import { Button, Icon, WhiteSpace, WingBlank } from '../../'
 
 /* tslint:disable:no-console */
 export default () => (
@@ -50,5 +50,10 @@ export default () => (
         ghost
       </Button>
     </WingBlank>
+    <WhiteSpace />
+
+    <Button type="primary">
+      <Icon name="login" />
+    </Button>
   </WingBlank>
 )
