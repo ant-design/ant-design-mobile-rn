@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   TouchableWithoutFeedback,
   View,
-  ViewStyle
+  ViewStyle,
 } from 'react-native'
 import { LocaleContext } from '../locale-provider'
 import { WithTheme, WithThemeStyles } from '../style'
