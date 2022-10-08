@@ -98,7 +98,7 @@ export default class BasicCarouselExample extends React.Component<any, any> {
           </Carousel>
           <Button
             onPress={() => this.setState({ autoplay: !this.state.autoplay })}>
-            Toggle autoplay {this.state.autoplay ? 'true' : 'false'}
+            {`Toggle autoplay ${this.state.autoplay ? 'true' : 'false'}`}
           </Button>
         </View>
       </View>

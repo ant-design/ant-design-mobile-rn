@@ -20,6 +20,7 @@ export interface ButtonProps
     WithThemeStyles<ButtonStyles>,
     TouchableHighlightProps {
   activeStyle?: StyleProp<ViewStyle>
+  children?: React.ReactNode
 }
 
 export default class Button extends React.Component<ButtonProps, any> {
@@ -139,7 +140,11 @@ export default class Button extends React.Component<ButtonProps, any> {
                     size="small"
                   />
                 ) : null}
-                <Text style={textStyle}>{this.props.children}</Text>
+                {typeof this.props.children === 'string' ? (
+                  <Text style={textStyle}>{this.props.children}</Text>
+                ) : (
+                  <>{this.props.children}</>
+                )}
               </View>
             </TouchableHighlight>
           )
