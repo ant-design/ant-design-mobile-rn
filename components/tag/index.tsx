@@ -16,6 +16,7 @@ export interface TagNativeProps
   extends TagPropsType,
     WithThemeStyles<TagStyle> {
   style?: StyleProp<ViewStyle>
+  children?: React.ReactNode
 }
 
 export default class Tag extends React.Component<TagNativeProps, any> {

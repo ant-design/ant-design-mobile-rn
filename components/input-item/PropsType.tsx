@@ -33,4 +33,5 @@ export interface InputItemPropsType {
   onFocus?: InputEventHandler
   onBlur?: InputEventHandler
   onVirtualKeyboardConfirm?: InputEventHandler
+  children?: React.ReactNode
 }
