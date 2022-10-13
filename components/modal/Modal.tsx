@@ -27,7 +27,7 @@ export interface ModalProps
   style?: StyleProp<ViewStyle>
   bodyStyle?: StyleProp<ViewStyle>
   onRequestClose?: CallbackOnBackHandler
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 class AntmModal extends React.Component<ModalProps, any> {
