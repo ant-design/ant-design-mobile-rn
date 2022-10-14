@@ -58,6 +58,11 @@ export default () => (
       </Button>
     </WingBlank>
   </WingBlank>
+  <WhiteSpace />
+
+  <Button type="primary">
+    <Icon name="login" />
+  </Button>
 );
 
 ````

@@ -5,6 +5,7 @@ import { WithTheme } from '../style'
 export interface WingBlankProps {
   style?: StyleProp<ViewStyle>
   size?: 'sm' | 'md' | 'lg'
+  children?: React.ReactNode
 }
 class WingBlank extends React.Component<WingBlankProps, any> {
   static defaultProps = {

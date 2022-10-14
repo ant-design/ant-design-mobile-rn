@@ -9,6 +9,7 @@ import CardStyles, { CardStyle } from './style/index'
 export interface CardNativeProps extends WithThemeStyles<CardStyle> {
   style?: StyleProp<ViewStyle>
   full?: boolean
+  children?: React.ReactNode
 }
 
 export default class Card extends React.Component<CardNativeProps, any> {

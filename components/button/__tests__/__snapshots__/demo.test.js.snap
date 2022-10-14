@@ -927,5 +927,80 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       </View>
     </View>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 47,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        },
+        Object {
+          "backgroundColor": "#108ee9",
+          "borderColor": "#108ee9",
+        },
+        false,
+        false,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#cccccc",
+              "fontFamily": "antoutline",
+              "fontSize": 22,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
 </View>
 `;

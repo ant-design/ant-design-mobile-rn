@@ -14,7 +14,13 @@ toc: false
 
 ---
 
-### 5.0.01
+### 5.0.2
+`2022-10-13`
+ - fix: type error on React 18 [#1257](https://github.com/ant-design/ant-design-mobile-rn/pull/1257) [@lhr000lhr](https://github.com/lhr000lhr)
+ - fix: `EventEmitter.removeListener` warning [#1200](https://github.com/ant-design/ant-design-mobile-rn/issues/1200)
+ - feat: children as react element in button [#1260](https://github.com/ant-design/ant-design-mobile-rn/pull/1260) [@lucas-it](https://github.com/lucas-it)
+
+### 5.0.1
 `2022-08-11`
  - fix: Tabs `onChange` no-call [#1241](https://github.com/ant-design/ant-design-mobile-rn/issues/1241)
  - fix: add libraries required for version 5.0.0 [#1228](https://github.com/ant-design/ant-design-mobile-rn/pull/1228)

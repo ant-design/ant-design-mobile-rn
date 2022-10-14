@@ -1,5 +1,7 @@
 import React from 'react'
 import {
+  KeyboardAvoidingView,
+  Platform,
   StyleProp,
   Text,
   TextStyle,
@@ -7,9 +9,8 @@ import {
   TouchableWithoutFeedback,
   View,
   ViewStyle,
-  KeyboardAvoidingView,
-  Platform,
 } from 'react-native'
+import { LocaleContext } from '../locale-provider'
 import { WithTheme, WithThemeStyles } from '../style'
 import { getComponentLocale } from '../_util/getLocale'
 import alert from './alert'
@@ -19,7 +20,6 @@ import operation from './operation'
 import prompt from './prompt'
 import { CallbackOnBackHandler, ModalPropsType } from './PropsType'
 import modalStyles, { ModalStyle } from './style/index'
-import { LocaleContext } from '../locale-provider'
 
 export interface ModalProps
   extends ModalPropsType<TextStyle>,
@@ -27,6 +27,7 @@ export interface ModalProps
   style?: StyleProp<ViewStyle>
   bodyStyle?: StyleProp<ViewStyle>
   onRequestClose?: CallbackOnBackHandler
+  children?: React.ReactNode
 }
 
 class AntmModal extends React.Component<ModalProps, any> {
