@@ -100,4 +100,5 @@ export interface PropsType {
   useLeftInsteadTransform?: boolean
   style?: StyleProp<ViewStyle>
   keyboardShouldPersistTaps?: boolean
+  children?: React.ReactNode
 }
