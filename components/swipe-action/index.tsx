@@ -7,11 +7,11 @@ import {
   Text,
   TextStyle,
   View,
-  ViewStyle,
+  ViewStyle
 } from 'react-native'
 import {
   PanGestureHandlerProps,
-  RectButton,
+  RectButton
 } from 'react-native-gesture-handler'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
 
@@ -97,7 +97,7 @@ class SwipeAction extends React.Component<SwipeActionProps> {
         leftThreshold={30}
         rightThreshold={40}
         renderLeftActions={(v, d) => this.renderActions(v, d, true)}
-        renderRightActions={this.renderActions}
+        renderRightActions={(v, d) => this.renderActions(v, d, false)}
         {...restProps}>
         {children}
       </Swipeable>
