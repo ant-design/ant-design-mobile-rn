@@ -49,7 +49,7 @@
     "@ant-design/tools": "^13.4.1-beta.0",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
-    "@react-native-community/cameraroll": "^4.0.4",
+    "@react-native-camera-roll/camera-roll": "^5.1.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@react-native-community/masked-view": "^0.1.9",
     "@react-native-community/segmented-control": "^2.2.2",
@@ -101,7 +101,7 @@
     "typescript": "^4.3.2"
   },
   "peerDependencies": {
-    "@react-native-community/cameraroll": ">= 1.5.2",
+    "@react-native-camera-roll/camera-roll": ">= 5.0.0",
     "@react-native-community/segmented-control": ">= 1.4.0",
     "@react-native-community/slider": ">= 2.0.0",
     "@react-native-picker/picker": "^1.9.10",
