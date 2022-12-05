@@ -97,7 +97,7 @@ class SwipeAction extends React.Component<SwipeActionProps> {
         leftThreshold={30}
         rightThreshold={40}
         renderLeftActions={(v, d) => this.renderActions(v, d, true)}
-        renderRightActions={this.renderActions}
+        renderRightActions={(v, d) => this.renderActions(v, d, false)}
         {...restProps}>
         {children}
       </Swipeable>
