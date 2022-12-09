@@ -182,6 +182,10 @@ android {
 
         }
     }
+
+    packagingOptions {
+        pickFirst '**/libfbjni.so'
+    }
 }
 
 dependencies {
