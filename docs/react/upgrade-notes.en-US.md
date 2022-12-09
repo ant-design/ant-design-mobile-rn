@@ -7,7 +7,7 @@ Here list some of main incompatible changes and recommended changes in the upgra
 
 ### 5.0.2
 
-> 安装 peer 依赖
+> Installing peer dependencies
 
 ```bash
 npm install @react-native-camera-roll/camera-roll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
