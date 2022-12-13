@@ -5,7 +5,7 @@ title: Upgrade
 
 Here list some of main incompatible changes and recommended changes in the upgrade. See [Changelog](/changelog) for all changes.
 
-### 5.0.2
+### 5.0.3
 
 > Installing peer dependencies
 
