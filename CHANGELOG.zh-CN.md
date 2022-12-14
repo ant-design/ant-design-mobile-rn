@@ -14,6 +14,11 @@ toc: false
 
 ---
 
+### 5.0.3
+`2022-12-13`
+- fix: 兼容`react-native-gesture-handler/Swipeable@2.8.0` [#1271](https://github.com/ant-design/ant-design-mobile-rn/pull/1271) [@XionGuo37](https://github.com/XionGuo37)
+- fix: 将peer依赖`@react-native-community/cameraroll` 更新到 `@react-native-camera-roll/camera-roll` [@aoarashi1988](https://github.com/aoarashi1988)
+
 ### 5.0.2
 `2022-10-13`
  - fix: type error on React 18 [#1257](https://github.com/ant-design/ant-design-mobile-rn/pull/1257) [@lhr000lhr](https://github.com/lhr000lhr)
