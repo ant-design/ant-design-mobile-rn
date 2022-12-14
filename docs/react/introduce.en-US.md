@@ -64,13 +64,24 @@ $ npm install @ant-design/react-native --save
 or
 
 ```bash
-yarn add @ant-design/react-native
+$ yarn add @ant-design/react-native
 ```
 
 ### Link icon fonts
 
+
 ```bash
-react-native link @ant-design/icons-react-native
+$ npm install @ant-design/icons-react-native --save
+```
+
+or
+
+```bash
+$ yarn add @ant-design/icons-react-native
+```
+
+```bash
+$ npx react-native link @ant-design/icons-react-native
 ```
 
 > If you are using expo please make sure fonts has been loaded
@@ -118,12 +129,12 @@ class App extends React.Component {
   }
 }
 ```
-This is not the way you would write it if you were using expo sdk32 or above 
-```jsx 
+This is not the way you would write it if you were using expo sdk32 or above
+```jsx
 import { Font } from 'expo';
 ```
 Instead, use a separate name
-```jsx 
+```jsx
 import * as Font from 'expo-font';
 ```
 
