@@ -6,7 +6,13 @@
     "slug": "ant-design-mobile-rn",
     "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
     "icon": "../rn-kitchen-sink/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "splash":{
+      "image": "../rn-kitchen-sink/ios/KitchenSink/Images.xcassets/AppIcon.appiconset/ios-marketing-1024@1x.png"
+    },
     "version": "5.0.1",
-    "entryPoint": "index.js"
+    "entryPoint": "index.js",
+    "web": {
+      "bundler": "metro"
+    }
   }
 }
