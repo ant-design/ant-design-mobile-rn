@@ -25,12 +25,22 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 - 基于 React Native 的多平台支持。
 - 使用 TypeScript 开发，提供类型定义文件。
 
-## 演示
+## Expo
 
-**可直接预览H5网页版本：**[🔗 链接1](https://1uokun.github.io/ant-design-mobile-rn/index.html)<br>
-**或下载我们的Expo演示应用:** [🔗 链接2](https://expo.dev/@1uokun/ant-design-mobile-rn) <br>
-[<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) <br>
+ - **Web support**
+   
+   点击[[这里] 🔗 ](https://1uokun.github.io/ant-design-mobile-rn/index.html)预览H5网页版本
+
+ - **Expo demo app**
+
+|Expo SDK 44|SDK 47 iOS|SDK 47 Android|
+|--|--|--|
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=65e0a655-a75b-46f9-98b7-2baa9d5015bc&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=8774266f-6890-44ba-9a07-0f2e8c382507&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
+
+
 > 提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
+
+## 本地演示
 
  - **使用 react-native-cli 运行**
 

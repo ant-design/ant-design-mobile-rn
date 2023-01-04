@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/react-native-example",
-  "version": "5.0.0",
+  "version": "5.0.3",
   "description": "Demo app for ant-design mobile RN UI Library",
   "private": true,
   "homepage": ".",
@@ -22,6 +22,7 @@
     "expo": "^47.0.0",
     "expo-font": "~11.0.1",
     "expo-splash-screen": "~0.17.4",
+    "expo-updates": "~0.15.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",

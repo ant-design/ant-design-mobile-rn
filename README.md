@@ -27,13 +27,23 @@ A configurable Mobile UI specification and React-based implementation.
 - Support web and native usages based on React Native.
 - Develop in TypeScript.
 
-## Demo
+## Expo
 
-**Preview in [ 🔗 Web Platform](https://1uokun.github.io/ant-design-mobile-rn/index.html)**. or<br>
-**Download our Expo demo app** <br>
-[<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) <br>
+ - **Web support**
+   
+   Preview Web Platform in [[here] 🔗](https://1uokun.github.io/ant-design-mobile-rn/index.html)
+
+ - **Expo demo app**
+
+|Expo SDK 44|SDK 47 iOS|SDK 47 Android|
+|--|--|--|
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=65e0a655-a75b-46f9-98b7-2baa9d5015bc&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=8774266f-6890-44ba-9a07-0f2e8c382507&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
+
+
 > Open the camera app on your device and scan the code above, <br>
 need install expo app: https://expo.io/tools
+
+## Development
 
  - **Running On Device**
 

@@ -5,14 +5,28 @@
     "name": "@ant-design/react-native",
     "slug": "ant-design-mobile-rn",
     "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
+    "sdkVersion": "47.0.0",
     "icon": "../rn-kitchen-sink/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
-    "splash":{
+    "splash": {
       "image": "../rn-kitchen-sink/ios/KitchenSink/Images.xcassets/AppIcon.appiconset/ios-marketing-1024@1x.png"
     },
-    "version": "5.0.1",
+    "version": "5.0.3",
     "entryPoint": "index.js",
     "web": {
       "bundler": "metro"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7729a68b-f881-4294-89f5-5ae751bfb2b2"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/7729a68b-f881-4294-89f5-5ae751bfb2b2"
+    },
+    "android": {},
+    "ios": {}
   }
 }
