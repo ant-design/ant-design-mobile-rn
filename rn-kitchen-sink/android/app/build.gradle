@@ -185,6 +185,7 @@ android {
 
     packagingOptions {
         pickFirst '**/libfbjni.so'
+        pickFirst '**/libc++_shared.so'
     }
 }
 
