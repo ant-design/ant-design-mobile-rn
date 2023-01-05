@@ -1,8 +1,7 @@
 /* eslint no-console:0 */
 import React from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
-import List from '../../components/list'
-import SearchBar from '../../components/search-bar'
+import { List, SearchBar } from '../../components'
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from '../demoList'
 
 const styles = StyleSheet.create({

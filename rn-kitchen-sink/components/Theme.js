@@ -1,9 +1,6 @@
 import { presetPalettes } from 'ant-design-palettes'
 import React from 'react'
-import Button from '../../components/button'
-import Flex from '../../components/flex'
-import Icon from '../../components/icon'
-import Modal from '../../components/modal'
+import { Button, Flex, Icon, Modal } from '../../components'
 
 class ThemePanel extends React.Component {
   state = {

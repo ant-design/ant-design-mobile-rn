@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import React, { Suspense } from 'react'
-import { AppRegistry, Text } from 'react-native'
+import React from 'react'
+import { AppRegistry } from 'react-native'
 import 'react-native-gesture-handler'
 import Provider from '../components/provider'
 import RnIndex from './components/index'
@@ -19,7 +19,7 @@ const getOptions = (title) => ({
 const scenes = {}
 
 ;[...UIVIEWS, ...UICONTROLS, ...OTHERS, ...UIBARS].map((component) => {
-  const Module = component.module
+  const Module = component.module.default
   scenes[component.title] = {
     screen: Module,
     navigationOptions: getOptions(component.title),
@@ -42,34 +42,32 @@ class App extends React.Component {
     const { theme, currentTheme } = this.state
     return (
       <Provider theme={theme}>
-        <Suspense fallback={<Text>Loading...</Text>}>
-          <NavigationContainer>
-            <Stack.Navigator initialRouteName="native">
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="native">
+            <Stack.Screen
+              name="native"
+              component={RnIndex}
+              options={{
+                ...getOptions('Ant Design'),
+                headerLeft: (props) => (
+                  <Theme
+                    {...props}
+                    changeTheme={this.changeTheme}
+                    currentTheme={currentTheme}
+                  />
+                ),
+              }}
+            />
+            {Object.keys(scenes).map((key) => (
               <Stack.Screen
-                name="native"
-                component={RnIndex}
-                options={{
-                  ...getOptions('Ant Design'),
-                  headerLeft: (props) => (
-                    <Theme
-                      {...props}
-                      changeTheme={this.changeTheme}
-                      currentTheme={currentTheme}
-                    />
-                  ),
-                }}
+                name={key}
+                key={key}
+                component={scenes[key].screen}
+                options={scenes[key].navigationOptions}
               />
-              {Object.keys(scenes).map((key) => (
-                <Stack.Screen
-                  name={key}
-                  key={key}
-                  component={scenes[key].screen}
-                  options={scenes[key].navigationOptions}
-                />
-              ))}
-            </Stack.Navigator>
-          </NavigationContainer>
-        </Suspense>
+            ))}
+          </Stack.Navigator>
+        </NavigationContainer>
       </Provider>
     )
   }
