@@ -5,6 +5,7 @@ import { AppRegistry, Text } from 'react-native'
 import 'react-native-gesture-handler'
 import Provider from '../components/provider'
 import RnIndex from './components/index'
+import Theme from './components/Theme'
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from './demoList'
 
 const getOptions = (title) => ({
@@ -15,12 +16,7 @@ const getOptions = (title) => ({
   headerTintColor: 'white',
 })
 
-const scenes = {
-  native: {
-    screen: RnIndex,
-    navigationOptions: getOptions('Ant Design'),
-  },
-}
+const scenes = {}
 
 ;[...UIVIEWS, ...UICONTROLS, ...OTHERS, ...UIBARS].map((component) => {
   const Module = component.module
@@ -47,10 +43,22 @@ class App extends React.Component {
     return (
       <Provider theme={theme}>
         <Suspense fallback={<Text>Loading...</Text>}>
-          <NavigationContainer
-            screenProps={{ changeTheme: this.changeTheme, currentTheme }}
-            initialRouteName="Home">
-            <Stack.Navigator>
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName="native">
+              <Stack.Screen
+                name="native"
+                component={RnIndex}
+                options={{
+                  ...getOptions('Ant Design'),
+                  headerLeft: (props) => (
+                    <Theme
+                      {...props}
+                      changeTheme={this.changeTheme}
+                      currentTheme={currentTheme}
+                    />
+                  ),
+                }}
+              />
               {Object.keys(scenes).map((key) => (
                 <Stack.Screen
                   name={key}
