@@ -8,11 +8,11 @@ iOS-style swipeout buttons that appear from behind a component.
 
 ### Definition
 
-Call out oprations from one side of screen with gesture.
+Call out operations from one side of screen with gesture.
 
 ### Rules
 1. Only one row can be swiped at a time.
-2. Can hide oprations by clicking outside of buttons or swiping the list backforwards.
+2. Can hide operations by clicking outside of buttons or swiping the list backforwards.
 
 ## API
 

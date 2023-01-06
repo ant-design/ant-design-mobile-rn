@@ -6,6 +6,7 @@ import { CascaderProps, CascaderValue } from './CascaderTypes'
 export interface IPopupCascaderProps extends PopupPickerProps {
   cascader: React.ReactElement<CascaderProps>
   onChange?: (date?: CascaderValue) => void
+  children?: React.ReactNode
 }
 
 class PopupCascader extends React.Component<IPopupCascaderProps, any> {

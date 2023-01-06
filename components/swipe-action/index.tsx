@@ -74,6 +74,7 @@ export interface SwipeActionProps extends SwipeableProps {
   left?: SwipeoutButtonProps[]
   right?: SwipeoutButtonProps[]
   buttonWidth?: number
+  children?: React.ReactNode
 }
 export interface SwipeoutButtonProps {
   style?: StyleProp<TextStyle>
@@ -97,7 +98,7 @@ class SwipeAction extends React.Component<SwipeActionProps> {
         leftThreshold={30}
         rightThreshold={40}
         renderLeftActions={(v, d) => this.renderActions(v, d, true)}
-        renderRightActions={this.renderActions}
+        renderRightActions={(v, d) => this.renderActions(v, d, false)}
         {...restProps}>
         {children}
       </Swipeable>

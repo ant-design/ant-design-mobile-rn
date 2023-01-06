@@ -1,29 +1,30 @@
-import AppLoading from 'expo-app-loading'
-import * as Font from 'expo-font'
-import React from 'react'
-import App from '../rn-kitchen-sink/App'
-export default class extends React.Component {
-  state = {
-    isReady: false,
-  }
+import App from '@ant-design/react-native/rn-kitchen-sink/App'
+import { useFonts } from 'expo-font'
+import * as SplashScreen from 'expo-splash-screen'
+import React, { useCallback } from 'react'
+import { View } from 'react-native'
 
-  async componentDidMount() {
-    await Font.loadAsync(
-      'antoutline',
-      require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
-    )
+SplashScreen.preventAutoHideAsync()
 
-    await Font.loadAsync(
-      'antfill',
-      require('@ant-design/icons-react-native/fonts/antfill.ttf'),
-    )
-    this.setState({ isReady: true })
-  }
-  render() {
-    const { isReady } = this.state
-    if (!isReady) {
-      return <AppLoading />
+export default function () {
+  const [fontsLoaded] = useFonts({
+    antoutline: require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
+    antfill: require('@ant-design/icons-react-native/fonts/antfill.ttf'),
+  })
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync()
     }
-    return <App />
+  }, [fontsLoaded])
+
+  if (!fontsLoaded) {
+    return null
   }
+
+  return (
+    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+      <App />
+    </View>
+  )
 }

@@ -40,6 +40,7 @@ export interface IModalPropTypes {
   wrapStyle?: StyleProp<ViewStyle>
   maskStyle?: StyleProp<ViewStyle>
   style?: {}
+  children?: React.ReactNode
   animationType: 'none' | 'fade' | 'slide-up' | 'slide-down'
   animationDuration?: number
   visible: boolean

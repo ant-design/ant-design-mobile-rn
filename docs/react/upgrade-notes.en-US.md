@@ -5,6 +5,20 @@ title: Upgrade
 
 Here list some of main incompatible changes and recommended changes in the upgrade. See [Changelog](/changelog) for all changes.
 
+### 5.0.3
+
+> Installing peer dependencies
+
+```bash
+npm install @react-native-camera-roll/camera-roll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+```
+
+or
+
+```bash
+yarn add @react-native-camera-roll/camera-roll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+```
+
 ### 4.2.0
 
 > Installing peer dependencies

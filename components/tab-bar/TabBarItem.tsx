@@ -23,6 +23,7 @@ export interface TabBarItemProps {
   iconStyle?: StyleProp<ImageStyle>
   renderAsOriginal?: boolean
   styles?: ReturnType<typeof TabBarItemStyles>
+  children?: React.ReactNode
 }
 export default class TabBarItem extends React.Component<TabBarItemProps, any> {
   static defaultProps = {

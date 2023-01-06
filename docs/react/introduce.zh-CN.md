@@ -58,19 +58,30 @@ title: Ant Design Mobile RN of React
 ### 2. 安装
 
 ```bash
-npm install @ant-design/react-native --save
+$ npm install @ant-design/react-native --save
 ```
 
 or
 
 ```bash
-yarn add @ant-design/react-native
+$ yarn add @ant-design/react-native
 ```
 
 ### 链接字体图标
 
+
 ```bash
-react-native link @ant-design/icons-react-native
+$ npm install @ant-design/icons-react-native --save
+```
+
+or
+
+```bash
+$ yarn add @ant-design/icons-react-native
+```
+
+```bash
+$ npx react-native link @ant-design/icons-react-native
 ```
 
 > 如果你用的是 expo 请确保字体已经加载完成再初始化 app
@@ -119,12 +130,12 @@ class App extends React.Component {
 }
 ```
 当你使用expo sdk32以上版本时已经弃用了下面这种写法
- 
-```jsx 
+
+```jsx
 import { Font } from 'expo';
 ```
 转而使用单独命名的
-```jsx 
+```jsx
 import * as Font from 'expo-font';
 ```
 ### 3. 使用
