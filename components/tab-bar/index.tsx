@@ -6,6 +6,7 @@ import TabBarStyles, { TabBarStyle } from './style/index'
 import TabBarItem from './TabBarItem'
 export interface TabBarNativeProps extends TabBarProps {
   styles?: TabBarStyle
+  children: React.ReactElement<TabBarItem>[] | React.ReactElement<TabBarItem>
 }
 
 class TabBar extends React.Component<TabBarNativeProps, any> {

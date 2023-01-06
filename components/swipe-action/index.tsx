@@ -74,6 +74,7 @@ export interface SwipeActionProps extends SwipeableProps {
   left?: SwipeoutButtonProps[]
   right?: SwipeoutButtonProps[]
   buttonWidth?: number
+  children?: React.ReactNode
 }
 export interface SwipeoutButtonProps {
   style?: StyleProp<TextStyle>

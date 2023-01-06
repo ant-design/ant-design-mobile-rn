@@ -17,6 +17,7 @@ export interface NoticeNativeProps
     WithThemeStyles<NoticeBarStyle> {
   marqueeProps?: MarqueeProps
   style?: StyleProp<ViewStyle>
+  children?: React.ReactNode
 }
 
 export default class NoticeBar extends React.Component<NoticeNativeProps, any> {
