@@ -7,7 +7,7 @@ title: Slider
 A Slider component for selecting particular value in range, eg: controls the display brightness of the screen.
 
 ### Rule
-- By default, the minimum value in the left and maximum value in the right of `Silder` .
+- By default, the minimum value in the left and maximum value in the right of `Slider` .
 - Generally `Slider` is positioned horizontally.
 
 ## API
