@@ -14,6 +14,11 @@ toc: false
 
 ---
 
+### 5.0.4
+`2023-02-20`
+- fix: children as react element in `@type/react@18`(剩余所有) [~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/0d08b6bfe90f923f14155734979e551815ee9b0b)
+- fix: resolve peer dependency tree [#1284](https://github.com/ant-design/ant-design-mobile-rn/pull/1284)
+
 ### 5.0.3
 `2022-12-13`
 - fix: 兼容`react-native-gesture-handler/Swipeable@2.8.0` [#1271](https://github.com/ant-design/ant-design-mobile-rn/pull/1271) [@XionGuo37](https://github.com/XionGuo37)
