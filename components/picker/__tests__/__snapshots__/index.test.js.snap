@@ -246,6 +246,7 @@ Array [
                   },
                 ]
               }
+              numberOfLines={1}
               onChange={[Function]}
               selectedIndex={0}
               style={
@@ -276,6 +277,7 @@ Array [
                   },
                 ]
               }
+              numberOfLines={1}
               onChange={[Function]}
               selectedIndex={0}
               style={
@@ -312,6 +314,7 @@ Array [
                   },
                 ]
               }
+              numberOfLines={1}
               onChange={[Function]}
               selectedIndex={0}
               style={
