@@ -98,7 +98,7 @@ export default class Demo extends React.Component {
     const componentName = this.state.componentName
     let dependencies =
       '@react-native-picker/picker,' +
-      '@react-native-community/cameraroll,' +
+      '@react-native-camera-roll/camera-roll@5.1.0,' +
       '@react-native-community/slider,' +
       '@react-native-community/segmented-control,' +
       'react-native-gesture-handler/DrawerLayout,' +
