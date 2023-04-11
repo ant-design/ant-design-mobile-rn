@@ -25,19 +25,7 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
         ]
       }
     >
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexDirection": "column",
-              "flexWrap": "nowrap",
-              "justifyContent": "flex-start",
-            },
-            undefined,
-          ]
-        }
-      >
+      <View>
         <View
           style={
             Array [
@@ -1982,19 +1970,7 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
         Custom GridCell Style
       </Text>
     </View>
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "flexWrap": "nowrap",
-            "justifyContent": "flex-start",
-          },
-          undefined,
-        ]
-      }
-    >
+    <View>
       <View
         style={
           Array [
