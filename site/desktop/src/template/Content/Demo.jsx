@@ -116,7 +116,16 @@ export default class Demo extends React.Component {
         `@ant-design/react-native/lib/locale-provider/es_ES@${antdVersion},` +
         `@ant-design/react-native/lib/locale-provider/pt_BR@${antdVersion},` +
         `@ant-design/react-native/lib/locale-provider/ru_RU@${antdVersion},` +
-        `@ant-design/react-native/lib/locale-provider/zh_CN@${antdVersion},`
+        `@ant-design/react-native/lib/locale-provider/zh_CN@${antdVersion}`
+    }
+
+    if (componentName === 'icon') {
+      dependencies +=
+        ',@ant-design/icons-react-native@2.3.1,' +
+        '@ant-design/icons-react-native/lib/outline,' +
+        '@ant-design/icons-react-native/fonts/antfill.ttf,' +
+        '@ant-design/icons-react-native/fonts/antoutline.ttf,' +
+        'expo-font@11.0.1'
     }
 
     return `https://snack.expo.dev/embedded?platform=web&name=${localizedTitle}&dependencies=${encodeURIComponent(
