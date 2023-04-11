@@ -178,7 +178,7 @@ export default class Grid extends React.Component<GridProps, any> {
               {pagesArr}
             </Carousel>
           ) : (
-            <Flex direction="column">{rowsArr}</Flex>
+            <View>{rowsArr}</View>
           )
         }}
       </WithTheme>
