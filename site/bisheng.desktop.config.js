@@ -10,4 +10,5 @@ module.exports = Object.assign({}, commonConfig, {
   },
   theme: './site/desktop/src',
   htmlTemplate: path.join(__dirname, './desktop/src/static/template.html'),
+  hash: true,
 })
