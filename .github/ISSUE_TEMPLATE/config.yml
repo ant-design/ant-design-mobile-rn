@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: 🆕 Create new issue
-    url: https://github.com/ant-design/ant-design-mobile-rn/issues/new?expand=1&template=ISSUE_TEMPLATE.md
-    about: A good question can help us quickly locate the problem for you.
-  - name: 🆕 创建一个新 Issue
     url: http://new-issue.ant.design?repo=ant-design-mobile-rn
-    about: 通过模版可以快速创建issue，并且能够帮助我们更快定位问题。
+    about: The issue which is not created via http://new-issue.ant.design will be closed immediately.
+  - name: 🐛 创建一个错误报告issue
+    url: https://github.com/ant-design/ant-design-mobile-rn/issues/new?assignees=1uokun&labels=Bug🐛&template=bug_report.yml&title=%5BBUG%5D
+    about: 不使用模版创建的issue可能会被机器人自动关闭。
