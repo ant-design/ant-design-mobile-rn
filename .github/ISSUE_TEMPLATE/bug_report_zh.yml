@@ -1,0 +1,51 @@
+name: 🐛 创建一个Bug Issue
+description: 不使用模版创建的issue可能会被机器人自动关闭。
+labels: ["Bug🐛"]
+title: "[Bug] "
+body:
+  - type: checkboxes
+    attributes:
+      label: 💬 前提强调
+      description: 在开 issue 前，可以先搜索一下以往的旧 issue - 你遇到的问题可能已经有人提了，也可能已经在最新版本中被修正。
+       <br/> 注意：如果你发现一个已经关闭的旧 issue 在最新版本中仍然存在，请不要在旧 issue 下面留言，而应该用下面的表单开一个新的 issue。
+      options:
+        - label: I have searched the [issues](https://github.com/ant-design/ant-design-mobile-rn/issues) of this repository and believe that this is not a duplicate.
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 🙋 描述详情/重现步骤
+      description: |
+       请耐心平静清晰简明地描述你的问题，截图也是可以的。在提问前最好使用最新版本[![npm package](https://img.shields.io/npm/v/@ant-design/react-native.svg?style=flat-square)](https://www.npmjs.org/package/@ant-design/react-native)测试一下，确保您的问题尚未得到解决。
+       简洁清晰的重现步骤能够帮助我们更迅速地定位问题所在。支持使用 [Markdown](https://guides.github.com/features/mastering-markdown/) 来格式化列表或是代码片段。
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 💻 运行环境
+      multiple: true
+      options:
+        - iOS
+        - Android
+        - Expo
+        - react-native-web
+        - react-native-windows
+        - react-native-macos
+    validations:
+        required: true
+  - type: textarea
+    id: react-native-info
+    attributes:
+      label: ⚫️ `npx react-native info`输出信息
+      description: 在终端中运行`npx react-native info`，并将结果复制并粘贴到此处。
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充说明
+      description: |
+        （可选）比如提供一个尽可能精简的链接 Snack (https://snack.expo.dev/) 或是 GitHub 仓库的链接。 [什么是最小化重现，为什么这是必需的？](https://new-issue.ant.design/?repo=ant-design-mobile-rn#repro-modal)
+    validations:
+      required: false

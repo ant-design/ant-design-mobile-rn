@@ -1,0 +1,21 @@
+name: Issue help issue
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: check invalid
+        if: github.event.label.name == 'Invalid'
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'create-comment,close-issue'
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Hello @${{ github.event.issue.user.login }}, your issue has been closed because it does not conform to our issue requirements. Please use the [ISSUE_TEMPLATE](https://github.com/ant-design/ant-design-mobile-rn/issues/new?assignees=&labels=Bug%F0%9F%90%9B&template=bug_report.yml&title=%5BBug%5D+) to create an issue, thank you!
+            你好 @${{ github.event.issue.user.login }}，为了能够进行高效沟通，我们对 issue 有一定的格式要求，你的 issue 因为不符合要求而被自动关闭。你可以通过 [Github Issue 模版](https://github.com/ant-design/ant-design-mobile-rn/issues/new?assignees=&labels=Bug%F0%9F%90%9B&template=bug_report_zh.yml&title=%5BBug%5D+) 来创建 issue 以方便我们定位错误。谢谢配合！
