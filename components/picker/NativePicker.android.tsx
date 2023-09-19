@@ -8,15 +8,11 @@ const styles = StyleSheet.create({
   indicator: {
     position: 'absolute',
     left: 0,
-    top: -99,
+    width: '100%',
     borderColor: '#aaa',
     borderTopWidth: 1 / ratio,
     borderBottomWidth: 1 / ratio,
   } as any,
-
-  scrollView: {
-    height: 0,
-  },
 
   selectedItemText: {
     fontSize: 20,
@@ -37,63 +33,30 @@ export interface IPickerProp {
 }
 
 class Picker extends React.Component<IPickerProp & PickerProps, any> {
-  itemHeight: number
-  itemWidth: number
   scrollBuffer: number
   scrollerRef: ScrollView | null
-  contentRef: View | null
-  indicatorRef: View | null
+
+  state = {
+    itemHeight: 0,
+  }
 
   onItemLayout = (e: any) => {
-    const { height, width } = e.nativeEvent.layout
-    // console.log('onItemLayout', height);
-    if (this.itemHeight !== height || this.itemWidth !== width) {
-      this.itemWidth = width
-      if (this.indicatorRef) {
-        this.indicatorRef.setNativeProps({
-          style: [
-            styles.indicator,
-            {
-              top: height * 3,
-              height,
-              width,
-            },
-          ],
-        })
-      }
-    }
-    if (this.itemHeight !== height) {
-      this.itemHeight = height
-      if (this.scrollerRef) {
-        // eslint-disable-next-line no-extra-semi
-        ;(this.scrollerRef as any).setNativeProps({
-          style: {
-            height: height * 7,
-          },
-        })
-      }
-      if (this.contentRef) {
-        this.contentRef.setNativeProps({
-          style: {
-            paddingTop: height * 3,
-            paddingBottom: height * 3,
-          },
-        })
-      }
-
-      // i do no know why!...
-      setTimeout(() => {
-        this.props.select(
-          this.props.selectedValue,
-          this.itemHeight,
-          this.scrollTo,
-        )
-      }, 0)
-    }
+    const { height } = e.nativeEvent.layout
+    this.setState({ itemHeight: height }, () => {
+      this.props.select(
+        this.props.selectedValue,
+        this.state.itemHeight,
+        this.scrollTo,
+      )
+    })
   }
 
   componentDidUpdate() {
-    this.props.select(this.props.selectedValue, this.itemHeight, this.scrollTo)
+    this.props.select(
+      this.props.selectedValue,
+      this.state.itemHeight,
+      this.scrollTo,
+    )
   }
 
   componentWillUnmount() {
@@ -129,12 +92,23 @@ class Picker extends React.Component<IPickerProp & PickerProps, any> {
     this.clearScrollBuffer()
     this.scrollBuffer = setTimeout(() => {
       this.clearScrollBuffer()
-      this.props.doScrollingComplete(y, this.itemHeight, this.fireValueChange)
+      this.props.doScrollingComplete(
+        y,
+        this.state.itemHeight,
+        this.fireValueChange,
+      )
     }, 50) as any
   }
 
   render() {
-    const { children, itemStyle, selectedValue, style } = this.props
+    const { itemHeight } = this.state
+    const {
+      children,
+      itemStyle,
+      selectedValue,
+      style,
+      numberOfLines = 1,
+    } = this.props
     const items = React.Children.map(children, (item: any, index) => {
       const totalStyle = [styles.itemText]
       if (selectedValue === item.props.value) {
@@ -142,12 +116,15 @@ class Picker extends React.Component<IPickerProp & PickerProps, any> {
       }
       return (
         <View
-          ref={(el) => ((this as any)[`item${index}`] = el)}
-          onLayout={index === 0 ? this.onItemLayout : undefined}
-          key={item.key}>
+          key={index}
+          style={{
+            minHeight: itemHeight,
+            display: 'flex',
+            justifyContent: 'center',
+          }}>
           <Text
             style={[{ includeFontPadding: false }, totalStyle, itemStyle]}
-            numberOfLines={1}>
+            numberOfLines={numberOfLines}>
             {item.props.label}
           </Text>
         </View>
@@ -155,9 +132,22 @@ class Picker extends React.Component<IPickerProp & PickerProps, any> {
     })
     return (
       <View style={style}>
-        <View ref={(el) => (this.indicatorRef = el)} style={styles.indicator} />
+        <View
+          style={[
+            styles.indicator,
+            { top: itemHeight * 3, height: itemHeight },
+          ]}
+        />
+        {/* 计算中文占位符换行的高度后，items统一这个高度 */}
+        {itemHeight === 0 && (
+          <Text
+            style={[styles.itemText, itemStyle]}
+            onLayout={this.onItemLayout}>
+            {Array(numberOfLines).join('\n')}&#12288;
+          </Text>
+        )}
         <ScrollView
-          style={styles.scrollView}
+          style={{ height: itemHeight * 7 }}
           ref={(el) => (this.scrollerRef = el)}
           onScroll={this.onScroll}
           showsVerticalScrollIndicator={false}
@@ -168,7 +158,13 @@ class Picker extends React.Component<IPickerProp & PickerProps, any> {
           collapsable
           horizontal={false}
           removeClippedSubviews>
-          <View ref={(el) => (this.contentRef = el)}>{items}</View>
+          <View
+            style={{
+              paddingTop: itemHeight * 3,
+              paddingBottom: itemHeight * 3,
+            }}>
+            {items}
+          </View>
         </ScrollView>
       </View>
     )
