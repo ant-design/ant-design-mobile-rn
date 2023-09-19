@@ -1,13 +1,13 @@
 import treeFilter from 'array-tree-filter'
 import React from 'react'
+import { getComponentLocale } from '../_util/getLocale'
 import { LocaleContext } from '../locale-provider'
 import { WithTheme, WithThemeStyles } from '../style'
-import { getComponentLocale } from '../_util/getLocale'
-import RMCCascader from './cascader'
-import RMCPopupCascader from './cascader/Popup'
 import MultiPicker from './MultiPicker'
 import RMCPicker from './Picker'
 import { PickerData, PickerPropsType } from './PropsType'
+import RMCCascader from './cascader'
+import RMCPopupCascader from './cascader/Popup'
 import PickerStyles, { PickerStyle } from './style'
 
 export interface PickerProps
@@ -63,7 +63,7 @@ export default class Picker extends React.Component<PickerProps, any> {
   }
 
   getPickerCol = () => {
-    const { data, itemStyle, indicatorStyle } = this.props
+    const { data, itemStyle, indicatorStyle, numberOfLines } = this.props
 
     return ((Array.isArray(data[0]) ? data : [data]) as PickerData[][]).map(
       (col, index) => {
@@ -72,7 +72,8 @@ export default class Picker extends React.Component<PickerProps, any> {
             key={index}
             style={{ flex: 1 }}
             itemStyle={itemStyle}
-            indicatorStyle={indicatorStyle}>
+            indicatorStyle={indicatorStyle}
+            numberOfLines={numberOfLines}>
             {col.map((item) => {
               return (
                 <RMCPicker.Item key={item.value} value={item.value}>
@@ -144,6 +145,7 @@ export default class Picker extends React.Component<PickerProps, any> {
       popupPrefixCls,
       itemStyle,
       indicatorStyle,
+      numberOfLines,
       okText,
       dismissText,
       extra,
@@ -163,7 +165,14 @@ export default class Picker extends React.Component<PickerProps, any> {
     )
 
     const { cascader, popupMoreProps }: { cascader: any; popupMoreProps: {} } =
-      this.getCascade(cascade, data, cols, itemStyle, indicatorStyle)
+      this.getCascade(
+        cascade,
+        data,
+        cols,
+        itemStyle,
+        indicatorStyle,
+        numberOfLines,
+      )
     return (
       <WithTheme styles={restProps.styles} themeStyles={PickerStyles}>
         {(styles) => (
@@ -196,6 +205,7 @@ export default class Picker extends React.Component<PickerProps, any> {
     cols: number | undefined,
     itemStyle: any,
     indicatorStyle: any,
+    numberOfLines: number | undefined,
   ) => {
     let cascader: React.ReactNode
     let popupMoreProps = {}
@@ -208,6 +218,7 @@ export default class Picker extends React.Component<PickerProps, any> {
           onScrollChange={this.setCasecadeScrollValue}
           pickerItemStyle={itemStyle}
           indicatorStyle={indicatorStyle}
+          numberOfLines={numberOfLines}
         />
       )
     } else {

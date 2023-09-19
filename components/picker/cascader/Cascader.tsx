@@ -86,7 +86,14 @@ class Cascader extends React.Component<CascaderProps, any> {
   }
 
   getCols() {
-    const { data, cols, disabled, pickerItemStyle, indicatorStyle } = this.props
+    const {
+      data,
+      cols,
+      disabled,
+      pickerItemStyle,
+      indicatorStyle,
+      numberOfLines,
+    } = this.props
     const value = this.state.value
     const childrenTree = arrayTreeFilter(data, (c, level) => {
       return c.value === value[level]
@@ -107,7 +114,8 @@ class Cascader extends React.Component<CascaderProps, any> {
         style={{ flex: 1 }}
         disabled={disabled}
         itemStyle={pickerItemStyle}
-        indicatorStyle={indicatorStyle}>
+        indicatorStyle={indicatorStyle}
+        numberOfLines={numberOfLines}>
         {children.map((item) => (
           <Picker.Item value={item.value} key={item.value}>
             {item.label}

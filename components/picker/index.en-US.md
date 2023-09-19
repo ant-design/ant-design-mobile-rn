@@ -22,6 +22,7 @@ Properties | Descrition | Type | Default
 | onPickerChange | trigger on each column of selected data is changed  | (val): void | - |
 | onVisibleChange  | visible state change callback    | (visible: bool): void |  -   |
 | itemStyle | style to apply to each of the item labels | Object | -|
+| numberOfLines | Used to truncate the text with an ellipsis after computing the text layout, including line wrapping, such that the total number of lines does not exceed this number  |   Number   | 1  |
 | indicatorStyle  | style of indicator | Object | - |
 | children| usually `List.Item` | Object |  `List.Item`  |
 | okText  | ok text | String |  `确定`  |

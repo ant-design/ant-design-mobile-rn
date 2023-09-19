@@ -11,4 +11,5 @@ export type PickerProps = {
   style?: StyleProp<ViewStyle>
   onScrollChange?: (value: any) => void
   noAnimate?: boolean
+  numberOfLines?: number
 }
