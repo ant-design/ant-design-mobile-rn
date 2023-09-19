@@ -137,14 +137,19 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
         return
       }
       this._newLineLeft = newLineLeft
-      Animated.timing(this.state._leftTabUnderline, {
-        toValue: newLineLeft,
-        useNativeDriver: false,
-      }).start()
-      Animated.timing(this.state._widthTabUnderline, {
-        toValue: newLineRight - newLineLeft,
-        useNativeDriver: false,
-      }).start()
+      if (this.props.animated) {
+        Animated.timing(this.state._leftTabUnderline, {
+          toValue: newLineLeft,
+          useNativeDriver: false,
+        }).start()
+        Animated.timing(this.state._widthTabUnderline, {
+          toValue: newLineRight - newLineLeft,
+          useNativeDriver: false,
+        }).start()
+      } else {
+        this.state._leftTabUnderline.setValue(newLineLeft)
+        this.state._widthTabUnderline.setValue(newLineRight - newLineLeft)
+      }
     }
   }
 
