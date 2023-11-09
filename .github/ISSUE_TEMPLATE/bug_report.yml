@@ -1,0 +1,51 @@
+name: 🐛 Bug Report
+description: The issue which is not created via ISSUE_TEMPLATE will be closed immediately.
+labels: ["Bug🐛"]
+title: "[Bug] "
+body:
+  - type: checkboxes
+    attributes:
+      label: 💬 Before You Start
+      description: Also try to search for your issue - it may have already been answered or even fixed in the development branch.
+       <br/> However, if you find that an old, closed issue still persists in the latest version, you should open a new issue using the form below instead of commenting on the old issue.
+      options:
+        - label: I have searched the [issues](https://github.com/ant-design/ant-design-mobile-rn/issues) of this repository and believe that this is not a duplicate.
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 🙋 Description/Step to reproduce
+      description: |
+       Please provide a clear and concise description of what the bug is. Include screenshots if needed. Test using the latest [![npm package](https://img.shields.io/npm/v/@ant-design/react-native.svg?style=flat-square)](https://www.npmjs.org/package/@ant-design/react-native) to make sure your issue has not already been fixed.
+       Clear and concise reproduction instructions are important for us to be able to triage your issue in a timely manner. Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 💻 Environment
+      multiple: true
+      options:
+        - iOS
+        - Android
+        - Expo
+        - react-native-web
+        - react-native-windows
+        - react-native-macos
+    validations:
+        required: true
+  - type: textarea
+    id: react-native-info
+    attributes:
+      label: ⚫️ Output of `npx react-native info`
+      description: Run npx react-native info in your terminal, copy and paste the results here.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional comments
+      description: |
+        (optional) Please provide a link by forking these links Snack (https://snack.expo.dev/) or GitHub repo. [What is a minimal reproduction, and why is it required?](https://new-issue.ant.design/?repo=ant-design-mobile-rn#repro-modal)
+    validations:
+      required: false

@@ -22,4 +22,5 @@ export interface CascaderProps {
   indicatorStyle?: StyleProp<ViewStyle>
   style?: StyleProp<ViewStyle>
   onScrollChange?: (value: CascaderValue) => void
+  numberOfLines?: number
 }

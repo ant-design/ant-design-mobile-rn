@@ -23,6 +23,7 @@ subtitle: 选择器
 | onPickerChange | 每列数据选择变化后的回调函数   | (val): void | - |
 | onVisibleChange  | 当显隐状态变化时回调函数    | (visible: bool): void |  -   |
 | itemStyle | 每列样式  |   Object   | -  |
+| numberOfLines | 允许每列显示行数  |   Number   | 1  |
 | indicatorStyle  | indicator 样式 | Object | - |
 | children| 通常是 `List.Item` | Object |  `List.Item`  |
 | okText  | 选中的文案 | String |  `确定`  |

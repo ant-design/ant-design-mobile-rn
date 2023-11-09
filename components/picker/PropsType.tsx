@@ -1,7 +1,7 @@
 import { StyleProp, TextStyle, ViewStyle } from 'react-native'
 import { Omit } from 'utility-types'
-import { CascaderValue } from './cascader/CascaderTypes'
 import { PopupPickerProps } from './PopupPickerTypes'
+import { CascaderValue } from './cascader/CascaderTypes'
 export interface PickerData {
   value: string | number
   label: string
@@ -18,4 +18,5 @@ export interface PickerPropsType extends Omit<PopupPickerProps, 'styles'> {
   onPickerChange?: (value: CascaderValue) => void
   itemStyle?: StyleProp<TextStyle>
   indicatorStyle?: StyleProp<ViewStyle>
+  numberOfLines?: number
 }

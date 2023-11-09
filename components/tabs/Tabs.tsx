@@ -65,7 +65,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
   }
 
   renderContent = (getSubElements = this.getSubElements()) => {
-    const { tabs, usePaged, destroyInactiveTab } = this.props
+    const { tabs, destroyInactiveTab } = this.props
     const { containerHeight = 0, containerWidth = 0, currentTab } = this.state
     const content = tabs.map((tab, index) => {
       const key = tab.key || `tab_${index}`
@@ -103,7 +103,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
             this.state.scrollX.setValue(index * this.state.containerWidth)
           })
         }}
-        scrollEnabled={this.props.swipeable || usePaged}
+        scrollEnabled={this.props.swipeable}
         style={{
           height: containerHeight,
           width: containerWidth,
@@ -219,12 +219,13 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     direction === 'vertical'
 
   shouldRenderTab = (idx: number) => {
-    const { prerenderingSiblingsNumber = 0 } = this.props
+    const { prerenderingSiblingsNumber = 0, usePaged } = this.props
     const { currentTab = 0 } = this.state
 
     return (
-      currentTab - prerenderingSiblingsNumber <= idx &&
-      idx <= currentTab + prerenderingSiblingsNumber
+      !usePaged ||
+      (currentTab - prerenderingSiblingsNumber <= idx &&
+        idx <= currentTab + prerenderingSiblingsNumber)
     )
   }
 
@@ -258,7 +259,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
 
   goToTab(index: number) {
     if (this.carousel) {
-      this.carousel.goTo(index)
+      this.carousel.goTo(index, this.props.animated)
     }
     this.setState({ currentTab: index }, () => {
       this.state.scrollX.setValue(index * this.state.containerWidth)

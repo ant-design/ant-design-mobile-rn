@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🆕 Create new issue
+    url: http://new-issue.ant.design?repo=ant-design-mobile-rn
+    about: The issue which is not created via http://new-issue.ant.design will be closed immediately.
