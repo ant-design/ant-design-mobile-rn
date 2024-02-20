@@ -19,16 +19,18 @@
   "dependencies": {
     "@ant-design/icons-react-native": "^2.3.2",
     "@ant-design/react-native": "*",
-    "expo": "^47.0.0",
+    "expo": "49",
     "expo-font": "~11.0.1",
     "expo-splash-screen": "~0.17.4",
     "expo-updates": "~0.15.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-native": "0.70.5",
+    "react-native": "0.70.8",
+    "react-native-gesture-handler": "~2.12.0",
     "react-native-reanimated": "~2.12.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "9.0.2"
+    "@expo/metro-runtime": "^2.2.15",
+    "babel-preset-expo": "~9.2.1"
   }
 }

@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import React, { useCallback } from 'react'
 import { View } from 'react-native'
+import 'react-native-gesture-handler'
 
 SplashScreen.preventAutoHideAsync()
 
