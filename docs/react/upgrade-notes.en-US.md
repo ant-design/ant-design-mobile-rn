@@ -5,6 +5,26 @@ title: Upgrade
 
 Here list some of main incompatible changes and recommended changes in the upgrade. See [Changelog](/changelog) for all changes.
 
+### 5.1.0
+
+> 安装 peer 依赖
+
+```bash
+npm install @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+```
+
+or
+
+```bash
+yarn add @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+```
+<br/>
+> On the root of the Project, the `App.js/ App.tsx` file probably need import
+
+```js
+import 'react-native-gesture-handler';
+```
+
 ### 5.0.3
 
 > Installing peer dependencies

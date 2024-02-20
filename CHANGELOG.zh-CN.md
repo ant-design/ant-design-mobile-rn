@@ -14,6 +14,19 @@ toc: false
 
 ---
 
+### 5.1.0
+`2024-02-20`
+- 重构 **Picker** & **PickerView**
+  - 🔥 重构开发并移除 `@react-native-picker/picker` 依赖
+  - 💄 基于 `ScrollView {snapToInterval}` 开发并支持`web`端
+  - 🆕 重构 `itemStyle` 样式，显示更灵活 [#1311](https://github.com/ant-design/ant-design-mobile-rn/issues/1311) [#1316](https://github.com/ant-design/ant-design-mobile-rn/issues/1316)
+  - 🆕 Picker 新增 (`visible`) 属性支持
+- 重构 **DatePicker** & **DatePickerView**
+  - 💄 **样式** 和 **基础属性** 继承 Picker & PickerView
+  - 🆕 新增 (`precision` `filter` ) 属性支持
+  - ⚡️ 废弃（<del>`mode`</del>）属性；时间格式引用[Day.js](https://day.js.org/docs/zh-CN/parse/string-format)
+- ❗️删除 **ImagePicker** 并移除 `@react-native-camera-roll/camera-roll` 依赖
+
 ### 5.0.5
 `2023-11-08`
 - fix: Picker support `numberOfLines` property [#1311](https://github.com/ant-design/ant-design-mobile-rn/issues/1311)
