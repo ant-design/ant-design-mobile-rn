@@ -10,15 +10,13 @@ Array [
       }
     }
   >
-    <View>
-      <Text
-        extra="请选择"
-        onPress={[Function]}
-        testID="button"
-      >
-        省市选择
-      </Text>
-    </View>
+    <Text
+      extra="请选择"
+      onPress={[Function]}
+      testID="button"
+    >
+      省市选择
+    </Text>
   </View>,
   <View
     collapsable={false}
@@ -165,21 +163,7 @@ Array [
                 },
               ]
             }
-          >
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#666",
-                    "fontSize": 18,
-                    "textAlign": "center",
-                  },
-                ]
-              }
-            >
-              
-            </Text>
-          </View>
+          />
           <View
             accessible={true}
             focusable={true}
@@ -217,115 +201,43 @@ Array [
             </Text>
           </View>
         </View>
-        <View
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-              },
-              undefined,
-            ]
-          }
-        >
+        <View>
           <View
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
+            onLayout={[Function]}
           >
-            <RNCPicker
-              items={
-                Array [
-                  Object {
-                    "label": "北京市",
-                    "testID": undefined,
-                    "textColor": undefined,
-                    "value": "11",
-                  },
-                ]
-              }
-              numberOfLines={1}
-              onChange={[Function]}
-              selectedIndex={0}
+            <View
               style={
                 Array [
                   Object {
-                    "height": 216,
-                  },
-                  undefined,
-                ]
-              }
-            />
-          </View>
-          <View
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
-          >
-            <RNCPicker
-              items={
-                Array [
-                  Object {
-                    "label": "市辖区",
-                    "testID": undefined,
-                    "textColor": undefined,
-                    "value": "1101",
+                    "height": "auto",
+                    "justifyContent": "center",
+                    "overflow": "hidden",
                   },
                 ]
               }
-              numberOfLines={1}
-              onChange={[Function]}
-              selectedIndex={0}
-              style={
-                Array [
-                  Object {
-                    "height": 216,
-                  },
-                  undefined,
-                ]
-              }
-            />
-          </View>
-          <View
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
-          >
-            <RNCPicker
-              items={
-                Array [
-                  Object {
-                    "label": "东城区",
-                    "testID": undefined,
-                    "textColor": undefined,
-                    "value": "110101",
-                  },
-                  Object {
-                    "label": "西城区",
-                    "testID": undefined,
-                    "textColor": undefined,
-                    "value": "110102",
-                  },
-                ]
-              }
-              numberOfLines={1}
-              onChange={[Function]}
-              selectedIndex={0}
-              style={
-                Array [
-                  Object {
-                    "height": 216,
-                  },
-                  undefined,
-                ]
-              }
-            />
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#333",
+                      "fontSize": 16,
+                      "includeFontPadding": false,
+                      "padding": 8,
+                      "textAlign": "center",
+                    },
+                    undefined,
+                    Object {
+                      "height": "auto",
+                    },
+                  ]
+                }
+              >
+                
+                　
+              </Text>
+            </View>
           </View>
         </View>
       </View>

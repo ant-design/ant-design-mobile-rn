@@ -8,7 +8,6 @@ const transformPackages = [
   'react-native-collapsible',
   '@bang88/react-native-ultimate-listview',
   '@react-native-community',
-  '@react-native-picker/picker',
   'react-native-gesture-handler'
 ];
 
