@@ -1,240 +1,97 @@
-import treeFilter from 'array-tree-filter'
-import React from 'react'
-import { getComponentLocale } from '../_util/getLocale'
-import { LocaleContext } from '../locale-provider'
-import { WithTheme, WithThemeStyles } from '../style'
-import MultiPicker from './MultiPicker'
-import RMCPicker from './Picker'
-import { PickerData, PickerPropsType } from './PropsType'
-import RMCCascader from './cascader'
-import RMCPopupCascader from './cascader/Popup'
-import PickerStyles, { PickerStyle } from './style'
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
+import { mergeProps } from '../_util/with-default-props'
+import { PickerValue } from '../picker-view/PropsType'
+import { getColumns, getValueExtend } from '../picker-view/columns-extend'
+import { PickerPropsType } from './PropsType'
+import RMCPicker, { PickerRef } from './picker'
 
-export interface PickerProps
-  extends PickerPropsType,
-    WithThemeStyles<PickerStyle> {
-  pickerPrefixCls?: string
-  popupPrefixCls?: string
-  children: React.ReactNode
+export interface PickerProps extends PickerPropsType {}
+
+const defaultProps = {
+  defaultValue: [],
+  cols: 3,
+  cascade: true,
 }
 
-export function getDefaultProps() {
-  const defaultFormat = (values: string[]) => {
-    return values.join(',')
-  }
-  return {
-    triggerType: 'onPress',
-    prefixCls: 'am-picker',
-    pickerPrefixCls: 'am-picker-col',
-    popupPrefixCls: 'am-picker-popup',
-    format: defaultFormat,
-    cols: 3,
-    cascade: true,
-    title: '',
-  }
-}
+const Picker = forwardRef<PickerRef, PickerProps>((props, ref) => {
+  const p = mergeProps(defaultProps, props)
 
-export default class Picker extends React.Component<PickerProps, any> {
-  static contextType = LocaleContext
-  static defaultProps = getDefaultProps()
-  protected popupProps: {}
-  private scrollValue: any
-  getSel = () => {
-    const value = this.props.value || []
-    let treeChildren: PickerData[]
-    const { data } = this.props
-    if (this.props.cascade) {
-      treeChildren = treeFilter(data as PickerData[], (c: any, level: any) => {
-        return c.value === value[level]
-      })
-    } else {
-      treeChildren = value.map((v, i) => {
-        return (data as PickerData[][])[i].filter((d) => d.value === v)[0]
-      })
-    }
-    return (
-      this.props.format &&
-      this.props.format(
-        treeChildren.map((v) => {
-          return v.label
-        }),
-      )
-    )
-  }
+  const [innerValue, setInnerValue] = useState<PickerValue[]>(
+    p.value === undefined ? p.defaultValue : p.value,
+  )
 
-  getPickerCol = () => {
-    const { data, itemStyle, indicatorStyle, numberOfLines } = this.props
+  const pickerRef = React.useRef<PickerRef>(null)
 
-    return ((Array.isArray(data[0]) ? data : [data]) as PickerData[][]).map(
-      (col, index) => {
-        return (
-          <RMCPicker
-            key={index}
-            style={{ flex: 1 }}
-            itemStyle={itemStyle}
-            indicatorStyle={indicatorStyle}
-            numberOfLines={numberOfLines}>
-            {col.map((item) => {
-              return (
-                <RMCPicker.Item key={item.value} value={item.value}>
-                  {item.label}
-                </RMCPicker.Item>
-              )
-            })}
-          </RMCPicker>
-        )
-      },
-    )
-  }
+  useImperativeHandle(ref, () => pickerRef.current as PickerRef)
 
-  onOk = (v: any) => {
-    if (this.scrollValue !== undefined) {
-      v = this.scrollValue
-    }
-    if (this.props.onChange) {
-      this.props.onChange(v)
-    }
-    if (this.props.onOk) {
-      this.props.onOk(v)
-    }
-  }
+  const columns = useMemo(
+    () => getColumns(p.data, innerValue, p.cols, p.cascade),
+    [p.data, innerValue, p.cols, p.cascade],
+  )
 
-  setScrollValue = (v: any) => {
-    this.scrollValue = v
-  }
+  const handleSelect = useCallback(
+    (val: PickerValue, index: number) => {
+      const value = innerValue?.slice?.(0) || []
+      value[index] = val
+      const { nextValue } = getValueExtend(p.data, value, p.cols, p.cascade)
+      setInnerValue(nextValue)
+      p.onPickerChange?.(nextValue, index)
+    },
+    [p, innerValue, setInnerValue],
+  )
 
-  setCasecadeScrollValue = (v: any) => {
-    // 级联情况下保证数据正确性，滚动过程中只有当最后一级变化时才变更数据
-    if (v && this.scrollValue) {
-      const length = this.scrollValue.length
-      if (
-        length === v.length &&
-        this.scrollValue[length - 1] === v[length - 1]
-      ) {
-        return
+  // 记录value是否变化过
+  const isValueChanged = useRef(false)
+
+  const onVisibleChange = useCallback(
+    (visible) => {
+      p.onVisibleChange?.(visible)
+      if (!visible && p.value !== innerValue && isValueChanged.current) {
+        // 关闭时，如果选中值不同步，恢复为原选中值
+        setInnerValue(p.value || [])
       }
-    }
-    this.setScrollValue(v)
-  }
+    },
+    [innerValue, p, setInnerValue],
+  )
 
-  fixOnOk = (cascader: any) => {
-    if (cascader && cascader.onOk !== this.onOk) {
-      cascader.onOk = this.onOk
-      cascader.forceUpdate()
-    }
-  }
+  // for useEffect only on update
+  const isInitialMount = useRef(true)
 
-  onPickerChange = (v: any) => {
-    this.setScrollValue(v)
-    if (this.props.onPickerChange) {
-      this.props.onPickerChange(v)
-    }
-  }
-
-  onVisibleChange = (visible: boolean) => {
-    this.setScrollValue(undefined)
-    if (this.props.onVisibleChange) {
-      this.props.onVisibleChange(visible)
-    }
-  }
-
-  render() {
-    const {
-      children,
-      value = [],
-      popupPrefixCls,
-      itemStyle,
-      indicatorStyle,
-      numberOfLines,
-      okText,
-      dismissText,
-      extra,
-      cascade,
-      data,
-      cols,
-      onOk,
-      ...restProps
-    } = this.props
-
-    // tslint:disable-next-line:variable-name
-    const _locale = getComponentLocale(
-      this.props,
-      (this as any).context,
-      'Picker',
-      () => require('./locale/zh_CN'),
-    )
-
-    const { cascader, popupMoreProps }: { cascader: any; popupMoreProps: {} } =
-      this.getCascade(
-        cascade,
-        data,
-        cols,
-        itemStyle,
-        indicatorStyle,
-        numberOfLines,
-      )
-    return (
-      <WithTheme styles={restProps.styles} themeStyles={PickerStyles}>
-        {(styles) => (
-          <RMCPopupCascader
-            cascader={cascader}
-            {...this.popupProps}
-            {...restProps}
-            styles={styles}
-            value={value}
-            dismissText={dismissText || _locale.dismissText}
-            okText={okText || _locale.okText}
-            {...popupMoreProps}
-            ref={this.fixOnOk}
-            onVisibleChange={this.onVisibleChange}>
-            {children &&
-              typeof children !== 'string' &&
-              React.isValidElement(children) &&
-              React.cloneElement<object, any>(children as any, {
-                extra: this.getSel() || extra || _locale.extra,
-              })}
-          </RMCPopupCascader>
-        )}
-      </WithTheme>
-    )
-  }
-
-  getCascade = (
-    cascade: boolean | undefined,
-    data: PickerData[] | PickerData[][],
-    cols: number | undefined,
-    itemStyle: any,
-    indicatorStyle: any,
-    numberOfLines: number | undefined,
-  ) => {
-    let cascader: React.ReactNode
-    let popupMoreProps = {}
-    if (cascade) {
-      cascader = (
-        <RMCCascader
-          data={(Array.isArray(data[0]) ? data[0] : data) as PickerData[]}
-          cols={cols}
-          onChange={this.onPickerChange}
-          onScrollChange={this.setCasecadeScrollValue}
-          pickerItemStyle={itemStyle}
-          indicatorStyle={indicatorStyle}
-          numberOfLines={numberOfLines}
-        />
-      )
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+      // extra update initial
+      pickerRef.current?._updateExtra()
     } else {
-      cascader = (
-        <MultiPicker
-          style={{ flexDirection: 'row', alignItems: 'center' }}
-          onScrollChange={this.setScrollValue}
-          onValueChange={this.onPickerChange}>
-          {this.getPickerCol()}
-        </MultiPicker>
-      )
-      popupMoreProps = {
-        pickerValueProp: 'selectedValue',
-        pickerValueChangeProp: 'onValueChange',
-      }
+      isValueChanged.current = true
+      setInnerValue(p.value || [])
+      // extra update after value update
+      setTimeout(() => {
+        pickerRef.current?._updateExtra()
+      })
     }
-    return { cascader, popupMoreProps }
-  }
-}
+  }, [p.value])
+
+  return (
+    <RMCPicker
+      {...p}
+      value={innerValue}
+      columns={columns}
+      handleSelect={handleSelect}
+      onVisibleChange={onVisibleChange}
+      ref={pickerRef}
+    />
+  )
+})
+
+Picker.displayName = 'AntmPicker'
+
+export default Picker

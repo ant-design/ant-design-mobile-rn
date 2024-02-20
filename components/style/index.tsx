@@ -17,9 +17,33 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 export interface UseThemeContextProps {
   theme?: PartialTheme
 }
-export const useTheme = (props: UseThemeContextProps = {}) => {
+export const useTheme = <T, S>(props: any) => {
   const theme = React.useContext(ThemeContext)
-  return { ...theme, ...props.theme }
+  const { themeStyles, styles } = props
+
+  const stylesRef = React.useRef<S | undefined>(undefined)
+  const cache = React.useRef<T | any>(undefined)
+
+  const getStyles = React.useCallback(() => {
+    if (themeStyles && cache.current === undefined) {
+      cache.current = themeStyles(theme)
+    }
+
+    // TODO: check these styles has changed
+    if (styles && !shallowequal(stylesRef.current, styles)) {
+      stylesRef.current = styles
+      // merge styles from user defined
+      styles &&
+        Object.keys(styles).forEach((key) => {
+          if (cache.current[key]) {
+            cache.current[key] = [cache.current[key], styles[key]]
+          }
+        })
+    }
+
+    return cache.current || {}
+  }, [theme, themeStyles, styles])
+  return getStyles()
 }
 
 export interface WithThemeProps<T, S> {
