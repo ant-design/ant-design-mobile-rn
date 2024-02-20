@@ -2,22 +2,48 @@
 category: Components
 type: Data Entry
 title: DatePickerView
-subtitle: 选择器
+subtitle: 日期选择器
 ---
 
 DatePickerView 的功能类似于 DatePicker ，但它是直接渲染在区域中，而不是弹出窗口。
 
 ## API
 
-属性 | 说明 | 类型 | 默认值
-----|-----|------|------
-| mode  | 日期选择的类型, 可以是日期`date`,时间`time`,日期+时间`datetime`,年`year`,月`month` | String | `date` |
-| value | 当前选中时间 | Date | 无 |
-| minDate   | 最小可选日期 | Date  |  2000-1-1  |
-| maxDate   | 最大可选日期 | Date  |  2030-1-1  |
-| minuteStep |  分钟数递增步长设置   | Number | 1 |
-| locale   | 国际化，可覆盖全局`[LocaleProvider](https://mobile.ant.design/components/locale-provider)`的配置 | Object: {DatePickerLocale: {year, month, day, hour, minute, am?, pm?}, okText, dismissText } | - |
-| disabled   | 是否不可用      | Boolean |    false  |
-| use12Hours   | 12小时制      | Boolean |    false  |
-| onChange   | 时间发生变化的回调函数  | (date: Object): void | - |
-| onValueChange | 每列 picker 改变时的回调 | (vals: any, index: number) => void | - |
+```ts
+type Precision =
+  | 'week'
+  | 'week-day'
+  | 'year'
+  | 'month'
+  | 'day'
+  | 'hour'
+  | 'minute'
+  | 'second'
+
+type DatePickerFilter = Partial<
+  Record<
+    Precision,
+    (
+      val: number,
+      extend: {
+        date: Date
+      }
+    ) => boolean
+  >
+>
+```
+
+属性 | 说明 | 类型 | 默认值 | 版本
+----|-----|------|------|------
+| precision  | 精度 | `Precision` | `day` |`5.1.0`|
+| value | 当前选中时间 | Date | 无 ||
+| defaultValue | 默认选中时间 | Date | 无 ||
+| minDate   | 最小可选日期 | Date  |  2000-1-1  ||
+| maxDate   | 最大可选日期 | Date  |  2030-1-1  ||
+| onChange   | 时间发生变化的回调函数  | `(value: Date) => void` | - ||
+| onValueChange | 每列 picker 改变时的回调 | `(value: Date, index: number) => void` | - ||
+| renderLabel | 自定义渲染每列展示的内容。其中 `type` 参数为 `precision` 中的任意值或 `now`，`data` 参数为默认渲染的数字 | `(type:Precision / 'now', data: number) => ReactNode` | - ||
+| filter  | 过滤可供选择的时间 | `DatePickerFilter` | - | `5.1.0` |
+
+
+此外还支持 PickerView 的以下属性：`style` `styles` `itemStyle` `itemHeight` `numberOfLines` `renderMaskTop` `renderMaskBottom`
