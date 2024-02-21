@@ -10,8 +10,8 @@ import React, {
 import { mergeProps } from '../_util/with-default-props'
 import { PickerValue } from '../picker-view/PropsType'
 import { getColumns, getValueExtend } from '../picker-view/columns-extend'
+import RMCPicker, { PickerRef } from './Picker'
 import { PickerPropsType } from './PropsType'
-import RMCPicker, { PickerRef } from './picker'
 
 export interface PickerProps extends PickerPropsType {}
 

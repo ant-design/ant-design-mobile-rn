@@ -13,7 +13,7 @@ import { getComponentLocale } from '../_util/getLocale'
 import { mergeProps } from '../_util/with-default-props'
 import useRenderLabel from '../date-picker-view/useRenderLabel'
 import { LocaleContext } from '../locale-provider'
-import RMCPicker, { PickerRef } from '../picker/picker'
+import RMCPicker, { PickerRef } from '../picker/Picker'
 import { DatePickerPropsType } from './PropsType'
 import { getValueExtend, usePickerValue } from './columns-extend'
 import {
