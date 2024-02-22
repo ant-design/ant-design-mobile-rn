@@ -15,7 +15,7 @@ toc: false
 ---
 
 ### 5.1.0
-`2024-02-20`
+`2024-02-23`
 - 重构 **Picker** & **PickerView**
   - 🔥 重构开发并移除 `@react-native-picker/picker` 依赖
   - 💄 基于 `ScrollView {snapToInterval}` 开发并支持`web`端
@@ -26,6 +26,9 @@ toc: false
   - 🆕 新增 (`precision` `filter` ) 属性支持
   - ⚡️ 废弃（<del>`mode`</del>）属性；时间格式引用[Day.js](https://day.js.org/docs/zh-CN/parse/string-format)
 - ❗️删除 **ImagePicker** 并移除 `@react-native-camera-roll/camera-roll` 依赖
+- **Switch**
+  - fix: `checked`属性支持全受控模式 [#1325](https://github.com/ant-design/ant-design-mobile-rn/issues/1325)
+  - feat: `onChange`属性当返回 Promise 时，会自动显示加载状态
 
 ### 5.0.5
 `2023-11-08`

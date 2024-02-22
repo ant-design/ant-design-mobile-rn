@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 import { ColorValue } from 'react-native'
 
@@ -15,6 +14,9 @@ export interface SwitchPropsType {
   title?: string
   checkedChildren?: string | React.ReactNode
   unCheckedChildren?: string | React.ReactNode
-  onChange?: (checked: boolean) => void
+  onChange?: (checked: boolean) => void | Promise<void>
+  /**
+   * @deprecated
+   */
   onPress?: (checked: boolean) => void
 }

@@ -26,6 +26,9 @@ toc: false
   - 🆕 Support (`precision` `filter` ) new props
   - ⚡️ Deprecated (<del>`mode`</del>）prop; date format by [Day.js](https://day.js.org/docs/en/parse/string-format)
 - ❗️Delete **ImagePicker** and remove dependence `@react-native-camera-roll/camera-roll`
+- **Switch**
+  - fix: `checked` prop support controlled mode [#1325](https://github.com/ant-design/ant-design-mobile-rn/issues/1325)
+  - feat: `onChange` prop when the Promise is returned, the loading status will be displayed automatically
 
 ### 5.0.5
 `2023-11-08`
