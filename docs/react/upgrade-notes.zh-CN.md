@@ -5,6 +5,26 @@ title: 升级指南
 
 此处着重列出升级中的不兼容变化和推荐改动。所有变动请见 [Changelog](/changelog)。
 
+### 5.1.0
+
+> 安装 peer 依赖
+
+```bash
+npm install @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+```
+
+or
+
+```bash
+yarn add @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+```
+<br/>
+> 在项目的根目录下，入口文件(通常是App.js)文件中需要引入这句：
+
+```js
+import 'react-native-gesture-handler';
+```
+
 ### 5.0.3
 
 > 安装 peer 依赖

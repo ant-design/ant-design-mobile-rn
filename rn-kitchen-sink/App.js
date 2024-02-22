@@ -4,8 +4,8 @@ import React from 'react'
 import { AppRegistry } from 'react-native'
 import 'react-native-gesture-handler'
 import Provider from '../components/provider'
-import RnIndex from './components/index'
 import Theme from './components/Theme'
+import RnIndex from './components/index'
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from './demoList'
 
 const getOptions = (title) => ({
@@ -78,9 +78,11 @@ AppRegistry.registerComponent('KitchenSink', () => App)
 export default App
 
 // global catch error to avoid crash
-global.ErrorUtils?.setGlobalHandler((e, isFatal) => {
-  if (isFatal) {
-    // eslint-disable-next-line no-alert
-    alert(`${e.name}: ${e.message}`)
-  }
-})
+if (!__DEV__) {
+  global.ErrorUtils?.setGlobalHandler((e, isFatal) => {
+    if (isFatal) {
+      // eslint-disable-next-line no-alert
+      alert(`${e.name}: ${e.message}`)
+    }
+  })
+}

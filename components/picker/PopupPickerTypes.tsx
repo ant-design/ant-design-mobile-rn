@@ -1,27 +1,15 @@
-import React from 'react'
+import type { ReactNode } from 'react'
 
 export type PopupPickerProps = {
-  picker?: any
-  value?: any
-  triggerType?: string
-  WrapComponent?: any
-  dismissText?: string | React.ReactElement<any> // React.ReactElement only for web
-  okText?: string | React.ReactElement<any> // React.ReactElement only for web
-  title?: string | React.ReactElement<any> // React.ReactElement only for web
-  visible?: boolean
-  disabled?: boolean
-  onOk?: (value?: any) => void
-  style?: any
-  onVisibleChange?: (visible: boolean) => void
-  content?: React.ReactElement<any> | string
+  onOk?: () => void
   onDismiss?: () => void
-  styles?: any
+  onClose?: () => void
+  title?: ReactNode
+  visible?: boolean
+  okText?: ReactNode
+  dismissText?: ReactNode
+  children?: ReactNode
+  styles: any
   actionTextUnderlayColor?: string
   actionTextActiveOpacity?: number
-  wrapStyle?: React.CSSProperties
-  pickerValueProp?: string
-  pickerValueChangeProp?: string
-  transitionName?: string
-  popupTransitionName?: string
-  maskTransitionName?: string
 }

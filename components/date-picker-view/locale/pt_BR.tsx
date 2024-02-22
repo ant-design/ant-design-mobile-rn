@@ -1,3 +1,9 @@
-import DatePickerLocale from '../../date-picker/datepicker/locale/pt_BR'
-
-export default DatePickerLocale
+export default {
+  year: 'Ano',
+  month: 'Mês',
+  day: 'Dia',
+  hour: 'Hora',
+  minute: 'Minuto',
+  am: 'AM',
+  pm: 'PM',
+}

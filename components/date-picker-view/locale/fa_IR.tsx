@@ -1,3 +1,9 @@
-import DatePickerLocale from '../../date-picker/datepicker/locale/fa_IR'
-
-export default DatePickerLocale
+export default {
+  year: 'سال',
+  month: 'ماه',
+  day: 'روز',
+  hour: 'ساعت',
+  minute: 'دقیقه',
+  am: 'صبح',
+  pm: 'بعد از ظهر',
+}

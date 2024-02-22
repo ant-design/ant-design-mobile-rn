@@ -1,8 +1,7 @@
-import DatePickerLocale from '../datepicker/locale/pt_BR'
+import DatePickerLocale from '../../date-picker-view/locale/pt_BR'
+import PickerLocale from '../../picker/locale/pt_BR'
 
 export default {
-  okText: 'OK',
-  dismissText: 'Cancelar',
-  extra: 'Selecione',
+  ...PickerLocale,
   DatePickerLocale,
 }

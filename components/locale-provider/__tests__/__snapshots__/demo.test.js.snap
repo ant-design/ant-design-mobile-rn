@@ -12,29 +12,46 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
     ]
   }
 >
-  <View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
     <View
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "paddingLeft": 15,
+          },
+          undefined,
+        ]
+      }
     >
       <View
         style={
           Array [
             Object {
               "alignItems": "center",
-              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "flex": 1,
               "flexDirection": "row",
-              "flexGrow": 1,
-              "paddingLeft": 15,
+              "minHeight": 44,
+              "paddingRight": 15,
+              "paddingVertical": 6,
             },
-            undefined,
+            false,
+            false,
           ]
         }
       >
@@ -42,91 +59,72 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
           style={
             Array [
               Object {
-                "alignItems": "center",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
                 "flex": 1,
-                "flexDirection": "row",
-                "minHeight": 44,
-                "paddingRight": 15,
-                "paddingVertical": 6,
+                "flexDirection": "column",
               },
-              false,
-              false,
             ]
           }
         >
-          <View
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                },
-              ]
-            }
-          >
-            <Text
-              numberOfLines={1}
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontSize": 17,
-                    "textAlignVertical": "center",
-                  },
-                ]
-              }
-            >
-              Choose language
-            </Text>
-          </View>
-          <View
-            style={
-              Array [
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                },
-              ]
-            }
-          >
-            <Text
-              numberOfLines={1}
-              style={
-                Array [
-                  Object {
-                    "color": "#888888",
-                    "fontSize": 17,
-                    "textAlign": "right",
-                    "textAlignVertical": "center",
-                  },
-                ]
-              }
-            >
-              English
-            </Text>
-          </View>
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "color": "#cccccc",
-                  "fontFamily": "antoutline",
-                  "fontSize": 22,
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                Object {
-                  "marginLeft": 8,
-                  "marginTop": 3,
+                  "color": "#000000",
+                  "fontSize": 17,
+                  "textAlignVertical": "center",
                 },
               ]
             }
           >
-            
+            Choose language
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#888888",
+                  "fontSize": 17,
+                  "textAlign": "right",
+                  "textAlignVertical": "center",
+                },
+              ]
+            }
+          >
+            请选择
+          </Text>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#cccccc",
+                "fontFamily": "antoutline",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {
+                "marginLeft": 8,
+                "marginTop": 3,
+              },
+            ]
+          }
+        >
+          
+        </Text>
       </View>
     </View>
   </View>
@@ -397,29 +395,46 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
           }
         }
       >
-        <View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+        >
           <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "paddingLeft": 15,
+                },
+                undefined,
+              ]
+            }
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "backgroundColor": "#ffffff",
+                    "borderBottomColor": "#dddddd",
+                    "borderBottomWidth": 0.5,
+                    "flex": 1,
                     "flexDirection": "row",
-                    "flexGrow": 1,
-                    "paddingLeft": 15,
+                    "minHeight": 44,
+                    "paddingRight": 15,
+                    "paddingVertical": 6,
                   },
-                  undefined,
+                  false,
+                  false,
                 ]
               }
             >
@@ -427,117 +442,115 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "borderBottomColor": "#dddddd",
-                      "borderBottomWidth": 0.5,
                       "flex": 1,
-                      "flexDirection": "row",
-                      "minHeight": 44,
-                      "paddingRight": 15,
-                      "paddingVertical": 6,
+                      "flexDirection": "column",
                     },
-                    false,
-                    false,
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontSize": 17,
-                          "textAlignVertical": "center",
-                        },
-                      ]
-                    }
-                  >
-                    DatePicker
-                  </Text>
-                </View>
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#888888",
-                          "fontSize": 17,
-                          "textAlign": "right",
-                          "textAlignVertical": "center",
-                        },
-                      ]
-                    }
-                  >
-                    please select
-                  </Text>
-                </View>
                 <Text
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
-                        "color": "#cccccc",
-                        "fontFamily": "antoutline",
-                        "fontSize": 22,
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      Object {
-                        "marginLeft": 8,
-                        "marginTop": 3,
+                        "color": "#000000",
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
                       },
                     ]
                   }
                 >
-                  
+                  DatePicker
                 </Text>
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#888888",
+                        "fontSize": 17,
+                        "textAlign": "right",
+                        "textAlignVertical": "center",
+                      },
+                    ]
+                  }
+                >
+                  please select
+                </Text>
+              </View>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#cccccc",
+                      "fontFamily": "antoutline",
+                      "fontSize": 22,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {
+                      "marginLeft": 8,
+                      "marginTop": 3,
+                    },
+                  ]
+                }
+              >
+                
+              </Text>
             </View>
           </View>
         </View>
-        <View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+        >
           <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "paddingLeft": 15,
+                },
+                undefined,
+              ]
+            }
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "backgroundColor": "#ffffff",
+                    "borderBottomColor": "#dddddd",
+                    "borderBottomWidth": 0.5,
+                    "flex": 1,
                     "flexDirection": "row",
-                    "flexGrow": 1,
-                    "paddingLeft": 15,
+                    "minHeight": 44,
+                    "paddingRight": 15,
+                    "paddingVertical": 6,
                   },
-                  undefined,
+                  false,
+                  false,
                 ]
               }
             >
@@ -545,91 +558,72 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "borderBottomColor": "#dddddd",
-                      "borderBottomWidth": 0.5,
                       "flex": 1,
-                      "flexDirection": "row",
-                      "minHeight": 44,
-                      "paddingRight": 15,
-                      "paddingVertical": 6,
+                      "flexDirection": "column",
                     },
-                    false,
-                    false,
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontSize": 17,
-                          "textAlignVertical": "center",
-                        },
-                      ]
-                    }
-                  >
-                    Picker
-                  </Text>
-                </View>
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#888888",
-                          "fontSize": 17,
-                          "textAlign": "right",
-                          "textAlignVertical": "center",
-                        },
-                      ]
-                    }
-                  >
-                    please select
-                  </Text>
-                </View>
                 <Text
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
-                        "color": "#cccccc",
-                        "fontFamily": "antoutline",
-                        "fontSize": 22,
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      Object {
-                        "marginLeft": 8,
-                        "marginTop": 3,
+                        "color": "#000000",
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
                       },
                     ]
                   }
                 >
-                  
+                  Picker
                 </Text>
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#888888",
+                        "fontSize": 17,
+                        "textAlign": "right",
+                        "textAlignVertical": "center",
+                      },
+                    ]
+                  }
+                >
+                  please select
+                </Text>
+              </View>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#cccccc",
+                      "fontFamily": "antoutline",
+                      "fontSize": 22,
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {
+                      "marginLeft": 8,
+                      "marginTop": 3,
+                    },
+                  ]
+                }
+              >
+                
+              </Text>
             </View>
           </View>
         </View>

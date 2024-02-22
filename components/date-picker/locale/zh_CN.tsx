@@ -1,8 +1,7 @@
-import DatePickerLocale from '../datepicker/locale/zh_CN'
+import DatePickerLocale from '../../date-picker-view/locale/zh_CN'
+import PickerLocale from '../../picker/locale/zh_CN'
 
 export default {
-  okText: '确定',
-  dismissText: '取消',
-  extra: '请选择',
+  ...PickerLocale,
   DatePickerLocale,
 }

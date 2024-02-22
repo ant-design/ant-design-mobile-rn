@@ -7,6 +7,7 @@ export default class SwitchExample extends React.Component<any, any> {
     super(props)
     this.state = {
       disabled: true,
+      checked: false,
     }
   }
 
@@ -15,6 +16,20 @@ export default class SwitchExample extends React.Component<any, any> {
       disabled: !this.state.disabled,
     })
   }
+
+  sleep1s = () => {
+    return new Promise((resolve) => {
+      setTimeout(resolve, 1000)
+    })
+  }
+
+  onChangeAsync = async (val: boolean) => {
+    await this.sleep1s()
+    this.setState({
+      checked: val,
+    })
+  }
+
   render() {
     return (
       <ScrollView>
@@ -36,8 +51,8 @@ export default class SwitchExample extends React.Component<any, any> {
           <List.Item
             extra={
               <Switch
-                checkedChildren="开启"
-                unCheckedChildren="关闭"
+                checkedChildren="开"
+                unCheckedChildren="关"
                 defaultChecked
               />
             }
@@ -64,6 +79,17 @@ export default class SwitchExample extends React.Component<any, any> {
         <List renderHeader="颜色">
           <List.Item extra={<Switch checked color="red" />}>
             color="red"
+          </List.Item>
+        </List>
+        <List renderHeader="异步">
+          <List.Item
+            extra={
+              <Switch
+                checked={this.state.checked}
+                onChange={this.onChangeAsync}
+              />
+            }>
+            onChange 返回 Promise
           </List.Item>
         </List>
       </ScrollView>
