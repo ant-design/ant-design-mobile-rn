@@ -12,8 +12,11 @@ import {
 } from '../../'
 import enUS from '../en_US'
 import esES from '../es_ES'
+import faIR from '../fa_IR'
+import koKR from '../ko_KR'
 import ptBR from '../pt_BR'
 import ruRU from '../ru_RU'
+import svSE from '../sv_SE'
 import zhCN from '../zh_CN'
 
 const maxDate = new Date(2018, 11, 3, 22, 0)
@@ -104,6 +107,21 @@ export default class LocaleProviderExample extends React.Component<any, any> {
         value: 'Português - BR',
         label: 'Português - BR',
         language: ptBR,
+      },
+      {
+        value: 'Sverige',
+        label: 'Sverige',
+        language: svSE,
+      },
+      {
+        value: 'Persian',
+        label: 'Persian',
+        language: faIR,
+      },
+      {
+        value: '한국',
+        label: '한국',
+        language: koKR,
       },
     ]
     const currentLocale = languages.find(
