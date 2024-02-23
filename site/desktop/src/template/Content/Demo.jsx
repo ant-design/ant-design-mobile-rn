@@ -97,8 +97,6 @@ export default class Demo extends React.Component {
     const localizedTitle = meta.title[locale] || meta.title
     const componentName = this.state.componentName
     let dependencies =
-      '@react-native-picker/picker,' +
-      '@react-native-camera-roll/camera-roll@5.1.0,' +
       '@react-native-community/slider,' +
       '@react-native-community/segmented-control,' +
       'react-native-gesture-handler/DrawerLayout,' +
@@ -116,7 +114,18 @@ export default class Demo extends React.Component {
         `@ant-design/react-native/lib/locale-provider/es_ES@${antdVersion},` +
         `@ant-design/react-native/lib/locale-provider/pt_BR@${antdVersion},` +
         `@ant-design/react-native/lib/locale-provider/ru_RU@${antdVersion},` +
+        `@ant-design/react-native/lib/locale-provider/fa_IR@${antdVersion},` +
+        `@ant-design/react-native/lib/locale-provider/ko_KR@${antdVersion},` +
+        `@ant-design/react-native/lib/locale-provider/sv_SE@${antdVersion},` +
         `@ant-design/react-native/lib/locale-provider/zh_CN@${antdVersion}`
+    }
+
+    if (componentName === 'picker') {
+      dependencies += `,@ant-design/react-native/es/picker-view/PropsType@${antdVersion}`
+    }
+
+    if (componentName === 'date-picker-view') {
+      dependencies += `,@ant-design/react-native/es/date-picker/date-picker-utils@${antdVersion}`
     }
 
     if (componentName === 'icon') {
