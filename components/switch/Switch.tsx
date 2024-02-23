@@ -51,7 +51,6 @@ const AntmSwitch = ({
   const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
     value: checked,
     defaultValue: defaultChecked,
-    onChange: onChange,
   })
   const [innerLoading, setInnerLoading] = useMergedState<boolean>(false, {
     value: loading,
