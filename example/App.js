@@ -1,9 +1,10 @@
-import App from '@ant-design/react-native/rn-kitchen-sink/App'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import React, { useCallback } from 'react'
 import { View } from 'react-native'
 import 'react-native-gesture-handler'
+import 'react-native-reanimated'
+import App from '../rn-kitchen-sink/App'
 
 SplashScreen.preventAutoHideAsync()
 

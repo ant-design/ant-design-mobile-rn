@@ -4,16 +4,31 @@
   "expo": {
     "name": "@ant-design/react-native",
     "slug": "ant-design-mobile-rn",
+    "version": "5.1.0",
     "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
-    "sdkVersion": "49.0.0",
     "icon": "../rn-kitchen-sink/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
     "splash": {
       "image": "../rn-kitchen-sink/ios/KitchenSink/Images.xcassets/AppIcon.appiconset/ios-marketing-1024@1x.png"
     },
-    "version": "5.0.3",
-    "entryPoint": "index.js",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "experiments": {
+      "baseUrl": "https://1uokun.github.io/ant-design-mobile-rn/"
+    },
     "web": {
-      "bundler": "metro"
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "ios": {
+      "bundler": "metro",
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "../rn-kitchen-sink/ios/KitchenSink/Images.xcassets/AppIcon.appiconset/ios-marketing-1024@1x.png",
+        "backgroundColor": "#ffffff"
+      }
     },
     "extra": {
       "eas": {
@@ -21,12 +36,10 @@
       }
     },
     "runtimeVersion": {
-      "policy": "sdkVersion"
+      "policy": "appVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/7729a68b-f881-4294-89f5-5ae751bfb2b2"
-    },
-    "android": {},
-    "ios": {}
+    }
   }
 }

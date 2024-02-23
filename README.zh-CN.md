@@ -33,10 +33,16 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 
  - **Expo demo app**
 
+|SDK 49+ iOS|SDK 49+ Android|
+|--|--|
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=91ccee3a-f631-4bdb-b643-e3d01b52a95c&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=49a4c02d-5dc0-47b9-a98f-61932a6d4765&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
+
+<details><summary>Expo SDK历史版本</summary>
+
 |Expo SDK 44|SDK 47 iOS|SDK 47 Android|
 |--|--|--|
 | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=38b3a547-ab2b-4066-95ed-400f1707dcc6&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=05f0e308-2dd5-4cb9-9e6b-1ae31561bfee&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
-
+</details>
 
 > 提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
 
