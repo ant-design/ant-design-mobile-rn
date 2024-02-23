@@ -1,8 +1,7 @@
-import DatePickerLocale from '../datepicker/locale/en_US'
+import DatePickerLocale from '../../date-picker-view/locale/ru_RU'
+import PickerLocale from '../../picker/locale/ru_RU'
 
 export default {
-  okText: 'Ок',
-  dismissText: 'Отмена',
-  extra: '',
+  ...PickerLocale,
   DatePickerLocale,
 }

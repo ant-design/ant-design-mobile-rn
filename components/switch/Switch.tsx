@@ -1,13 +1,20 @@
 import classNames from 'classnames'
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import * as React from 'react'
-import { Animated, Easing, StyleProp, View, ViewStyle } from 'react-native'
-import RNActivityIndicator from '../activity-indicator'
-import ButtonWave from '../button/ButtonWave'
-import { WithTheme, WithThemeStyles } from '../style'
-import AntmView from '../view/index'
+import {
+  Animated,
+  Easing,
+  Pressable,
+  StyleProp,
+  View,
+  ViewStyle,
+} from 'react-native'
 import devWarning from '../_util/devWarning'
 import { useAnimatedTiming } from '../_util/hooks/useAnimations'
+import { isPromise } from '../_util/isPromise'
+import RNActivityIndicator from '../activity-indicator'
+import { WithTheme, WithThemeStyles } from '../style'
+import AntmView from '../view/index'
 import { SwitchPropsType } from './PropsType'
 import SwitchStyles, { SwitchStyle } from './style/index'
 
@@ -21,6 +28,7 @@ export interface SwitchProps
 const AnimatedView = Animated.createAnimatedComponent(AntmView)
 const AntmSwitch = ({
   prefixCls = 'switch',
+  style,
   checked,
   defaultChecked,
   disabled,
@@ -40,29 +48,37 @@ const AntmSwitch = ({
     'Switch',
     '`value` is not a valid prop, do you mean `checked`?',
   )
-  // Compatible with old code : checked without onChange was alse onControlled
-  const checkedRef = React.useRef<undefined | boolean>()
-  if (checkedRef.current === undefined) {
-    checkedRef.current = checked ?? defaultChecked
-  }
   const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
-    value: checkedRef.current,
+    value: checked,
     defaultValue: defaultChecked,
   })
+  const [innerLoading, setInnerLoading] = useMergedState<boolean>(false, {
+    value: loading,
+  })
+
+  const PADDING = 11 // switch旁白最低宽度
+  const TRACK_PADDING = 5 // switch轨道按压变形宽度
+  const BORDER_WIDTH = 2 // switch轨道边框宽度
+
+  // switch height measure
+  const [itemHeight, setHeight] = React.useState<number>(31)
+  const wrapperMeasure = React.useCallback((e) => {
+    setHeight(e.nativeEvent.layout.height)
+  }, [])
 
   //disabled when loading
-  disabled = disabled || loading
+  disabled = disabled || innerLoading
 
   // animate1
   const [animatedValue, animate] = useAnimatedTiming()
   const transitionMargin = {
     marginLeft: animatedValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [25, 7],
+      outputRange: [itemHeight - BORDER_WIDTH, BORDER_WIDTH],
     }),
     marginRight: animatedValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [7, 25],
+      outputRange: [BORDER_WIDTH, itemHeight - BORDER_WIDTH],
     }),
   }
 
@@ -71,48 +87,59 @@ const AntmSwitch = ({
   const transitionWidth = {
     width: animatedValue2.interpolate({
       inputRange: [0, 1],
-      outputRange: [22, 28],
+      outputRange: [
+        itemHeight - BORDER_WIDTH * 2,
+        itemHeight - BORDER_WIDTH * 2 + TRACK_PADDING,
+      ],
     }),
     left: !innerChecked
       ? animatedValue.interpolate({
           inputRange: [0, 1],
-          outputRange: [0, 10],
+          outputRange: [BORDER_WIDTH, PADDING],
         })
       : undefined,
     right: innerChecked
       ? animatedValue.interpolate({
           inputRange: [0, 1],
-          outputRange: [10, 0],
+          outputRange: [PADDING, BORDER_WIDTH],
         })
       : 0,
   }
 
   //initial animate
   React.useEffect(() => {
-    if (checkedRef.current) {
+    if (innerChecked) {
       animate({})
       animate2({ toValue: 0 })
     } else {
       animate({ toValue: 0 })
     }
-  }, [animate, animate2, checkedRef])
+  }, [animate, animate2, innerChecked, itemHeight])
 
-  function triggerChange(newChecked: boolean) {
+  async function triggerChange(newChecked: boolean) {
     if (!disabled) {
-      checkedRef.current = newChecked
       setInnerChecked(newChecked)
-      onChange?.(newChecked)
+      const result = onChange?.(newChecked)
+      if (isPromise(result)) {
+        setInnerLoading(true)
+        try {
+          await result
+          setInnerLoading(false)
+        } catch (e) {
+          setInnerLoading(false)
+          throw e
+        }
+      }
       return newChecked
     }
 
     return innerChecked
   }
 
-  function onInternalClick() {
-    const ret = triggerChange(!innerChecked)
+  async function onInternalClick() {
+    const ret = await triggerChange(!innerChecked)
     // [Legacy] trigger onClick with value
     onPress?.(ret)
-    animate({ toValue: ret ? 1 : 0 })
   }
 
   function onPressIn() {
@@ -134,6 +161,7 @@ const AntmSwitch = ({
         })
           .split(' ')
           .map((a) => styles[a])
+          .concat([style])
 
         const ant_switch_inner = classNames(`${prefixCls}_inner`, {
           [`${prefixCls}_inner_checked`]: innerChecked,
@@ -149,6 +177,13 @@ const AntmSwitch = ({
         })
           .split(' ')
           .map((a) => styles[a])
+          .concat([
+            {
+              width: itemHeight - BORDER_WIDTH * 2,
+              height: itemHeight - BORDER_WIDTH * 2,
+              borderRadius: itemHeight - BORDER_WIDTH * 2,
+            },
+          ])
 
         // color props
         const Color = innerChecked
@@ -170,51 +205,44 @@ const AntmSwitch = ({
         const accessibilityState = {
           checked: innerChecked,
           disabled,
-          busy: loading,
+          busy: innerLoading,
         }
 
         return (
-          <View
+          <Pressable
             accessibilityRole="switch"
             accessibilityState={accessibilityState}
-            style={[styles[prefixCls], { padding: 1 }]}>
-            <ButtonWave
-              {...restProps}
-              Color={Color}
-              disabled={disabled}
-              onPressIn={onPressIn}
-              onPressOut={onPressOut}
-              onPress={onInternalClick}>
-              <View
-                style={[
-                  ant_switch,
-                  Boolean(trackColor || color) && SwitchTrackColor,
-                ]}>
-                <Animated.View
-                  style={[
-                    ant_switch_handle,
-                    SwitchThumbColor,
-                    transitionWidth,
-                  ]}>
-                  {loading && (
-                    <RNActivityIndicator
-                      color={Color}
-                      size={18}
-                      styles={{
-                        spinner: {
-                          padding: 2,
-                          opacity: 0.4,
-                        },
-                      }}
-                    />
-                  )}
-                </Animated.View>
-                <AnimatedView style={[ant_switch_inner, transitionMargin]}>
-                  {innerChecked ? checkedChildren : unCheckedChildren}
-                </AnimatedView>
-              </View>
-            </ButtonWave>
-          </View>
+            {...restProps}
+            disabled={disabled}
+            onPressIn={onPressIn}
+            onPressOut={onPressOut}
+            onPress={onInternalClick}>
+            <View
+              style={[
+                ant_switch,
+                Boolean(trackColor || color) && SwitchTrackColor,
+                { minWidth: itemHeight + PADDING },
+              ]}
+              onLayout={wrapperMeasure}>
+              <Animated.View
+                style={[ant_switch_handle, SwitchThumbColor, transitionWidth]}>
+                {innerLoading && (
+                  <RNActivityIndicator
+                    color={Color}
+                    size={18}
+                    styles={{
+                      spinner: {
+                        opacity: 0.4,
+                      },
+                    }}
+                  />
+                )}
+              </Animated.View>
+              <AnimatedView style={[ant_switch_inner, transitionMargin]}>
+                {innerChecked ? checkedChildren : unCheckedChildren}
+              </AnimatedView>
+            </View>
+          </Pressable>
         )
       }}
     </WithTheme>

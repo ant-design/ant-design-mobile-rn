@@ -1,8 +1,7 @@
-import DatePickerLocale from '../datepicker/locale/fa_IR'
+import DatePickerLocale from '../../date-picker-view/locale/fa_IR'
+import PickerLocale from '../../picker/locale/fa_IR'
 
 export default {
-  okText: 'تایید',
-  dismissText: 'لغو',
-  extra: 'لطفا انتخاب کنید',
+  ...PickerLocale,
   DatePickerLocale,
 }

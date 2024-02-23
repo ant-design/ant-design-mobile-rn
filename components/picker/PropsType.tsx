@@ -1,22 +1,26 @@
-import { StyleProp, TextStyle, ViewStyle } from 'react-native'
+import type { ReactNode } from 'react'
 import { Omit } from 'utility-types'
+import {
+  PickerValue,
+  PickerValueExtend,
+  PickerViewPropsType,
+} from '../picker-view/PropsType'
+import { PickerViewStyle } from '../picker-view/style'
+import { WithThemeStyles } from '../style'
 import { PopupPickerProps } from './PopupPickerTypes'
-import { CascaderValue } from './cascader/CascaderTypes'
-export interface PickerData {
-  value: string | number
-  label: string
-  children?: PickerData[]
-}
-export interface PickerPropsType extends Omit<PopupPickerProps, 'styles'> {
-  data: PickerData[] | PickerData[][]
-  cascade?: boolean
-  value?: Array<string | number>
-  format?: (values: string[]) => string
-  cols?: number
+import { PickerStyle } from './style'
+
+export interface PickerPropsType
+  extends PickerViewPropsType,
+    WithThemeStyles<PickerViewStyle & PickerStyle>,
+    Omit<PopupPickerProps, 'onOk' | 'styles'> {
+  onOk?: (value: PickerValue[], extend: PickerValueExtend) => void
+  onPickerChange?: (value: PickerValue[], index: number) => void
+  onVisibleChange?: (visible: boolean) => void
+  format?: (labels: string[]) => string
   extra?: string
-  onChange?: (date?: CascaderValue) => void
-  onPickerChange?: (value: CascaderValue) => void
-  itemStyle?: StyleProp<TextStyle>
-  indicatorStyle?: StyleProp<ViewStyle>
-  numberOfLines?: number
+  triggerType?: string
+  disabled?: boolean
+  children?: ReactNode
+  locale?: { okText?: string; dismissText?: string; extra?: string }
 }

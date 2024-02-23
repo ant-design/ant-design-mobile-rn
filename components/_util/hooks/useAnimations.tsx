@@ -45,6 +45,7 @@ export function useAnimatedTiming(): [Animated.Value, animateType] {
         useNativeDriver,
       }).start()
     },
+    // @ts-ignore
     [animatedValue],
   )
   var [animatedValue] = useAnimate({

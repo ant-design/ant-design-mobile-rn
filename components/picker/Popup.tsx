@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Text, TouchableHighlight, View } from 'react-native'
 import Modal from '../modal/ModalView'
-import PopupMixin from './PopupMixin'
+import { PopupPickerProps } from './PopupPickerTypes'
 
-const getModal = (
-  props: any,
-  visible: any,
-  { getContent, hide, onDismiss, onOk }: any,
-) => {
-  const { styles, title, okText, dismissText } = props
+const PopupPicker = memo((props: PopupPickerProps) => {
+  const {
+    styles,
+    title,
+    okText = 'Ok',
+    dismissText = 'Dismiss',
+    visible,
+    onDismiss,
+    onOk,
+    onClose,
+    children,
+  } = props
 
   const titleEl =
     typeof title === 'string' ? (
@@ -35,7 +41,7 @@ const getModal = (
       wrapStyle={styles.modal}
       style={styles.container}
       visible={visible}
-      onClose={hide}>
+      onClose={onClose}>
       <View style={[styles.header]}>
         <TouchableHighlight
           onPress={onDismiss}
@@ -53,15 +59,8 @@ const getModal = (
           {okEl}
         </TouchableHighlight>
       </View>
-      {getContent()}
+      {children}
     </Modal>
   )
-}
-
-export default PopupMixin(getModal, {
-  actionTextUnderlayColor: '#ddd',
-  actionTextActiveOpacity: 1,
-  triggerType: 'onPress',
-  styles: {},
-  WrapComponent: View as any,
 })
+export default PopupPicker

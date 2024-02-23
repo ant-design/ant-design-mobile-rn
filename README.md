@@ -35,10 +35,16 @@ A configurable Mobile UI specification and React-based implementation.
 
  - **Expo demo app**
 
+|SDK 49+ iOS|SDK 49+ Android|
+|--|--|
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=91ccee3a-f631-4bdb-b643-e3d01b52a95c&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=49a4c02d-5dc0-47b9-a98f-61932a6d4765&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
+
+<details><summary>Expo SDK history version</summary>
+
 |Expo SDK 44|SDK 47 iOS|SDK 47 Android|
 |--|--|--|
 | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=38b3a547-ab2b-4066-95ed-400f1707dcc6&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=05f0e308-2dd5-4cb9-9e6b-1ae31561bfee&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
-
+</details>
 
 > Open the camera app on your device and scan the code above, <br>
 need install expo app: https://expo.io/tools
@@ -93,13 +99,13 @@ yarn add @ant-design/react-native
 ### Installing peer dependencies
 
 ```bash
-npm install @react-native-camera-roll/camera-roll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+npm install @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
 ```
 
 or
 
 ```bash
-yarn add @react-native-camera-roll/camera-roll @react-native-picker/picker @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
+yarn add @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler
 ```
 
 > You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.

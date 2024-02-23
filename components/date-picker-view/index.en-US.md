@@ -8,15 +8,41 @@ DatePickerView's functions like DatePicker, but it is rendered directly in the a
 
 ## API
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| mode  | mode value, can be a `date` or `time` or `datetime` or `year` or `month` | String | `date` |
+```ts
+type Precision =
+  | 'week'
+  | 'week-day'
+  | 'year'
+  | 'month'
+  | 'day'
+  | 'hour'
+  | 'minute'
+  | 'second'
+
+type DatePickerFilter = Partial<
+  Record<
+    Precision,
+    (
+      val: number,
+      extend: {
+        date: Date
+      }
+    ) => boolean
+  >
+>
+```
+
+Properties | Descrition | Type | Default | Version
+-----------|------------|------|---------|---------
+| precision  | Precision | `Precision` | `day` |`5.1.0`|
 | value | the currently selected value | Date | - |
+| defaultValue | the default selected value | Date | - ||
 | minDate   | minimum date | Date  |  2000-1-1  |
 | maxDate   | maximum date | Date  |  2030-1-1  |
-| minuteStep |   The amount of time, in minutes, between each minute item.    | Number | 1 |
-| locale   | international, can override the configuration of the global `[LocaleProvider](https://mobile.ant.design/components/locale-provider)` | Object: {DatePickerLocale: {year, month, day, hour, minute, am?, pm?}, okText, dismissText} |  -  |
-| disabled   | disabled      | Boolean |    false  |
-| use12Hours   | 12 hours format      | Boolean |    false  |
-| onChange  | change handler | (date: Object): void |  -  |
-| onValueChange | fire when picker col change | (vals: any, index: number) => void | - |
+| onChange  | change handler | `(value: Date) => void` |  -  ||
+| onValueChange | fire when picker col change | `(value: Date, index: number) => void` | - ||
+| renderLabel | The function to custom rendering the label shown on a column. `type` means any value in `precision`, `data` means the default number | `(type:Precision / 'now', data: number) => ReactNode` | - ||
+| filter  | Filter available time	 | `DatePickerFilter` | - | `5.1.0` |
+
+
+In addition, the following attributes of `PickerView` are supported: `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `renderMaskTop` `renderMaskBottom`

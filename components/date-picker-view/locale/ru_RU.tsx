@@ -1,3 +1,9 @@
-import DatePickerLocale from '../../date-picker/datepicker/locale/ru_RU'
-
-export default DatePickerLocale
+export default {
+  year: '',
+  month: '',
+  day: '',
+  hour: '',
+  minute: '',
+  am: 'AM',
+  pm: 'PM',
+}
