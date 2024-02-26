@@ -137,6 +137,9 @@ export default class Demo extends React.Component {
         'expo-font@11.0.1'
     }
 
+    /**
+     * @link https://github.com/expo/snack/blob/main/docs/url-query-parameters.md
+     * */
     return `https://snack.expo.dev/embedded?platform=web&name=${localizedTitle}&dependencies=${encodeURIComponent(
       dependencies,
     )}&sourceUrl=${`https://raw.githubusercontent.com/1uokun/ant-design-mobile-rn/feature-snack-doc/components/${this.state.componentName}/demo/basic.tsx`}&preview=true`
