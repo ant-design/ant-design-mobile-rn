@@ -1,8 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
-import { AppRegistry } from 'react-native'
+import { AppRegistry, Platform } from 'react-native'
 import 'react-native-gesture-handler'
+import Icon from '../components/icon'
 import Provider from '../components/provider'
 import Theme from './components/Theme'
 import RnIndex from './components/index'
@@ -43,7 +44,15 @@ class App extends React.Component {
     return (
       <Provider theme={theme}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="native">
+          <Stack.Navigator
+            initialRouteName="native"
+            screenOptions={
+              Platform.OS === 'web'
+                ? {
+                    headerBackImage: () => <Icon name={'arrow-left'} />,
+                  }
+                : {}
+            }>
             <Stack.Screen
               name="native"
               component={RnIndex}
