@@ -1,8 +1,7 @@
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import React, { useCallback } from 'react'
-import { View } from 'react-native'
-import 'react-native-gesture-handler'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import 'react-native-reanimated'
 import App from '../rn-kitchen-sink/App'
 
@@ -25,8 +24,8 @@ export default function () {
   }
 
   return (
-    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+    <GestureHandlerRootView onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <App />
-    </View>
+    </GestureHandlerRootView>
   )
 }

@@ -1,12 +1,12 @@
 /* eslint no-console:0 */
 import React from 'react'
-import { Dimensions, ScrollView, StyleSheet, View } from 'react-native'
+import { ScrollView, StyleSheet, View } from 'react-native'
 import { List, SearchBar } from '../../components'
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from '../demoList'
 
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height,
+    flex: 1,
   },
 })
 
