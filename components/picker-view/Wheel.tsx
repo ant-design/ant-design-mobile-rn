@@ -5,9 +5,9 @@ import {
   NativeScrollEvent,
   NativeSyntheticEvent,
   Platform,
+  ScrollView,
   View,
 } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
 
 type ColumnItem = {
   label: string | ReactNode

@@ -102,8 +102,7 @@
     "@react-native-community/segmented-control": ">= 1.4.0",
     "@react-native-community/slider": ">= 2.0.0",
     "react": ">=17.0.1",
-    "react-native": ">=0.64.1",
-    "react-native-gesture-handler": ">=2.2.1"
+    "react-native": ">=0.64.1"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",

@@ -7,7 +7,6 @@ import React, {
   useMemo,
   useState,
 } from 'react'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { Omit } from 'utility-types'
 
 import { getComponentLocale } from '../_util/getLocale'
@@ -156,14 +155,12 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
         {/* TODO: 组件卸载是在visible更新fasle之后,需要前置 */}
         {/* 否则会无效执行onPickerChange */}
         {innerVisible && (
-          <GestureHandlerRootView>
-            <RMCPickerView
-              {...restProps}
-              value={value}
-              columns={columns}
-              handleSelect={handleSelect}
-            />
-          </GestureHandlerRootView>
+          <RMCPickerView
+            {...restProps}
+            value={value}
+            columns={columns}
+            handleSelect={handleSelect}
+          />
         )}
       </PopupPicker>
       {renderChildren()}

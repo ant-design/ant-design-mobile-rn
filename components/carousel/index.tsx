@@ -4,12 +4,12 @@ import {
   NativeScrollEvent,
   NativeSyntheticEvent,
   Platform,
+  ScrollView,
   ScrollViewProps,
   StyleProp,
   View,
   ViewStyle,
 } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
 import devWarning from '../_util/devWarning'
 import { WithTheme, WithThemeStyles } from '../style'
 import CarouselStyles, { CarouselStyle } from './style/index'
