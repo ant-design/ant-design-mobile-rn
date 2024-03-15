@@ -120,14 +120,6 @@ export default class Demo extends React.Component {
         `@ant-design/react-native/lib/locale-provider/zh_CN@${antdVersion}`
     }
 
-    if (componentName === 'picker') {
-      dependencies += `,@ant-design/react-native/es/picker-view/PropsType@${antdVersion}`
-    }
-
-    if (componentName === 'date-picker-view') {
-      dependencies += `,@ant-design/react-native/es/date-picker/date-picker-utils@${antdVersion}`
-    }
-
     if (componentName === 'icon') {
       dependencies +=
         ',@ant-design/icons-react-native@2.3.1,' +
