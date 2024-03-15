@@ -919,7 +919,6 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
         automaticallyAdjustContentInsets={false}
         autoplay={false}
         autoplayInterval={3000}
-        collapsable={false}
         contentOffset={
           Object {
             "x": 0,
@@ -932,8 +931,6 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
         dots={true}
         horizontal={true}
         infinite={false}
-        onGestureHandlerEvent={[Function]}
-        onGestureHandlerStateChange={[Function]}
         onMomentumScrollEnd={[Function]}
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}
