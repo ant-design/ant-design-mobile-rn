@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ScrollView, Text } from 'react-native'
+import { createNativeWrapper } from 'react-native-gesture-handler'
 import { DatePickerView } from '../../'
 import { DatePickerFilter } from '../../date-picker/date-picker-utils'
 
@@ -39,6 +40,12 @@ export default () => {
         precision="hour"
         renderLabel={labelRenderer}
         filter={dateFilter}
+        withWrapper={(Component) =>
+          createNativeWrapper(Component, {
+            disallowInterruption: true,
+            shouldCancelWhenOutside: false,
+          })
+        }
       />
     </ScrollView>
   )
