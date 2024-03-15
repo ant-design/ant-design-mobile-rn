@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import { ComponentType } from 'react'
 import { StyleProp, TextStyle, ViewStyle } from 'react-native'
 
 export type PickerValue = string | number
@@ -35,18 +34,5 @@ export interface PickerViewPropsType {
   renderLabel?: (item: PickerColumnItem, index: number) => ReactNode
   renderMaskTop?: () => ReactNode
   renderMaskBottom?: () => ReactNode
-  /**
-   * @description HOC for Wheel
-   * @example ```tsx
-   * import { createNativeWrapper } from 'react-native-gesture-handler'
-   *
-   * withWrapper={(Component) =>
-   *  createNativeWrapper(Component, {
-   *    disallowInterruption: true,
-   *    shouldCancelWhenOutside: false,
-   *  })
-   * }
-   * ```
-   */
-  withWrapper?: (Component: ComponentType<any>) => ComponentType<any>
+  _ScrollViewComponent?: any
 }

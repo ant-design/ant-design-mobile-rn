@@ -16,7 +16,7 @@ export interface DatePickerViewPropsType
     | 'numberOfLines'
     | 'renderMaskTop'
     | 'renderMaskBottom'
-    | 'withWrapper'
+    | '_ScrollViewComponent'
   > {
   value?: PickerDate
   defaultValue?: PickerDate

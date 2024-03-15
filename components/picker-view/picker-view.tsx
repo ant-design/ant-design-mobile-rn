@@ -32,7 +32,6 @@ export default class RMCPickerView extends React.Component<
     renderMaskBottom: () => (
       <View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />
     ),
-    withWrapper: (Component: any) => Component,
   }
 
   constructor(props: RMCPickerViewProps) {
@@ -111,10 +110,9 @@ export default class RMCPickerView extends React.Component<
       numberOfLines,
       handleSelect,
       loadingContent,
-      withWrapper,
+      _ScrollViewComponent,
     } = this.props
     const itemHeight = this.props.itemHeight || this.state.itemHeight
-    const WheelHOC = withWrapper?.(Wheel) || Wheel
     return (
       <WithTheme themeStyles={pickerViewStyles} styles={styles}>
         {(s) =>
@@ -146,7 +144,7 @@ export default class RMCPickerView extends React.Component<
                   : itemHeight > 0 &&
                     wheelHeight > 0 &&
                     columns.map((column, index) => (
-                      <WheelHOC
+                      <Wheel
                         key={index}
                         index={index}
                         column={column}
@@ -155,6 +153,7 @@ export default class RMCPickerView extends React.Component<
                         itemHeight={itemHeight}
                         wheelHeight={wheelHeight}
                         renderLabel={this.renderLabel}
+                        _ScrollViewComponent={_ScrollViewComponent}
                       />
                     ))}
               </View>
