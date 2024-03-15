@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 5.1.1
+`2024-03-15`
+- **PickerView** & **DatePickerView** & **Carousel** 
+  - fix: 移除 `react-native-gesture-handler/ScrollView` 引用
+  - 提供 `_ScrollViewComponent` 属性让用户决定是否使用
+
 ### 5.1.0
 `2024-02-23`
 - 重构 **Picker** & **PickerView**

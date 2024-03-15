@@ -8,6 +8,7 @@ export { default as Carousel } from './carousel/index'
 export { default as Checkbox } from './checkbox/index'
 export { default as DatePickerView } from './date-picker-view/index'
 export { default as DatePicker } from './date-picker/index'
+export type { DatePickerFilter, Precision } from './date-picker/index'
 export { default as Drawer } from './drawer/index'
 export { default as Flex } from './flex/index'
 export { default as Grid } from './grid/index'
@@ -20,6 +21,12 @@ export { default as NoticeBar } from './notice-bar/index'
 export { default as Pagination } from './pagination/index'
 export { default as PickerView } from './picker-view/index'
 export { default as Picker } from './picker/index'
+export type {
+  PickerColumn,
+  PickerColumnItem,
+  PickerValue,
+  PickerValueExtend,
+} from './picker/index'
 export { default as Popover } from './popover/index'
 export { default as Portal } from './portal/index'
 export { default as Progress } from './progress/index'
@@ -42,3 +49,7 @@ export { default as Toast } from './toast/index'
 export { default as View } from './view/index'
 export { default as WhiteSpace } from './white-space/index'
 export { default as WingBlank } from './wing-blank/index'
+/**
+ * @deprecated
+ */
+export class ImagePicker {}

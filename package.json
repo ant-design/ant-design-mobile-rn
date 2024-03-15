@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/react-native",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
   "keywords": [
     "ant",
@@ -102,8 +102,7 @@
     "@react-native-community/segmented-control": ">= 1.4.0",
     "@react-native-community/slider": ">= 2.0.0",
     "react": ">=17.0.1",
-    "react-native": ">=0.64.1",
-    "react-native-gesture-handler": ">=2.2.1"
+    "react-native": ">=0.64.1"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",

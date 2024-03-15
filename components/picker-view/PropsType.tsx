@@ -16,7 +16,6 @@ export type PickerColumnItem = {
 }
 
 export type PickerColumn = PickerColumnItem[]
-// type PickerColumn = (string | PickerColumnItem)[] // TODO: support string type
 
 export interface PickerViewPropsType {
   value?: PickerValue[]
@@ -35,4 +34,5 @@ export interface PickerViewPropsType {
   renderLabel?: (item: PickerColumnItem, index: number) => ReactNode
   renderMaskTop?: () => ReactNode
   renderMaskBottom?: () => ReactNode
+  _ScrollViewComponent?: any
 }

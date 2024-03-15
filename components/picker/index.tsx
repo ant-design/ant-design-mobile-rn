@@ -8,12 +8,18 @@ import React, {
   useState,
 } from 'react'
 import { mergeProps } from '../_util/with-default-props'
-import { PickerValue } from '../picker-view/PropsType'
+import {
+  PickerColumn,
+  PickerColumnItem,
+  PickerValue,
+  PickerValueExtend,
+} from '../picker-view/PropsType'
 import { getColumns, getValueExtend } from '../picker-view/columns-extend'
 import RMCPicker, { PickerRef } from './Picker'
 import { PickerPropsType } from './PropsType'
 
 export interface PickerProps extends PickerPropsType {}
+export { PickerColumn, PickerColumnItem, PickerValue, PickerValueExtend }
 
 const defaultProps = {
   defaultValue: [],

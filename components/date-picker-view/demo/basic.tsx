@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ScrollView, Text } from 'react-native'
+import { ScrollView as GestureScrollView } from 'react-native-gesture-handler'
 import { DatePickerView } from '../../'
 import { DatePickerFilter } from '../../date-picker/date-picker-utils'
 
@@ -39,6 +40,7 @@ export default () => {
         precision="hour"
         renderLabel={labelRenderer}
         filter={dateFilter}
+        _ScrollViewComponent={GestureScrollView}
       />
     </ScrollView>
   )
