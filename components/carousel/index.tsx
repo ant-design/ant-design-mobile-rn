@@ -4,12 +4,12 @@ import {
   NativeScrollEvent,
   NativeSyntheticEvent,
   Platform,
+  ScrollView,
   ScrollViewProps,
   StyleProp,
   View,
   ViewStyle,
 } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
 import devWarning from '../_util/devWarning'
 import { WithTheme, WithThemeStyles } from '../style'
 import CarouselStyles, { CarouselStyle } from './style/index'
@@ -27,6 +27,10 @@ export interface CarouselPropsType
   autoplay?: boolean
   autoplayInterval?: number
   infinite?: boolean
+  /**
+   * @description To fix: Carousel not scrolling in Android ScrollView
+   */
+  _ScrollViewComponent?: any
 }
 
 export interface CarouselProps extends CarouselPropsType {
@@ -459,8 +463,9 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   }
 
   private renderScroll = (pages: React.ReactNode) => {
+    const ScrollViewComponent = this.props._ScrollViewComponent || ScrollView
     return (
-      <ScrollView
+      <ScrollViewComponent
         {...this.props}
         horizontal={!this.props.vertical}
         ref={this.scrollview as any}
@@ -483,7 +488,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
             }
           : {})}>
         {pages}
-      </ScrollView>
+      </ScrollViewComponent>
     )
   }
 

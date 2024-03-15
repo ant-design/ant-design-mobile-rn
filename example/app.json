@@ -22,7 +22,8 @@
     },
     "ios": {
       "bundler": "metro",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.1uokun.antdesignmobilern"
     },
     "android": {
       "adaptiveIcon": {

@@ -27,7 +27,6 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
         automaticallyAdjustContentInsets={false}
         autoplay={true}
         autoplayInterval={3000}
-        collapsable={false}
         contentOffset={
           Object {
             "x": 0,
@@ -40,8 +39,6 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
         dots={true}
         horizontal={true}
         infinite={true}
-        onGestureHandlerEvent={[Function]}
-        onGestureHandlerStateChange={[Function]}
         onMomentumScrollEnd={[Function]}
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}
@@ -495,7 +492,6 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
         automaticallyAdjustContentInsets={false}
         autoplay={true}
         autoplayInterval={3000}
-        collapsable={false}
         contentOffset={
           Object {
             "x": 0,
@@ -508,8 +504,6 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
         dots={true}
         horizontal={false}
         infinite={true}
-        onGestureHandlerEvent={[Function]}
-        onGestureHandlerStateChange={[Function]}
         onMomentumScrollEnd={[Function]}
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}

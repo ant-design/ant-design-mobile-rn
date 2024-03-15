@@ -1,13 +1,12 @@
-// 需要重构成translate3d
 import type { ReactNode } from 'react'
 import React from 'react'
 import {
   NativeScrollEvent,
   NativeSyntheticEvent,
   Platform,
+  ScrollView,
   View,
 } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
 
 type ColumnItem = {
   label: string | ReactNode
@@ -23,6 +22,7 @@ type Props = {
   renderLabel: (item: ColumnItem, index: number) => ReactNode
   itemHeight: number
   wheelHeight: number
+  _ScrollViewComponent?: any
 }
 
 class Wheel extends React.Component<Props> {
@@ -168,11 +168,12 @@ class Wheel extends React.Component<Props> {
   }
 
   render() {
+    const ScrollViewComponent = this.props._ScrollViewComponent || ScrollView
     return (
-      <ScrollView
+      <ScrollViewComponent
         style={{ flex: 1 }}
         horizontal={false}
-        ref={(el) => (this.scrollerRef = el)}
+        ref={(el: any) => (this.scrollerRef = el)}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         pagingEnabled={false}
@@ -192,7 +193,7 @@ class Wheel extends React.Component<Props> {
               onMomentumScrollEnd: this.onMomentumScrollEnd,
             })}>
         {this.renderItems()}
-      </ScrollView>
+      </ScrollViewComponent>
     )
   }
 }

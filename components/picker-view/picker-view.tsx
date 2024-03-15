@@ -110,6 +110,7 @@ export default class RMCPickerView extends React.Component<
       numberOfLines,
       handleSelect,
       loadingContent,
+      _ScrollViewComponent,
     } = this.props
     const itemHeight = this.props.itemHeight || this.state.itemHeight
     return (
@@ -133,7 +134,6 @@ export default class RMCPickerView extends React.Component<
               <View style={[s.wheelWrapper, { height: wheelHeight }]}>
                 {(loading || columns?.length === 0) && loading !== false
                   ? loadingContent || (
-                      // TODO-luokun: loading样式优化
                       <View style={{ flex: 1, alignSelf: 'center' }}>
                         <ActivityIndicator
                           animating
@@ -153,6 +153,7 @@ export default class RMCPickerView extends React.Component<
                         itemHeight={itemHeight}
                         wheelHeight={wheelHeight}
                         renderLabel={this.renderLabel}
+                        _ScrollViewComponent={_ScrollViewComponent}
                       />
                     ))}
               </View>

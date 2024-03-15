@@ -1,5 +1,6 @@
 import React from 'react'
 import { ScrollView, Text } from 'react-native'
+import { ScrollView as GestureScrollView } from 'react-native-gesture-handler'
 import { PickerView } from '../../'
 
 const basicColumns = [
@@ -40,6 +41,8 @@ export default class PickerViewExample extends React.Component {
           itemStyle={{
             padding: 0,
           }}
+          // To fix: Wheel not scrolling in Android ScrollView
+          _ScrollViewComponent={GestureScrollView}
         />
 
         <Text style={{ margin: 16 }}>受控模式</Text>

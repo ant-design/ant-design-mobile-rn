@@ -201,43 +201,41 @@ Array [
             </Text>
           </View>
         </View>
-        <View>
+        <View
+          onLayout={[Function]}
+        >
           <View
-            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "height": "auto",
+                  "justifyContent": "center",
+                  "overflow": "hidden",
+                },
+              ]
+            }
           >
-            <View
+            <Text
+              numberOfLines={1}
               style={
                 Array [
                   Object {
+                    "color": "#333",
+                    "fontSize": 16,
+                    "includeFontPadding": false,
+                    "padding": 8,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  Object {
                     "height": "auto",
-                    "justifyContent": "center",
-                    "overflow": "hidden",
                   },
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
-                style={
-                  Array [
-                    Object {
-                      "color": "#333",
-                      "fontSize": 16,
-                      "includeFontPadding": false,
-                      "padding": 8,
-                      "textAlign": "center",
-                    },
-                    undefined,
-                    Object {
-                      "height": "auto",
-                    },
-                  ]
-                }
-              >
-                
-                　
-              </Text>
-            </View>
+              
+              　
+            </Text>
           </View>
         </View>
       </View>
