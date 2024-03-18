@@ -108,6 +108,13 @@ export default class Demo extends React.Component {
         ',@bang88/china-city-data@1.0.0,' + 'antd-mobile-demo-data@0.2.0'
     }
 
+    if (
+      componentName === 'picker-view' ||
+      componentName === 'date-picker-view'
+    ) {
+      dependencies += ',react-native-gesture-handler'
+    }
+
     if (componentName === 'locale-provider') {
       dependencies +=
         `,@ant-design/react-native/lib/locale-provider/en_US@${antdVersion},` +
