@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { Text, TouchableHighlight, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import Modal from '../modal/ModalView'
 import { PopupPickerProps } from './PopupPickerTypes'
 
@@ -43,21 +43,13 @@ const PopupPicker = memo((props: PopupPickerProps) => {
       visible={visible}
       onClose={onClose}>
       <View style={[styles.header]}>
-        <TouchableHighlight
-          onPress={onDismiss}
-          style={[styles.headerItem]}
-          activeOpacity={props.actionTextActiveOpacity}
-          underlayColor={props.actionTextUnderlayColor}>
+        <TouchableOpacity onPress={onDismiss} style={[styles.headerItem]}>
           {dismissEl}
-        </TouchableHighlight>
+        </TouchableOpacity>
         <View style={[styles.headerItem]}>{titleEl}</View>
-        <TouchableHighlight
-          onPress={onOk}
-          style={[styles.headerItem]}
-          activeOpacity={props.actionTextActiveOpacity}
-          underlayColor={props.actionTextUnderlayColor}>
+        <TouchableOpacity onPress={onOk} style={[styles.headerItem]}>
           {okEl}
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
       {children}
     </Modal>
