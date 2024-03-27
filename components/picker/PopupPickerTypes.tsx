@@ -10,6 +10,4 @@ export type PopupPickerProps = {
   dismissText?: ReactNode
   children?: ReactNode
   styles: any
-  actionTextUnderlayColor?: string
-  actionTextActiveOpacity?: number
 }
