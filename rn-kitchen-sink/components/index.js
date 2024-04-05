@@ -1,6 +1,6 @@
 /* eslint no-console:0 */
 import React from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 import { List, SearchBar } from '../../components'
 import { OTHERS, UIBARS, UICONTROLS, UIVIEWS } from '../demoList'
 
@@ -89,6 +89,7 @@ export default class RnIndex extends React.Component {
             </List>
           ))}
         </ScrollView>
+        <SafeAreaView />
       </View>
     )
   }
