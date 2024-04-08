@@ -20,6 +20,13 @@ body:
        Clear and concise reproduction instructions are important for us to be able to triage your issue in a timely manner. Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
     validations:
       required: true
+  - type: input
+    id: version
+    attributes:
+      label: 🔴 Version
+      placeholder: Please fill in the affected npm version number
+    validations:
+        required: true
   - type: dropdown
     id: environment
     attributes:

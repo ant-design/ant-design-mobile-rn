@@ -112,11 +112,18 @@ yarn add @react-native-community/segmented-control @react-native-community/slide
 
 ### Link icon fonts
 
+```js
+// config `react-native.config.js` in project’s root directory
+module.exports = {
+  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+};
+```
+then
 ```bash
-npx react-native link
+npx react-native-asset
 ```
 
-[introduce](docs/react/introduce.en-US.md#安装)
+[introduce](docs/react/introduce.en-US.md#2-installation)
 
 ## Links
 
