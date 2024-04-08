@@ -24,14 +24,12 @@
   },
   "files": [
     "lib",
-    "es",
-    "react-native.config.js"
+    "es"
   ],
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
   "dependencies": {
-    "@ant-design/icons-react-native": "^2.3.1",
     "@bang88/react-native-ultimate-listview": "^4.1.0",
     "@types/shallowequal": "^1.1.1",
     "babel-runtime": "^6.x",
@@ -42,7 +40,6 @@
     "rc-util": "^4.21.1",
     "react-native-codegen": "^0.0.7",
     "react-native-collapsible": "^1.6.0",
-    "react-native-gesture-handler": "~2.2.1",
     "react-native-modal-popover": "^2.0.1",
     "shallowequal": "^1.1.0",
     "utility-types": "^3.10.0"
@@ -99,10 +96,12 @@
     "typescript": "^4.3.2"
   },
   "peerDependencies": {
+    "@ant-design/icons-react-native": ">= 2.3.1",
     "@react-native-community/segmented-control": ">= 1.4.0",
     "@react-native-community/slider": ">= 2.0.0",
     "react": ">=17.0.1",
-    "react-native": ">=0.64.1"
+    "react-native": ">=0.64.1",
+    "react-native-gesture-handler": ">=2.2.1"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",

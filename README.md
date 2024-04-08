@@ -99,21 +99,28 @@ yarn add @ant-design/react-native
 ### Installing peer dependencies
 
 ```bash
-npm install @react-native-community/segmented-control @react-native-community/slider
+npm install @react-native-community/segmented-control @react-native-community/slider @ant-design/icons-react-native react-native-gesture-handler
 ```
 
 or
 
 ```bash
-yarn add @react-native-community/segmented-control @react-native-community/slider
+yarn add @react-native-community/segmented-control @react-native-community/slider @ant-design/icons-react-native react-native-gesture-handler
 ```
 
 > You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
 
 ### Link icon fonts
 
+- config `react-native.config.js` in project’s root directory
+```js
+module.exports = {
+  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+};
+```
+ - command then
 ```bash
-npx react-native link
+npx react-native-asset
 ```
 
 [introduce](docs/react/introduce.en-US.md#安装)
