@@ -110,14 +110,22 @@ yarn add @react-native-community/segmented-control @react-native-community/slide
 
 > 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理
 
-### 链接字体图标以及自动链接
+### 链接字体图标
 
+
+```js
+// 配置根目录下的 `react-native.config.js` 文件
+module.exports = {
+  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+};
+```
+然后
 ```bash
-# 手动链接字体图标
-npx react-native link
+# 手动执行命令
+npx react-native-asset
 ```
 
-[介绍](docs/react/introduce.zh-CN.md#安装)
+[介绍](docs/react/introduce.zh-CN.md#2-安装)
 
 ## 链接
 

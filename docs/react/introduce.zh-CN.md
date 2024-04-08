@@ -80,9 +80,22 @@ or
 $ yarn add @ant-design/icons-react-native
 ```
 
-```bash
-$ npx react-native link @ant-design/icons-react-native
+<br/>
+
+将字体资源路径配置到根目录下的 `react-native.config.js` 文件中 ( 如果没有，请创建 )
+
+```js
+module.exports = {
+  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+};
 ```
+
+然后执行[`react-native-asset`](https://github.com/unimonkiez/react-native-asset)的命令
+
+```bash
+npx react-native-asset
+```
+<br/>
 
 > 如果你用的是 expo 请确保字体已经加载完成再初始化 app
 
