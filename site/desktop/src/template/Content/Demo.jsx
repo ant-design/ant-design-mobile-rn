@@ -101,6 +101,7 @@ export default class Demo extends React.Component {
       '@react-native-community/segmented-control,' +
       'react-native-gesture-handler/DrawerLayout,' +
       'react-native-gesture-handler/Swipeable,' +
+      '@ant-design/icons-react-native,' +
       `@ant-design/react-native@${antdVersion}`
 
     if (componentName === 'picker') {
