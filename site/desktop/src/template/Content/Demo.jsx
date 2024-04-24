@@ -101,19 +101,13 @@ export default class Demo extends React.Component {
       '@react-native-community/segmented-control,' +
       'react-native-gesture-handler/DrawerLayout,' +
       'react-native-gesture-handler/Swipeable,' +
-      '@ant-design/icons-react-native,' +
+      'react-native-gesture-handler,' +
+      '@ant-design/icons-react-native@2.3.1,' +
       `@ant-design/react-native@${antdVersion}`
 
     if (componentName === 'picker') {
       dependencies +=
         ',@bang88/china-city-data@1.0.0,' + 'antd-mobile-demo-data@0.2.0'
-    }
-
-    if (
-      componentName === 'picker-view' ||
-      componentName === 'date-picker-view'
-    ) {
-      dependencies += ',react-native-gesture-handler'
     }
 
     if (componentName === 'locale-provider') {
@@ -130,8 +124,7 @@ export default class Demo extends React.Component {
 
     if (componentName === 'icon') {
       dependencies +=
-        ',@ant-design/icons-react-native@2.3.1,' +
-        '@ant-design/icons-react-native/lib/outline,' +
+        ',@ant-design/icons-react-native/lib/outline,' +
         '@ant-design/icons-react-native/fonts/antfill.ttf,' +
         '@ant-design/icons-react-native/fonts/antoutline.ttf,' +
         'expo-font@11.0.1'
