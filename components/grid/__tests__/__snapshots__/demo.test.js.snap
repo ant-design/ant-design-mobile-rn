@@ -931,6 +931,7 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
         dots={true}
         horizontal={true}
         infinite={false}
+        nestedScrollEnabled={true}
         onMomentumScrollEnd={[Function]}
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}
