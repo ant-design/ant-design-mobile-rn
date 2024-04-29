@@ -46,16 +46,18 @@ const PopupPicker = memo((props: PopupPickerProps) => {
         <TouchableHighlight
           onPress={onDismiss}
           style={[styles.headerItem]}
-          activeOpacity={props.actionTextActiveOpacity}
-          underlayColor={props.actionTextUnderlayColor}>
+          activeOpacity={1}
+          underlayColor="#ddd"
+          {...props.dismissButtonProps}>
           {dismissEl}
         </TouchableHighlight>
         <View style={[styles.headerItem]}>{titleEl}</View>
         <TouchableHighlight
           onPress={onOk}
           style={[styles.headerItem]}
-          activeOpacity={props.actionTextActiveOpacity}
-          underlayColor={props.actionTextUnderlayColor}>
+          activeOpacity={1}
+          underlayColor="#ddd"
+          {...props.okButtonProps}>
           {okEl}
         </TouchableHighlight>
       </View>
