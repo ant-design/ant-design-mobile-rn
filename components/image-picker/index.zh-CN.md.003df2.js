@@ -1,0 +1,1 @@
+(self.webpackChunk_ant_design_react_native=self.webpackChunk_ant_design_react_native||[]).push([[2246],{26874:e=>{e.exports={content:["article"],meta:{category:"Components",type:"Data Entry",title:"ImagePicker",subtitle:"图片选择器",deprecate:"已废弃",filename:"components/image-picker/index.zh-CN.md"}}}}]);
