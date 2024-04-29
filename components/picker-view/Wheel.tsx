@@ -22,7 +22,6 @@ type Props = {
   renderLabel: (item: ColumnItem, index: number) => ReactNode
   itemHeight: number
   wheelHeight: number
-  _ScrollViewComponent?: any
 }
 
 class Wheel extends React.Component<Props> {
@@ -168,10 +167,10 @@ class Wheel extends React.Component<Props> {
   }
 
   render() {
-    const ScrollViewComponent = this.props._ScrollViewComponent || ScrollView
     return (
-      <ScrollViewComponent
+      <ScrollView
         style={{ flex: 1 }}
+        nestedScrollEnabled
         horizontal={false}
         ref={(el: any) => (this.scrollerRef = el)}
         showsHorizontalScrollIndicator={false}
@@ -193,7 +192,7 @@ class Wheel extends React.Component<Props> {
               onMomentumScrollEnd: this.onMomentumScrollEnd,
             })}>
         {this.renderItems()}
-      </ScrollViewComponent>
+      </ScrollView>
     )
   }
 }

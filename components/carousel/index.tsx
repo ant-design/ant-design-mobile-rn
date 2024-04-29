@@ -27,10 +27,6 @@ export interface CarouselPropsType
   autoplay?: boolean
   autoplayInterval?: number
   infinite?: boolean
-  /**
-   * @description To fix: Carousel not scrolling in Android ScrollView
-   */
-  _ScrollViewComponent?: any
 }
 
 export interface CarouselProps extends CarouselPropsType {
@@ -463,9 +459,9 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   }
 
   private renderScroll = (pages: React.ReactNode) => {
-    const ScrollViewComponent = this.props._ScrollViewComponent || ScrollView
     return (
-      <ScrollViewComponent
+      <ScrollView
+        nestedScrollEnabled
         {...this.props}
         horizontal={!this.props.vertical}
         ref={this.scrollview as any}
@@ -488,7 +484,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
             }
           : {})}>
         {pages}
-      </ScrollViewComponent>
+      </ScrollView>
     )
   }
 
