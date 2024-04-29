@@ -49,6 +49,8 @@ Properties | Descrition | Type | Default
 | dismissText  | dismiss text | String |  `取消`  |
 | onOk   | handler called when click ok  | `(value: PickerValue[], extend: PickerValueExtend) => void`  |  - |
 | onDismiss  | handler called when click cancel | (): void  |  -  |
+| okButtonProps  | The ok button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight)  |  `{ activeOpacity:1, underlayColor:'#ddd' }`  |
+| dismissButtonProps  | The dismiss button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight)  |  `{ activeOpacity:1, underlayColor:'#ddd' }`  |
 | visible  | Whether to show or hide the Picker  | Boolean | -  |
 | loading  | Should the Picker displays as loading state	  | Boolean | -  |
 | loadingContent  | The loading content displayed in loading state	  | ReactNode | -  |

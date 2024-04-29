@@ -110,7 +110,6 @@ export default class RMCPickerView extends React.Component<
       numberOfLines,
       handleSelect,
       loadingContent,
-      _ScrollViewComponent,
     } = this.props
     const itemHeight = this.props.itemHeight || this.state.itemHeight
     return (
@@ -153,7 +152,6 @@ export default class RMCPickerView extends React.Component<
                         itemHeight={itemHeight}
                         wheelHeight={wheelHeight}
                         renderLabel={this.renderLabel}
-                        _ScrollViewComponent={_ScrollViewComponent}
                       />
                     ))}
               </View>

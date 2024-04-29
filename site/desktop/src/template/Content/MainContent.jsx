@@ -1,6 +1,7 @@
 import Col from 'antd/lib/col'
 import Menu from 'antd/lib/menu'
 import Row from 'antd/lib/row'
+import Tag from 'antd/lib/tag'
 import { Link } from 'bisheng/router'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -86,13 +87,24 @@ export default class MainContent extends React.Component {
       text = item.title || item.chinese || item.english
     } else {
       text = [
-        <span key="english">{item.title || item.english}</span>,
-        <span className="chinese" key="chinese">
-          {item.subtitle || item.chinese}
+        <span
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+          <span style={{ flex: 1 }}>
+            <span key="english">{item.title || item.english}</span>
+            <span className="chinese" key="chinese">
+              {item.subtitle || item.chinese}
+            </span>
+          </span>
+          {item.version && <Tag color="green">{item.version}</Tag>}
+          {item.deprecate && <Tag color="red">{item.deprecate}</Tag>}
         </span>,
       ]
     }
-    const disabled = item.disabled
     let url = item.filename
       .replace(/(\/index)?((\.zh-CN)|(\.en-US))?\.md$/i, '')
       .toLowerCase()
@@ -100,24 +112,15 @@ export default class MainContent extends React.Component {
       url = `${url}-cn`
     }
     const child = !item.link ? (
-      <Link to={/^components/.test(url) ? `${url}/` : url} disabled={disabled}>
-        {text}
-      </Link>
+      <Link to={/^components/.test(url) ? `${url}/` : url}>{text}</Link>
     ) : (
-      <a
-        href={item.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        disabled={disabled}>
+      <a href={item.link} target="_blank" rel="noopener noreferrer">
         {text}
+        <Tag>5.1.1</Tag>
       </a>
     )
 
-    return (
-      <Menu.Item key={key.toLowerCase()} disabled={disabled}>
-        {child}
-      </Menu.Item>
-    )
+    return <Menu.Item key={key.toLowerCase()}>{child}</Menu.Item>
   }
 
   isNotTopLevel(level) {
