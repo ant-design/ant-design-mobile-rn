@@ -34,5 +34,4 @@ export interface PickerViewPropsType {
   renderLabel?: (item: PickerColumnItem, index: number) => ReactNode
   renderMaskTop?: () => ReactNode
   renderMaskBottom?: () => ReactNode
-  _ScrollViewComponent?: any
 }

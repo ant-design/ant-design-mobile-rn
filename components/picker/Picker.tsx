@@ -40,6 +40,8 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
     children,
     okText,
     dismissText,
+    okButtonProps,
+    dismissButtonProps,
     onChange,
     onOk,
     onDismiss,
@@ -151,7 +153,9 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
         onOk={handleOk}
         dismissText={dismissText || _locale.dismissText}
         onDismiss={handleDismiss}
-        onClose={actions.close}>
+        onClose={actions.close}
+        okButtonProps={okButtonProps}
+        dismissButtonProps={dismissButtonProps}>
         {/* TODO: 组件卸载是在visible更新fasle之后,需要前置 */}
         {/* 否则会无效执行onPickerChange */}
         {innerVisible && (

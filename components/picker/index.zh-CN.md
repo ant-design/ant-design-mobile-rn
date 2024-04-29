@@ -50,6 +50,8 @@ type PickerValueExtend = {
 | dismissText  | 取消选中的文案 | String |  `取消`  |
 | onOk   | 点击选中时执行的回调  | `(value: PickerValue[], extend: PickerValueExtend) => void`  |  - |
 | onDismiss  | 点击取消时执行的回调 | (): void  |  -  |
+| okButtonProps  | ok 按钮 props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight)  |  `{ activeOpacity:1, underlayColor:'#ddd' }`  |
+| dismissButtonProps  | dismiss 按钮 props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight)  |  `{ activeOpacity:1, underlayColor:'#ddd' }`  |
 | visible  | 是否显示选择器	  | Boolean | -  |
 | loading  | 是否处于加载状态  | Boolean | -  |
 | loadingContent  | 加载状态下展示的内容  | ReactNode | -  |

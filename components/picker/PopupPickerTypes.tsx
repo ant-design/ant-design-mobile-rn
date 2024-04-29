@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { TouchableHighlightProps } from 'react-native'
 
 export type PopupPickerProps = {
   onOk?: () => void
@@ -8,8 +9,8 @@ export type PopupPickerProps = {
   visible?: boolean
   okText?: ReactNode
   dismissText?: ReactNode
+  okButtonProps?: TouchableHighlightProps
+  dismissButtonProps?: TouchableHighlightProps
   children?: ReactNode
   styles: any
-  actionTextUnderlayColor?: string
-  actionTextActiveOpacity?: number
 }
