@@ -1,31 +1,25 @@
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import * as React from 'react'
-import { StyleProp, ViewStyle } from 'react-native'
-import { CheckboxStyle } from '../checkbox/style'
-import { WithThemeStyles } from '../style'
-import View from '../view'
-import { OnGroupChangeParams, RadioGroupPropsType } from './PropsType'
-import RadioItem from './RadioItem'
+import { View } from 'react-native'
+import DisabledContext from '../config-provider/DisabledContext'
+import { OnGroupChangeParams, RadioGroupProps } from './PropsType'
 import { RadioGroupContextProvider } from './RadioContext'
+import RadioItem from './RadioItem'
 
-export interface RadioGroupProps
-  extends RadioGroupPropsType,
-    WithThemeStyles<CheckboxStyle> {
-  style?: StyleProp<ViewStyle>
-}
-const RadioGroup = React.forwardRef<any, RadioGroupProps>(
-  (
-    {
+const RadioGroup = React.forwardRef<View, RadioGroupProps>(
+  (props: RadioGroupProps, ref) => {
+    const contextDisabled = React.useContext(DisabledContext)
+
+    const {
       defaultValue,
       onChange,
       options,
-      disabled,
+      disabled = contextDisabled,
       children,
       style,
       ...restProps
-    }: RadioGroupProps,
-    ref,
-  ) => {
+    } = props
+
     const [value, setValue] = useMergedState(defaultValue, {
       value: restProps.value,
     })
