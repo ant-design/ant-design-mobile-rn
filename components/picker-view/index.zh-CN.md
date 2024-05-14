@@ -44,3 +44,9 @@ PickerView 的功能类似于 Picker ，但它是直接渲染在区域中，而�
 ----|-----|------|------
 | renderMaskTop | 自定义渲染上半部分遮罩层 | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
 | renderMaskBottom | 自定义渲染下半部分遮罩层 | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
+
+## FAQ
+
+### 在Android平台，ScrollView中嵌套使用PickerView，会发生Picker Item不能滑动的情况，怎么办？
+
+设置`ScrollView`的`nestedScrollEnabled`属性为`true`即可。

@@ -3,13 +3,16 @@ import React, {
   forwardRef,
   useCallback,
   useContext,
+  useEffect,
   useImperativeHandle,
   useMemo,
   useState,
 } from 'react'
 import { Omit } from 'utility-types'
 
+import { Keyboard } from 'react-native'
 import { getComponentLocale } from '../_util/getLocale'
+import DisabledContext from '../config-provider/DisabledContext'
 import { LocaleContext } from '../locale-provider'
 import { PickerColumn, PickerValue } from '../picker-view/PropsType'
 import RMCPickerView from '../picker-view/picker-view'
@@ -22,18 +25,20 @@ export type PickerActions = {
   open: () => void
   close: () => void
   toggle: () => void
-  _updateExtra: () => void
+  value?: PickerValue[]
 }
 export type PickerRef = PickerActions
 
 export interface RMCPickerProps
   extends Omit<PickerPropsType, 'value' | 'data' | 'cols' | 'cascade'> {
-  value: PickerValue[]
+  value?: PickerValue[]
+  innerValue: PickerValue[]
   columns: PickerColumn[]
   handleSelect: (value: PickerValue, index: number) => void
 }
 
 const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
+  const contextDisabled = useContext(DisabledContext)
   const {
     onVisibleChange,
     visible,
@@ -48,20 +53,32 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
     onClose,
     title,
     extra,
-    disabled,
+    disabled = contextDisabled,
     format,
     value,
+    innerValue,
     columns,
     handleSelect,
     ...restProps
   } = props
 
-  const [innerVisible, setInnerVisible] = useMergedState<boolean>(false, {
+  const [innerVisible, setInnerVisible2] = useMergedState<boolean>(false, {
     value: visible,
     onChange: (v) => onVisibleChange?.(v),
   })
-  const [innerExtra, setInnerExtra] = useState(extra)
 
+  const setInnerVisible = useCallback(
+    (bool) => {
+      !disabled && setInnerVisible2(bool)
+    },
+    [disabled, setInnerVisible2],
+  )
+
+  useEffect(() => {
+    Keyboard.dismiss()
+  }, [innerVisible])
+
+  // ================== Actions Ref ==================
   const actions = useMemo(
     () => ({
       toggle: () => {
@@ -74,37 +91,22 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
         setInnerVisible(false)
         onClose?.()
       },
-      // TODO: remove hack
-      _updateExtra: () => {
-        setInnerExtra(
-          format?.(
-            columns.reduce((cur: any[], next, index) => {
-              const labelValue = next.find(
-                (item) => item.value === value?.[index],
-              )
-              if (labelValue?.label) {
-                cur.push(labelValue.label)
-              }
-              return cur
-            }, []),
-          ),
-        )
-      },
+      value: innerValue,
     }),
-    [columns, format, innerVisible, onClose, setInnerVisible, value],
+    [innerValue, innerVisible, onClose, setInnerVisible],
   )
   useImperativeHandle(ref, () => actions)
 
   const handleOk = useCallback(() => {
     const extend = columns.map(
       (column, index) =>
-        column.find((item) => item.value === value?.[index]) ?? column[0],
+        column.find((item) => item.value === innerValue?.[index]) ?? column[0],
     )
     const nextValue = extend.map((item) => item.value)
     onOk?.(nextValue, { items: extend, columns })
     onChange?.(nextValue, { items: extend, columns })
     actions.close()
-  }, [actions, columns, onChange, onOk, value])
+  }, [actions, columns, onChange, onOk, innerValue])
 
   const handleDismiss = useCallback(() => {
     onDismiss?.()
@@ -118,12 +120,45 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
     () => require('./locale/zh_CN'),
   )
 
+  // ================== Extra Render ==================
+  const [innerExtra, setInnerExtra] = useState(extra || _locale.extra)
+  useEffect(() => {
+    if (!children || innerVisible) {
+      return
+    }
+    if (!value?.length) {
+      return setInnerExtra(extra || _locale.extra)
+    }
+
+    setInnerExtra(
+      format?.(
+        columns.reduce((cur: any[], next, index) => {
+          const labelValue = next.find((item) => item.value === value[index])
+          if (labelValue?.label) {
+            cur.push(labelValue.label)
+          }
+          return cur
+        }, []),
+      ),
+    )
+  }, [value, columns, innerVisible, format, children, extra, _locale.extra])
+
   const renderChildren = () => {
     if (!children) {
       return null
     }
-    const child = children as any
+    // children as function
+    if (typeof children === 'function') {
+      return children({
+        value,
+        extra: innerExtra || extra || _locale.extra,
+        disabled,
+        toggle: actions.toggle,
+      })
+    }
+    const child = children as React.ReactElement
     const newChildProps = {
+      value,
       extra: innerExtra || extra || _locale.extra,
       disabled,
     } as any
@@ -161,7 +196,7 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
         {innerVisible && (
           <RMCPickerView
             {...restProps}
-            value={value}
+            value={innerValue}
             columns={columns}
             handleSelect={handleSelect}
           />

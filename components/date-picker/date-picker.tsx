@@ -6,7 +6,6 @@ import React, {
   useEffect,
   useImperativeHandle,
   useMemo,
-  useRef,
   useState,
 } from 'react'
 import { getComponentLocale } from '../_util/getLocale'
@@ -68,11 +67,19 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
   const pickerRef = React.useRef<PickerRef>(null)
   useImperativeHandle(ref, () => pickerRef.current as PickerRef)
 
-  const pickerValue = usePickerValue(innerValue, minDate, maxDate, _precision)
+  // innerValue
+  const pickerInnerValue = usePickerValue(
+    innerValue,
+    minDate,
+    maxDate,
+    _precision,
+  )
+  // value prop
+  const pickerValue = usePickerValue(value, minDate, maxDate, _precision)
 
   const columns = useMemo(() => {
     return generateDatePickerColumns(
-      pickerValue,
+      pickerInnerValue,
       minDate,
       maxDate,
       _precision,
@@ -80,17 +87,24 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
       filter,
       false,
     )
-  }, [maxDate, mergedRenderLabel, minDate, _precision, filter, pickerValue])
+  }, [
+    maxDate,
+    mergedRenderLabel,
+    minDate,
+    _precision,
+    filter,
+    pickerInnerValue,
+  ])
 
   const handleSelect = useCallback(
     (val: any, i: number) => {
-      const pvalue = pickerValue.slice(0)
+      const pvalue = pickerInnerValue.slice(0)
       pvalue[i] = val
       const { dateValue } = getValueExtend(columns, pvalue, _precision)
       setInnerValue(dateValue)
       p.onValueChange?.(dateValue, i)
     },
-    [columns, _precision, p, pickerValue],
+    [columns, _precision, p, pickerInnerValue],
   )
 
   const handleOk = useCallback(
@@ -126,13 +140,10 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
     [_precision, p],
   )
 
-  // 记录value是否变化过
-  const isValueChanged = useRef(false)
-
   const onVisibleChange = useCallback(
     (visible) => {
       p.onVisibleChange?.(visible)
-      if (!visible && value !== innerValue && isValueChanged.current) {
+      if (!visible && value !== innerValue) {
         // 关闭时，如果选中值不同步，恢复为原选中值
         setInnerValue(value)
       }
@@ -140,22 +151,8 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
     [innerValue, p, value],
   )
 
-  // for useEffect only on update
-  const isInitialMount = useRef(true)
-
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false
-      // extra update initial
-      pickerRef.current?._updateExtra()
-    } else {
-      isValueChanged.current = true
-      setInnerValue(value)
-      // extra update after value update
-      setTimeout(() => {
-        pickerRef.current?._updateExtra()
-      })
-    }
+    setInnerValue(value)
   }, [value])
 
   return (
@@ -163,6 +160,7 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
       {...restProps}
       locale={_locale}
       value={pickerValue}
+      innerValue={pickerInnerValue}
       columns={columns}
       handleSelect={handleSelect}
       onVisibleChange={onVisibleChange}
