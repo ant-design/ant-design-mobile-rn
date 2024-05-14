@@ -138,6 +138,18 @@ module.exports = {
       module: require('../components/date-picker-view/demo/basic'),
     },
     {
+      title: 'Form',
+      description: '表单',
+      icon: 'https://os.alipayobjects.com/rmsportal/SdSqpihcSBoBrFO.png',
+      module: require('../components/form/demo/basic'),
+    },
+    {
+      title: 'Input',
+      description: '文本输入',
+      icon: 'https://os.alipayobjects.com/rmsportal/SdSqpihcSBoBrFO.png',
+      module: require('../components/input/demo/basic'),
+    },
+    {
       title: 'InputItem',
       description: '文本输入',
       icon: 'https://os.alipayobjects.com/rmsportal/SdSqpihcSBoBrFO.png',

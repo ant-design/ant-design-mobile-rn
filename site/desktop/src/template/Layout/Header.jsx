@@ -229,11 +229,11 @@ export default class Header extends React.Component {
             <FormattedMessage id="app.header.menu.support" />
           </Link>
         </Menu.Item>
-        {/* <Menu.Item key="pc">
-          <a href="//ant.design">
-            <FormattedMessage id="app.header.menu.pc" />
+        <Menu.Item key="pc">
+          <a href="https://github.com/ant-design/ant-design-mobile-rn">
+            github
           </a>
-        </Menu.Item> */}
+        </Menu.Item>
       </Menu>,
     ]
 

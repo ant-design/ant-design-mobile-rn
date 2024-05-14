@@ -30,7 +30,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -55,13 +55,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             }
           >
             <View
-              accessibilityRole="checkbox"
+              accessibilityRole="radio"
               accessibilityState={
                 Object {
                   "checked": false,
-                  "disabled": undefined,
+                  "disabled": false,
                 }
               }
+              accessible={true}
+              checked={false}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -92,24 +105,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Array [
@@ -168,34 +163,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   />
                 </View>
               </View>
-              <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
               >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                >
-                  Radio
-                </Text>
-              </View>
+                Radio
+              </Text>
             </View>
             <View
               style={
@@ -214,47 +194,21 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </View>
+            />
           </View>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -286,7 +240,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -330,12 +284,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <View
@@ -352,13 +304,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
-                    accessibilityRole="checkbox"
+                    accessibilityRole="radio"
                     accessibilityState={
                       Object {
                         "checked": false,
                         "disabled": false,
                       }
                     }
+                    accessible={true}
+                    checked={false}
+                    collapsable={false}
+                    focusable={true}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -389,24 +354,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
-                        accessibilityRole="button"
-                        accessibilityState={
-                          Object {
-                            "disabled": false,
-                          }
-                        }
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Array [
@@ -465,34 +412,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         />
                       </View>
                     </View>
-                    <View
-                      accessible={true}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "marginLeft": 8,
+                            "marginRight": 8,
+                          },
+                        ]
+                      }
                     >
-                      <Text
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      >
-                        Disabled
-                      </Text>
-                    </View>
+                      Disabled
+                    </Text>
                   </View>
                   <View
                     style={
@@ -506,13 +438,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     }
                   />
                   <View
-                    accessibilityRole="checkbox"
+                    accessibilityRole="radio"
                     accessibilityState={
                       Object {
                         "checked": false,
                         "disabled": false,
                       }
                     }
+                    accessible={true}
+                    checked={false}
+                    collapsable={false}
+                    focusable={true}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -543,24 +488,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
-                        accessibilityRole="button"
-                        accessibilityState={
-                          Object {
-                            "disabled": false,
-                          }
-                        }
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Array [
@@ -619,34 +546,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         />
                       </View>
                     </View>
-                    <View
-                      accessible={true}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "marginLeft": 8,
+                            "marginRight": 8,
+                          },
+                        ]
+                      }
                     >
-                      <Text
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      >
-                        Disabled
-                      </Text>
-                    </View>
+                      Disabled
+                    </Text>
                   </View>
                 </View>
               </View>
@@ -655,18 +567,16 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -765,6 +675,13 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
+          accessibilityRole="radio"
+          accessibilityState={
+            Object {
+              "checked": true,
+              "disabled": false,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -809,12 +726,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -834,13 +749,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityRole="checkbox"
+                accessibilityRole="radio"
                 accessibilityState={
                   Object {
                     "checked": true,
-                    "disabled": undefined,
+                    "disabled": false,
                   }
                 }
+                accessible={true}
+                checked={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Object {
@@ -871,25 +799,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
-                    Color="#1890ff"
-                    accessibilityRole="button"
-                    accessibilityState={
-                      Object {
-                        "disabled": false,
-                      }
-                    }
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Array [
@@ -952,36 +861,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                >
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
-                </View>
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                      },
+                    ]
+                  }
+                />
               </View>
             </View>
           </View>
         </View>
         <View
+          accessibilityRole="radio"
+          accessibilityState={
+            Object {
+              "checked": false,
+              "disabled": false,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -1026,12 +927,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -1051,13 +950,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityRole="checkbox"
+                accessibilityRole="radio"
                 accessibilityState={
                   Object {
                     "checked": false,
-                    "disabled": undefined,
+                    "disabled": false,
                   }
                 }
+                accessible={true}
+                checked={false}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Object {
@@ -1088,24 +1000,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
-                    accessibilityRole="button"
-                    accessibilityState={
-                      Object {
-                        "disabled": false,
-                      }
-                    }
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Array [
@@ -1165,49 +1059,32 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                >
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
-                </View>
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                      },
+                    ]
+                  }
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -1243,7 +1120,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
           accessibilityRole="radiogroup"
           accessibilityState={
             Object {
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           style={
@@ -1255,13 +1132,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
-            accessibilityRole="checkbox"
+            accessibilityRole="radio"
             accessibilityState={
               Object {
                 "checked": true,
-                "disabled": undefined,
+                "disabled": false,
               }
             }
+            accessible={true}
+            checked={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -1292,25 +1182,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                Color="#1890ff"
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": false,
-                  }
-                }
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Array [
@@ -1372,43 +1243,41 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 />
               </View>
             </View>
-            <View
-              accessible={true}
-              collapsable={false}
-              focusable={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                  },
+                ]
+              }
             >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                    },
-                  ]
-                }
-              >
-                A
-              </Text>
-            </View>
+              A
+            </Text>
           </View>
           <View
-            accessibilityRole="checkbox"
+            accessibilityRole="radio"
             accessibilityState={
               Object {
                 "checked": false,
-                "disabled": undefined,
+                "disabled": false,
               }
             }
+            accessible={true}
+            checked={false}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -1439,24 +1308,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": false,
-                  }
-                }
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Array [
@@ -1515,43 +1366,41 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 />
               </View>
             </View>
-            <View
-              accessible={true}
-              collapsable={false}
-              focusable={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                  },
+                ]
+              }
             >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                    },
-                  ]
-                }
-              >
-                B
-              </Text>
-            </View>
+              B
+            </Text>
           </View>
           <View
-            accessibilityRole="checkbox"
+            accessibilityRole="radio"
             accessibilityState={
               Object {
                 "checked": false,
-                "disabled": undefined,
+                "disabled": false,
               }
             }
+            accessible={true}
+            checked={false}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -1582,24 +1431,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": false,
-                  }
-                }
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Array [
@@ -1658,43 +1489,41 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 />
               </View>
             </View>
-            <View
-              accessible={true}
-              collapsable={false}
-              focusable={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                  },
+                ]
+              }
             >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                    },
-                  ]
-                }
-              >
-                C
-              </Text>
-            </View>
+              C
+            </Text>
           </View>
           <View
-            accessibilityRole="checkbox"
+            accessibilityRole="radio"
             accessibilityState={
               Object {
                 "checked": false,
-                "disabled": undefined,
+                "disabled": false,
               }
             }
+            accessible={true}
+            checked={false}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -1725,24 +1554,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": false,
-                  }
-                }
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Array [
@@ -1801,50 +1612,33 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 />
               </View>
             </View>
-            <View
-              accessible={true}
-              collapsable={false}
-              focusable={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
+            <Text
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                  },
+                ]
+              }
             >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "transparent",
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                    },
-                  ]
-                }
-              >
-                D
-              </Text>
-            </View>
+              D
+            </Text>
           </View>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -1880,11 +1674,18 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
           accessibilityRole="radiogroup"
           accessibilityState={
             Object {
-              "disabled": undefined,
+              "disabled": false,
             }
           }
         >
           <View
+            accessibilityRole="radio"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -1929,12 +1730,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    }
                   }
                 >
                   <Text
@@ -1954,13 +1753,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </Text>
                 </View>
                 <View
-                  accessibilityRole="checkbox"
+                  accessibilityRole="radio"
                   accessibilityState={
                     Object {
                       "checked": true,
-                      "disabled": undefined,
+                      "disabled": false,
                     }
                   }
+                  accessible={true}
+                  checked={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -1991,25 +1803,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     }
                   >
                     <View
-                      Color="#1890ff"
-                      accessibilityRole="button"
-                      accessibilityState={
-                        Object {
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Array [
@@ -2072,36 +1865,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     </View>
                   </View>
                   <View
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                  >
-                    <View
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "marginLeft": 8,
-                            "marginRight": 8,
-                          },
-                        ]
-                      }
-                    />
-                  </View>
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
                 </View>
               </View>
             </View>
           </View>
           <View
+            accessibilityRole="radio"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2146,12 +1931,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    }
                   }
                 >
                   <Text
@@ -2171,13 +1954,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </Text>
                 </View>
                 <View
-                  accessibilityRole="checkbox"
+                  accessibilityRole="radio"
                   accessibilityState={
                     Object {
                       "checked": false,
-                      "disabled": undefined,
+                      "disabled": false,
                     }
                   }
+                  accessible={true}
+                  checked={false}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -2208,24 +2004,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     }
                   >
                     <View
-                      accessibilityRole="button"
-                      accessibilityState={
-                        Object {
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Array [
@@ -2285,36 +2063,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     </View>
                   </View>
                   <View
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                  >
-                    <View
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "marginLeft": 8,
-                            "marginRight": 8,
-                          },
-                        ]
-                      }
-                    />
-                  </View>
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
                 </View>
               </View>
             </View>
           </View>
           <View
+            accessibilityRole="radio"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2359,12 +2129,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    }
                   }
                 >
                   <Text
@@ -2384,13 +2152,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </Text>
                 </View>
                 <View
-                  accessibilityRole="checkbox"
+                  accessibilityRole="radio"
                   accessibilityState={
                     Object {
                       "checked": false,
-                      "disabled": undefined,
+                      "disabled": false,
                     }
                   }
+                  accessible={true}
+                  checked={false}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -2421,24 +2202,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     }
                   >
                     <View
-                      accessibilityRole="button"
-                      accessibilityState={
-                        Object {
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Array [
@@ -2498,36 +2261,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     </View>
                   </View>
                   <View
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                  >
-                    <View
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "marginLeft": 8,
-                            "marginRight": 8,
-                          },
-                        ]
-                      }
-                    />
-                  </View>
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
                 </View>
               </View>
             </View>
           </View>
           <View
+            accessibilityRole="radio"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2553,13 +2308,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                accessibilityRole="checkbox"
+                accessibilityRole="radio"
                 accessibilityState={
                   Object {
                     "checked": false,
-                    "disabled": undefined,
+                    "disabled": false,
                   }
                 }
+                accessible={true}
+                checked={false}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Object {
@@ -2590,24 +2358,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
-                    accessibilityRole="button"
-                    accessibilityState={
-                      Object {
-                        "disabled": false,
-                      }
-                    }
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Array [
@@ -2667,31 +2417,16 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                >
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
-                </View>
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
                 style={
@@ -2713,12 +2448,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    }
                   }
                 >
                   <Text
@@ -2743,18 +2476,16 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -2816,11 +2547,18 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               accessibilityRole="radiogroup"
               accessibilityState={
                 Object {
-                  "disabled": undefined,
+                  "disabled": false,
                 }
               }
             >
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": true,
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 focusable={true}
                 onClick={[Function]}
@@ -2865,12 +2603,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -2890,13 +2626,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": true,
-                          "disabled": undefined,
+                          "disabled": false,
                         }
                       }
+                      accessible={true}
+                      checked={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -2927,25 +2676,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          Color="#1890ff"
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": false,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -3008,36 +2738,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
               </View>
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": false,
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 focusable={true}
                 onClick={[Function]}
@@ -3082,12 +2804,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -3107,13 +2827,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": false,
-                          "disabled": undefined,
+                          "disabled": false,
                         }
                       }
+                      accessible={true}
+                      checked={false}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -3144,24 +2877,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": false,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -3221,36 +2936,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
               </View>
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": false,
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 focusable={true}
                 onClick={[Function]}
@@ -3295,12 +3002,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -3320,13 +3025,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": false,
-                          "disabled": undefined,
+                          "disabled": false,
                         }
                       }
+                      accessible={true}
+                      checked={false}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -3357,24 +3075,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": false,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -3434,31 +3134,16 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
@@ -3466,18 +3151,16 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             </View>
             <View
               style={
-                Array [
-                  Object {
-                    "backgroundColor": "#ffffff",
-                    "borderBottomColor": "#dddddd",
-                    "borderBottomWidth": 0.5,
-                    "bottom": 0,
-                    "height": 1,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                  },
-                ]
+                Object {
+                  "backgroundColor": "#ffffff",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "bottom": 0,
+                  "height": 1,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                }
               }
             />
           </View>
@@ -3512,11 +3195,18 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               accessibilityRole="radiogroup"
               accessibilityState={
                 Object {
-                  "disabled": undefined,
+                  "disabled": false,
                 }
               }
             >
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": true,
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 focusable={true}
                 onClick={[Function]}
@@ -3561,12 +3251,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -3586,13 +3274,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": true,
-                          "disabled": undefined,
+                          "disabled": false,
                         }
                       }
+                      accessible={true}
+                      checked={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -3623,25 +3324,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          Color="#1890ff"
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": false,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -3704,36 +3386,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
               </View>
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": false,
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 focusable={true}
                 onClick={[Function]}
@@ -3778,12 +3452,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -3803,13 +3475,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": false,
-                          "disabled": undefined,
+                          "disabled": false,
                         }
                       }
+                      accessible={true}
+                      checked={false}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -3840,24 +3525,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": false,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -3917,36 +3584,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
               </View>
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": false,
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 focusable={true}
                 onClick={[Function]}
@@ -3991,12 +3650,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -4016,13 +3673,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": false,
-                          "disabled": undefined,
+                          "disabled": false,
                         }
                       }
+                      accessible={true}
+                      checked={false}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -4053,24 +3723,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": false,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -4130,31 +3782,16 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
@@ -4162,18 +3799,16 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             </View>
             <View
               style={
-                Array [
-                  Object {
-                    "backgroundColor": "#ffffff",
-                    "borderBottomColor": "#dddddd",
-                    "borderBottomWidth": 0.5,
-                    "bottom": 0,
-                    "height": 1,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                  },
-                ]
+                Object {
+                  "backgroundColor": "#ffffff",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "bottom": 0,
+                  "height": 1,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                }
               }
             />
           </View>
@@ -4208,11 +3843,18 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               accessibilityRole="radiogroup"
               accessibilityState={
                 Object {
-                  "disabled": undefined,
+                  "disabled": false,
                 }
               }
             >
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": true,
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 focusable={true}
                 onClick={[Function]}
@@ -4257,12 +3899,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -4282,13 +3922,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": true,
-                          "disabled": undefined,
+                          "disabled": false,
                         }
                       }
+                      accessible={true}
+                      checked={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -4319,25 +3972,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          Color="#1890ff"
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": false,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -4400,36 +4034,28 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
               </View>
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": false,
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 focusable={true}
                 onClick={[Function]}
@@ -4474,12 +4100,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -4499,13 +4123,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": false,
-                          "disabled": undefined,
+                          "disabled": false,
                         }
                       }
+                      accessible={true}
+                      checked={false}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -4536,24 +4173,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": false,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -4613,38 +4232,30 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
               </View>
               <View
+                accessibilityRole="radio"
+                accessibilityState={
+                  Object {
+                    "checked": false,
+                    "disabled": true,
+                  }
+                }
                 accessible={true}
-                focusable={false}
+                focusable={true}
                 onClick={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
@@ -4687,12 +4298,10 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Array [
-                          Object {
-                            "flex": 1,
-                            "flexDirection": "column",
-                          },
-                        ]
+                        Object {
+                          "flex": 1,
+                          "flexDirection": "column",
+                        }
                       }
                     >
                       <Text
@@ -4714,13 +4323,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="checkbox"
+                      accessibilityRole="radio"
                       accessibilityState={
                         Object {
                           "checked": false,
                           "disabled": true,
                         }
                       }
+                      accessible={true}
+                      checked={false}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
@@ -4751,24 +4373,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         }
                       >
                         <View
-                          accessibilityRole="button"
-                          accessibilityState={
-                            Object {
-                              "disabled": true,
-                            }
-                          }
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
                           style={
                             Array [
                               Array [
@@ -4832,34 +4436,19 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         </View>
                       </View>
                       <View
-                        accessible={true}
-                        collapsable={false}
-                        focusable={true}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
-                      >
-                        <View
-                          style={
-                            Array [
-                              Object {
-                                "backgroundColor": "transparent",
-                                "marginLeft": 8,
-                                "marginRight": 8,
-                              },
-                              Object {
-                                "color": "#bbbbbb",
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "marginLeft": 8,
+                              "marginRight": 8,
+                            },
+                            Object {
+                              "color": "#bbbbbb",
+                            },
+                          ]
+                        }
+                      />
                     </View>
                   </View>
                 </View>
@@ -4867,36 +4456,32 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             </View>
             <View
               style={
-                Array [
-                  Object {
-                    "backgroundColor": "#ffffff",
-                    "borderBottomColor": "#dddddd",
-                    "borderBottomWidth": 0.5,
-                    "bottom": 0,
-                    "height": 1,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                  },
-                ]
+                Object {
+                  "backgroundColor": "#ffffff",
+                  "borderBottomColor": "#dddddd",
+                  "borderBottomWidth": 0.5,
+                  "bottom": 0,
+                  "height": 1,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                }
               }
             />
           </View>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>

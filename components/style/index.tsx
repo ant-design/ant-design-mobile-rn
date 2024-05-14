@@ -17,33 +17,32 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 export interface UseThemeContextProps {
   theme?: PartialTheme
 }
-export const useTheme = <T, S>(props: any) => {
+
+// useTheme hook
+export function useTheme<T>(props: {
+  themeStyles: (theme: Theme) => T
+  styles?: Partial<T>
+}): T {
   const theme = React.useContext(ThemeContext)
   const { themeStyles, styles } = props
 
-  const stylesRef = React.useRef<S | undefined>(undefined)
-  const cache = React.useRef<T | any>(undefined)
+  const stylesRef = React.useRef<Partial<T>>({})
+  const cache = React.useRef<T | any>(themeStyles(theme))
 
-  const getStyles = React.useCallback(() => {
-    if (themeStyles && cache.current === undefined) {
-      cache.current = themeStyles(theme)
-    }
-
-    // TODO: check these styles has changed
+  return React.useMemo(() => {
     if (styles && !shallowequal(stylesRef.current, styles)) {
       stylesRef.current = styles
+      const themeStyle = themeStyles(theme)
       // merge styles from user defined
-      styles &&
-        Object.keys(styles).forEach((key) => {
-          if (cache.current[key]) {
-            cache.current[key] = [cache.current[key], styles[key]]
-          }
-        })
+      for (let key in styles) {
+        if (cache.current[key]) {
+          cache.current[key] = [themeStyle[key], styles[key]]
+        }
+      }
     }
 
-    return cache.current || {}
-  }, [theme, themeStyles, styles])
-  return getStyles()
+    return cache.current
+  }, [styles, theme, themeStyles])
 }
 
 export interface WithThemeProps<T, S> {
@@ -69,23 +68,22 @@ export function WithTheme<T, S>(props: WithThemeProps<T, S>) {
 
   const getStyles = React.useCallback(
     (theme: Theme) => {
-      if (themeStyles && cache.current === undefined) {
-        cache.current = themeStyles(theme)
+      if (!cache.current) {
+        cache.current = themeStyles?.(theme) as typeof styles
       }
 
-      // TODO: check these styles has changed
       if (styles && !shallowequal(stylesRef.current, styles)) {
         stylesRef.current = styles
+        const themeStyle = themeStyles?.(theme) as typeof styles
         // merge styles from user defined
-        styles &&
-          Object.keys(styles).forEach((key) => {
-            if (cache.current[key]) {
-              cache.current[key] = [cache.current[key], styles[key]]
-            }
-          })
+        for (let key in styles) {
+          if (cache.current[key]) {
+            cache.current[key] = [themeStyle[key], styles[key]]
+          }
+        }
       }
 
-      return cache.current || {}
+      return cache.current
     },
     [themeStyles, styles],
   )

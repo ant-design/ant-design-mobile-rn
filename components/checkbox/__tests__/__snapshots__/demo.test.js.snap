@@ -30,7 +30,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -59,9 +59,21 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               accessibilityState={
                 Object {
                   "checked": false,
-                  "disabled": undefined,
+                  "disabled": false,
                 }
               }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -87,25 +99,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  Color="#d9d9d9"
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -157,34 +150,19 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   />
                 </View>
               </View>
-              <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
               >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                >
-                  Checkbox
-                </Text>
-              </View>
+                Checkbox
+              </Text>
             </View>
             <View
               style={
@@ -203,47 +181,21 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </View>
+            />
           </View>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -275,7 +227,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -307,6 +259,18 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   "disabled": true,
                 }
               }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -332,25 +296,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  Color="#d9d9d9"
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": true,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -407,34 +352,19 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 </View>
               </View>
               <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                      Object {
-                        "color": "#bbbbbb",
-                      },
-                    ]
-                  }
-                />
-              </View>
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                    Object {
+                      "color": "#bbbbbb",
+                    },
+                  ]
+                }
+              />
             </View>
             <View
               style={
@@ -453,35 +383,11 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </View>
+            />
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -513,6 +419,18 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   "disabled": true,
                 }
               }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -538,25 +456,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  Color="#1890ff"
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": true,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -616,34 +515,19 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 </View>
               </View>
               <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                      Object {
-                        "color": "#bbbbbb",
-                      },
-                    ]
-                  }
-                />
-              </View>
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                    Object {
+                      "color": "#bbbbbb",
+                    },
+                  ]
+                }
+              />
             </View>
             <View
               style={
@@ -662,47 +546,21 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </View>
+            />
           </View>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -734,7 +592,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -766,6 +624,19 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   "disabled": false,
                 }
               }
+              accessible={true}
+              checked={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -791,25 +662,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  Color="#1890ff"
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -864,34 +716,19 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   />
                 </View>
               </View>
-              <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
               >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                >
-                  Checked-Enabled
-                </Text>
-              </View>
+                Checked-Enabled
+              </Text>
             </View>
             <View
               style={
@@ -910,47 +747,21 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </View>
+            />
           </View>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -1158,9 +969,21 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           accessibilityState={
             Object {
               "checked": false,
-              "disabled": undefined,
+              "disabled": false,
             }
           }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
@@ -1186,25 +1009,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             }
           >
             <View
-              Color="#d9d9d9"
-              accessibilityRole="button"
-              accessibilityState={
-                Object {
-                  "disabled": false,
-                }
-              }
-              accessible={true}
-              collapsable={false}
-              focusable={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -1256,49 +1060,32 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               />
             </View>
           </View>
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+          <Text
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "marginLeft": 8,
+                  "marginRight": 8,
+                },
+              ]
+            }
           >
-            <Text
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "marginLeft": 8,
-                    "marginRight": 8,
-                  },
-                ]
-              }
-            >
-              Agree agreement agreement agreement agreement agreement agreement agreement
-            </Text>
-          </View>
+            Agree agreement agreement agreement agreement agreement agreement agreement
+          </Text>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -1330,6 +1117,13 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
+          accessibilityRole="checkbox"
+          accessibilityState={
+            Object {
+              "checked": true,
+              "disabled": false,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -1341,8 +1135,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           onStartShouldSetResponder={[Function]}
         >
           <View
-            checked={true}
-            onChange={[Function]}
             style={
               Array [
                 Object {
@@ -1361,9 +1153,22 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               accessibilityState={
                 Object {
                   "checked": true,
-                  "disabled": undefined,
+                  "disabled": false,
                 }
               }
+              accessible={true}
+              checked={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -1389,25 +1194,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  Color="#1890ff"
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -1463,31 +1249,16 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 </View>
               </View>
               <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                />
-              </View>
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
+              />
             </View>
             <View
               style={
@@ -1509,12 +1280,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -1536,6 +1305,13 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
+          accessibilityRole="checkbox"
+          accessibilityState={
+            Object {
+              "checked": false,
+              "disabled": false,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -1565,9 +1341,21 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               accessibilityState={
                 Object {
                   "checked": false,
-                  "disabled": undefined,
+                  "disabled": false,
                 }
               }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -1593,25 +1381,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  Color="#d9d9d9"
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -1664,31 +1433,16 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 </View>
               </View>
               <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                />
-              </View>
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
+              />
             </View>
             <View
               style={
@@ -1710,12 +1464,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -1737,8 +1489,15 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
+          accessibilityRole="checkbox"
+          accessibilityState={
+            Object {
+              "checked": false,
+              "disabled": true,
+            }
+          }
           accessible={true}
-          focusable={false}
+          focusable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -1769,6 +1528,18 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   "disabled": true,
                 }
               }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -1794,25 +1565,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  Color="#d9d9d9"
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": true,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -1869,34 +1621,19 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 </View>
               </View>
               <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                      Object {
-                        "color": "#bbbbbb",
-                      },
-                    ]
-                  }
-                />
-              </View>
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                    Object {
+                      "color": "#bbbbbb",
+                    },
+                  ]
+                }
+              />
             </View>
             <View
               style={
@@ -1918,12 +1655,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -1948,8 +1683,15 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
+          accessibilityRole="checkbox"
+          accessibilityState={
+            Object {
+              "checked": true,
+              "disabled": true,
+            }
+          }
           accessible={true}
-          focusable={false}
+          focusable={true}
           onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -1959,7 +1701,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           onStartShouldSetResponder={[Function]}
         >
           <View
-            checked={true}
             style={
               Array [
                 Object {
@@ -1993,12 +1734,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -2027,6 +1766,19 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     "disabled": true,
                   }
                 }
+                accessible={true}
+                checked={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Object {
@@ -2052,25 +1804,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
-                    Color="#1890ff"
-                    accessibilityRole="button"
-                    accessibilityState={
-                      Object {
-                        "disabled": true,
-                      }
-                    }
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -2130,52 +1863,35 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                >
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                        Object {
-                          "color": "#bbbbbb",
-                        },
-                      ]
-                    }
-                  />
-                </View>
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                      },
+                      Object {
+                        "color": "#bbbbbb",
+                      },
+                    ]
+                  }
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -2208,6 +1924,13 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
+          accessibilityRole="checkbox"
+          accessibilityState={
+            Object {
+              "checked": "mixed",
+              "disabled": false,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -2219,9 +1942,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           onStartShouldSetResponder={[Function]}
         >
           <View
-            checked={false}
-            indeterminate={true}
-            onChange={[Function]}
             style={
               Array [
                 Object {
@@ -2239,10 +1959,23 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               accessibilityRole="checkbox"
               accessibilityState={
                 Object {
-                  "checked": false,
-                  "disabled": undefined,
+                  "checked": "mixed",
+                  "disabled": false,
                 }
               }
+              accessible={true}
+              checked={false}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Array [
                   Object {
@@ -2268,25 +2001,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 }
               >
                 <View
-                  Color="#d9d9d9"
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
@@ -2332,31 +2046,16 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 </View>
               </View>
               <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                />
-              </View>
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "marginLeft": 8,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
+              />
             </View>
             <View
               style={
@@ -2378,12 +2077,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -2416,6 +2113,13 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": true,
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2427,8 +2131,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             onStartShouldSetResponder={[Function]}
           >
             <View
-              checked={true}
-              onChange={[Function]}
               style={
                 Array [
                   Object {
@@ -2447,9 +2149,22 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 accessibilityState={
                   Object {
                     "checked": true,
-                    "disabled": undefined,
+                    "disabled": false,
                   }
                 }
+                accessible={true}
+                checked={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Object {
@@ -2475,25 +2190,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
-                    Color="#1890ff"
-                    accessibilityRole="button"
-                    accessibilityState={
-                      Object {
-                        "disabled": false,
-                      }
-                    }
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -2549,31 +2245,16 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                >
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
-                </View>
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
                 style={
@@ -2595,12 +2276,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    }
                   }
                 >
                   <Text
@@ -2622,6 +2301,13 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2633,8 +2319,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             onStartShouldSetResponder={[Function]}
           >
             <View
-              checked={false}
-              onChange={[Function]}
               style={
                 Array [
                   Object {
@@ -2653,9 +2337,22 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 accessibilityState={
                   Object {
                     "checked": false,
-                    "disabled": undefined,
+                    "disabled": false,
                   }
                 }
+                accessible={true}
+                checked={false}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Object {
@@ -2681,25 +2378,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
-                    Color="#d9d9d9"
-                    accessibilityRole="button"
-                    accessibilityState={
-                      Object {
-                        "disabled": false,
-                      }
-                    }
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -2752,31 +2430,16 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                >
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
-                </View>
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
                 style={
@@ -2798,12 +2461,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    }
                   }
                 >
                   <Text
@@ -2825,6 +2486,13 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": true,
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2836,8 +2504,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             onStartShouldSetResponder={[Function]}
           >
             <View
-              checked={true}
-              onChange={[Function]}
               style={
                 Array [
                   Object {
@@ -2856,9 +2522,22 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 accessibilityState={
                   Object {
                     "checked": true,
-                    "disabled": undefined,
+                    "disabled": false,
                   }
                 }
+                accessible={true}
+                checked={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Array [
                     Object {
@@ -2884,25 +2563,6 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   }
                 >
                   <View
-                    Color="#1890ff"
-                    accessibilityRole="button"
-                    accessibilityState={
-                      Object {
-                        "disabled": false,
-                      }
-                    }
-                    accessible={true}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
@@ -2958,31 +2618,16 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   </View>
                 </View>
                 <View
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                >
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
-                </View>
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
                 style={
@@ -3004,12 +2649,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "column",
+                    }
                   }
                 >
                   <Text
@@ -3033,18 +2676,16 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>

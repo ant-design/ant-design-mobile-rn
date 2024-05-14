@@ -40,7 +40,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -51,7 +51,6 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           onStartShouldSetResponder={[Function]}
         >
           <View
-            data-seed="logId"
             style={
               Array [
                 Object {
@@ -85,24 +84,20 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   标题文字点击无反馈，文字超长则隐藏，文字超长则隐藏
@@ -112,7 +107,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -156,23 +151,19 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行
@@ -226,24 +217,20 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   标题文字
@@ -262,14 +249,12 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   箭头向右
@@ -298,8 +283,8 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
-          focusable={true}
+          accessible={false}
+          focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -340,57 +325,9 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                >
-                  标题文字
-                </Text>
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                >
-                  箭头向下
-                </Text>
-              </View>
+              <Text>
+                箭头向下
+              </Text>
               <Text
                 style={
                   Array [
@@ -457,24 +394,20 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   标题文字
@@ -493,14 +426,12 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   箭头向上
@@ -528,7 +459,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -572,24 +503,20 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   标题文字
@@ -608,14 +535,12 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   没有箭头
@@ -633,7 +558,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -679,39 +604,26 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   垂直居中对齐
                 </Text>
               </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
+              <View>
                 <Text
                   numberOfLines={1}
                   style={
@@ -759,7 +671,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -805,12 +717,10 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -866,14 +776,12 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   内容内容
@@ -883,7 +791,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -931,12 +839,10 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
@@ -1015,14 +921,12 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               >
                 <Text
                   style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行
@@ -1051,7 +955,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -1099,39 +1003,26 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   底部对齐
                 </Text>
               </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
+              <View>
                 <Text
                   numberOfLines={1}
                   style={
@@ -1180,18 +1071,16 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -1223,7 +1112,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -1284,24 +1173,20 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   thumb
@@ -1311,7 +1196,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -1372,24 +1257,20 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   thumb
@@ -1418,7 +1299,7 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -1462,24 +1343,20 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   extra为Image
@@ -1522,18 +1399,16 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
