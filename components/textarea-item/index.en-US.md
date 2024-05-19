@@ -2,7 +2,10 @@
 category: Components
 type: Data Entry
 title: TextareaItem
+subtitle: (archived)
 ---
+
+> This package has been deprecated, recommend [components/Input.TextArea](/components/input#inputtextarea)
 
 A foundational component for inputting multi-line text into the app via a keyboard.
 

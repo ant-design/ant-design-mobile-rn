@@ -1,76 +1,91 @@
 import classNames from 'classnames'
-import React from 'react'
-import { Text, StyleProp, ViewStyle } from 'react-native'
+import useMergedState from 'rc-util/lib/hooks/useMergedState'
+import React, { forwardRef, memo, useContext, useMemo, useRef } from 'react'
+import { Text, TouchableHighlight } from 'react-native'
+import DisabledContext from '../config-provider/DisabledContext'
 import List from '../list/index'
-import { ListItemPropsType } from '../list/PropsType'
 import { WithTheme } from '../style'
-import Checkbox, { RefCheckboxProps } from './Checkbox'
-import { CheckboxItemPropsType } from './PropsType'
-import CheckboxStyles from './style/index'
+import Checkbox from './Checkbox'
+import { CheckboxForwardedRef, CheckboxItemProps } from './PropsType'
+import checkboxStyles from './style/index'
 
-const ListItem = List.Item
-
-interface CheckboxItemProps extends CheckboxItemPropsType, ListItemPropsType {
-  style?: StyleProp<ViewStyle>
-  styles?: { [key: string]: StyleProp<ViewStyle> }
-}
-export default class CheckboxItem extends React.PureComponent<CheckboxItemProps> {
-  checkbox: RefCheckboxProps
-
-  handleClick = () => {
-    if (this.checkbox) {
-      this.checkbox.onPress()
-    }
-    if (this.props.onPress) {
-      this.props.onPress()
-    }
-  }
-
-  render() {
+const CheckboxItem = forwardRef<TouchableHighlight, CheckboxItemProps>(
+  (props, ref) => {
+    const contextDisabled = useContext(DisabledContext)
     const {
       style,
-      disabled,
+      prefixCls = 'checkbox',
+      disabled = contextDisabled,
       children,
       right,
       left = !right,
       ...restProps
-    } = this.props
+    } = props
+    const checkbox = useRef<CheckboxForwardedRef>(null)
+
+    // for accessibility
+    const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
+      value: props.checked,
+      defaultValue: props.defaultChecked,
+    })
+
+    const handleClick = () => {
+      if (checkbox.current) {
+        setInnerChecked(checkbox.current.onPress())
+      }
+      props.onPress?.()
+    }
+
+    const thumbNode = (
+      <Checkbox {...restProps} prefixCls={prefixCls} ref={checkbox} />
+    )
+    const listProps = {
+      ...restProps,
+      thumb: left && !right ? thumbNode : undefined,
+      extra: right ? thumbNode : undefined,
+    }
+
+    const contentDom = useMemo(() => {
+      if (React.isValidElement(children)) {
+        return children
+      }
+      if (typeof children === 'string') {
+        return (
+          <WithTheme themeStyles={checkboxStyles} styles={props.styles}>
+            {(styles) => {
+              const antd_checlbox_label = classNames(`${prefixCls}_label`, {
+                [`${prefixCls}_label_disabled`]: disabled,
+              })
+                .split(' ')
+                .map((a) => styles[a])
+
+              return (
+                <Text style={antd_checlbox_label} numberOfLines={1}>
+                  {children}
+                </Text>
+              )
+            }}
+          </WithTheme>
+        )
+      }
+    }, [children, disabled, prefixCls, props.styles])
 
     return (
-      <WithTheme themeStyles={CheckboxStyles} styles={restProps.styles}>
-        {(styles) => {
-          const thumbNode = (
-            <Checkbox
-              ref={(ref: RefCheckboxProps) => (this.checkbox = ref)}
-              disabled={disabled}
-              {...restProps}
-            />
-          )
-          const listProps = {
-            ...restProps,
-            thumb: left && !right ? thumbNode : undefined,
-            extra: right ? thumbNode : undefined,
-          }
-          const antd_checlbox_label = classNames(
-            `${restProps.prefixCls || 'checkbox'}_label`,
-            {
-              [`${restProps.prefixCls || 'checkbox'}_label_disabled`]: disabled,
-            },
-          )
-            .split(' ')
-            .map((a) => styles[a])
-          return (
-            <ListItem
-              style={style}
-              onPress={disabled ? undefined : this.handleClick}
-              {...listProps}>
-              <Text style={antd_checlbox_label} numberOfLines={1}>
-                {children}
-              </Text>
-            </ListItem>
-          )
+      <List.Item
+        ref={ref}
+        style={style}
+        disabled={disabled}
+        onPress={handleClick}
+        accessibilityRole="checkbox"
+        accessibilityState={{
+          checked: props.indeterminate ? 'mixed' : innerChecked,
+          disabled,
         }}
-      </WithTheme>
+        {...listProps}>
+        {contentDom}
+      </List.Item>
     )
-  }
-}
+  },
+)
+
+export default memo(CheckboxItem)

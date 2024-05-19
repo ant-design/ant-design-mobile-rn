@@ -30,10 +30,23 @@ For the type definition of  `PickerColumnItem` `PickerColumn` `PickerValue` `Pic
 Properties | Descrition | Type | Default
 -----------|------------|------|--------
 | style    | style   | `StyleProp<ViewStyle>` | -   |
-| styles   | inner component styles   | interface `PickerViewStyle` | -   |
+| styles   | Semantic DOM style   | [PickerViewStyle](#pickerviewstyle-interface) | -   |
 | itemStyle| style to apply to each of the item labels   | `StyleProp<TextStyle>` | -   |
 | itemHeight | Height of option item, calculated by `numberOfLines` when without value; `itemStyle` was not allowed to set `{height}`  |   Number   | -  |
 | numberOfLines | Used to truncate the text with an ellipsis after computing the text layout, including line wrapping, such that the total number of lines does not exceed this number  |   Number   | `1`  |
+
+#### PickerViewStyle interface
+
+```jsx
+interface PickerViewStyle {
+  wrappper: ViewStyle
+  wheelWrapper: ViewStyle
+  mask: ViewStyle
+  maskTop: ViewStyle
+  maskMiddle: ViewStyle
+  maskBottom: ViewStyle
+}
+```
 
 #### Mask View
 
@@ -43,3 +56,16 @@ Properties | Descrition | Type | Default
 -----------|------------|------|--------
 | renderMaskTop | The function to custom rendering the mask top half view | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
 | renderMaskBottom | The function to custom rendering the mask bottom half view | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
+
+## FAQ
+
+### On the Android platform, when using `PickerView` nested in `ScrollView`, the Picker Item cannot slide. What should I do?
+
+Support in `5.1.3`. Set the `nestedScrollEnabled` property of `ScrollView` to `true`.
+
+```jsx
+<ScrollView nestedScrollEnabled={true}>
+  ...
+  <PickerView />
+</ScrollView>
+```

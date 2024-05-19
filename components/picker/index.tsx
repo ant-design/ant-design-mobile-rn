@@ -4,7 +4,6 @@ import React, {
   useEffect,
   useImperativeHandle,
   useMemo,
-  useRef,
   useState,
 } from 'react'
 import { mergeProps } from '../_util/with-default-props'
@@ -54,42 +53,25 @@ const Picker = forwardRef<PickerRef, PickerProps>((props, ref) => {
     [p, innerValue, setInnerValue],
   )
 
-  // 记录value是否变化过
-  const isValueChanged = useRef(false)
-
   const onVisibleChange = useCallback(
     (visible) => {
       p.onVisibleChange?.(visible)
-      if (!visible && p.value !== innerValue && isValueChanged.current) {
+      if (!visible && p.value !== innerValue) {
         // 关闭时，如果选中值不同步，恢复为原选中值
         setInnerValue(p.value || [])
       }
     },
-    [innerValue, p, setInnerValue],
+    [innerValue, p],
   )
 
-  // for useEffect only on update
-  const isInitialMount = useRef(true)
-
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false
-      // extra update initial
-      pickerRef.current?._updateExtra()
-    } else {
-      isValueChanged.current = true
-      setInnerValue(p.value || [])
-      // extra update after value update
-      setTimeout(() => {
-        pickerRef.current?._updateExtra()
-      })
-    }
+    setInnerValue(p.value || [])
   }, [p.value])
 
   return (
     <RMCPicker
       {...p}
-      value={innerValue}
+      innerValue={innerValue}
       columns={columns}
       handleSelect={handleSelect}
       onVisibleChange={onVisibleChange}

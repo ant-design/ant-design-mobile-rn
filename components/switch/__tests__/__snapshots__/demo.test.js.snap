@@ -30,7 +30,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -74,24 +74,20 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   最简单的用法
@@ -103,7 +99,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                   Object {
                     "busy": false,
                     "checked": false,
-                    "disabled": false,
+                    "mergedDisabled": false,
                   }
                 }
                 accessible={true}
@@ -192,18 +188,16 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -235,7 +229,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -279,24 +273,20 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   Switch 失效状态
@@ -308,7 +298,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                   Object {
                     "busy": false,
                     "checked": false,
-                    "disabled": true,
+                    "mergedDisabled": true,
                   }
                 }
                 accessible={true}
@@ -488,18 +478,16 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -531,7 +519,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -574,35 +562,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-              <View
                 accessibilityRole="switch"
                 accessibilityState={
                   Object {
                     "busy": false,
                     "checked": true,
-                    "disabled": false,
+                    "mergedDisabled": false,
                   }
                 }
                 accessible={true}
@@ -692,7 +657,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -735,35 +700,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-              <View
                 accessibilityRole="switch"
                 accessibilityState={
                   Object {
                     "busy": false,
                     "checked": false,
-                    "disabled": false,
+                    "mergedDisabled": false,
                   }
                 }
                 accessible={true}
@@ -853,7 +795,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -896,35 +838,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-              <View
                 accessibilityRole="switch"
                 accessibilityState={
                   Object {
                     "busy": false,
                     "checked": true,
-                    "disabled": false,
+                    "mergedDisabled": false,
                   }
                 }
                 accessible={true}
@@ -1030,18 +949,16 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -1073,7 +990,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -1117,24 +1034,20 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   标识开关操作仍在执行中
@@ -1146,7 +1059,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                   Object {
                     "busy": true,
                     "checked": true,
-                    "disabled": true,
+                    "mergedDisabled": true,
                   }
                 }
                 accessible={true}
@@ -1260,7 +1173,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -1303,35 +1216,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
-                style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                />
-              </View>
-              <View
                 accessibilityRole="switch"
                 accessibilityState={
                   Object {
                     "busy": true,
                     "checked": false,
-                    "disabled": true,
+                    "mergedDisabled": true,
                   }
                 }
                 accessible={true}
@@ -1446,18 +1336,16 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -1489,7 +1377,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -1533,24 +1421,20 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   color="red"
@@ -1562,7 +1446,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                   Object {
                     "busy": false,
                     "checked": true,
-                    "disabled": false,
+                    "mergedDisabled": false,
                   }
                 }
                 accessible={true}
@@ -1655,18 +1539,16 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>
@@ -1698,7 +1580,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
-          accessible={true}
+          accessible={false}
           focusable={false}
           onClick={[Function]}
           onResponderGrant={[Function]}
@@ -1742,24 +1624,20 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   onChange 返回 Promise
@@ -1771,7 +1649,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                   Object {
                     "busy": false,
                     "checked": false,
-                    "disabled": false,
+                    "mergedDisabled": false,
                   }
                 }
                 accessible={true}
@@ -1860,18 +1738,16 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>

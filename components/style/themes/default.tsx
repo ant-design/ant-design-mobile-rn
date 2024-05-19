@@ -18,6 +18,10 @@ export default {
   color_text_caption: '#888888', // 辅助描述
   color_text_paragraph: '#333333', // 段落
   color_link: brandPrimary, // 链接
+  color_error: '#ff4d4f', // 错误(form validate)
+  color_warning: '#faad14', // 警告
+  color_success: '#52c41a',
+  color_primary: '#1677ff',
 
   // 背景色
   fill_base: '#ffffff', // 组件默认背景
@@ -183,6 +187,11 @@ export default {
 
   // picker
   option_height: 42, // picker 标题的高度
+
+  // form
+  prefix_width: 65, // 水平布局时，表单项的标签宽度
+  prefix_padding: 6, // form item 上下内边距
+  extra_max_width: '50%',
 
   toast_zindex: 1999,
   action_sheet_zindex: 1000,

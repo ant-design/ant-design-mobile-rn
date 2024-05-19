@@ -29,7 +29,7 @@ class AntmView extends React.PureComponent<ViewInterface> {
               if (React.isValidElement(child)) {
                 return child
               }
-              return <AntmView>{child}</AntmView>
+              return <Text>{child}</Text>
             })}
           </View>
         )
@@ -41,22 +41,6 @@ class AntmView extends React.PureComponent<ViewInterface> {
           />
         )
       }
-    }
-
-    if (
-      React.isValidElement(children) &&
-      String(children.type) === 'Symbol(react.fragment)'
-    ) {
-      return (
-        <React.Fragment {...restProps}>
-          {React.Children.map(children.props.children, (child) => {
-            if (React.isValidElement(child)) {
-              return child
-            }
-            return <AntmView>{child}</AntmView>
-          })}
-        </React.Fragment>
-      )
     }
 
     return <View {...this.props} />

@@ -51,7 +51,7 @@ type DatePickerFilter = Partial<
 | filter  | 过滤可供选择的时间 | `DatePickerFilter` | - | `5.1.0` |
 
 
-此外还支持 Picker 的以下属性：`onPickerChange` `onVisibleChange` `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `title` `okText` `dismissText` `visible` `children` `renderMaskTop` `renderMaskBottom`
+此外还支持 [Picker](/components/picker-cn) 的以下属性：`onPickerChange` `onVisibleChange` `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `title` `okText` `dismissText` `okButtonProps` `dismissButtonProps` `visible` `children` `renderMaskTop` `renderMaskBottom`
 
 ### Children
 同 [Picker](/components/picker-cn/#Children)，其中`format`类型不同：

@@ -57,24 +57,20 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
       >
         <View
           style={
-            Array [
-              Object {
-                "flex": 1,
-                "flexDirection": "column",
-              },
-            ]
+            Object {
+              "flex": 1,
+              "flexDirection": "column",
+            }
           }
         >
           <Text
             numberOfLines={1}
             style={
-              Array [
-                Object {
-                  "color": "#000000",
-                  "fontSize": 17,
-                  "textAlignVertical": "center",
-                },
-              ]
+              Object {
+                "color": "#000000",
+                "fontSize": 17,
+                "textAlignVertical": "center",
+              }
             }
           >
             Choose language
@@ -93,14 +89,12 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
           <Text
             numberOfLines={1}
             style={
-              Array [
-                Object {
-                  "color": "#888888",
-                  "fontSize": 17,
-                  "textAlign": "right",
-                  "textAlignVertical": "center",
-                },
-              ]
+              Object {
+                "color": "#888888",
+                "fontSize": 17,
+                "textAlign": "right",
+                "textAlignVertical": "center",
+              }
             }
           >
             请选择
@@ -440,24 +434,20 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   DatePicker
@@ -476,14 +466,12 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   please select
@@ -556,24 +544,20 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column",
+                  }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   Picker
@@ -592,14 +576,12 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   please select
@@ -739,18 +721,16 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
         </View>
         <View
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "bottom": 0,
-                "height": 1,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-              },
-            ]
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderBottomColor": "#dddddd",
+              "borderBottomWidth": 0.5,
+              "bottom": 0,
+              "height": 1,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
           }
         />
       </View>

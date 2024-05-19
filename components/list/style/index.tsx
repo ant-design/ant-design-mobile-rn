@@ -1,26 +1,33 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 export interface ListStyle {
-  underlayColor: ViewStyle
   Header: TextStyle
   Footer: TextStyle
   Body: ViewStyle
   BodyBottomLine: ViewStyle
+}
+
+export interface ListItemStyle {
+  underlayColor: ViewStyle
   Item: ViewStyle
   Line: ViewStyle
   Thumb: ImageStyle
   Content: TextStyle
   Extra: TextStyle
-  Brief: ViewStyle
-  BriefText: TextStyle
   Arrow: TextStyle
   ArrowV: TextStyle
   multipleLine: ViewStyle
   multipleThumb: ImageStyle
   column: ViewStyle
 }
+
+export interface BriefStyle {
+  Brief: ViewStyle
+  BriefText: TextStyle
+}
+
 export default (variables: Theme) =>
-  StyleSheet.create<ListStyle>({
+  StyleSheet.create<ListStyle & ListItemStyle & BriefStyle>({
     underlayColor: {
       backgroundColor: variables.fill_tap,
     },
