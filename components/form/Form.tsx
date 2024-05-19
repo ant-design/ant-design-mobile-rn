@@ -9,17 +9,17 @@ import DisabledContext, {
 } from '../config-provider/DisabledContext'
 import AntmList from '../list'
 import { ListProps } from '../list/List'
+import useLocale from '../locale-provider/useLocale'
 import type { FeedbackIcons } from './FormItem'
 import type { FormContextProps } from './context'
 import { FormContext, FormProvider } from './context'
 import type { FormInstance } from './hooks/useForm'
 import useForm from './hooks/useForm'
 import useFormWarning from './hooks/useFormWarning'
-import ValidateMessagesContext from './validateMessagesContext'
 
 export type RequiredMark =
   | boolean
-  // | 'optional'
+  | 'optional'
   | ((
       labelNode: React.ReactNode,
       info: { required: boolean },
@@ -55,7 +55,7 @@ const InternalForm: React.ForwardRefRenderFunction<FormInstance, FormProps> = (
     ...restFormProps
   } = props
 
-  const contextValidateMessages = React.useContext(ValidateMessagesContext)
+  const [locale] = useLocale('Form')
 
   if (__DEV__) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -94,7 +94,7 @@ const InternalForm: React.ForwardRefRenderFunction<FormInstance, FormProps> = (
       <FormProvider
         {...{
           // This is not list in API, we pass with spread
-          validateMessages: contextValidateMessages,
+          validateMessages: locale.defaultValidateMessages,
         }}>
         <FormContext.Provider value={formContextValue}>
           <FieldForm

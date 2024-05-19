@@ -11,6 +11,7 @@ export interface FormItemStyle extends ListItemStyle {
   formItemLabelText: ViewStyle | TextStyle
   formItemControl: ViewStyle
   asterisk: TextStyle
+  optional: TextStyle
 }
 
 export interface ValidateStatusStyle {
@@ -37,14 +38,14 @@ export default (theme: Theme) =>
       overflow: 'hidden',
     },
     formItemLabel: {
+      minWidth: theme.prefix_width,
       position: 'relative',
+      flexDirection: 'row',
+      paddingTop: theme.prefix_padding,
     },
     formItemLabelText: {
-      width: theme.prefix_width,
       color: theme.color_text_base,
       fontSize: theme.font_size_heading,
-      lineHeight: theme.font_size_heading + theme.prefix_padding / 2,
-      paddingTop: theme.prefix_padding,
     },
     asterisk: {
       position: 'absolute',
@@ -53,9 +54,14 @@ export default (theme: Theme) =>
       color: theme.color_error,
       fontSize: theme.font_size_heading,
     },
+    optional: {
+      color: 'rgba(0, 0, 0, 0.45)',
+      fontSize: theme.font_size_heading,
+    },
     formItemControl: {
       flex: 1,
-      height: 'auto', // TODO-luokun: 样式待回归
+      flexDirection: 'column',
+      justifyContent: 'center',
     },
 
     error: {

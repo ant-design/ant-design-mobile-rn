@@ -14,7 +14,7 @@ import ErrorList from './ErrorList'
 import { FormProvider } from './context'
 import useFormInstance from './hooks/useFormInstance'
 
-export type FormLayout = 'horizontal' | 'inline' | 'vertical'
+export type FormLayout = 'horizontal' | 'vertical'
 type InternalFormType = typeof InternalForm
 
 type CompoundedComponent = InternalFormType & {

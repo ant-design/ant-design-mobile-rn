@@ -100,7 +100,6 @@ export default function ItemHolder(props: ItemHolderProps) {
           <FormItemLabel
             {...props}
             styles={ss}
-            style={mergeLayout === 'vertical' && { width: 'auto' }}
             requiredMark={requiredMark}
             required={required ?? isRequired}
           />

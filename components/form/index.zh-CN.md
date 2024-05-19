@@ -39,6 +39,7 @@ version: 5.2.0-rc.0
 | onFinish | 提交表单且数据验证成功后回调事件 | function(values) | - |
 | onFinishFailed | 提交表单且数据验证失败后回调事件 | function({ values, errorFields, outOfDate }) | - |
 | onValuesChange | 字段值更新时触发回调事件 | function(changedValues, allValues) | - |
+| styles | 语义化结构 style | 同 [ListStyle](/components/list-cn#liststyle-语义化样式) | - |
 
 ### validateMessages
 
@@ -76,6 +77,7 @@ const validateMessages = {
 | required | 必填样式设置。如不设置，则会根据校验规则自动生成 | boolean | false |
 | rules | 校验规则，设置字段的校验逻辑。点击[此处](https://ant.design/components/form-cn#components-form-demo-basic)查看示例 | [Rule](#rule)\[] | - |
 | shouldUpdate | 自定义字段更新逻辑，说明[见下](#shouldupdate) | boolean \| (prevValue, curValue) => boolean | false |
+| styles  | 语义化结构 style | [FormItemStyle](#formitemstyle-语义化样式) & [ValidateStatusStyle](#validatestatusstyle-语义化样式) | - |
 | trigger | 设置收集字段值变更的时机。点击[此处](https://ant.design/components/form-cn#components-form-demo-customized-form-controls)查看示例 | string | `onChange` |
 | validateFirst | 当某一规则校验不通过时，是否停止剩下的规则的校验。设置 `parallel` 时会并行校验 | boolean \| `parallel` | false |
 | validateDebounce | 设置防抖，延迟毫秒数后进行校验 | number | - |
@@ -197,6 +199,7 @@ Form.List 渲染表单相关操作函数。
 | 参数   | 说明     | 类型         | 默认值 |
 | ------ | -------- | ------------ | ------ |
 | errors | 错误列表 | ReactNode\[] | -      |
+| styles | 语义化结构 style | [ValidateStatusStyle](#validatestatusstyle-语义化样式) | - |
 
 ## Form.Provider
 
@@ -282,6 +285,33 @@ validateFields()
       }
     */
   });
+```
+
+### FormItemStyle 语义化样式
+
+```typescript
+interface FormItemStyle extends ListItemStyle {
+  formitemRow: ViewStyle
+  formitemColumn: ViewStyle
+  formItemExtra: ViewStyle | TextStyle  // default: { maxWidth: 50% } as ListItem['extra']
+  formItemLabel: ViewStyle              // default: { minWidth: 65 }
+  formItemLabelText: ViewStyle | TextStyle
+  formItemControl: ViewStyle            // children style
+  asterisk: TextStyle                   // required={true}
+  optional: TextStyle                   // requiredMark="optional"
+}
+```
+
+### ValidateStatusStyle 语义化样式
+当设置`validateStatus`时
+```typescript
+interface ValidateStatusStyle {
+  error: TextStyle
+  warning: TextStyle
+  success: TextStyle
+  validating: TextStyle
+  feedbackIcon: ViewStyle
+}
 ```
 
 ## Hooks

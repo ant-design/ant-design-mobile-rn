@@ -1,5 +1,6 @@
 import DatePickerView from '../date-picker-view/locale/en_US'
 import DatePicker from '../date-picker/locale/en_US'
+import Form from '../form/locale/en_US'
 import InputItem from '../input-item/locale/en_US'
 import ListView from '../list-view/locale/en_US'
 import Modal from '../modal/locale/en_US'
@@ -17,4 +18,5 @@ export default {
   Picker,
   SearchBar,
   ListView,
+  Form,
 }

@@ -3,6 +3,7 @@ import * as React from 'react'
 import { StyleProp, Text, TextStyle, ViewStyle } from 'react-native'
 import View from '../view'
 
+import useLocale from '../locale-provider/useLocale'
 import type { RequiredMark } from './Form'
 import type { FormContextProps } from './context'
 import { FormContext } from './context'
@@ -11,7 +12,6 @@ import { FormItemStyle } from './style'
 export interface FormItemLabelProps {
   label?: React.ReactNode
   labelStyle?: StyleProp<ViewStyle | TextStyle>
-  style?: StyleProp<ViewStyle | TextStyle>
   styles: Partial<FormItemStyle>
   /**
    * @internal Used for pass `requiredMark` from `<Form />`
@@ -24,9 +24,10 @@ const FormItemLabel: React.FC<FormItemLabelProps & { required?: boolean }> = ({
   labelStyle,
   required,
   requiredMark,
-  style,
   styles,
 }) => {
+  const [locale] = useLocale('Form')
+
   const { labelStyle: contextLabelStyle } =
     React.useContext<FormContextProps>(FormContext)
 
@@ -36,19 +37,31 @@ const FormItemLabel: React.FC<FormItemLabelProps & { required?: boolean }> = ({
 
   const mergedLabelStyle = labelStyle || contextLabelStyle || {}
 
-  let labelChildren: React.ReactNode = label
+  let labelChildren: React.ReactNode = (
+    <View style={[styles.formItemLabelText, mergedLabelStyle]}>{label}</View>
+  )
 
   // Required Mark
-  if (typeof requiredMark === 'function') {
+  const isOptionalMark = requiredMark === 'optional'
+  const isRenderMark = typeof requiredMark === 'function'
+
+  if (isRenderMark) {
     labelChildren = requiredMark(labelChildren, { required: !!required })
+  } else if (isOptionalMark && !required) {
+    labelChildren = (
+      <>
+        {labelChildren}
+        <Text style={styles.optional}>{locale.optional}</Text>
+      </>
+    )
   }
 
   return (
     <View style={styles.formItemLabel}>
-      {Boolean(required) && <Text style={styles.asterisk}>*</Text>}
-      <View style={[styles.formItemLabelText, style, mergedLabelStyle]}>
-        {labelChildren}
-      </View>
+      {Boolean(required && requiredMark) && (
+        <Text style={styles.asterisk}>*</Text>
+      )}
+      {labelChildren}
     </View>
   )
 }

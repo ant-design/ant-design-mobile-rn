@@ -189,7 +189,7 @@ export default {
   option_height: 42, // picker 标题的高度
 
   // form
-  prefix_width: 80, // 水平布局时，表单项的标签宽度
+  prefix_width: 65, // 水平布局时，表单项的标签宽度
   prefix_padding: 6, // form item 上下内边距
   extra_max_width: '50%',
 
