@@ -62,7 +62,7 @@ type PickerValueExtend = {
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | style    | 外部样式   | `StyleProp<ViewStyle>` | -   |
-| styles   | 内部组件样式集   | `PickerViewStyle` | -   |
+| styles   | 内部组件样式集   | 同 [PickerViewStyle](/components//picker-view-cn/#pickerviewstyle-语义化样式) | -   |
 | itemStyle| 每列样式   | `StyleProp<TextStyle>` | -   |
 | itemHeight | 每列固定高度，未设值时会根据`numberOfLines`动态计算；`itemStyle`属性设置`{height}`值是无效的  |   Number   | -  |
 | numberOfLines | 允许每列显示行数  |   Number   | `1`  |

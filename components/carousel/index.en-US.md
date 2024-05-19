@@ -25,3 +25,16 @@ Properties | Descrition | Type | Default
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | goTo | jump to specified index | (index: number, animated?: boolean): void |  -  |
+
+## FAQ
+
+### On the Android platform, when using `Carousel` nested in `ScrollView`, the Carousel Item cannot slide. What should I do?
+
+Support in `5.1.3`. Set the `nestedScrollEnabled` property of `ScrollView` to `true`.
+
+```jsx
+<ScrollView nestedScrollEnabled={true}>
+  ...
+  <Carousel vertical/>
+</ScrollView>
+```

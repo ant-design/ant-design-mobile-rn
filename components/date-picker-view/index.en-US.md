@@ -45,4 +45,4 @@ Properties | Descrition | Type | Default | Version
 | filter  | Filter available time	 | `DatePickerFilter` | - | `5.1.0` |
 
 
-In addition, the following attributes of `PickerView` are supported: `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `renderMaskTop` `renderMaskBottom`
+In addition, the following attributes of [PickerView](/components/picker-view) are supported: `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `renderMaskTop` `renderMaskBottom`

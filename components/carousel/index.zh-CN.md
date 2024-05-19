@@ -28,3 +28,16 @@ subtitle: 走马灯
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | goTo | 跳转到指定位置 | (index: number, animated?: boolean): void |  -  |
+
+## FAQ
+
+### 在Android平台，ScrollView中嵌套使用Carousel，会发生Carousel Item不能滑动的情况，怎么办？
+
+`5.1.3`新增支持。 设置`ScrollView`的`nestedScrollEnabled`属性为`true`即可。
+
+```jsx
+<ScrollView nestedScrollEnabled={true}>
+  ...
+  <Carousel vertical/>
+</ScrollView>
+```

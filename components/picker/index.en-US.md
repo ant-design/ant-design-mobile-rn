@@ -61,7 +61,7 @@ Properties | Descrition | Type | Default | Version
 Properties | Descrition | Type | Default
 -----------|------------|------|--------
 | style    | style   | `StyleProp<ViewStyle>` | -   |
-| styles   | inner component styles   | interface `PickerViewStyle` | -   |
+| styles   | inner component styles  | same as [PickerViewStyle](/components//picker-view/#pickerviewstyle-interface) | -   |
 | itemStyle| style to apply to each of the item labels   | `StyleProp<TextStyle>` | -   |
 | itemHeight | Height of option item, calculated by `numberOfLines` when without value; `itemStyle` was not allowed to set `{height}`  |   Number   | -  |
 | numberOfLines | Used to truncate the text with an ellipsis after computing the text layout, including line wrapping, such that the total number of lines does not exceed this number  |   Number   | `1`  |

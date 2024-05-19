@@ -46,4 +46,4 @@ type DatePickerFilter = Partial<
 | filter  | 过滤可供选择的时间 | `DatePickerFilter` | - | `5.1.0` |
 
 
-此外还支持 PickerView 的以下属性：`style` `styles` `itemStyle` `itemHeight` `numberOfLines` `renderMaskTop` `renderMaskBottom`
+此外还支持 [PickerView](/components/picker-view-cn) 的以下属性：`style` `styles` `itemStyle` `itemHeight` `numberOfLines` `renderMaskTop` `renderMaskBottom`
