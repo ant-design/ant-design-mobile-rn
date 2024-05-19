@@ -2,7 +2,10 @@
 category: Components
 type: Data Entry
 title: InputItem
+subtitle: (archived)
 ---
+
+> This package has been deprecated, recommend [components/Input](/components/input)
 
 A foundational component for inputting text into the app via a keyboard.
 

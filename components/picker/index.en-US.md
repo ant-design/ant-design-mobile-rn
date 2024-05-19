@@ -32,36 +32,36 @@ type PickerValueExtend = {
 }
 ```
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| data     | data source     | `PickerColumn` / `PickerColumn[]` | -   |
-| value    | Selected options  | `PickerValue[]`  | -   |
-| defaultValue  | Default selected options  | `PickerValue[]`  | -   |
-| cascade  | whether cascade <br/>child cascade get from `data[].children`   | Boolean | `true` |
-| cols     | col numbers    | Number | `3` |
-| onChange | selected callback function, can use [rc-form](https://github.com/react-component/form) | `(value: PickerValue[], extend: PickerValueExtend) => void`      | -   |
-| onPickerChange | trigger on each column of selected data is changed   | `(value: PickerValue[], index: number) => void` | - |
-| onVisibleChange  | visible state change callback    | `(visible: bool): void` |  -   |
-| renderLabel | 	The function to custom rendering the label shown on a column  |   `(item: PickerColumnItem, index: number) => ReactNode`   | `(item) => item.label`  |
-| locale | international, can override the configuration of the global [LocaleProvider](/components/locale-provider) | Object: Object: {okText, dismissText, extra} | - |
-| title  | title | ReactNode | - |
-| okText | ok text | String |  `确定`  |
-| dismissText  | dismiss text | String |  `取消`  |
-| onOk   | handler called when click ok  | `(value: PickerValue[], extend: PickerValueExtend) => void`  |  - |
-| onDismiss  | handler called when click cancel | (): void  |  -  |
-| okButtonProps  | The ok button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight)  |  `{ activeOpacity:1, underlayColor:'#ddd' }`  |
-| dismissButtonProps  | The dismiss button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight)  |  `{ activeOpacity:1, underlayColor:'#ddd' }`  |
-| visible  | Whether to show or hide the Picker  | Boolean | -  |
-| loading  | Should the Picker displays as loading state	  | Boolean | -  |
-| loadingContent  | The loading content displayed in loading state	  | ReactNode | -  |
-| indicatorStyle  | style of default Indicator  | Object | -  |
+Properties | Descrition | Type | Default | Version
+-----------|------------|------|--------|--------
+| data     | data source     | `PickerColumn` / `PickerColumn[]` | -   |  |
+| value    | Selected options  | `PickerValue[]`  | -   |  |
+| defaultValue  | Default selected options  | `PickerValue[]`  | -   |  |
+| cascade  | whether cascade <br/>child cascade get from `data[].children`   | Boolean | `true` |  |
+| cols     | col numbers    | Number | `3` |  |
+| onChange | selected callback function, can use [rc-form](https://github.com/react-component/form) | `(value: PickerValue[], extend: PickerValueExtend) => void`      | -   |  |
+| onPickerChange | trigger on each column of selected data is changed   | `(value: PickerValue[], index: number) => void` | - |  |
+| onVisibleChange  | visible state change callback    | `(visible: bool): void` |  -   |  |
+| renderLabel | 	The function to custom rendering the label shown on a column  |   `(item: PickerColumnItem, index: number) => ReactNode`   | `(item) => item.label`  |  |
+| locale | international, can override the configuration of the global [LocaleProvider](/components/locale-provider) | Object: Object: {okText, dismissText, extra} | - |  |
+| title  | title | ReactNode | - |  |
+| okText | ok text | String |  `确定`  |  |
+| dismissText  | dismiss text | String |  `取消`  |  |
+| onOk   | handler called when click ok  | `(value: PickerValue[], extend: PickerValueExtend) => void`  |  - |  |
+| onDismiss  | handler called when click cancel | (): void  |  -  |  |
+| okButtonProps  | The ok button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight)  |  `{ activeOpacity:1, underlayColor:'#ddd' }`  | `5.1.3` |
+| dismissButtonProps  | The dismiss button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight)  |  `{ activeOpacity:1, underlayColor:'#ddd' }`  | `5.1.3` |
+| visible  | Whether to show or hide the Picker  | Boolean | -  |  |
+| loading  | Should the Picker displays as loading state	  | Boolean | -  |  |
+| loadingContent  | The loading content displayed in loading state	  | ReactNode | -  |  |
+| indicatorStyle  | style of default Indicator  | Object | -  |  |
 
 ### Custom Style
 
 Properties | Descrition | Type | Default
 -----------|------------|------|--------
 | style    | style   | `StyleProp<ViewStyle>` | -   |
-| styles   | inner component styles   | interface `PickerViewStyle` | -   |
+| styles   | inner component styles  | same as [PickerViewStyle](/components//picker-view/#pickerviewstyle-interface) | -   |
 | itemStyle| style to apply to each of the item labels   | `StyleProp<TextStyle>` | -   |
 | itemHeight | Height of option item, calculated by `numberOfLines` when without value; `itemStyle` was not allowed to set `{height}`  |   Number   | -  |
 | numberOfLines | Used to truncate the text with an ellipsis after computing the text layout, including line wrapping, such that the total number of lines does not exceed this number  |   Number   | `1`  |
@@ -76,16 +76,16 @@ Properties | Descrition | Type | Default
 | renderMaskBottom | The function to custom rendering the mask bottom half view | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
 
 
-### Children
-Picker's children is best to [List.Item](/components/list/#List.Item), if not, need to be a custom component (the `onClick`/`extra` props need to be handled in the component):
+### Custom Children
+Picker's children is best to [List.Item](/components/list/#List.Item), if not, need to be a custom component (the `onPress`/`extra` props need to be handled in the component):
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| children| usually `List.Item` | ReactNode |  `List.Item`  |
-| extra   | Picker's children `extra` prop, display when no `value` | String |  `请选择`  |
-| format  | a function that formats the selected value	  | (labels: string[]): any | `(labels) => { return labels.join(','); } ` |
-| triggerType  | Press event name | String | `onPress` |
-| disabled  | set disabled	 | Boolean | `false` |
+Properties | Descrition | Type | Default | Version |
+-----------|------------|------|--------|--------
+| children| usually `List.Item` | `ReactNode`/`({extra, value, toggle})=>ReactNode` | -  | `5.2.0` add function as Children |
+| extra   | Picker's children `extra` prop, display when no `value` | String |  `please select`  |  |
+| format  | a function that formats the selected value	  | (labels: string[]): any | `(labels) => { return labels.join(','); } ` |  |
+| triggerType  | Press event name | String | `onPress` |  |
+| disabled  | set disabled	 | Boolean | `false` |  |
 
 ### PickerActions
 Properties | Descrition | Type

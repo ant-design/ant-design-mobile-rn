@@ -50,7 +50,7 @@ Properties | Descrition | Type | Default | Version
 | filter  | Filter available time	 | `DatePickerFilter` | - | `5.1.0` |
 
 
-In addition, the following attributes of `Picker` are supported: `onPickerChange` `onVisibleChange` `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `title` `okText` `dismissText` `visible` `children` `renderMaskTop` `renderMaskBottom`
+In addition, the following attributes of [Picker](/components/picker) are supported: `onPickerChange` `onVisibleChange` `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `title` `okText` `dismissText` `okButtonProps` `dismissButtonProps` `visible` `children` `renderMaskTop` `renderMaskBottom`
 
 ### Children
 Same as [Picker](/components/picker/#Children), except type `format` is different：

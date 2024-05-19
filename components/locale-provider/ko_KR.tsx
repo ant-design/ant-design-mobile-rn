@@ -1,5 +1,6 @@
 import DatePickerView from '../date-picker-view/locale/ko_KR'
 import DatePicker from '../date-picker/locale/ko_KR'
+import Form from '../form/locale/ko_KR'
 import InputItem from '../input-item/locale/ko_KR'
 import ListView from '../list-view/locale/ko_KR'
 import Modal from '../modal/locale/ko_KR'
@@ -17,4 +18,5 @@ export default {
   Picker,
   SearchBar,
   ListView,
+  Form,
 }

@@ -1,248 +1,227 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import {
   GestureResponderEvent,
   Image,
-  StyleProp,
   StyleSheet,
   Text,
   TouchableHighlight,
+  TouchableHighlightProps,
   View,
   ViewStyle,
 } from 'react-native'
+import DisabledContext from '../config-provider/DisabledContext'
 import Icon from '../icon'
-import { WithTheme, WithThemeStyles } from '../style'
-import {
-  BriefProps as BriefBasePropsType,
-  ListItemPropsType,
-} from './PropsType'
-import ListStyles, { ListStyle } from './style/index'
+import { useTheme } from '../style'
+import { ListItemPropsType } from './PropsType'
+import ListStyles, { ListItemStyle } from './style/index'
 
 export interface ListItemProps
   extends ListItemPropsType,
-    WithThemeStyles<ListStyle> {
-  onPress?: (event: GestureResponderEvent) => void
-  onPressIn?: (event: GestureResponderEvent) => void
-  onPressOut?: (event: GestureResponderEvent) => void
-  delayLongPress?: number
-  onLongPress?: (event: GestureResponderEvent) => void
-  style?: StyleProp<ViewStyle>
+    TouchableHighlightProps {
+  /**
+   * No need anymore Use `onPress` instead
+   * @deprecated
+   */
+  onClick?: (event: GestureResponderEvent) => void
+  styles?: Partial<ListItemStyle>
 }
 
-export interface BriefProps
-  extends BriefBasePropsType,
-    WithThemeStyles<Pick<ListStyle, 'Brief' | 'BriefText'>> {}
+const defaultProps = {
+  multipleLine: false,
+  wrap: false,
+  delayLongPress: 500,
+  onLongPress: () => {},
+}
 
-export class Brief extends React.Component<BriefProps, any> {
-  render() {
-    const { children, style, wrap } = this.props
+const InternalListItem: React.ForwardRefRenderFunction<
+  TouchableHighlight,
+  ListItemProps
+> = (props, ref) => {
+  const contextDisabled = React.useContext(DisabledContext)
+  const {
+    styles,
+    children,
+    multipleLine,
+    thumb,
+    extra,
+    arrow,
+    style,
+    onPress = props.onClick,
+    wrap,
+    disabled = contextDisabled,
+    align,
+    ...restButtonProps
+  } = props
 
-    let numberOfLines = {}
-
+  const itemStyles = useTheme({
+    styles,
+    themeStyles: ListStyles,
+  })
+  // ================  Text numberOfLines  ================
+  const numberOfLines = useMemo(() => {
     if (wrap === false) {
-      numberOfLines = {
+      return {
         numberOfLines: 1,
       }
     }
-    return (
-      <WithTheme styles={this.props.styles} themeStyles={ListStyles}>
-        {(styles) => (
-          <View style={[styles!.Brief]}>
-            <Text style={[styles!.BriefText, style]} {...numberOfLines}>
-              {children}
-            </Text>
-          </View>
-        )}
-      </WithTheme>
-    )
-  }
-}
+    return {}
+  }, [wrap])
 
-export default class Item extends React.Component<ListItemProps, any> {
-  static defaultProps: Partial<ListItemProps> = {
-    multipleLine: false,
-    wrap: false,
-    delayLongPress: 500,
-    onLongPress: () => {},
-  }
-  static Brief = Brief
-  render() {
-    const {
-      styles,
-      children,
-      multipleLine,
-      thumb,
-      extra,
-      arrow,
-      style,
-      onPress,
-      onPressIn,
-      onPressOut,
-      onLongPress,
-      delayLongPress,
-      wrap,
-      disabled,
-      align,
-      ...restProps
-    } = this.props
+  // ================  TouchableHighlight underlayColor  ================
+  const underlayColor = useMemo(() => {
+    if (!disabled && onPress) {
+      return {
+        underlayColor: StyleSheet.flatten(itemStyles.underlayColor)
+          .backgroundColor,
+        activeOpacity: 0.5,
+      }
+    }
+    return {
+      activeOpacity: 1,
+    }
+  }, [disabled, itemStyles.underlayColor, onPress])
 
-    return (
-      <WithTheme styles={styles} themeStyles={ListStyles}>
-        {(itemStyles) => {
-          let numberOfLines = {}
-          if (wrap === false) {
-            numberOfLines = {
-              numberOfLines: 1,
-            }
-          }
+  const alignStyle = useMemo(() => {
+    if (align === 'top') {
+      return {
+        alignItems: 'flex-start',
+      }
+    }
+    if (align === 'bottom') {
+      return {
+        alignItems: 'flex-end',
+      }
+    }
+    return {}
+  }, [align]) as ViewStyle
 
-          let underlayColor = {}
+  // ================  children  ================
+  const contentDom = useMemo(() => {
+    if (Array.isArray(children)) {
+      const tempContentDom: any[] = []
+      children.forEach((el, index) => {
+        if (React.isValidElement(el)) {
+          tempContentDom.push(el)
+        } else {
+          tempContentDom.push(
+            <Text
+              style={[itemStyles.Content]}
+              {...numberOfLines}
+              key={`${index}-children`}>
+              {el}
+            </Text>,
+          )
+        }
+      })
+      return <View style={itemStyles.column}>{tempContentDom}</View>
+    }
+    if (React.isValidElement(children)) {
+      return <View style={itemStyles.column}>{children}</View>
+    }
+    if (typeof children === 'string') {
+      return (
+        <View style={itemStyles.column}>
+          <Text style={itemStyles.Content} {...numberOfLines}>
+            {children}
+          </Text>
+        </View>
+      )
+    }
+  }, [children, itemStyles.Content, itemStyles.column, numberOfLines])
 
-          if (!disabled && onPress) {
-            underlayColor = {
-              underlayColor: StyleSheet.flatten(itemStyles.underlayColor)
-                .backgroundColor,
-              activeOpacity: 0.5,
-            }
-          } else {
-            underlayColor = {
-              activeOpacity: 1,
-            }
-          }
-
-          let alignStyle = {}
-
-          if (align === 'top') {
-            alignStyle = {
-              alignItems: 'flex-start',
-            }
-          } else if (align === 'bottom') {
-            alignStyle = {
-              alignItems: 'flex-end',
-            }
-          }
-
-          let contentDom
-          if (Array.isArray(children)) {
-            const tempContentDom: any[] = []
-            children.forEach((el, index) => {
-              if (React.isValidElement(el)) {
-                tempContentDom.push(el)
-              } else {
-                tempContentDom.push(
-                  <Text
-                    style={[itemStyles.Content]}
-                    {...numberOfLines}
-                    key={`${index}-children`}>
-                    {el}
-                  </Text>,
-                )
-              }
-            })
-            contentDom = (
-              <View style={[itemStyles.column]}>{tempContentDom}</View>
-            )
-          } else {
-            if (children && React.isValidElement(children)) {
-              contentDom = <View style={[itemStyles.column]}>{children}</View>
-            } else {
-              contentDom = (
-                <View style={[itemStyles.column]}>
-                  <Text style={[itemStyles.Content]} {...numberOfLines}>
-                    {children}
-                  </Text>
-                </View>
+  // ====================  extra  ========================
+  const extraDom = useMemo(() => {
+    if (React.isValidElement(extra)) {
+      const extraChildren = extra.props.children
+      if (Array.isArray(extraChildren)) {
+        return React.cloneElement(extra, {
+          // @ts-ignore
+          children: extraChildren.map((el, index) => {
+            if (typeof el === 'string') {
+              return (
+                <Text
+                  {...numberOfLines}
+                  style={[itemStyles.Extra]}
+                  key={`${index}-children`}>
+                  {el}
+                </Text>
               )
             }
-          }
+            return el
+          }),
+        })
+      }
+      return extra
+    }
+    if (typeof extra === 'string') {
+      return (
+        <View style={[itemStyles.column]}>
+          <Text style={itemStyles.Extra} {...numberOfLines}>
+            {extra}
+          </Text>
+        </View>
+      )
+    }
+  }, [extra, itemStyles.Extra, itemStyles.column, numberOfLines])
 
-          let extraDom
-          if (extra) {
-            extraDom = (
-              <View style={[itemStyles.column]}>
-                <Text style={[itemStyles.Extra]} {...numberOfLines}>
-                  {extra}
-                </Text>
-              </View>
-            )
-            if (React.isValidElement(extra)) {
-              const extraChildren = (extra.props as any).children
-              if (Array.isArray(extraChildren)) {
-                const tempExtraDom: any[] = []
-                extraChildren.forEach((el, index) => {
-                  if (typeof el === 'string') {
-                    tempExtraDom.push(
-                      <Text
-                        {...numberOfLines}
-                        style={[itemStyles.Extra]}
-                        key={`${index}-children`}>
-                        {el}
-                      </Text>,
-                    )
-                  } else {
-                    tempExtraDom.push(el)
-                  }
-                })
-                extraDom = (
-                  <View style={[itemStyles.column]}>{tempExtraDom}</View>
-                )
-              } else {
-                extraDom = extra
-              }
-            }
-          }
+  // ====================  arrow  ========================
+  const arrowDom = useMemo(() => {
+    const arrEnum = {
+      horizontal: <Icon name="right" style={itemStyles.Arrow} />,
+      down: <Icon name="down" style={itemStyles.ArrowV} />,
+      up: <Icon name="up" style={itemStyles.ArrowV} />,
+    } as Record<string, React.ReactElement>
+    if (arrow) {
+      return arrEnum[arrow] || <View style={itemStyles.Arrow} />
+    }
+  }, [arrow, itemStyles.Arrow, itemStyles.ArrowV])
 
-          const arrEnum = {
-            horizontal: <Icon name="right" style={itemStyles.Arrow} />,
-            down: <Icon name="down" style={itemStyles.ArrowV} />,
-            up: <Icon name="up" style={itemStyles.ArrowV} />,
-          }
+  const itemView = (
+    <View style={[itemStyles.Item, style]}>
+      {typeof thumb === 'string' ? (
+        <Image
+          source={{ uri: thumb }}
+          style={[itemStyles.Thumb, multipleLine && itemStyles.multipleThumb]}
+        />
+      ) : (
+        thumb
+      )}
+      <View
+        style={[
+          itemStyles.Line,
+          multipleLine && itemStyles.multipleLine,
+          multipleLine && alignStyle,
+        ]}>
+        {contentDom}
+        {extraDom}
+        {arrowDom}
+      </View>
+    </View>
+  )
 
-          const itemView = (
-            <View {...restProps} style={[itemStyles.Item, style]}>
-              {typeof thumb === 'string' ? (
-                <Image
-                  source={{ uri: thumb }}
-                  style={[
-                    itemStyles.Thumb,
-                    multipleLine && itemStyles.multipleThumb,
-                  ]}
-                />
-              ) : (
-                thumb
-              )}
-              <View
-                style={[
-                  itemStyles.Line,
-                  multipleLine && itemStyles.multipleLine,
-                  multipleLine && alignStyle,
-                ]}>
-                {contentDom}
-                {extraDom}
-                {arrow
-                  ? (arrEnum as any)[arrow] || <View style={itemStyles.Arrow} />
-                  : null}
-              </View>
-            </View>
-          )
-
-          return (
-            <TouchableHighlight
-              {...underlayColor}
-              // TODO: fix onClick
-              onPress={
-                (this.props as any).onClick
-                  ? (this.props as any).onClick
-                  : onPress || undefined
-              }
-              onPressIn={onPressIn}
-              onPressOut={onPressOut}
-              onLongPress={onLongPress}
-              delayLongPress={delayLongPress}>
-              {itemView}
-            </TouchableHighlight>
-          )
-        }}
-      </WithTheme>
-    )
-  }
+  return (
+    <TouchableHighlight
+      accessible={Boolean(onPress)}
+      {...underlayColor}
+      {...restButtonProps}
+      onPress={onPress}
+      disabled={Boolean(disabled || !onPress)}
+      ref={ref}>
+      {itemView}
+    </TouchableHighlight>
+  )
 }
+
+const ListItem = React.forwardRef<TouchableHighlight, ListItemProps>(
+  InternalListItem,
+) as ((
+  props: React.PropsWithChildren<ListItemProps> &
+    React.RefAttributes<TouchableHighlight>,
+) => React.ReactElement) &
+  Pick<React.FC, 'displayName' | 'defaultProps'>
+
+ListItem.defaultProps = defaultProps
+
+ListItem.displayName = 'ListItem'
+
+export default React.memo(ListItem)

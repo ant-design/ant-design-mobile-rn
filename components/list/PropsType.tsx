@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
-import { StyleProp, TextStyle, ViewStyle } from 'react-native'
-// export type ListType = JSX.Element
+import { StyleProp, TextStyle } from 'react-native'
+
 export interface ListPropsType {
   renderHeader?: (() => React.ReactType) | string | React.ReactElement
   renderFooter?: (() => React.ReactType) | string | React.ReactElement
@@ -9,16 +9,12 @@ export interface ListPropsType {
 
 export interface ListItemPropsType {
   align?: 'top' | 'middle' | 'bottom'
-  disabled?: boolean
-  multipleLine?: boolean
-  children?: ReactNode
-  thumb?: ReactNode | null
-  extra?: ReactNode
   arrow?: 'horizontal' | 'down' | 'up' | 'empty' | ''
+  children?: ReactNode
+  extra?: ReactNode
+  multipleLine?: boolean
+  thumb?: ReactNode | null
   wrap?: boolean
-  activeStyle?: StyleProp<ViewStyle>
-  error?: boolean
-  platform?: 'android' | 'ios'
 }
 
 export interface BriefProps {

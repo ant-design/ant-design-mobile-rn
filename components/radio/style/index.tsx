@@ -1,6 +1,12 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TextStyle } from 'react-native'
 import { Theme } from '../../style'
 
+export interface RadioItemStyle {
+  radioItemContent: TextStyle
+  radioItemContentDisable: TextStyle
+}
+
+// only for Checkbox themeStyles func
 export default (theme: Theme) =>
   StyleSheet.create({
     checkbox_wave: { borderRadius: 999 },

@@ -13,6 +13,7 @@ import devWarning from '../_util/devWarning'
 import { useAnimatedTiming } from '../_util/hooks/useAnimations'
 import { isPromise } from '../_util/isPromise'
 import RNActivityIndicator from '../activity-indicator'
+import DisabledContext from '../config-provider/DisabledContext'
 import { WithTheme, WithThemeStyles } from '../style'
 import AntmView from '../view/index'
 import { SwitchPropsType } from './PropsType'
@@ -26,23 +27,25 @@ export interface SwitchProps
 }
 
 const AnimatedView = Animated.createAnimatedComponent(AntmView)
-const AntmSwitch = ({
-  prefixCls = 'switch',
-  style,
-  checked,
-  defaultChecked,
-  disabled,
-  color,
-  loading,
-  checkedChildren,
-  unCheckedChildren,
-  onPress,
-  onChange,
-  trackColor,
-  thumbColor,
-  thumbTintColor,
-  ...restProps
-}: SwitchProps) => {
+const AntmSwitch = (props: SwitchProps) => {
+  const disabledContext = React.useContext(DisabledContext)
+  const {
+    prefixCls = 'switch',
+    style,
+    checked,
+    defaultChecked,
+    disabled = disabledContext,
+    color,
+    loading,
+    checkedChildren,
+    unCheckedChildren,
+    onPress,
+    onChange,
+    trackColor,
+    thumbColor,
+    thumbTintColor,
+    ...restProps
+  } = props
   devWarning(
     'checked' in restProps || !('value' in restProps),
     'Switch',
@@ -67,7 +70,7 @@ const AntmSwitch = ({
   }, [])
 
   //disabled when loading
-  disabled = disabled || innerLoading
+  const mergedDisabled = disabled || innerLoading
 
   // animate1
   const [animatedValue, animate] = useAnimatedTiming()
@@ -117,7 +120,7 @@ const AntmSwitch = ({
   }, [animate, animate2, innerChecked, itemHeight])
 
   async function triggerChange(newChecked: boolean) {
-    if (!disabled) {
+    if (!mergedDisabled) {
       setInnerChecked(newChecked)
       const result = onChange?.(newChecked)
       if (isPromise(result)) {
@@ -156,8 +159,8 @@ const AntmSwitch = ({
         const ant_switch = classNames(prefixCls, {
           [`${prefixCls}_checked`]: innerChecked,
           [`${prefixCls}_unchecked`]: !innerChecked,
-          [`${prefixCls}_checked_disabled`]: innerChecked && disabled,
-          [`${prefixCls}_unchecked_disabled`]: !innerChecked && disabled,
+          [`${prefixCls}_checked_disabled`]: innerChecked && mergedDisabled,
+          [`${prefixCls}_unchecked_disabled`]: !innerChecked && mergedDisabled,
         })
           .split(' ')
           .map((a) => styles[a])
@@ -173,7 +176,7 @@ const AntmSwitch = ({
         const ant_switch_handle = classNames(`${prefixCls}_handle`, {
           [`${prefixCls}_handle_checked`]: innerChecked,
           [`${prefixCls}_handle_unchecked`]: !innerChecked,
-          [`${prefixCls}_handle_disabled`]: disabled,
+          [`${prefixCls}_handle_disabled`]: mergedDisabled,
         })
           .split(' ')
           .map((a) => styles[a])
@@ -193,7 +196,7 @@ const AntmSwitch = ({
         const SwitchTrackColor = {
           backgroundColor: Color,
           borderColor: Color,
-          opacity: Color ? (disabled ? 0.6 : 1) : 1,
+          opacity: Color ? (mergedDisabled ? 0.6 : 1) : 1,
         }
 
         const SwitchThumbColor = JSON.parse(
@@ -204,7 +207,7 @@ const AntmSwitch = ({
 
         const accessibilityState = {
           checked: innerChecked,
-          disabled,
+          mergedDisabled,
           busy: innerLoading,
         }
 
@@ -213,7 +216,7 @@ const AntmSwitch = ({
             accessibilityRole="switch"
             accessibilityState={accessibilityState}
             {...restProps}
-            disabled={disabled}
+            disabled={mergedDisabled}
             onPressIn={onPressIn}
             onPressOut={onPressOut}
             onPress={onInternalClick}>

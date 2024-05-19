@@ -1,4 +1,6 @@
+import type { ValidateMessages } from 'rc-field-form/lib/interface'
 import React from 'react'
+
 export interface Locale {
   /** zh_CN */
   locale: string
@@ -90,15 +92,25 @@ export interface Locale {
     /** 暂无数据 */
     noData: string
   }
+  Form: {
+    optional?: string
+    defaultValidateMessages: ValidateMessages
+  }
 }
 export interface LocaleProviderProps {
   locale?: Partial<Locale>
   children?: React.ReactNode
 }
 
-export const LocaleContext = React.createContext({})
+export type LocaleContextProps = {
+  antLocale: Partial<Locale & { exist: boolean }>
+}
 
-const LocaleProvider = function (props: LocaleProviderProps) {
+export const LocaleContext = React.createContext<
+  LocaleContextProps | undefined
+>(undefined)
+
+const LocaleProvider: React.FC<LocaleProviderProps> = (props) => {
   const locale = React.useMemo(() => {
     return { antLocale: { ...props.locale, exist: true } }
   }, [props.locale])
@@ -108,5 +120,7 @@ const LocaleProvider = function (props: LocaleProviderProps) {
     </LocaleContext.Provider>
   )
 }
+
+LocaleProvider.displayName = 'LocaleProvider'
 
 export default React.memo(LocaleProvider)

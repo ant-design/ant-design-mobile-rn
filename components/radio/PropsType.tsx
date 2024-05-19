@@ -1,9 +1,13 @@
 import React from 'react'
+import { StyleProp, ViewStyle } from 'react-native'
 import {
   CheckboxForwardedRef,
-  CheckboxItemPropsType,
-  CheckboxPropsType,
+  CheckboxItemProps,
+  CheckboxProps,
 } from '../checkbox/PropsType'
+import { CheckboxStyle } from '../checkbox/style'
+import { ListItemStyle } from '../list/style'
+import { RadioItemStyle } from './style'
 
 export type RadioValue = string | number | undefined
 
@@ -13,13 +17,15 @@ export interface OnGroupChangeParams {
   }
 }
 
-export interface RadioPropsType extends CheckboxPropsType {
-  value?: RadioValue
+export interface RadioProps extends CheckboxProps {
+  value?: RadioValue // for radio group
 }
 
-export interface RadioItemPropsType
-  extends CheckboxItemPropsType,
-    RadioPropsType {}
+export interface RadioItemProps
+  extends CheckboxItemProps,
+    Omit<RadioProps, 'styles'> {
+  styles?: Partial<CheckboxStyle & RadioItemStyle & ListItemStyle>
+}
 
 export interface RadioOptionType {
   label: React.ReactNode
@@ -27,13 +33,14 @@ export interface RadioOptionType {
   disabled?: boolean
 }
 
-export interface RadioGroupPropsType {
+export interface RadioGroupProps {
   children?: React.ReactNode
   defaultValue?: RadioValue
   value?: RadioValue
   onChange?: (_e: OnGroupChangeParams) => void
   options?: Array<RadioOptionType | RadioValue>
   disabled?: boolean
+  style?: StyleProp<ViewStyle>
 }
 export interface RadioGroupContextProps {
   onChange: (_e: OnGroupChangeParams) => void

@@ -1,77 +1,87 @@
-import useMergedState from 'rc-util/lib/hooks/useMergedState'
-import * as React from 'react'
-import { StyleProp, ViewStyle } from 'react-native'
-import Checkbox from '../checkbox/Checkbox'
-import { OnChangeParams } from '../checkbox/PropsType'
-import { CheckboxStyle } from '../checkbox/style'
-import { WithTheme, WithThemeStyles } from '../style'
+import React, { useMemo, useState } from 'react'
 import devWarning from '../_util/devWarning'
-import { RadioPropsType } from './PropsType'
+import Checkbox from '../checkbox/Checkbox'
+import { WithTheme } from '../style'
+import { RadioForwardedRef, RadioProps } from './PropsType'
 import RadioGroupContext from './RadioContext'
 import RadioStyle from './style'
 
-export interface RadioProps
-  extends RadioPropsType,
-    WithThemeStyles<CheckboxStyle> {
-  style?: StyleProp<ViewStyle>
-  children?: React.ReactNode
-}
-
-const InternalRadio = (
-  { styles, onChange, value, ...restProps }: RadioProps,
-  ref: any,
-) => {
+const InternalRadio: React.ForwardRefRenderFunction<
+  RadioForwardedRef,
+  RadioProps
+> = (props, ref) => {
   const context = React.useContext(RadioGroupContext)
-  devWarning(
-    'checked' in restProps || !('value' in restProps && context),
-    'Radio',
-    '`value` is always used with Radio.Group., do you mean `checked`?',
-  )
-
-  const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
-    value: restProps.checked,
-    defaultValue: restProps.defaultChecked,
-  })
-
-  if (context) {
-    restProps.checked = value === context.value
-    restProps.disabled = restProps.disabled || context.disabled
-  } else {
-    restProps.checked = innerChecked
+  const {
+    styles,
+    checked,
+    onChange,
+    value,
+    disabled = context?.disabled,
+    ...restProps
+  } = props
+  if (__DEV__) {
+    devWarning(
+      !('value' in props && !context && !('checked' in props)),
+      'Radio',
+      '`value` is always used with Radio.Group., do you mean `checked`?',
+    )
   }
 
-  const onInternalChange = (e: OnChangeParams) => {
-    e.target.checked && triggerChange(e.target.checked)
-  }
+  const [innerChecked, setInnerChecked] = useState<boolean>(false)
 
-  function triggerChange(newChecked: boolean) {
-    setInnerChecked(newChecked)
-    onChange?.({ target: { checked: newChecked } })
-    context?.onChange?.({ target: { value } })
-  }
+  const restCheckboxProps = useMemo<RadioProps>(() => {
+    if (context) {
+      return {
+        checked: context.value === value,
+        onChange: (e) => {
+          if (e.target.checked) {
+            onChange?.(e)
+            context?.onChange?.({ target: { value } })
+          }
+        },
+      }
+    }
+    if (checked === undefined) {
+      return {
+        checked: innerChecked,
+        onChange: (e) => {
+          if (e.target.checked) {
+            setInnerChecked(true)
+          }
+        },
+      }
+    }
+    return {
+      checked,
+      onChange,
+    }
+  }, [checked, context, innerChecked, onChange, value])
 
   return (
     <WithTheme themeStyles={RadioStyle} styles={styles}>
       {(_styles) => (
         <Checkbox
           accessibilityRole="radio"
-          accessibilityState={{
-            checked: restProps.checked,
-            disabled: restProps.disabled,
-          }}
           {...restProps}
-          ref={ref}
+          {...restCheckboxProps}
+          disabled={disabled}
           indeterminate={false}
-          onChange={onInternalChange}
           styles={_styles}
+          ref={ref}
         />
       )}
     </WithTheme>
   )
 }
 
-const AntmRadio = React.forwardRef(InternalRadio)
+const Radio = React.forwardRef<RadioForwardedRef, RadioProps>(
+  InternalRadio,
+) as ((
+  props: React.PropsWithChildren<RadioProps> &
+    React.RefAttributes<RadioForwardedRef>,
+) => React.ReactElement) &
+  Pick<React.FC, 'displayName'>
 
-AntmRadio.displayName = 'AntmRadio'
+Radio.displayName = 'AntmRadio'
 
-export default AntmRadio
+export default React.memo(Radio)

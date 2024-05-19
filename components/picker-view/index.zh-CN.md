@@ -31,10 +31,23 @@ PickerView 的功能类似于 Picker ，但它是直接渲染在区域中，而�
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | style    | 外部样式   | `StyleProp<ViewStyle>` | -   |
-| styles   | 内部组件样式集   | `PickerViewStyle` | -   |
+| styles   | 语义化结构 style   | [PickerViewStyle](#pickerviewstyle-语义化样式) | -   |
 | itemStyle| 每列样式   | `StyleProp<TextStyle>` | -   |
 | itemHeight | 每列固定高度，未设值时会根据`numberOfLines`动态计算；`itemStyle`属性设置`{height}`值是无效的  |   Number   | -  |
 | numberOfLines | 允许每列显示行数  |   Number   | `1`  |
+
+#### PickerViewStyle 语义化样式
+
+```jsx
+interface PickerViewStyle {
+  wrappper: ViewStyle
+  wheelWrapper: ViewStyle
+  mask: ViewStyle
+  maskTop: ViewStyle
+  maskMiddle: ViewStyle
+  maskBottom: ViewStyle
+}
+```
 
 #### 遮罩层
 
@@ -44,3 +57,16 @@ PickerView 的功能类似于 Picker ，但它是直接渲染在区域中，而�
 ----|-----|------|------
 | renderMaskTop | 自定义渲染上半部分遮罩层 | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
 | renderMaskBottom | 自定义渲染下半部分遮罩层 | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
+
+## FAQ
+
+### 在Android平台，ScrollView中嵌套使用PickerView，会发生Picker Item不能滑动的情况，怎么办？
+
+`5.1.3`新增支持。 设置`ScrollView`的`nestedScrollEnabled`属性为`true`即可。
+
+```jsx
+<ScrollView nestedScrollEnabled={true}>
+  ...
+  <PickerView />
+</ScrollView>
+```

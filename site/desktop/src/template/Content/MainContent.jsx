@@ -101,7 +101,6 @@ export default class MainContent extends React.Component {
             </span>
           </span>
           {item.version && <Tag color="green">{item.version}</Tag>}
-          {item.deprecate && <Tag color="red">{item.deprecate}</Tag>}
         </span>,
       ]
     }

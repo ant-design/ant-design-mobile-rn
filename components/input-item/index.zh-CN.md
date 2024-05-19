@@ -2,8 +2,10 @@
 category: Components
 type: Data Entry
 title: InputItem
-subtitle: 文本输入
+subtitle: 文本输入(归档)
 ---
+
+> 已停止更新，推荐使用 [components/Input](/components/input-cn)
 
 用于接受单行文本。
 

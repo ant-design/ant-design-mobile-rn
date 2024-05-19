@@ -11,6 +11,7 @@ Array [
     }
   >
     <Text
+      disabled={false}
       extra="请选择"
       onPress={[Function]}
       testID="button"
