@@ -17,6 +17,7 @@ export default (theme: Theme) =>
       fontSize: theme.font_size_heading,
       paddingVertical: theme.prefix_padding,
       textAlignVertical: 'top',
+      includeFontPadding: true,
     },
     clearIcon: {
       position: 'absolute',

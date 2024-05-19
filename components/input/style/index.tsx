@@ -24,6 +24,7 @@ export default (theme: Theme) =>
       fontSize: theme.font_size_heading,
       paddingVertical: theme.prefix_padding,
       textAlignVertical: 'center',
+      includeFontPadding: true,
     },
     clearIcon: {
       backgroundColor: 'rgba(0,0,0,0.2)',

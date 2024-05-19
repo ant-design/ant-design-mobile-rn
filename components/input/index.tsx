@@ -1,6 +1,6 @@
 import InternalInput from './Input'
 import Item from './Item'
-import TextArea from './TextArea'
+import TextArea from './TextArea/index'
 
 type InternalInputType = typeof InternalInput
 

@@ -27,9 +27,9 @@ version: 5.2.0-rc.0
 | status | 设置校验状态 | 'error' \| 'warning' | - |
 | styles | 语义化结构 style | [InputStyle](#inputstyle-语义化样式) | - |
 | suffix | 带有后缀图标的 input | ReactNode | - |
-| type | 声明 Input 类型，同原生 [`keyboardType`](https://reactnative.dev/docs/textinput.html#keyboardtype) 属性 | 'text'  \| 'bankCard' \| 'phone' \| 'password' \| 'number' \| 'digit' \| KeyboardTypeOptions | `text` |
+| type | 声明 Input 类型，同原生 [`keyboardType`](https://reactnative.dev/docs/textinput.html#keyboardtype) 属性 | 'text' \| 'number' \|'password' \| KeyboardTypeOptions | `text` |
 | value | 输入框内容 | string | - |
-| onChange | 输入框内容变化时的回调 | `(value: string) => void` | - |
+| onChange | 输入框内容变化时的回调，额外支持`e.target.value`的返回 | `(e: NativeSyntheticEvent<TextInputChangeEventData>) => void;` | - |
 
 Input 的其他属性和 react-native 内置组件[TextInput](http://facebook.github.io/react-native/docs/textinput.html) 一致。
 
@@ -40,7 +40,7 @@ Input 的其他属性和 react-native 内置组件[TextInput](http://facebook.gi
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| autoSize | 自适应内容高度，可设置为 true \| false 或对象：`{ minRows: 2, maxRows: 6 }` | boolean \| object | false |
+| autoSize | 自适应内容高度，可设置为 `true` \| `false` 或对象：`{ minRows: 2, maxRows: 6 }` | boolean \| object | false |
 | rows | 固定显示几行，`autoSize` 优先级高 | number | 2 |
 | styles | 语义化结构 style | [InputStyle](#inputstyle-语义化样式) | - |
 

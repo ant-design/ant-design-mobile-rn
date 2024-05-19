@@ -2,8 +2,10 @@
 category: Components
 type: Data Entry
 title: TextareaItem
-subtitle: 多行输入
+subtitle: 多行输入(归档)
 ---
+
+> 已停止更新，推荐使用 [components/Input.TextArea](/components/input-cn#inputtextarea)
 
 用于接受多行文本。
 

@@ -12,7 +12,7 @@ export interface AutoSizeType {
   maxRows?: number
 }
 export type InputStatus = 'error' | 'warning'
-export interface InputProps extends Omit<TextInputProps, 'onChange'> {
+export interface InputProps extends TextInputProps {
   allowClear?: boolean | ClearIconType
   disabled?: boolean
   maxLength?: number
@@ -31,21 +31,12 @@ export interface InputProps extends Omit<TextInputProps, 'onChange'> {
   styles?: Partial<InputStyle>
   suffix?: React.ReactNode
   themeStyles?: (theme: Theme) => Partial<InputStyle>
-  type?:
-    | 'text'
-    | 'bankCard'
-    | 'phone'
-    | 'password'
-    | 'number'
-    | 'digit' // TODO-luokun
-    | KeyboardTypeOptions
-  onChange?: (value: string) => void
+  type?: 'text' | 'password' | 'number' | KeyboardTypeOptions
 }
 
 export interface TextAreaProps
   extends Omit<InputProps, 'prefix' | 'status' | 'styles' | 'suffix' | 'type'> {
   autoSize?: boolean | AutoSizeType
   styles?: Partial<TextAreaStyle>
-  rows?: number // TODO-luokun: 原生rows/cols
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
+  rows?: number
 }

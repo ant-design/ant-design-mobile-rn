@@ -52,6 +52,7 @@ export default function InputExample() {
             <Input.TextArea
               rows={4}
               maxLength={100}
+              showCount
               allowClear
               placeholder="固定行数 row={4}"
             />

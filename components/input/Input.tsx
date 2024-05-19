@@ -1,10 +1,17 @@
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
-import React, { useCallback, useContext, useEffect, useMemo } from 'react'
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from 'react'
 import {
   Keyboard,
-  KeyboardTypeOptions,
+  NativeSyntheticEvent,
   Text,
   TextInput,
+  TextInputChangeEventData,
   TextInputProps,
   TouchableOpacity,
   View,
@@ -68,10 +75,28 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     defaultValue: props.defaultValue,
     postState: (value) => (props.value === undefined ? value : props.value),
   })
+
+  // clone TextInput SyntheticEvent
+  // TODO: web better refer to https://github.com/react-component/input/blob/master/src/utils/commonUtils.ts#L13
+  const cloneEventRef = useRef<any>()
+  const resolveOnChange = (
+    text: string,
+    e?: NativeSyntheticEvent<TextInputChangeEventData>,
+    onChange?: (event: NativeSyntheticEvent<TextInputChangeEventData>) => void,
+  ) => {
+    if (!e) {
+      return
+    }
+    e.nativeEvent.text = text
+    // @ts-ignore hack for web/Form
+    e.target.value = text
+    onChange?.(e)
+  }
+
   // Push value to controlled
   const pushInputValue = useCallback(
     (value) => {
-      props.onChange?.(value)
+      resolveOnChange(value, cloneEventRef.current, props.onChange)
       props.onChangeText?.(value)
       setInnerValue(value)
     },
@@ -134,7 +159,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
   // format text value
   const formatText = useCallback(
     (text: string) => {
-      if (type === 'number' || type === 'digit') {
+      if (type === 'number') {
         text = text.replace(/[^\d]+/, '')
       }
       return text
@@ -146,9 +171,13 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
   const restProps = React.useMemo(() => {
     const res = { ...rest } as TextInputProps
 
-    // Override onChange (text:string)=>void
+    // Override onChange support ({target:{value:string}})=>void
     if (typeof rest.onChange === 'function') {
-      res.onChange = (e) => rest.onChange?.(formatText(e.nativeEvent.text))
+      res.onChange = (e) => {
+        const text = formatText(e.nativeEvent.text)
+        cloneEventRef.current = e
+        resolveOnChange(text, e, rest.onChange)
+      }
     }
     if (typeof rest.onChangeText === 'function') {
       res.onChangeText = (text) => rest.onChangeText?.(formatText(text))
@@ -157,11 +186,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     // Controlled when allowClear/maxLength/showCount/type is set
     if (
       rest.value === undefined &&
-      (allowClear ||
-        maxLengthConfig.show ||
-        showCount ||
-        type === 'number' ||
-        type === 'digit')
+      (allowClear || maxLengthConfig.show || showCount || type === 'number')
     ) {
       res.value = innerValue
       res.onChangeText = (text) => {
@@ -179,7 +204,10 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
       }
       res.onBlur = (e: any) => {
         // Cut to maxLength when onBlur
-        if (maxLengthConfig.show && maxLengthConfig.value < innerValue.length) {
+        if (
+          maxLengthConfig.show &&
+          maxLengthConfig.value < innerValue?.length
+        ) {
           pushInputValue(innerValue.slice(0, maxLengthConfig.value))
         }
         timer.current = setTimeout(() => {
@@ -207,12 +235,8 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     // typo killer
     if (type === 'number') {
       return 'numeric'
-    } else if (type === 'bankCard') {
-      return 'number-pad'
-    } else if (type === 'phone') {
-      return 'phone-pad'
     }
-    return (type as KeyboardTypeOptions) || props.keyboardType
+    return props.keyboardType
   }, [props.keyboardType, type])
 
   // ========================= UI =========================
@@ -271,7 +295,9 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     if (React.isValidElement(node)) {
       return node
     }
-    return <Text style={[styles.showCount, statusClassName]}>{node}</Text>
+    if (node !== undefined) {
+      return <Text style={[styles.showCount, statusClassName]}>{node}</Text>
+    }
   }, [
     innerValue,
     maxLengthConfig.show,
@@ -305,7 +331,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
         secureTextEntry={type === 'password'}
         onSubmitEditing={Keyboard.dismiss}
         {...restProps}
-        keyboardType={keyboardType} // TODO-luokun: 原生keyboardType完全放开
+        keyboardType={keyboardType}
         style={[styles.input, statusClassName, style]}
         ref={inputRef}
       />

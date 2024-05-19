@@ -26,9 +26,9 @@ Entering content through the keyboard is the most basic form field wrapper.
 | status | Set validation status | 'error' \| 'warning' | - |
 | styles | Semantic DOM style | [InputStyle](#inputstyle-interface) | - |
 | suffix | The suffix icon for the Input | ReactNode | - |
-| type   | Declare the Input type, the same as the native [keyboardType](https://reactnative.dev/docs/textinput.html#keyboardtype) attribute | 'text'  \| 'bankCard' \| 'phone' \| 'password' \| 'number' \| 'digit' \| KeyboardTypeOptions | `text` |
+| type   | Declare the Input type, the same as the native [keyboardType](http://facebook.github.io/react-native/docs/textinput.html#keyboardtype) attribute | 'text' \| 'number' \| 'password' \| KeyboardTypeOptions | `text` |
 | value | The input content value | string | - |
-| onChange | Callback when user input | `(value: string) => void` | - |
+| onChange | Callback when user input, extra return `e.target.value` | `(e: NativeSyntheticEvent<TextInputChangeEventData>) => void;` | - |
 
 The rest of the props of Input are exactly the same as the react-native [TextInput](http://facebook.github.io/react-native/docs/textinput.html).
 
@@ -38,7 +38,7 @@ Same as Input, and more:
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
-| autoSize | Height auto size feature, can be set to true \| false or an object `{ minRows: 2, maxRows: 6 }` | boolean \| object | false |
+| autoSize | Height auto size feature, can be set to `true` \| `false` or an object `{ minRows: 2, maxRows: 6 }` | boolean \| object | false |
 | rows | sets the number of lines for a textarea.	Prioritize`autoSize`  | number | 2 |
 | styles | Semantic DOM style | [InputStyle](#inputstyle-interface) | - |
 
