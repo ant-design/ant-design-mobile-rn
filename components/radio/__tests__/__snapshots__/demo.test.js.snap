@@ -151,9 +151,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
-                          },
-                          Object {
                             "scale": 0,
                           },
                         ],
@@ -400,9 +397,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                               "position": "absolute",
                               "transform": Array [
                                 Object {
-                                  "rotate": "45deg",
-                                },
-                                Object {
                                   "scale": 0,
                                 },
                               ],
@@ -533,9 +527,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                               "height": 8,
                               "position": "absolute",
                               "transform": Array [
-                                Object {
-                                  "rotate": "45deg",
-                                },
                                 Object {
                                   "scale": 0,
                                 },
@@ -848,9 +839,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                           "position": "absolute",
                           "transform": Array [
                             Object {
-                              "rotate": "45deg",
-                            },
-                            Object {
                               "scale": 0,
                             },
                           ],
@@ -1046,9 +1034,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                           "position": "absolute",
                           "transform": Array [
                             Object {
-                              "rotate": "45deg",
-                            },
-                            Object {
                               "scale": 0,
                             },
                           ],
@@ -1231,9 +1216,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       "position": "absolute",
                       "transform": Array [
                         Object {
-                          "rotate": "45deg",
-                        },
-                        Object {
                           "scale": 0,
                         },
                       ],
@@ -1353,9 +1335,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       "height": 8,
                       "position": "absolute",
                       "transform": Array [
-                        Object {
-                          "rotate": "45deg",
-                        },
                         Object {
                           "scale": 0,
                         },
@@ -1477,9 +1456,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       "position": "absolute",
                       "transform": Array [
                         Object {
-                          "rotate": "45deg",
-                        },
-                        Object {
                           "scale": 0,
                         },
                       ],
@@ -1599,9 +1575,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       "height": 8,
                       "position": "absolute",
                       "transform": Array [
-                        Object {
-                          "rotate": "45deg",
-                        },
                         Object {
                           "scale": 0,
                         },
@@ -1852,9 +1825,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                             "position": "absolute",
                             "transform": Array [
                               Object {
-                                "rotate": "45deg",
-                              },
-                              Object {
                                 "scale": 0,
                               },
                             ],
@@ -2049,9 +2019,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                             "height": 8,
                             "position": "absolute",
                             "transform": Array [
-                              Object {
-                                "rotate": "45deg",
-                              },
                               Object {
                                 "scale": 0,
                               },
@@ -2248,9 +2215,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                             "position": "absolute",
                             "transform": Array [
                               Object {
-                                "rotate": "45deg",
-                              },
-                              Object {
                                 "scale": 0,
                               },
                             ],
@@ -2403,9 +2367,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                           "height": 8,
                           "position": "absolute",
                           "transform": Array [
-                            Object {
-                              "rotate": "45deg",
-                            },
                             Object {
                               "scale": 0,
                             },
@@ -2725,9 +2686,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "position": "absolute",
                                 "transform": Array [
                                   Object {
-                                    "rotate": "45deg",
-                                  },
-                                  Object {
                                     "scale": 0,
                                   },
                                 ],
@@ -2923,9 +2881,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "position": "absolute",
                                 "transform": Array [
                                   Object {
-                                    "rotate": "45deg",
-                                  },
-                                  Object {
                                     "scale": 0,
                                   },
                                 ],
@@ -3120,9 +3075,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "height": 8,
                                 "position": "absolute",
                                 "transform": Array [
-                                  Object {
-                                    "rotate": "45deg",
-                                  },
                                   Object {
                                     "scale": 0,
                                   },
@@ -3373,9 +3325,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "position": "absolute",
                                 "transform": Array [
                                   Object {
-                                    "rotate": "45deg",
-                                  },
-                                  Object {
                                     "scale": 0,
                                   },
                                 ],
@@ -3571,9 +3520,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "position": "absolute",
                                 "transform": Array [
                                   Object {
-                                    "rotate": "45deg",
-                                  },
-                                  Object {
                                     "scale": 0,
                                   },
                                 ],
@@ -3768,9 +3714,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "height": 8,
                                 "position": "absolute",
                                 "transform": Array [
-                                  Object {
-                                    "rotate": "45deg",
-                                  },
                                   Object {
                                     "scale": 0,
                                   },
@@ -4021,9 +3964,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "position": "absolute",
                                 "transform": Array [
                                   Object {
-                                    "rotate": "45deg",
-                                  },
-                                  Object {
                                     "scale": 0,
                                   },
                                 ],
@@ -4219,9 +4159,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "position": "absolute",
                                 "transform": Array [
                                   Object {
-                                    "rotate": "45deg",
-                                  },
-                                  Object {
                                     "scale": 0,
                                   },
                                 ],
@@ -4327,7 +4264,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       accessibilityState={
                         Object {
                           "checked": false,
-                          "disabled": true,
+                          "disabled": false,
                         }
                       }
                       accessible={true}
@@ -4392,17 +4329,13 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                   "borderRadius": 999,
                                 },
                               ],
-                              Object {
-                                "backgroundColor": "#f5f5f5",
-                                "borderColor": "#b9b9b9",
-                              },
                             ]
                           }
                         >
                           <View
                             style={
                               Object {
-                                "backgroundColor": "#f5f5f5",
+                                "backgroundColor": "#1890ff",
                                 "height": 0,
                                 "opacity": 0,
                                 "width": 0,
@@ -4412,8 +4345,8 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                           <View
                             style={
                               Object {
-                                "backgroundColor": "#0003",
-                                "borderColor": "#b9b9b9",
+                                "backgroundColor": "#1890ff",
+                                "borderColor": "#ffffff",
                                 "borderLeftWidth": 0,
                                 "borderRadius": 999,
                                 "borderTopWidth": 0,
@@ -4422,9 +4355,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                                 "height": 8,
                                 "position": "absolute",
                                 "transform": Array [
-                                  Object {
-                                    "rotate": "45deg",
-                                  },
                                   Object {
                                     "scale": 0,
                                   },
@@ -4442,9 +4372,6 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                               "backgroundColor": "transparent",
                               "marginLeft": 8,
                               "marginRight": 8,
-                            },
-                            Object {
-                              "color": "#bbbbbb",
                             },
                           ]
                         }

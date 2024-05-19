@@ -94,7 +94,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                 Object {
                   "busy": false,
                   "checked": true,
-                  "disabled": false,
+                  "mergedDisabled": false,
                 }
               }
               accessible={true}
@@ -251,7 +251,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                 Object {
                   "busy": false,
                   "checked": true,
-                  "disabled": false,
+                  "mergedDisabled": false,
                 }
               }
               accessible={true}

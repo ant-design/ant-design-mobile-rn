@@ -42,12 +42,9 @@ const FormItemLabel: React.FC<FormItemLabelProps & { required?: boolean }> = ({
   )
 
   // Required Mark
-  const isOptionalMark = requiredMark === 'optional'
-  const isRenderMark = typeof requiredMark === 'function'
-
-  if (isRenderMark) {
+  if (typeof requiredMark === 'function') {
     labelChildren = requiredMark(labelChildren, { required: !!required })
-  } else if (isOptionalMark && !required) {
+  } else if (requiredMark === 'optional' && !required) {
     labelChildren = (
       <>
         {labelChildren}

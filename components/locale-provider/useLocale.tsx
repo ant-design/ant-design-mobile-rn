@@ -11,7 +11,7 @@ const useLocale = <C extends LocaleComponentName = LocaleComponentName>(
   defaultLocale?: Locale[C] | (() => Locale[C]),
 ): readonly [NonNullable<Locale[C]>, string] => {
   const fullLocale = React.useContext(LocaleContext)
-
+  // @ts-ignore
   const getLocale = React.useMemo<NonNullable<Locale[C]>>(() => {
     const locale = defaultLocale || defaultLocaleData[componentName]
     const localeFromContext = fullLocale?.antLocale?.[componentName] ?? {}
