@@ -205,7 +205,7 @@ const InternalListItem: React.ForwardRefRenderFunction<
       {...underlayColor}
       {...restButtonProps}
       onPress={onPress}
-      disabled={Boolean(disabled || !onPress)} // TODO-luokun: 待回归交互样式
+      disabled={Boolean(disabled || !onPress)}
       ref={ref}>
       {itemView}
     </TouchableHighlight>
