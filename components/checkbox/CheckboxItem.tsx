@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import React, { forwardRef, memo, useContext, useMemo, useRef } from 'react'
 import { Text, TouchableHighlight } from 'react-native'
 import DisabledContext from '../config-provider/DisabledContext'
@@ -23,27 +24,20 @@ const CheckboxItem = forwardRef<TouchableHighlight, CheckboxItemProps>(
     const checkbox = useRef<CheckboxForwardedRef>(null)
 
     // for accessibility
-    const [innerChecked, setInnerChecked] = React.useState<boolean>(
-      props.checked ?? props.defaultChecked ?? false,
-    )
+    const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
+      value: props.checked,
+      defaultValue: props.defaultChecked,
+    })
 
     const handleClick = () => {
       if (checkbox.current) {
-        checkbox.current.onPress()
+        setInnerChecked(checkbox.current.onPress())
       }
       props.onPress?.()
     }
 
     const thumbNode = (
-      <Checkbox
-        {...restProps}
-        prefixCls={prefixCls}
-        disabled={disabled}
-        onChange={({ target: { checked } }) => {
-          setInnerChecked(checked)
-        }}
-        ref={checkbox}
-      />
+      <Checkbox {...restProps} prefixCls={prefixCls} ref={checkbox} />
     )
     const listProps = {
       ...restProps,

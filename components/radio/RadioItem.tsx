@@ -1,3 +1,4 @@
+import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import React, { forwardRef, memo, useContext, useMemo, useRef } from 'react'
 import { Text, TouchableHighlight } from 'react-native'
 import DisabledContext from '../config-provider/DisabledContext'
@@ -21,27 +22,19 @@ const RadioItem = forwardRef<TouchableHighlight, RadioItemProps>(
     const radio = useRef<RadioForwardedRef>(null)
 
     // for accessibility
-    const [innerChecked, setInnerChecked] = React.useState<boolean>(
-      props.checked ?? props.defaultChecked ?? false,
-    )
+    const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
+      value: props.checked,
+      defaultValue: props.defaultChecked,
+    })
 
     const handleClick = () => {
       if (radio.current) {
         radio.current.onPress()
+        !innerChecked && setInnerChecked(true)
       }
       props.onPress?.()
     }
-
-    const radioEl = (
-      <Radio
-        {...restProps}
-        disabled={disabled}
-        onChange={({ target: { checked } }) => {
-          setInnerChecked(checked)
-        }}
-        ref={radio}
-      />
-    )
+    const radioEl = <Radio {...restProps} ref={radio} />
     const listProps = {
       ...restProps,
       thumb: left && !right ? radioEl : undefined,

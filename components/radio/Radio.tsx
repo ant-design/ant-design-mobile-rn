@@ -1,13 +1,6 @@
-import useMergedState from 'rc-util/lib/hooks/useMergedState'
-import React, {
-  useCallback,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-} from 'react'
+import React, { useMemo, useState } from 'react'
 import devWarning from '../_util/devWarning'
 import Checkbox from '../checkbox/Checkbox'
-import { OnChangeParams } from '../checkbox/PropsType'
 import { WithTheme } from '../style'
 import { RadioForwardedRef, RadioProps } from './PropsType'
 import RadioGroupContext from './RadioContext'
@@ -20,6 +13,7 @@ const InternalRadio: React.ForwardRefRenderFunction<
   const context = React.useContext(RadioGroupContext)
   const {
     styles,
+    checked,
     onChange,
     value,
     disabled = context?.disabled,
@@ -33,43 +27,35 @@ const InternalRadio: React.ForwardRefRenderFunction<
     )
   }
 
-  const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
-    value: context?.value ? value === context.value : restProps.checked,
-    defaultValue: restProps.defaultChecked,
-  })
+  const [innerChecked, setInnerChecked] = useState<boolean>(false)
 
-  const triggerChange = useCallback(
-    (newChecked: boolean) => {
-      if (newChecked) {
-        setInnerChecked(newChecked)
-        onChange?.({ target: { checked: newChecked } })
-        context?.onChange?.({ target: { value } })
+  const restCheckboxProps = useMemo<RadioProps>(() => {
+    if (context) {
+      return {
+        checked: context.value === value,
+        onChange: (e) => {
+          if (e.target.checked) {
+            onChange?.(e)
+            context?.onChange?.({ target: { value } })
+          }
+        },
       }
-      return true
-    },
-    [context, onChange, setInnerChecked, value],
-  )
-
-  useEffect(() => {
-    onChange?.({ target: { checked: innerChecked } })
-  }, [innerChecked, onChange])
-
-  const onInternalChange = useCallback(
-    (e: OnChangeParams) => {
-      e.target.checked && triggerChange(e.target.checked)
-    },
-    [triggerChange],
-  )
-
-  // ================== Actions Ref ==================
-  const actions = useMemo(
-    () => ({
-      onPress: () => triggerChange(!innerChecked),
-      checked: innerChecked,
-    }),
-    [innerChecked, triggerChange],
-  )
-  useImperativeHandle(ref, () => actions)
+    }
+    if (checked === undefined) {
+      return {
+        checked: innerChecked,
+        onChange: (e) => {
+          if (e.target.checked) {
+            setInnerChecked(true)
+          }
+        },
+      }
+    }
+    return {
+      checked,
+      onChange,
+    }
+  }, [checked, context, innerChecked, onChange, value])
 
   return (
     <WithTheme themeStyles={RadioStyle} styles={styles}>
@@ -77,11 +63,11 @@ const InternalRadio: React.ForwardRefRenderFunction<
         <Checkbox
           accessibilityRole="radio"
           {...restProps}
+          {...restCheckboxProps}
           disabled={disabled}
           indeterminate={false}
-          checked={innerChecked}
-          onChange={onInternalChange}
           styles={_styles}
+          ref={ref}
         />
       )}
     </WithTheme>

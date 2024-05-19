@@ -56,7 +56,8 @@ const InternalCheckbox: React.ForwardRefRenderFunction<
   }
   const transitionTransform = {
     transform: [
-      { rotate: '45deg' },
+      // hack: rotate & radius bug in android
+      ...(restProps.accessibilityRole === 'radio' ? [] : [{ rotate: '45deg' }]),
       {
         scale: animatedValue.interpolate({
           inputRange: [0, 1],
@@ -72,6 +73,7 @@ const InternalCheckbox: React.ForwardRefRenderFunction<
       toValue: innerChecked ? 1 : 0,
       duration: 300,
       easing: Easing.bezier(0.68, -0.55, 0.27, 1.55),
+      useNativeDriver: true,
     })
   }, [animate, innerChecked])
 
