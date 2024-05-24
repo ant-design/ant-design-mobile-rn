@@ -35,9 +35,9 @@ A configurable Mobile UI specification and React-based implementation.
 
  - **Expo demo app**
 
-|SDK 49+ iOS|SDK 49+ Android|
-|--|--|
-| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=91ccee3a-f631-4bdb-b643-e3d01b52a95c&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=49a4c02d-5dc0-47b9-a98f-61932a6d4765&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
+|SDK 49+|
+|--|
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5" />](https://expo.dev/preview/update?message=5.2.0%20Form%20%26%20Input&updateRuntimeVersion=5.2.0&createdAt=2024-05-24T06%3A10%3A13.909Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5) |
 
 <details><summary>Expo SDK history version</summary>
 
