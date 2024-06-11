@@ -2,6 +2,9 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 export interface StepperStyle {
   container: ViewStyle
+  minus: ViewStyle
+  plus: ViewStyle
+  middle: ViewStyle
   input: TextStyle
   stepWrap: ViewStyle
   stepText: TextStyle
@@ -18,6 +21,9 @@ export default (theme: Theme) =>
       alignItems: 'center',
       justifyContent: 'center',
     },
+    minus: {},
+    plus: {},
+    middle: {},
     input: {
       flex: 1,
       textAlign: 'center',

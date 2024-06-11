@@ -12,11 +12,12 @@ export interface AutoSizeType {
   maxRows?: number
 }
 export type InputStatus = 'error' | 'warning'
-export interface InputProps extends TextInputProps {
+export interface InputProps extends Omit<TextInputProps, 'readOnly'> {
   allowClear?: boolean | ClearIconType
   disabled?: boolean
   maxLength?: number
   prefix?: React.ReactNode
+  readOnly?: boolean
   showCount?:
     | boolean
     | {

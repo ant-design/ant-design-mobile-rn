@@ -33,7 +33,8 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
   const {
     allowClear,
     disabled = contextDisabled,
-    editable = true,
+    readOnly,
+    editable = !readOnly,
     maxLength,
     prefix,
     showCount,

@@ -1,17 +1,25 @@
-import { StyleProp, TextStyle, ViewStyle } from 'react-native'
+import { StyleProp, ViewStyle } from 'react-native'
+import { InputProps } from '../input/PropsType'
+import { Theme } from '../style'
+import { StepperStyle } from './style'
 
-export interface StepPropsType {
-  min?: number
-  max?: number
-  step?: number | string
-  readOnly?: boolean
+export interface StepperProps<ValueType>
+  extends Omit<InputProps, 'value' | 'defaultValue' | 'onChange'> {
+  allowEmpty?: false
+  value?: ValueType
+  defaultValue?: ValueType
+  onChange?: (value: ValueType) => void
+  min?: ValueType
+  max?: ValueType
+  step?: ValueType
+  digits?: number
   disabled?: boolean
-  autoFocus?: boolean
-  value?: number
-  defaultValue?: number
-  onChange?: (value: any) => void
-  upStyle?: StyleProp<ViewStyle>
-  downStyle?: StyleProp<ViewStyle>
-  inputStyle?: StyleProp<TextStyle>
-  name?: string
+  // Format & Parse
+  parser?: (text: string) => ValueType
+  formatter?: (value?: ValueType) => string
+  // String Mode
+  stringMode?: boolean
+  style?: StyleProp<ViewStyle>
+  styles?: Partial<StepperStyle>
+  themeStyles?: (theme: Theme) => Partial<StepperStyle>
 }
