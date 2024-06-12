@@ -66,6 +66,27 @@ export function InnerStepper<ValueType extends number | string>(
     return decimal.isInvalidate() ? null : decimal.toString()
   }
 
+  const formatValue = useCallback(
+    (val: ValueType | null): string => {
+      if (val === null) {
+        return ''
+      }
+
+      return formatter ? formatter(val) : fixedValue(val)
+    },
+    [fixedValue, formatter],
+  )
+
+  // ======================== Value & Reducer  ========================
+  const [mergedValue, setMergedValue] = useMergedState<ValueType | null>(
+    defaultValue,
+    {
+      value,
+      onChange,
+    },
+  )
+
+  // >>>>> Value
   const setValueWithCheck = (nextValue: DecimalClass) => {
     if (nextValue.isNaN()) {
       return
@@ -94,28 +115,7 @@ export function InnerStepper<ValueType extends number | string>(
     }
 
     setMergedValue(getValueAsType(target))
-    // return getValueAsType(target)
   }
-
-  const formatValue = useCallback(
-    (val: ValueType | null): string => {
-      if (val === null) {
-        return ''
-      }
-
-      return formatter ? formatter(val) : fixedValue(val)
-    },
-    [fixedValue, formatter],
-  )
-
-  // ======================== Value & Reducer  ========================
-  const [mergedValue, setMergedValue] = useMergedState<ValueType | null>(
-    defaultValue,
-    {
-      value,
-      onChange,
-    },
-  )
 
   const reducer = (
     state: { value: string },
@@ -129,13 +129,10 @@ export function InnerStepper<ValueType extends number | string>(
     if (action.type === 'minus') {
       stepValue = stepValue.negate()
     }
-
     setValueWithCheck(
-      getMiniDecimal(state.value ?? 0).add(stepValue.toString()),
+      getMiniDecimal(mergedValue ?? 0).add(stepValue.toString()),
     )
-    return {
-      value: state.value,
-    }
+    return { state }
   }
   const [state, dispatch] = useReducer(reducer, {
     value: formatValue(mergedValue),
