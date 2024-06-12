@@ -6,6 +6,7 @@ import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import React, {
   forwardRef,
   useCallback,
+  useContext,
   useEffect,
   useMemo,
   useReducer,
@@ -13,6 +14,7 @@ import React, {
   useState,
 } from 'react'
 import { Pressable, TextInput, View } from 'react-native'
+import DisabledContext from '../config-provider/DisabledContext'
 import Input from '../input'
 import { useTheme } from '../style'
 import AntdView from '../view'
@@ -23,11 +25,13 @@ export function InnerStepper<ValueType extends number | string>(
   props: StepperProps,
   ref: React.ForwardedRef<TextInput>,
 ) {
+  const contextDisabled = useContext(DisabledContext)
+
   const {
-    value,
+    value: inputValue,
     defaultValue = 0 as ValueType,
     onChange,
-    disabled,
+    disabled = contextDisabled,
     step = 1,
     max,
     min,
@@ -41,17 +45,16 @@ export function InnerStepper<ValueType extends number | string>(
 
   // ========================== Parse / Format ==========================
   const fixedValue = useCallback(
-    (val: ValueType): string => {
+    (value: ValueType): string => {
       return (
-        digits !== undefined ? toFixed(val.toString(), '.', digits) : val
+        digits !== undefined ? toFixed(value.toString(), '.', digits) : value
       ).toString()
     },
     [digits],
   )
 
-  const getValueAsType = (val: DecimalClass) => {
-    return (stringMode ? val.toString() : val.toNumber()) as ValueType
-  }
+  const getValueAsType = (value: DecimalClass) =>
+    (stringMode ? value.toString() : value.toNumber()) as ValueType
 
   const parseValue = (text: string): string | null => {
     if (text === '') {
@@ -67,12 +70,12 @@ export function InnerStepper<ValueType extends number | string>(
   }
 
   const formatValue = useCallback(
-    (val: ValueType | null): string => {
-      if (val === null) {
+    (value: ValueType | null): string => {
+      if (value === null) {
         return ''
       }
 
-      return formatter ? formatter(val) : fixedValue(val)
+      return formatter ? formatter(value) : fixedValue(value)
     },
     [fixedValue, formatter],
   )
@@ -81,13 +84,13 @@ export function InnerStepper<ValueType extends number | string>(
   const [mergedValue, setMergedValue] = useMergedState<ValueType | null>(
     defaultValue,
     {
-      value,
+      value: inputValue,
       onChange,
     },
   )
 
   // >>>>> Value
-  const setValueWithCheck = (nextValue: DecimalClass) => {
+  function setValueWithCheck(nextValue: DecimalClass) {
     if (nextValue.isNaN()) {
       return
     }
@@ -119,9 +122,9 @@ export function InnerStepper<ValueType extends number | string>(
 
   const reducer = (
     state: { value: string },
-    action: { type: 'onChange' | 'minus' | 'plus'; payload?: string },
+    action: { type: 'setInputValue' | 'minus' | 'plus'; payload?: string },
   ) => {
-    if (action.type === 'onChange') {
+    if (action.type === 'setInputValue') {
       return { value: action.payload }
     }
 
@@ -140,7 +143,7 @@ export function InnerStepper<ValueType extends number | string>(
 
   // >>>>> Input
   const handleInputChange = (v: string) => {
-    dispatch({ type: 'onChange', payload: v })
+    dispatch({ type: 'setInputValue', payload: v })
     const valueStr = parseValue(v)
 
     if (valueStr === null) {
@@ -163,7 +166,7 @@ export function InnerStepper<ValueType extends number | string>(
     // We will convert value to original text when focus
     if (nextFocus) {
       dispatch({
-        type: 'onChange',
+        type: 'setInputValue',
         payload:
           mergedValue !== null && mergedValue !== undefined
             ? String(mergedValue)
@@ -176,7 +179,7 @@ export function InnerStepper<ValueType extends number | string>(
   useEffect(() => {
     if (!focused) {
       dispatch({
-        type: 'onChange',
+        type: 'setInputValue',
         payload: formatValue(mergedValue),
       })
     }
