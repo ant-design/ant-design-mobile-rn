@@ -3,23 +3,45 @@ import { InputProps } from '../input/PropsType'
 import { Theme } from '../style'
 import { StepperStyle } from './style'
 
-export interface StepperProps<ValueType>
-  extends Omit<InputProps, 'value' | 'defaultValue' | 'onChange'> {
+type ValueProps<ValueType> = {
+  allowEmpty: true
+  value?: ValueType | null
+  defaultValue?: ValueType | null
+  onChange?: (value: ValueType | null) => void
+}
+
+type ValuePropsWithNull<ValueType> = {
   allowEmpty?: false
   value?: ValueType
   defaultValue?: ValueType
   onChange?: (value: ValueType) => void
-  min?: ValueType
-  max?: ValueType
-  step?: ValueType
-  digits?: number
-  disabled?: boolean
-  // Format & Parse
-  parser?: (text: string) => ValueType
-  formatter?: (value?: ValueType) => string
-  // String Mode
-  stringMode?: boolean
-  style?: StyleProp<ViewStyle>
-  styles?: Partial<StepperStyle>
-  themeStyles?: (theme: Theme) => Partial<StepperStyle>
 }
+
+export type BaseStepperProps<ValueType> = Omit<
+  InputProps,
+  'value' | 'defaultValue' | 'onChange'
+> &
+  (ValuePropsWithNull<ValueType> | ValueProps<ValueType>) & {
+    min?: ValueType
+    max?: ValueType
+    step?: ValueType
+    digits?: number
+    disabled?: boolean
+    // Format & Parse
+    parser?: (text: string) => ValueType
+    formatter?: (value?: ValueType) => string
+    style?: StyleProp<ViewStyle>
+    styles?: Partial<StepperStyle>
+    themeStyles?: (theme: Theme) => Partial<StepperStyle>
+  }
+
+export type NumberStepperProps = BaseStepperProps<number> & {
+  // stringMode
+  stringMode?: false
+}
+export type StringStepperProps = BaseStepperProps<string> & {
+  // stringMode
+  stringMode: true
+}
+
+export type StepperProps = NumberStepperProps | StringStepperProps

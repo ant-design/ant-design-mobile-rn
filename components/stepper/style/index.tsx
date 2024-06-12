@@ -16,10 +16,8 @@ export interface StepperStyle {
 export default (theme: Theme) =>
   StyleSheet.create<StepperStyle>({
     container: {
-      flex: 1,
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'center',
     },
     minus: {},
     plus: {},
