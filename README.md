@@ -89,7 +89,7 @@ npx react-native-asset
 ## Links
 
 - [Home Page](http://rn.mobile.ant.design)
-- [More introduce >](docs/react/introduce.en-US.md)
+- [More Introduce >](docs/react/introduce.en-US.md)
 - [Developer Instruction](development.en-US.md)
 
 ## Development

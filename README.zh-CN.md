@@ -86,7 +86,7 @@ npx react-native-asset
 ## 链接
 
 - [首页](http://rn.mobile.ant.design)
-- [更详细的安装方式 >](docs/react/introduce.zh-CN.md)
+- [更详细的安装说明 >](docs/react/introduce.zh-CN.md)
 - [开发者文档](development.zh-CN.md)
 
 ## 本地演示
