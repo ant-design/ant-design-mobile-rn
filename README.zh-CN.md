@@ -27,15 +27,14 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 
 ## Expo
 
- - **Web support**
-   
-   点击[[这里] 🔗 ](https://1uokun.github.io/ant-design-mobile-rn/index.html)预览H5网页版本
+> HTML5 预览: [ant-design-mobile-rn/index.html](https://1uokun.github.io/ant-design-mobile-rn/index.html)
 
- - **Expo demo app**
 
-|SDK 49+ iOS|SDK 49+ Android|
-|--|--|
-| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=91ccee3a-f631-4bdb-b643-e3d01b52a95c&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=49a4c02d-5dc0-47b9-a98f-61932a6d4765&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
+|SDK 49+|
+|--|
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5" />](https://expo.dev/preview/update?message=5.2.0%20Form%20%26%20Input&updateRuntimeVersion=5.2.0&createdAt=2024-05-24T06%3A10%3A13.909Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5) |
+
+提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
 
 <details><summary>Expo SDK历史版本</summary>
 
@@ -44,7 +43,51 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=38b3a547-ab2b-4066-95ed-400f1707dcc6&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=05f0e308-2dd5-4cb9-9e6b-1ae31561bfee&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
 </details>
 
-> 提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
+## 安装 & 使用
+
+```bash
+npm install @ant-design/react-native --save
+```
+
+or
+
+```bash
+yarn add @ant-design/react-native
+```
+
+### 安装peer依赖
+
+```bash
+npm install @react-native-community/segmented-control @ant-design/icons-react-native react-native-gesture-handler
+```
+
+or
+
+```bash
+yarn add @react-native-community/segmented-control @ant-design/icons-react-native react-native-gesture-handler
+```
+
+> 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理
+
+### 链接字体图标
+
+```js
+// 配置根目录下的 `react-native.config.js` 文件
+module.exports = {
+  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+};
+```
+然后
+```bash
+# 手动执行命令
+npx react-native-asset
+```
+
+## 链接
+
+- [首页](http://rn.mobile.ant.design)
+- [更详细的安装方式 >](docs/react/introduce.zh-CN.md)
+- [开发者文档](development.zh-CN.md)
 
 ## 本地演示
 
@@ -83,56 +126,6 @@ yarn
 # start expo
 yarn expo
 ```
-
-## 安装 & 使用
-
-```bash
-npm install @ant-design/react-native --save
-```
-
-or
-
-```bash
-yarn add @ant-design/react-native
-```
-
-### 安装peer依赖
-
-```bash
-npm install @react-native-community/segmented-control @react-native-community/slider
-```
-
-or
-
-```bash
-yarn add @react-native-community/segmented-control @react-native-community/slider
-```
-
-> 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理
-
-### 链接字体图标
-
-
-```js
-// 配置根目录下的 `react-native.config.js` 文件
-module.exports = {
-  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
-};
-```
-然后
-```bash
-# 手动执行命令
-npx react-native-asset
-```
-
-[介绍](docs/react/introduce.zh-CN.md#2-安装)
-
-## 链接
-
-- [首页](http://rn.mobile.ant.design)
-- [开发文档](development.zh-CN.md)
-- [底层 React 模块](http://github.com/react-component)
-- [官方 Demo 集合](https://github.com/ant-design/antd-mobile-samples)
 
 ## 欢迎贡献
 
