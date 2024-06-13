@@ -40,6 +40,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     showCount,
     status: customStatus,
     style,
+    inputStyle,
     suffix,
     themeStyles = InputStyles,
     type,
@@ -323,7 +324,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     }
   }, [feedbackIcon, hasFeedback, statusClassName, styles.suffix, suffix])
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {prefixDom}
       <TextInput
         editable={!disabled && editable}
@@ -333,7 +334,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
         onSubmitEditing={Keyboard.dismiss}
         {...restProps}
         keyboardType={keyboardType}
-        style={[styles.input, statusClassName, style]}
+        style={[styles.input, statusClassName, inputStyle]}
         ref={inputRef}
       />
       {clearIconDom}

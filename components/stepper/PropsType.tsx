@@ -1,5 +1,5 @@
-import { StyleProp, ViewStyle } from 'react-native'
 import { InputProps } from '../input/PropsType'
+import { InputStyle } from '../input/style'
 import { Theme } from '../style'
 import { StepperStyle } from './style'
 
@@ -19,7 +19,7 @@ type ValuePropsWithNull<ValueType> = {
 
 export type BaseStepperProps<ValueType> = Omit<
   InputProps,
-  'value' | 'defaultValue' | 'onChange'
+  'value' | 'defaultValue' | 'onChange' | 'styles'
 > &
   (ValuePropsWithNull<ValueType> | ValueProps<ValueType>) & {
     min?: ValueType
@@ -30,8 +30,7 @@ export type BaseStepperProps<ValueType> = Omit<
     // Format & Parse
     parser?: (text: string) => ValueType
     formatter?: (value?: ValueType) => string
-    style?: StyleProp<ViewStyle>
-    styles?: Partial<StepperStyle>
+    styles?: Partial<StepperStyle & InputStyle>
     themeStyles?: (theme: Theme) => Partial<StepperStyle>
   }
 

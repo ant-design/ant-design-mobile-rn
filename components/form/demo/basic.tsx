@@ -1,7 +1,16 @@
 import React from 'react'
 import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
 import { FormProps } from '..'
-import { Button, Form, Input, Picker, Radio, Flex as Row, Switch } from '../../'
+import {
+  Button,
+  Form,
+  Input,
+  Picker,
+  Radio,
+  Flex as Row,
+  Stepper,
+  Switch,
+} from '../../'
 
 const Col = Row.Item
 
@@ -91,7 +100,7 @@ const FormExample: React.FC = () => {
             hasFeedback
             validateDebounce={500}
             rules={[{ pattern: /^1[3456789]\d{9}$/ }, { required: true }]}>
-            <Input type="number" placeholder="请输入手机号" />
+            <Stepper type="number" placeholder="请输入手机号" />
           </Form.Item>
 
           <Form.Item

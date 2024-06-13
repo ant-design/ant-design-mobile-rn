@@ -25,6 +25,7 @@ version: 5.2.0-rc.0
 | prefix | 带有前缀图标的 input | ReactNode | - |
 | showCount | 是否展示字数 | `boolean` \| `{ formatter: (info: { value: string, count: number, maxLength?: number }) => ReactNode }` | false |
 | status | 设置校验状态 | 'error' \| 'warning' | - |
+| inputStyle | TextInput style | `StyleProp<TextStyle>` | - |
 | styles | 语义化结构 style | [InputStyle](#inputstyle-语义化样式) | - |
 | suffix | 带有后缀图标的 input | ReactNode | - |
 | type | 声明 Input 类型，同原生 [`keyboardType`](https://reactnative.dev/docs/textinput.html#keyboardtype) 属性 | 'text' \| 'number' \|'password' \| KeyboardTypeOptions | `text` |

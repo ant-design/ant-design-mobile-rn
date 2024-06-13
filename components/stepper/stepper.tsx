@@ -13,11 +13,10 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { Pressable, TextInput, View } from 'react-native'
+import { Pressable, Text, TextInput } from 'react-native'
 import DisabledContext from '../config-provider/DisabledContext'
 import Input from '../input'
 import { useTheme } from '../style'
-import AntdView from '../view'
 import { BaseStepperProps, StepperProps } from './PropsType'
 import StepperStyles from './style'
 
@@ -40,6 +39,7 @@ export function InnerStepper<ValueType extends number | string>(
     formatter,
     parser,
     allowEmpty,
+    styles,
     ...restInputProps
   } = props as BaseStepperProps<ValueType> & { stringMode: boolean }
 
@@ -240,50 +240,58 @@ export function InnerStepper<ValueType extends number | string>(
     return false
   }, [disabled, max, mergedValue])
 
-  const styles = useTheme({
-    styles: props.styles,
+  const ss = useTheme({
+    styles,
     themeStyles: StepperStyles,
   })
 
   // ============================== Render ==============================
   return (
-    <View style={styles.container}>
-      <Pressable
-        onPress={handleMinus}
-        onLongPress={() => onLongPressMinus()}
-        onPressOut={onPressOut}
-        disabled={minusDisabled}>
-        <AntdView style={styles.minus}>-</AntdView>
-      </Pressable>
-      <View style={styles.middle}>
-        <Input
-          ref={ref}
-          style={styles.input}
-          selectTextOnFocus
-          {...restInputProps}
-          disabled={disabled}
-          value={state.value}
-          onChangeText={(val) => {
-            disabled || handleInputChange(val)
-          }}
-          onFocus={(e) => {
-            triggerFocus(true)
-            props.onFocus?.(e)
-          }}
-          onBlur={(e) => {
-            triggerFocus(false)
-            props.onBlur?.(e)
-          }}
-        />
-      </View>
-      <Pressable
-        onPress={handlePlus}
-        onLongPress={() => onLongPressPlus()}
-        onPressOut={onPressOut}
-        disabled={plusDisabled}>
-        <AntdView style={styles.plus}>+</AntdView>
-      </Pressable>
-    </View>
+    <Input
+      ref={ref}
+      styles={ss}
+      selectTextOnFocus
+      {...restInputProps}
+      disabled={disabled}
+      value={state.value}
+      onChangeText={(val) => {
+        disabled || handleInputChange(val)
+      }}
+      onFocus={(e) => {
+        triggerFocus(true)
+        props.onFocus?.(e)
+      }}
+      onBlur={(e) => {
+        triggerFocus(false)
+        props.onBlur?.(e)
+      }}
+      prefix={
+        <Pressable
+          style={[ss.stepWrap, minusDisabled && ss.stepDisabled]}
+          onPress={handleMinus}
+          onLongPress={() => onLongPressMinus()}
+          onPressOut={onPressOut}
+          disabled={minusDisabled}>
+          <Text
+            style={[ss.stepText, minusDisabled && ss.disabledStepTextColor]}>
+            -
+          </Text>
+        </Pressable>
+      }
+      suffix={
+        <Pressable
+          style={[ss.stepWrap, minusDisabled && ss.stepDisabled]}
+          onPress={handlePlus}
+          onLongPress={() => onLongPressPlus()}
+          onPressOut={onPressOut}
+          disabled={plusDisabled}>
+          <Text
+            style={[ss.stepText, minusDisabled && ss.disabledStepTextColor]}>
+            +
+          </Text>
+        </Pressable>
+      }
+    />
   )
 }
 

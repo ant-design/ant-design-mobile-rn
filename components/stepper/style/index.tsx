@@ -2,32 +2,22 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 export interface StepperStyle {
   container: ViewStyle
-  minus: ViewStyle
-  plus: ViewStyle
-  middle: ViewStyle
   input: TextStyle
   stepWrap: ViewStyle
   stepText: TextStyle
   stepDisabled: ViewStyle
   disabledStepTextColor: TextStyle
-  highlightStepTextColor: TextStyle
-  highlightStepBorderColor: ViewStyle
 }
 export default (theme: Theme) =>
   StyleSheet.create<StepperStyle>({
     container: {
-      flexDirection: 'row',
-      alignItems: 'center',
+      width: 44 + 8 * 2 + 28 * 2,
     },
-    minus: {},
-    plus: {},
-    middle: {},
     input: {
-      flex: 1,
-      textAlign: 'center',
       paddingHorizontal: 8,
-      fontSize: theme.input_font_size,
+      fontSize: theme.font_size_base,
       color: theme.color_text_base,
+      textAlign: 'center',
     },
     stepWrap: {
       width: 28,
@@ -47,13 +37,5 @@ export default (theme: Theme) =>
       borderColor: theme.color_text_disabled,
       backgroundColor: theme.fill_disabled,
     },
-    disabledStepTextColor: {
-      color: theme.color_text_disabled,
-    },
-    highlightStepTextColor: {
-      color: theme.brand_primary,
-    },
-    highlightStepBorderColor: {
-      borderColor: theme.brand_primary,
-    },
+    disabledStepTextColor: {},
   })

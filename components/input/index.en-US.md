@@ -24,6 +24,7 @@ Entering content through the keyboard is the most basic form field wrapper.
 | prefix | The prefix icon for the Input | ReactNode | - |
 | showCount | Whether to show character count | `boolean` \| `{ formatter: (info: { value: string, count: number, maxLength?: number }) => ReactNode }` | false |
 | status | Set validation status | 'error' \| 'warning' | - |
+| inputStyle | TextInput style | `StyleProp<TextStyle>` | - |
 | styles | Semantic DOM style | [InputStyle](#inputstyle-interface) | - |
 | suffix | The suffix icon for the Input | ReactNode | - |
 | type   | Declare the Input type, the same as the native [keyboardType](http://facebook.github.io/react-native/docs/textinput.html#keyboardtype) attribute | 'text' \| 'number' \| 'password' \| KeyboardTypeOptions | `text` |
