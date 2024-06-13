@@ -49,8 +49,8 @@ Input 的其他属性和 react-native 内置组件[TextInput](http://facebook.gi
 
 ```typescript
 interface InputStyle {
-  container: ViewStyle
-  input: ViewStyle
+  container: ViewStyle // 同 `style` prop 
+  input: ViewStyle     // 同 `inputStyle` prop
   clearIcon: ViewStyle
   prefix: ViewStyle | TextStyle
   showCount: TextStyle
@@ -59,6 +59,9 @@ interface InputStyle {
   error: TextStyle
 }
 ```
+
+## Ref
+指向 [TextInput](http://facebook.github.io/react-native/docs/textinput.html)
 
 ## FAQ
 

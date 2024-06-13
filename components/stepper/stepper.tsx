@@ -39,6 +39,7 @@ export function InnerStepper<ValueType extends number | string>(
     formatter,
     parser,
     allowEmpty,
+    inputStyle,
     styles,
     ...restInputProps
   } = props as BaseStepperProps<ValueType> & { stringMode: boolean }
@@ -249,6 +250,7 @@ export function InnerStepper<ValueType extends number | string>(
   return (
     <Input
       ref={ref}
+      inputStyle={[inputStyle, disabled && ss.inputDisabled]}
       styles={ss}
       selectTextOnFocus
       {...restInputProps}
@@ -280,13 +282,12 @@ export function InnerStepper<ValueType extends number | string>(
       }
       suffix={
         <Pressable
-          style={[ss.stepWrap, minusDisabled && ss.stepDisabled]}
+          style={[ss.stepWrap, plusDisabled && ss.stepDisabled]}
           onPress={handlePlus}
           onLongPress={() => onLongPressPlus()}
           onPressOut={onPressOut}
           disabled={plusDisabled}>
-          <Text
-            style={[ss.stepText, minusDisabled && ss.disabledStepTextColor]}>
+          <Text style={[ss.stepText, plusDisabled && ss.disabledStepTextColor]}>
             +
           </Text>
         </Pressable>

@@ -37,7 +37,7 @@ Properties | Descrition | Type | Default | Version |
 
 ### TouchableHighlightProps
 
-New in `5.2.0`. In addition, all attributes of [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) are supported; 
+New in `5.2.0`. In addition, all properties of [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) are supported; 
 when setting `onPress` props, it has a default touch style:
 <br/> `{ underlayColor:'#dddddd', activeOpacity: 0.5 }`
 

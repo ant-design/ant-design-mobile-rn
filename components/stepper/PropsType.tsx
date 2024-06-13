@@ -1,5 +1,4 @@
 import { InputProps } from '../input/PropsType'
-import { InputStyle } from '../input/style'
 import { Theme } from '../style'
 import { StepperStyle } from './style'
 
@@ -30,7 +29,7 @@ export type BaseStepperProps<ValueType> = Omit<
     // Format & Parse
     parser?: (text: string) => ValueType
     formatter?: (value?: ValueType) => string
-    styles?: Partial<StepperStyle & InputStyle>
+    styles?: Partial<StepperStyle>
     themeStyles?: (theme: Theme) => Partial<StepperStyle>
   }
 

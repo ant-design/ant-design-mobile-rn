@@ -50,14 +50,14 @@ Properties | Descrition | Type | Default | Version
 | filter  | Filter available time	 | `DatePickerFilter` | - | `5.1.0` |
 
 
-In addition, the following attributes of [Picker](/components/picker) are supported: `onPickerChange` `onVisibleChange` `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `title` `okText` `dismissText` `okButtonProps` `dismissButtonProps` `visible` `children` `renderMaskTop` `renderMaskBottom`
+In addition, the following properties of [Picker](/components/picker) are supported: `onPickerChange` `onVisibleChange` `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `title` `okText` `dismissText` `okButtonProps` `dismissButtonProps` `visible` `children` `renderMaskTop` `renderMaskBottom`
 
 ### Children
-Same as [Picker](/components/picker/#Children), except type `format` is different：
+Same as [Picker](/components/picker#children), except type `format` is different：
 
 Properties | Descrition | Type | Default
 ----|-----|------|------
 | format  | format the selected value |`(value: Date) => date string` | import [Day.js Format](https://day.js.org/docs/en/parse/string-format), precision:`YYYY-MM-DD`,`YYYY-MM-DD HH:mm:ss`|
 
 ### Ref
-Same as `Picker`
+Same as [Picker](/components/picker#ref)
