@@ -1,5 +1,5 @@
-import { SliderAntm } from './slider'
+import { Slider } from './slider'
 
 export type { SliderProps } from './PropsType'
 
-export default SliderAntm
+export default Slider

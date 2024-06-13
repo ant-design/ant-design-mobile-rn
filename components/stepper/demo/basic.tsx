@@ -1,4 +1,3 @@
-/* tslint:disable:no-console */
 import React from 'react'
 import { ScrollView } from 'react-native'
 import { List, Stepper, Toast } from '../../'

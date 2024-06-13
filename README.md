@@ -94,6 +94,21 @@ npx react-native-asset
 
 ## Development
 
+ - **Running On Expo**
+
+> node >= 18
+
+```bash
+# go to expo example folder
+cd example
+
+# install dependencies
+yarn
+
+# start expo
+yarn expo
+```
+
  - **Running On Device**
 
 ```bash
@@ -112,19 +127,6 @@ yarn ios
 
 # start android
 yarn android
-```
-
- - **Running On Expo**
-
-```bash
-# go to expo example folder
-cd example
-
-# install dependencies
-yarn
-
-# start expo
-yarn expo
 ```
 
 ## Contributing

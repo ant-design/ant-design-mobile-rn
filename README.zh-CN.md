@@ -91,6 +91,19 @@ npx react-native-asset
 
 ## 本地演示
 
+ - **使用 expo-cli 运行**
+
+```bash
+# go to expo example folder
+cd example
+
+# install dependencies
+yarn
+
+# start expo
+yarn expo
+```
+
  - **使用 react-native-cli 运行**
 
 ```bash
@@ -109,22 +122,6 @@ yarn ios
 
 # start android
 yarn android
-
-# start expo
-yarn expo
-```
-
- - **使用 expo-cli 运行**
-
-```bash
-# go to expo example folder
-cd example
-
-# install dependencies
-yarn
-
-# start expo
-yarn expo
 ```
 
 ## 欢迎贡献

@@ -96,7 +96,8 @@ export default {
     }
   },
   /**
-   * @deprecated use Toast.info instead
+   * TODO-luokun: why deprecated
+   * @deprecated2 use Toast.info instead
    */
   show(props: string | IToastProps, duration?: number, mask?: boolean) {
     return notice(props, 'info', duration, () => {}, mask)
