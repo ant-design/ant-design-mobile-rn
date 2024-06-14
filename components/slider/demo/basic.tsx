@@ -37,7 +37,7 @@ export default function StepperExample() {
       </List>
       <List renderHeader={'传入刻度标记'}>
         <List.Item>
-          <Slider marks={marks} ticks />
+          <Slider marks={marks} ticks step={20} />
         </List.Item>
       </List>
       <List renderHeader={'最大/最小值'}>

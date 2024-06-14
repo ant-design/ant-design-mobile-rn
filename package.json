@@ -31,7 +31,6 @@
   "module": "es/index.js",
   "dependencies": {
     "@bang88/react-native-ultimate-listview": "^4.1.0",
-    "@miblanchard/react-native-slider": "^2.6.0",
     "@rc-component/mini-decimal": "^1.1.0",
     "@types/shallowequal": "^1.1.1",
     "babel-runtime": "^6.x",
