@@ -48,14 +48,19 @@ export default class AlertContainer extends React.Component<
     const { title, actions, content, onAnimationEnd } = this.props
     const footer = actions.map((button) => {
       // tslint:disable-next-line:only-arrow-functions
-      const orginPress = button.onPress || function () {}
-      button.onPress = () => {
-        const res = orginPress()
-        if (res && res.then) {
-          res.then(() => {
-            this.onClose()
-          })
-        } else {
+      const originPress = button.onPress ?? function () {}
+      const originStyle = button.style
+      button.onPress = async () => {
+        if (button.style === 'disabled') {
+          return
+        }
+        button.style = 'disabled'
+        // developer should handle the errors by themselves,
+        // so we don't need to do anything at here
+        try {
+          await originPress()
+        } finally {
+          button.style = originStyle
           this.onClose()
         }
       }
