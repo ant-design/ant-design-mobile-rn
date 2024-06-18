@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import React from 'react'
 import { View } from 'react-native'
+import AntmView from '../view'
 import { SliderStyle } from './style'
 
 export type SliderMarks = {
@@ -43,10 +44,11 @@ const Marks: FC<MarksProps> = ({
         left: `${((point - min) / range) * 100}%`,
       }
       return (
-        <View
-          style={[styles.markText, isActive && styles.markTextActive, style]}
-          key={point}>
-          {markPoint}
+        <View style={[{ position: 'absolute' }, style]} key={point}>
+          <AntmView
+            style={[styles.markText, isActive && styles.markTextActive]}>
+            {markPoint}
+          </AntmView>
         </View>
       )
     })

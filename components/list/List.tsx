@@ -45,8 +45,9 @@ const InternalList: React.ForwardRefRenderFunction<View, ListProps> = (
     <View {...restProps} style={style} ref={ref}>
       {headerDom}
       <View style={s.Body}>
-        {children ? children : null}
+        {/* TODO-luokun:zindex层级问题&为什么要absolute */}
         <View style={s.BodyBottomLine} />
+        {children ? children : null}
       </View>
       {footerDom}
     </View>

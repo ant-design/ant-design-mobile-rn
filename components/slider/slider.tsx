@@ -3,7 +3,7 @@ import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import getMiniDecimal, { toFixed } from '@rc-component/mini-decimal'
 import type { FC, ReactNode } from 'react'
 import React, { useMemo, useRef } from 'react'
-import { View } from 'react-native'
+import { GestureResponderEvent, View } from 'react-native'
 import devWarning from '../_util/devWarning'
 import { useTheme } from '../style'
 import Marks, { SliderMarks } from './marks'
@@ -110,7 +110,7 @@ export const Slider: FC<SliderProps> = (props) => {
     setRawValue(reverseValue(next))
   }
 
-  const trackRef = useRef<any>(null)
+  const trackRef = useRef<View>(null)
 
   const fillSize = `${(100 * (sliderValue[1] - sliderValue[0])) / (max - min)}%`
   const fillStart = `${(100 * (sliderValue[0] - min)) / (max - min)}%`
@@ -155,7 +155,7 @@ export const Slider: FC<SliderProps> = (props) => {
 
   const dragLockRef = useRef(0)
 
-  const onTrackClick = (event: React.MouseEvent) => {
+  const onTrackClick = (event: GestureResponderEvent) => {
     if (dragLockRef.current > 0) {
       return
     }
@@ -163,33 +163,32 @@ export const Slider: FC<SliderProps> = (props) => {
     if (disabled) {
       return
     }
-    const track = trackRef.current
-    if (!track) {
-      return
-    }
-    const sliderOffsetLeft = track.getBoundingClientRect().left
-    const position =
-      ((event.clientX - sliderOffsetLeft) / Math.ceil(track.offsetWidth)) *
-        (max - min) +
-      min
-
-    const targetValue = getValueByPosition(position)
-    let nextSliderValue: [number, number]
-    if (props.range) {
-      // 移动的滑块采用就近原则
-      if (
-        Math.abs(targetValue - sliderValue[0]) >
-        Math.abs(targetValue - sliderValue[1])
-      ) {
-        nextSliderValue = [sliderValue[0], targetValue]
-      } else {
-        nextSliderValue = [targetValue, sliderValue[1]]
-      }
-    } else {
-      nextSliderValue = [min, targetValue]
-    }
-    setSliderValue(nextSliderValue)
-    onAfterChange(nextSliderValue)
+    trackRef.current &&
+      trackRef.current.measure((_fx, _fy, _width, _height, _px, _py) => {
+        const sliderOffsetLeft = _fx
+        const position =
+          ((event.nativeEvent.locationX - sliderOffsetLeft) /
+            Math.ceil(_width)) *
+            (max - min) +
+          min
+        const targetValue = getValueByPosition(position)
+        let nextSliderValue: [number, number]
+        if (props.range) {
+          // 移动的滑块采用就近原则
+          if (
+            Math.abs(targetValue - sliderValue[0]) >
+            Math.abs(targetValue - sliderValue[1])
+          ) {
+            nextSliderValue = [sliderValue[0], targetValue]
+          } else {
+            nextSliderValue = [targetValue, sliderValue[1]]
+          }
+        } else {
+          nextSliderValue = [min, targetValue]
+        }
+        setSliderValue(nextSliderValue)
+        onAfterChange(nextSliderValue)
+      })
   }
 
   const valueBeforeDragRef = useRef<[number, number]>()
@@ -232,32 +231,37 @@ export const Slider: FC<SliderProps> = (props) => {
   }
 
   return (
-    <View style={ss.slider}>
-      <View style={ss.sliderContianer}>
-        <View style={ss.trackStyle} ref={trackRef}>
-          <View
-            style={[
-              ss.fill,
-              {
-                width: fillSize,
-                left: fillStart,
-              },
-            ]}
+    <View style={[ss.slider, disabled && ss.disabled]}>
+      <View
+        style={ss.trackContianer}
+        ref={trackRef}
+        onResponderRelease={onTrackClick}
+        onStartShouldSetResponder={() => true}>
+        <View style={ss.track} />
+        <View
+          style={[
+            ss.fill,
+            {
+              width: fillSize,
+              left: fillStart,
+            },
+          ]}
+        />
+        {/* 刻度 */}
+        {props.ticks && (
+          <Ticks
+            points={pointList}
+            min={min}
+            max={max}
+            lowerBound={sliderValue[0]}
+            upperBound={sliderValue[1]}
+            styles={ss}
           />
-          {props.ticks && (
-            <Ticks
-              points={pointList}
-              min={min}
-              max={max}
-              lowerBound={sliderValue[0]}
-              upperBound={sliderValue[1]}
-              styles={ss}
-            />
-          )}
-          {props.range && renderThumb(0)}
-          {renderThumb(1)}
-        </View>
+        )}
+        {props.range && renderThumb(0)}
+        {renderThumb(1)}
       </View>
+      {/* 刻度下的标记 */}
       {marks && (
         <Marks
           min={min}
