@@ -7,6 +7,7 @@ interface IToastConfigurable {
   onClose?: () => void
   mask?: boolean
   stackable?: boolean
+  position?: 'top' | 'bottom' | 'center'
 }
 
 interface IToastProps extends IToastConfigurable {
@@ -96,11 +97,13 @@ export default {
     }
   },
   /**
-   * TODO-luokun: why deprecated
-   * @deprecated2 use Toast.info instead
+   * Quick use, include default values
+   * @param props: toast props
+   * @param duration: default `1.5s`
+   * @param mask: default `false`
    */
   show(props: string | IToastProps, duration?: number, mask?: boolean) {
-    return notice(props, 'info', duration, () => {}, mask)
+    return notice(props, 'info', duration ?? 1.5, () => {}, mask ?? false)
   },
   /**
    *

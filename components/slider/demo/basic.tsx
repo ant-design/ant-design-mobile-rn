@@ -1,6 +1,9 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { List, Slider } from '../../'
+import { Slider as Slider2 } from 'react-native-awesome-slider'
+import { useSharedValue } from 'react-native-reanimated'
+
+import { List, Slider, Toast } from '../../'
 
 export default function StepperExample() {
   const marks = {
@@ -19,27 +22,27 @@ export default function StepperExample() {
     } else {
       text = `[${value.join(',')}]`
     }
-    // Toast.show(`当前选中值为：${text}`)
+    Toast.show(`当前选中值为：${text}`)
   }
 
   return (
     <ScrollView>
-      <List renderHeader={'基础用法'}>
+      {/* <List renderHeader={'基础用法'}>
         <List.Item>
           <Slider onAfterChange={toastValue} />
         </List.Item>
       </List>
-      <List renderHeader={'显示刻度并指定步距'}>
+      <List renderHeader={'显示刻度(ticks)并指定步距(step)'}>
         <List.Item>
-          <Slider ticks step={10} />
+          <Slider ticks step={10} defaultValue={40} />
         </List.Item>
       </List>
-      <List renderHeader={'传入刻度标记'}>
+      <List renderHeader={'传入刻度标记(marks)'}>
         <List.Item>
           <Slider marks={marks} ticks step={20} />
         </List.Item>
       </List>
-      <List renderHeader={'最大/最小值'}>
+      <List renderHeader={'最大(max)/最小值(min)'}>
         <List.Item>
           <Slider
             step={100}
@@ -49,12 +52,19 @@ export default function StepperExample() {
             onAfterChange={toastValue}
           />
         </List.Item>
-      </List>
-      <List renderHeader={'默认值'}>
+      </List> */}
+      <List renderHeader={'双滑块(range)'}>
         <List.Item>
-          <Slider step={20} defaultValue={40} />
+          <Slider marks={marks} ticks range value={[60, 40]} />
         </List.Item>
       </List>
+      <Example />
     </ScrollView>
   )
+}
+const Example = () => {
+  const progress = useSharedValue(30)
+  const min = useSharedValue(0)
+  const max = useSharedValue(100)
+  return <Slider2 progress={progress} minimumValue={min} maximumValue={max} />
 }

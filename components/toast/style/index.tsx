@@ -22,6 +22,9 @@ export default (theme: Theme) =>
       right: 0,
       backgroundColor: 'transparent',
       justifyContent: 'center',
+      // justifyContent: 'flex-start',
+      // TODO-luokun: position: top / button到底是多少，参考android的toast
+      // top: '20%',
       alignItems: 'center',
       zIndex: theme.toast_zindex,
     },

@@ -1,6 +1,11 @@
 import type { FC, ReactNode } from 'react'
 import React, { useState } from 'react'
-import { LayoutChangeEvent, LayoutRectangle } from 'react-native'
+import {
+  LayoutChangeEvent,
+  LayoutRectangle,
+  StyleProp,
+  ViewStyle,
+} from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
 import Animated, { runOnJS, useAnimatedStyle } from 'react-native-reanimated'
 import { SliderStyle } from './style'
@@ -16,6 +21,7 @@ type ThumbProps = {
   icon?: ReactNode
   popover: boolean | ((value: number) => ReactNode)
   residentPopover: boolean
+  style?: StyleProp<ViewStyle>
   styles: Partial<SliderStyle>
 }
 
@@ -29,6 +35,7 @@ const Thumb: FC<ThumbProps> = (props) => {
     icon,
     residentPopover,
     onDrag,
+    style,
     styles,
   } = props
 
@@ -69,7 +76,7 @@ const Thumb: FC<ThumbProps> = (props) => {
   return (
     <GestureDetector gesture={gesture}>
       <Animated.View
-        style={[styles.thumb, animatedStyles]}
+        style={[styles.thumb, animatedStyles, style]}
         onLayout={handleLayout}>
         {icon ? icon : <ThumbIcon />}
       </Animated.View>
