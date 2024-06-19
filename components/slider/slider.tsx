@@ -2,8 +2,13 @@ import useMergedState from 'rc-util/lib/hooks/useMergedState'
 
 import getMiniDecimal, { toFixed } from '@rc-component/mini-decimal'
 import type { FC, ReactNode } from 'react'
-import React, { useMemo, useRef } from 'react'
-import { GestureResponderEvent, View } from 'react-native'
+import React, { useMemo, useState } from 'react'
+import {
+  GestureResponderEvent,
+  LayoutChangeEvent,
+  LayoutRectangle,
+  View,
+} from 'react-native'
 import devWarning from '../_util/devWarning'
 import { useTheme } from '../style'
 import Marks, { SliderMarks } from './marks'
@@ -110,8 +115,6 @@ export const Slider: FC<SliderProps> = (props) => {
     setRawValue(reverseValue(next))
   }
 
-  const trackRef = useRef<View>(null)
-
   const fillSize = `${(100 * (sliderValue[1] - sliderValue[0])) / (max - min)}%`
   const fillStart = `${(100 * (sliderValue[0] - min)) / (max - min)}%`
 
@@ -153,45 +156,43 @@ export const Slider: FC<SliderProps> = (props) => {
     return value
   }
 
-  const dragLockRef = useRef(0)
+  const [trackLayout, setTrackLayout] = useState<LayoutRectangle | undefined>()
+  const onTrackLayout = (e: LayoutChangeEvent) => {
+    setTrackLayout(e.nativeEvent.layout)
+  }
 
   const onTrackClick = (event: GestureResponderEvent) => {
-    if (dragLockRef.current > 0) {
-      return
-    }
     event.stopPropagation()
     if (disabled) {
       return
     }
-    trackRef.current &&
-      trackRef.current.measure((_fx, _fy, _width, _height, _px, _py) => {
-        const sliderOffsetLeft = _fx
-        const position =
-          ((event.nativeEvent.locationX - sliderOffsetLeft) /
-            Math.ceil(_width)) *
-            (max - min) +
-          min
-        const targetValue = getValueByPosition(position)
-        let nextSliderValue: [number, number]
-        if (props.range) {
-          // 移动的滑块采用就近原则
-          if (
-            Math.abs(targetValue - sliderValue[0]) >
-            Math.abs(targetValue - sliderValue[1])
-          ) {
-            nextSliderValue = [sliderValue[0], targetValue]
-          } else {
-            nextSliderValue = [targetValue, sliderValue[1]]
-          }
-        } else {
-          nextSliderValue = [min, targetValue]
-        }
-        setSliderValue(nextSliderValue)
-        onAfterChange(nextSliderValue)
-      })
+    if (!trackLayout) {
+      return
+    }
+    const sliderOffsetLeft = trackLayout.x
+    const position =
+      ((event.nativeEvent.locationX - sliderOffsetLeft) /
+        Math.ceil(trackLayout.width)) *
+        (max - min) +
+      min
+    const targetValue = getValueByPosition(position)
+    let nextSliderValue: [number, number]
+    if (props.range) {
+      // 移动的滑块采用就近原则
+      if (
+        Math.abs(targetValue - sliderValue[0]) >
+        Math.abs(targetValue - sliderValue[1])
+      ) {
+        nextSliderValue = [sliderValue[0], targetValue]
+      } else {
+        nextSliderValue = [targetValue, sliderValue[1]]
+      }
+    } else {
+      nextSliderValue = [min, targetValue]
+    }
+    setSliderValue(nextSliderValue)
+    onAfterChange(nextSliderValue)
   }
-
-  const valueBeforeDragRef = useRef<[number, number]>()
 
   const renderThumb = (index: number) => {
     return (
@@ -201,28 +202,24 @@ export const Slider: FC<SliderProps> = (props) => {
         min={min}
         max={max}
         disabled={disabled}
-        trackRef={trackRef}
         icon={icon}
         popover={!!props.popover}
         residentPopover={!!props.residentPopover}
-        onDrag={(position, first, last) => {
-          if (first) {
-            dragLockRef.current += 1
-            valueBeforeDragRef.current = sliderValue
-          }
-          const val = getValueByPosition(position)
-          const valueBeforeDrag = valueBeforeDragRef.current
-          if (!valueBeforeDrag) {
+        onDrag={(locationX, last) => {
+          if (!trackLayout) {
             return
           }
-          const next = [...valueBeforeDrag] as [number, number]
+          const sliderOffsetLeft = trackLayout.x
+          const position =
+            ((locationX - sliderOffsetLeft) / Math.ceil(trackLayout.width)) *
+              (max - min) +
+            min
+          const val = getValueByPosition(position)
+          const next = [...sliderValue] as [number, number]
           next[index] = val
           setSliderValue(next)
           if (last) {
             onAfterChange(next)
-            setTimeout(() => {
-              dragLockRef.current -= 1
-            }, 100)
           }
         }}
         styles={ss}
@@ -234,7 +231,7 @@ export const Slider: FC<SliderProps> = (props) => {
     <View style={[ss.slider, disabled && ss.disabled]}>
       <View
         style={ss.trackContianer}
-        ref={trackRef}
+        onLayout={onTrackLayout}
         onResponderRelease={onTrackClick}
         onStartShouldSetResponder={() => true}>
         <View style={ss.track} />

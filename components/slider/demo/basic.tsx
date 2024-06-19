@@ -1,6 +1,6 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { List, Slider, Toast } from '../../'
+import { List, Slider } from '../../'
 
 export default function StepperExample() {
   const marks = {
@@ -19,7 +19,7 @@ export default function StepperExample() {
     } else {
       text = `[${value.join(',')}]`
     }
-    Toast.show(`当前选中值为：${text}`)
+    // Toast.show(`当前选中值为：${text}`)
     console.log(value)
   }
 
