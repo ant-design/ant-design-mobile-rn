@@ -1,16 +1,17 @@
 import type { FC, ReactNode } from 'react'
 import React, { useState } from 'react'
-import { View } from 'react-native'
+import { LayoutChangeEvent, LayoutRectangle } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
-import Animated from 'react-native-reanimated'
+import Animated, { runOnJS, useAnimatedStyle } from 'react-native-reanimated'
 import { SliderStyle } from './style'
-// import { ThumbIcon } from './thumb-icon'
+import { ThumbIcon } from './thumb-icon'
 
 type ThumbProps = {
   value: number
   min: number
   max: number
   disabled: boolean
+  trackLayout?: LayoutRectangle
   onDrag: (value: number, last?: boolean) => void
   icon?: ReactNode
   popover: boolean | ((value: number) => ReactNode)
@@ -19,15 +20,31 @@ type ThumbProps = {
 }
 
 const Thumb: FC<ThumbProps> = (props) => {
-  const { value, min, max, disabled, icon, residentPopover, onDrag, styles } =
-    props
+  const {
+    value,
+    min,
+    max,
+    trackLayout,
+    disabled,
+    icon,
+    residentPopover,
+    onDrag,
+    styles,
+  } = props
 
-  const currentPosition = () => {
+  const animatedStyles = useAnimatedStyle(() => {
     return {
-      // TODO-luokun: 还要减去thumb宽度的一半
-      left: `${((value - min) / (max - min)) * 100}%`,
-      right: 'auto',
+      transform: [
+        {
+          translateX: ((value - min) / (max - min)) * (trackLayout?.width || 0),
+        },
+      ],
     }
+  }, [max, min, trackLayout?.width, value])
+
+  const [thumbLayout, setThumbLayout] = useState<LayoutRectangle | undefined>()
+  const handleLayout = (e: LayoutChangeEvent) => {
+    setThumbLayout(e.nativeEvent.layout)
   }
 
   const [dragging, setDragging] = useState(false)
@@ -35,10 +52,10 @@ const Thumb: FC<ThumbProps> = (props) => {
   const gesture = Gesture.Pan()
     .onBegin(() => {})
     .onUpdate((e) => {
-      onDrag(e.absoluteX)
+      runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))
     })
     .onEnd((e) => {
-      onDrag(e.absoluteX, true)
+      runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0), true)
     })
     .onFinalize(() => {})
 
@@ -49,16 +66,12 @@ const Thumb: FC<ThumbProps> = (props) => {
       ? (value: number) => value.toString()
       : null
 
-  const thumbElement = (
-    <View style={styles.thumb}>
-      {/* {icon ? icon : <ThumbIcon style={styles.thumbIcon} />} */}
-      <View style={styles.thumbIcon} />
-    </View>
-  )
   return (
     <GestureDetector gesture={gesture}>
-      <Animated.View style={[styles.thumbContainer, currentPosition()]}>
-        {thumbElement}
+      <Animated.View
+        style={[styles.thumb, animatedStyles]}
+        onLayout={handleLayout}>
+        {icon ? icon : <ThumbIcon />}
       </Animated.View>
     </GestureDetector>
   )

@@ -20,7 +20,6 @@ export default function StepperExample() {
       text = `[${value.join(',')}]`
     }
     // Toast.show(`当前选中值为：${text}`)
-    console.log(value)
   }
 
   return (

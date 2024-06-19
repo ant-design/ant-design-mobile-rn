@@ -9,9 +9,7 @@ export interface SliderStyle {
   fill: ViewStyle
 
   // 滑轨按钮
-  thumbContainer: ViewStyle
   thumb: ViewStyle
-  thumbIcon: ViewStyle
 
   // 刻度
   ticks: ViewStyle
@@ -55,40 +53,21 @@ export default (theme: Theme) =>
       backgroundColor: '#3086ff',
     },
 
-    thumbContainer: {
-      // cursor: 'grab',
-      // touchAction: 'none',
-      // position: 'absolute',
+    thumb: {
       zIndex: 2,
       width: 32,
       height: 32,
       borderRadius: 32,
       marginLeft: -16,
-      // transform: [{ translateX: -16 }],
-    },
-    thumb: {
-      width: 28,
-      height: 28,
-      margin: 2,
-      borderRadius: 28,
-      textAlign: 'center',
-      lineHeight: 28,
       backgroundColor: '#ffffff',
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
         height: 1,
       },
-      shadowOpacity: 0.5,
-      shadowRadius: 8,
-      elevation: 8,
-      color: '#3086ff',
-    },
-    thumbIcon: {
-      width: 12,
-      height: 12,
-      margin: 8,
-      backgroundColor: '#3086ff',
+      shadowOpacity: 0.2,
+      shadowRadius: 3,
+      elevation: 3,
     },
 
     ticks: {

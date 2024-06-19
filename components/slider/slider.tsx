@@ -199,6 +199,7 @@ export const Slider: FC<SliderProps> = (props) => {
       <Thumb
         key={index}
         value={sliderValue[index]}
+        trackLayout={trackLayout}
         min={min}
         max={max}
         disabled={disabled}

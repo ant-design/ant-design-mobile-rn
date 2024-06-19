@@ -1,14 +1,27 @@
-import type { FC } from 'react'
 import React from 'react'
+import { StyleSheet, View } from 'react-native'
 
-export const ThumbIcon: FC<any> = (props) => {
+export const ThumbIcon = () => {
   return (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <g fill="currentColor" fillRule="evenodd">
-        <rect x={10} width={4} height={24} rx={2} />
-        <rect y={4} width={4} height={16} rx={2} />
-        <rect x={20} y={4} width={4} height={16} rx={2} />
-      </g>
-    </svg>
+    <View style={style.thumbIcon}>
+      <View style={style.line} />
+      <View style={[style.line, { height: '42%', marginHorizontal: 3 }]} />
+      <View style={style.line} />
+    </View>
   )
 }
+
+const style = StyleSheet.create({
+  thumbIcon: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  line: {
+    width: 2,
+    height: '30%',
+    borderRadius: 2,
+    backgroundColor: '#3086ff',
+  },
+})
