@@ -76,6 +76,7 @@ const Thumb: FC<ThumbProps> = (props) => {
   return (
     <GestureDetector gesture={gesture}>
       <Animated.View
+        onStartShouldSetResponder={() => true}
         style={[styles.thumb, animatedStyles, style]}
         onLayout={handleLayout}>
         {icon ? icon : <ThumbIcon />}

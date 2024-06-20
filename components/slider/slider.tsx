@@ -2,7 +2,7 @@ import useMergedState from 'rc-util/lib/hooks/useMergedState'
 
 import getMiniDecimal, { toFixed } from '@rc-component/mini-decimal'
 import type { FC, ReactNode } from 'react'
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import {
   GestureResponderEvent,
   LayoutChangeEvent,
@@ -108,7 +108,6 @@ export const Slider: FC<SliderProps> = (props) => {
   const sliderValue = sortValue(convertValue(rawValue))
   function setSliderValue(value: [number, number]) {
     const next = sortValue(value)
-    console.log(next, sliderValue, 'sortValue')
 
     const current = sliderValue
     if (next[0] === current[0] && next[1] === current[1]) {
@@ -196,6 +195,8 @@ export const Slider: FC<SliderProps> = (props) => {
     onAfterChange(nextSliderValue)
   }
 
+  const valueBeforeDragRef = useRef<[number, number]>()
+
   const renderThumb = (index: number) => {
     return (
       <Thumb
@@ -209,11 +210,6 @@ export const Slider: FC<SliderProps> = (props) => {
         popover={!!props.popover}
         residentPopover={!!props.residentPopover}
         onDrag={(locationX, last) => {
-          console.log(index, 'index')
-          // TODO-luokun: tap期间，即使[60,40]了，也要保持住
-          // 不然range会跟着跑，因为[60,40]转成[40,60]，此时你tap的还是第一个，也就是下一个动作直接更新的40->60,即[60,60]
-          // Q：mobile怎么做的呢？ A：重叠后会刷新tap响应块
-          // 可不可以响应的还是当前tap，但是tanslateX针对的另一个呢？
           if (!trackLayout) {
             return
           }
@@ -223,15 +219,18 @@ export const Slider: FC<SliderProps> = (props) => {
               (max - min) +
             min
           const val = getValueByPosition(position)
-          const next = [...sliderValue] as [number, number]
-          next[index] = val
-          // console.log(next, 'next')
-          setSliderValue(sortValue(next))
+          if (!valueBeforeDragRef.current) {
+            valueBeforeDragRef.current = [...sliderValue]
+          }
+          valueBeforeDragRef.current[index] = val
+          const next = sortValue([...valueBeforeDragRef.current])
+          setSliderValue(next)
           if (last) {
+            valueBeforeDragRef.current = undefined
             onAfterChange(next)
           }
         }}
-        style={index ? { position: 'absolute' } : {}}
+        style={index === 0 ? { position: 'absolute' } : {}}
         styles={ss}
       />
     )
