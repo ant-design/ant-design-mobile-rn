@@ -23,10 +23,11 @@ Props has these fields:
 | ---------- | ---------- | -----| -----------| --------|---------|
 | content    | Toast content | `String \| React.ReactNode` | Yes | - | |
 | duration   | Delay time to close, which units is second | number |  No  | 3 | |
-| onClose    | A callback function Triggered when the Toast is closed | Function | No | - | |
 | mask       | Whether to show a transparent mask, which will prevent touch event of the whole page | Boolean |  No  | true | |
+| onClose    | A callback function Triggered when the Toast is closed | Function | No | - | |
 | position  | Vertical display position | `'top' \| 'bottom' \| 'center'` | No  | `'center'` | `5.2.0` |
 | stackable |  Whether to allow toast overlay | Boolean  |  No | true | |
+| styles    | Semantic DOM style              | [ToastStyle](#toaststyle-interface) | No | - | `5.2.0` |
 
 > **Notice：** OnClose is invalid and Toast does not hide, If set duration = 0, toast will not auto hide, you have to manually do it.
 
@@ -47,11 +48,26 @@ Toast.removeAll()
 
 ### Toast.config
 
-Methods for global configuration. Support `duration`、`mask`、`onClose`、`position` and `stackable`. The configuration method is as follows:
+Methods for global configuration. Support `duration`、`mask`、`onClose`、`position`、`stackable` and `style`. The configuration method is as follows:
 
 ```ts
 Toast.config({ duration: 1, position: 'top' })
 
 // get current config
 Toast.getConfig()
+```
+
+### InputStyle interface
+
+```typescript
+interface ToastStyle {
+  container: ViewStyle
+  innerContainer: ViewStyle
+  innerWrap: ViewStyle
+  iconToast: ViewStyle
+  textToast: ViewStyle
+  content: TextStyle
+  image: TextStyle
+  centering: ViewStyle
+}
 ```

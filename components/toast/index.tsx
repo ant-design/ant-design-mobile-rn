@@ -1,6 +1,7 @@
 import React from 'react'
 import Portal from '../portal'
 import ToastContainer from './ToastContainer'
+import { ToastStyle } from './style'
 
 interface IToastConfigurable {
   duration?: number
@@ -8,6 +9,7 @@ interface IToastConfigurable {
   mask?: boolean
   stackable?: boolean
   position?: 'top' | 'bottom' | 'center'
+  styles?: Partial<ToastStyle>
 }
 
 interface IToastProps extends IToastConfigurable {
@@ -74,6 +76,7 @@ function notice(
       onClose={props.onClose}
       type={props.type}
       mask={props.mask}
+      styles={props.styles}
       onAnimationEnd={() => {
         remove(key)
       }}
