@@ -1,7 +1,5 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { Slider as Slider2 } from 'react-native-awesome-slider'
-import { useSharedValue } from 'react-native-reanimated'
 
 import { List, Slider, Toast } from '../../'
 
@@ -22,12 +20,12 @@ export default function StepperExample() {
     } else {
       text = `[${value.join(',')}]`
     }
-    Toast.show(`当前选中值为：${text}`)
+    Toast.show({ content: `当前选中值为：${text}`, position: 'top' })
   }
 
   return (
     <ScrollView>
-      {/* <List renderHeader={'基础用法'}>
+      <List renderHeader={'基础用法'}>
         <List.Item>
           <Slider onAfterChange={toastValue} />
         </List.Item>
@@ -52,19 +50,12 @@ export default function StepperExample() {
             onAfterChange={toastValue}
           />
         </List.Item>
-      </List> */}
+      </List>
       <List renderHeader={'双滑块(range)'}>
         <List.Item>
-          <Slider marks={marks} ticks range value={[60, 40]} />
+          <Slider marks={marks} ticks range defaultValue={[60, 40]} />
         </List.Item>
       </List>
-      <Example />
     </ScrollView>
   )
-}
-const Example = () => {
-  const progress = useSharedValue(30)
-  const min = useSharedValue(0)
-  const max = useSharedValue(100)
-  return <Slider2 progress={progress} minimumValue={min} maximumValue={max} />
 }
