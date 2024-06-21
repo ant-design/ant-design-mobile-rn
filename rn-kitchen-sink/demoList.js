@@ -204,12 +204,6 @@ module.exports = {
       module: require('../components/steps/demo/basic'), // 必须
     },
     {
-      title: 'SegmentedControl',
-      description: '分段器',
-      icon: 'https://zos.alipayobjects.com/rmsportal/qCqRFuSbewqIWyv.png',
-      module: require('../components/segmented-control/demo/basic'),
-    },
-    {
       title: 'Switch',
       description: '滑动开关',
       icon: 'https://os.alipayobjects.com/rmsportal/ITFdMlELFchsTmz.png',
