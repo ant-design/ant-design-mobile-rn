@@ -128,7 +128,7 @@ export default class RMCPickerView extends React.Component<
             </View>
           ) : (
             <View
-              style={[{ height: 7 * itemHeight }, style, s.wrappper]}
+              style={[{ height: 7 * itemHeight }, s.wrappper, style]}
               onLayout={this.wrapperMeasure}>
               <View style={[s.wheelWrapper, { height: wheelHeight }]}>
                 {(loading || columns?.length === 0) && loading !== false
