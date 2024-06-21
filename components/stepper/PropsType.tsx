@@ -1,3 +1,4 @@
+import { TouchableHighlightProps } from 'react-native'
 import { InputProps } from '../input/PropsType'
 import { Theme } from '../style'
 import { StepperStyle } from './style'
@@ -26,6 +27,8 @@ export type BaseStepperProps<ValueType> = Omit<
     step?: ValueType
     digits?: number
     disabled?: boolean
+    minusButtonProps?: TouchableHighlightProps
+    plusButtonProps?: TouchableHighlightProps
     // Format & Parse
     parser?: (text: string) => ValueType
     formatter?: (value?: ValueType) => string

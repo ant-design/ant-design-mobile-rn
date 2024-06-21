@@ -13,7 +13,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { Pressable, Text, TextInput } from 'react-native'
+import { Text, TextInput, TouchableHighlight } from 'react-native'
 import DisabledContext from '../config-provider/DisabledContext'
 import Input from '../input'
 import { useTheme } from '../style'
@@ -41,6 +41,8 @@ export function InnerStepper<ValueType extends number | string>(
     allowEmpty,
     inputStyle,
     styles,
+    minusButtonProps,
+    plusButtonProps,
     ...restInputProps
   } = props as BaseStepperProps<ValueType> & { stringMode: boolean }
 
@@ -215,6 +217,12 @@ export function InnerStepper<ValueType extends number | string>(
     timer.current && clearTimeout(timer.current)
   }
 
+  useEffect(() => {
+    return () => {
+      onPressOut()
+    }
+  }, [])
+
   const minusDisabled = useMemo(() => {
     if (disabled) {
       return true
@@ -268,29 +276,35 @@ export function InnerStepper<ValueType extends number | string>(
         props.onBlur?.(e)
       }}
       prefix={
-        <Pressable
+        <TouchableHighlight
           style={[ss.stepWrap, minusDisabled && ss.stepDisabled]}
           onPress={handleMinus}
           onLongPress={() => onLongPressMinus()}
           onPressOut={onPressOut}
-          disabled={minusDisabled}>
+          disabled={minusDisabled}
+          activeOpacity={1}
+          underlayColor="#ddd"
+          {...minusButtonProps}>
           <Text
             style={[ss.stepText, minusDisabled && ss.disabledStepTextColor]}>
             -
           </Text>
-        </Pressable>
+        </TouchableHighlight>
       }
       suffix={
-        <Pressable
+        <TouchableHighlight
           style={[ss.stepWrap, plusDisabled && ss.stepDisabled]}
           onPress={handlePlus}
           onLongPress={() => onLongPressPlus()}
           onPressOut={onPressOut}
-          disabled={plusDisabled}>
+          disabled={plusDisabled}
+          activeOpacity={1}
+          underlayColor="#ddd"
+          {...plusButtonProps}>
           <Text style={[ss.stepText, plusDisabled && ss.disabledStepTextColor]}>
             +
           </Text>
-        </Pressable>
+        </TouchableHighlight>
       }
     />
   )

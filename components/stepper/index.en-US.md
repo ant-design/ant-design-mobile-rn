@@ -19,20 +19,43 @@ title: Stepper
 | disabled | Whether to disabled Stepper | `boolean` | `false` |
 | formatter | Format value in input | `(value?: number) => string` | - | 5.2.0 |
 | inputStyle | TextInput style | `StyleProp<TextStyle>` | - |
-| inputReadOnly | Whether input readonly or not | `boolean` | `false` |
 | max | Max value | `number` | - |
 | min | Min value | `number` | - |
-| onBlur | Triggered when the input lose focus | `(e: React.FocusEvent<HTMLInputElement>) => void` | - |
+| minusButtonProps | The minus button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) | `{ activeOpacity:1, underlayColor:'#ddd' }` | 5.2.0 |
+| plusButtonProps | The plus button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) | `{ activeOpacity:1, underlayColor:'#ddd' }` | 5.2.0 |
 | onChange | Callback when value is changed | `(value: number \| null) => void` | - |
-| onFocus | Triggered when the input get focus | `(e: React.FocusEvent<HTMLInputElement>) => void` | - |
 | parser | Parse input text into number which should work with `formatter` | `(text: string) => number` | - | 5.2.0 |
 | step | The value to increase or decrease each time, can be a decimal | `number` | `1` |
 | stringMode | Set value as string to support high precision decimals. Will set `defaultValue`,`value`, `min`, `max`, `onChange` to `string` type | `boolean` | `false` | 5.2.0 |
+| styles | Semantic DOM style | [StepperStyle](#stepperstyle-interface) | - | 5.2.0 |
 | value | Current number, controlled value | `number \| null` | - |
 
-New in `5.2.0`. In addition, all properties of react-native [TextInput](http://facebook.github.io/react-native/docs/textinput.html) are supported, eg: `readOnly`
+ - New in `5.2.0`. In addition, all properties of react-native [TextInput](http://facebook.github.io/react-native/docs/textinput.html) are supported, eg: **`readOnly`** **`onFocus`** **`onBlur`**
 
-When `allowEmpty` is `true`, the `value` parameter of `onChange` may be `null`, please pay attention when using it.
+ - New in `5.2.0`. Support **Long Press To Trigger** increment or decrement; customizable execution timing: `plusButtonProps={{ delayLongPress: 500 }}`.
+
+ - When `allowEmpty` is `true`, the `value` parameter of `onChange` may be **`null`**, please pay attention when using it.
+
+### StepperStyle interface
+
+`5.2.0`refactored the styles
+
+```typescript
+export interface StepperStyle extends Partial<InputStyle> {
+  // extends InputStyle
+  container: ViewStyle
+  input: ViewStyle
+  prefix: ViewStyle // for minus button
+  suffix: ViewStyle // for plus button
+
+  // StepperStyle
+  inputDisabled: TextStyle
+  stepWrap: ViewStyle
+  stepText: TextStyle
+  stepDisabled: ViewStyle
+  disabledStepTextColor: TextStyle
+}
+```
 
 ## Ref
-Same as [Input](/components/input#ref)
+Same as [component/Input](/components/input#ref)

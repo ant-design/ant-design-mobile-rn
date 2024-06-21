@@ -160,7 +160,8 @@ export default class PortalHost extends React.Component<PortalHostProps> {
         {/* Need collapsable=false here to clip the elevations, otherwise they appear above Portal components */}
         <ScrollView
           contentContainerStyle={styles.container}
-          collapsable={false}>
+          collapsable={false}
+          bounces={false}>
           {this.props.children}
         </ScrollView>
         <PortalManager ref={this._setManager} />
