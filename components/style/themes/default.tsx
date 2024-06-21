@@ -197,4 +197,5 @@ export default {
   action_sheet_zindex: 1000,
   popup_zindex: 999,
   modal_zindex: 999,
+  tooltip_zindex: 999,
 }

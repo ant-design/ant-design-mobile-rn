@@ -70,10 +70,10 @@ module.exports = {
       module: require('../components/modal/demo/basic'),
     },
     {
-      title: 'Popover',
+      title: 'Tooltip',
       description: '气泡',
       icon: 'https://os.alipayobjects.com/rmsportal/iIOLFHTKUCxBgUV.png',
-      module: require('../components/popover/demo/basic'),
+      module: require('../components/tooltip/demo/basic'),
     },
     {
       title: 'Portal',
@@ -149,12 +149,12 @@ module.exports = {
       icon: 'https://os.alipayobjects.com/rmsportal/SdSqpihcSBoBrFO.png',
       module: require('../components/input/demo/basic'),
     },
-    {
-      title: 'InputItem',
-      description: '文本输入',
-      icon: 'https://os.alipayobjects.com/rmsportal/SdSqpihcSBoBrFO.png',
-      module: require('../components/input-item/demo/basic'),
-    },
+    // {
+    //   title: 'InputItem',
+    //   description: '文本输入',
+    //   icon: 'https://os.alipayobjects.com/rmsportal/SdSqpihcSBoBrFO.png',
+    //   module: require('../components/input-item/demo/basic'),
+    // },
     {
       title: 'Picker',
       description: '选择器',
@@ -227,12 +227,12 @@ module.exports = {
       icon: 'https://os.alipayobjects.com/rmsportal/gfstSzAhvXqKyEg.png',
       module: require('../components/tag/demo/basic'),
     },
-    {
-      title: 'TextAreaItem',
-      description: '多行输入',
-      icon: 'https://os.alipayobjects.com/rmsportal/PfzuWlDVfndrQUK.png',
-      module: require('../components/textarea-item/demo/basic'),
-    },
+    // {
+    //   title: 'TextAreaItem',
+    //   description: '多行输入',
+    //   icon: 'https://os.alipayobjects.com/rmsportal/PfzuWlDVfndrQUK.png',
+    //   module: require('../components/textarea-item/demo/basic'),
+    // },
   ],
   OTHERS: [
     {

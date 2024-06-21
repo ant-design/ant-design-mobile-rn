@@ -2,7 +2,10 @@
 category: Components
 type: Navigation
 title: Popover
+subtitle: (archived)
 ---
+
+> This package has been deprecated in `5.2.0`, recommend [components/Tooltip](/components/tooltip)
 
 After clicking on a control or an area, a Popover menu appears for doing more.
 If set mask prop, it is recommended to exit by clicking on any of the mask layers.

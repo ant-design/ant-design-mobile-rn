@@ -31,6 +31,7 @@
   "module": "es/index.js",
   "dependencies": {
     "@bang88/react-native-ultimate-listview": "^4.1.0",
+    "@floating-ui/react-native": "^0.10.6",
     "@rc-component/mini-decimal": "^1.1.0",
     "@types/shallowequal": "^1.1.1",
     "babel-runtime": "^6.x",

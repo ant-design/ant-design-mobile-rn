@@ -5,7 +5,7 @@ title: InputItem
 subtitle: (archived)
 ---
 
-> This package has been deprecated, recommend [components/Input](/components/input)
+> This package has been deprecated in `5.2.0`, recommend [components/Input](/components/input)
 
 A foundational component for inputting text into the app via a keyboard.
 
