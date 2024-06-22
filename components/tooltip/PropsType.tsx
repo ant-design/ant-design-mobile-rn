@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ReactElement, ReactNode } from 'react'
 import { StyleProp, ViewStyle } from 'react-native'
 import { TooltipStyle } from './style'
 
@@ -35,9 +35,9 @@ export type TooltipProps = {
   onVisibleChange?: (visible: boolean) => void
   getContainer?: GetContainer
   destroyOnHide?: boolean
-  children: ReactNode
+  children: ReactElement
   mode?: 'light' | 'dark'
-  trigger?: 'click'
+  trigger?: string
   placement?: Placement | DeprecatedPlacement
   stopPropagation?: PropagationEvent[]
   content: ReactNode
