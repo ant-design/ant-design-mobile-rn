@@ -1,16 +1,18 @@
 import React, { ClassAttributes, ReactElement, memo, useCallback } from 'react'
-import { Platform, findNodeHandle } from 'react-native'
+import { findNodeHandle } from 'react-native'
 
 export default memo(
   (props: {
     children: ReactElement & ClassAttributes<ReactElement>
     setReference: (el: any) => void
+    onLayout: () => void
+    onBlur: () => void
     trigger: string
     onTrigger: () => void
   }) => {
     const childElement = React.Children.only(props.children)
 
-    // ref for web
+    // ref
     const ref = useCallback(
       (el) => {
         if (typeof childElement.ref === 'function') {
@@ -20,13 +22,23 @@ export default memo(
       },
       [childElement, props],
     )
-    // onLayout to get ref target for not web
+    // onLayout to get measure
     const onLayout = useCallback(
       (e) => {
         if (typeof childElement.props.onLayout === 'function') {
           childElement.props.onLayout(e)
         }
-        props.setReference?.(e.target)
+        props.onLayout(e)
+      },
+      [childElement.props, props],
+    )
+    // onBlur to close popover
+    const onBlur = useCallback(
+      (e) => {
+        if (typeof childElement.props.onBlur === 'function') {
+          childElement.props.onBlur(e)
+        }
+        props.onBlur()
       },
       [childElement.props, props],
     )
@@ -43,7 +55,9 @@ export default memo(
     )
 
     return React.cloneElement(childElement, {
-      ...(Platform.OS === 'web' ? { ref } : { onLayout }),
+      ref,
+      onLayout,
+      onBlur,
       [props.trigger]: onTrigger,
     })
   },

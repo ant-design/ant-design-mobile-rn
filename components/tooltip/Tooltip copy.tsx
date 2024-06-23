@@ -8,9 +8,10 @@ import {
   useFloating,
 } from '@floating-ui/react-native'
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
-import React, { useImperativeHandle, useMemo, useRef } from 'react'
+import React, { useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { mergeProps } from '../_util/with-default-props'
+import Portal from '../portal'
 import { ThemeContext, useTheme } from '../style'
 import AntmView from '../view'
 import { Placement, TooltipProps, TooltipRef } from './PropsType'
@@ -56,10 +57,23 @@ const InternalTooltip: React.ForwardRefRenderFunction<
   )
 
   const arrowRef = useRef<View>(null)
+  // TODO
+  const wrapperRef = useRef<any>(null)
 
+  const [measure, setMeasure] = useState<any>({})
+  const onLayout = () => {
+    console.log('asd')
+    update()
+    // @ts-ignore
+    wrapperRef.current?.measure((fx, fy, width, height, px, py) => {
+      setMeasure({ fx, fy, width, height, px, py })
+    })
+  }
+  const onBlur = () => setVisible(false)
   const onTrigger = () => setVisible((v) => !v)
 
   const {
+    update,
     refs,
     floatingStyles,
     middlewareData: { arrow: { x: arrowX, y: arrowY } = {} },
@@ -98,26 +112,42 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     }
   }, [arrowX, arrowY, realPlacement, theme.arrow_size])
 
-  if (!refs) {
-    return props.children
-  }
   return (
     <>
       <Wrapper
-        setReference={refs.setReference}
+        setReference={(el: any) => (wrapperRef.current = el)}
+        onLayout={onLayout}
+        onBlur={onBlur}
         trigger={props.trigger}
         onTrigger={onTrigger}>
         {props.children}
       </Wrapper>
-      <View
-        ref={refs.setFloating}
-        collapsable={false}
-        style={[styles.tooltip, floatingStyles]}>
-        <View style={[styles.arrow, arrowPosition]} ref={arrowRef} />
-        <View style={styles.tooltipInner}>
-          <AntmView style={styles.content}>{props.content}</AntmView>
-        </View>
-      </View>
+      {Boolean(measure.width && visible) && (
+        <Portal>
+          <View
+            ref={refs.setReference}
+            style={{
+              position: 'absolute',
+              width: measure.width,
+              height: measure.height,
+              left: measure.px,
+              top: measure.py,
+              backgroundColor: 'red',
+            }}
+            pointerEvents="none"
+            onStartShouldSetResponder={() => false}
+          />
+          <View
+            ref={refs.setFloating}
+            collapsable={false}
+            style={[styles.tooltip, floatingStyles]}>
+            <View style={[styles.arrow, arrowPosition]} ref={arrowRef} />
+            <View style={styles.tooltipInner}>
+              <AntmView style={styles.content}>{props.content}</AntmView>
+            </View>
+          </View>
+        </Portal>
+      )}
     </>
   )
 }

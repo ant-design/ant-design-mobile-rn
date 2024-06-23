@@ -10,7 +10,7 @@ export default function TooltipExample() {
   useEffect(() => {
     let current = 0
 
-    const timer = window.setInterval(() => {
+    const timer = setInterval(() => {
       if (current >= directionList.length - 1) {
         current = 0
       } else {
@@ -20,7 +20,7 @@ export default function TooltipExample() {
     }, 2000)
 
     return () => {
-      window.clearInterval(timer)
+      clearInterval(timer)
     }
   }, [])
 
@@ -46,7 +46,7 @@ export default function TooltipExample() {
       </List>
       <List renderHeader="气泡位置">
         <Tooltip
-          key={placement}
+          // key={placement}
           visible
           content={
             <View>

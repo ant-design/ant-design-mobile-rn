@@ -16,12 +16,12 @@ export default (theme: Theme) =>
       borderRadius: 8,
       shadowColor: 'rgba(51, 51, 51, 1)',
       shadowOffset: {
-        width: 0,
+        width: 1,
         height: 1,
       },
       shadowOpacity: 0.2,
-      shadowRadius: 15,
-      elevation: 15,
+      shadowRadius: 12,
+      elevation: 12,
     },
     tooltipInner: {
       backgroundColor: '#ffffff',
