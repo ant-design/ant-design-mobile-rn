@@ -4,7 +4,7 @@ import { findNodeHandle } from 'react-native'
 export default memo(
   (props: {
     children: ReactElement & ClassAttributes<ReactElement>
-    setReference: any
+    setReference: (el: any) => void
     onLayout: () => void
     onBlur: () => void
     trigger: string
@@ -28,7 +28,7 @@ export default memo(
         if (typeof childElement.props.onLayout === 'function') {
           childElement.props.onLayout(e)
         }
-        props.onLayout()
+        props.onLayout(e)
       },
       [childElement.props, props],
     )

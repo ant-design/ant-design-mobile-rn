@@ -12,7 +12,7 @@ import React, { useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { mergeProps } from '../_util/with-default-props'
 import Portal from '../portal'
-import { useTheme } from '../style'
+import { ThemeContext, useTheme } from '../style'
 import AntmView from '../view'
 import { Placement, TooltipProps, TooltipRef } from './PropsType'
 import Wrapper from './Wrapper'
@@ -33,8 +33,8 @@ const InternalTooltip: React.ForwardRefRenderFunction<
   TooltipProps
 > = (p, ref) => {
   const props = mergeProps(defaultProps, p)
-  const { children } = props
 
+  const theme = React.useContext(ThemeContext)
   const styles = useTheme({
     styles: props.styles,
     themeStyles: TooltipStyles,
@@ -79,7 +79,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     sameScrollView: true,
     placement: normalizePlacement(props.placement),
     middleware: [
-      offset(12),
+      offset(theme.arrow_size),
       shift({
         padding: 2,
         crossAxis: false,
@@ -89,7 +89,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
       hide(),
       arrow({
         element: arrowRef,
-        padding: 6,
+        padding: theme.arrow_size,
       }),
     ],
   })
@@ -102,16 +102,12 @@ const InternalTooltip: React.ForwardRefRenderFunction<
       bottom: 'top',
       left: 'right',
     }[side] as string
-    // TODo-luokun" arrow width
-    // arrowRef.current?.measure((fx, fy, width, height, px, py) => {
-    //   setMeasure({ fx, fy, width, height, px, py })
-    // })
     return {
       left: arrowX || undefined,
       top: arrowY || undefined,
-      [arrowSide]: -4,
+      [arrowSide]: -theme.arrow_size / 2,
     }
-  }, [arrowX, arrowY, realPlacement])
+  }, [arrowX, arrowY, realPlacement, theme.arrow_size])
 
   return (
     <>
@@ -121,7 +117,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
         onBlur={onBlur}
         trigger={props.trigger}
         onTrigger={onTrigger}>
-        {children}
+        {props.children}
       </Wrapper>
       {Boolean(measure.width && visible) && (
         <Portal>
@@ -140,10 +136,10 @@ const InternalTooltip: React.ForwardRefRenderFunction<
           <View
             ref={refs.setFloating}
             collapsable={false}
-            style={floatingStyles}>
-            <View style={[styles.tooltipArrow, arrowPosition]} ref={arrowRef} />
-            <View style={styles.tooltip}>
-              <AntmView style={styles.tooltipContent}>{props.content}</AntmView>
+            style={[styles.tooltip, floatingStyles]}>
+            <View style={[styles.arrow, arrowPosition]} ref={arrowRef} />
+            <View style={styles.tooltipInner}>
+              <AntmView style={styles.content}>{props.content}</AntmView>
             </View>
           </View>
         </Portal>

@@ -198,4 +198,5 @@ export default {
   popup_zindex: 999,
   modal_zindex: 999,
   tooltip_zindex: 999,
+  arrow_size: 8,
 }

@@ -3,8 +3,9 @@ import { Theme } from '../../style'
 
 export interface TooltipStyle {
   tooltip: ViewStyle
-  tooltipContent: ViewStyle | TextStyle
-  tooltipArrow: ViewStyle
+  tooltipInner: ViewStyle
+  content: ViewStyle | TextStyle
+  arrow: ViewStyle
 }
 
 export default (theme: Theme) =>
@@ -19,29 +20,24 @@ export default (theme: Theme) =>
         height: 1,
       },
       shadowOpacity: 0.2,
-      // TODO-luokun: shadow border line
-      shadowRadius: 3,
-      elevation: 3,
+      shadowRadius: 15,
+      elevation: 15,
+    },
+    tooltipInner: {
+      backgroundColor: '#ffffff',
+      borderRadius: 8,
       minWidth: 32,
       // max-width: calc(100vw - 24px);
     },
-    tooltipContent: {
+    content: {
       paddingVertical: 8,
       paddingHorizontal: 12,
     },
-    tooltipArrow: {
-      height: 8,
-      width: 8,
+    arrow: {
+      height: theme.arrow_size,
+      width: theme.arrow_size,
       position: 'absolute',
       backgroundColor: '#ffffff',
       transform: [{ rotate: '45deg' }],
-      shadowColor: 'rgba(51, 51, 51, 1)',
-      shadowOffset: {
-        width: 0,
-        height: 1,
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 3,
-      elevation: 3,
     },
   })
