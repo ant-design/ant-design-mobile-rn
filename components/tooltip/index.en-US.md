@@ -25,16 +25,6 @@ If set mask prop, it is recommended to exit by clicking on any of the mask layer
 | trigger | Event to trigger | `'click'` | - |
 | visible | Whether to display pop-up content in controlled mode | `boolean` | - |
 
-Prior to version 5.5.0, the optional values for `placement` were:
-
-`top left right bottom topLeft topRight bottomLeft bottomRight leftTop leftBottom rightTop rightBottom`
-
-In 5.5.0 and later versions, the writing of `placement` has undergone some adjustments, becoming:
-
-`top top-start top-end right right-start right-end bottom bottom-start bottom-end left left-start left-end`
-
-In order to maintain compatibility, we still support the use of the old version of the writing method, but if you see the prompt here, please try to use the new version of the writing method.
-
 ### Ref
 
 | Name    | Description                      | Type         |

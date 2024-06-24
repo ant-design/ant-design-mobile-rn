@@ -26,16 +26,6 @@ subtitle: 气泡
 | trigger | 触发方式 | `'click'` | - |
 | visible | 受控模式下，是否展示弹出内容 | `boolean` | - |
 
-在 5.5.0 版本之前，`placement` 的可选值是：
-
-`top left right bottom topLeft topRight bottomLeft bottomRight leftTop leftBottom rightTop rightBottom`
-
-而在 5.5.0 及之后的版本中，`placement` 的写法发生了一些调整，变为了：
-
-`top top-start top-end right right-start right-end bottom bottom-start bottom-end left left-start left-end`
-
-为了保持兼容，我们仍然支持使用旧版的写法，但是如果你看到了这里的提示，请尽量使用新版的写法。
-
 ### Ref
 
 | 属性    | 说明                       | 类型         |
@@ -69,3 +59,41 @@ subtitle: 气泡
 ### Ref
 
 同 Tooltip
+
+
+## FAQ
+
+### 为什么有些情况下 Tooltip 显示不全容易被遮住？
+
+首先，tooltip的定位是相对于children的，
+在React-Native层级中，后面的层级高于前面的，
+
+```jsx
+<List renderHeader="深色气泡">
+  <Tooltip
+    content="Hello World"
+    placement="bottom"
+    mode="dark"
+    defaultVisible>
+    <Button style={{ alignSelf: 'flex-start', margin: 10 }}>点我</Button>
+  </Tooltip>
+</List>
+<List renderHeader="气泡位置">
+</List>
+```
+
+所以如果要显示在最上层，需要给tooltip所在的层级赋予一个更高的zindex值
+
+```diff
++ <List renderHeader="深色气泡" style={{zIndex:999}}>
+- <List renderHeader="深色气泡">
+   <Tooltip
+     content="Hello World"
+     placement="bottom"
+     mode="dark"
+     defaultVisible>
+     <Button style={{ alignSelf: 'flex-start', margin: 10 }}>点我</Button>
+   </Tooltip>
+ </List>
+...
+```
