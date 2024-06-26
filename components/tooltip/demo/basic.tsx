@@ -35,31 +35,31 @@ export default function TooltipExample() {
           <Button style={{ alignSelf: 'flex-start', margin: 10 }}>点我</Button>
         </Tooltip>
       </List>
-      <List renderHeader="深色气泡">
+      <List renderHeader="深色气泡" style={{ zIndex: 999 }}>
         <Tooltip
           content="Hello World"
           placement="bottom"
           mode="dark"
           defaultVisible>
-          <Button style={{ alignSelf: 'flex-start', margin: 10 }}>点我</Button>
-        </Tooltip>
-      </List>
-      <List renderHeader="气泡位置">
-        <Tooltip
-          // key={placement}
-          visible
-          content={
-            <View>
-              <Text>Popover</Text>
-              <Text>Content</Text>
-            </View>
-          }
-          placement={placement}>
-          <Button style={{ alignSelf: 'center', margin: 10 }}>
-            {placement}
+          <Button
+            style={{ alignSelf: 'flex-start', margin: 10, marginBottom: 30 }}>
+            点我
           </Button>
         </Tooltip>
       </List>
+      <List renderHeader="气泡位置" />
+      <Tooltip
+        // key={placement}
+        visible
+        content={
+          <View>
+            <Text>Popover</Text>
+            <Text>Content</Text>
+          </View>
+        }
+        placement={placement}>
+        <Button style={{ alignSelf: 'center', margin: 10 }}>{placement}</Button>
+      </Tooltip>
     </ScrollView>
   )
 }

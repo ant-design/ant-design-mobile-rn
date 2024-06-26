@@ -8,7 +8,13 @@ import {
   useFloating,
 } from '@floating-ui/react-native'
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
-import React, { useImperativeHandle, useMemo, useRef } from 'react'
+import React, {
+  useCallback,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { View } from 'react-native'
 import { mergeProps } from '../_util/with-default-props'
 import { ThemeContext, useTheme } from '../style'
@@ -33,16 +39,28 @@ const InternalTooltip: React.ForwardRefRenderFunction<
 > = (p, ref) => {
   const props = mergeProps(defaultProps, p)
 
+  const {
+    mode,
+    styles,
+    visible: pvisible,
+    defaultVisible,
+    onVisibleChange,
+    placement,
+    children,
+    trigger,
+    content,
+    destroyOnHide,
+    // getContainer?: GetContainer
+    // stopPropagation?: PropagationEvent[]
+    style,
+  } = props
+
   const theme = React.useContext(ThemeContext)
-  const styles = useTheme({
-    styles: props.styles,
-    themeStyles: TooltipStyles,
-  })
 
   const [visible, setVisible] = useMergedState<boolean>(false, {
-    value: props.visible,
-    defaultValue: props.defaultVisible,
-    onChange: props.onVisibleChange,
+    value: pvisible,
+    defaultValue: defaultVisible,
+    onChange: onVisibleChange,
   })
 
   useImperativeHandle(
@@ -59,14 +77,21 @@ const InternalTooltip: React.ForwardRefRenderFunction<
 
   const onTrigger = () => setVisible((v) => !v)
 
+  const [reference, setReference] = useState<any>()
+  const [floating, setFloating] = useState<any>()
+
   const {
-    refs,
     floatingStyles,
     middlewareData: { arrow: { x: arrowX, y: arrowY } = {} },
     placement: realPlacement,
+    update,
   } = useFloating({
     sameScrollView: true,
-    placement: normalizePlacement(props.placement),
+    placement: normalizePlacement(placement),
+    elements: {
+      reference,
+      floating,
+    },
     middleware: [
       offset(theme.arrow_size),
       shift({
@@ -83,8 +108,18 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     ],
   })
 
+  // useEffect(() => {
+  //   update()
+  // }, [update, reference, floating])
+
   const arrowPosition = useMemo(() => {
     const side = realPlacement.split('-')[0] as string
+    const arrowBorder = {
+      top: 'borderTopColor',
+      right: 'borderRightColor',
+      bottom: 'borderBottomColor',
+      left: 'borderLeftColor',
+    }[side] as string
     const arrowSide = {
       top: 'bottom',
       right: 'left',
@@ -94,30 +129,58 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     return {
       left: arrowX || undefined,
       top: arrowY || undefined,
-      [arrowSide]: -theme.arrow_size / 2,
+      [arrowSide]: -theme.arrow_size * 2,
+      [arrowBorder]: mode === 'dark' ? theme.tooltip_dark : '#ffffff',
     }
-  }, [arrowX, arrowY, realPlacement, theme.arrow_size])
+  }, [
+    arrowX,
+    arrowY,
+    mode,
+    realPlacement,
+    theme.arrow_size,
+    theme.tooltip_dark,
+  ])
 
-  if (!refs) {
-    return props.children
-  }
+  const TooltipStylesMemo = useCallback(() => {
+    return TooltipStyles(theme, mode)
+  }, [mode, theme])
+
+  const ss = useTheme({
+    styles,
+    themeStyles: TooltipStylesMemo,
+  })
+
   return (
     <>
       <Wrapper
-        setReference={refs.setReference}
-        trigger={props.trigger}
+        setReference={(el) => setReference(el)}
+        trigger={trigger}
+        onLayout={(e) => {
+          console.log(e.nativeEvent.layout, 'asd')
+          // update()
+        }}
         onTrigger={onTrigger}>
-        {props.children}
+        {children}
       </Wrapper>
-      <View
-        ref={refs.setFloating}
-        collapsable={false}
-        style={[styles.tooltip, floatingStyles]}>
-        <View style={[styles.arrow, arrowPosition]} ref={arrowRef} />
-        <View style={styles.tooltipInner}>
-          <AntmView style={styles.content}>{props.content}</AntmView>
+      {!(!visible && destroyOnHide) && (
+        <View
+          ref={(el) => {
+            console.log(el)
+            // setTimeout(() => {
+            setFloating(el)
+            // }, 1500)
+          }}
+          collapsable={false}
+          style={[
+            ss.tooltip,
+            floatingStyles,
+            style,
+            !visible && !destroyOnHide && { display: 'none' },
+          ]}>
+          <View style={[ss.arrow, arrowPosition]} ref={arrowRef} />
+          <AntmView style={[ss.content]}>{content}</AntmView>
         </View>
-      </View>
+      )}
     </>
   )
 }

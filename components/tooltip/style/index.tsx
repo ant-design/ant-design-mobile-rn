@@ -3,16 +3,15 @@ import { Theme } from '../../style'
 
 export interface TooltipStyle {
   tooltip: ViewStyle
-  tooltipInner: ViewStyle
-  content: ViewStyle | TextStyle
+  content: TextStyle
   arrow: ViewStyle
 }
 
-export default (theme: Theme) =>
+export default (theme: Theme, mode: 'dark' | 'light') =>
   StyleSheet.create<TooltipStyle>({
     tooltip: {
       zIndex: theme.tooltip_zindex,
-      backgroundColor: '#ffffff',
+      backgroundColor: mode === 'dark' ? theme.tooltip_dark : '#ffffff',
       borderRadius: 8,
       shadowColor: 'rgba(51, 51, 51, 1)',
       shadowOffset: {
@@ -22,22 +21,22 @@ export default (theme: Theme) =>
       shadowOpacity: 0.2,
       shadowRadius: 12,
       elevation: 12,
-    },
-    tooltipInner: {
-      backgroundColor: '#ffffff',
-      borderRadius: 8,
       minWidth: 32,
-      // max-width: calc(100vw - 24px);
     },
     content: {
       paddingVertical: 8,
       paddingHorizontal: 12,
+      color: mode === 'dark' ? '#ffffff' : undefined,
     },
     arrow: {
-      height: theme.arrow_size,
-      width: theme.arrow_size,
+      width: 0,
+      height: 0,
+      borderTopColor: 'transparent',
+      borderRightColor: 'transparent',
+      borderBottomColor: 'transparent',
+      borderLeftColor: 'transparent',
+      borderStyle: 'solid',
+      borderWidth: theme.arrow_size,
       position: 'absolute',
-      backgroundColor: '#ffffff',
-      transform: [{ rotate: '45deg' }],
     },
   })

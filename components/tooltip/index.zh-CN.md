@@ -65,8 +65,9 @@ subtitle: 气泡
 
 ### 为什么有些情况下 Tooltip 显示不全容易被遮住？
 
-首先，tooltip的定位是相对于children的，
-在React-Native层级中，后面的层级高于前面的，
+tooltip层级（zIndex）是和其包裹的children同级的，只是定位使用了 `{position:'absolute'}`绝对定位。
+当层级小于相邻View时会被高层级遮住，因此需要保证children层级要高于相邻View的层级（默认后面View层级高于前面View层级）。
+只比较同层，跨多层级请确保有足够的边距来显示。
 
 ```jsx
 <List renderHeader="深色气泡">

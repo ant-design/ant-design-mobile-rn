@@ -5,6 +5,7 @@ export default memo(
   (props: {
     children: ReactElement & ClassAttributes<ReactElement>
     setReference: (el: any) => void
+    onLayout: (e: any) => void
     trigger: string
     onTrigger: () => void
   }) => {
@@ -27,6 +28,7 @@ export default memo(
           childElement.props.onLayout(e)
         }
         props.setReference?.(e.target)
+        props.onLayout?.(e)
       },
       [childElement.props, props],
     )
