@@ -1,12 +1,3 @@
-import {
-  arrow,
-  flip,
-  hide,
-  limitShift,
-  offset,
-  shift,
-  useFloating,
-} from '@floating-ui/react-native'
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import React, {
   useCallback,
@@ -17,8 +8,18 @@ import React, {
 } from 'react'
 import { View } from 'react-native'
 import { mergeProps } from '../_util/with-default-props'
+import Portal from '../portal'
 import { ThemeContext, useTheme } from '../style'
 import AntmView from '../view'
+import {
+  arrow,
+  flip,
+  hide,
+  limitShift,
+  offset,
+  shift,
+  useFloating,
+} from './@floating-ui/react-native/src'
 import { Placement, TooltipProps, TooltipRef } from './PropsType'
 import Wrapper from './Wrapper'
 import { normalizePlacement } from './normalize-placement'
@@ -84,7 +85,6 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     floatingStyles,
     middlewareData: { arrow: { x: arrowX, y: arrowY } = {} },
     placement: realPlacement,
-    update,
   } = useFloating({
     sameScrollView: true,
     placement: normalizePlacement(placement),
@@ -154,32 +154,33 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     <>
       <Wrapper
         setReference={(el) => setReference(el)}
+        onLayout={() => {}}
         trigger={trigger}
-        onLayout={(e) => {
-          console.log(e.nativeEvent.layout, 'asd')
-          // update()
-        }}
         onTrigger={onTrigger}>
         {children}
       </Wrapper>
       {!(!visible && destroyOnHide) && (
-        <View
-          ref={(el) => {
-            console.log(el)
-            // setTimeout(() => {
-            setFloating(el)
-            // }, 1500)
-          }}
-          collapsable={false}
-          style={[
-            ss.tooltip,
-            floatingStyles,
-            style,
-            !visible && !destroyOnHide && { display: 'none' },
-          ]}>
-          <View style={[ss.arrow, arrowPosition]} ref={arrowRef} />
-          <AntmView style={[ss.content]}>{content}</AntmView>
-        </View>
+        <Portal>
+          <View
+            style={{
+              flex: 1,
+              // backgroundColor: 'yellow',
+              position: 'relative',
+            }}>
+            <View
+              ref={setFloating}
+              collapsable={false}
+              style={[
+                ss.tooltip,
+                floatingStyles,
+                style,
+                !visible && !destroyOnHide && { display: 'none' },
+              ]}>
+              <View style={[ss.arrow, arrowPosition]} ref={arrowRef} />
+              <AntmView style={[ss.content]}>{content}</AntmView>
+            </View>
+          </View>
+        </Portal>
       )}
     </>
   )
