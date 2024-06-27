@@ -4,13 +4,12 @@ import {
   EventSubscription,
   NativeEventEmitter,
   ScrollView,
+  ScrollViewProps,
   StyleSheet,
 } from 'react-native'
 import PortalManager from './portal-manager'
 
-export type PortalHostProps = {
-  children: React.ReactNode
-}
+export type PortalHostProps = ScrollViewProps
 
 export type Operation =
   | { type: 'mount'; key: number; children: React.ReactNode }
@@ -160,10 +159,11 @@ export default class PortalHost extends React.Component<PortalHostProps> {
         {/* Need collapsable=false here to clip the elevations, otherwise they appear above Portal components */}
         <ScrollView
           contentContainerStyle={styles.container}
+          nestedScrollEnabled
           collapsable={false}
-          bounces={false}>
-          {this.props.children}
-        </ScrollView>
+          bounces={false}
+          {...this.props}
+        />
         <PortalManager ref={this._setManager} />
       </PortalContext.Provider>
     )
