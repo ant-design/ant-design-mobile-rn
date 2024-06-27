@@ -3,9 +3,7 @@ import {
   Animated,
   I18nManager,
   StyleProp,
-  StyleSheet,
   Text,
-  TextStyle,
   View,
   ViewStyle,
 } from 'react-native'
@@ -14,6 +12,8 @@ import {
   RectButton,
 } from 'react-native-gesture-handler'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
+import { SwipeActionProps } from './PropsType'
+import styles from './style'
 
 declare type SwipeableExcludes = Exclude<
   keyof PanGestureHandlerProps,
@@ -70,20 +70,6 @@ interface SwipeableProps
   childrenContainerStyle?: StyleProp<ViewStyle>
 }
 
-export interface SwipeActionProps extends SwipeableProps {
-  left?: SwipeoutButtonProps[]
-  right?: SwipeoutButtonProps[]
-  buttonWidth?: number
-  children?: React.ReactNode
-}
-export interface SwipeoutButtonProps {
-  style?: StyleProp<TextStyle>
-  backgroundColor?: string
-  color?: string
-  text?: React.ReactNode
-  disabled?: boolean
-  onPress?(): void
-}
 class SwipeAction extends React.Component<SwipeActionProps> {
   swipeableRow?: Swipeable
 
@@ -99,6 +85,8 @@ class SwipeAction extends React.Component<SwipeActionProps> {
         rightThreshold={40}
         renderLeftActions={(v, d) => this.renderActions(v, d, true)}
         renderRightActions={(v, d) => this.renderActions(v, d, false)}
+        // onSwipeableClose={onClose}
+        // onSwipeableClose={onClose}
         {...restProps}>
         {children}
       </Swipeable>
@@ -178,17 +166,3 @@ class SwipeAction extends React.Component<SwipeActionProps> {
 }
 
 export default SwipeAction
-
-const styles = StyleSheet.create({
-  actionText: {
-    color: 'white',
-    fontSize: 16,
-    backgroundColor: 'transparent',
-    padding: 10,
-  },
-  rightAction: {
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'center',
-  },
-})
