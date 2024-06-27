@@ -2,11 +2,13 @@ import React from 'react'
 import {
   DeviceEventEmitter,
   EventSubscription,
+  GestureResponderEvent,
   NativeEventEmitter,
   ScrollView,
   ScrollViewProps,
   StyleSheet,
 } from 'react-native'
+import { USE_CLICK_AWAY_EVENT_NAME } from '../_util/hooks/useClickAway'
 import PortalManager from './portal-manager'
 
 export type PortalHostProps = ScrollViewProps
@@ -148,6 +150,11 @@ export default class PortalHost extends React.Component<PortalHostProps> {
     }
   }
 
+  // coordinate for hook `useClickAway`
+  _onTouchEnd = (event: GestureResponderEvent) => {
+    TopViewEventEmitter.emit(USE_CLICK_AWAY_EVENT_NAME, event)
+  }
+
   render() {
     return (
       <PortalContext.Provider
@@ -159,6 +166,7 @@ export default class PortalHost extends React.Component<PortalHostProps> {
         {/* Need collapsable=false here to clip the elevations, otherwise they appear above Portal components */}
         <ScrollView
           contentContainerStyle={styles.container}
+          onTouchEnd={this._onTouchEnd}
           nestedScrollEnabled
           collapsable={false}
           bounces={false}
