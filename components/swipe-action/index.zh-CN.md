@@ -18,16 +18,15 @@ subtitle: 滑动操作
 
 ### SwipeAction
 
-| 属性 | 说明 | 类型 | 默认值
-|-----|-----|------|------
-| closeOnAction | 点击按钮后自动隐藏按钮   | `boolean` | `true` |
-| closeOnTouchOutside | 是否在点击其他区域时自动归位 | `boolean` | `false` |
-| disabled      | 禁用 `swipeout`    | `boolean` | `false` |
-| left          | 左侧按钮组      | [SwipeoutButtonProps](/components/swipe-action-cn#swipeoutbuttonprops)[ ] | `[]` |
-| right         | 右侧按钮组      | [SwipeoutButtonProps](/components/swipe-action-cn#swipeoutbuttonprops)[ ] | `[]` |
-| onClose       | 关闭时回调函数   | `() => void` | - |
-| onOpen        | 打开时回调函数   | `() => void` | - |
-| styles        | 语义化结构 style | 同 [ListStyle](/components/list-cn#liststyle-语义化样式) | - |
+| 属性 | 说明 | 类型 | 默认值 | 版本 |
+|-----|-----|------|-------|------|
+| closeOnAction | 点击按钮后自动隐藏按钮   | `boolean` | `true` | `5.2.0` |
+| closeOnTouchOutside | 是否在点击其他区域时自动归位 | `boolean` | `false` | `5.2.0` |
+| left          | 左侧按钮组      | [SwipeoutButtonProps](/components/swipe-action-cn#swipeoutbuttonprops)[ ] | `[]` | |
+| right         | 右侧按钮组      | [SwipeoutButtonProps](/components/swipe-action-cn#swipeoutbuttonprops)[ ] | `[]` | |
+| onClose       | 关闭时回调函数   | `() => void` | - | |
+| onOpen        | 打开时回调函数   | `() => void` | - | |
+| styles        | 语义化结构 style | 同 [SwipeActionStyle](/components/swipe-action-cn#swipeactionstyle-语义化样式) | - | `5.2.0` |
 
 SwipeAction 剩余其他属性和 [react-native-gesture-handler/Swipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/) 一致。
 
@@ -35,18 +34,32 @@ SwipeAction 剩余其他属性和 [react-native-gesture-handler/Swipeable](https
 
 ### SwipeoutButtonProps
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----|------|------|------|
-| backgroundColor | 按钮样式 | `string` | - |
-| color | 按钮样式 | `string` | - |
-| disabled | 按钮样式 | `boolean` | - |
-| onPress | 按钮点击事件 | `() => void` | - |
-| style | 按钮样式 | `StyleProp<TextStyle>` | - |
-| text | 按钮文案 | `string` | - |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----|------|------|------|------|
+| backgroundColor | 背景色 | `string` | - | |
+| color | 字体颜色 | `string` | - | |
+| disabled | 是否禁用 | `boolean` | - | |
+| onPress | 按钮点击事件 | `() => void` | - | |
+| style | 按钮样式 | `StyleProp<TextStyle>` | - | |
+| text | 按钮文案 | `string` | - | |
+| actionButtonProps | 其他额外props | [RectButtonProps](https://docs.swmansion.com/react-native-gesture-handler/docs/components/buttons/#rectbutton) | - | `5.2.0` |
+
+### SwipeActionStyle 语义化样式
+
+```typescript
+export interface SwipeActionStyle {
+  actionButton: ViewStyle
+  actionText: TextStyle
+}
+```
 
 ### Ref
+
+`5.2.0`新增。 指向 [Swipeable # Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
 
 | 参数 | 说明 | 类型 |
 |-----|------|------|
 | close | 让滑动条归位 | `() => void` |
-| show | 滑动出操作按钮，`side` 参数默认为 `right` | `(side?: 'left' | 'right') => void` |
+| openLeft | 滑动出左侧操作按钮 | `() => void` |
+| openRight | 滑动出右侧操作按钮 | `() => void` |
+| reset | 重置此 Swipeable 组件的滑动状态的方法。<br/>与方法 `close` 不同，此方法不会触发任何动画。 | `() => void` |

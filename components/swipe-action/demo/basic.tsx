@@ -8,7 +8,14 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
     const right = [
       {
         text: 'More',
-        onPress: () => console.log('more'),
+        onPress: () => {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              console.log('asd')
+              resolve(123)
+            }, 1500)
+          })
+        },
         backgroundColor: 'orange',
         color: 'white',
       },
@@ -28,7 +35,7 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
       },
       {
         text: 'Reply',
-        onPress: () => console.log('reply'),
+        // onPress: () => console.log('reply'),
         backgroundColor: 'green',
         color: 'white',
       },
@@ -40,9 +47,14 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
           <SwipeAction
             right={right}
             left={left}
-            onSwipeableOpen={() => console.log('open')}
-            onSwipeableClose={() => console.log('close')}>
-            <List.Item extra="extra content">
+            // closeOnAction={true}
+            // closeOnTouchOutside={false}
+            closeOnAction={false}
+            closeOnTouchOutside
+            // onSwipeableOpen={() => console.log('open')}
+            // onSwipeableClose={() => console.log('close')}
+          >
+            <List.Item extra="extra content" disabled>
               Simple example: left and right buttons
             </List.Item>
           </SwipeAction>

@@ -1,7 +1,5 @@
-import useMergedState from 'rc-util/lib/hooks/useMergedState'
-
 import getMiniDecimal, { toFixed } from '@rc-component/mini-decimal'
-import type { FC, ReactNode } from 'react'
+import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import React, { useMemo, useRef, useState } from 'react'
 import {
   GestureResponderEvent,
@@ -11,38 +9,19 @@ import {
 } from 'react-native'
 import devWarning from '../_util/devWarning'
 import { useTheme } from '../style'
-import Marks, { SliderMarks } from './marks'
-import SliderStyles, { SliderStyle } from './style'
+import { SliderProps, SliderValue } from './PropsType'
+import Marks from './marks'
+import SliderStyles from './style'
 import Thumb from './thumb'
 import Ticks from './ticks'
 
-export type SliderValue = number | [number, number]
-
-export function nearest(arr: number[], target: number) {
+function nearest(arr: number[], target: number) {
   return arr.reduce((pre, cur) => {
     return Math.abs(pre - target) < Math.abs(cur - target) ? pre : cur
   })
 }
 
-export type SliderProps = {
-  min?: number
-  max?: number
-  value?: SliderValue
-  defaultValue?: SliderValue
-  step?: number
-  marks?: SliderMarks
-  ticks?: boolean
-  disabled?: boolean
-  range?: boolean
-  icon?: ReactNode
-  popover?: boolean | ((value: number) => ReactNode)
-  residentPopover?: boolean
-  onChange?: (value: SliderValue) => void
-  onAfterChange?: (value: SliderValue) => void
-  styles?: Partial<SliderStyle>
-}
-
-export const Slider: FC<SliderProps> = (props) => {
+export const Slider: React.FC<SliderProps> = (props) => {
   const {
     min = 0,
     max = 100,
@@ -51,6 +30,7 @@ export const Slider: FC<SliderProps> = (props) => {
     ticks,
     step = 1,
     icon,
+    style,
     styles,
   } = props
 
@@ -237,7 +217,7 @@ export const Slider: FC<SliderProps> = (props) => {
   }
 
   return (
-    <View style={[ss.slider, disabled && ss.disabled]}>
+    <View style={[ss.slider, disabled && ss.disabled, style]}>
       <View
         style={ss.trackContianer}
         onLayout={onTrackLayout}
