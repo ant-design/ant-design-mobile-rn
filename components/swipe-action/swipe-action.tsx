@@ -64,15 +64,21 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
     )
 
     // ======================== Swipeable onSwipeableOpen/onSwipeableClose ========================
-    const handleSwipeableOpen = useCallback(() => {
-      openRef.current = true
-      onSwipeableOpen?.()
-    }, [onSwipeableOpen])
+    const handleSwipeableOpen = useCallback(
+      (...args) => {
+        openRef.current = true
+        onSwipeableOpen && onSwipeableOpen.apply(undefined, args)
+      },
+      [onSwipeableOpen],
+    )
 
-    const handleSwipeableClose = useCallback(() => {
-      openRef.current = false
-      onSwipeableClose?.()
-    }, [onSwipeableClose])
+    const handleSwipeableClose = useCallback(
+      (...args) => {
+        openRef.current = false
+        onSwipeableClose && onSwipeableClose.apply(undefined, args)
+      },
+      [onSwipeableClose],
+    )
 
     // ======================== Closing when click outside ========================
     useClickAway(() => {
