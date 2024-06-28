@@ -19,6 +19,10 @@ export interface SwipeActionProps extends SwipeableProps {
   closeOnTouchOutside?: boolean
   left?: SwipeoutButtonProps[]
   right?: SwipeoutButtonProps[]
+  /**
+   * @deprecated No longer needed
+   * @version `5.2.0`
+   */
   buttonWidth?: number
   children?: React.ReactNode
   styles?: Partial<SwipeActionStyle>
