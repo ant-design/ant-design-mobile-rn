@@ -27,13 +27,11 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
 
     const openRef = useRef<boolean | undefined>(false)
     const close = useCallback(() => {
-      setTimeout(() => {
-        if (openRef.current === true) {
-          openRef.current = false
+      if (openRef.current === true) {
+        openRef.current = false
 
-          swipeActionRef.current?.close?.()
-        }
-      })
+        swipeActionRef.current?.close?.()
+      }
     }, [])
 
     const ss = useTheme({
@@ -70,8 +68,7 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
                 if (button.disabled) {
                   return
                 }
-                if (closeOnTouchOutside) {
-                  // TODO-luokun: closeOnAction优先级大于closeOnTouchOutside
+                if (!closeOnAction) {
                   openRef.current = undefined
                 }
                 try {
@@ -81,7 +78,9 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
                   }
                 } finally {
                   if (closeOnAction) {
-                    close()
+                    setTimeout(() => {
+                      close()
+                    })
                   }
                 }
               }
@@ -123,7 +122,6 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
         buttonWidth,
         close,
         closeOnAction,
-        closeOnTouchOutside,
         left,
         right,
         ss.actionButton,
