@@ -2,6 +2,7 @@
 category: Components
 type: Data Entry
 title: Stepper
+version: 5.2.0-rc.1
 ---
 
 `Stepper` can be used to increase or decrease value step by step.

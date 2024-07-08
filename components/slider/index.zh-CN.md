@@ -3,6 +3,7 @@ category: Components
 type: Data Entry
 title: Slider
 subtitle: 滑动输入条
+version: 5.2.0-rc.1
 ---
 
 允许用户在一个区间中选择特定值，eg：控制屏幕的显示亮度。
@@ -13,17 +14,19 @@ subtitle: 滑动输入条
 
 ## API
 
-| 属性 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| defaultValue | 默认值 | `number \| [number, number]` | `range ? [0, 0] : 0` |
-| disabled | 是否禁用 | `boolean` | `false` |
-| icon | 滑块的图标 | `ReactNode` | - |
-| marks | 刻度标记 | `{ [key: number]: React.ReactNode }` | - |
-| max | 最大值 | `number` | `100` |
-| min | 最小值 | `number` | `0` |
-| onAfterChange | 与 `touchend` 触发时机一致，把当前值作为参数传入 | `(value: number \| [number, number]) => void` | - |
-| onChange | 拖拽滑块时触发，并把当前拖拽的值作为参数传入 | `(value: number \| [number, number]) => void` | - |
-| range | 是否为双滑块 | `boolean` | `false` |
-| step | 步距，取值必须大于 `0`，并且 `(max - min)` 可被 `step` 整除。当 `marks` 不为空对象时，`step` 的配置失效 | `number` | `1` |
-| ticks | 是否显示刻度 | `boolean` | `false` |
-| value | 当前值 | `number \| [number, number]` | - |
+| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| --- | --- | --- | --- | --- |
+| defaultValue | 默认值 | `number` \|<br/> `[number, number]` | `range ? [0, 0] : 0` | |
+| disabled | 是否禁用 | `boolean` | `false` | |
+| icon | 滑块的图标 | `ReactNode` | - | |
+| marks | 刻度标记 | `{ [key: number]: React.ReactNode }` | - | `5.2.0` |
+| max | 最大值 | `number` | `100` | |
+| min | 最小值 | `number` | `0` | |
+| onAfterChange | 与 `touchend` 触发时机一致，把当前值作为参数传入 | `(value: number | [number, number]) => void` | - | |
+| onChange | 拖拽滑块时触发，并把当前拖拽的值作为参数传入 | `(value: number | [number, number]) => void` | - | |
+| range | 是否为双滑块 | `boolean` | `false` | `5.2.0` |
+| step | 步距，取值必须大于 `0`，并且 `(max - min)` 可被 `step` 整除。当 `marks` 不为空对象时，`step` 的配置失效 | `number` | `1` | `5.2.0` |
+| ticks | 是否显示刻度 | `boolean` | `false` | `5.2.0` |
+| value | 当前值 | `number` \|<br/> `[number, number]` | - | |
+
+> 当 `range={true}` 时返回的 `value` 格式为 `[number, number]` ，否则为 `number` 。
