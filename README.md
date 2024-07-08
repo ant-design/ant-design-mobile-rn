@@ -29,15 +29,15 @@ A configurable Mobile UI specification and React-based implementation.
 
 ## Expo
 
- - **Web support**
-   
-   Preview Web Platform in [[here] 🔗](https://1uokun.github.io/ant-design-mobile-rn/index.html)
+> HTML5 Preview: [ant-design-mobile-rn/index.html](https://1uokun.github.io/ant-design-mobile-rn/index.html)
 
- - **Expo demo app**
 
 |SDK 49+|
 |--|
 | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5" />](https://expo.dev/preview/update?message=5.2.0%20Form%20%26%20Input&updateRuntimeVersion=5.2.0&createdAt=2024-05-24T06%3A10%3A13.909Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5) |
+
+Open the camera app on your device and scan the code above, <br>
+need install expo app: https://expo.io/tools
 
 <details><summary>Expo SDK history version</summary>
 
@@ -46,10 +46,68 @@ A configurable Mobile UI specification and React-based implementation.
 | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=38b3a547-ab2b-4066-95ed-400f1707dcc6&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=05f0e308-2dd5-4cb9-9e6b-1ae31561bfee&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
 </details>
 
-> Open the camera app on your device and scan the code above, <br>
-need install expo app: https://expo.io/tools
+
+## Install & Usage
+
+```bash
+$ npm install @ant-design/react-native --save
+```
+
+or
+
+```bash
+yarn add @ant-design/react-native
+```
+
+### Installing peer dependencies
+
+```bash
+npm install @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+```
+
+or
+
+```bash
+yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+```
+
+> You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
+
+### Link icon fonts
+
+```js
+// config `react-native.config.js` in project’s root directory
+module.exports = {
+  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+};
+```
+then
+```bash
+npx react-native-asset
+```
+
+## Links
+
+- [Home Page](http://rn.mobile.ant.design)
+- [More Introduce >](docs/react/introduce.en-US.md)
+- [Developer Instruction](development.en-US.md)
 
 ## Development
+
+ - **Running On Expo**
+
+> node >= 18
+
+```bash
+# go to expo example folder
+cd example
+
+# install dependencies
+yarn
+
+# start expo
+yarn expo
+```
 
  - **Running On Device**
 
@@ -70,67 +128,6 @@ yarn ios
 # start android
 yarn android
 ```
-
- - **Running On Expo**
-
-```bash
-# go to expo example folder
-cd example
-
-# install dependencies
-yarn
-
-# start expo
-yarn expo
-```
-
-## Install & Usage
-
-```bash
-$ npm install @ant-design/react-native --save
-```
-
-or
-
-```bash
-yarn add @ant-design/react-native
-```
-
-### Installing peer dependencies
-
-```bash
-npm install @react-native-community/segmented-control @react-native-community/slider @ant-design/icons-react-native react-native-gesture-handler
-```
-
-or
-
-```bash
-yarn add @react-native-community/segmented-control @react-native-community/slider @ant-design/icons-react-native react-native-gesture-handler
-```
-
-> You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
-
-### Link icon fonts
-
-```js
-// config `react-native.config.js` in project’s root directory
-module.exports = {
-  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
-};
-```
-then
-```bash
-npx react-native-asset
-```
-
-[introduce](docs/react/introduce.en-US.md#2-installation)
-
-## Links
-
-- [Home Page](http://rn.mobile.ant.design)
-- [Developer Instruction](development.en-US.md)
-- [React components](http://github.com/react-component/)
-- [Demos](https://github.com/ant-design/antd-mobile-samples)
 
 ## Contributing
 

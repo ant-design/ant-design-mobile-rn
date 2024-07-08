@@ -1,5 +1,10 @@
 import React from 'react'
-import { KeyboardTypeOptions, TextInputProps } from 'react-native'
+import {
+  KeyboardTypeOptions,
+  StyleProp,
+  TextInputProps,
+  ViewStyle,
+} from 'react-native'
 import { Theme } from '../style'
 import { InputStyle } from './style/index'
 import { TextAreaStyle } from './style/textarea'
@@ -12,11 +17,12 @@ export interface AutoSizeType {
   maxRows?: number
 }
 export type InputStatus = 'error' | 'warning'
-export interface InputProps extends TextInputProps {
+export interface InputProps extends Omit<TextInputProps, 'readOnly' | 'style'> {
   allowClear?: boolean | ClearIconType
   disabled?: boolean
   maxLength?: number
   prefix?: React.ReactNode
+  readOnly?: boolean
   showCount?:
     | boolean
     | {
@@ -28,6 +34,8 @@ export interface InputProps extends TextInputProps {
         }) => React.ReactNode
       }
   status?: InputStatus
+  inputStyle?: TextInputProps['style']
+  style?: StyleProp<ViewStyle>
   styles?: Partial<InputStyle>
   suffix?: React.ReactNode
   themeStyles?: (theme: Theme) => Partial<InputStyle>

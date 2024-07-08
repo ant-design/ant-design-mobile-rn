@@ -25,6 +25,8 @@ version: 5.2.0-rc.0
 | prefix | 带有前缀图标的 input | ReactNode | - |
 | showCount | 是否展示字数 | `boolean` \| `{ formatter: (info: { value: string, count: number, maxLength?: number }) => ReactNode }` | false |
 | status | 设置校验状态 | 'error' \| 'warning' | - |
+| inputStyle | TextInput style | `StyleProp<TextStyle>` | - |
+| style  | 容器(container)样式 | `StyleProp<ViewStyle>` | - |
 | styles | 语义化结构 style | [InputStyle](#inputstyle-语义化样式) | - |
 | suffix | 带有后缀图标的 input | ReactNode | - |
 | type | 声明 Input 类型，同原生 [`keyboardType`](https://reactnative.dev/docs/textinput.html#keyboardtype) 属性 | 'text' \| 'number' \|'password' \| KeyboardTypeOptions | `text` |
@@ -48,8 +50,8 @@ Input 的其他属性和 react-native 内置组件[TextInput](http://facebook.gi
 
 ```typescript
 interface InputStyle {
-  container: ViewStyle
-  input: ViewStyle
+  container: ViewStyle // 同 `style` prop 
+  input: ViewStyle     // 同 `inputStyle` prop
   clearIcon: ViewStyle
   prefix: ViewStyle | TextStyle
   showCount: TextStyle
@@ -58,6 +60,9 @@ interface InputStyle {
   error: TextStyle
 }
 ```
+
+## Ref
+指向 [TextInput](http://facebook.github.io/react-native/docs/textinput.html)
 
 ## FAQ
 
