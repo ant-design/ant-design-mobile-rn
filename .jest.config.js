@@ -8,7 +8,8 @@ const transformPackages = [
   'react-native-collapsible',
   '@bang88/react-native-ultimate-listview',
   '@react-native-community',
-  'react-native-gesture-handler'
+  'react-native-gesture-handler',
+  'react-native-reanimated'
 ];
 
 module.exports = {
