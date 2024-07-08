@@ -2,6 +2,7 @@
 category: Components
 type: Data Entry
 title: Stepper
+version: 5.2.0-rc.1
 ---
 
 `Stepper` can be used to increase or decrease value step by step.
@@ -11,15 +12,51 @@ title: Stepper
 
 ## API
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| min     | Specifies the minimum value   | Number | -Infinity        |
-| max     | Specifies the maximum value       | Number      | Infinity           |
-| value     | Specifies the value of the `Stepper`       | Number      |            |
-| step     | Specifies the legal number intervals  | Number or String      |  1      |
-| defaultValue     | Specifies the defaultValue of the `Stepper`       | Number      |            |
-| onChange     | Called when value of the `Stepper` changed      | (): void      |            |
-| disabled     | Specifies the `Stepper` should be disabled      | Boolean      |      false      |
-| readOnly     | Specifies the `Stepper` is read only       | Boolean      |      false      |
-| styles  | the styles of React-Native component  | ReactNative StyleSheet      |  -   |
-| inputStyle  | react native numeral style  | ReactNative StyleSheet      |  -   |
+| Name | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| allowEmpty | Whether to allow empty content. | `boolean` | `false` |
+| defaultValue | Default value | `number \| null` | `0` |
+| digits | Format to a fixed number of digits after the decimal point, set to `0` means format to integer. Will use `formatter` as display value when configured | `number` | - | 5.2.0 |
+| disabled | Whether to disabled Stepper | `boolean` | `false` |
+| formatter | Format value in input | `(value?: number) => string` | - | 5.2.0 |
+| inputStyle | TextInput style | `StyleProp<TextStyle>` | - |
+| max | Max value | `number` | - |
+| min | Min value | `number` | - |
+| minusButtonProps | The minus button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) | `{ activeOpacity:1, underlayColor:'#ddd', children: <Text>-</Text>, delayLongPress:500  }` | 5.2.0 |
+| plusButtonProps | The plus button props | [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) | `{ activeOpacity:1, underlayColor:'#ddd', children: <Text>+</Text>, delayLongPress:500  }` | 5.2.0 |
+| onChange | Callback when value is changed | `(value: number \| null) => void` | - |
+| parser | Parse input text into number which should work with `formatter` | `(text: string) => number` | - | 5.2.0 |
+| step | The value to increase or decrease each time, can be a decimal | `number` | `1` |
+| stringMode | Set value as string to support high precision decimals. Will set `defaultValue`,`value`, `min`, `max`, `onChange` to `string` type | `boolean` | `false` | 5.2.0 |
+| styles | Semantic DOM style | [StepperStyle](#stepperstyle-interface) | - | 5.2.0 |
+| value | Current number, controlled value | `number \| null` | - |
+
+ - New in `5.2.0`. In addition, all properties of react-native [TextInput](http://facebook.github.io/react-native/docs/textinput.html) are supported, eg: **`readOnly`** **`onFocus`** **`onBlur`**
+
+ - New in `5.2.0`. Support **Long Press To Trigger** increment or decrement; customizable execution timing: `plusButtonProps={{ delayLongPress: 500 }}`.
+
+ - When `allowEmpty` is `true`, the `value` parameter of `onChange` may be **`null`**, please pay attention when using it.
+
+### StepperStyle interface
+
+`5.2.0`refactored the styles
+
+```typescript
+export interface StepperStyle extends Partial<InputStyle> {
+  // extends InputStyle
+  container: ViewStyle
+  input: ViewStyle
+  prefix: ViewStyle // for minus button
+  suffix: ViewStyle // for plus button
+
+  // StepperStyle
+  inputDisabled: TextStyle
+  stepWrap: ViewStyle
+  stepText: TextStyle
+  stepDisabled: ViewStyle
+  disabledStepTextColor: TextStyle
+}
+```
+
+## Ref
+Same as [component/Input](/components/input#ref)

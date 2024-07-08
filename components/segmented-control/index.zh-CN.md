@@ -2,9 +2,14 @@
 category: Components
 type: Navigation
 title: SegmentedControl
-subtitle: 分段器
+subtitle: 分段器(已弃用)
 ---
 
+即将从`5.2.0`中弃用。
+
+请使用[@react-native-community/segmented-control](https://github.com/react-native-community/segmented-control#usage)替代。
+
+-----
 
 由至少 2 个分段控件组成，用作不同视图的显示；是 iOS 的推荐组件。
 
@@ -25,3 +30,4 @@ subtitle: 分段器
 | values  | 选项数组,值是字符串        | array |  []  |
 | onChange    | 回调函数, 其中`e.nativeEvent.selectedSegmentIndex`是选中项索引, `e.nativeEvent.value`是选中的值. | (e): void |  function(){}  |
 | onValueChange    |    回调函数   | (val): void |  function(){}  |
+

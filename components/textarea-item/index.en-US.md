@@ -5,7 +5,7 @@ title: TextareaItem
 subtitle: (archived)
 ---
 
-> This package has been deprecated, recommend [components/Input.TextArea](/components/input#inputtextarea)
+> This package has been deprecated in `5.2.0`, recommend [components/Input.TextArea](/components/input#inputtextarea)
 
 A foundational component for inputting multi-line text into the app via a keyboard.
 

@@ -54,11 +54,11 @@ type DatePickerFilter = Partial<
 此外还支持 [Picker](/components/picker-cn) 的以下属性：`onPickerChange` `onVisibleChange` `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `title` `okText` `dismissText` `okButtonProps` `dismissButtonProps` `visible` `children` `renderMaskTop` `renderMaskBottom`
 
 ### Children
-同 [Picker](/components/picker-cn/#Children)，其中`format`类型不同：
+同 [Picker](/components/picker-cn#children)，其中`format`类型不同：
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | format  | 格式化选中的值 |`(value: Date) => date string` | 引用 [Day.js Format](https://day.js.org/docs/en/parse/string-format)，参数对应精度:`YYYY-MM-DD`,`YYYY-MM-DD HH:mm:ss`|
 
 ### Ref
-同 `Picker`。
+同 [Picker](/components/picker-cn#ref)。

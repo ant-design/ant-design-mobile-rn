@@ -24,6 +24,8 @@ Entering content through the keyboard is the most basic form field wrapper.
 | prefix | The prefix icon for the Input | ReactNode | - |
 | showCount | Whether to show character count | `boolean` \| `{ formatter: (info: { value: string, count: number, maxLength?: number }) => ReactNode }` | false |
 | status | Set validation status | 'error' \| 'warning' | - |
+| inputStyle | TextInput style | `StyleProp<TextStyle>` | - |
+| style  | Container style | `StyleProp<ViewStyle>` | - |
 | styles | Semantic DOM style | [InputStyle](#inputstyle-interface) | - |
 | suffix | The suffix icon for the Input | ReactNode | - |
 | type   | Declare the Input type, the same as the native [keyboardType](http://facebook.github.io/react-native/docs/textinput.html#keyboardtype) attribute | 'text' \| 'number' \| 'password' \| KeyboardTypeOptions | `text` |
@@ -46,8 +48,8 @@ Same as Input, and more:
 
 ```typescript
 interface InputStyle {
-  container: ViewStyle
-  input: ViewStyle
+  container: ViewStyle // Same as `style` prop
+  input: ViewStyle     // Same as `inputStyle` prop
   clearIcon: ViewStyle
   prefix: ViewStyle | TextStyle
   showCount: TextStyle
@@ -56,6 +58,10 @@ interface InputStyle {
   error: TextStyle
 }
 ```
+
+## Ref
+Ref to [TextInput](http://facebook.github.io/react-native/docs/textinput.html)
+
 ## FAQ
 
 ## When setting `allowClear` on the Android platform, why does it not work when I click clearIcon?
