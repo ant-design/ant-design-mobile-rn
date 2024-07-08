@@ -21,7 +21,6 @@ export default (theme: Theme) =>
       bottom: 0,
       right: 0,
       backgroundColor: 'transparent',
-      justifyContent: 'center',
       alignItems: 'center',
       zIndex: theme.toast_zindex,
     },

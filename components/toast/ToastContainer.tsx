@@ -1,43 +1,47 @@
-import React from 'react'
-import { ActivityIndicator, Animated, Text, View } from 'react-native'
+import type { FC } from 'react'
+import React, { useEffect, useMemo } from 'react'
+import {
+  ActivityIndicator,
+  Animated,
+  Dimensions,
+  Text,
+  View,
+  ViewStyle,
+} from 'react-native'
+import { mergeProps } from '../_util/with-default-props'
 import Icon, { IconNames } from '../icon'
-import { WithTheme, WithThemeStyles } from '../style'
-import ToastStyles, { ToastStyle } from './style/index'
+import { useTheme } from '../style'
+import { ToastProps } from './PropsType'
+import ToastStyles from './style'
 
-export interface ToastProps extends WithThemeStyles<ToastStyle> {
-  content: string | React.ReactNode
-  duration?: number
-  onClose?: () => void
-  mask?: boolean
-  type?: string
-  onAnimationEnd?: () => void
+const defaultProps = {
+  duration: 3,
+  mask: true,
+  onClose() {},
 }
 
-export default class ToastContainer extends React.Component<ToastProps, any> {
-  static defaultProps = {
-    duration: 3,
-    mask: true,
-    onClose() {},
-  }
+const ToastContainer: FC<ToastProps> = (p) => {
+  const props = mergeProps(defaultProps, p)
+  const {
+    icon,
+    type = '',
+    mask,
+    duration,
+    content,
+    onAnimationEnd,
+    onClose,
+    position,
+  } = props
 
-  anim: Animated.CompositeAnimation | null
+  const anim = React.useRef<Animated.CompositeAnimation | null>()
+  const fadeAnim = React.useRef(new Animated.Value(0))
 
-  constructor(props: ToastProps) {
-    super(props)
-    this.state = {
-      fadeAnim: new Animated.Value(0),
-    }
-  }
-
-  componentDidMount() {
-    const { onAnimationEnd } = this.props
-    const duration = this.props.duration as number
-    const timing = Animated.timing
-    if (this.anim) {
-      this.anim = null
+  useEffect(() => {
+    if (anim.current) {
+      anim.current = null
     }
     const animArr = [
-      timing(this.state.fadeAnim, {
+      Animated.timing(fadeAnim.current, {
         toValue: 1,
         duration: 200,
         useNativeDriver: true,
@@ -46,96 +50,124 @@ export default class ToastContainer extends React.Component<ToastProps, any> {
     ]
     if (duration > 0) {
       animArr.push(
-        timing(this.state.fadeAnim, {
+        Animated.timing(fadeAnim.current, {
           toValue: 0,
           duration: 200,
           useNativeDriver: true,
         }),
       )
     }
-    this.anim = Animated.sequence(animArr)
-    this.anim.start(() => {
+    anim.current = Animated.sequence(animArr)
+    anim.current.start(() => {
       if (duration > 0) {
-        this.anim = null
+        anim.current = null
         if (onAnimationEnd) {
           onAnimationEnd()
         }
       }
     })
-  }
 
-  componentWillUnmount() {
-    if (this.anim) {
-      this.anim.stop()
-      this.anim = null
+    return () => {
+      if (anim.current) {
+        anim.current.stop()
+        anim.current = null
+      }
+
+      if (onClose) {
+        onClose()
+      }
     }
 
-    const { onClose } = this.props
-    if (onClose) {
-      onClose()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const styles = useTheme({
+    styles: props.styles,
+    themeStyles: ToastStyles,
+  })
+
+  const iconDom = useMemo(() => {
+    let typeTemp = type
+    if (type === 'info' && typeof icon === 'string') {
+      if (['success', 'fail', 'offline', 'loading'].includes(icon)) {
+        typeTemp = icon
+      }
     }
-  }
+    switch (typeTemp) {
+      case 'loading':
+        return (
+          <ActivityIndicator
+            animating
+            style={[styles.centering]}
+            color="white"
+            size="large"
+          />
+        )
+      case 'info':
+        return icon
+      default:
+        const iconType: {
+          [key: string]: IconNames
+        } = {
+          success: 'check-circle',
+          fail: 'close-circle',
+          offline: 'frown',
+        }
+        return (
+          <Icon
+            name={iconType[type]}
+            style={styles.image}
+            color="white"
+            size={36}
+          />
+        )
+    }
+  }, [icon, styles.centering, styles.image, type])
 
-  render() {
-    const { type = '', content, mask } = this.props
-    return (
-      <WithTheme styles={this.props.styles} themeStyles={ToastStyles}>
-        {(styles) => {
-          const iconType: {
-            [key: string]: IconNames
-          } = {
-            success: 'check-circle',
-            fail: 'close-circle',
-            offline: 'frown',
-          }
+  const positionStyle: ViewStyle = useMemo(() => {
+    const { height } = Dimensions.get('window')
+    const offset = height * 0.2
 
-          let iconDom: React.ReactElement<any> | null = null
-          if (type === 'loading') {
-            iconDom = (
-              <ActivityIndicator
-                animating
-                style={[styles.centering]}
-                color="white"
-                size="large"
-              />
-            )
-          } else if (type === 'info') {
-            iconDom = null
-          } else {
-            iconDom = (
-              <Icon
-                name={iconType[type]}
-                style={styles.image}
-                color="white"
-                size={36}
-              />
-            )
-          }
+    switch (position) {
+      case 'top':
+        return {
+          justifyContent: 'flex-start',
+          marginTop: offset,
+        }
+      case 'bottom':
+        return {
+          justifyContent: 'flex-end',
+          marginBottom: offset,
+        }
+      default:
+        return {
+          justifyContent: 'center',
+        }
+    }
+  }, [position])
 
-          return (
-            <View
-              style={[styles.container]}
-              pointerEvents={mask ? undefined : 'box-none'}>
-              <View style={[styles.innerContainer]}>
-                <Animated.View style={{ opacity: this.state.fadeAnim }}>
-                  <View
-                    style={[
-                      styles.innerWrap,
-                      iconDom ? styles.iconToast : styles.textToast,
-                    ]}>
-                    {iconDom}
-                    {React.isValidElement(content) ? (
-                      content
-                    ) : (
-                      <Text style={styles.content}>{content}</Text>
-                    )}
-                  </View>
-                </Animated.View>
-              </View>
-            </View>
-          )
-        }}
-      </WithTheme>
-    )
-  }
+  return (
+    <View
+      style={[positionStyle, styles.container]}
+      pointerEvents={mask ? undefined : 'box-none'}>
+      <View style={[styles.innerContainer]}>
+        <Animated.View style={{ opacity: fadeAnim.current }}>
+          <View
+            style={[
+              styles.innerWrap,
+              iconDom ? styles.iconToast : styles.textToast,
+            ]}>
+            {iconDom}
+            {React.isValidElement(content) ? (
+              content
+            ) : (
+              <Text style={styles.content}>{content}</Text>
+            )}
+          </View>
+        </Animated.View>
+      </View>
+    </View>
+  )
 }
+
+export default ToastContainer
