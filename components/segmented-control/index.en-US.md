@@ -2,7 +2,14 @@
 category: Components
 type: Navigation
 title: SegmentedControl
+subtitle: (deprecated)
 ---
+
+Will be deprecated in `5.2.0`.
+
+Please use [@react-native-community/segmented-control](https://github.com/react-native-community/segmented-control#usage) instead.
+
+------
 
 `SegmentedControl` includes at least two segments, it is used to display diffrent views and recommended by `iOS`.
 

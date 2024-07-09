@@ -34,7 +34,7 @@ export default (theme: Theme) =>
     },
     prefix: {
       fontSize: theme.font_size_heading,
-      paddingRight: theme.prefix_padding,
+      marginRight: theme.prefix_padding,
     },
     showCount: {
       fontSize: theme.font_size_heading,
@@ -43,7 +43,7 @@ export default (theme: Theme) =>
     },
     suffix: {
       fontSize: theme.font_size_heading,
-      paddingLeft: theme.prefix_padding,
+      marginLeft: theme.prefix_padding,
     },
     warning: {
       color: theme.color_warning,

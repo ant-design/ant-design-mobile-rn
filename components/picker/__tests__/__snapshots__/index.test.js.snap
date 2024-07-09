@@ -2,23 +2,28 @@
 
 exports[`Picker test cascade props when cascade={true} should be render MultiPicker 1`] = `
 Array [
-  <View
+  <RCTScrollView
+    bounces={false}
     collapsable={false}
-    style={
+    contentContainerStyle={
       Object {
         "flex": 1,
       }
     }
+    nestedScrollEnabled={true}
+    onTouchEnd={[Function]}
   >
-    <Text
-      disabled={false}
-      extra="请选择"
-      onPress={[Function]}
-      testID="button"
-    >
-      省市选择
-    </Text>
-  </View>,
+    <View>
+      <Text
+        disabled={false}
+        extra="请选择"
+        onPress={[Function]}
+        testID="button"
+      >
+        省市选择
+      </Text>
+    </View>
+  </RCTScrollView>,
   <View
     collapsable={false}
     pointerEvents="box-none"

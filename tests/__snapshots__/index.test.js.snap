@@ -33,7 +33,6 @@ Array [
   "Radio",
   "Result",
   "SearchBar",
-  "SegmentedControl",
   "Slider",
   "Stepper",
   "Steps",
@@ -49,5 +48,6 @@ Array [
   "WhiteSpace",
   "WingBlank",
   "ImagePicker",
+  "SegmentedControl",
 ]
 `;

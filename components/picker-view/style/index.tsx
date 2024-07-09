@@ -16,11 +16,11 @@ export default () =>
       flexDirection: 'column',
       justifyContent: 'center',
       overflow: 'hidden',
+      backgroundColor: '#fff',
     },
     wheelWrapper: {
       display: 'flex',
       flexDirection: 'row',
-      backgroundColor: '#fff',
     },
     mask: {
       position: 'absolute',

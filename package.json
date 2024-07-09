@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/react-native",
-  "version": "5.2.0-rc.0",
+  "version": "5.2.0-rc.1",
   "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
   "keywords": [
     "ant",
@@ -31,6 +31,7 @@
   "module": "es/index.js",
   "dependencies": {
     "@bang88/react-native-ultimate-listview": "^4.1.0",
+    "@rc-component/mini-decimal": "^1.1.0",
     "@types/shallowequal": "^1.1.1",
     "babel-runtime": "^6.x",
     "classnames": "^2.2.1",
@@ -51,8 +52,6 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
-    "@react-native-community/segmented-control": "^2.2.2",
-    "@react-native-community/slider": "^3.0.3",
     "@react-navigation/native": "^6.1.1",
     "@react-navigation/stack": "^6.3.10",
     "@testing-library/jest-native": "^4.0.1",
@@ -88,7 +87,7 @@
     "react-native": "0.64.2",
     "react-native-gesture-handler": "~2.2.1",
     "react-native-mocker": "^0.0.12",
-    "react-native-reanimated": "^2.2.0",
+    "react-native-reanimated": "^2.8.0",
     "react-native-safe-area-context": "4.2.4",
     "react-native-screens": "^3.14.1",
     "react-native-web": "^0.17.6",
@@ -100,11 +99,10 @@
   },
   "peerDependencies": {
     "@ant-design/icons-react-native": ">= 2.3.1",
-    "@react-native-community/segmented-control": ">= 1.4.0",
-    "@react-native-community/slider": ">= 2.0.0",
     "react": ">=17.0.1",
     "react-native": ">=0.64.1",
-    "react-native-gesture-handler": ">=2.2.1"
+    "react-native-gesture-handler": ">=2.2.1",
+    "react-native-reanimated": ">=2.8.0"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",

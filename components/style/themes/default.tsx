@@ -197,4 +197,7 @@ export default {
   action_sheet_zindex: 1000,
   popup_zindex: 999,
   modal_zindex: 999,
+  tooltip_zindex: 999,
+  tooltip_dark: 'rgba(0, 0, 0, 0.75)',
+  arrow_size: 8,
 }

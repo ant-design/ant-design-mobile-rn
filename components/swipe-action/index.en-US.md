@@ -2,6 +2,7 @@
 category: Components
 type: Gesture
 title: SwipeAction
+version: 5.2.0-rc.1
 ---
 
 iOS-style swipeout buttons that appear from behind a component.
@@ -18,20 +19,50 @@ Call out operations from one side of screen with gesture.
 
 ### SwipeAction
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| style           | style for `swipeout`   | Object |             |
-| left       | left buttons for `swipeout`      | Array | `null` |
-| right       | right buttons for `swipeout`    | Array | `null` |
-| autoClose       | auto hide after button is pressed   | Boolean | `function() {}` |
-| onOpen       |    callback function that is triggered when the buttons will be opened   | (): void | `function() {}` |
-| disabled       |   whether is disabled    | Boolean | `false` |
-| onClose   |  callback function that is triggered when the buttons will be closed | (): void | `function() {}` |
+| Properties | Descrition | Type | Default | Version |
+|-----|-----|------|-------|------|
+| closeOnAction | Whether to return to the position automatically when the operation button is clicked | `boolean` | `true` | `5.2.0` |
+| closeOnTouchOutside | Whether to return to the position automatically when other areas is clicked | `boolean` | `false` | `5.2.0` |
+| left          | List of operation buttons on the left | [SwipeoutButtonProps](/components/swipe-action#swipeoutbuttonprops)[] | `[]` | |
+| right         | List of operation buttons on the right | [SwipeoutButtonProps](/components/swipe-action#swipeoutbuttonprops)[] | `[]` | |
+| styles        | Semantic DOM style | [SwipeActionStyle](/components/swipe-action#swipeactionstyle-interface) | - | `5.2.0` |
 
-### Button
+The rest of the props of `SwipeAction` are exactly the same as [react-native-gesture-handler/Swipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/),
 
-| Properties | Descrition             | Type                    | Default |
-|------|------------------|-------------------------|--------|
-| text       | text of button    | String | `Click` |
-| style       | style of button     | Object | `` |
-| onPress       | callback function that is triggered when button will be pressed   | (): void | `function() {}` |
+**eg: `onSwipeableOpen` , `onSwipeableClose` , `renderLeftActions` , `renderRightActions`**
+
+
+When you set `renderLeftActions` prop, it will override `left` prop; <br/>
+when you set `renderRightActions` prop, it will override `right` prop.
+
+### SwipeoutButtonProps
+
+| Properties | Descrition | Type | Default | Version |
+|-----|------|------|------|------|
+| backgroundColor | background color | `string` | - | |
+| color | font color | `string` | - | |
+| disabled | Whether disabled | `boolean` | - | |
+| onPress | Trigger when clicked | `() => void | Promise<any>` | - | `5.2.0` support async |
+| style | Aaction button style, effective when `text` is `string` | `StyleProp<TextStyle>` | - | |
+| text | Text | `string | ReactNode` | - | |
+| actionButtonProps | Rest props | [RectButtonProps](https://docs.swmansion.com/react-native-gesture-handler/docs/components/buttons/#rectbutton) | - | `5.2.0` |
+
+### SwipeActionStyle interface
+
+```typescript
+export interface SwipeActionStyle {
+  actionButton: ViewStyle
+  actionText: TextStyle
+}
+```
+
+### Ref
+
+New in `5.2.0`. Ref to Swipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
+
+| Properties | Descrition | Type|
+|-----|------|------|
+| close | method that closes component | `() => void` |
+| openLeft | method that opens component on left side. | `() => void` |
+| openRight | method that opens component on right side. | `() => void` |
+| reset | method that resets the swiping states of this `Swipeable` component.<br/>Unlike method `close`, this method does not trigger any animation. | `() => void` |
