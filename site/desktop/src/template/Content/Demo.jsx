@@ -102,7 +102,8 @@ export default class Demo extends React.Component {
       'react-native-gesture-handler/DrawerLayout,' +
       'react-native-gesture-handler/Swipeable,' +
       'react-native-gesture-handler,' +
-      '@ant-design/icons-react-native@2.3.1,' +
+      'react-native-reanimated,' +
+      '@ant-design/icons-react-native@2.3.2,' +
       `@ant-design/react-native@${antdVersion}`
 
     if (componentName === 'picker') {
@@ -127,7 +128,7 @@ export default class Demo extends React.Component {
         ',@ant-design/icons-react-native/lib/outline,' +
         '@ant-design/icons-react-native/fonts/antfill.ttf,' +
         '@ant-design/icons-react-native/fonts/antoutline.ttf,' +
-        'expo-font@11.0.1'
+        'expo-font@12.0.8'
     }
 
     if (componentName === 'form') {
