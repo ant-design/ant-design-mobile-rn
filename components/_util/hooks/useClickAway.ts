@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import {
   DeviceEventEmitter,
   EmitterSubscription,
@@ -8,14 +8,27 @@ import {
 
 export const USE_CLICK_AWAY_EVENT_NAME = 'ANT_DESIGN_MOBILE_RN_USE_CLICK_AWAY'
 
+const TopViewEventEmitter = DeviceEventEmitter || new NativeEventEmitter()
+
+let _temp_bool: any
+export const CustomSyntheticEvent = {
+  stopPropagation: function () {
+    _temp_bool = true
+  },
+  preventDefault: function () {
+    _temp_bool = undefined
+  },
+  isPropagationStopped() {
+    return _temp_bool
+  },
+  emit(event: GestureResponderEvent) {
+    TopViewEventEmitter.emit(USE_CLICK_AWAY_EVENT_NAME, event)
+  },
+}
+
 export default function useClickAway(
   onClickAway: (event: GestureResponderEvent) => void,
 ) {
-  const TopViewEventEmitter = useMemo(
-    () => DeviceEventEmitter || new NativeEventEmitter(),
-    [],
-  )
-
   const onClickAwayRef = useRef<EmitterSubscription>()
 
   useEffect(() => {
@@ -26,5 +39,7 @@ export default function useClickAway(
     return () => {
       onClickAwayRef.current?.remove?.()
     }
-  }, [TopViewEventEmitter, onClickAway])
+  }, [onClickAway])
+
+  return [CustomSyntheticEvent]
 }

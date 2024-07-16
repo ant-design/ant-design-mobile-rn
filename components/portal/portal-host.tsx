@@ -4,11 +4,11 @@ import {
   EventSubscription,
   GestureResponderEvent,
   NativeEventEmitter,
-  ScrollView,
   ScrollViewProps,
   StyleSheet,
+  View,
 } from 'react-native'
-import { USE_CLICK_AWAY_EVENT_NAME } from '../_util/hooks/useClickAway'
+import { CustomSyntheticEvent } from '../_util/hooks/useClickAway'
 import PortalManager from './portal-manager'
 
 export type PortalHostProps = ScrollViewProps
@@ -150,9 +150,17 @@ export default class PortalHost extends React.Component<PortalHostProps> {
     }
   }
 
+  _onTouchMove = () => {
+    CustomSyntheticEvent.stopPropagation()
+  }
+
   // coordinate for hook `useClickAway`
   _onTouchEnd = (event: GestureResponderEvent) => {
-    TopViewEventEmitter.emit(USE_CLICK_AWAY_EVENT_NAME, event)
+    if (CustomSyntheticEvent.isPropagationStopped()) {
+      CustomSyntheticEvent.preventDefault()
+      return
+    }
+    CustomSyntheticEvent.emit(event)
   }
 
   render() {
@@ -164,12 +172,11 @@ export default class PortalHost extends React.Component<PortalHostProps> {
           unmount: this._unmount,
         }}>
         {/* Need collapsable=false here to clip the elevations, otherwise they appear above Portal components */}
-        <ScrollView
-          contentContainerStyle={styles.container}
-          onTouchEnd={this._onTouchEnd}
-          nestedScrollEnabled
+        <View
+          style={styles.container}
           collapsable={false}
-          bounces={false}
+          onTouchEnd={this._onTouchEnd}
+          onTouchMove={this._onTouchMove}
           {...this.props}
         />
         <PortalManager ref={this._setManager} />
@@ -181,5 +188,6 @@ export default class PortalHost extends React.Component<PortalHostProps> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    overflow: 'scroll',
   },
 })
