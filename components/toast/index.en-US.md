@@ -12,6 +12,7 @@ A lightweight feedback or tips, used to display content that does not interrupt 
 
 ## API
 
+- `Toast.show(props)`
 - `Toast.success(props)`
 - `Toast.fail(props)`
 - `Toast.info(props)`

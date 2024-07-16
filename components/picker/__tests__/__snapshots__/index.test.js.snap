@@ -4,9 +4,12 @@ exports[`Picker test cascade props when cascade={true} should be render MultiPic
 Array [
   <View
     collapsable={false}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
     style={
       Object {
         "flex": 1,
+        "overflow": "scroll",
       }
     }
   >

@@ -33,7 +33,6 @@ Array [
   "Radio",
   "Result",
   "SearchBar",
-  "SegmentedControl",
   "Slider",
   "Stepper",
   "Steps",
@@ -45,9 +44,11 @@ Array [
   "Text",
   "TextareaItem",
   "Toast",
+  "Tooltip",
   "View",
   "WhiteSpace",
   "WingBlank",
   "ImagePicker",
+  "SegmentedControl",
 ]
 `;

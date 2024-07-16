@@ -1,4 +1,4 @@
-import React, { useCallback, useImperativeHandle, useRef } from 'react'
+import React, { useCallback, useImperativeHandle } from 'react'
 import { Animated } from 'react-native'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
 import useClickAway from '../_util/hooks/useClickAway'
@@ -15,23 +15,14 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
       right,
       styles,
       onSwipeableOpen,
-      onSwipeableWillClose,
       ...restProps
     } = props
 
     const swipeActionRef = React.useRef<Swipeable>(null)
     useImperativeHandle(ref, () => swipeActionRef.current as Swipeable)
 
-    const openRef = useRef<boolean>(false)
-    const setOpenRef = useCallback((open) => {
-      openRef.current = open
-    }, [])
-
     const close = useCallback(() => {
-      if (openRef.current === true) {
-        openRef.current = false
-        swipeActionRef.current?.close?.()
-      }
+      swipeActionRef.current?.close?.()
     }, [])
 
     // ======================== Swipeable renderLeftActions/renderRightActions ========================
@@ -46,13 +37,12 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
             closeOnAction={closeOnAction}
             isLeft={isLeft}
             progressAnimatedValue={progressAnimatedValue}
-            setOpenRef={setOpenRef}
             setClose={close}
             styles={styles}
           />
         )
       },
-      [close, closeOnAction, left, right, setOpenRef, styles],
+      [close, closeOnAction, left, right, styles],
     )
     const renderLeftActions = useCallback(
       (progressAnimatedValue) => renderActions(progressAnimatedValue, true),
@@ -63,31 +53,21 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
       [renderActions],
     )
 
-    // ======================== Swipeable onSwipeableOpen/onSwipeableWillClose ========================
-    const handleSwipeableOpen = useCallback(
-      (...args) => {
-        openRef.current = true
-        onSwipeableOpen && onSwipeableOpen.apply(undefined, args)
-      },
-      [onSwipeableOpen],
-    )
-
-    const handleSwipeableWillClose = useCallback(
-      (...args) => {
-        openRef.current = false
-        onSwipeableWillClose && onSwipeableWillClose.apply(undefined, args)
-      },
-      [onSwipeableWillClose],
-    )
-
     // ======================== Closing when click outside ========================
-    useClickAway(() => {
+    const [{ preventDefault }] = useClickAway(() => {
       if (closeOnTouchOutside) {
-        setTimeout(() => {
-          close()
-        })
+        close()
       }
     })
+
+    // ======================== Swipeable onSwipeableOpen preventDefault ========================
+    const handleSwipeableOpen = useCallback(
+      (...args) => {
+        preventDefault()
+        onSwipeableOpen && onSwipeableOpen.apply(undefined, args)
+      },
+      [onSwipeableOpen, preventDefault],
+    )
 
     return (
       <Swipeable
@@ -98,9 +78,8 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
         rightThreshold={40}
         renderLeftActions={renderLeftActions}
         renderRightActions={renderRightActions}
-        {...restProps}
         onSwipeableOpen={handleSwipeableOpen}
-        onSwipeableWillClose={handleSwipeableWillClose}>
+        {...restProps}>
         {children}
       </Swipeable>
     )

@@ -31,6 +31,8 @@
   "module": "es/index.js",
   "dependencies": {
     "@bang88/react-native-ultimate-listview": "^4.1.0",
+    "@floating-ui/react-native": "^0.10.6",
+    "@rc-component/mini-decimal": "^1.1.0",
     "@types/shallowequal": "^1.1.1",
     "babel-runtime": "^6.x",
     "classnames": "^2.2.1",
@@ -46,7 +48,7 @@
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
-    "@ant-design/icons-react-native": "2.3.1",
+    "@ant-design/icons-react-native": "2.3.2",
     "@ant-design/tools": "^13.4.1-beta.0",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
@@ -84,9 +86,9 @@
     "react-github-button": "^0.1.9",
     "react-intl": "^2.2.3",
     "react-native": "0.64.2",
-    "react-native-gesture-handler": "~2.2.1",
+    "react-native-gesture-handler": "~2.16.2",
     "react-native-mocker": "^0.0.12",
-    "react-native-reanimated": "^2.2.0",
+    "react-native-reanimated": "^2.8.0",
     "react-native-safe-area-context": "4.2.4",
     "react-native-screens": "^3.14.1",
     "react-native-web": "^0.17.6",
@@ -97,10 +99,11 @@
     "typescript": "^4.3.2"
   },
   "peerDependencies": {
-    "@ant-design/icons-react-native": ">= 2.3.1",
+    "@ant-design/icons-react-native": ">= 2.3.2",
     "react": ">=17.0.1",
     "react-native": ">=0.64.1",
-    "react-native-gesture-handler": ">=2.2.1"
+    "react-native-gesture-handler": ">=2.2.1",
+    "react-native-reanimated": ">=2.8.0"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",

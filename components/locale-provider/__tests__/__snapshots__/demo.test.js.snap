@@ -117,7 +117,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </View>
@@ -494,7 +494,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
           </View>
@@ -604,7 +604,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
           </View>
@@ -694,7 +694,7 @@ exports[`renders ./components/locale-provider/demo/basic.tsx correctly 1`] = `
               ]
             }
           >
-            
+            
           </Text>
           <View
             style={
