@@ -16,7 +16,6 @@ interface RenderActionsProps {
   closeOnAction: boolean
   isLeft: boolean
   progressAnimatedValue: Animated.AnimatedInterpolation
-  setOpenRef: (open: boolean) => void
   setClose: () => void
   styles?: Partial<SwipeActionStyle>
 }
@@ -41,7 +40,6 @@ export const RenderActions: React.FC<RenderActionsProps> = memo((props) => {
   return (
     <View
       onLayout={onLayout}
-      // TODO-luokun: 专门封装一个 RTL 组件
       style={{
         flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
       }}>
@@ -68,7 +66,6 @@ const SwipeActionButton: React.FC<SwipeActionButtonProps> = memo((props) => {
     closeOnAction,
     isLeft,
     progressAnimatedValue,
-    setOpenRef,
     setClose,
     styles,
   } = props
@@ -77,24 +74,18 @@ const SwipeActionButton: React.FC<SwipeActionButtonProps> = memo((props) => {
     if (button.disabled || loading) {
       return
     }
-    // Forced not to be closed
-    if (!closeOnAction) {
-      setOpenRef(false)
-    }
     try {
       setLoading(true)
       if (button.onPress) {
         await button.onPress()
       }
     } finally {
-      setTimeout(() => {
-        if (closeOnAction) {
-          setClose()
-        }
-        setLoading(false)
-      })
+      if (closeOnAction) {
+        setClose()
+      }
+      setLoading(false)
     }
-  }, [button, closeOnAction, loading, setClose, setOpenRef])
+  }, [button, closeOnAction, loading, setClose])
 
   const [layout, setLayout] = useState<{ x: number; width: number }>({
     x: 0,
@@ -119,6 +110,7 @@ const SwipeActionButton: React.FC<SwipeActionButtonProps> = memo((props) => {
   return (
     <Animated.View
       onLayout={onLayout}
+      onTouchEnd={(e) => e.stopPropagation()}
       style={{
         transform: [{ translateX: trans }],
       }}>

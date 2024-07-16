@@ -126,7 +126,7 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>
@@ -236,7 +236,7 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
         </View>

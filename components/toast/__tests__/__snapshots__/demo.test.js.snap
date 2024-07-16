@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
-<RCTScrollView
-  collapsable={false}
-  onGestureHandlerEvent={[Function]}
-  onGestureHandlerStateChange={[Function]}
->
+<RCTScrollView>
   <View>
     <View>
       <View

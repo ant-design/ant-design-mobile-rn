@@ -70,6 +70,12 @@ module.exports = {
       module: require('../components/modal/demo/basic'),
     },
     {
+      title: 'Tooltip',
+      description: '气泡',
+      icon: 'https://os.alipayobjects.com/rmsportal/iIOLFHTKUCxBgUV.png',
+      module: require('../components/tooltip/demo/basic'),
+    },
+    {
       title: 'Portal',
       description: 'portal',
       icon: 'https://os.alipayobjects.com/rmsportal/iIOLFHTKUCxBgUV.png',

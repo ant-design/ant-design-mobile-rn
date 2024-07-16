@@ -20,9 +20,8 @@ export type SliderProps = {
   disabled?: boolean
   range?: boolean
   icon?: ReactNode
-  // TODO-luokun
-  // popover?: boolean | ((value: number) => ReactNode)
-  // residentPopover?: boolean
+  popover?: boolean | ((value: number) => ReactNode)
+  residentPopover?: boolean
   onChange?: (value: SliderValue) => void
   onAfterChange?: (value: SliderValue) => void
   style?: StyleProp<ViewStyle>

@@ -187,8 +187,8 @@ export const Slider: React.FC<SliderProps> = (props) => {
         max={max}
         disabled={disabled}
         icon={icon}
-        // popover={!!props.popover}
-        // residentPopover={!!props.residentPopover}
+        popover={!!props.popover}
+        residentPopover={!!props.residentPopover}
         onDrag={(locationX, last) => {
           if (!trackLayout) {
             return

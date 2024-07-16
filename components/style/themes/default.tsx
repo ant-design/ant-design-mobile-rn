@@ -193,11 +193,14 @@ export default {
   prefix_padding: 6, // form item 上下内边距
   extra_max_width: '50%',
 
+  // tooltip
+  tooltip_dark: 'rgba(0, 0, 0, 0.9)',
+  tooltip_border_radius: 8,
+  arrow_size: 8,
+
   toast_zindex: 1999,
   action_sheet_zindex: 1000,
   popup_zindex: 999,
   modal_zindex: 999,
   tooltip_zindex: 999,
-  tooltip_dark: 'rgba(0, 0, 0, 0.75)',
-  arrow_size: 8,
 }

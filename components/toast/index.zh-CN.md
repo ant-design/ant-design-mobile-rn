@@ -13,6 +13,7 @@ version: 5.2.0-rc.1
 
 ## API
 
+- `Toast.show(props)`
 - `Toast.success(props)`
 - `Toast.fail(props)`
 - `Toast.info(props)`

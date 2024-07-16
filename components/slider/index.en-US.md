@@ -23,6 +23,8 @@ A Slider component for selecting particular value in range, eg: controls the dis
 | min | Min value | `number` | `0` | |
 | onAfterChange | Consistent with the trigger timing of `touchend`, pass the current value as a parameter | `(value: number | [number, number]) => void` | - | |
 | onChange | Triggered when the slider is dragged, and the current dragged value is passed in as a parameter | `(value: number | [number, number]) => void` | - | |
+| popover | Whether to display the popover when dragging. Support passing in function to customize the rendering content. | `boolean | ((value: number) => ReactNode)` | `false` | `5.2.0` |
+| residentPopover | Whether the `popover` is permanently displayed , this attribute takes effect when `popover` exists | `boolean ` | `false` | `5.2.0` |
 | range | Whether it is a double sliders | `boolean` | `false` | `5.2.0` |
 | step | Step distance, the value must be greater than `0`, and `(max-min)` can be divisible by `step`. When `marks` is not null, the configuration of `step` is invalid | `number` | `1` | `5.2.0` |
 | ticks | Whether to display the scale | `boolean` | `false` | `5.2.0` |
