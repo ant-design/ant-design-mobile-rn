@@ -97,8 +97,6 @@ export default class Demo extends React.Component {
     const localizedTitle = meta.title[locale] || meta.title
     const componentName = this.state.componentName
     let dependencies =
-      '@react-native-community/slider,' +
-      '@react-native-community/segmented-control,' +
       'react-native-gesture-handler/DrawerLayout,' +
       'react-native-gesture-handler/Swipeable,' +
       'react-native-gesture-handler,' +
