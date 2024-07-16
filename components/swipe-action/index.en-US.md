@@ -2,7 +2,7 @@
 category: Components
 type: Gesture
 title: SwipeAction
-version: 5.2.0-rc.1
+version: 5.2.0-rc.2
 ---
 
 iOS-style swipeout buttons that appear from behind a component.
