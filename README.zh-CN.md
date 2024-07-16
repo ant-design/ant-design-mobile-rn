@@ -32,7 +32,7 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 
 |SDK 49+|
 |--|
-| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5" />](https://expo.dev/preview/update?message=5.2.0%20Form%20%26%20Input&updateRuntimeVersion=5.2.0&createdAt=2024-05-24T06%3A10%3A13.909Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5) |
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=0d1cb959-bf55-425a-81fc-62cdd0c07eb6" />](https://expo.dev/preview/update?message=5.2.0%20Tooltip%20%26%20Slider&updateRuntimeVersion=5.2.0&createdAt=2024-07-16T07%3A13%3A47.592Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=0d1cb959-bf55-425a-81fc-62cdd0c07eb6) |
 
 提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
 
