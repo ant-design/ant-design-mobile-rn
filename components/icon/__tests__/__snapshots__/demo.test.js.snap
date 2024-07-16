@@ -78,7 +78,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
           ]
         }
       >
-        
+        
       </Text>
     </View>
     <View>
@@ -19397,7 +19397,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              home
+              holder
             </Text>
           </View>
         </View>
@@ -19505,7 +19505,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              hourglass
+              home
             </Text>
           </View>
         </View>
@@ -19591,7 +19591,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              html5
+              hourglass
             </Text>
           </View>
         </View>
@@ -19677,7 +19677,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              idcard
+              html5
             </Text>
           </View>
         </View>
@@ -19785,7 +19785,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              ie
+              idcard
             </Text>
           </View>
         </View>
@@ -19871,7 +19871,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              import
+              ie
             </Text>
           </View>
         </View>
@@ -19957,7 +19957,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              inbox
+              import
             </Text>
           </View>
         </View>
@@ -20065,7 +20065,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              info-circle
+              inbox
             </Text>
           </View>
         </View>
@@ -20151,7 +20151,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              info
+              info-circle
             </Text>
           </View>
         </View>
@@ -20237,7 +20237,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              insert-row-above
+              info
             </Text>
           </View>
         </View>
@@ -20345,7 +20345,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              insert-row-below
+              insert-row-above
             </Text>
           </View>
         </View>
@@ -20431,7 +20431,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              insert-row-left
+              insert-row-below
             </Text>
           </View>
         </View>
@@ -20517,7 +20517,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              insert-row-right
+              insert-row-left
             </Text>
           </View>
         </View>
@@ -20625,7 +20625,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              instagram
+              insert-row-right
             </Text>
           </View>
         </View>
@@ -20711,7 +20711,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              insurance
+              instagram
             </Text>
           </View>
         </View>
@@ -20797,7 +20797,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              interaction
+              insurance
             </Text>
           </View>
         </View>
@@ -20905,7 +20905,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              issues-close
+              interaction
             </Text>
           </View>
         </View>
@@ -20991,7 +20991,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              italic
+              issues-close
             </Text>
           </View>
         </View>
@@ -21077,7 +21077,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              key
+              italic
             </Text>
           </View>
         </View>
@@ -21185,7 +21185,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              laptop
+              key
             </Text>
           </View>
         </View>
@@ -21271,7 +21271,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              layout
+              laptop
             </Text>
           </View>
         </View>
@@ -21357,7 +21357,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              left-circle
+              layout
             </Text>
           </View>
         </View>
@@ -21465,7 +21465,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              left-square
+              left-circle
             </Text>
           </View>
         </View>
@@ -21551,7 +21551,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              left
+              left-square
             </Text>
           </View>
         </View>
@@ -21637,7 +21637,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              like
+              left
             </Text>
           </View>
         </View>
@@ -21745,7 +21745,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              line-chart
+              like
             </Text>
           </View>
         </View>
@@ -21831,7 +21831,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              line-height
+              line-chart
             </Text>
           </View>
         </View>
@@ -21917,7 +21917,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              line
+              line-height
             </Text>
           </View>
         </View>
@@ -22025,7 +22025,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              link
+              line
             </Text>
           </View>
         </View>
@@ -22111,7 +22111,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              linkedin
+              link
             </Text>
           </View>
         </View>
@@ -22197,7 +22197,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              loading-3-quarters
+              linkedin
             </Text>
           </View>
         </View>
@@ -22305,7 +22305,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              loading
+              loading-3-quarters
             </Text>
           </View>
         </View>
@@ -22391,7 +22391,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              lock
+              loading
             </Text>
           </View>
         </View>
@@ -22477,7 +22477,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              login
+              lock
             </Text>
           </View>
         </View>
@@ -22585,7 +22585,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              logout
+              login
             </Text>
           </View>
         </View>
@@ -22671,7 +22671,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              mac-command
+              logout
             </Text>
           </View>
         </View>
@@ -22757,7 +22757,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              mail
+              mac-command
             </Text>
           </View>
         </View>
@@ -22865,7 +22865,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              man
+              mail
             </Text>
           </View>
         </View>
@@ -22951,7 +22951,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              medicine-box
+              man
             </Text>
           </View>
         </View>
@@ -23037,7 +23037,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              medium-workmark
+              medicine-box
             </Text>
           </View>
         </View>
@@ -23145,7 +23145,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              medium
+              medium-workmark
             </Text>
           </View>
         </View>
@@ -23231,7 +23231,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              meh
+              medium
             </Text>
           </View>
         </View>
@@ -23317,7 +23317,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              menu-fold
+              meh
             </Text>
           </View>
         </View>
@@ -23425,7 +23425,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              menu-unfold
+              menu-fold
             </Text>
           </View>
         </View>
@@ -23511,7 +23511,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              menu
+              menu-unfold
             </Text>
           </View>
         </View>
@@ -23597,7 +23597,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              merge-cells
+              menu
             </Text>
           </View>
         </View>
@@ -23705,7 +23705,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              message
+              merge-cells
             </Text>
           </View>
         </View>
@@ -23791,7 +23791,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              minus-circle
+              message
             </Text>
           </View>
         </View>
@@ -23877,7 +23877,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              minus-square
+              minus-circle
             </Text>
           </View>
         </View>
@@ -23985,7 +23985,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              minus
+              minus-square
             </Text>
           </View>
         </View>
@@ -24071,7 +24071,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              mobile
+              minus
             </Text>
           </View>
         </View>
@@ -24157,7 +24157,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              money-collect
+              mobile
             </Text>
           </View>
         </View>
@@ -24265,7 +24265,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              monitor
+              money-collect
             </Text>
           </View>
         </View>
@@ -24351,7 +24351,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              more
+              monitor
             </Text>
           </View>
         </View>
@@ -24437,7 +24437,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              node-collapse
+              more
             </Text>
           </View>
         </View>
@@ -24545,7 +24545,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              node-expand
+              node-collapse
             </Text>
           </View>
         </View>
@@ -24631,7 +24631,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              node-index
+              node-expand
             </Text>
           </View>
         </View>
@@ -24717,7 +24717,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              notification
+              node-index
             </Text>
           </View>
         </View>
@@ -24825,7 +24825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              number
+              notification
             </Text>
           </View>
         </View>
@@ -24911,7 +24911,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              one-to-one
+              number
             </Text>
           </View>
         </View>
@@ -24997,7 +24997,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              ordered-list
+              one-to-one
             </Text>
           </View>
         </View>
@@ -25105,7 +25105,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              paper-clip
+              ordered-list
             </Text>
           </View>
         </View>
@@ -25191,7 +25191,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              partition
+              paper-clip
             </Text>
           </View>
         </View>
@@ -25277,7 +25277,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pause-circle
+              partition
             </Text>
           </View>
         </View>
@@ -25385,7 +25385,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pause
+              pause-circle
             </Text>
           </View>
         </View>
@@ -25471,7 +25471,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pay-circle
+              pause
             </Text>
           </View>
         </View>
@@ -25557,7 +25557,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              percentage
+              pay-circle
             </Text>
           </View>
         </View>
@@ -25665,7 +25665,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              phone
+              percentage
             </Text>
           </View>
         </View>
@@ -25751,7 +25751,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pic-center
+              phone
             </Text>
           </View>
         </View>
@@ -25837,7 +25837,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pic-left
+              pic-center
             </Text>
           </View>
         </View>
@@ -25945,7 +25945,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pic-right
+              pic-left
             </Text>
           </View>
         </View>
@@ -26031,7 +26031,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              picture
+              pic-right
             </Text>
           </View>
         </View>
@@ -26117,7 +26117,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pie-chart
+              picture
             </Text>
           </View>
         </View>
@@ -26225,7 +26225,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              play-circle
+              pie-chart
             </Text>
           </View>
         </View>
@@ -26311,7 +26311,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              play-square
+              play-circle
             </Text>
           </View>
         </View>
@@ -26397,7 +26397,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              plus-circle
+              play-square
             </Text>
           </View>
         </View>
@@ -26505,7 +26505,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              plus-square
+              plus-circle
             </Text>
           </View>
         </View>
@@ -26591,7 +26591,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              plus
+              plus-square
             </Text>
           </View>
         </View>
@@ -26677,7 +26677,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pound-circle
+              plus
             </Text>
           </View>
         </View>
@@ -26785,7 +26785,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pound
+              pound-circle
             </Text>
           </View>
         </View>
@@ -26871,7 +26871,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              poweroff
+              pound
             </Text>
           </View>
         </View>
@@ -26957,7 +26957,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              printer
+              poweroff
             </Text>
           </View>
         </View>
@@ -27065,7 +27065,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              profile
+              printer
             </Text>
           </View>
         </View>
@@ -27151,7 +27151,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              project
+              profile
             </Text>
           </View>
         </View>
@@ -27237,7 +27237,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              property-safety
+              project
             </Text>
           </View>
         </View>
@@ -27345,7 +27345,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pull-request
+              property-safety
             </Text>
           </View>
         </View>
@@ -27431,7 +27431,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              pushpin
+              pull-request
             </Text>
           </View>
         </View>
@@ -27517,7 +27517,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              qq
+              pushpin
             </Text>
           </View>
         </View>
@@ -27625,7 +27625,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              qrcode
+              qq
             </Text>
           </View>
         </View>
@@ -27711,7 +27711,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              question-circle
+              qrcode
             </Text>
           </View>
         </View>
@@ -27797,7 +27797,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              question
+              question-circle
             </Text>
           </View>
         </View>
@@ -27905,7 +27905,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              radar-chart
+              question
             </Text>
           </View>
         </View>
@@ -27991,7 +27991,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              radius-bottomleft
+              radar-chart
             </Text>
           </View>
         </View>
@@ -28077,7 +28077,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              radius-bottomright
+              radius-bottomleft
             </Text>
           </View>
         </View>
@@ -28185,7 +28185,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              radius-setting
+              radius-bottomright
             </Text>
           </View>
         </View>
@@ -28271,7 +28271,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              radius-upleft
+              radius-setting
             </Text>
           </View>
         </View>
@@ -28357,7 +28357,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              radius-upright
+              radius-upleft
             </Text>
           </View>
         </View>
@@ -28465,7 +28465,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              read
+              radius-upright
             </Text>
           </View>
         </View>
@@ -28551,7 +28551,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              reconciliation
+              read
             </Text>
           </View>
         </View>
@@ -28637,7 +28637,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              red-envelope
+              reconciliation
             </Text>
           </View>
         </View>
@@ -28745,7 +28745,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              reddit
+              red-envelope
             </Text>
           </View>
         </View>
@@ -28831,7 +28831,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              redo
+              reddit
             </Text>
           </View>
         </View>
@@ -28917,7 +28917,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              reload
+              redo
             </Text>
           </View>
         </View>
@@ -29025,7 +29025,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              rest
+              reload
             </Text>
           </View>
         </View>
@@ -29111,7 +29111,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              retweet
+              rest
             </Text>
           </View>
         </View>
@@ -29197,7 +29197,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              right-circle
+              retweet
             </Text>
           </View>
         </View>
@@ -29305,7 +29305,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              right-square
+              right-circle
             </Text>
           </View>
         </View>
@@ -29391,7 +29391,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              right
+              right-square
             </Text>
           </View>
         </View>
@@ -29477,7 +29477,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              rise
+              right
             </Text>
           </View>
         </View>
@@ -29585,7 +29585,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              robot
+              rise
             </Text>
           </View>
         </View>
@@ -29671,7 +29671,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              rocket
+              robot
             </Text>
           </View>
         </View>
@@ -29757,7 +29757,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              rollback
+              rocket
             </Text>
           </View>
         </View>
@@ -29865,7 +29865,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              rotate-left
+              rollback
             </Text>
           </View>
         </View>
@@ -29951,7 +29951,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              rotate-right
+              rotate-left
             </Text>
           </View>
         </View>
@@ -30037,7 +30037,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              safety-certificate
+              rotate-right
             </Text>
           </View>
         </View>
@@ -30145,7 +30145,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              safety
+              safety-certificate
             </Text>
           </View>
         </View>
@@ -30231,7 +30231,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              save
+              safety
             </Text>
           </View>
         </View>
@@ -30317,7 +30317,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              scan
+              save
             </Text>
           </View>
         </View>
@@ -30425,7 +30425,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              schedule
+              scan
             </Text>
           </View>
         </View>
@@ -30511,7 +30511,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              scissor
+              schedule
             </Text>
           </View>
         </View>
@@ -30597,7 +30597,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              search
+              scissor
             </Text>
           </View>
         </View>
@@ -30705,7 +30705,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              security-scan
+              search
             </Text>
           </View>
         </View>
@@ -30791,7 +30791,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              select
+              security-scan
             </Text>
           </View>
         </View>
@@ -30877,7 +30877,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              send
+              select
             </Text>
           </View>
         </View>
@@ -30985,7 +30985,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              setting
+              send
             </Text>
           </View>
         </View>
@@ -31071,7 +31071,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              shake
+              setting
             </Text>
           </View>
         </View>
@@ -31157,7 +31157,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              share-alt
+              shake
             </Text>
           </View>
         </View>
@@ -31265,7 +31265,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              shop
+              share-alt
             </Text>
           </View>
         </View>
@@ -31351,7 +31351,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              shopping-cart
+              shop
             </Text>
           </View>
         </View>
@@ -31437,7 +31437,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              shopping
+              shopping-cart
             </Text>
           </View>
         </View>
@@ -31545,7 +31545,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              shrink
+              shopping
             </Text>
           </View>
         </View>
@@ -31631,7 +31631,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              sisternode
+              shrink
             </Text>
           </View>
         </View>
@@ -31717,7 +31717,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              sketch
+              sisternode
             </Text>
           </View>
         </View>
@@ -31825,7 +31825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              skin
+              sketch
             </Text>
           </View>
         </View>
@@ -31911,7 +31911,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              skype
+              skin
             </Text>
           </View>
         </View>
@@ -31997,7 +31997,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              slack-square
+              skype
             </Text>
           </View>
         </View>
@@ -32105,7 +32105,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              slack
+              slack-square
             </Text>
           </View>
         </View>
@@ -32191,7 +32191,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              sliders
+              slack
             </Text>
           </View>
         </View>
@@ -32277,7 +32277,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              small-dash
+              sliders
             </Text>
           </View>
         </View>
@@ -32385,7 +32385,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              smile
+              small-dash
             </Text>
           </View>
         </View>
@@ -32471,7 +32471,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              snippets
+              smile
             </Text>
           </View>
         </View>
@@ -32557,7 +32557,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              solution
+              snippets
             </Text>
           </View>
         </View>
@@ -32665,7 +32665,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              sort-ascending
+              solution
             </Text>
           </View>
         </View>
@@ -32751,7 +32751,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              sort-descending
+              sort-ascending
             </Text>
           </View>
         </View>
@@ -32837,7 +32837,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              sound
+              sort-descending
             </Text>
           </View>
         </View>
@@ -32945,7 +32945,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              split-cells
+              sound
             </Text>
           </View>
         </View>
@@ -33031,7 +33031,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              star
+              split-cells
             </Text>
           </View>
         </View>
@@ -33117,7 +33117,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              step-backward
+              star
             </Text>
           </View>
         </View>
@@ -33225,7 +33225,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              step-forward
+              step-backward
             </Text>
           </View>
         </View>
@@ -33311,7 +33311,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              stock
+              step-forward
             </Text>
           </View>
         </View>
@@ -33397,7 +33397,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              stop
+              stock
             </Text>
           </View>
         </View>
@@ -33505,7 +33505,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              strikethrough
+              stop
             </Text>
           </View>
         </View>
@@ -33591,7 +33591,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              subnode
+              strikethrough
             </Text>
           </View>
         </View>
@@ -33677,7 +33677,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              swap-left
+              subnode
             </Text>
           </View>
         </View>
@@ -33785,7 +33785,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              swap-right
+              swap-left
             </Text>
           </View>
         </View>
@@ -33871,7 +33871,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              swap
+              swap-right
             </Text>
           </View>
         </View>
@@ -33957,7 +33957,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              switcher
+              swap
             </Text>
           </View>
         </View>
@@ -34065,7 +34065,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              sync
+              switcher
             </Text>
           </View>
         </View>
@@ -34151,7 +34151,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              table
+              sync
             </Text>
           </View>
         </View>
@@ -34237,7 +34237,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              tablet
+              table
             </Text>
           </View>
         </View>
@@ -34345,7 +34345,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              tag
+              tablet
             </Text>
           </View>
         </View>
@@ -34431,7 +34431,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              tags
+              tag
             </Text>
           </View>
         </View>
@@ -34517,7 +34517,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              taobao-circle
+              tags
             </Text>
           </View>
         </View>
@@ -34625,7 +34625,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              taobao
+              taobao-circle
             </Text>
           </View>
         </View>
@@ -34711,7 +34711,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              team
+              taobao
             </Text>
           </View>
         </View>
@@ -34797,7 +34797,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              thunderbolt
+              team
             </Text>
           </View>
         </View>
@@ -34905,7 +34905,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              to-top
+              thunderbolt
             </Text>
           </View>
         </View>
@@ -34991,7 +34991,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              tool
+              to-top
             </Text>
           </View>
         </View>
@@ -35077,7 +35077,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              trademark-circle
+              tool
             </Text>
           </View>
         </View>
@@ -35185,7 +35185,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              trademark
+              trademark-circle
             </Text>
           </View>
         </View>
@@ -35271,7 +35271,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              transaction
+              trademark
             </Text>
           </View>
         </View>
@@ -35357,7 +35357,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              translation
+              transaction
             </Text>
           </View>
         </View>
@@ -35465,7 +35465,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              trophy
+              translation
             </Text>
           </View>
         </View>
@@ -35551,7 +35551,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              twitter
+              trophy
             </Text>
           </View>
         </View>
@@ -35637,7 +35637,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              underline
+              twitter
             </Text>
           </View>
         </View>
@@ -35745,7 +35745,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              undo
+              underline
             </Text>
           </View>
         </View>
@@ -35831,7 +35831,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              ungroup
+              undo
             </Text>
           </View>
         </View>
@@ -35917,7 +35917,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              unlock
+              ungroup
             </Text>
           </View>
         </View>
@@ -36025,7 +36025,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              unordered-list
+              unlock
             </Text>
           </View>
         </View>
@@ -36111,7 +36111,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              up-circle
+              unordered-list
             </Text>
           </View>
         </View>
@@ -36197,7 +36197,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              up-square
+              up-circle
             </Text>
           </View>
         </View>
@@ -36305,7 +36305,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              up
+              up-square
             </Text>
           </View>
         </View>
@@ -36391,7 +36391,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              upload
+              up
             </Text>
           </View>
         </View>
@@ -36477,7 +36477,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              usb
+              upload
             </Text>
           </View>
         </View>
@@ -36585,7 +36585,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              user-add
+              usb
             </Text>
           </View>
         </View>
@@ -36671,7 +36671,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              user-delete
+              user-add
             </Text>
           </View>
         </View>
@@ -36757,7 +36757,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              user-switch
+              user-delete
             </Text>
           </View>
         </View>
@@ -36865,7 +36865,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              user
+              user-switch
             </Text>
           </View>
         </View>
@@ -36951,7 +36951,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              usergroup-add
+              user
             </Text>
           </View>
         </View>
@@ -37037,7 +37037,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              usergroup-delete
+              usergroup-add
             </Text>
           </View>
         </View>
@@ -37145,7 +37145,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              verified
+              usergroup-delete
             </Text>
           </View>
         </View>
@@ -37231,7 +37231,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              vertical-align-bottom
+              verified
             </Text>
           </View>
         </View>
@@ -37317,7 +37317,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              vertical-align-middle
+              vertical-align-bottom
             </Text>
           </View>
         </View>
@@ -37425,7 +37425,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              vertical-align-top
+              vertical-align-middle
             </Text>
           </View>
         </View>
@@ -37511,7 +37511,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              vertical-left
+              vertical-align-top
             </Text>
           </View>
         </View>
@@ -37597,7 +37597,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              vertical-right
+              vertical-left
             </Text>
           </View>
         </View>
@@ -37705,7 +37705,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              video-camera-add
+              vertical-right
             </Text>
           </View>
         </View>
@@ -37791,7 +37791,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              video-camera
+              video-camera-add
             </Text>
           </View>
         </View>
@@ -37877,7 +37877,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              wallet
+              video-camera
             </Text>
           </View>
         </View>
@@ -37985,7 +37985,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              warning
+              wallet
             </Text>
           </View>
         </View>
@@ -38071,7 +38071,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              wechat
+              warning
             </Text>
           </View>
         </View>
@@ -38157,7 +38157,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              weibo-circle
+              wechat
             </Text>
           </View>
         </View>
@@ -38265,7 +38265,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              weibo-square
+              weibo-circle
             </Text>
           </View>
         </View>
@@ -38351,7 +38351,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              weibo
+              weibo-square
             </Text>
           </View>
         </View>
@@ -38437,7 +38437,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              whats-app
+              weibo
             </Text>
           </View>
         </View>
@@ -38545,7 +38545,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              wifi
+              whats-app
             </Text>
           </View>
         </View>
@@ -38631,7 +38631,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              windows
+              wifi
             </Text>
           </View>
         </View>
@@ -38717,7 +38717,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              woman
+              windows
             </Text>
           </View>
         </View>
@@ -38825,7 +38825,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              yahoo
+              woman
             </Text>
           </View>
         </View>
@@ -38911,7 +38911,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              youtube
+              yahoo
             </Text>
           </View>
         </View>
@@ -38997,7 +38997,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              yuque
+              youtube
             </Text>
           </View>
         </View>
@@ -39105,7 +39105,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              zhihu
+              yuque
             </Text>
           </View>
         </View>
@@ -39191,7 +39191,7 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
-              zoom-in
+              zhihu
             </Text>
           </View>
         </View>
@@ -39277,10 +39277,156 @@ exports[`renders ./components/icon/demo/basic.tsx correctly 1`] = `
                 }
               }
             >
+              zoom-in
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "flex-start",
+            },
+            Array [
+              Object {
+                "borderColor": "#dddddd",
+              },
+              Object {
+                "borderBottomWidth": 0,
+                "borderTopWidth": 0,
+              },
+            ],
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onPress={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0,
+                  "height": 250,
+                },
+                Object {
+                  "borderLeftWidth": 0,
+                },
+                Object {},
+              ],
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onPress={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "column",
+                  "flexWrap": "nowrap",
+                  "justifyContent": "center",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#cccccc",
+                    "fontFamily": "antoutline",
+                    "fontSize": 22,
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "marginTop": 9,
+                }
+              }
+            >
               zoom-out
             </Text>
           </View>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0,
+                  "height": 250,
+                },
+                Object {},
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Array [
+                Object {
+                  "borderColor": "#dddddd",
+                },
+                Object {
+                  "borderRightWidth": 0,
+                  "height": 250,
+                },
+                Object {},
+              ],
+            ]
+          }
+        />
       </View>
     </View>
   </View>

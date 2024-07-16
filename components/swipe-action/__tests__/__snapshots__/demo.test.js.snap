@@ -21,6 +21,8 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
       <View
         collapsable={false}
         forwardedRef={[Function]}
+        handlerTag={1}
+        handlerType="PanGestureHandler"
         onGestureHandlerEvent={[Function]}
         onGestureHandlerStateChange={[Function]}
         onLayout={[Function]}
@@ -57,6 +59,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
           >
             <View
               onLayout={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "transform": Array [
@@ -70,6 +73,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               <RNGestureHandlerButton
                 activeOpacity={0.105}
                 collapsable={false}
+                delayLongPress={600}
+                handlerTag={2}
+                handlerType="NativeViewGestureHandler"
                 onActiveStateChange={[Function]}
                 onGestureEvent={[Function]}
                 onGestureHandlerEvent={[Function]}
@@ -126,6 +132,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             </View>
             <View
               onLayout={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "transform": Array [
@@ -139,6 +146,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               <RNGestureHandlerButton
                 activeOpacity={0.105}
                 collapsable={false}
+                delayLongPress={600}
+                handlerTag={3}
+                handlerType="NativeViewGestureHandler"
                 onActiveStateChange={[Function]}
                 onGestureEvent={[Function]}
                 onGestureHandlerEvent={[Function]}
@@ -225,6 +235,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
           >
             <View
               onLayout={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "transform": Array [
@@ -238,6 +249,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               <RNGestureHandlerButton
                 activeOpacity={0.105}
                 collapsable={false}
+                delayLongPress={600}
+                handlerTag={4}
+                handlerType="NativeViewGestureHandler"
                 onActiveStateChange={[Function]}
                 onGestureEvent={[Function]}
                 onGestureHandlerEvent={[Function]}
@@ -294,6 +308,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             </View>
             <View
               onLayout={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "transform": Array [
@@ -307,6 +322,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               <RNGestureHandlerButton
                 activeOpacity={0.105}
                 collapsable={false}
+                delayLongPress={600}
+                handlerTag={5}
+                handlerType="NativeViewGestureHandler"
                 onActiveStateChange={[Function]}
                 onGestureEvent={[Function]}
                 onGestureHandlerEvent={[Function]}
@@ -369,6 +387,8 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
         <View
           collapsable={false}
           forwardedRef={[Function]}
+          handlerTag={6}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
           pointerEvents="auto"
@@ -504,6 +524,8 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
       <View
         collapsable={false}
         forwardedRef={[Function]}
+        handlerTag={7}
+        handlerType="PanGestureHandler"
         onGestureHandlerEvent={[Function]}
         onGestureHandlerStateChange={[Function]}
         onLayout={[Function]}
@@ -540,6 +562,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
           >
             <View
               onLayout={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "transform": Array [
@@ -553,6 +576,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               <RNGestureHandlerButton
                 activeOpacity={0.105}
                 collapsable={false}
+                delayLongPress={600}
+                handlerTag={8}
+                handlerType="NativeViewGestureHandler"
                 onActiveStateChange={[Function]}
                 onGestureEvent={[Function]}
                 onGestureHandlerEvent={[Function]}
@@ -609,6 +635,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             </View>
             <View
               onLayout={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "transform": Array [
@@ -622,6 +649,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               <RNGestureHandlerButton
                 activeOpacity={0.105}
                 collapsable={false}
+                delayLongPress={600}
+                handlerTag={9}
+                handlerType="NativeViewGestureHandler"
                 onActiveStateChange={[Function]}
                 onGestureEvent={[Function]}
                 onGestureHandlerEvent={[Function]}
@@ -708,6 +738,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
           >
             <View
               onLayout={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "transform": Array [
@@ -721,6 +752,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               <RNGestureHandlerButton
                 activeOpacity={0.105}
                 collapsable={false}
+                delayLongPress={600}
+                handlerTag={10}
+                handlerType="NativeViewGestureHandler"
                 onActiveStateChange={[Function]}
                 onGestureEvent={[Function]}
                 onGestureHandlerEvent={[Function]}
@@ -777,6 +811,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             </View>
             <View
               onLayout={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "transform": Array [
@@ -790,6 +825,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               <RNGestureHandlerButton
                 activeOpacity={0.105}
                 collapsable={false}
+                delayLongPress={600}
+                handlerTag={11}
+                handlerType="NativeViewGestureHandler"
                 onActiveStateChange={[Function]}
                 onGestureEvent={[Function]}
                 onGestureHandlerEvent={[Function]}
@@ -852,6 +890,8 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
         <View
           collapsable={false}
           forwardedRef={[Function]}
+          handlerTag={12}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
           pointerEvents="auto"

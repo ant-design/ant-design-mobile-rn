@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ActivityIndicator, Text } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ActivityIndicator, ScrollView, Text } from 'react-native'
 import { Button, List, Switch, Toast } from '../../'
 
 const ToastExample = () => {
