@@ -91,7 +91,6 @@ const Thumb: FC<ThumbProps> = (props) => {
             content={renderPopoverContent(value)}
             placement="top"
             visible={residentPopover || dragging}
-            getContainer={null}
             mode="dark">
             <View style={{ flex: 1 }}>{thumbElement}</View>
           </Tooltip>
