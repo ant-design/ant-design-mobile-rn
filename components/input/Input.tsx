@@ -162,7 +162,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
   const formatText = useCallback(
     (text: string) => {
       if (type === 'number') {
-        text = text.replace(/[^\d]+/, '')
+        text = text.replace(/[^0-9.]/g, '')
       }
       return text
     },
