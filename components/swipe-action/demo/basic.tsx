@@ -53,7 +53,7 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
             left={left}
             closeOnAction
             closeOnTouchOutside>
-            <List.Item extra="extra content" disabled>
+            <List.Item extra="extra content">
               Simple example: left and right buttons
             </List.Item>
           </SwipeAction>
@@ -66,7 +66,7 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
             closeOnTouchOutside
             onSwipeableOpen={() => console.log('open')}
             onSwipeableClose={() => console.log('close')}>
-            <List.Item extra="extra content" disabled>
+            <List.Item extra="extra content">
               Simple example: left and right buttons
             </List.Item>
           </SwipeAction>
