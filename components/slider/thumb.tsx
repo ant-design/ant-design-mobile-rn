@@ -4,10 +4,12 @@ import {
   LayoutChangeEvent,
   LayoutRectangle,
   StyleProp,
+  View,
   ViewStyle,
 } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
 import Animated, { runOnJS, useAnimatedStyle } from 'react-native-reanimated'
+import Tooltip from '../tooltip'
 import { SliderStyle } from './style'
 import { ThumbIcon } from './thumb-icon'
 
@@ -19,8 +21,8 @@ type ThumbProps = {
   trackLayout?: LayoutRectangle
   onDrag: (value: number, last?: boolean) => void
   icon?: ReactNode
-  // popover: boolean | ((value: number) => ReactNode)
-  // residentPopover: boolean
+  popover: boolean | ((value: number) => ReactNode)
+  residentPopover: boolean
   style?: StyleProp<ViewStyle>
   styles: Partial<SliderStyle>
 }
@@ -33,6 +35,7 @@ const Thumb: FC<ThumbProps> = (props) => {
     trackLayout,
     disabled,
     icon,
+    residentPopover,
     onDrag,
     style,
     styles,
@@ -53,16 +56,29 @@ const Thumb: FC<ThumbProps> = (props) => {
     setThumbLayout(e.nativeEvent.layout)
   }
 
+  const [dragging, setDragging] = useState(false)
+
   const gesture = Gesture.Pan()
     .enabled(!disabled)
-    .onBegin(() => {})
     .onUpdate((e) => {
+      !dragging && runOnJS(setDragging)(true)
       runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))
     })
     .onEnd((e) => {
       runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0), true)
     })
-    .onFinalize(() => {})
+    .onFinalize(() => {
+      runOnJS(setDragging)(false)
+    })
+
+  const renderPopoverContent =
+    typeof props.popover === 'function'
+      ? props.popover
+      : props.popover
+      ? (val: number) => val.toString()
+      : null
+
+  const thumbElement = icon ? icon : <ThumbIcon />
 
   return (
     <GestureDetector gesture={gesture}>
@@ -70,7 +86,18 @@ const Thumb: FC<ThumbProps> = (props) => {
         onStartShouldSetResponder={() => true}
         style={[styles.thumb, animatedStyles, style]}
         onLayout={handleLayout}>
-        {icon ? icon : <ThumbIcon />}
+        {renderPopoverContent ? (
+          <Tooltip
+            content={renderPopoverContent(value)}
+            placement="top"
+            visible={residentPopover || dragging}
+            getContainer={null}
+            mode="dark">
+            <View style={{ flex: 1 }}>{thumbElement}</View>
+          </Tooltip>
+        ) : (
+          thumbElement
+        )}
       </Animated.View>
     </GestureDetector>
   )

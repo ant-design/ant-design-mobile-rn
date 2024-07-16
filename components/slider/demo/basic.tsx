@@ -56,6 +56,11 @@ export default function StepperExample() {
           <Slider marks={marks} ticks range defaultValue={[60, 40]} />
         </List.Item>
       </List>
+      <List renderHeader={'在拖动时显示悬浮提示'}>
+        <List.Item>
+          <Slider popover />
+        </List.Item>
+      </List>
     </ScrollView>
   )
 }
