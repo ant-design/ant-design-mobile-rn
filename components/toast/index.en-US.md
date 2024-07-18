@@ -10,16 +10,20 @@ A lightweight feedback or tips, used to display content that does not interrupt 
 ### Rules
 - Toast with Icon, 4-6 words is recommended; Toast without Icon, the number of words should not exceed 14.
 
-## API
+## Imperative API
 
-- `Toast.show(props)`
+`Toast` only supports Imperative calls. The argument type is `string | ToastProps`.
+
+- `Toast.show(props)` - New in `5.2.0`
 - `Toast.success(props)`
 - `Toast.fail(props)`
 - `Toast.info(props)`
 - `Toast.loading(props)`
 - `Toast.offline(props)`
 
-Props has these fields:
+`Toast.show(string)`'s default config is `{duration:1.5, mask: false}`. Another method is to specify a shortcut to the `icon`.
+
+ToastProps has these fields:
 
 | Properties | Descrition | Type |  Required  | Default | Version |
 | ---------- | ---------- | -----| -----------| --------|---------|

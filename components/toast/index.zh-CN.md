@@ -11,16 +11,20 @@ version: 5.2.0-rc.1
 ### 规则
 - 有 Icon 的 Toast，字数为 4-6 个；没有 Icon 的 Toast，字数不宜超过 14 个。
 
-## API
+## 指令式API
 
-- `Toast.show(props)`
+`Toast`只支持指令氏调用，入参类型为`string | ToastProps`。
+
+- `Toast.show(props)` - `5.2.0`新增
 - `Toast.success(props)`
 - `Toast.fail(props)`
 - `Toast.info(props)`
 - `Toast.loading(props)`
 - `Toast.offline(props)`
 
-Props 参数如下：
+`Toast.show(string)`的默认配置是`{duration:1.5, mask: false}`，其他方法是指定icon的快捷调用方式。
+
+ToastProps 参数如下：
 
 |    属性    | 说明                           | 类型      | 必填 | 默认值 | 版本 |
 | --------  | ------------------------------ | -------- | --- | ------ | ------|
