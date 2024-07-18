@@ -10,7 +10,7 @@ A lightweight feedback or tips, used to display content that does not interrupt 
 ### Rules
 - Toast with Icon, 4-6 words is recommended; Toast without Icon, the number of words should not exceed 14.
 
-## Imperative API
+## API
 
 `Toast` only supports Imperative calls. The argument type is `string | ToastProps`.
 

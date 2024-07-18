@@ -11,9 +11,9 @@ version: 5.2.0-rc.1
 ### 规则
 - 有 Icon 的 Toast，字数为 4-6 个；没有 Icon 的 Toast，字数不宜超过 14 个。
 
-## 指令式API
+## API
 
-`Toast`只支持指令氏调用，入参类型为`string | ToastProps`。
+`Toast`只支持指令式调用，入参类型为`string | ToastProps`。
 
 - `Toast.show(props)` - `5.2.0`新增
 - `Toast.success(props)`
