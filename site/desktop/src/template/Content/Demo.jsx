@@ -121,7 +121,11 @@ export default class Demo extends React.Component {
         `@ant-design/react-native/lib/locale-provider/zh_CN@${antdVersion}`
     }
 
-    if (componentName === 'icon' || componentName === 'toast') {
+    if (
+      componentName === 'icon' ||
+      componentName === 'toast' ||
+      componentName === 'tooltip'
+    ) {
       dependencies +=
         ',@ant-design/icons-react-native/lib/outline,' +
         '@ant-design/icons-react-native/fonts/antfill.ttf,' +
