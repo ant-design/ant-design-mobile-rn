@@ -1,4 +1,5 @@
 import { StyleSheet, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface PickerViewStyle {
   wrappper: ViewStyle
@@ -9,22 +10,23 @@ export interface PickerViewStyle {
   maskBottom: ViewStyle
 }
 
-export default () =>
+export default (theme: Theme) =>
   StyleSheet.create<PickerViewStyle>({
     wrappper: {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       overflow: 'hidden',
-      backgroundColor: '#fff',
+      backgroundColor: theme.fill_base,
     },
     wheelWrapper: {
+      zIndex: 1,
       display: 'flex',
       flexDirection: 'row',
     },
     mask: {
       position: 'absolute',
-      zIndex: 10000,
+      zIndex: 2,
       left: 0,
       top: 0,
       width: '100%',
@@ -39,7 +41,7 @@ export default () =>
     },
 
     maskMiddle: {
-      borderColor: '#eee',
+      borderColor: theme.border_color_thin,
       borderTopWidth: 1,
       borderBottomWidth: 1,
     },

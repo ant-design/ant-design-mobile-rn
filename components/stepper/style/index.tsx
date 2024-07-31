@@ -44,13 +44,13 @@ export default (theme: Theme) =>
     stepText: {
       textAlign: 'center',
       fontSize: 20,
-      color: theme.color_primary,
+      color: theme.brand_primary,
       backgroundColor: 'transparent',
     },
     stepDisabled: {
       opacity: 0.4,
     },
     disabledStepTextColor: {
-      color: '#999999',
+      color: theme.color_text_disabled,
     },
   })

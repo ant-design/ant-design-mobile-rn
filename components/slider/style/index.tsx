@@ -43,14 +43,14 @@ export default (theme: Theme) =>
       zIndex: 1,
       height: 3,
       borderRadius: 3,
-      backgroundColor: '#f5f5f5',
+      backgroundColor: theme.fill_body,
     },
     fill: {
       position: 'absolute',
       zIndex: 1,
       height: 3,
       borderRadius: 3,
-      backgroundColor: theme.color_primary,
+      backgroundColor: theme.brand_primary,
     },
 
     thumb: {
@@ -59,8 +59,8 @@ export default (theme: Theme) =>
       height: 32,
       borderRadius: 32,
       marginLeft: -16,
-      backgroundColor: '#ffffff',
-      shadowColor: '#000',
+      backgroundColor: theme.fill_base,
+      shadowColor: theme.color_text_base,
       shadowOffset: {
         width: 0,
         height: 1,
@@ -82,11 +82,11 @@ export default (theme: Theme) =>
       width: 7,
       height: 7,
       marginLeft: -3,
-      backgroundColor: '#f5f5f5',
+      backgroundColor: theme.fill_body,
       borderRadius: 7,
     },
     tickActive: {
-      backgroundColor: theme.color_primary,
+      backgroundColor: theme.brand_primary,
     },
 
     mark: {
@@ -96,8 +96,8 @@ export default (theme: Theme) =>
     },
     markText: {
       marginLeft: '-50%',
-      fontSize: 11,
-      color: '#333333',
+      fontSize: theme.font_size_caption_sm,
+      color: theme.color_text_paragraph,
     },
     markTextActive: {},
   })

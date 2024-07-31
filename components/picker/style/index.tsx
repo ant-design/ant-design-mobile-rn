@@ -1,4 +1,5 @@
 import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
 
 export interface PickerStyle {
   modal: ViewStyle
@@ -11,7 +12,7 @@ export interface PickerStyle {
   dismissText: TextStyle
 }
 
-export default () =>
+export default (theme: Theme) =>
   StyleSheet.create<PickerStyle>({
     modal: {
       flex: 1,
@@ -20,29 +21,29 @@ export default () =>
     },
     container: {},
     header: {
-      height: 44,
+      height: theme.option_height,
       alignItems: 'center',
       flexDirection: 'row',
       justifyContent: 'center',
-      borderBottomWidth: 1,
-      borderBottomColor: '#e7e7e7',
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderBottomColor: theme.border_color_thin,
     },
     headerItem: {
-      height: 44,
+      height: theme.option_height,
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
     },
     actionText: {
-      color: '#0ae',
-      fontSize: 18,
+      color: theme.brand_primary,
+      fontSize: theme.font_size_heading,
       textAlign: 'center',
     },
     okText: {},
     dismissText: {},
     title: {
-      color: '#666',
-      fontSize: 18,
+      color: theme.color_text_caption,
+      fontSize: theme.font_size_heading,
       textAlign: 'center',
     },
   })

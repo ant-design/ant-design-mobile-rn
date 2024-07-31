@@ -66,8 +66,8 @@ export default (theme: Theme) =>
     },
     // checked
     switch_checked: {
-      borderColor: theme.switch_fill,
-      backgroundColor: theme.switch_fill,
+      borderColor: theme.brand_primary,
+      backgroundColor: theme.brand_primary,
     },
     switch_unchecked: {
       borderColor: theme.switch_unchecked,
@@ -81,8 +81,8 @@ export default (theme: Theme) =>
     },
     // disabled
     switch_checked_disabled: {
-      borderColor: theme.switch_checked_disabled,
-      backgroundColor: theme.switch_checked_disabled,
+      borderColor: `${theme.brand_primary}66`,
+      backgroundColor: `${theme.brand_primary}66`, // brand_primary的40%透明度
     },
     switch_unchecked_disabled: {
       borderColor: theme.switch_unchecked_disabled,

@@ -46,9 +46,9 @@ export default (theme: Theme) =>
       marginLeft: theme.prefix_padding,
     },
     warning: {
-      color: theme.color_warning,
+      color: theme.brand_warning,
     },
     error: {
-      color: theme.color_error,
+      color: theme.brand_error,
     },
   })
