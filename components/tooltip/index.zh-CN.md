@@ -3,7 +3,7 @@ category: Components
 type: Navigation
 title: Tooltip
 subtitle: 气泡
-version: 5.2.0-rc.2
+version: 5.2.0
 ---
 
 在点击控件或者某个区域后，浮出一个气泡菜单来做更多的操作。

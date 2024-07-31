@@ -3,7 +3,7 @@ category: Components
 type: Feedback
 title: Toast
 subtitle: 轻提示
-version: 5.2.0-rc.1
+version: update
 ---
 
 一种轻量级反馈/提示，可以用来显示不会打断用户操作的内容，适合用于页面转场、数据交互的等场景中。
@@ -13,14 +13,18 @@ version: 5.2.0-rc.1
 
 ## API
 
-- `Toast.show(props)`
+`Toast`只支持指令式调用，入参类型为`string | ToastProps`。
+
+- `Toast.show(props)` - `5.2.0`新增
 - `Toast.success(props)`
 - `Toast.fail(props)`
 - `Toast.info(props)`
 - `Toast.loading(props)`
 - `Toast.offline(props)`
 
-Props 参数如下：
+`Toast.show(string)`的默认配置是`{duration:1.5, mask: false}`，其他方法是指定icon的快捷调用方式。
+
+ToastProps 参数如下：
 
 |    属性    | 说明                           | 类型      | 必填 | 默认值 | 版本 |
 | --------  | ------------------------------ | -------- | --- | ------ | ------|

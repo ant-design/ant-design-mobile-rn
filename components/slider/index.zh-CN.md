@@ -3,7 +3,7 @@ category: Components
 type: Data Entry
 title: Slider
 subtitle: 滑动输入条
-version: 5.2.0-rc.2
+version: update
 ---
 
 允许用户在一个区间中选择特定值，eg：控制屏幕的显示亮度。
@@ -28,7 +28,34 @@ version: 5.2.0-rc.2
 | residentPopover | `popover` 是否常驻显示，`popover` 存在时生效 | `boolean ` | `false` | `5.2.0` |
 | range | 是否为双滑块 | `boolean` | `false` | `5.2.0` |
 | step | 步距，取值必须大于 `0`，并且 `(max - min)` 可被 `step` 整除。当 `marks` 不为空对象时，`step` 的配置失效 | `number` | `1` | `5.2.0` |
+| style  | 最外层容器样式 | `StyleProp<ViewStyle>` | - | |
+| styles | 语义化结构 style | [SliderStyle](#sliderstyle-语义化样式) | - | `5.2.0` |
 | ticks | 是否显示刻度 | `boolean` | `false` | `5.2.0` |
 | value | 当前值 | `number` \|<br/> `[number, number]` | - | |
 
 > 当 `range={true}` 时返回的 `value` 格式为 `[number, number]` ，否则为 `number` 。
+
+### SliderStyle 语义化样式
+
+```typescript
+interface SliderStyle {
+  slider: ViewStyle // 同 style
+  disabled: ViewStyle
+  trackContianer: ViewStyle // 轨道容器
+  track: ViewStyle // 轨道线
+  fill: ViewStyle // 轨道填充部分
+
+  // 滑轨按钮
+  thumb: ViewStyle
+
+  // 刻度
+  ticks: ViewStyle
+  tick: ViewStyle
+  tickActive: ViewStyle
+
+  // 刻度下的标记
+  mark: ViewStyle
+  markText: TextStyle
+  markTextActive: TextStyle
+}
+```

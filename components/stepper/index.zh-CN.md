@@ -3,7 +3,7 @@ category: Components
 type: Data Entry
 title: Stepper
 subtitle: 步进器
-version: 5.2.0-rc.1
+version: update
 ---
 
 用作增加或者减少当前数值。
