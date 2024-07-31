@@ -1,6 +1,6 @@
 import getMiniDecimal, { toFixed } from '@rc-component/mini-decimal'
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useContext, useMemo, useRef, useState } from 'react'
 import {
   GestureResponderEvent,
   LayoutChangeEvent,
@@ -8,8 +8,9 @@ import {
   View,
 } from 'react-native'
 import devWarning from '../_util/devWarning'
+import HapticsContext from '../provider/HapticsContext'
 import { useTheme } from '../style'
-import { SliderProps, SliderValue } from './PropsType'
+import { BaseSliderProps, SliderProps } from './PropsType'
 import Marks from './marks'
 import SliderStyles from './style'
 import Thumb from './thumb'
@@ -21,29 +22,37 @@ function nearest(arr: number[], target: number) {
   })
 }
 
-export const Slider: React.FC<SliderProps> = (props) => {
+export function Slider<SliderValue extends number | [number, number]>(
+  props: SliderProps,
+) {
   const {
-    min = 0,
-    max = 100,
+    defaultValue,
     disabled = false,
-    marks,
-    ticks,
-    step = 1,
     icon,
+    marks,
+    max = 100,
+    min = 0,
+    onAfterChange,
+    onChange,
+    popover,
+    residentPopover,
+    range,
+    step = 1,
     style,
     styles,
-  } = props
+    ticks,
+  } = props as BaseSliderProps<SliderValue> & { range: boolean }
 
   const ss = useTheme({
     styles,
     themeStyles: SliderStyles,
   })
 
-  function sortValue(val: [number, number]): [number, number] {
+  function sortValue(val: [number, number]) {
     return val.sort((a, b) => a - b)
   }
-  function convertValue(value: SliderValue): [number, number] {
-    return (props.range ? value : [min, value]) as any
+  function convertValue(value: SliderValue) {
+    return (range ? value : [min, value]) as [number, number]
   }
   function alignValue(value: number, decimalLen: number) {
     const decimal = getMiniDecimal(value)
@@ -52,37 +61,39 @@ export const Slider: React.FC<SliderProps> = (props) => {
     return getMiniDecimal(fixedStr).toNumber()
   }
 
-  function reverseValue(value: [number, number]): SliderValue {
+  function reverseValue(value: [number, number]) {
     const mergedDecimalLen = Math.max(
       getDecimalLen(step),
       getDecimalLen(value[0]),
       getDecimalLen(value[1]),
     )
-    return props.range
-      ? (value.map((v) => alignValue(v, mergedDecimalLen)) as [number, number])
-      : alignValue(value[1], mergedDecimalLen)
+    return (
+      range
+        ? value.map((v) => alignValue(v, mergedDecimalLen))
+        : alignValue(value[1], mergedDecimalLen)
+    ) as SliderValue
   }
 
   function getDecimalLen(n: number) {
     return (`${n}`.split('.')[1] || '').length
   }
 
-  function onAfterChange(value: [number, number]) {
-    props.onAfterChange?.(reverseValue(value))
+  function onAfterChangeRange(value: [number, number]) {
+    onAfterChange?.(reverseValue(value))
   }
 
-  let propsValue: SliderValue | undefined = props.value
-  if (props.range && typeof props.value === 'number') {
+  let propsValue = props.value as SliderValue
+  if (range && typeof props.value === 'number') {
     devWarning(
       false,
       'Slider',
       'When `range` prop is enabled, the `value` prop should be an array, like: [0, 0]',
     )
-    propsValue = [0, props.value]
+    propsValue = [0, props.value] as SliderValue
   }
   const [rawValue, setRawValue] = useMergedState<SliderValue>(
-    props.defaultValue ?? (props.range ? [min, min] : min),
-    { value: propsValue, onChange: props.onChange },
+    (defaultValue ?? (range ? [min, min] : min)) as SliderValue,
+    { value: propsValue, onChange },
   )
 
   const sliderValue = sortValue(convertValue(rawValue))
@@ -142,6 +153,7 @@ export const Slider: React.FC<SliderProps> = (props) => {
     setTrackLayout(e.nativeEvent.layout)
   }
 
+  const onHaptics = useContext(HapticsContext)
   const onTrackClick = (event: GestureResponderEvent) => {
     event.stopPropagation()
     if (disabled) {
@@ -158,7 +170,7 @@ export const Slider: React.FC<SliderProps> = (props) => {
       min
     const targetValue = getValueByPosition(position)
     let nextSliderValue: [number, number]
-    if (props.range) {
+    if (range) {
       // 移动的滑块采用就近原则
       if (
         Math.abs(targetValue - sliderValue[0]) >
@@ -172,7 +184,10 @@ export const Slider: React.FC<SliderProps> = (props) => {
       nextSliderValue = [min, targetValue]
     }
     setSliderValue(nextSliderValue)
-    onAfterChange(nextSliderValue)
+    onAfterChangeRange(nextSliderValue)
+    if (!ticks) {
+      onHaptics('slider')
+    }
   }
 
   const valueBeforeDragRef = useRef<[number, number]>()
@@ -187,8 +202,8 @@ export const Slider: React.FC<SliderProps> = (props) => {
         max={max}
         disabled={disabled}
         icon={icon}
-        popover={!!props.popover}
-        residentPopover={!!props.residentPopover}
+        popover={!!popover}
+        residentPopover={!!residentPopover}
         onDrag={(locationX, last) => {
           if (!trackLayout) {
             return
@@ -207,7 +222,7 @@ export const Slider: React.FC<SliderProps> = (props) => {
           setSliderValue(next)
           if (last) {
             valueBeforeDragRef.current = undefined
-            onAfterChange(next)
+            onAfterChangeRange(next)
           }
         }}
         style={index === 0 ? { position: 'absolute' } : {}}
@@ -234,7 +249,7 @@ export const Slider: React.FC<SliderProps> = (props) => {
           ]}
         />
         {/* 刻度 */}
-        {props.ticks && (
+        {ticks && (
           <Ticks
             points={pointList}
             min={min}
@@ -244,7 +259,7 @@ export const Slider: React.FC<SliderProps> = (props) => {
             styles={ss}
           />
         )}
-        {props.range && renderThumb(0)}
+        {range && renderThumb(0)}
         {renderThumb(1)}
       </View>
       {/* 刻度下的标记 */}

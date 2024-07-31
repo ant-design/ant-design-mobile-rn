@@ -1,6 +1,7 @@
 import type { FC } from 'react'
-import React from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { View } from 'react-native'
+import HapticsContext from '../provider/HapticsContext'
 import { SliderStyle } from './style'
 
 type TicksProps = {
@@ -20,6 +21,16 @@ const Ticks: FC<TicksProps> = ({
   lowerBound,
   styles,
 }) => {
+  const onHaptics = useContext(HapticsContext)
+  const didmountRef = useRef(false)
+  useEffect(() => {
+    if (didmountRef.current) {
+      onHaptics('slider')
+    } else {
+      didmountRef.current = true
+    }
+  }, [upperBound, lowerBound, onHaptics])
+
   const range = max - min
   const elements = points.map((point) => {
     const offset = `${(Math.abs(point - min) / range) * 100}%`
