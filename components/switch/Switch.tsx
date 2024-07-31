@@ -13,7 +13,8 @@ import devWarning from '../_util/devWarning'
 import { useAnimatedTiming } from '../_util/hooks/useAnimations'
 import { isPromise } from '../_util/isPromise'
 import RNActivityIndicator from '../activity-indicator'
-import DisabledContext from '../config-provider/DisabledContext'
+import DisabledContext from '../provider/DisabledContext'
+import HapticsContext from '../provider/HapticsContext'
 import { WithTheme, WithThemeStyles } from '../style'
 import AntmView from '../view/index'
 import { SwitchPropsType } from './PropsType'
@@ -119,6 +120,8 @@ const AntmSwitch = (props: SwitchProps) => {
     }
   }, [animate, animate2, innerChecked, itemHeight])
 
+  const onHaptics = React.useContext(HapticsContext)
+
   async function triggerChange(newChecked: boolean) {
     if (!mergedDisabled) {
       setInnerChecked(newChecked)
@@ -133,6 +136,7 @@ const AntmSwitch = (props: SwitchProps) => {
           throw e
         }
       }
+      onHaptics('switch')
       return newChecked
     }
 
@@ -190,7 +194,7 @@ const AntmSwitch = (props: SwitchProps) => {
 
         // color props
         const Color = innerChecked
-          ? color || trackColor?.true || theme.switch_fill
+          ? color || trackColor?.true || theme.brand_primary
           : trackColor?.false || theme.switch_unchecked
 
         const SwitchTrackColor = {

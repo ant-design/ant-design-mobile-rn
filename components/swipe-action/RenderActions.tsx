@@ -1,12 +1,7 @@
-import React, { memo, useCallback, useState } from 'react'
-import {
-  Animated,
-  I18nManager,
-  LayoutChangeEvent,
-  Text,
-  View,
-} from 'react-native'
+import React, { memo, useCallback, useContext, useState } from 'react'
+import { Animated, LayoutChangeEvent, Text, View } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
+import AccessibilityContext from '../provider/AccessibilityContext'
 import { useTheme } from '../style'
 import { SwipeoutButtonProps } from './PropsType'
 import SwipeActionStyles, { SwipeActionStyle } from './style'
@@ -34,6 +29,8 @@ export const RenderActions: React.FC<RenderActionsProps> = memo((props) => {
     setButtonWidth(e.nativeEvent.layout.width)
   }
 
+  const isRTL = useContext(AccessibilityContext)
+
   if (!Array.isArray(buttons) || buttons.length === 0) {
     return null
   }
@@ -41,7 +38,7 @@ export const RenderActions: React.FC<RenderActionsProps> = memo((props) => {
     <View
       onLayout={onLayout}
       style={{
-        flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+        flexDirection: isRTL ? 'row-reverse' : 'row',
       }}>
       {buttons.map((button, i) => {
         return (

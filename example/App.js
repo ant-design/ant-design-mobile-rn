@@ -1,8 +1,11 @@
 import { useFonts } from 'expo-font'
+import * as Haptics from 'expo-haptics'
 import * as SplashScreen from 'expo-splash-screen'
 import React, { useCallback } from 'react'
+import { Platform } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import 'react-native-reanimated'
+import { HapticsContextProvider } from '../components/provider/HapticsContext'
 import App from '../rn-kitchen-sink/App'
 
 SplashScreen.preventAutoHideAsync()
@@ -25,7 +28,10 @@ export default function () {
 
   return (
     <GestureHandlerRootView onLayout={onLayoutRootView} style={{ flex: 1 }}>
-      <App />
+      <HapticsContextProvider
+        onHaptics={() => Platform.OS !== 'web' && Haptics.impactAsync('light')}>
+        <App />
+      </HapticsContextProvider>
     </GestureHandlerRootView>
   )
 }

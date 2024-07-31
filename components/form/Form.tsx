@@ -4,12 +4,12 @@ import * as React from 'react'
 import { useMemo } from 'react'
 import { StyleProp, TextStyle, ViewStyle } from 'react-native'
 import { FormLayout } from '.'
-import DisabledContext, {
-  DisabledContextProvider,
-} from '../config-provider/DisabledContext'
 import AntmList from '../list'
 import { ListProps } from '../list/List'
 import useLocale from '../locale-provider/useLocale'
+import DisabledContext, {
+  DisabledContextProvider,
+} from '../provider/DisabledContext'
 import type { FeedbackIcons } from './FormItem'
 import type { FormContextProps } from './context'
 import { FormContext, FormProvider } from './context'

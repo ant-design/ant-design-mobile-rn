@@ -10,7 +10,7 @@ import React, {
 import { Animated, Easing, Pressable, View } from 'react-native'
 import devWarning from '../_util/devWarning'
 import { useAnimatedTiming } from '../_util/hooks/useAnimations'
-import DisabledContext from '../config-provider/DisabledContext'
+import DisabledContext from '../provider/DisabledContext'
 import { WithTheme } from '../style'
 import AntmView from '../view'
 import { CheckboxForwardedRef, CheckboxProps } from './PropsType'
