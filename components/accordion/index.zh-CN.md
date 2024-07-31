@@ -2,8 +2,10 @@
 category: Components
 type: Data Display
 title: Accordion
-subtitle: 手风琴
+subtitle: 手风琴(归档)
 ---
+
+> `5.2.0`已停止更新，推荐使用 [components/Collapse](/components/collapse-cn)
 
 可以折叠/展开的内容区域。
 
