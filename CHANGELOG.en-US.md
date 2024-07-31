@@ -14,6 +14,35 @@ toc: false
 
 ---
 
+### 5.2.0
+`2024-08-01`
+- 🔥 New Components
+  - 🔥 **Form** component. [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)
+  - 🔥 **Input** component, used to replace **InputItem** & **TextareaItem** component. [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)
+  - 🔥 **Collapse** component, used to replace **Accordion** component.[~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/1c855106c8362345781cf29451beb28a542df3a2)
+  - 🔥 **Tooltip** component, used to replace **Popover** component, base on `@floating-ui/react-native`. [#1356](https://github.com/ant-design/ant-design-mobile-rn/pull/1356)
+- 🔥 **Toast**
+  - 🆕 Add `icon` prop to support custom icons 
+  - 🆕 Add `position` prop for vertical display position [#1353](https://github.com/ant-design/ant-design-mobile-rn/pull/1353)
+- **Provider**
+  - 🆕 Add `onHaptics` for vibration feedback
+  - 🛠 Simplified `theme`
+- **NoticeBar**
+  - 🆕 Complete `marqueeProps` prop, design reference https://github.com/justin-chu/react-fast-marquee
+- **Slider**
+  - 💄 Refactor style, changed to brand color(`#108ee9`). 
+  - 🆕 Add new features such as `range` `step` `ticks`.
+  - 🆕 Add dependence `react-native-reanimated`.
+  - 🗑 Remove dependence `@react-native-community/slider`.
+- **Stepper**
+  - 💄 Refactor style, base on InputStyle.
+  - 🆕 Add `stringMode`, set value as string to support high precision decimals.
+- **SwipeAction**
+  - 🆕 Add `closeOnTouchOutside` prop, base on `useClickAway` hook implementation. [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)
+  - 🆕 Complete more properties base on `react-native-gesture-handler/Swipeable`.
+- 🗑 Deprecate **SegmentedControl** component.
+  - 🗑 Remove dependence `@react-native-community/segmented-control`.
+
 ### 5.1.1
 `2024-03-15`
 - **PickerView** & **DatePickerView** & **Carousel** 

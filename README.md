@@ -62,13 +62,13 @@ yarn add @ant-design/react-native
 ### Installing peer dependencies
 
 ```bash
-npm install @react-native-community/segmented-control @react-native-community/slider @ant-design/icons-react-native react-native-gesture-handler
+npm install  @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
 ```
 
 or
 
 ```bash
-yarn add @react-native-community/segmented-control @react-native-community/slider @ant-design/icons-react-native react-native-gesture-handler
+yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
 ```
 
 > You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
