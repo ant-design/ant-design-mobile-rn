@@ -323,6 +323,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
       )
     }
   }, [feedbackIcon, hasFeedback, statusClassName, styles.suffix, suffix])
+
   return (
     <View style={[styles.container, style]}>
       {prefixDom}

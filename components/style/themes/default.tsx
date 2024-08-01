@@ -116,6 +116,7 @@ export default {
   // list
   list_item_height_sm: 35,
   list_item_height: 44,
+  list_extra_max_width: '70%',
 
   // tabs
   // tabs_fill: brandPrimary,

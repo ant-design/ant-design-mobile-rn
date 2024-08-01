@@ -62,17 +62,18 @@ interface ListStyle {
 
 ```typescript
 interface ListItemStyle {
-  underlayColor: ViewStyle
-  Item: ViewStyle
-  Line: ViewStyle
+  underlayColor: ViewStyle // ListItem其实是一个TouchableHighlight
+  Item: ViewStyle // ListItem wrap
+  Line: ViewStyle // borderBottom
+
   Thumb: ImageStyle
   Content: TextStyle
   Extra: TextStyle
-  Arrow: TextStyle
-  ArrowV: TextStyle
+  
+  Arrow: TextStyle  // horizontal arrow
+  ArrowV: TextStyle // up/down arrow
   multipleLine: ViewStyle
   multipleThumb: ImageStyle
-  column: ViewStyle
 }
 ```
 ### BriefStyle 语义化样式
