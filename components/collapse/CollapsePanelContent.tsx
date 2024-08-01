@@ -60,9 +60,12 @@ export const CollapsePanelContent: FC<{
       overshootClamping: true,
     }),
   )
-  const bodyStyle = useAnimatedStyle(() => ({
-    height: derivedHeight.value,
-  }))
+  const bodyStyle = useAnimatedStyle(
+    () => ({
+      height: derivedHeight.value,
+    }),
+    [],
+  )
 
   return (
     <Animated.View style={[styles.animatedView, bodyStyle, style]}>
