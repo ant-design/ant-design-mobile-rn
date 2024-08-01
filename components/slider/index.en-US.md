@@ -2,7 +2,7 @@
 category: Components
 type: Data Entry
 title: Slider
-version: 5.2.0-rc.2
+version: update
 ---
 
 A Slider component for selecting particular value in range, eg: controls the display brightness of the screen.
@@ -27,7 +27,34 @@ A Slider component for selecting particular value in range, eg: controls the dis
 | residentPopover | Whether the `popover` is permanently displayed , this attribute takes effect when `popover` exists | `boolean ` | `false` | `5.2.0` |
 | range | Whether it is a double sliders | `boolean` | `false` | `5.2.0` |
 | step | Step distance, the value must be greater than `0`, and `(max-min)` can be divisible by `step`. When `marks` is not null, the configuration of `step` is invalid | `number` | `1` | `5.2.0` |
+| style  | Container style | `StyleProp<ViewStyle>` | - | |
+| styles | Semantic DOM style | [SliderStyle](#sliderstyle-interface) | - | `5.2.0` |
 | ticks | Whether to display the scale | `boolean` | `false` | `5.2.0` |
 | value | Current value | `number` \|<br/> `[number, number]` | - | |
 
 > The returned `value` format is `[number, number]` when `range={true}`, otherwise it is `number`.
+
+### SliderStyle interface
+
+```typescript
+interface SliderStyle {
+  slider: ViewStyle // Same as `style`
+  disabled: ViewStyle
+  trackContianer: ViewStyle // track container
+  track: ViewStyle // track line
+  fill: ViewStyle // Filled portion of the track line
+
+  // Track button
+  thumb: ViewStyle
+
+  // Tick
+  ticks: ViewStyle
+  tick: ViewStyle
+  tickActive: ViewStyle
+
+  // Mark within the tick
+  mark: ViewStyle
+  markText: TextStyle
+  markTextActive: TextStyle
+}
+```

@@ -2,7 +2,7 @@
 category: Components
 type: Feedback
 title: Toast
-version: 5.2.0-rc.1
+version: update
 ---
 
 A lightweight feedback or tips, used to display content that does not interrupt user operations. Suitable for page transitions, data interaction and other scenes.
@@ -12,14 +12,18 @@ A lightweight feedback or tips, used to display content that does not interrupt 
 
 ## API
 
-- `Toast.show(props)`
+`Toast` only supports Imperative calls. The argument type is `string | ToastProps`.
+
+- `Toast.show(props)` - New in `5.2.0`
 - `Toast.success(props)`
 - `Toast.fail(props)`
 - `Toast.info(props)`
 - `Toast.loading(props)`
 - `Toast.offline(props)`
 
-Props has these fields:
+`Toast.show(string)`'s default config is `{duration:1.5, mask: false}`. Another method is to specify a shortcut to the `icon`.
+
+ToastProps has these fields:
 
 | Properties | Descrition | Type |  Required  | Default | Version |
 | ---------- | ---------- | -----| -----------| --------|---------|

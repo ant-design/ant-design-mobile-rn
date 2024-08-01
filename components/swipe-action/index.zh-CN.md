@@ -3,7 +3,7 @@ category: Components
 type: Gesture
 title: SwipeAction
 subtitle: 滑动操作
-version: 5.2.0-rc.2
+version: update
 ---
 
 滑动操作组件。

@@ -36,11 +36,11 @@ export type BaseStepperProps<ValueType> = Omit<
     themeStyles?: (theme: Theme) => Partial<StepperStyle>
   }
 
-export type NumberStepperProps = BaseStepperProps<number> & {
+type NumberStepperProps = BaseStepperProps<number> & {
   // stringMode
   stringMode?: false
 }
-export type StringStepperProps = BaseStepperProps<string> & {
+type StringStepperProps = BaseStepperProps<string> & {
   // stringMode
   stringMode: true
 }

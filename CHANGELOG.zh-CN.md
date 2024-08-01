@@ -14,6 +14,35 @@ toc: false
 
 ---
 
+### 5.2.0
+`2024-08-01`
+- 🔥 新增组件
+  - 🔥 **Form**  高性能表单控件。 [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)
+  - 🔥 **Input** 文本输入组件，用于替换 **InputItem** & **TextareaItem** 组件，也更好支持**Form**。 [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)
+  - 🔥 **Collapse** 折叠面板组件，用于替换 **Accordion** 组件。[~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/1c855106c8362345781cf29451beb28a542df3a2)
+  - 🔥 **Tooltip**  气泡组件, 用于替换 **Popover** 组件。基于`@floating-ui/react-native`依赖实现。 [#1356](https://github.com/ant-design/ant-design-mobile-rn/pull/1356)
+- 🔥 **Toast**
+  - 🆕 新增 `icon` 属性，支持自定义图标。
+  - 🆕 新增 `position` 属性，控制垂直方向显示位置。 [#1353](https://github.com/ant-design/ant-design-mobile-rn/pull/1353)
+- **Provider**
+  - 🆕 新增 `onHaptics` 属性，用于执行震动反馈事件，需自行选择引入触觉引擎。
+  - 🛠 精简 `theme`主题变量。
+- **NoticeBar**
+  - 🆕 完善 `marqueeProps` 属性，设计参考 https://github.com/justin-chu/react-fast-marquee 。
+- **Slider**
+  - 💄 重构样式，改为品牌色(`#108ee9`)。
+  - 🆕 添加新功能，例如`range`、`step`、`ticks`。
+  - 🆕 新增 `react-native-reanimated` 依赖。
+  - 🗑 移除 `@react-native-community/slider` 依赖。
+- **Stepper**
+  - 💄 重构样式，改为基于 InputStyle。
+  - 🆕 新增 `stringMode`属性，支持高精度小数，基于`@rc-component/mini-decimal`依赖实现。
+- **SwipeAction**
+  - 🆕 新增 `closeOnTouchOutside` 属性，基于 `useClickAway` 钩子实现。 [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)
+  - 🆕 完善并支持 `react-native-gesture-handler/Swipeable` 的所有属性。
+- 🗑 废弃 **SegmentedControl** 组件。
+  - 🗑 移除 `@react-native-community/segmented-control` 依赖。
+
 ### 5.1.1
 `2024-03-15`
 - **PickerView** & **DatePickerView** & **Carousel** 

@@ -111,8 +111,8 @@ Array [
             Array [
               Object {
                 "alignItems": "center",
-                "borderBottomColor": "#e7e7e7",
-                "borderBottomWidth": 1,
+                "borderBottomColor": "#eeeeee",
+                "borderBottomWidth": 0.5,
                 "flexDirection": "row",
                 "height": 44,
                 "justifyContent": "center",
@@ -145,8 +145,8 @@ Array [
               style={
                 Array [
                   Object {
-                    "color": "#0ae",
-                    "fontSize": 18,
+                    "color": "#108ee9",
+                    "fontSize": 17,
                     "textAlign": "center",
                   },
                   Object {},
@@ -193,8 +193,8 @@ Array [
               style={
                 Array [
                   Object {
-                    "color": "#0ae",
-                    "fontSize": 18,
+                    "color": "#108ee9",
+                    "fontSize": 17,
                     "textAlign": "center",
                   },
                   Object {},

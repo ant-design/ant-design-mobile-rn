@@ -12,6 +12,7 @@ type animateType = (_TimingAnimationConfig: {
   duration?: number
   delay?: number
   useNativeDriver?: boolean
+  callback?: (arg: { finished: boolean }) => void
 }) => void
 
 interface ConfigureInterface {
@@ -36,14 +37,22 @@ export function useAnimatedTiming(): [Animated.Value, animateType] {
   const animatedRef = React.useRef<Animated.CompositeAnimation | void>()
 
   const animatedFunc = React.useCallback(
-    ({ toValue = 1, duration = 200, easing, useNativeDriver = false }) => {
+    ({
+      toValue = 1,
+      easing,
+      duration = 200,
+      delay,
+      useNativeDriver = false,
+      callback,
+    }) => {
       animatedRef.current?.stop()
       animatedRef.current = Animated.timing(animatedValue, {
         toValue,
-        duration,
         easing,
+        duration,
+        delay,
         useNativeDriver,
-      }).start()
+      }).start(callback)
     },
     // @ts-ignore
     [animatedValue],

@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/react-native",
-  "version": "5.2.0-rc.2",
+  "version": "5.2.0",
   "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
   "keywords": [
     "ant",
@@ -86,7 +86,7 @@
     "react-github-button": "^0.1.9",
     "react-intl": "^2.2.3",
     "react-native": "0.64.2",
-    "react-native-gesture-handler": "~2.16.2",
+    "react-native-gesture-handler": "~2.14.0",
     "react-native-mocker": "^0.0.12",
     "react-native-reanimated": "^2.8.0",
     "react-native-safe-area-context": "4.2.4",

@@ -9,8 +9,8 @@ import {
   View,
   ViewStyle,
 } from 'react-native'
-import DisabledContext from '../config-provider/DisabledContext'
 import Icon from '../icon'
+import DisabledContext from '../provider/DisabledContext'
 import { useTheme } from '../style'
 import { ListItemPropsType } from './PropsType'
 import ListStyles, { ListItemStyle } from './style/index'

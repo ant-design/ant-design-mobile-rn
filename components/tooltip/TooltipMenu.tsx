@@ -46,13 +46,15 @@ export const TooltipMenu = forwardRef<TooltipRef, TooltipMenuProps>(
             flex: undefined, // to auto width
           },
           Item: {
-            borderRadius: theme.tooltip_border_radius,
-            ...(mode === 'dark' ? { backgroundColor: 'transparent' } : {}),
+            backgroundColor: 'transparent',
           },
         }
         if (mode === 'dark') {
           res.Content = {
             color: '#ffffff',
+          }
+          res.underlayColor = {
+            backgroundColor: 'transparent',
           }
         }
         return res
@@ -87,15 +89,7 @@ export const TooltipMenu = forwardRef<TooltipRef, TooltipMenuProps>(
           ))}
         </ScrollView>
       )
-    }, [
-      actions,
-      maxCount,
-      mode,
-      onPress,
-      styles,
-      theme.list_item_height,
-      theme.tooltip_border_radius,
-    ])
+    }, [actions, maxCount, mode, onPress, styles, theme.list_item_height])
 
     return (
       <Tooltip

@@ -22,12 +22,6 @@ module.exports = {
   ],
   UIVIEWS: [
     {
-      title: 'Accordion',
-      description: '手风琴',
-      icon: 'https://os.alipayobjects.com/rmsportal/gfWmRfZNzMyVUss.png',
-      module: require('../components/accordion/demo/basic'),
-    },
-    {
       title: 'ActionSheet',
       description: '动作面板',
       icon: 'https://zos.alipayobjects.com/rmsportal/cYmaBafYBnAxCqQ.png',
@@ -38,6 +32,12 @@ module.exports = {
       description: '卡片',
       icon: 'https://os.alipayobjects.com/rmsportal/daARhPjKcxlSuuZ.png',
       module: require('../components/card/demo/basic'),
+    },
+    {
+      title: 'Collapse',
+      description: '折叠面板',
+      icon: 'https://os.alipayobjects.com/rmsportal/gfWmRfZNzMyVUss.png',
+      module: require('../components/collapse/demo/basic'),
     },
     {
       title: 'Drawer',
@@ -70,12 +70,6 @@ module.exports = {
       module: require('../components/modal/demo/basic'),
     },
     {
-      title: 'Tooltip',
-      description: '气泡',
-      icon: 'https://os.alipayobjects.com/rmsportal/iIOLFHTKUCxBgUV.png',
-      module: require('../components/tooltip/demo/basic'),
-    },
-    {
       title: 'Portal',
       description: 'portal',
       icon: 'https://os.alipayobjects.com/rmsportal/iIOLFHTKUCxBgUV.png',
@@ -92,6 +86,12 @@ module.exports = {
       description: '轻提示',
       icon: 'https://os.alipayobjects.com/rmsportal/nREwETegxvDndJZ.png',
       module: require('../components/toast/demo/basic'),
+    },
+    {
+      title: 'Tooltip',
+      description: '气泡',
+      icon: 'https://os.alipayobjects.com/rmsportal/iIOLFHTKUCxBgUV.png',
+      module: require('../components/tooltip/demo/basic'),
     },
   ],
   UICONTROLS: [
@@ -248,10 +248,10 @@ module.exports = {
       module: require('../components/grid/demo/basic'),
     },
     {
-      title: 'LocaleProvider',
-      description: '国际化',
+      title: 'Provider',
+      description: '国际化和主题配置',
       icon: 'https://os.alipayobjects.com/rmsportal/HzRRcuwtqUCCOBg.png',
-      module: require('../components/locale-provider/demo/basic'),
+      module: require('../components/provider/demo/basic'),
     },
     {
       title: 'View',

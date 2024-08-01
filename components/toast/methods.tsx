@@ -97,7 +97,7 @@ const show = (
   duration?: number,
   mask?: boolean,
 ) => {
-  return notice(props, 'info', duration ?? 1.5, () => {}, mask)
+  return notice(props, 'info', duration ?? 1.5, () => {}, mask ?? false)
 }
 
 export const methods = {

@@ -1,6 +1,7 @@
-import React, { memo } from 'react'
+import React, { memo, useContext } from 'react'
 import { Text, TouchableHighlight, View } from 'react-native'
 import Modal from '../modal/ModalView'
+import { ThemeContext } from '../style'
 import { PopupPickerProps } from './PopupPickerTypes'
 
 const PopupPicker = memo((props: PopupPickerProps) => {
@@ -35,6 +36,8 @@ const PopupPicker = memo((props: PopupPickerProps) => {
       dismissText
     )
 
+  const theme = useContext(ThemeContext)
+
   return (
     <Modal
       animationType="slide-up"
@@ -47,7 +50,7 @@ const PopupPicker = memo((props: PopupPickerProps) => {
           onPress={onDismiss}
           style={[styles.headerItem]}
           activeOpacity={1}
-          underlayColor="#ddd"
+          underlayColor={theme.fill_tap}
           {...props.dismissButtonProps}>
           {dismissEl}
         </TouchableHighlight>
@@ -56,7 +59,7 @@ const PopupPicker = memo((props: PopupPickerProps) => {
           onPress={onOk}
           style={[styles.headerItem]}
           activeOpacity={1}
-          underlayColor="#ddd"
+          underlayColor={theme.fill_tap}
           {...props.okButtonProps}>
           {okEl}
         </TouchableHighlight>

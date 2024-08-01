@@ -53,7 +53,7 @@ export type Action = {
   disabled?: boolean
   key?: string | number
   onPress?: () => void
-  style?: ViewStyle
+  style?: StyleProp<ViewStyle>
 }
 
 export type TooltipMenuProps = Omit<TooltipProps, 'content'> & {

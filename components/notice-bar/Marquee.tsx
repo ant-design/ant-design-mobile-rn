@@ -1,153 +1,176 @@
-import React from 'react'
-import {
-  Animated,
-  Easing,
-  LayoutChangeEvent,
-  StyleProp,
-  Text,
-  TextStyle,
-  View,
-} from 'react-native'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { LayoutChangeEvent, ScrollView, Text, View } from 'react-native'
+import Animated, {
+  runOnJS,
+  useAnimatedStyle,
+  useFrameCallback,
+  useSharedValue,
+} from 'react-native-reanimated'
+import { MarqueeProps } from './PropsType'
 
-export interface MarqueeProps {
-  text?: React.ReactNode
-  loop?: boolean
-  leading?: number
-  trailing?: number
-  className?: string
-  fps?: number
-  style?: StyleProp<TextStyle>
-  maxWidth?: number
-}
+export const Marquee: React.FC<MarqueeProps> = (props) => {
+  const {
+    autoFill,
+    children,
+    direction = 'left',
+    fps = 40,
+    leading = 500,
+    loop = false,
+    onCycleComplete,
+    onFinish,
+    play = true,
+    spacing,
+    style,
+    trailing = 800,
+  } = props
 
-class Marquee extends React.PureComponent<MarqueeProps, any> {
-  static defaultProps = {
-    text: '',
-    loop: false,
-    leading: 500,
-    trailing: 800,
-    fps: 40,
-    maxWidth: 1000,
+  const [parentWidth, setParentWidth] = useState(0)
+  const [childrenWidth, setChildrenWidth] = useState(0)
+
+  const onLayoutContainer = (e: LayoutChangeEvent) => {
+    setParentWidth(e.nativeEvent.layout.width)
   }
+  const onLayoutContent = useCallback((e: LayoutChangeEvent) => {
+    setChildrenWidth(e.nativeEvent.layout.width)
+  }, [])
 
-  texts: any
-  left: any
+  // =========== fps & direction ==============
+  const duration = useMemo(() => {
+    return (1 / fps) * childrenWidth * 1000
+  }, [fps, childrenWidth])
 
-  constructor(props: MarqueeProps) {
-    super(props)
+  const coeff = useMemo(() => {
+    return direction === 'left' ? 1 : -1
+  }, [direction])
 
-    this.texts = {}
-    this.left = new Animated.Value(0)
-    this.state = {
-      twidth: 0,
-      width: 0,
+  // =========== loop & onCycleComplete & onFinish ==============
+  const loopsRef = useRef(0)
+  const convertLoop = useMemo(() => {
+    if (loop === true || loop === 0) {
+      return Infinity
     }
-  }
+    if (loop === false) {
+      return 1
+    }
+    return loop
+  }, [loop])
+  const handleLoopWorklet = useCallback(() => {
+    'worklet'
+    if (convertLoop < loopsRef.current) {
+      onFinish && runOnJS(onFinish)()
+    } else if (onCycleComplete) {
+      runOnJS(onCycleComplete)()
+    }
+  }, [convertLoop, onCycleComplete, onFinish])
 
-  onLayout = (e: LayoutChangeEvent) => {
-    if (this.state.twidth) {
+  // =========== useFrameCallback & timestamp ==============
+  const offset = useSharedValue(0)
+  const timestamp = useRef(0)
+  const ufc = useFrameCallback((i) => {
+    // The number of times the marquee should loop
+    if (convertLoop < loopsRef.current) {
       return
     }
 
-    this.setState(
-      {
-        twidth: e.nativeEvent.layout.width,
-      },
-      () => {
-        // onLayout may be earlier than onLayoutContainer on android, can not be sure width < twidth at that time.
-        this.tryStart()
-      },
-    )
-  }
-
-  tryStart() {
-    if (this.state.twidth > this.state.width && this.state.width) {
-      this.startMove()
+    if (
+      i.timestamp - timestamp.current <
+      (timestamp.current === 0
+        ? // Duration to delay the animation after first render
+          leading
+        : // Duration to delay the animation after previous loop
+          trailing)
+    ) {
+      return
     }
-  }
 
-  onLayoutContainer = (e: LayoutChangeEvent) => {
-    if (!this.state.width) {
-      this.setState(
+    offset.value +=
+      ((i.timeSincePreviousFrame ?? 1) * coeff * childrenWidth) / duration
+    if (Math.abs(offset.value) >= childrenWidth) {
+      timestamp.current = i.timestamp
+      loopsRef.current += 1
+      handleLoopWorklet()
+      offset.value = autoFill ? 0 : coeff * -parentWidth
+    } else {
+      offset.value = offset.value % childrenWidth
+    }
+  }, false)
+
+  // =========== initialPosition & useEffect ==============
+  const initialPosition = useMemo(() => {
+    return direction === 'right' && autoFill ? -childrenWidth : 0
+  }, [autoFill, childrenWidth, direction])
+
+  useEffect(() => {
+    if (childrenWidth > 0 && parentWidth > 0) {
+      if (childrenWidth > parentWidth || autoFill) {
+        ufc.setActive(play)
+      } else if (!play || !autoFill) {
+        offset.value = initialPosition
+        ufc.setActive(false)
+      }
+    } else {
+      ufc.setActive(false)
+    }
+  }, [autoFill, childrenWidth, initialPosition, offset, parentWidth, play, ufc])
+
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
         {
-          width: e.nativeEvent.layout.width,
+          translateX: -offset.value + initialPosition,
         },
-        () => {
-          this.left.setValue(0)
-          this.tryStart()
-        },
-      )
+      ],
     }
-  }
+  }, [initialPosition])
 
-  startMove = () => {
-    const { fps = 40, loop } = this.props
-    const SPPED = (1 / fps) * 1000
-    // tslint:disable-next-line:no-this-assignment
-    const { props } = this
-    Animated.timing(this.left, {
-      toValue: 1,
-      duration: this.state.twidth * SPPED,
-      easing: Easing.linear,
-      delay: props.leading,
-      isInteraction: false,
-      useNativeDriver: true,
-    }).start(() => {
-      if (loop) {
-        this.moveToHeader()
+  const renderChild = useMemo(() => {
+    // autoFill multiples
+    const autoFillTimes =
+      autoFill && childrenWidth > 0
+        ? Math.ceil(parentWidth / childrenWidth) + 1
+        : 1
+    return new Array(autoFillTimes).fill('').map((_, index) => {
+      if (typeof children === 'string') {
+        return (
+          <Text
+            key={index}
+            style={[spacing ? { paddingRight: spacing } : {}, style]}
+            numberOfLines={1}
+            ellipsizeMode="tail"
+            onLayout={index ? undefined : onLayoutContent}>
+            {children}
+          </Text>
+        )
+      } else {
+        return (
+          <View
+            key={index}
+            onLayout={index ? undefined : onLayoutContent}
+            style={spacing ? { paddingRight: spacing } : undefined}>
+            {children}
+          </View>
+        )
       }
     })
-  }
+  }, [
+    autoFill,
+    children,
+    childrenWidth,
+    onLayoutContent,
+    parentWidth,
+    spacing,
+    style,
+  ])
 
-  moveToHeader = () => {
-    Animated.timing(this.left, {
-      toValue: 0,
-      duration: 0,
-      delay: this.props.trailing,
-      isInteraction: false,
-      useNativeDriver: true,
-    }).start(() => {
-      this.startMove()
-    })
-  }
-
-  render() {
-    const { width, twidth } = this.state
-    const { style, text, maxWidth } = this.props
-
-    const textChildren = (
-      <Text
-        onLayout={this.onLayout}
-        numberOfLines={1}
-        ellipsizeMode="tail"
-        style={style}>
-        {text}
-      </Text>
-    )
-
-    return (
-      <View
-        style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}
-        onLayout={this.onLayoutContainer}>
-        <Animated.View
-          // tslint:disable-next-line:jsx-no-multiline-js
-          style={{
-            flexDirection: 'row',
-            transform: [
-              {
-                translateX: this.left.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [0, -twidth + width],
-                }),
-              },
-            ],
-            width: maxWidth,
-          }}>
-          {textChildren}
-        </Animated.View>
-      </View>
-    )
-  }
+  return (
+    <ScrollView
+      showsHorizontalScrollIndicator={false}
+      horizontal
+      onLayout={onLayoutContainer}>
+      <Animated.View
+        style={[{ flexDirection: 'row', alignItems: 'center' }, animatedStyle]}>
+        {renderChild}
+      </Animated.View>
+    </ScrollView>
+  )
 }
-
-export default Marquee

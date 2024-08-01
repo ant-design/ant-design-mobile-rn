@@ -3,7 +3,7 @@ category: Components
 type: Data Entry
 title: Input
 subtitle: 文本输入
-version: 5.2.0-rc.0
+version: 5.2.0
 ---
 
 通过键盘输入内容，是最基础的表单域包装。

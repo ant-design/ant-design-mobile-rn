@@ -165,7 +165,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -220,7 +220,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -240,7 +240,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -305,7 +305,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -449,7 +449,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -504,7 +504,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -524,7 +524,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -589,7 +589,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -733,7 +733,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -788,7 +788,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -808,7 +808,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -873,7 +873,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -1017,7 +1017,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -1072,7 +1072,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -1092,7 +1092,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -1157,7 +1157,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -1301,7 +1301,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -1356,7 +1356,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -1376,7 +1376,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -1441,7 +1441,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -1629,12 +1629,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
                             Object {
-                              "color": "#999999",
+                              "color": "#bbbbbb",
                             },
                           ]
                         }
@@ -1688,7 +1688,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -1708,7 +1708,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -1775,12 +1775,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
                             Object {
-                              "color": "#999999",
+                              "color": "#bbbbbb",
                             },
                           ]
                         }
@@ -1921,7 +1921,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -1976,7 +1976,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -1996,7 +1996,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -2061,7 +2061,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -2205,7 +2205,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -2260,7 +2260,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -2280,7 +2280,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -2345,7 +2345,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -2491,12 +2491,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
                             Object {
-                              "color": "#999999",
+                              "color": "#bbbbbb",
                             },
                           ]
                         }
@@ -2548,7 +2548,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -2568,7 +2568,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -2633,7 +2633,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -2777,7 +2777,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -2832,7 +2832,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           "width": 104,
                         },
                         "disabledStepTextColor": Object {
-                          "color": "#999999",
+                          "color": "#bbbbbb",
                         },
                         "input": Object {
                           "backgroundColor": "#f5f5f9",
@@ -2852,7 +2852,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                         },
                         "stepText": Object {
                           "backgroundColor": "transparent",
-                          "color": "#1677ff",
+                          "color": "#108ee9",
                           "fontSize": 20,
                           "textAlign": "center",
                         },
@@ -2917,7 +2917,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           Array [
                             Object {
                               "backgroundColor": "transparent",
-                              "color": "#1677ff",
+                              "color": "#108ee9",
                               "fontSize": 20,
                               "textAlign": "center",
                             },
@@ -3092,7 +3092,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                             Array [
                               Object {
                                 "backgroundColor": "transparent",
-                                "color": "#1677ff",
+                                "color": "#108ee9",
                                 "fontSize": 20,
                                 "textAlign": "center",
                               },
@@ -3147,7 +3147,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                             "width": 104,
                           },
                           "disabledStepTextColor": Object {
-                            "color": "#999999",
+                            "color": "#bbbbbb",
                           },
                           "input": Object {
                             "backgroundColor": "#f5f5f9",
@@ -3167,7 +3167,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           },
                           "stepText": Object {
                             "backgroundColor": "transparent",
-                            "color": "#1677ff",
+                            "color": "#108ee9",
                             "fontSize": 20,
                             "textAlign": "center",
                           },
@@ -3232,7 +3232,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                             Array [
                               Object {
                                 "backgroundColor": "transparent",
-                                "color": "#1677ff",
+                                "color": "#108ee9",
                                 "fontSize": 20,
                                 "textAlign": "center",
                               },
@@ -3392,7 +3392,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
-                                    "color": "#1677ff",
+                                    "color": "#108ee9",
                                     "fontSize": 20,
                                     "textAlign": "center",
                                   },
@@ -3447,7 +3447,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                                 "width": 104,
                               },
                               "disabledStepTextColor": Object {
-                                "color": "#999999",
+                                "color": "#bbbbbb",
                               },
                               "input": Object {
                                 "backgroundColor": "#f5f5f9",
@@ -3467,7 +3467,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                               },
                               "stepText": Object {
                                 "backgroundColor": "transparent",
-                                "color": "#1677ff",
+                                "color": "#108ee9",
                                 "fontSize": 20,
                                 "textAlign": "center",
                               },
@@ -3532,7 +3532,7 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                                 Array [
                                   Object {
                                     "backgroundColor": "transparent",
-                                    "color": "#1677ff",
+                                    "color": "#108ee9",
                                     "fontSize": 20,
                                     "textAlign": "center",
                                   },

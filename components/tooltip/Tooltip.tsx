@@ -84,7 +84,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     sameScrollView: false, // Rendering outside the page（in portal)
     placement: normalizePlacement(placement),
     middleware: [
-      offset(theme.arrow_size),
+      offset(theme.tooltip_arrow_size),
       shift({
         padding: 2,
         crossAxis: false,
@@ -94,12 +94,12 @@ const InternalTooltip: React.ForwardRefRenderFunction<
       hide(),
       arrow({
         element: arrowRef,
-        padding: theme.arrow_size,
+        padding: theme.tooltip_arrow_size,
       }),
     ],
   })
 
-  useEffect(update, [update, floatingStyles])
+  useEffect(update, [update, floatingStyles, content])
   // Replace `useLayoutEffect(update)` to improve performance
   useScroll(scrollProps.onScroll)
 
@@ -129,7 +129,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     return {
       left: arrowX || undefined,
       top: arrowY || undefined,
-      [arrowSide]: -theme.arrow_size * 2,
+      [arrowSide]: -theme.tooltip_arrow_size * 2,
       [arrowBorder]: mode === 'dark' ? theme.tooltip_dark : '#ffffff',
     }
   }, [
@@ -137,7 +137,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     arrowY,
     mode,
     realPlacement,
-    theme.arrow_size,
+    theme.tooltip_arrow_size,
     theme.tooltip_dark,
   ])
 

@@ -16,7 +16,7 @@ export default (theme: Theme) =>
       width: 8,
       height: 8,
       borderRadius: 999,
-      backgroundColor: theme.checkbox_fill,
+      backgroundColor: theme.brand_primary,
       borderWidth: 0,
     },
     checkbox_inner_after_disabled: {

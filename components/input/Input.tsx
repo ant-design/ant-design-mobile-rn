@@ -16,9 +16,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import DisabledContext from '../config-provider/DisabledContext'
 import { FormItemInputContext } from '../form/context'
 import Icon from '../icon'
+import DisabledContext from '../provider/DisabledContext'
 import { ThemeContext, useTheme } from '../style'
 import AntmView from '../view'
 import { ClearIconType, InputProps, InputStatus } from './PropsType'

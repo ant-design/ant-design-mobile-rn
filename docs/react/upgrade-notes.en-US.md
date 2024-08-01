@@ -5,9 +5,23 @@ title: Upgrade
 
 Here list some of main incompatible changes and recommended changes in the upgrade. See [Changelog](/changelog) for all changes.
 
+### 5.2.0
+
+> Installing peer dependencies
+
+```bash
+npm install @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+```
+
+or
+
+```bash
+yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+```
+
 ### 5.1.0
 
-> 安装 peer 依赖
+> Installing peer dependencies
 
 ```bash
 npm install @react-native-community/segmented-control @react-native-community/slider react-native-gesture-handler

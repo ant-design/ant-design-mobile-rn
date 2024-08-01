@@ -10,15 +10,15 @@ import {
   View,
   ViewStyle,
 } from 'react-native'
+import { getComponentLocale } from '../_util/getLocale'
 import { LocaleContext } from '../locale-provider'
 import { WithTheme, WithThemeStyles } from '../style'
-import { getComponentLocale } from '../_util/getLocale'
+import RCModal from './ModalView'
+import { CallbackOnBackHandler, ModalPropsType } from './PropsType'
 import alert from './alert'
 import zh_CN from './locale/zh_CN'
-import RCModal from './ModalView'
 import operation from './operation'
 import prompt from './prompt'
-import { CallbackOnBackHandler, ModalPropsType } from './PropsType'
 import modalStyles, { ModalStyle } from './style/index'
 
 export interface ModalProps
@@ -79,7 +79,7 @@ class AntmModal extends React.Component<ModalProps, any> {
 
     return (
       <WithTheme styles={this.props.styles} themeStyles={modalStyles}>
-        {(styles) => {
+        {(styles, theme) => {
           let btnGroupStyle = styles.buttonGroupV
           let horizontalFlex = {}
           if (footer && footer.length === 2 && !this.props.operation) {
@@ -126,7 +126,7 @@ class AntmModal extends React.Component<ModalProps, any> {
                 <TouchableHighlight
                   key={i}
                   style={horizontalFlex}
-                  underlayColor="#ddd"
+                  underlayColor={theme.fill_tap}
                   onPress={onPressFn}>
                   <View style={[buttonWrapStyle, noneBorder]}>
                     <Text style={[styles.buttonText, buttonStyle]}>

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useCallback, useContext, useState } from 'react'
 import { ActivityIndicator, LayoutChangeEvent, Text, View } from 'react-native'
-import { WithTheme, WithThemeStyles } from '../style'
+import { mergeProps } from '../_util/with-default-props'
+import HapticsContext from '../provider/HapticsContext'
+import { WithThemeStyles, useTheme } from '../style'
 import {
   PickerColumn,
   PickerColumnItem,
@@ -8,7 +10,7 @@ import {
   PickerViewPropsType,
 } from './PropsType'
 import Wheel from './Wheel'
-import pickerViewStyles, { PickerViewStyle } from './style/index'
+import PickerViewStyles, { PickerViewStyle } from './style/index'
 
 export type RMCPickerViewProps = Omit<
   PickerViewPropsType,
@@ -18,149 +20,136 @@ export type RMCPickerViewProps = Omit<
     columns: PickerColumn[]
     handleSelect: (value: PickerValue, index: number) => void
   }
-export default class RMCPickerView extends React.Component<
-  RMCPickerViewProps,
-  any
-> {
-  static defaultProps = {
-    value: [],
-    itemHeight: 0,
-    numberOfLines: 1,
-    renderMaskTop: () => (
-      <View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />
-    ),
-    renderMaskBottom: () => (
-      <View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />
-    ),
-  }
 
-  constructor(props: RMCPickerViewProps) {
-    super(props)
-    this.state = {
-      itemHeight: 0,
-      wheelHeight: 0,
-    }
-  }
+const defaultProps = {
+  value: [],
+  itemHeight: 0,
+  numberOfLines: 1,
+  renderMaskTop: () => (
+    <View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />
+  ),
+  renderMaskBottom: () => (
+    <View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />
+  ),
+}
 
-  wrapperMeasure = (e: LayoutChangeEvent) => {
+const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
+  const p = mergeProps(defaultProps, props)
+
+  const [wheelHeight, setWheelHeight] = useState(0)
+  const [stateItemHeight, setItemHeight] = useState(0)
+  const itemHeight = p.itemHeight || stateItemHeight
+
+  const wrapperMeasure = (e: LayoutChangeEvent) => {
     const { height } = e.nativeEvent.layout
-    this.setState({ wheelHeight: height })
+    setWheelHeight(height)
   }
 
-  itemHeightMeasure = (e: LayoutChangeEvent) => {
+  const itemHeightMeasure = (e: LayoutChangeEvent) => {
     const { height } = e.nativeEvent.layout
-    this.setState({ itemHeight: height })
+    setItemHeight(height)
   }
 
-  renderLabel = (item: PickerColumnItem, index: number) => {
+  const renderLabel = useCallback(
+    (item: PickerColumnItem, index: number) => {
+      return (
+        <View
+          key={item.key || item.value}
+          style={[
+            {
+              height: itemHeight || 'auto',
+              overflow: 'hidden',
+              justifyContent: 'center',
+            },
+          ]}>
+          {p.renderLabel?.(item, index) || (
+            <Text
+              style={[
+                {
+                  fontSize: 16,
+                  color: '#333',
+                  textAlign: 'center',
+                  includeFontPadding: false,
+                  padding: 8,
+                },
+                p.itemStyle,
+                // itemStyle was not allowed to set height
+                { height: 'auto' },
+              ]}
+              numberOfLines={p.numberOfLines}>
+              {item.label}
+            </Text>
+          )}
+        </View>
+      )
+    },
+    [itemHeight, p],
+  )
+
+  const onHaptics = useContext(HapticsContext)
+  const handleSelect = useCallback(
+    (...args) => {
+      p.handleSelect.apply(undefined, args)
+      onHaptics('picker')
+    },
+    [onHaptics, p.handleSelect],
+  )
+
+  const ss = useTheme({
+    styles: p.styles,
+    themeStyles: PickerViewStyles,
+  })
+
+  if (itemHeight === 0) {
     return (
-      <View
-        key={item.key || item.value}
-        style={[
+      <View onLayout={itemHeightMeasure}>
+        {renderLabel(
           {
-            height: this.props.itemHeight || this.state.itemHeight || 'auto',
-            overflow: 'hidden',
-            justifyContent: 'center',
+            value: 'layout',
+            label: <>{Array(p.numberOfLines).join('\n')}&#12288;</>,
           },
-        ]}>
-        {this.props.renderLabel?.(item, index) || (
-          <Text
-            style={[
-              {
-                fontSize: 16,
-                color: '#333',
-                textAlign: 'center',
-                includeFontPadding: false,
-                padding: 8,
-              },
-              this.props.itemStyle,
-              // itemStyle was not allowed to set height
-              { height: 'auto' },
-            ]}
-            numberOfLines={this.props.numberOfLines}>
-            {item.label}
-          </Text>
+          0,
         )}
       </View>
     )
   }
 
-  renderMask = (s: PickerViewStyle) => (
-    <View style={s.mask} pointerEvents="none">
-      <View style={s.maskTop}>{this.props.renderMaskTop?.()}</View>
-      <View
-        style={[
-          s.maskMiddle,
-          { height: this.props.itemHeight || this.state.itemHeight },
-        ]}
-      />
-      <View style={s.maskBottom}>{this.props.renderMaskBottom?.()}</View>
+  return (
+    <View
+      style={[{ height: 7 * itemHeight }, ss.wrappper, p.style]}
+      onLayout={wrapperMeasure}>
+      <View style={[ss.wheelWrapper, { height: wheelHeight }]}>
+        {(p.loading || p.columns?.length === 0) && p.loading !== false
+          ? p.loadingContent || (
+              <View style={{ flex: 1, alignSelf: 'center' }}>
+                <ActivityIndicator animating style={p.indicatorStyle || {}} />
+              </View>
+            )
+          : itemHeight > 0 &&
+            wheelHeight > 0 &&
+            p.columns.map((column, index) => (
+              <Wheel
+                key={index}
+                index={index}
+                column={column}
+                value={p.value?.[index]}
+                onSelect={handleSelect}
+                itemHeight={itemHeight}
+                wheelHeight={wheelHeight}
+                renderLabel={renderLabel}
+              />
+            ))}
+      </View>
+      {/* mask */}
+      <View style={ss.mask} pointerEvents="none">
+        <View style={ss.maskTop}>{p.renderMaskTop?.()}</View>
+        <View style={[ss.maskMiddle, { height: itemHeight }]} />
+        <View style={ss.maskBottom}>{p.renderMaskBottom?.()}</View>
+      </View>
     </View>
   )
-
-  render() {
-    const { wheelHeight } = this.state
-    const {
-      style,
-      styles,
-      columns,
-      value,
-      loading,
-      indicatorStyle,
-      numberOfLines,
-      handleSelect,
-      loadingContent,
-    } = this.props
-    const itemHeight = this.props.itemHeight || this.state.itemHeight
-    return (
-      <WithTheme themeStyles={pickerViewStyles} styles={styles}>
-        {(s) =>
-          // {/* 计算中文占位符换行的高度后，items统一这个高度 */}
-          itemHeight === 0 ? (
-            <View onLayout={this.itemHeightMeasure}>
-              {this.renderLabel(
-                {
-                  value: 'layout',
-                  label: <>{Array(numberOfLines).join('\n')}&#12288;</>,
-                },
-                0,
-              )}
-            </View>
-          ) : (
-            <View
-              style={[{ height: 7 * itemHeight }, s.wrappper, style]}
-              onLayout={this.wrapperMeasure}>
-              <View style={[s.wheelWrapper, { height: wheelHeight }]}>
-                {(loading || columns?.length === 0) && loading !== false
-                  ? loadingContent || (
-                      <View style={{ flex: 1, alignSelf: 'center' }}>
-                        <ActivityIndicator
-                          animating
-                          style={indicatorStyle || {}}
-                        />
-                      </View>
-                    )
-                  : itemHeight > 0 &&
-                    wheelHeight > 0 &&
-                    columns.map((column, index) => (
-                      <Wheel
-                        key={index}
-                        index={index}
-                        column={column}
-                        value={value?.[index]}
-                        onSelect={handleSelect}
-                        itemHeight={itemHeight}
-                        wheelHeight={wheelHeight}
-                        renderLabel={this.renderLabel}
-                      />
-                    ))}
-              </View>
-              {/* mask */}
-              {this.renderMask(s)}
-            </View>
-          )
-        }
-      </WithTheme>
-    )
-  }
 }
+
+RMCPickerView.displayName = 'RMCPickerView'
+
+export default React.memo(RMCPickerView)

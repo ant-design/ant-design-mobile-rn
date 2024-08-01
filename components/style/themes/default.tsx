@@ -12,16 +12,12 @@ export default {
   // 文字色
   color_text_base: '#000000', // 基本
   color_text_base_inverse: '#ffffff', // 基本 _ 反色
-  color_text_secondary: '#a4a9b0', // 辅助色
+  // color_text_secondary: '#a4a9b0', // 辅助色
   color_text_placeholder: '#bbbbbb', // 文本框提示
   color_text_disabled: '#bbbbbb', // 失效
   color_text_caption: '#888888', // 辅助描述
   color_text_paragraph: '#333333', // 段落
   color_link: brandPrimary, // 链接
-  color_error: '#ff4d4f', // 错误(form validate)
-  color_warning: '#faad14', // 警告
-  color_success: '#52c41a',
-  color_primary: '#1677ff',
 
   // 背景色
   fill_base: '#ffffff', // 组件默认背景
@@ -32,20 +28,17 @@ export default {
   color_icon_base: '#cccccc', // 许多小图标的背景，比如一些小圆点，加减号
   fill_grey: '#f7f7f7',
 
-  // 透明度
-  opacity_disabled: '0.3', // switch checkbox radio 等组件禁用的透明度
-
   // 全局/品牌色
   brand_primary: brandPrimary,
   brand_primary_tap: brandPrimaryTap,
   brand_success: '#6abf47',
-  brand_warning: '#f4333c',
-  brand_error: '#f4333c',
+  brand_warning: '#faad14',
+  brand_error: '#f4333c', // 错误(form validate)
   brand_important: '#ff5b05', // 用于小红点
-  brand_wait: '#108ee9',
 
   // 边框色
-  border_color_base: '#dddddd',
+  border_color_base: '#dddddd', // 基础的
+  border_color_thin: '#eeeeee', // 更细的
 
   // 字体尺寸
   // ---
@@ -83,11 +76,6 @@ export default {
   v_spacing_lg: 15,
   v_spacing_xl: 21,
 
-  // 高度
-  // ---
-  line_height_base: 1, // 单行行高
-  line_height_paragraph: 1.5, // 多行行高
-
   // 图标尺寸
   // ---
   icon_size_xxs: 15,
@@ -96,13 +84,9 @@ export default {
   icon_size_md: 22, // 导航条上的图标
   icon_size_lg: 36,
 
-  // 动画缓动
-  // ---
-  ease_in_out_quint: 'cubic_bezier(0.86, 0, 0.07, 1)',
-
   // 组件变量
-  // ---
 
+  // action-sheet
   actionsheet_item_height: 50,
   actionsheet_item_font_size: 18,
 
@@ -114,7 +98,7 @@ export default {
   button_font_size_sm: 12,
 
   primary_button_fill: brandPrimary,
-  primary_button_fill_tap: '#0e80d2',
+  primary_button_fill_tap: brandPrimaryTap,
 
   ghost_button_color: brandPrimary, // 同时应用于背景、文字颜色、边框色
   ghost_button_fill_tap: `${brandPrimary}99`, // alpha 60%  https://codepen.io/chriscoyier/pen/XjbzAW
@@ -122,7 +106,6 @@ export default {
   warning_button_fill: '#e94f4f',
   warning_button_fill_tap: '#d24747',
 
-  link_button_fill_tap: '#dddddd',
   link_button_font_size: 16,
 
   // modal
@@ -131,25 +114,13 @@ export default {
   modal_button_height: 50, // 按钮高度
 
   // list
-  list_title_height: 30,
   list_item_height_sm: 35,
   list_item_height: 44,
 
-  // input
-  input_label_width: 17, // InputItem、TextareaItem 文字长度基础值
-  input_font_size: 17,
-  input_color_icon: '#cccccc',
-  input_color_icon_tap: brandPrimary,
-
   // tabs
-  tabs_color: brandPrimary,
+  // tabs_fill: brandPrimary,
   tabs_height: 42,
   tabs_font_size_heading: 15,
-
-  // segmented_control
-  segmented_control_color: brandPrimary, // 同时应用于背景、文字颜色、边框色
-  segmented_control_height: 27,
-  segmented_control_fill_tap: `${brandPrimary}10`,
 
   // tab_bar
   tab_bar_fill: '#ebeeef',
@@ -170,23 +141,23 @@ export default {
   notice_bar_height: 36,
 
   // checkbox
-  checkbox_fill: '#1890ff',
+  // checkbox_fill: brandPrimary,
   checkbox_fill_disabled: '#f5f5f5',
   checkbox_border: '#d9d9d9',
   checkbox_border_disabled: '#b9b9b9',
 
   // switch
-  switch_fill: '#1890ff',
+  // switch_fill: brandPrimary,
+  // switch_checked_disabled: `${brandPrimary}66`
   switch_unchecked: '#cccccc',
   switch_unchecked_disabled: '#cccccc66', // switch_fill的40%透明度
-  switch_checked_disabled: '#1890ff66', // switch_unchecked的40%透明度
 
   // tag
   tag_height: 25,
   tag_small_height: 15,
 
   // picker
-  option_height: 42, // picker 标题的高度
+  option_height: 44, // item选项的高度
 
   // form
   prefix_width: 65, // 水平布局时，表单项的标签宽度
@@ -196,7 +167,7 @@ export default {
   // tooltip
   tooltip_dark: 'rgba(0, 0, 0, 0.9)',
   tooltip_border_radius: 8,
-  arrow_size: 8,
+  tooltip_arrow_size: 8,
 
   toast_zindex: 1999,
   action_sheet_zindex: 1000,

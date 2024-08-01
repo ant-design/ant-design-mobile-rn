@@ -599,8 +599,8 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "width": 55,
                         },
                         Object {
-                          "backgroundColor": "#1890ff",
-                          "borderColor": "#1890ff",
+                          "backgroundColor": "#108ee9",
+                          "borderColor": "#108ee9",
                         },
                         undefined,
                       ],
@@ -875,8 +875,8 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "width": 55,
                         },
                         Object {
-                          "backgroundColor": "#1890ff",
-                          "borderColor": "#1890ff",
+                          "backgroundColor": "#108ee9",
+                          "borderColor": "#108ee9",
                         },
                         undefined,
                       ],
@@ -1091,12 +1091,12 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "width": 55,
                         },
                         Object {
-                          "backgroundColor": "#1890ff",
-                          "borderColor": "#1890ff",
+                          "backgroundColor": "#108ee9",
+                          "borderColor": "#108ee9",
                         },
                         Object {
-                          "backgroundColor": "#1890ff66",
-                          "borderColor": "#1890ff66",
+                          "backgroundColor": "#108ee966",
+                          "borderColor": "#108ee966",
                         },
                         undefined,
                       ],
@@ -1147,7 +1147,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                     >
                       <ActivityIndicator
                         animating={true}
-                        color="#1890ff"
+                        color="#108ee9"
                         hidesWhenStopped={true}
                         size={18}
                       />
@@ -1478,8 +1478,8 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "width": 55,
                         },
                         Object {
-                          "backgroundColor": "#1890ff",
-                          "borderColor": "#1890ff",
+                          "backgroundColor": "#108ee9",
+                          "borderColor": "#108ee9",
                         },
                         undefined,
                       ],

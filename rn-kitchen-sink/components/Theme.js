@@ -25,8 +25,9 @@ class ThemePanel extends React.Component {
               const palette = presetPalettes[palettes]
               changeTheme(
                 {
+                  brand_primary: palette[5],
                   fill_base: palette[0],
-                  primary_button_fill: palette[6],
+                  primary_button_fill: palette[5],
                   primary_button_fill_tap: palette[3],
                   color_icon_base: palette[4],
                 },
