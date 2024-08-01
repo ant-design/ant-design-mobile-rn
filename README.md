@@ -34,7 +34,7 @@ A configurable Mobile UI specification and React-based implementation.
 
 |SDK 49+|
 |--|
-| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=0d1cb959-bf55-425a-81fc-62cdd0c07eb6" />](https://expo.dev/preview/update?message=5.2.0%20Tooltip%20%26%20Slider&updateRuntimeVersion=5.2.0&createdAt=2024-07-16T07%3A13%3A47.592Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=0d1cb959-bf55-425a-81fc-62cdd0c07eb6) |
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=1380588b-3ab3-4216-b507-a281d159be16" />](https://expo.dev/preview/update?message=5.2.0&updateRuntimeVersion=5.2.0&createdAt=2024-08-01T10%3A54%3A39.803Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=1380588b-3ab3-4216-b507-a281d159be16) |
 
 Open the camera app on your device and scan the code above, <br>
 need install expo app: https://expo.io/tools
@@ -50,38 +50,39 @@ need install expo app: https://expo.io/tools
 ## Install & Usage
 
 ```bash
-$ npm install @ant-design/react-native --save
-```
-
-or
-
-```bash
-yarn add @ant-design/react-native
+$ npm install @ant-design/react-native @ant-design/icons-react-native
 ```
 
 ### Installing peer dependencies
 
-```bash
-npm install  @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
-```
+Next, install the required peer dependencies. You need to run different commands depending on whether your project is an Expo managed project or a bare React Native project.
 
-or
+ - If you have an Expo managed project, install the dependencies with `expo`:
+   ```bash
+   npx expo install react-native-gesture-handler react-native-reanimated
+   ```
 
-```bash
-yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
-```
+ - If you have a bare React Native project, install the dependencies with `npm`:
+   ```bash
+   npm install react-native-gesture-handler react-native-reanimated
+   ```
 
-> You need go to ios folder and run `pod install` (auto linking)，Android will handle it by itself.
+ - For iOS with bare React Native project, make sure you have CocoaPods installed. Then install the pods to complete the installation:
+   ```bash
+   cd ios
+   pod install
+   cd ..
+   ```
 
 ### Link icon fonts
 
+Add assets to your `react-native.config.js` ( If not exist, please create in project’s root directory )
 ```js
-// config `react-native.config.js` in project’s root directory
 module.exports = {
   assets: ['node_modules/@ant-design/icons-react-native/fonts'],
 };
 ```
-then
+Run the [react-native-asset](https://github.com/unimonkiez/react-native-asset)'s command and linking + unlinking is automatic
 ```bash
 npx react-native-asset
 ```
