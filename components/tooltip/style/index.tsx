@@ -37,7 +37,7 @@ export default (theme: Theme, mode?: 'dark' | 'light') =>
       borderBottomColor: 'transparent',
       borderLeftColor: 'transparent',
       borderStyle: 'solid',
-      borderWidth: theme.arrow_size,
+      borderWidth: theme.tooltip_arrow_size,
       position: 'absolute',
     },
   })

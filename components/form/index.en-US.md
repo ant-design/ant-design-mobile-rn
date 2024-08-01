@@ -2,7 +2,7 @@
 category: Components
 type: Data Entry
 title: Form
-version: 5.2.0-rc.0
+version: 5.2.0
 ---
 
 High-performance form component with data domain management. Includes data entry, validation, and corresponding styles. Base on [rc-field-form](https://www.npmjs.com/package/rc-field-form).

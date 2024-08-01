@@ -46,7 +46,7 @@ export default (theme: Theme) =>
       alignItems: 'center',
     },
     checkbox_checked: {
-      borderColor: theme.checkbox_fill,
+      borderColor: theme.brand_primary,
     },
     checkbox_disabled: {
       borderColor: theme.checkbox_border_disabled,
@@ -58,7 +58,7 @@ export default (theme: Theme) =>
       //box-sizing not support in RN
       width: '103%',
       height: '103%',
-      backgroundColor: theme.checkbox_fill,
+      backgroundColor: theme.brand_primary,
     },
     checkbox_inner_indeterminate: {
       backgroundColor: 'transparent',
@@ -85,7 +85,7 @@ export default (theme: Theme) =>
       position: 'absolute',
       width: 8,
       height: 8,
-      backgroundColor: theme.checkbox_fill,
+      backgroundColor: theme.brand_primary,
     },
     checkbox_inner_after_disabled: {
       borderColor: theme.checkbox_border_disabled,

@@ -2,11 +2,11 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 
 export interface NoticeBarStyle {
-  notice: ViewStyle
   container: ViewStyle
-  content: TextStyle
-  left6: ViewStyle
-  left15: ViewStyle
+  font: TextStyle
+  background: ViewStyle
+  marquee: TextStyle
+  iconWrap: ViewStyle
   actionWrap: ViewStyle
   close: TextStyle
   link: TextStyle
@@ -14,41 +14,38 @@ export interface NoticeBarStyle {
 
 export default (variables: Theme) =>
   StyleSheet.create<NoticeBarStyle>({
-    notice: {
+    font: {
+      color: variables.brand_error,
+    },
+    background: {
       backgroundColor: variables.notice_bar_fill,
+    },
+    container: {
       height: variables.notice_bar_height,
       overflow: 'hidden',
       flexDirection: 'row',
       alignItems: 'center',
     },
-    container: {
-      flex: 1,
-      marginRight: variables.h_spacing_lg,
-      overflow: 'hidden',
-      width: 0, // ios bug: width size is wrong (usecase: with react-navigation).
-    },
-    content: {
+    marquee: {
       fontSize: variables.font_size_subhead,
-      color: variables.brand_warning,
     },
-    left6: {
-      marginLeft: variables.h_spacing_sm,
-    },
-    left15: {
+    iconWrap: {
       marginLeft: variables.h_spacing_lg,
+      marginRight: variables.h_spacing_sm,
     },
     actionWrap: {
-      marginRight: variables.h_spacing_lg,
+      height: '100%',
+      justifyContent: 'center',
+      paddingRight: variables.h_spacing_lg,
+      paddingLeft: variables.h_spacing_sm,
     },
     close: {
-      color: variables.brand_warning,
       fontSize: 18,
       fontWeight: '200',
       textAlign: 'left',
     },
     link: {
       transform: [{ rotate: '225deg' }],
-      color: variables.brand_warning,
       fontSize: variables.font_size_icontext,
       fontWeight: '500',
       textAlign: 'left',

@@ -1,7 +1,7 @@
 import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import * as React from 'react'
 import { View } from 'react-native'
-import DisabledContext from '../config-provider/DisabledContext'
+import DisabledContext from '../provider/DisabledContext'
 import { OnGroupChangeParams, RadioGroupProps } from './PropsType'
 import { RadioGroupContextProvider } from './RadioContext'
 import RadioItem from './RadioItem'

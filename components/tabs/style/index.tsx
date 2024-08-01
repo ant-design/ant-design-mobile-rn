@@ -28,9 +28,9 @@ export default (theme: Theme) =>
     },
     underline: {
       height: 2,
-      backgroundColor: theme.tabs_color,
+      backgroundColor: theme.brand_primary,
     },
     textStyle: {
-      fontSize: 15,
+      fontSize: theme.tabs_font_size_heading,
     },
   })

@@ -14,13 +14,14 @@ import React, {
   useState,
 } from 'react'
 import { Text, TextInput, TouchableHighlight } from 'react-native'
-import DisabledContext from '../config-provider/DisabledContext'
 import Input from '../input'
-import { useTheme } from '../style'
+import DisabledContext from '../provider/DisabledContext'
+import HapticsContext from '../provider/HapticsContext'
+import { ThemeContext, useTheme } from '../style'
 import { BaseStepperProps, StepperProps } from './PropsType'
 import StepperStyles from './style'
 
-export function InnerStepper<ValueType extends number | string>(
+function InnerStepper<ValueType extends number | string>(
   props: StepperProps,
   ref: React.ForwardedRef<TextInput>,
 ) {
@@ -123,6 +124,34 @@ export function InnerStepper<ValueType extends number | string>(
     setMergedValue(getValueAsType(target))
   }
 
+  const onHaptics = useContext(HapticsContext)
+
+  const plusDisabled = useMemo(() => {
+    if (disabled) {
+      return true
+    }
+    if (mergedValue === null) {
+      return false
+    }
+    if (max !== undefined) {
+      return mergedValue >= max
+    }
+    return false
+  }, [disabled, max, mergedValue])
+
+  const minusDisabled = useMemo(() => {
+    if (disabled) {
+      return true
+    }
+    if (mergedValue === null) {
+      return false
+    }
+    if (min !== undefined) {
+      return mergedValue <= min
+    }
+    return false
+  }, [disabled, min, mergedValue])
+
   const reducer = (
     state: { value: string },
     action: { type: 'setInputValue' | 'minus' | 'plus'; payload?: string },
@@ -131,14 +160,25 @@ export function InnerStepper<ValueType extends number | string>(
       return { value: action.payload }
     }
 
+    if (
+      (action.type === 'plus' && plusDisabled) ||
+      (action.type === 'minus' && minusDisabled)
+    ) {
+      return state
+    }
+
+    onHaptics('stepper')
+
     let stepValue = getMiniDecimal(step)
     if (action.type === 'minus') {
       stepValue = stepValue.negate()
     }
+
     setValueWithCheck(
       getMiniDecimal(mergedValue ?? 0).add(stepValue.toString()),
     )
-    return { state }
+
+    return state
   }
   const [state, dispatch] = useReducer(reducer, {
     value: formatValue(mergedValue),
@@ -186,7 +226,7 @@ export function InnerStepper<ValueType extends number | string>(
         payload: formatValue(mergedValue),
       })
     }
-  }, [focused, mergedValue, digits, formatValue])
+  }, [focused, mergedValue, digits, formatValue, dispatch])
 
   // ============================ Operations ============================
   const handleMinus = () => {
@@ -223,36 +263,11 @@ export function InnerStepper<ValueType extends number | string>(
     }
   }, [])
 
-  const minusDisabled = useMemo(() => {
-    if (disabled) {
-      return true
-    }
-    if (mergedValue === null) {
-      return false
-    }
-    if (min !== undefined) {
-      return mergedValue <= min
-    }
-    return false
-  }, [disabled, min, mergedValue])
-
-  const plusDisabled = useMemo(() => {
-    if (disabled) {
-      return true
-    }
-    if (mergedValue === null) {
-      return false
-    }
-    if (max !== undefined) {
-      return mergedValue >= max
-    }
-    return false
-  }, [disabled, max, mergedValue])
-
   const ss = useTheme({
     styles,
     themeStyles: StepperStyles,
   })
+  const theme = useContext(ThemeContext)
 
   // ============================== Render ==============================
   return (
@@ -283,7 +298,7 @@ export function InnerStepper<ValueType extends number | string>(
           onPressOut={onPressOut}
           disabled={minusDisabled}
           activeOpacity={1}
-          underlayColor="#ddd"
+          underlayColor={theme.fill_tap}
           children={
             <Text
               style={[ss.stepText, minusDisabled && ss.disabledStepTextColor]}>
@@ -301,7 +316,7 @@ export function InnerStepper<ValueType extends number | string>(
           onPressOut={onPressOut}
           disabled={plusDisabled}
           activeOpacity={1}
-          underlayColor="#ddd"
+          underlayColor={theme.fill_tap}
           children={
             <Text
               style={[ss.stepText, plusDisabled && ss.disabledStepTextColor]}>

@@ -3,7 +3,7 @@ category: Components
 type: Data Entry
 title: Form
 subtitle: 表单
-version: 5.2.0-rc.0
+version: 5.2.0
 ---
 
 高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。基于[rc-field-form](https://www.npmjs.com/package/rc-field-form)。

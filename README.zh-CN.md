@@ -32,7 +32,7 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 
 |SDK 49+|
 |--|
-| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5" />](https://expo.dev/preview/update?message=5.2.0%20Form%20%26%20Input&updateRuntimeVersion=5.2.0&createdAt=2024-05-24T06%3A10%3A13.909Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=5278146b-c8d6-4c93-8a6b-6f942a2b5fb5) |
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=1380588b-3ab3-4216-b507-a281d159be16" />](https://expo.dev/preview/update?message=5.2.0&updateRuntimeVersion=5.2.0&createdAt=2024-08-01T10%3A54%3A39.803Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=1380588b-3ab3-4216-b507-a281d159be16) |
 
 提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
 
@@ -46,40 +46,39 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 ## 安装 & 使用
 
 ```bash
-npm install @ant-design/react-native --save
-```
-
-or
-
-```bash
-yarn add @ant-design/react-native
+npm install @ant-design/react-native @ant-design/icons-react-native
 ```
 
 ### 安装peer依赖
+接下来安装来自 `peerDependencies` 管理的依赖：
 
-```bash
-npm install @react-native-community/segmented-control @react-native-community/slider @ant-design/icons-react-native react-native-gesture-handler
-```
+ - 如果使用Expo来构建项目的，请使用 `expo`（**推荐，这能安装到最合适的版本**）：
+   ```bash
+   npx expo install react-native-gesture-handler react-native-reanimated
+   ```
 
-or
-
-```bash
-yarn add @react-native-community/segmented-control @react-native-community/slider @ant-design/icons-react-native react-native-gesture-handler
-```
-
-> 安装完依赖后需要到 iOS 目录 `pod install`(auto linking)，Android 不需要手动处理
+ - 如果使用React Native CLI原生构建项目的，请使用 `npm` ：
+   ```bash
+   npm install react-native-gesture-handler react-native-reanimated
+   ```
+   
+ - 对于 iOS 的 React Native CLI裸项目，请确保已安装 CocoaPods。然后执行 `pods` (auto linking)，
+   <br/>Android 不需要手动处理：
+   ```bash
+   cd ios
+   pod install
+   cd ..
+   ```
 
 ### 链接字体图标
-
+将字体资源路径配置到根目录下的 `react-native.config.js` 文件中 ( 如果没有，请创建 )
 ```js
-// 配置根目录下的 `react-native.config.js` 文件
 module.exports = {
   assets: ['node_modules/@ant-design/icons-react-native/fonts'],
 };
 ```
-然后
+然后执行 [react-native-asset](https://github.com/unimonkiez/react-native-asset) 的命令
 ```bash
-# 手动执行命令
 npx react-native-asset
 ```
 

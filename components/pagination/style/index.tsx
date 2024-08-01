@@ -38,7 +38,7 @@ export default (theme: Theme) =>
       width: 8,
       height: 8,
       borderRadius: 8,
-      backgroundColor: theme.input_color_icon,
+      backgroundColor: theme.color_icon_base,
     },
     pointActiveStyle: {
       backgroundColor: '#888',

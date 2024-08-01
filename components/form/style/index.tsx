@@ -51,7 +51,7 @@ export default (theme: Theme) =>
       position: 'absolute',
       left: -theme.font_size_heading / 2,
       top: theme.prefix_padding,
-      color: theme.color_error,
+      color: theme.brand_error,
       fontSize: theme.font_size_heading,
     },
     optional: {
@@ -65,16 +65,16 @@ export default (theme: Theme) =>
     },
 
     error: {
-      color: theme.color_error,
+      color: theme.brand_error,
     },
     warning: {
-      color: theme.color_warning,
+      color: theme.brand_warning,
     },
     success: {
-      color: theme.color_success,
+      color: theme.brand_success,
     },
     validating: {
-      color: theme.color_primary,
+      color: theme.brand_primary,
     },
     feedbackIcon: {},
   })

@@ -33,7 +33,7 @@ export default (theme: Theme) =>
       flex: 1,
       // height: theme.list_item_height,
       backgroundColor: 'transparent',
-      fontSize: theme.input_font_size,
+      fontSize: theme.font_size_heading,
       color: theme.color_text_base,
     },
     inputDisabled: {

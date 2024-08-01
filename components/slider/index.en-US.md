@@ -2,7 +2,7 @@
 category: Components
 type: Data Entry
 title: Slider
-version: 5.2.0-rc.2
+version: update
 ---
 
 A Slider component for selecting particular value in range, eg: controls the display brightness of the screen.

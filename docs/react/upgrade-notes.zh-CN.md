@@ -5,6 +5,20 @@ title: 升级指南
 
 此处着重列出升级中的不兼容变化和推荐改动。所有变动请见 [Changelog](/changelog)。
 
+### 5.2.0
+
+> 安装 peer 依赖
+
+```bash
+npm install @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+```
+
+or
+
+```bash
+yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+```
+
 ### 5.1.0
 
 > 安装 peer 依赖

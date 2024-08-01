@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {
   LayoutChangeEvent,
   LayoutRectangle,
@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
 import Animated, { runOnJS, useAnimatedStyle } from 'react-native-reanimated'
+import HapticsContext from '../provider/HapticsContext'
 import Tooltip from '../tooltip'
 import { SliderStyle } from './style'
 import { ThumbIcon } from './thumb-icon'
@@ -57,9 +58,11 @@ const Thumb: FC<ThumbProps> = (props) => {
   }
 
   const [dragging, setDragging] = useState(false)
+  const onHaptics = useContext(HapticsContext)
 
   const gesture = Gesture.Pan()
     .enabled(!disabled)
+    .onBegin(() => runOnJS(onHaptics)('slider'))
     .onUpdate((e) => {
       !dragging && runOnJS(setDragging)(true)
       runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))

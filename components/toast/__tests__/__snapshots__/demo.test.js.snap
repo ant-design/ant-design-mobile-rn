@@ -142,8 +142,8 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                           "width": 55,
                         },
                         Object {
-                          "backgroundColor": "#1890ff",
-                          "borderColor": "#1890ff",
+                          "backgroundColor": "#108ee9",
+                          "borderColor": "#108ee9",
                         },
                         undefined,
                       ],
@@ -326,8 +326,8 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                           "width": 55,
                         },
                         Object {
-                          "backgroundColor": "#1890ff",
-                          "borderColor": "#1890ff",
+                          "backgroundColor": "#108ee9",
+                          "borderColor": "#108ee9",
                         },
                         undefined,
                       ],

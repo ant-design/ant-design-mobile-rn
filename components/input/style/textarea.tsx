@@ -33,6 +33,6 @@ export default (theme: Theme) =>
       alignSelf: 'flex-end',
     },
     showCountError: {
-      color: theme.color_error,
+      color: theme.brand_error,
     },
   })

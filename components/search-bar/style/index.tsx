@@ -51,7 +51,7 @@ export default (theme: Theme) =>
       paddingLeft: theme.h_spacing_lg,
     },
     search: {
-      color: theme.input_color_icon,
+      color: theme.color_icon_base,
       position: 'absolute',
       left: theme.h_spacing_md + 8,
       top: (theme.search_bar_height - theme.icon_size_xxs) / 2,

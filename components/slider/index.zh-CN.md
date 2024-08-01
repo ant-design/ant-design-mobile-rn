@@ -3,7 +3,7 @@ category: Components
 type: Data Entry
 title: Slider
 subtitle: 滑动输入条
-version: 5.2.0-rc.2
+version: update
 ---
 
 允许用户在一个区间中选择特定值，eg：控制屏幕的显示亮度。

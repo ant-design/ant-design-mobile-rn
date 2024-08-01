@@ -4,7 +4,7 @@
   "expo": {
     "name": "@ant-design/react-native",
     "slug": "ant-design-mobile-rn",
-    "version": "5.1.0",
+    "version": "5.2.0",
     "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
     "icon": "../rn-kitchen-sink/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
     "splash": {

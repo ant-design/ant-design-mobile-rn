@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import LocaleProvider from '..'
+import Provider from '..'
 import {
   DatePicker,
   List,
@@ -10,14 +10,14 @@ import {
   WhiteSpace,
   WingBlank,
 } from '../../'
-import enUS from '../en_US'
-import esES from '../es_ES'
-import faIR from '../fa_IR'
-import koKR from '../ko_KR'
-import ptBR from '../pt_BR'
-import ruRU from '../ru_RU'
-import svSE from '../sv_SE'
-import zhCN from '../zh_CN'
+import enUS from '../../locale-provider/en_US'
+import esES from '../../locale-provider/es_ES'
+import faIR from '../../locale-provider/fa_IR'
+import koKR from '../../locale-provider/ko_KR'
+import ptBR from '../../locale-provider/pt_BR'
+import ruRU from '../../locale-provider/ru_RU'
+import svSE from '../../locale-provider/sv_SE'
+import zhCN from '../../locale-provider/zh_CN'
 
 const maxDate = new Date(2018, 11, 3, 22, 0)
 const minDate = new Date(2015, 7, 6, 8, 30)
@@ -138,9 +138,9 @@ export default class LocaleProviderExample extends React.Component<any, any> {
           <List.Item arrow="horizontal">Choose language</List.Item>
         </Picker>
         <WhiteSpace />
-        <LocaleProvider locale={currentLocale}>
+        <Provider locale={currentLocale}>
           <Page />
-        </LocaleProvider>
+        </Provider>
       </WingBlank>
     )
   }

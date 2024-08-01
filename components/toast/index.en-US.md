@@ -2,7 +2,7 @@
 category: Components
 type: Feedback
 title: Toast
-version: 5.2.0-rc.1
+version: update
 ---
 
 A lightweight feedback or tips, used to display content that does not interrupt user operations. Suitable for page transitions, data interaction and other scenes.
