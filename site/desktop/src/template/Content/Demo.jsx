@@ -124,7 +124,10 @@ export default class Demo extends React.Component {
     if (
       componentName === 'icon' ||
       componentName === 'toast' ||
-      componentName === 'tooltip'
+      componentName === 'list' ||
+      componentName === 'tooltip' ||
+      componentName === 'collapse' ||
+      componentName === 'notice-bar'
     ) {
       dependencies +=
         ',@ant-design/icons-react-native/lib/outline,' +
