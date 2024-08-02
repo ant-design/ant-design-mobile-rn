@@ -3,29 +3,35 @@
 exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
 <RCTScrollView>
   <View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          基本用法
-        </Text>
-      </View>
+        }
+      >
+        基本用法
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -165,6 +171,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -191,17 +198,26 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -210,29 +226,35 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          不可用
-        </Text>
-      </View>
+        }
+      >
+        不可用
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -280,277 +302,274 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
+                align="center"
+                direction="row"
+                justify="start"
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                    undefined,
+                  ]
                 }
+                wrap="nowrap"
               >
                 <View
+                  accessibilityRole="radio"
+                  accessibilityState={
+                    Object {
+                      "checked": false,
+                      "disabled": false,
+                    }
+                  }
+                  accessible={true}
+                  checked={false}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
                         "alignItems": "center",
+                        "display": "flex",
                         "flexDirection": "row",
-                        "flexWrap": "nowrap",
-                        "justifyContent": "flex-start",
+                        "margin": 0,
+                        "padding": 0,
+                        "position": "relative",
                       },
                       undefined,
                     ]
                   }
                 >
                   <View
-                    accessibilityRole="radio"
-                    accessibilityState={
-                      Object {
-                        "checked": false,
-                        "disabled": false,
-                      }
-                    }
-                    accessible={true}
-                    checked={false}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
-                          "alignItems": "center",
-                          "display": "flex",
-                          "flexDirection": "row",
-                          "margin": 0,
-                          "padding": 0,
-                          "position": "relative",
+                          "height": 20,
+                          "overflow": "hidden",
+                          "padding": 2,
+                          "width": 20,
                         },
-                        undefined,
+                        Object {
+                          "borderRadius": 999,
+                        },
                       ]
                     }
                   >
                     <View
                       style={
                         Array [
-                          Object {
-                            "height": 20,
-                            "overflow": "hidden",
-                            "padding": 2,
-                            "width": 20,
-                          },
-                          Object {
-                            "borderRadius": 999,
-                          },
+                          Array [
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderColor": "#d9d9d9",
+                              "borderRadius": 2,
+                              "borderStyle": "solid",
+                              "borderWidth": 1,
+                              "height": "100%",
+                              "justifyContent": "center",
+                              "position": "relative",
+                              "width": "100%",
+                            },
+                            Object {
+                              "borderRadius": 999,
+                            },
+                          ],
                         ]
                       }
                     >
                       <View
                         style={
-                          Array [
-                            Array [
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "height": 0,
+                            "opacity": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "borderColor": "#ffffff",
+                            "borderLeftWidth": 0,
+                            "borderRadius": 999,
+                            "borderTopWidth": 0,
+                            "borderWidth": 0,
+                            "bottom": "20%",
+                            "height": 8,
+                            "position": "absolute",
+                            "transform": Array [
                               Object {
-                                "alignItems": "center",
-                                "backgroundColor": "transparent",
-                                "borderColor": "#d9d9d9",
-                                "borderRadius": 2,
-                                "borderStyle": "solid",
-                                "borderWidth": 1,
-                                "height": "100%",
-                                "justifyContent": "center",
-                                "position": "relative",
-                                "width": "100%",
-                              },
-                              Object {
-                                "borderRadius": 999,
+                                "scale": 0,
                               },
                             ],
-                          ]
+                            "width": 8,
+                          }
                         }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#108ee9",
-                              "height": 0,
-                              "opacity": 0,
-                              "width": 0,
-                            }
-                          }
-                        />
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#108ee9",
-                              "borderColor": "#ffffff",
-                              "borderLeftWidth": 0,
-                              "borderRadius": 999,
-                              "borderTopWidth": 0,
-                              "borderWidth": 0,
-                              "bottom": "20%",
-                              "height": 8,
-                              "position": "absolute",
-                              "transform": Array [
-                                Object {
-                                  "scale": 0,
-                                },
-                              ],
-                              "width": 8,
-                            }
-                          }
-                        />
-                      </View>
+                      />
                     </View>
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "marginLeft": 8,
-                            "marginRight": 8,
-                          },
-                        ]
-                      }
-                    >
-                      Disabled
-                    </Text>
                   </View>
-                  <View
+                  <Text
                     style={
                       Array [
                         Object {
-                          "marginLeft": 15,
-                          "marginRight": 15,
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "marginLeft": 8,
+                          "marginRight": 8,
                         },
-                        undefined,
                       ]
                     }
-                  />
-                  <View
-                    accessibilityRole="radio"
-                    accessibilityState={
+                  >
+                    Disabled
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Array [
                       Object {
-                        "checked": false,
-                        "disabled": false,
-                      }
+                        "marginLeft": 15,
+                        "marginRight": 15,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  accessibilityRole="radio"
+                  accessibilityState={
+                    Object {
+                      "checked": false,
+                      "disabled": false,
                     }
-                    accessible={true}
-                    checked={false}
-                    collapsable={false}
-                    focusable={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
+                  }
+                  accessible={true}
+                  checked={false}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "margin": 0,
+                        "padding": 0,
+                        "position": "relative",
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <View
                     style={
                       Array [
                         Object {
-                          "alignItems": "center",
-                          "display": "flex",
-                          "flexDirection": "row",
-                          "margin": 0,
-                          "padding": 0,
-                          "position": "relative",
+                          "height": 20,
+                          "overflow": "hidden",
+                          "padding": 2,
+                          "width": 20,
                         },
-                        undefined,
+                        Object {
+                          "borderRadius": 999,
+                        },
                       ]
                     }
                   >
                     <View
                       style={
                         Array [
-                          Object {
-                            "height": 20,
-                            "overflow": "hidden",
-                            "padding": 2,
-                            "width": 20,
-                          },
-                          Object {
-                            "borderRadius": 999,
-                          },
+                          Array [
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderColor": "#d9d9d9",
+                              "borderRadius": 2,
+                              "borderStyle": "solid",
+                              "borderWidth": 1,
+                              "height": "100%",
+                              "justifyContent": "center",
+                              "position": "relative",
+                              "width": "100%",
+                            },
+                            Object {
+                              "borderRadius": 999,
+                            },
+                          ],
                         ]
                       }
                     >
                       <View
                         style={
-                          Array [
-                            Array [
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "height": 0,
+                            "opacity": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "borderColor": "#ffffff",
+                            "borderLeftWidth": 0,
+                            "borderRadius": 999,
+                            "borderTopWidth": 0,
+                            "borderWidth": 0,
+                            "bottom": "20%",
+                            "height": 8,
+                            "position": "absolute",
+                            "transform": Array [
                               Object {
-                                "alignItems": "center",
-                                "backgroundColor": "transparent",
-                                "borderColor": "#d9d9d9",
-                                "borderRadius": 2,
-                                "borderStyle": "solid",
-                                "borderWidth": 1,
-                                "height": "100%",
-                                "justifyContent": "center",
-                                "position": "relative",
-                                "width": "100%",
-                              },
-                              Object {
-                                "borderRadius": 999,
+                                "scale": 0,
                               },
                             ],
-                          ]
+                            "width": 8,
+                          }
                         }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#108ee9",
-                              "height": 0,
-                              "opacity": 0,
-                              "width": 0,
-                            }
-                          }
-                        />
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#108ee9",
-                              "borderColor": "#ffffff",
-                              "borderLeftWidth": 0,
-                              "borderRadius": 999,
-                              "borderTopWidth": 0,
-                              "borderWidth": 0,
-                              "bottom": "20%",
-                              "height": 8,
-                              "position": "absolute",
-                              "transform": Array [
-                                Object {
-                                  "scale": 0,
-                                },
-                              ],
-                              "width": 8,
-                            }
-                          }
-                        />
-                      </View>
+                      />
                     </View>
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "marginLeft": 8,
-                            "marginRight": 8,
-                          },
-                        ]
-                      }
-                    >
-                      Disabled
-                    </Text>
                   </View>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  >
+                    Disabled
+                  </Text>
                 </View>
               </View>
             </View>
@@ -559,11 +578,9 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -571,97 +588,101 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
           }
         />
       </View>
-      <View>
-        <View
-          accessibilityRole="button"
-          accessibilityState={
-            Object {
-              "disabled": false,
-            }
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
           }
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+        }
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
+            },
+            Object {
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+            },
+            Object {
+              "backgroundColor": "#108ee9",
+              "borderColor": "#108ee9",
+            },
+            false,
+            false,
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <View
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 5,
-                "borderWidth": 1,
-                "justifyContent": "center",
-              },
-              Object {
-                "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
-              },
-              Object {
-                "backgroundColor": "#108ee9",
-                "borderColor": "#108ee9",
-              },
-              false,
-              false,
-              undefined,
-              undefined,
-            ]
+            Object {
+              "flexDirection": "row",
+            }
           }
         >
-          <View
+          <Text
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "fontSize": 18,
+                },
+                Object {
+                  "color": "#ffffff",
+                },
+                false,
+                false,
+              ]
             }
           >
-            <Text
-              style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#ffffff",
-                  },
-                  false,
-                  false,
-                ]
-              }
-            >
-              Toggle disabled
-            </Text>
-          </View>
+            Toggle disabled
+          </Text>
         </View>
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          RadioItem
-        </Text>
-      </View>
+        }
+      >
+        RadioItem
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -717,10 +738,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
                 }
               >
                 <Text
@@ -740,125 +765,144 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityRole="radio"
-                accessibilityState={
-                  Object {
-                    "checked": true,
-                    "disabled": false,
-                  }
-                }
-                accessible={true}
                 checked={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+                onChange={[Function]}
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "display": "flex",
-                      "flexDirection": "row",
-                      "margin": 0,
-                      "padding": 0,
-                      "position": "relative",
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "maxWidth": "70%",
+                      "paddingLeft": 8,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
                     },
                     undefined,
                   ]
                 }
               >
                 <View
+                  accessibilityRole="radio"
+                  accessibilityState={
+                    Object {
+                      "checked": true,
+                      "disabled": false,
+                    }
+                  }
+                  accessible={true}
+                  checked={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "height": 20,
-                        "overflow": "hidden",
-                        "padding": 2,
-                        "width": 20,
+                        "alignItems": "center",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "margin": 0,
+                        "padding": 0,
+                        "position": "relative",
                       },
-                      Object {
-                        "borderRadius": 999,
-                      },
+                      undefined,
                     ]
                   }
                 >
                   <View
                     style={
                       Array [
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "transparent",
-                            "borderColor": "#d9d9d9",
-                            "borderRadius": 2,
-                            "borderStyle": "solid",
-                            "borderWidth": 1,
-                            "height": "100%",
-                            "justifyContent": "center",
-                            "position": "relative",
-                            "width": "100%",
-                          },
-                          Object {
-                            "borderRadius": 999,
-                          },
-                        ],
                         Object {
-                          "borderColor": "#108ee9",
+                          "height": 20,
+                          "overflow": "hidden",
+                          "padding": 2,
+                          "width": 20,
+                        },
+                        Object {
+                          "borderRadius": 999,
                         },
                       ]
                     }
                   >
                     <View
                       style={
-                        Object {
-                          "backgroundColor": "#108ee9",
-                          "height": 0,
-                          "opacity": 0,
-                          "width": 0,
-                        }
-                      }
-                    />
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#108ee9",
-                          "borderColor": "#ffffff",
-                          "borderLeftWidth": 0,
-                          "borderRadius": 999,
-                          "borderTopWidth": 0,
-                          "borderWidth": 0,
-                          "bottom": "20%",
-                          "height": 8,
-                          "position": "absolute",
-                          "transform": Array [
+                        Array [
+                          Array [
                             Object {
-                              "scale": 0,
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderColor": "#d9d9d9",
+                              "borderRadius": 2,
+                              "borderStyle": "solid",
+                              "borderWidth": 1,
+                              "height": "100%",
+                              "justifyContent": "center",
+                              "position": "relative",
+                              "width": "100%",
+                            },
+                            Object {
+                              "borderRadius": 999,
                             },
                           ],
-                          "width": 8,
-                        }
+                          Object {
+                            "borderColor": "#108ee9",
+                          },
+                        ]
                       }
-                    />
+                    >
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "height": 0,
+                            "opacity": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "borderColor": "#ffffff",
+                            "borderLeftWidth": 0,
+                            "borderRadius": 999,
+                            "borderTopWidth": 0,
+                            "borderWidth": 0,
+                            "bottom": "20%",
+                            "height": 8,
+                            "position": "absolute",
+                            "transform": Array [
+                              Object {
+                                "scale": 0,
+                              },
+                            ],
+                            "width": 8,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
                 </View>
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -915,10 +959,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
                 }
               >
                 <Text
@@ -938,122 +986,141 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityRole="radio"
-                accessibilityState={
-                  Object {
-                    "checked": false,
-                    "disabled": false,
-                  }
-                }
-                accessible={true}
                 checked={false}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+                onChange={[Function]}
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "display": "flex",
-                      "flexDirection": "row",
-                      "margin": 0,
-                      "padding": 0,
-                      "position": "relative",
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "maxWidth": "70%",
+                      "paddingLeft": 8,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
                     },
                     undefined,
                   ]
                 }
               >
                 <View
+                  accessibilityRole="radio"
+                  accessibilityState={
+                    Object {
+                      "checked": false,
+                      "disabled": false,
+                    }
+                  }
+                  accessible={true}
+                  checked={false}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "height": 20,
-                        "overflow": "hidden",
-                        "padding": 2,
-                        "width": 20,
+                        "alignItems": "center",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "margin": 0,
+                        "padding": 0,
+                        "position": "relative",
                       },
-                      Object {
-                        "borderRadius": 999,
-                      },
+                      undefined,
                     ]
                   }
                 >
                   <View
                     style={
                       Array [
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "transparent",
-                            "borderColor": "#d9d9d9",
-                            "borderRadius": 2,
-                            "borderStyle": "solid",
-                            "borderWidth": 1,
-                            "height": "100%",
-                            "justifyContent": "center",
-                            "position": "relative",
-                            "width": "100%",
-                          },
-                          Object {
-                            "borderRadius": 999,
-                          },
-                        ],
+                        Object {
+                          "height": 20,
+                          "overflow": "hidden",
+                          "padding": 2,
+                          "width": 20,
+                        },
+                        Object {
+                          "borderRadius": 999,
+                        },
                       ]
                     }
                   >
                     <View
                       style={
-                        Object {
-                          "backgroundColor": "#108ee9",
-                          "height": 0,
-                          "opacity": 0,
-                          "width": 0,
-                        }
-                      }
-                    />
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#108ee9",
-                          "borderColor": "#ffffff",
-                          "borderLeftWidth": 0,
-                          "borderRadius": 999,
-                          "borderTopWidth": 0,
-                          "borderWidth": 0,
-                          "bottom": "20%",
-                          "height": 8,
-                          "position": "absolute",
-                          "transform": Array [
+                        Array [
+                          Array [
                             Object {
-                              "scale": 0,
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "borderColor": "#d9d9d9",
+                              "borderRadius": 2,
+                              "borderStyle": "solid",
+                              "borderWidth": 1,
+                              "height": "100%",
+                              "justifyContent": "center",
+                              "position": "relative",
+                              "width": "100%",
+                            },
+                            Object {
+                              "borderRadius": 999,
                             },
                           ],
-                          "width": 8,
-                        }
+                        ]
                       }
-                    />
+                    >
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "height": 0,
+                            "opacity": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "borderColor": "#ffffff",
+                            "borderLeftWidth": 0,
+                            "borderRadius": 999,
+                            "borderTopWidth": 0,
+                            "borderWidth": 0,
+                            "bottom": "20%",
+                            "height": 8,
+                            "position": "absolute",
+                            "transform": Array [
+                              Object {
+                                "scale": 0,
+                              },
+                            ],
+                            "width": 8,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
                 </View>
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -1061,11 +1128,9 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -1074,30 +1139,36 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          单选组合 RadioGroup
+        }
+      >
+        单选组合 RadioGroup
 一组互斥的 Radio 配合使用
-        </Text>
-      </View>
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -1230,6 +1301,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 Array [
                   Object {
                     "backgroundColor": "transparent",
+                    "color": "#000000",
                     "marginLeft": 8,
                     "marginRight": 8,
                   },
@@ -1350,6 +1422,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 Array [
                   Object {
                     "backgroundColor": "transparent",
+                    "color": "#000000",
                     "marginLeft": 8,
                     "marginRight": 8,
                   },
@@ -1470,6 +1543,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 Array [
                   Object {
                     "backgroundColor": "transparent",
+                    "color": "#000000",
                     "marginLeft": 8,
                     "marginRight": 8,
                   },
@@ -1590,6 +1664,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                 Array [
                   Object {
                     "backgroundColor": "transparent",
+                    "color": "#000000",
                     "marginLeft": 8,
                     "marginRight": 8,
                   },
@@ -1603,11 +1678,9 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -1616,30 +1689,36 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          Radio.Group 垂直
+        }
+      >
+        Radio.Group 垂直
 垂直的 Radio.Group，配合更多输入框选项
-        </Text>
-      </View>
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -1703,10 +1782,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    }
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "flex": 1,
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
+                      },
+                    ]
                   }
                 >
                   <Text
@@ -1726,125 +1809,143 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </Text>
                 </View>
                 <View
-                  accessibilityRole="radio"
-                  accessibilityState={
-                    Object {
-                      "checked": true,
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  checked={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "alignItems": "center",
-                        "display": "flex",
-                        "flexDirection": "row",
-                        "margin": 0,
-                        "padding": 0,
-                        "position": "relative",
+                        "color": "#888888",
+                        "fontSize": 17,
+                        "maxWidth": "70%",
+                        "paddingLeft": 8,
+                        "textAlign": "right",
+                        "textAlignVertical": "center",
                       },
                       undefined,
                     ]
                   }
+                  value={1}
                 >
                   <View
+                    accessibilityRole="radio"
+                    accessibilityState={
+                      Object {
+                        "checked": true,
+                        "disabled": false,
+                      }
+                    }
+                    accessible={true}
+                    checked={true}
+                    collapsable={false}
+                    focusable={true}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
-                          "height": 20,
-                          "overflow": "hidden",
-                          "padding": 2,
-                          "width": 20,
+                          "alignItems": "center",
+                          "display": "flex",
+                          "flexDirection": "row",
+                          "margin": 0,
+                          "padding": 0,
+                          "position": "relative",
                         },
-                        Object {
-                          "borderRadius": 999,
-                        },
+                        undefined,
                       ]
                     }
                   >
                     <View
                       style={
                         Array [
-                          Array [
-                            Object {
-                              "alignItems": "center",
-                              "backgroundColor": "transparent",
-                              "borderColor": "#d9d9d9",
-                              "borderRadius": 2,
-                              "borderStyle": "solid",
-                              "borderWidth": 1,
-                              "height": "100%",
-                              "justifyContent": "center",
-                              "position": "relative",
-                              "width": "100%",
-                            },
-                            Object {
-                              "borderRadius": 999,
-                            },
-                          ],
                           Object {
-                            "borderColor": "#108ee9",
+                            "height": 20,
+                            "overflow": "hidden",
+                            "padding": 2,
+                            "width": 20,
+                          },
+                          Object {
+                            "borderRadius": 999,
                           },
                         ]
                       }
                     >
                       <View
                         style={
-                          Object {
-                            "backgroundColor": "#108ee9",
-                            "height": 0,
-                            "opacity": 0,
-                            "width": 0,
-                          }
-                        }
-                      />
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "#108ee9",
-                            "borderColor": "#ffffff",
-                            "borderLeftWidth": 0,
-                            "borderRadius": 999,
-                            "borderTopWidth": 0,
-                            "borderWidth": 0,
-                            "bottom": "20%",
-                            "height": 8,
-                            "position": "absolute",
-                            "transform": Array [
+                          Array [
+                            Array [
                               Object {
-                                "scale": 0,
+                                "alignItems": "center",
+                                "backgroundColor": "transparent",
+                                "borderColor": "#d9d9d9",
+                                "borderRadius": 2,
+                                "borderStyle": "solid",
+                                "borderWidth": 1,
+                                "height": "100%",
+                                "justifyContent": "center",
+                                "position": "relative",
+                                "width": "100%",
+                              },
+                              Object {
+                                "borderRadius": 999,
                               },
                             ],
-                            "width": 8,
-                          }
+                            Object {
+                              "borderColor": "#108ee9",
+                            },
+                          ]
                         }
-                      />
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#108ee9",
+                              "height": 0,
+                              "opacity": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#108ee9",
+                              "borderColor": "#ffffff",
+                              "borderLeftWidth": 0,
+                              "borderRadius": 999,
+                              "borderTopWidth": 0,
+                              "borderWidth": 0,
+                              "bottom": "20%",
+                              "height": 8,
+                              "position": "absolute",
+                              "transform": Array [
+                                Object {
+                                  "scale": 0,
+                                },
+                              ],
+                              "width": 8,
+                            }
+                          }
+                        />
+                      </View>
                     </View>
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "marginLeft": 8,
+                            "marginRight": 8,
+                          },
+                        ]
+                      }
+                    />
                   </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
                 </View>
               </View>
             </View>
@@ -1901,10 +2002,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    }
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "flex": 1,
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
+                      },
+                    ]
                   }
                 >
                   <Text
@@ -1924,122 +2029,140 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </Text>
                 </View>
                 <View
-                  accessibilityRole="radio"
-                  accessibilityState={
-                    Object {
-                      "checked": false,
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  checked={false}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "alignItems": "center",
-                        "display": "flex",
-                        "flexDirection": "row",
-                        "margin": 0,
-                        "padding": 0,
-                        "position": "relative",
+                        "color": "#888888",
+                        "fontSize": 17,
+                        "maxWidth": "70%",
+                        "paddingLeft": 8,
+                        "textAlign": "right",
+                        "textAlignVertical": "center",
                       },
                       undefined,
                     ]
                   }
+                  value={2}
                 >
                   <View
+                    accessibilityRole="radio"
+                    accessibilityState={
+                      Object {
+                        "checked": false,
+                        "disabled": false,
+                      }
+                    }
+                    accessible={true}
+                    checked={false}
+                    collapsable={false}
+                    focusable={true}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
-                          "height": 20,
-                          "overflow": "hidden",
-                          "padding": 2,
-                          "width": 20,
+                          "alignItems": "center",
+                          "display": "flex",
+                          "flexDirection": "row",
+                          "margin": 0,
+                          "padding": 0,
+                          "position": "relative",
                         },
-                        Object {
-                          "borderRadius": 999,
-                        },
+                        undefined,
                       ]
                     }
                   >
                     <View
                       style={
                         Array [
-                          Array [
-                            Object {
-                              "alignItems": "center",
-                              "backgroundColor": "transparent",
-                              "borderColor": "#d9d9d9",
-                              "borderRadius": 2,
-                              "borderStyle": "solid",
-                              "borderWidth": 1,
-                              "height": "100%",
-                              "justifyContent": "center",
-                              "position": "relative",
-                              "width": "100%",
-                            },
-                            Object {
-                              "borderRadius": 999,
-                            },
-                          ],
+                          Object {
+                            "height": 20,
+                            "overflow": "hidden",
+                            "padding": 2,
+                            "width": 20,
+                          },
+                          Object {
+                            "borderRadius": 999,
+                          },
                         ]
                       }
                     >
                       <View
                         style={
-                          Object {
-                            "backgroundColor": "#108ee9",
-                            "height": 0,
-                            "opacity": 0,
-                            "width": 0,
-                          }
-                        }
-                      />
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "#108ee9",
-                            "borderColor": "#ffffff",
-                            "borderLeftWidth": 0,
-                            "borderRadius": 999,
-                            "borderTopWidth": 0,
-                            "borderWidth": 0,
-                            "bottom": "20%",
-                            "height": 8,
-                            "position": "absolute",
-                            "transform": Array [
+                          Array [
+                            Array [
                               Object {
-                                "scale": 0,
+                                "alignItems": "center",
+                                "backgroundColor": "transparent",
+                                "borderColor": "#d9d9d9",
+                                "borderRadius": 2,
+                                "borderStyle": "solid",
+                                "borderWidth": 1,
+                                "height": "100%",
+                                "justifyContent": "center",
+                                "position": "relative",
+                                "width": "100%",
+                              },
+                              Object {
+                                "borderRadius": 999,
                               },
                             ],
-                            "width": 8,
-                          }
+                          ]
                         }
-                      />
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#108ee9",
+                              "height": 0,
+                              "opacity": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#108ee9",
+                              "borderColor": "#ffffff",
+                              "borderLeftWidth": 0,
+                              "borderRadius": 999,
+                              "borderTopWidth": 0,
+                              "borderWidth": 0,
+                              "bottom": "20%",
+                              "height": 8,
+                              "position": "absolute",
+                              "transform": Array [
+                                Object {
+                                  "scale": 0,
+                                },
+                              ],
+                              "width": 8,
+                            }
+                          }
+                        />
+                      </View>
                     </View>
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "marginLeft": 8,
+                            "marginRight": 8,
+                          },
+                        ]
+                      }
+                    />
                   </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
                 </View>
               </View>
             </View>
@@ -2096,10 +2219,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    }
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "flex": 1,
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
+                      },
+                    ]
                   }
                 >
                   <Text
@@ -2119,122 +2246,140 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   </Text>
                 </View>
                 <View
-                  accessibilityRole="radio"
-                  accessibilityState={
-                    Object {
-                      "checked": false,
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  checked={false}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "alignItems": "center",
-                        "display": "flex",
-                        "flexDirection": "row",
-                        "margin": 0,
-                        "padding": 0,
-                        "position": "relative",
+                        "color": "#888888",
+                        "fontSize": 17,
+                        "maxWidth": "70%",
+                        "paddingLeft": 8,
+                        "textAlign": "right",
+                        "textAlignVertical": "center",
                       },
                       undefined,
                     ]
                   }
+                  value={3}
                 >
                   <View
+                    accessibilityRole="radio"
+                    accessibilityState={
+                      Object {
+                        "checked": false,
+                        "disabled": false,
+                      }
+                    }
+                    accessible={true}
+                    checked={false}
+                    collapsable={false}
+                    focusable={true}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
-                          "height": 20,
-                          "overflow": "hidden",
-                          "padding": 2,
-                          "width": 20,
+                          "alignItems": "center",
+                          "display": "flex",
+                          "flexDirection": "row",
+                          "margin": 0,
+                          "padding": 0,
+                          "position": "relative",
                         },
-                        Object {
-                          "borderRadius": 999,
-                        },
+                        undefined,
                       ]
                     }
                   >
                     <View
                       style={
                         Array [
-                          Array [
-                            Object {
-                              "alignItems": "center",
-                              "backgroundColor": "transparent",
-                              "borderColor": "#d9d9d9",
-                              "borderRadius": 2,
-                              "borderStyle": "solid",
-                              "borderWidth": 1,
-                              "height": "100%",
-                              "justifyContent": "center",
-                              "position": "relative",
-                              "width": "100%",
-                            },
-                            Object {
-                              "borderRadius": 999,
-                            },
-                          ],
+                          Object {
+                            "height": 20,
+                            "overflow": "hidden",
+                            "padding": 2,
+                            "width": 20,
+                          },
+                          Object {
+                            "borderRadius": 999,
+                          },
                         ]
                       }
                     >
                       <View
                         style={
-                          Object {
-                            "backgroundColor": "#108ee9",
-                            "height": 0,
-                            "opacity": 0,
-                            "width": 0,
-                          }
-                        }
-                      />
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "#108ee9",
-                            "borderColor": "#ffffff",
-                            "borderLeftWidth": 0,
-                            "borderRadius": 999,
-                            "borderTopWidth": 0,
-                            "borderWidth": 0,
-                            "bottom": "20%",
-                            "height": 8,
-                            "position": "absolute",
-                            "transform": Array [
+                          Array [
+                            Array [
                               Object {
-                                "scale": 0,
+                                "alignItems": "center",
+                                "backgroundColor": "transparent",
+                                "borderColor": "#d9d9d9",
+                                "borderRadius": 2,
+                                "borderStyle": "solid",
+                                "borderWidth": 1,
+                                "height": "100%",
+                                "justifyContent": "center",
+                                "position": "relative",
+                                "width": "100%",
+                              },
+                              Object {
+                                "borderRadius": 999,
                               },
                             ],
-                            "width": 8,
-                          }
+                          ]
                         }
-                      />
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#108ee9",
+                              "height": 0,
+                              "opacity": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#108ee9",
+                              "borderColor": "#ffffff",
+                              "borderLeftWidth": 0,
+                              "borderRadius": 999,
+                              "borderTopWidth": 0,
+                              "borderWidth": 0,
+                              "bottom": "20%",
+                              "height": 8,
+                              "position": "absolute",
+                              "transform": Array [
+                                Object {
+                                  "scale": 0,
+                                },
+                              ],
+                              "width": 8,
+                            }
+                          }
+                        />
+                      </View>
                     </View>
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "color": "#000000",
+                            "marginLeft": 8,
+                            "marginRight": 8,
+                          },
+                        ]
+                      }
+                    />
                   </View>
-                  <View
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "marginLeft": 8,
-                          "marginRight": 8,
-                        },
-                      ]
-                    }
-                  />
                 </View>
               </View>
             </View>
@@ -2382,6 +2527,7 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -2409,10 +2555,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    }
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "flex": 1,
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
+                      },
+                    ]
                   }
                 >
                   <Text
@@ -2438,11 +2588,9 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -2451,56 +2599,68 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
-          }
-        >
-          Radio.Group 组合 - 配置方式
-可通过配置 options 参数来渲染单选框。
-        </Text>
-      </View>
-      <View
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
-            "borderTopWidth": 0.5,
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
         }
       >
-        <View>
-          <View>
-            <Text
-              style={
-                Object {
-                  "backgroundColor": "#f5f5f9",
-                  "color": "#888888",
-                  "fontSize": 14,
-                  "paddingBottom": 9,
-                  "paddingHorizontal": 15,
-                  "paddingTop": 15,
-                }
+        Radio.Group 组合 - 配置方式
+可通过配置 options 参数来渲染单选框。
+      </Text>
+      <View
+        style={
+          Object {
+            "borderTopColor": "#eeeeee",
+            "borderTopWidth": 0.5,
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#f5f5f9",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#888888",
+                "fontSize": 14,
+                "paddingBottom": 9,
+                "paddingHorizontal": 15,
+                "paddingTop": 15,
               }
-            >
-              PlainOptions
-            </Text>
-          </View>
+            }
+          >
+            PlainOptions
+          </Text>
           <View
             style={
               Object {
-                "backgroundColor": "#ffffff",
-                "borderTopColor": "#dddddd",
+                "borderTopColor": "#eeeeee",
                 "borderTopWidth": 0.5,
+                "position": "relative",
               }
             }
           >
@@ -2564,10 +2724,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -2587,125 +2751,144 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": true,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={true}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Apple"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": true,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={true}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
                               Object {
-                                "borderColor": "#108ee9",
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
                               },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                                Object {
+                                  "borderColor": "#108ee9",
+                                },
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -2762,10 +2945,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -2785,122 +2972,141 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": false,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={false}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Pear"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": false,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={false}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
+                              Object {
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
+                              },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -2957,10 +3163,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -2980,122 +3190,141 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": false,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={false}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Orange"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": false,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={false}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
+                              Object {
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
+                              },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -3104,11 +3333,9 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#ffffff",
-                  "borderBottomColor": "#dddddd",
-                  "borderBottomWidth": 0.5,
+                  "backgroundColor": "#eeeeee",
                   "bottom": 0,
-                  "height": 1,
+                  "height": 0.5,
                   "left": 0,
                   "position": "absolute",
                   "right": 0,
@@ -3117,29 +3344,35 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             />
           </View>
         </View>
-        <View>
-          <View>
-            <Text
-              style={
-                Object {
-                  "backgroundColor": "#f5f5f9",
-                  "color": "#888888",
-                  "fontSize": 14,
-                  "paddingBottom": 9,
-                  "paddingHorizontal": 15,
-                  "paddingTop": 15,
-                }
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#f5f5f9",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#888888",
+                "fontSize": 14,
+                "paddingBottom": 9,
+                "paddingHorizontal": 15,
+                "paddingTop": 15,
               }
-            >
-              Options
-            </Text>
-          </View>
+            }
+          >
+            Options
+          </Text>
           <View
             style={
               Object {
-                "backgroundColor": "#ffffff",
-                "borderTopColor": "#dddddd",
+                "borderTopColor": "#eeeeee",
                 "borderTopWidth": 0.5,
+                "position": "relative",
               }
             }
           >
@@ -3203,10 +3436,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -3226,125 +3463,144 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": true,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={true}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Apple"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": true,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={true}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
                               Object {
-                                "borderColor": "#108ee9",
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
                               },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                                Object {
+                                  "borderColor": "#108ee9",
+                                },
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -3401,10 +3657,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -3424,122 +3684,141 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": false,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={false}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Pear"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": false,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={false}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
+                              Object {
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
+                              },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -3596,10 +3875,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -3619,122 +3902,141 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": false,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={false}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Orange"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": false,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={false}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
+                              Object {
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
+                              },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -3743,11 +4045,9 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#ffffff",
-                  "borderBottomColor": "#dddddd",
-                  "borderBottomWidth": 0.5,
+                  "backgroundColor": "#eeeeee",
                   "bottom": 0,
-                  "height": 1,
+                  "height": 0.5,
                   "left": 0,
                   "position": "absolute",
                   "right": 0,
@@ -3756,29 +4056,35 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             />
           </View>
         </View>
-        <View>
-          <View>
-            <Text
-              style={
-                Object {
-                  "backgroundColor": "#f5f5f9",
-                  "color": "#888888",
-                  "fontSize": 14,
-                  "paddingBottom": 9,
-                  "paddingHorizontal": 15,
-                  "paddingTop": 15,
-                }
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#f5f5f9",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#888888",
+                "fontSize": 14,
+                "paddingBottom": 9,
+                "paddingHorizontal": 15,
+                "paddingTop": 15,
               }
-            >
-              OptionsWithDisabled
-            </Text>
-          </View>
+            }
+          >
+            OptionsWithDisabled
+          </Text>
           <View
             style={
               Object {
-                "backgroundColor": "#ffffff",
-                "borderTopColor": "#dddddd",
+                "borderTopColor": "#eeeeee",
                 "borderTopWidth": 0.5,
+                "position": "relative",
               }
             }
           >
@@ -3842,10 +4148,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -3865,125 +4175,144 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": true,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={true}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Apple"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": true,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={true}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
                               Object {
-                                "borderColor": "#108ee9",
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
                               },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                                Object {
+                                  "borderColor": "#108ee9",
+                                },
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -4040,10 +4369,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -4063,122 +4396,141 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": false,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={false}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Pear"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": false,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={false}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
+                              Object {
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
+                              },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -4235,10 +4587,14 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                   >
                     <View
                       style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                        }
+                        Array [
+                          Object {
+                            "color": "#000000",
+                            "flex": 1,
+                            "fontSize": 17,
+                            "textAlignVertical": "center",
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -4260,122 +4616,141 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
                       </Text>
                     </View>
                     <View
-                      accessibilityRole="radio"
-                      accessibilityState={
-                        Object {
-                          "checked": false,
-                          "disabled": false,
-                        }
-                      }
-                      accessible={true}
                       checked={false}
-                      collapsable={false}
-                      focusable={true}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "display": "flex",
-                            "flexDirection": "row",
-                            "margin": 0,
-                            "padding": 0,
-                            "position": "relative",
+                            "color": "#888888",
+                            "fontSize": 17,
+                            "maxWidth": "70%",
+                            "paddingLeft": 8,
+                            "textAlign": "right",
+                            "textAlignVertical": "center",
                           },
                           undefined,
                         ]
                       }
+                      value="Orange"
                     >
                       <View
+                        accessibilityRole="radio"
+                        accessibilityState={
+                          Object {
+                            "checked": false,
+                            "disabled": false,
+                          }
+                        }
+                        accessible={true}
+                        checked={false}
+                        collapsable={false}
+                        focusable={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
                         style={
                           Array [
                             Object {
-                              "height": 20,
-                              "overflow": "hidden",
-                              "padding": 2,
-                              "width": 20,
+                              "alignItems": "center",
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "margin": 0,
+                              "padding": 0,
+                              "position": "relative",
                             },
-                            Object {
-                              "borderRadius": 999,
-                            },
+                            undefined,
                           ]
                         }
                       >
                         <View
                           style={
                             Array [
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "transparent",
-                                  "borderColor": "#d9d9d9",
-                                  "borderRadius": 2,
-                                  "borderStyle": "solid",
-                                  "borderWidth": 1,
-                                  "height": "100%",
-                                  "justifyContent": "center",
-                                  "position": "relative",
-                                  "width": "100%",
-                                },
-                                Object {
-                                  "borderRadius": 999,
-                                },
-                              ],
+                              Object {
+                                "height": 20,
+                                "overflow": "hidden",
+                                "padding": 2,
+                                "width": 20,
+                              },
+                              Object {
+                                "borderRadius": 999,
+                              },
                             ]
                           }
                         >
                           <View
                             style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "height": 0,
-                                "opacity": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "backgroundColor": "#108ee9",
-                                "borderColor": "#ffffff",
-                                "borderLeftWidth": 0,
-                                "borderRadius": 999,
-                                "borderTopWidth": 0,
-                                "borderWidth": 0,
-                                "bottom": "20%",
-                                "height": 8,
-                                "position": "absolute",
-                                "transform": Array [
+                              Array [
+                                Array [
                                   Object {
-                                    "scale": 0,
+                                    "alignItems": "center",
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#d9d9d9",
+                                    "borderRadius": 2,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1,
+                                    "height": "100%",
+                                    "justifyContent": "center",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  },
+                                  Object {
+                                    "borderRadius": 999,
                                   },
                                 ],
-                                "width": 8,
-                              }
+                              ]
                             }
-                          />
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "height": 0,
+                                  "opacity": 0,
+                                  "width": 0,
+                                }
+                              }
+                            />
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#108ee9",
+                                  "borderColor": "#ffffff",
+                                  "borderLeftWidth": 0,
+                                  "borderRadius": 999,
+                                  "borderTopWidth": 0,
+                                  "borderWidth": 0,
+                                  "bottom": "20%",
+                                  "height": 8,
+                                  "position": "absolute",
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 0,
+                                    },
+                                  ],
+                                  "width": 8,
+                                }
+                              }
+                            />
+                          </View>
                         </View>
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "#000000",
+                                "marginLeft": 8,
+                                "marginRight": 8,
+                              },
+                            ]
+                          }
+                        />
                       </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                              "marginLeft": 8,
-                              "marginRight": 8,
-                            },
-                          ]
-                        }
-                      />
                     </View>
                   </View>
                 </View>
@@ -4384,11 +4759,9 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#ffffff",
-                  "borderBottomColor": "#dddddd",
-                  "borderBottomWidth": 0.5,
+                  "backgroundColor": "#eeeeee",
                   "bottom": 0,
-                  "height": 1,
+                  "height": 0.5,
                   "left": 0,
                   "position": "absolute",
                   "right": 0,
@@ -4400,11 +4773,9 @@ exports[`renders ./components/radio/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,

@@ -2,13 +2,22 @@
 
 exports[`renders ./components/popover/demo/basic.tsx correctly 1`] = `
 Array [
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#f5f5f9",
+        },
+        undefined,
+      ]
+    }
+  >
     <View
       style={
         Object {
-          "backgroundColor": "#ffffff",
-          "borderTopColor": "#dddddd",
+          "borderTopColor": "#eeeeee",
           "borderTopWidth": 0.5,
+          "position": "relative",
         }
       }
     >
@@ -57,284 +66,99 @@ Array [
           >
             <View
               style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                }
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
               }
             >
-              <View>
-                <Text>
-                  选择了：
-                </Text>
-              </View>
+              <Text>
+                选择了：
+              </Text>
             </View>
-            <View>
-              <View
-                accessible={true}
-                focusable={true}
-                forwardedRef={[Function]}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingHorizontal": 6,
-                  }
-                }
-              >
-                <Text>
-                  菜单
-                </Text>
-              </View>
-              <Modal
-                hardwareAccelerated={false}
-                onDismiss={[Function]}
-                onOrientationChange={[Function]}
-                onRequestClose={[Function]}
-                supportedOrientations={
-                  Array [
-                    "portrait",
-                    "landscape",
-                  ]
-                }
-                transparent={true}
-                visible={false}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                    }
-                  />
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "left": 0,
-                        "position": "absolute",
-                        "shadowColor": "black",
-                        "shadowOffset": Object {
-                          "height": 2,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.4,
-                        "shadowRadius": 2,
-                        "top": 0,
-                      }
-                    }
+            <View
+              onSelect={[Function]}
+              overlay={
+                Array [
+                  <PopoverItem
+                    value="option 1"
                   >
-                    <View
-                      onLayout={[Function]}
+                    <Text>
+                      option 
+                      1
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 2"
+                  >
+                    <Text>
+                      option 
+                      2
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 3"
+                  >
+                    <Text>
+                      option 
+                      3
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    disabled={true}
+                    value="disabled"
+                  >
+                    <Text
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 3,
-                          "elevation": 3,
-                          "flexDirection": "column",
-                          "padding": 0,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "translateX": 0,
-                            },
-                            Object {
-                              "translateY": 0,
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
+                          "color": "#ddd",
                         }
                       }
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomColor": "transparent",
-                          "borderBottomWidth": 9,
-                          "borderEndWidth": 9,
-                          "borderLeftColor": "transparent",
-                          "borderRightColor": "transparent",
-                          "borderStartWidth": 9,
-                          "borderTopColor": "transparent",
-                          "borderTopWidth": 9,
-                          "height": 18,
-                          "left": -9,
-                          "position": "absolute",
-                          "top": -9,
-                          "transform": Array [
-                            Object {
-                              "rotate": "0deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 18,
-                        }
+                      disabled opt
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    style={
+                      Object {
+                        "backgroundColor": "#efeff4",
                       }
-                    />
-                  </View>
-                </View>
-              </Modal>
+                    }
+                    value="button ct"
+                  >
+                    <Text>
+                      关闭
+                    </Text>
+                  </PopoverItem>,
+                ]
+              }
+              style={
+                Array [
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
+              }
+              triggerStyle={
+                Object {
+                  "paddingHorizontal": 6,
+                }
+              }
+            >
+              <Text>
+                菜单
+              </Text>
             </View>
           </View>
         </View>
@@ -384,284 +208,99 @@ Array [
           >
             <View
               style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                }
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
               }
             >
-              <View>
-                <Text>
-                  选择了：
-                </Text>
-              </View>
+              <Text>
+                选择了：
+              </Text>
             </View>
-            <View>
-              <View
-                accessible={true}
-                focusable={true}
-                forwardedRef={[Function]}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingHorizontal": 6,
-                  }
-                }
-              >
-                <Text>
-                  菜单
-                </Text>
-              </View>
-              <Modal
-                hardwareAccelerated={false}
-                onDismiss={[Function]}
-                onOrientationChange={[Function]}
-                onRequestClose={[Function]}
-                supportedOrientations={
-                  Array [
-                    "portrait",
-                    "landscape",
-                  ]
-                }
-                transparent={true}
-                visible={false}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                    }
-                  />
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "left": 0,
-                        "position": "absolute",
-                        "shadowColor": "black",
-                        "shadowOffset": Object {
-                          "height": 2,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.4,
-                        "shadowRadius": 2,
-                        "top": 0,
-                      }
-                    }
+            <View
+              onSelect={[Function]}
+              overlay={
+                Array [
+                  <PopoverItem
+                    value="option 1"
                   >
-                    <View
-                      onLayout={[Function]}
+                    <Text>
+                      option 
+                      1
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 2"
+                  >
+                    <Text>
+                      option 
+                      2
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 3"
+                  >
+                    <Text>
+                      option 
+                      3
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    disabled={true}
+                    value="disabled"
+                  >
+                    <Text
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 3,
-                          "elevation": 3,
-                          "flexDirection": "column",
-                          "padding": 0,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "translateX": 0,
-                            },
-                            Object {
-                              "translateY": 0,
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
+                          "color": "#ddd",
                         }
                       }
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomColor": "transparent",
-                          "borderBottomWidth": 9,
-                          "borderEndWidth": 9,
-                          "borderLeftColor": "transparent",
-                          "borderRightColor": "transparent",
-                          "borderStartWidth": 9,
-                          "borderTopColor": "transparent",
-                          "borderTopWidth": 9,
-                          "height": 18,
-                          "left": -9,
-                          "position": "absolute",
-                          "top": -9,
-                          "transform": Array [
-                            Object {
-                              "rotate": "0deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 18,
-                        }
+                      disabled opt
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    style={
+                      Object {
+                        "backgroundColor": "#efeff4",
                       }
-                    />
-                  </View>
-                </View>
-              </Modal>
+                    }
+                    value="button ct"
+                  >
+                    <Text>
+                      关闭
+                    </Text>
+                  </PopoverItem>,
+                ]
+              }
+              style={
+                Array [
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
+              }
+              triggerStyle={
+                Object {
+                  "paddingHorizontal": 6,
+                }
+              }
+            >
+              <Text>
+                菜单
+              </Text>
             </View>
           </View>
         </View>
@@ -711,284 +350,99 @@ Array [
           >
             <View
               style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                }
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
               }
             >
-              <View>
-                <Text>
-                  选择了：
-                </Text>
-              </View>
+              <Text>
+                选择了：
+              </Text>
             </View>
-            <View>
-              <View
-                accessible={true}
-                focusable={true}
-                forwardedRef={[Function]}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingHorizontal": 6,
-                  }
-                }
-              >
-                <Text>
-                  菜单
-                </Text>
-              </View>
-              <Modal
-                hardwareAccelerated={false}
-                onDismiss={[Function]}
-                onOrientationChange={[Function]}
-                onRequestClose={[Function]}
-                supportedOrientations={
-                  Array [
-                    "portrait",
-                    "landscape",
-                  ]
-                }
-                transparent={true}
-                visible={false}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                    }
-                  />
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "left": 0,
-                        "position": "absolute",
-                        "shadowColor": "black",
-                        "shadowOffset": Object {
-                          "height": 2,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.4,
-                        "shadowRadius": 2,
-                        "top": 0,
-                      }
-                    }
+            <View
+              onSelect={[Function]}
+              overlay={
+                Array [
+                  <PopoverItem
+                    value="option 1"
                   >
-                    <View
-                      onLayout={[Function]}
+                    <Text>
+                      option 
+                      1
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 2"
+                  >
+                    <Text>
+                      option 
+                      2
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 3"
+                  >
+                    <Text>
+                      option 
+                      3
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    disabled={true}
+                    value="disabled"
+                  >
+                    <Text
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 3,
-                          "elevation": 3,
-                          "flexDirection": "column",
-                          "padding": 0,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "translateX": 0,
-                            },
-                            Object {
-                              "translateY": 0,
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
+                          "color": "#ddd",
                         }
                       }
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomColor": "transparent",
-                          "borderBottomWidth": 9,
-                          "borderEndWidth": 9,
-                          "borderLeftColor": "transparent",
-                          "borderRightColor": "transparent",
-                          "borderStartWidth": 9,
-                          "borderTopColor": "transparent",
-                          "borderTopWidth": 9,
-                          "height": 18,
-                          "left": -9,
-                          "position": "absolute",
-                          "top": -9,
-                          "transform": Array [
-                            Object {
-                              "rotate": "0deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 18,
-                        }
+                      disabled opt
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    style={
+                      Object {
+                        "backgroundColor": "#efeff4",
                       }
-                    />
-                  </View>
-                </View>
-              </Modal>
+                    }
+                    value="button ct"
+                  >
+                    <Text>
+                      关闭
+                    </Text>
+                  </PopoverItem>,
+                ]
+              }
+              style={
+                Array [
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
+              }
+              triggerStyle={
+                Object {
+                  "paddingHorizontal": 6,
+                }
+              }
+            >
+              <Text>
+                菜单
+              </Text>
             </View>
           </View>
         </View>
@@ -1038,284 +492,99 @@ Array [
           >
             <View
               style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                }
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
               }
             >
-              <View>
-                <Text>
-                  选择了：
-                </Text>
-              </View>
+              <Text>
+                选择了：
+              </Text>
             </View>
-            <View>
-              <View
-                accessible={true}
-                focusable={true}
-                forwardedRef={[Function]}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingHorizontal": 6,
-                  }
-                }
-              >
-                <Text>
-                  菜单
-                </Text>
-              </View>
-              <Modal
-                hardwareAccelerated={false}
-                onDismiss={[Function]}
-                onOrientationChange={[Function]}
-                onRequestClose={[Function]}
-                supportedOrientations={
-                  Array [
-                    "portrait",
-                    "landscape",
-                  ]
-                }
-                transparent={true}
-                visible={false}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                    }
-                  />
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "left": 0,
-                        "position": "absolute",
-                        "shadowColor": "black",
-                        "shadowOffset": Object {
-                          "height": 2,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.4,
-                        "shadowRadius": 2,
-                        "top": 0,
-                      }
-                    }
+            <View
+              onSelect={[Function]}
+              overlay={
+                Array [
+                  <PopoverItem
+                    value="option 1"
                   >
-                    <View
-                      onLayout={[Function]}
+                    <Text>
+                      option 
+                      1
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 2"
+                  >
+                    <Text>
+                      option 
+                      2
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 3"
+                  >
+                    <Text>
+                      option 
+                      3
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    disabled={true}
+                    value="disabled"
+                  >
+                    <Text
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 3,
-                          "elevation": 3,
-                          "flexDirection": "column",
-                          "padding": 0,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "translateX": 0,
-                            },
-                            Object {
-                              "translateY": 0,
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
+                          "color": "#ddd",
                         }
                       }
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomColor": "transparent",
-                          "borderBottomWidth": 9,
-                          "borderEndWidth": 9,
-                          "borderLeftColor": "transparent",
-                          "borderRightColor": "transparent",
-                          "borderStartWidth": 9,
-                          "borderTopColor": "transparent",
-                          "borderTopWidth": 9,
-                          "height": 18,
-                          "left": -9,
-                          "position": "absolute",
-                          "top": -9,
-                          "transform": Array [
-                            Object {
-                              "rotate": "0deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 18,
-                        }
+                      disabled opt
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    style={
+                      Object {
+                        "backgroundColor": "#efeff4",
                       }
-                    />
-                  </View>
-                </View>
-              </Modal>
+                    }
+                    value="button ct"
+                  >
+                    <Text>
+                      关闭
+                    </Text>
+                  </PopoverItem>,
+                ]
+              }
+              style={
+                Array [
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
+              }
+              triggerStyle={
+                Object {
+                  "paddingHorizontal": 6,
+                }
+              }
+            >
+              <Text>
+                菜单
+              </Text>
             </View>
           </View>
         </View>
@@ -1365,284 +634,99 @@ Array [
           >
             <View
               style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                }
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
               }
             >
-              <View>
-                <Text>
-                  选择了：
-                </Text>
-              </View>
+              <Text>
+                选择了：
+              </Text>
             </View>
-            <View>
-              <View
-                accessible={true}
-                focusable={true}
-                forwardedRef={[Function]}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingHorizontal": 6,
-                  }
-                }
-              >
-                <Text>
-                  菜单
-                </Text>
-              </View>
-              <Modal
-                hardwareAccelerated={false}
-                onDismiss={[Function]}
-                onOrientationChange={[Function]}
-                onRequestClose={[Function]}
-                supportedOrientations={
-                  Array [
-                    "portrait",
-                    "landscape",
-                  ]
-                }
-                transparent={true}
-                visible={false}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                    }
-                  />
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "left": 0,
-                        "position": "absolute",
-                        "shadowColor": "black",
-                        "shadowOffset": Object {
-                          "height": 2,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.4,
-                        "shadowRadius": 2,
-                        "top": 0,
-                      }
-                    }
+            <View
+              onSelect={[Function]}
+              overlay={
+                Array [
+                  <PopoverItem
+                    value="option 1"
                   >
-                    <View
-                      onLayout={[Function]}
+                    <Text>
+                      option 
+                      1
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 2"
+                  >
+                    <Text>
+                      option 
+                      2
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 3"
+                  >
+                    <Text>
+                      option 
+                      3
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    disabled={true}
+                    value="disabled"
+                  >
+                    <Text
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 3,
-                          "elevation": 3,
-                          "flexDirection": "column",
-                          "padding": 0,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "translateX": 0,
-                            },
-                            Object {
-                              "translateY": 0,
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
+                          "color": "#ddd",
                         }
                       }
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomColor": "transparent",
-                          "borderBottomWidth": 9,
-                          "borderEndWidth": 9,
-                          "borderLeftColor": "transparent",
-                          "borderRightColor": "transparent",
-                          "borderStartWidth": 9,
-                          "borderTopColor": "transparent",
-                          "borderTopWidth": 9,
-                          "height": 18,
-                          "left": -9,
-                          "position": "absolute",
-                          "top": -9,
-                          "transform": Array [
-                            Object {
-                              "rotate": "0deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 18,
-                        }
+                      disabled opt
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    style={
+                      Object {
+                        "backgroundColor": "#efeff4",
                       }
-                    />
-                  </View>
-                </View>
-              </Modal>
+                    }
+                    value="button ct"
+                  >
+                    <Text>
+                      关闭
+                    </Text>
+                  </PopoverItem>,
+                ]
+              }
+              style={
+                Array [
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
+              }
+              triggerStyle={
+                Object {
+                  "paddingHorizontal": 6,
+                }
+              }
+            >
+              <Text>
+                菜单
+              </Text>
             </View>
           </View>
         </View>
@@ -1692,284 +776,99 @@ Array [
           >
             <View
               style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                }
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
               }
             >
-              <View>
-                <Text>
-                  选择了：
-                </Text>
-              </View>
+              <Text>
+                选择了：
+              </Text>
             </View>
-            <View>
-              <View
-                accessible={true}
-                focusable={true}
-                forwardedRef={[Function]}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingHorizontal": 6,
-                  }
-                }
-              >
-                <Text>
-                  菜单
-                </Text>
-              </View>
-              <Modal
-                hardwareAccelerated={false}
-                onDismiss={[Function]}
-                onOrientationChange={[Function]}
-                onRequestClose={[Function]}
-                supportedOrientations={
-                  Array [
-                    "portrait",
-                    "landscape",
-                  ]
-                }
-                transparent={true}
-                visible={false}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                    }
-                  />
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "left": 0,
-                        "position": "absolute",
-                        "shadowColor": "black",
-                        "shadowOffset": Object {
-                          "height": 2,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.4,
-                        "shadowRadius": 2,
-                        "top": 0,
-                      }
-                    }
+            <View
+              onSelect={[Function]}
+              overlay={
+                Array [
+                  <PopoverItem
+                    value="option 1"
                   >
-                    <View
-                      onLayout={[Function]}
+                    <Text>
+                      option 
+                      1
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 2"
+                  >
+                    <Text>
+                      option 
+                      2
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 3"
+                  >
+                    <Text>
+                      option 
+                      3
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    disabled={true}
+                    value="disabled"
+                  >
+                    <Text
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 3,
-                          "elevation": 3,
-                          "flexDirection": "column",
-                          "padding": 0,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "translateX": 0,
-                            },
-                            Object {
-                              "translateY": 0,
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
+                          "color": "#ddd",
                         }
                       }
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomColor": "transparent",
-                          "borderBottomWidth": 9,
-                          "borderEndWidth": 9,
-                          "borderLeftColor": "transparent",
-                          "borderRightColor": "transparent",
-                          "borderStartWidth": 9,
-                          "borderTopColor": "transparent",
-                          "borderTopWidth": 9,
-                          "height": 18,
-                          "left": -9,
-                          "position": "absolute",
-                          "top": -9,
-                          "transform": Array [
-                            Object {
-                              "rotate": "0deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 18,
-                        }
+                      disabled opt
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    style={
+                      Object {
+                        "backgroundColor": "#efeff4",
                       }
-                    />
-                  </View>
-                </View>
-              </Modal>
+                    }
+                    value="button ct"
+                  >
+                    <Text>
+                      关闭
+                    </Text>
+                  </PopoverItem>,
+                ]
+              }
+              style={
+                Array [
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
+              }
+              triggerStyle={
+                Object {
+                  "paddingHorizontal": 6,
+                }
+              }
+            >
+              <Text>
+                菜单
+              </Text>
             </View>
           </View>
         </View>
@@ -2019,284 +918,99 @@ Array [
           >
             <View
               style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                }
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
               }
             >
-              <View>
-                <Text>
-                  选择了：
-                </Text>
-              </View>
+              <Text>
+                选择了：
+              </Text>
             </View>
-            <View>
-              <View
-                accessible={true}
-                focusable={true}
-                forwardedRef={[Function]}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingHorizontal": 6,
-                  }
-                }
-              >
-                <Text>
-                  菜单
-                </Text>
-              </View>
-              <Modal
-                hardwareAccelerated={false}
-                onDismiss={[Function]}
-                onOrientationChange={[Function]}
-                onRequestClose={[Function]}
-                supportedOrientations={
-                  Array [
-                    "portrait",
-                    "landscape",
-                  ]
-                }
-                transparent={true}
-                visible={false}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                    }
-                  />
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "left": 0,
-                        "position": "absolute",
-                        "shadowColor": "black",
-                        "shadowOffset": Object {
-                          "height": 2,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.4,
-                        "shadowRadius": 2,
-                        "top": 0,
-                      }
-                    }
+            <View
+              onSelect={[Function]}
+              overlay={
+                Array [
+                  <PopoverItem
+                    value="option 1"
                   >
-                    <View
-                      onLayout={[Function]}
+                    <Text>
+                      option 
+                      1
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 2"
+                  >
+                    <Text>
+                      option 
+                      2
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 3"
+                  >
+                    <Text>
+                      option 
+                      3
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    disabled={true}
+                    value="disabled"
+                  >
+                    <Text
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 3,
-                          "elevation": 3,
-                          "flexDirection": "column",
-                          "padding": 0,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "translateX": 0,
-                            },
-                            Object {
-                              "translateY": 0,
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
+                          "color": "#ddd",
                         }
                       }
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomColor": "transparent",
-                          "borderBottomWidth": 9,
-                          "borderEndWidth": 9,
-                          "borderLeftColor": "transparent",
-                          "borderRightColor": "transparent",
-                          "borderStartWidth": 9,
-                          "borderTopColor": "transparent",
-                          "borderTopWidth": 9,
-                          "height": 18,
-                          "left": -9,
-                          "position": "absolute",
-                          "top": -9,
-                          "transform": Array [
-                            Object {
-                              "rotate": "0deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 18,
-                        }
+                      disabled opt
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    style={
+                      Object {
+                        "backgroundColor": "#efeff4",
                       }
-                    />
-                  </View>
-                </View>
-              </Modal>
+                    }
+                    value="button ct"
+                  >
+                    <Text>
+                      关闭
+                    </Text>
+                  </PopoverItem>,
+                ]
+              }
+              style={
+                Array [
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
+              }
+              triggerStyle={
+                Object {
+                  "paddingHorizontal": 6,
+                }
+              }
+            >
+              <Text>
+                菜单
+              </Text>
             </View>
           </View>
         </View>
@@ -2346,284 +1060,99 @@ Array [
           >
             <View
               style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "column",
-                }
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
               }
             >
-              <View>
-                <Text>
-                  选择了：
-                </Text>
-              </View>
+              <Text>
+                选择了：
+              </Text>
             </View>
-            <View>
-              <View
-                accessible={true}
-                focusable={true}
-                forwardedRef={[Function]}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingHorizontal": 6,
-                  }
-                }
-              >
-                <Text>
-                  菜单
-                </Text>
-              </View>
-              <Modal
-                hardwareAccelerated={false}
-                onDismiss={[Function]}
-                onOrientationChange={[Function]}
-                onRequestClose={[Function]}
-                supportedOrientations={
-                  Array [
-                    "portrait",
-                    "landscape",
-                  ]
-                }
-                transparent={true}
-                visible={false}
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                    }
-                  />
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "left": 0,
-                        "position": "absolute",
-                        "shadowColor": "black",
-                        "shadowOffset": Object {
-                          "height": 2,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0.4,
-                        "shadowRadius": 2,
-                        "top": 0,
-                      }
-                    }
+            <View
+              onSelect={[Function]}
+              overlay={
+                Array [
+                  <PopoverItem
+                    value="option 1"
                   >
-                    <View
-                      onLayout={[Function]}
+                    <Text>
+                      option 
+                      1
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 2"
+                  >
+                    <Text>
+                      option 
+                      2
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    value="option 3"
+                  >
+                    <Text>
+                      option 
+                      3
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    disabled={true}
+                    value="disabled"
+                  >
+                    <Text
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 3,
-                          "elevation": 3,
-                          "flexDirection": "column",
-                          "padding": 0,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "translateX": 0,
-                            },
-                            Object {
-                              "translateY": 0,
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
+                          "color": "#ddd",
                         }
                       }
                     >
-                      <RCTScrollView>
-                        <View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              1
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              2
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              option 
-                              3
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ddd",
-                                }
-                              }
-                            >
-                              disabled opt
-                            </Text>
-                          </View>
-                          <View
-                            accessible={true}
-                            focusable={true}
-                            onClick={[Function]}
-                            onResponderGrant={[Function]}
-                            onResponderMove={[Function]}
-                            onResponderRelease={[Function]}
-                            onResponderTerminate={[Function]}
-                            onResponderTerminationRequest={[Function]}
-                            onStartShouldSetResponder={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#efeff4",
-                                "opacity": 1,
-                                "padding": 9,
-                              }
-                            }
-                          >
-                            <Text>
-                              关闭
-                            </Text>
-                          </View>
-                        </View>
-                      </RCTScrollView>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomColor": "transparent",
-                          "borderBottomWidth": 9,
-                          "borderEndWidth": 9,
-                          "borderLeftColor": "transparent",
-                          "borderRightColor": "transparent",
-                          "borderStartWidth": 9,
-                          "borderTopColor": "transparent",
-                          "borderTopWidth": 9,
-                          "height": 18,
-                          "left": -9,
-                          "position": "absolute",
-                          "top": -9,
-                          "transform": Array [
-                            Object {
-                              "rotate": "0deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 18,
-                        }
+                      disabled opt
+                    </Text>
+                  </PopoverItem>,
+                  <PopoverItem
+                    style={
+                      Object {
+                        "backgroundColor": "#efeff4",
                       }
-                    />
-                  </View>
-                </View>
-              </Modal>
+                    }
+                    value="button ct"
+                  >
+                    <Text>
+                      关闭
+                    </Text>
+                  </PopoverItem>,
+                ]
+              }
+              style={
+                Array [
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  },
+                  undefined,
+                ]
+              }
+              triggerStyle={
+                Object {
+                  "paddingHorizontal": 6,
+                }
+              }
+            >
+              <Text>
+                菜单
+              </Text>
             </View>
           </View>
         </View>
@@ -2631,11 +1160,9 @@ Array [
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderBottomColor": "#dddddd",
-            "borderBottomWidth": 0.5,
+            "backgroundColor": "#eeeeee",
             "bottom": 0,
-            "height": 1,
+            "height": 0.5,
             "left": 0,
             "position": "absolute",
             "right": 0,
