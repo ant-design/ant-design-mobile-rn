@@ -125,6 +125,7 @@ export default class Demo extends React.Component {
       componentName === 'icon' ||
       componentName === 'toast' ||
       componentName === 'list' ||
+      componentName === 'input' ||
       componentName === 'tooltip' ||
       componentName === 'collapse' ||
       componentName === 'notice-bar'
