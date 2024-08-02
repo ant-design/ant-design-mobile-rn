@@ -2452,14 +2452,6 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "elevation": 3,
-                          "shadowColor": "#000000",
-                          "shadowOffset": Object {
-                            "height": 1,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.2,
-                          "shadowRadius": 3,
                           "transform": Array [
                             Object {
                               "translateX": 0,
@@ -2484,10 +2476,17 @@ exports[`renders ./components/notice-bar/demo/basic.tsx correctly 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#ffffff",
                               "borderRadius": 32,
-                              "flex": 1,
+                              "elevation": 3,
                               "flexDirection": "row",
                               "height": 32,
                               "justifyContent": "center",
+                              "shadowColor": "#000000",
+                              "shadowOffset": Object {
+                                "height": 1,
+                                "width": 0,
+                              },
+                              "shadowOpacity": 0.2,
+                              "shadowRadius": 3,
                               "width": 32,
                             }
                           }
