@@ -14,8 +14,8 @@ toc: false
 
 ---
 
-### 5.2.0
-`2024-08-01`
+### 5.2.1
+`2024-08-02`
 - 🔥 新增组件
   - 🔥 **Form**  高性能表单控件。 [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)
   - 🔥 **Input** 文本输入组件，用于替换 **InputItem** & **TextareaItem** 组件，也更好支持**Form**。 [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)

@@ -15,7 +15,7 @@ version: update
 
 `Toast`只支持指令式调用，入参类型为`string | ToastProps`。
 
-- `Toast.show(props)` - `5.2.0`新增
+- `Toast.show(props)` - `5.2.1`新增
 - `Toast.success(props)`
 - `Toast.fail(props)`
 - `Toast.info(props)`
@@ -30,12 +30,12 @@ ToastProps 参数如下：
 | --------  | ------------------------------ | -------- | --- | ------ | ------|
 | content   | 提示内容                        | `String | React.ReactNode`   | 是   |  -     ||
 | duration  | 自动关闭的延时，单位秒            | number   |  否  |  3       ||
-| icon      | 图标                           | `'success' | 'fail' | 'offline' | 'loading' | React.ReactNode` | 否 | - | `5.2.0` |
+| icon      | 图标                           | `'success' | 'fail' | 'offline' | 'loading' | React.ReactNode` | 否 | - | `5.2.1` |
 | mask      | 是否显示透明蒙层，防止触摸穿透     | Boolean   |  否   |   true  ||
-| position  | 垂直方向显示位置                 | `'top' | 'bottom' | 'center'` | 否  | `'center'` | `5.2.0` |
+| position  | 垂直方向显示位置                 | `'top' | 'bottom' | 'center'` | 否  | `'center'` | `5.2.1` |
 | onClose   | 关闭后回调                      | Function  |  否  | - ||
 | stackable | 是否允许叠加显示                 | Boolean  |  否   |   true  ||
-| styles    | 语义化结构 style                | [ToastStyle](#toaststyle-语义化样式) | 否 | - | `5.2.0` |
+| styles    | 语义化结构 style                | [ToastStyle](#toaststyle-语义化样式) | 否 | - | `5.2.1` |
 
 > **注：**  duration = 0 时，onClose 无效，toast 不会消失，隐藏 toast 需要手动调用 remove
 

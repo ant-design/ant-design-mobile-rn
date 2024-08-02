@@ -14,8 +14,8 @@ toc: false
 
 ---
 
-### 5.2.0
-`2024-08-01`
+### 5.2.1
+`2024-08-02`
 - 🔥 New Components
   - 🔥 **Form** component. [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)
   - 🔥 **Input** component, used to replace **InputItem** & **TextareaItem** component. [#1345](https://github.com/ant-design/ant-design-mobile-rn/pull/1345)

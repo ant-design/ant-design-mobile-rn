@@ -21,7 +21,7 @@ export interface SwipeActionProps extends SwipeableProps {
   right?: SwipeoutButtonProps[]
   /**
    * @deprecated No longer needed
-   * @version `5.2.0`
+   * @version `5.2.1`
    */
   buttonWidth?: number
   children?: React.ReactNode

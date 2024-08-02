@@ -3,7 +3,7 @@ category: Components
 type: Data Display
 title: Collapse
 subtitle: 折叠面板
-version: 5.2.0
+version: 5.2.1
 ---
 
 可以折叠/展开的内容区域。

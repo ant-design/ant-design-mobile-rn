@@ -2,7 +2,7 @@
 category: Components
 type: Navigation
 title: Tooltip
-version: 5.2.0
+version: 5.2.1
 ---
 
 After clicking on a control or an area, a Tooltip menu appears for doing more.

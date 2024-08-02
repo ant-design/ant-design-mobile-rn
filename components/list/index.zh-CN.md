@@ -21,7 +21,7 @@ subtitle: 列表
 ----|-----|------|-------|------
 | renderHeader       | list heder  | (): void |  无  | |
 | renderFooter       | list footer  | (): void |  无  | |
-| styles | 语义化结构 style | [ListStyle](#liststyle-语义化样式) | - | `5.2.0` |
+| styles | 语义化结构 style | [ListStyle](#liststyle-语义化样式) | - | `5.2.1` |
 
 ### List.Item
 
@@ -34,10 +34,10 @@ subtitle: 列表
 | onPress    | 点击事件的回调函数 | 同[TouchableHighlightProps['onPress']](#touchablehighlightprops) |  无  | |
 | multipleLine    | 多行 | Boolean  | `false`  | |
 | wrap    | 是否换行，默认情况下，文字超长会被隐藏， | Boolean  | `false`  ||
-| styles | 语义化结构 style | [ListItemStyle](#listitemstyle-语义化样式) | - | `5.2.0` |
+| styles | 语义化结构 style | [ListItemStyle](#listitemstyle-语义化样式) | - | `5.2.1` |
 
 ### TouchableHighlightProps
-`5.2.0`新增。此外还支持 [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) 的所有属性，当设置 `onPress` 事件时，会有默认点击样式:
+`5.2.1`新增。此外还支持 [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) 的所有属性，当设置 `onPress` 事件时，会有默认点击样式:
 <br/> `{ underlayColor:'#dddddd', activeOpacity: 0.5 }`
 
 ### List.Item.Brief
@@ -46,7 +46,7 @@ subtitle: 列表
 属性 | 说明 | 类型 | 默认值 | 版本 |
 ----|-----|------|-------|------
 | wrap    | 是否换行，默认情况下，文字超长会被隐藏， | Boolean  | `false`  | |
-| styles | 语义化结构 style | [BriefStyle](#briefstyle-语义化样式) | - | `5.2.0` |
+| styles | 语义化结构 style | [BriefStyle](#briefstyle-语义化样式) | - | `5.2.1` |
 
 ### ListStyle 语义化样式
 

@@ -5,7 +5,7 @@ title: InputItem
 subtitle: 文本输入(归档)
 ---
 
-> `5.2.0` 已停止更新，推荐使用 [components/Input](/components/input-cn)
+> `5.2.1` 已停止更新，推荐使用 [components/Input](/components/input-cn)
 
 用于接受单行文本。
 
