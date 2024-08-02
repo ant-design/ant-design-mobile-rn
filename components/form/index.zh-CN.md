@@ -291,14 +291,17 @@ validateFields()
 
 ```typescript
 interface FormItemStyle extends ListItemStyle {
-  formitemRow: ViewStyle
-  formitemColumn: ViewStyle
-  formItemExtra: ViewStyle | TextStyle  // default: { maxWidth: 50% } as ListItem['extra']
-  formItemLabel: ViewStyle              // default: { minWidth: 65 }
+  // label字段
+  formItemLabel: ViewStyle // { minWidth: 65 }
   formItemLabelText: ViewStyle | TextStyle
-  formItemControl: ViewStyle            // children style
-  asterisk: TextStyle                   // required={true}
-  optional: TextStyle                   // requiredMark="optional"
+
+  // children style
+  formItemControl: ViewStyle
+
+  // required={true}
+  asterisk: TextStyle    
+  // requiredMark="optional"               
+  optional: TextStyle                   
 }
 ```
 

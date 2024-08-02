@@ -24,9 +24,12 @@ toc: false
 - 🔥 **Toast**
   - 🆕 Add `icon` prop to support custom icons 
   - 🆕 Add `position` prop for vertical display position [#1353](https://github.com/ant-design/ant-design-mobile-rn/pull/1353)
+- 🔥 **List**
+  - 💄 Refactor internal DOM structure, cancel the `{flex:1}` layout of `extra`, and change it to `{maxWith: "70%"}`.
+  - 🛠 Simplified styles to better support and serve as the main component of **Dark Mode**.
 - **Provider**
   - 🆕 Add `onHaptics` for vibration feedback
-  - 🛠 Simplified `theme`
+  - 🛠 Simplified `theme`, complete **Dark Mode**. [~doc](https://rn.mobile.ant.design/components/provider/#dark-mode)
 - **NoticeBar**
   - 🆕 Complete `marqueeProps` prop, design reference https://github.com/justin-chu/react-fast-marquee
 - **Slider**

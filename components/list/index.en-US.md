@@ -54,6 +54,7 @@ Properties | Descrition | Type | Default | Version |
 
 ```typescript
 interface ListStyle {
+  List: ViewStyle
   Header: TextStyle
   Footer: TextStyle
   Body: ViewStyle
@@ -65,6 +66,7 @@ interface ListStyle {
 ```typescript
 interface ListItemStyle {
   underlayColor: ViewStyle // ListItem is a TouchableHighlight
+  
   Item: ViewStyle // ListItem wrap
   Line: ViewStyle // borderBottom
 

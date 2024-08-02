@@ -25,7 +25,7 @@ Component to display a system message, event notice and etc. Which is under the 
 | style  | Container style | `StyleProp<ViewStyle>` | - | |
 | styles | Semantic DOM style | [NoticeBarStyle](#noticebarstyle-interface) | - | |
 
-- Theme color [theme.brand_error](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx#L43) = `#f4333c`
+- Theme color [theme.brand_error](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx#L35) = `#f4333c`
 
 ### Marquee props
 

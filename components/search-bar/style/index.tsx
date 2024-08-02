@@ -18,7 +18,7 @@ export default (theme: Theme) =>
     },
     input: {
       borderRadius: theme.radius_md,
-      backgroundColor: '#fff',
+      backgroundColor: theme.fill_grey,
       borderColor: theme.border_color_base,
       borderWidth: theme.border_width_sm,
       height: theme.search_bar_input_height,
@@ -33,7 +33,7 @@ export default (theme: Theme) =>
       paddingBottom: 0,
     },
     wrapper: {
-      backgroundColor: theme.search_bar_fill,
+      backgroundColor: theme.fill_base,
       height: theme.search_bar_height,
       paddingLeft: theme.h_spacing_md,
       paddingRight: theme.h_spacing_md,

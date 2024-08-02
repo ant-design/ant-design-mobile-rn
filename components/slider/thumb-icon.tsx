@@ -28,6 +28,10 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
+    width: 32,
+    height: 32,
+    borderRadius: 32,
+    backgroundColor: '#ffffff',
   },
   line: {
     width: 2,

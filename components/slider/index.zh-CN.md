@@ -45,7 +45,7 @@ interface SliderStyle {
   track: ViewStyle // 轨道线
   fill: ViewStyle // 轨道填充部分
 
-  // 滑轨按钮
+  // 滑轨按钮wrap+阴影
   thumb: ViewStyle
 
   // 刻度

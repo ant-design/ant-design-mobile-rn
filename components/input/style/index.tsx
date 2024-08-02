@@ -30,6 +30,7 @@ export default (theme: Theme) =>
       maxHeight: '100%',
       minHeight: 24,
       fontSize: theme.font_size_heading,
+      color: theme.color_text_base,
       paddingVertical: theme.prefix_padding,
       textAlignVertical: 'center',
       includeFontPadding: true,
@@ -42,6 +43,7 @@ export default (theme: Theme) =>
     },
     prefix: {
       fontSize: theme.font_size_heading,
+      color: theme.color_text_base,
       marginRight: theme.prefix_padding,
     },
     showCount: {
@@ -51,6 +53,7 @@ export default (theme: Theme) =>
     },
     suffix: {
       fontSize: theme.font_size_heading,
+      color: theme.color_text_base,
       marginLeft: theme.prefix_padding,
     },
     warning: {

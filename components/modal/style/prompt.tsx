@@ -30,6 +30,7 @@ export default (variables: Theme) =>
     input: {
       height: 36,
       fontSize: variables.font_size_base,
+      color: variables.color_text_base,
       paddingHorizontal: variables.h_spacing_sm,
       paddingVertical: 0,
     },

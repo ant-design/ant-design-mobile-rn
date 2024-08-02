@@ -1,6 +1,7 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 export interface ListStyle {
+  List: ViewStyle
   Header: TextStyle
   Footer: TextStyle
   Body: ViewStyle
@@ -27,8 +28,8 @@ export interface BriefStyle {
 
 export default (variables: Theme) =>
   StyleSheet.create<ListStyle & ListItemStyle & BriefStyle>({
-    underlayColor: {
-      backgroundColor: variables.fill_tap,
+    List: {
+      backgroundColor: variables.fill_body,
     },
     Header: {
       fontSize: variables.font_size_base,
@@ -36,18 +37,15 @@ export default (variables: Theme) =>
       paddingHorizontal: variables.h_spacing_lg,
       paddingTop: variables.v_spacing_lg,
       paddingBottom: variables.v_spacing_md,
-      backgroundColor: variables.fill_body,
     },
     Footer: {
       fontSize: variables.font_size_base,
       color: variables.color_text_caption,
       paddingHorizontal: variables.h_spacing_lg,
       paddingVertical: variables.v_spacing_md,
-      backgroundColor: variables.fill_body,
     },
     Body: {
       position: 'relative',
-      backgroundColor: variables.fill_base,
       borderTopWidth: StyleSheet.hairlineWidth,
       borderTopColor: variables.border_color_thin,
     },
@@ -58,6 +56,10 @@ export default (variables: Theme) =>
       right: 0,
       height: StyleSheet.hairlineWidth,
       backgroundColor: variables.border_color_thin,
+    },
+
+    underlayColor: {
+      backgroundColor: variables.fill_tap,
     },
     Item: {
       flexGrow: 1,
@@ -93,7 +95,7 @@ export default (variables: Theme) =>
       textAlign: 'right',
       textAlignVertical: 'center',
       paddingLeft: variables.h_spacing_md,
-      maxWidth: variables.list_extra_max_width,
+      maxWidth: variables.extra_max_width,
     },
     Brief: {
       minHeight: variables.font_size_icontext,

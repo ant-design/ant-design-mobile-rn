@@ -9,12 +9,12 @@ import {
   TextStyle,
   View,
 } from 'react-native'
-import Icon from '../icon'
-import { WithTheme, WithThemeStyles } from '../style'
 import { getComponentLocale } from '../_util/getLocale'
-import { defaultProps, SearchBarPropsType, SearchBarState } from './PropsType'
-import SearchBarStyles, { SearchBarStyle } from './style/index'
+import Icon from '../icon'
 import { LocaleContext } from '../locale-provider'
+import { WithTheme, WithThemeStyles } from '../style'
+import { SearchBarPropsType, SearchBarState, defaultProps } from './PropsType'
+import SearchBarStyles, { SearchBarStyle } from './style/index'
 
 export interface SearchBarProps
   extends SearchBarPropsType,
@@ -125,12 +125,13 @@ export default class SearchBar extends React.Component<
     const _showCancelButton = showCancelButton || focus
     return (
       <WithTheme styles={styles} themeStyles={SearchBarStyles}>
-        {(_styles) => (
+        {(_styles, theme) => (
           <View style={_styles.wrapper}>
             <View style={_styles.inputWrapper}>
               <TextInput
                 clearButtonMode="always"
                 underlineColorAndroid="transparent"
+                placeholderTextColor={theme.color_text_placeholder}
                 editable={!disabled}
                 {...restProps}
                 style={[_styles.input, style]}

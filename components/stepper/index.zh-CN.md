@@ -52,9 +52,9 @@ export interface StepperStyle extends Partial<InputStyle> {
 
   // StepperStyle
   inputDisabled: TextStyle
-  stepWrap: ViewStyle
-  stepText: TextStyle
-  stepDisabled: ViewStyle
+  stepWrap: ViewStyle // step button wrap
+  stepText: TextStyle // step button text
+  stepDisabled: ViewStyle // step button disabled
   disabledStepTextColor: TextStyle
 }
 ```

@@ -21,6 +21,7 @@ version: 5.2.0
 | mode | 设置亮色模式或者黑色模式 | `'light' | 'dark'` | `'light'` |
 | onVisibleChange | 显示隐藏的回调 | `(visible: boolean) => void` | - |
 | placement | 气泡框位置 | `'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end'` | `'top'` |
+| styles | 语义化结构 style | [TooltipStyle](/#tooltipstyle-语义化样式) | - |
 | trigger | 触发方式 | `'onPress'` | - |
 | visible | 受控模式下，是否展示弹出内容 | `boolean` | - |
 
@@ -69,11 +70,19 @@ import { Tooltip } from '@ant-design/react-native'
 | onPress | 点击时触发 | `() => void` | - |
 | text | 菜单列表，当弹出内容为标准菜单时使用 | `ReactNode` | - |
 
+### TooltipStyle 语义化样式
+
+```typescript
+interface TooltipStyle extends ListItemStyle {
+  tooltip: ViewStyle
+  tooltipText: TextStyle
+  arrow: ViewStyle
+}
+```
+
 ### Ref
 
 同 Tooltip
-
-
 
 ## FAQ
 

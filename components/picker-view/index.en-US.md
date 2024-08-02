@@ -41,6 +41,12 @@ Properties | Descrition | Type | Default
 interface PickerViewStyle {
   wrappper: ViewStyle
   wheelWrapper: ViewStyle
+
+  // item style
+  itemWrap: ViewStyle
+  itemStyle: TextStyle
+
+  // mask view
   mask: ViewStyle
   maskTop: ViewStyle
   maskMiddle: ViewStyle
@@ -54,8 +60,10 @@ Support custom mask style, such as using the gradient component `<LinearGradient
 
 Properties | Descrition | Type | Default
 -----------|------------|------|--------
-| renderMaskTop | The function to custom rendering the mask top half view | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
-| renderMaskBottom | The function to custom rendering the mask bottom half view | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
+| renderMaskTop | The function to custom rendering the mask top half view | `()=> ReactNode` | `<View style={{ flex: 1, opacity:0.8, backgroundColor: theme.fill_base }} />` |
+| renderMaskBottom | The function to custom rendering the mask bottom half view | `()=> ReactNode` | `<View style={{ flex: 1, opacity:0.8, backgroundColor: theme.fill_base }} />` |
+
+- Theme color [theme.fill_base](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx#L24) = `#ffffff`
 
 ## FAQ
 

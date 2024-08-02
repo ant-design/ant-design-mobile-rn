@@ -103,9 +103,9 @@ class AntmModal extends React.Component<ModalProps, any> {
                   const styleMap: {
                     [key: string]: object
                   } = {
-                    cancel: { color: '#000' },
+                    cancel: { color: theme.color_text_base },
                     default: {},
-                    destructive: { color: 'red' },
+                    destructive: { color: theme.brand_error },
                   }
                   buttonStyle = styleMap[buttonStyle] || {}
                 }

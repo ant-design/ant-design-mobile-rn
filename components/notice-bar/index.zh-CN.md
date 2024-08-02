@@ -25,7 +25,7 @@ version: update
 | style  | 最外层样式 | `StyleProp<ViewStyle>` | - | |
 | styles | 语义化结构 style | [NoticeBarStyle](#noticebarstyle-语义化样式) | - | |
 
- - 其中主题色 [theme.brand_error](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx#L43) = `#f4333c`
+ - 其中主题色 [theme.brand_error](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx#L35) = `#f4333c`
 
 
 ### MarqueeProps

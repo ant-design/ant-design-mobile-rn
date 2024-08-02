@@ -44,7 +44,7 @@ interface SliderStyle {
   track: ViewStyle // track line
   fill: ViewStyle // Filled portion of the track line
 
-  // Track button
+  // Track button wrap + shadow style
   thumb: ViewStyle
 
   // Tick

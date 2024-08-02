@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useState } from 'react'
 import { ActivityIndicator, LayoutChangeEvent, Text, View } from 'react-native'
 import { mergeProps } from '../_util/with-default-props'
 import HapticsContext from '../provider/HapticsContext'
-import { WithThemeStyles, useTheme } from '../style'
+import { Theme, ThemeContext, WithThemeStyles, useTheme } from '../style'
 import {
   PickerColumn,
   PickerColumnItem,
@@ -25,11 +25,11 @@ const defaultProps = {
   value: [],
   itemHeight: 0,
   numberOfLines: 1,
-  renderMaskTop: () => (
-    <View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />
+  renderMaskTop: (theme: Theme) => (
+    <View style={{ flex: 1, opacity: 0.8, backgroundColor: theme.fill_base }} />
   ),
-  renderMaskBottom: () => (
-    <View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />
+  renderMaskBottom: (theme: Theme) => (
+    <View style={{ flex: 1, opacity: 0.8, backgroundColor: theme.fill_base }} />
   ),
 }
 
@@ -50,31 +50,24 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
     setItemHeight(height)
   }
 
+  const ss = useTheme({
+    styles: p.styles,
+    themeStyles: PickerViewStyles,
+  })
+  const theme = useContext(ThemeContext)
+
   const renderLabel = useCallback(
     (item: PickerColumnItem, index: number) => {
       return (
         <View
           key={item.key || item.value}
-          style={[
-            {
-              height: itemHeight || 'auto',
-              overflow: 'hidden',
-              justifyContent: 'center',
-            },
-          ]}>
+          style={[ss.itemWrap, { height: itemHeight || 'auto' }]}>
           {p.renderLabel?.(item, index) || (
             <Text
               style={[
-                {
-                  fontSize: 16,
-                  color: '#333',
-                  textAlign: 'center',
-                  includeFontPadding: false,
-                  padding: 8,
-                },
+                ss.itemStyle,
                 p.itemStyle,
-                // itemStyle was not allowed to set height
-                { height: 'auto' },
+                { height: 'auto' }, // itemStyle was not allowed to set height
               ]}
               numberOfLines={p.numberOfLines}>
               {item.label}
@@ -83,7 +76,7 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
         </View>
       )
     },
-    [itemHeight, p],
+    [itemHeight, p, ss.itemStyle, ss.itemWrap],
   )
 
   const onHaptics = useContext(HapticsContext)
@@ -94,11 +87,6 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
     },
     [onHaptics, p.handleSelect],
   )
-
-  const ss = useTheme({
-    styles: p.styles,
-    themeStyles: PickerViewStyles,
-  })
 
   if (itemHeight === 0) {
     return (
@@ -142,9 +130,9 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
       </View>
       {/* mask */}
       <View style={ss.mask} pointerEvents="none">
-        <View style={ss.maskTop}>{p.renderMaskTop?.()}</View>
+        <View style={ss.maskTop}>{p.renderMaskTop?.(theme)}</View>
         <View style={[ss.maskMiddle, { height: itemHeight }]} />
-        <View style={ss.maskBottom}>{p.renderMaskBottom?.()}</View>
+        <View style={ss.maskBottom}>{p.renderMaskBottom?.(theme)}</View>
       </View>
     </View>
   )

@@ -132,6 +132,8 @@ const InternalListItem: React.ForwardRefRenderFunction<
         </View>
       )
     }
+
+    return <View style={itemStyles.Content} />
   }, [children, itemStyles.Content, numberOfLines])
 
   // ====================  extra  ========================

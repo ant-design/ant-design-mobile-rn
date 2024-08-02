@@ -46,6 +46,19 @@ version: update
 </Provider>
 ```
 
+### 暗黑模式
+```json
+{
+    "fill_body": "#262629",
+    "fill_base": "#1a1a1a",
+    "fill_tap": "#2b2b2b",
+    "fill_grey": "#0a0a0a",
+    "color_text_base": "#e6e6e6",
+    "border_color_base": "#2b2b2b",
+    "border_color_thin": "#2b2b2b",
+}
+```
+
 ### 如何启动组件震动？
 由于不同平台的震动引擎不同，为此我们将震动事件暴露出来，由外挂引擎执行。
 

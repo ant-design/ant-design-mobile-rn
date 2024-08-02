@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { StyleProp, Text, View, ViewStyle } from 'react-native'
 import { useTheme } from '../style'
 import { ListPropsType } from './PropsType'
@@ -21,31 +21,33 @@ const InternalList: React.ForwardRefRenderFunction<View, ListProps> = (
     themeStyles: listStyles,
   })
 
-  let headerDom: React.ReactElement<any> | null = null
-  let footerDom: React.ReactElement<any> | null = null
+  const headerDom = useMemo(() => {
+    if (renderHeader) {
+      let content =
+        typeof renderHeader === 'function' ? renderHeader() : renderHeader
+      if (typeof content === 'string') {
+        content = <Text style={s.Header}>{content}</Text>
+      }
+      return content
+    }
+  }, [renderHeader, s.Header])
 
-  if (renderHeader) {
-    let content =
-      typeof renderHeader === 'function' ? renderHeader() : renderHeader
-    if (typeof content === 'string') {
-      content = <Text style={s.Header}>{content}</Text>
+  const footerDom = useMemo(() => {
+    if (renderFooter) {
+      let content =
+        typeof renderFooter === 'function' ? renderFooter() : renderFooter
+      if (typeof content === 'string') {
+        content = <Text style={s.Footer}>{content}</Text>
+      }
+      return content
     }
-    headerDom = <View>{content}</View>
-  }
-  if (renderFooter) {
-    let content =
-      typeof renderFooter === 'function' ? renderFooter() : renderFooter
-    if (typeof content === 'string') {
-      content = <Text style={s.Footer}>{content}</Text>
-    }
-    footerDom = <View>{content}</View>
-  }
+  }, [renderFooter, s.Footer])
 
   return (
-    <View {...restProps} style={style} ref={ref}>
+    <View {...restProps} style={[s.List, style]} ref={ref}>
       {headerDom}
       <View style={s.Body}>
-        {children ? children : null}
+        {children}
         <View style={s.BodyBottomLine} />
       </View>
       {footerDom}

@@ -1,5 +1,6 @@
 import type { Meta } from 'rc-field-form/lib/interface'
 import React, { useMemo } from 'react'
+import { StyleSheet } from 'react-native'
 import { FormItemProps } from '.'
 import { List, View } from '../..'
 import { useTheme } from '../../style'
@@ -34,7 +35,6 @@ export default function ItemHolder(props: ItemHolderProps) {
     meta,
     hasFeedback,
     layout,
-    extra,
     wrapperStyle,
     hidden,
     children,
@@ -76,10 +76,13 @@ export default function ItemHolder(props: ItemHolderProps) {
   const ss = useTheme({ styles, themeStyles: FormItemStyle })
   const itemStyles = useMemo(
     () => ({
-      column: mergeLayout === 'horizontal' ? ss.formitemRow : ss.formitemColumn,
       ...styles,
+      Content: StyleSheet.flatten([
+        styles?.Content || {},
+        mergeLayout === 'horizontal' ? { flexDirection: 'row' } : {},
+      ]) as any,
     }),
-    [mergeLayout, ss.formitemRow, ss.formitemColumn, styles],
+    [mergeLayout, styles],
   )
 
   return (
@@ -95,7 +98,6 @@ export default function ItemHolder(props: ItemHolderProps) {
         <List.Item
           {...resetListItemProps}
           styles={itemStyles}
-          extra={<View style={ss.formItemExtra}>{extra}</View>}
           style={[style, hidden && { display: 'none' }]}>
           <FormItemLabel
             {...props}

@@ -46,6 +46,19 @@ For example: Modifying the following theme variables has a relatively large impa
 </Provider>
 ```
 
+### Dark Mode
+```json
+{
+    "fill_body": "#262629",
+    "fill_base": "#1a1a1a",
+    "fill_tap": "#2b2b2b",
+    "fill_grey": "#0a0a0a",
+    "color_text_base": "#e6e6e6",
+    "border_color_base": "#2b2b2b",
+    "border_color_thin": "#2b2b2b",
+}
+```
+
 ### How to activate component vibration?
 Since the vibration engines of different platforms are different, we expose the vibration events and execute them by the plug-in engine.
 

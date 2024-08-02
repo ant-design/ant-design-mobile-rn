@@ -5,16 +5,17 @@ import React, {
   useMemo,
   useRef,
 } from 'react'
-import { ScrollView } from 'react-native'
+import { ScrollView, StyleSheet } from 'react-native'
 import List from '../list'
-import { ListItemStyle } from '../list/style'
-import { ThemeContext } from '../style'
+import { ThemeContext, useTheme } from '../style'
 import { Action, TooltipMenuProps, TooltipRef } from './PropsType'
 import Tooltip from './Tooltip'
+import TooltipStyles from './style'
 
 export const TooltipMenu = forwardRef<TooltipRef, TooltipMenuProps>(
   (props, ref) => {
-    const { actions, maxCount, mode, onAction, styles, ...restProps } = props
+    const { actions, maxCount, mode, onAction, style, styles, ...restProps } =
+      props
 
     const theme = React.useContext(ThemeContext)
     const innerRef = useRef<TooltipRef>(null)
@@ -35,69 +36,29 @@ export const TooltipMenu = forwardRef<TooltipRef, TooltipMenuProps>(
       const whetherScroll = Boolean(maxCount && actions.length > maxCount)
       const innerHeight = maxCount && maxCount * theme.list_item_height
 
-      const getListItemStyle = (isLastChild: boolean, hasIcon: boolean) => {
-        const res: Partial<ListItemStyle> = {
-          Line: {
-            flex: undefined, // to auto width
-            ...(isLastChild ? { borderBottomWidth: 0 } : {}),
-            ...(hasIcon ? { marginLeft: 8 } : {}),
-          },
-          column: {
-            flex: undefined, // to auto width
-          },
-          Item: {
-            backgroundColor: 'transparent',
-          },
-        }
-        if (mode === 'dark') {
-          res.Content = {
-            color: '#ffffff',
-          }
-          res.underlayColor = {
-            backgroundColor: 'transparent',
-          }
-        }
-        return res
-      }
-
       return (
         <ScrollView
           scrollEnabled={whetherScroll}
           style={whetherScroll && { height: innerHeight }}>
           {actions.map((action, index) => (
-            <List.Item
+            <TooltipMenuItem
               key={action.key ?? index}
-              thumb={action.icon}
-              disabled={action.disabled}
-              onPress={() => {
-                if (action.disabled) {
-                  return
-                }
-                onPress(action)
-                action.onPress?.()
-              }}
-              styles={{
-                ...getListItemStyle(
-                  index + 1 === actions.length,
-                  !!action.icon,
-                ),
-                ...styles,
-              }}
-              style={action.style}>
-              {action.text}
-            </List.Item>
+              action={action}
+              index={index}
+              isLastChild={index + 1 === actions.length}
+              mode={mode}
+              onPress={onPress}
+            />
           ))}
         </ScrollView>
       )
-    }, [actions, maxCount, mode, onPress, styles, theme.list_item_height])
+    }, [actions, maxCount, mode, onPress, theme.list_item_height])
 
     return (
       <Tooltip
         ref={innerRef}
-        styles={{
-          content: { padding: 0 },
-          ...styles,
-        }}
+        style={[{ paddingRight: 0 }, style]}
+        styles={styles}
         mode={mode}
         {...restProps}
         content={overlay}
@@ -105,3 +66,43 @@ export const TooltipMenu = forwardRef<TooltipRef, TooltipMenuProps>(
     )
   },
 )
+
+const TooltipMenuItem = (
+  props: {
+    action: Action
+    index: number
+    isLastChild: boolean
+    onPress: (e: Action) => void
+  } & Pick<TooltipMenuProps, 'styles' | 'mode'>,
+) => {
+  const { action, isLastChild, mode, onPress, styles } = props
+  const theme = React.useContext(ThemeContext)
+
+  const TooltipStylesMemo = useCallback(() => {
+    return TooltipStyles(theme, mode)
+  }, [mode, theme])
+
+  const ss = useTheme({
+    styles,
+    themeStyles: TooltipStylesMemo,
+  })
+
+  const getListItemStyle = useMemo(() => {
+    return {
+      ...ss,
+      Line: StyleSheet.flatten([
+        isLastChild ? { borderBottomWidth: 0 } : {},
+        action.icon ? { marginLeft: 8 } : {},
+        ss.Line,
+      ]),
+    }
+  }, [action.icon, isLastChild, ss])
+  return (
+    <List.Item
+      styles={getListItemStyle}
+      thumb={action.icon}
+      onPress={() => onPress(action)}>
+      {action.text}
+    </List.Item>
+  )
+}

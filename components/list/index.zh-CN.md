@@ -52,6 +52,7 @@ subtitle: 列表
 
 ```typescript
 interface ListStyle {
+  List: ViewStyle
   Header: TextStyle
   Footer: TextStyle
   Body: ViewStyle
@@ -63,6 +64,7 @@ interface ListStyle {
 ```typescript
 interface ListItemStyle {
   underlayColor: ViewStyle // ListItem其实是一个TouchableHighlight
+
   Item: ViewStyle // ListItem wrap
   Line: ViewStyle // borderBottom
 
