@@ -4,9 +4,6 @@ import { Theme } from '../../style'
 
 export interface FormStyle extends ListStyle {}
 export interface FormItemStyle extends ListItemStyle {
-  formitemRow: ViewStyle
-  formitemColumn: ViewStyle
-  formItemExtra: ViewStyle | TextStyle
   formItemLabel: ViewStyle
   formItemLabelText: ViewStyle | TextStyle
   formItemControl: ViewStyle
@@ -24,19 +21,6 @@ export interface ValidateStatusStyle {
 
 export default (theme: Theme) =>
   StyleSheet.create<Partial<FormItemStyle & ValidateStatusStyle>>({
-    formitemRow: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-    },
-    formitemColumn: {
-      flex: 1,
-      flexDirection: 'column',
-    },
-    formItemExtra: {
-      maxWidth: theme.extra_max_width,
-      overflow: 'hidden',
-    },
     formItemLabel: {
       minWidth: theme.prefix_width,
       position: 'relative',

@@ -154,9 +154,12 @@ const styles = StyleSheet.create({
 export function ArrowAnimated(props: { children: ReactNode; active: boolean }) {
   const rotate = useSharedValue(0)
 
-  const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{ rotate: `${rotate.value * -180}deg` }],
-  }))
+  const animatedStyles = useAnimatedStyle(
+    () => ({
+      transform: [{ rotate: `${rotate.value * -180}deg` }],
+    }),
+    [],
+  )
 
   React.useEffect(() => {
     if (props.active) {

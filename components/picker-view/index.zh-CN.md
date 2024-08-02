@@ -42,6 +42,12 @@ PickerView 的功能类似于 Picker ，但它是直接渲染在区域中，而�
 interface PickerViewStyle {
   wrappper: ViewStyle
   wheelWrapper: ViewStyle
+
+  // item style
+  itemWrap: ViewStyle
+  itemStyle: TextStyle
+
+  // 遮罩层
   mask: ViewStyle
   maskTop: ViewStyle
   maskMiddle: ViewStyle
@@ -55,9 +61,10 @@ interface PickerViewStyle {
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| renderMaskTop | 自定义渲染上半部分遮罩层 | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
-| renderMaskBottom | 自定义渲染下半部分遮罩层 | `()=> ReactNode` | `<View style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.8)' }} />` |
+| renderMaskTop | 自定义渲染上半部分遮罩层 | `(theme)=> ReactNode` | `<View style={{ flex: 1, opacity:0.8, backgroundColor: theme.fill_base }} />` |
+| renderMaskBottom | 自定义渲染下半部分遮罩层 | `(theme)=> ReactNode` | `<View style={{ flex: 1, opacity:0.8, backgroundColor: theme.fill_base }} />` |
 
+ - 其中主题色 [theme.fill_base](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx#L24) = `#ffffff`
 ## FAQ
 
 ### 在Android平台，ScrollView中嵌套使用PickerView，会发生Picker Item不能滑动的情况，怎么办？

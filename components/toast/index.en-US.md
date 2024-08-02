@@ -14,7 +14,7 @@ A lightweight feedback or tips, used to display content that does not interrupt 
 
 `Toast` only supports Imperative calls. The argument type is `string | ToastProps`.
 
-- `Toast.show(props)` - New in `5.2.0`
+- `Toast.show(props)` - New in `5.2.1`
 - `Toast.success(props)`
 - `Toast.fail(props)`
 - `Toast.info(props)`
@@ -29,12 +29,12 @@ ToastProps has these fields:
 | ---------- | ---------- | -----| -----------| --------|---------|
 | content    | Toast content | `String | React.ReactNode` | Yes | - | |
 | duration   | Delay time to close, which units is second | number |  No  | 3 | |
-| icon       | Toast icon | `'success' | 'fail' | 'offline' | 'loading' | React.ReactNode` | No | - | `5.2.0` |
+| icon       | Toast icon | `'success' | 'fail' | 'offline' | 'loading' | React.ReactNode` | No | - | `5.2.1` |
 | mask       | Whether to show a transparent mask, which will prevent touch event of the whole page | Boolean |  No  | true | |
 | onClose    | A callback function Triggered when the Toast is closed | Function | No | - | |
-| position  | Vertical display position | `'top' | 'bottom' | 'center'` | No  | `'center'` | `5.2.0` |
+| position  | Vertical display position | `'top' | 'bottom' | 'center'` | No  | `'center'` | `5.2.1` |
 | stackable |  Whether to allow toast overlay | Boolean  |  No | true | |
-| styles    | Semantic DOM style              | [ToastStyle](#toaststyle-interface) | No | - | `5.2.0` |
+| styles    | Semantic DOM style              | [ToastStyle](#toaststyle-interface) | No | - | `5.2.1` |
 
 > **Notice：** OnClose is invalid and Toast does not hide, If set duration = 0, toast will not auto hide, you have to manually do it.
 

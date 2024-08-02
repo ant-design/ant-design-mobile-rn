@@ -13,29 +13,35 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
   }
 >
   <View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          basic
-        </Text>
-      </View>
+        }
+      >
+        basic
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -82,27 +88,19 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  标题文字点击无反馈，文字超长则隐藏，文字超长则隐藏
-                </Text>
-              </View>
+                标题文字点击无反馈，文字超长则隐藏，文字超长则隐藏
+              </Text>
             </View>
           </View>
         </View>
@@ -149,26 +147,18 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行
-                </Text>
-              </View>
+                文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行
+              </Text>
             </View>
           </View>
         </View>
@@ -215,51 +205,34 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  标题文字
-                </Text>
-              </View>
-              <View
+                标题文字
+              </Text>
+              <Text
+                numberOfLines={1}
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#888888",
-                      "fontSize": 17,
-                      "textAlign": "right",
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  箭头向右
-                </Text>
-              </View>
+                箭头向右
+              </Text>
               <Text
                 style={
                   Array [
@@ -325,51 +298,34 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  标题文字
-                </Text>
-              </View>
-              <View
+                标题文字
+              </Text>
+              <Text
+                numberOfLines={1}
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#888888",
-                      "fontSize": 17,
-                      "textAlign": "right",
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  箭头向下
-                </Text>
-              </View>
+                箭头向下
+              </Text>
               <Text
                 style={
                   Array [
@@ -434,51 +390,34 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  标题文字
-                </Text>
-              </View>
-              <View
+                标题文字
+              </Text>
+              <Text
+                numberOfLines={1}
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#888888",
-                      "fontSize": 17,
-                      "textAlign": "right",
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  箭头向上
-                </Text>
-              </View>
+                箭头向上
+              </Text>
               <Text
                 style={
                   Array [
@@ -543,51 +482,34 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  标题文字
-                </Text>
-              </View>
-              <View
+                标题文字
+              </Text>
+              <Text
+                numberOfLines={1}
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#888888",
-                      "fontSize": 17,
-                      "textAlign": "right",
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  没有箭头
-                </Text>
-              </View>
+                没有箭头
+              </Text>
               <View
                 style={
                   Object {
@@ -644,41 +566,35 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
+                垂直居中对齐
+              </Text>
+              <View
+                style={
+                  Array [
                     Object {
-                      "color": "#000000",
+                      "color": "#888888",
                       "fontSize": 17,
+                      "maxWidth": "70%",
+                      "paddingLeft": 8,
+                      "textAlign": "right",
                       "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  垂直居中对齐
-                </Text>
-              </View>
-              <View>
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                >
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text>
                   内容内容
                 </Text>
                 <View
@@ -760,21 +676,22 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               <View
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
                 <Text
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   垂直居中对齐
@@ -805,30 +722,21 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                   </Text>
                 </View>
               </View>
-              <View
+              <Text
+                numberOfLines={1}
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#888888",
-                      "fontSize": 17,
-                      "textAlign": "right",
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  内容内容
-                </Text>
-              </View>
+                内容内容
+              </Text>
             </View>
           </View>
         </View>
@@ -882,20 +790,21 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
               <View
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
                 <Text
                   style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      },
-                    ]
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
                   顶部对齐
@@ -951,29 +860,20 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                   </Text>
                 </View>
               </View>
-              <View
+              <Text
                 style={
-                  Array [
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    },
-                  ]
+                  Object {
+                    "color": "#888888",
+                    "fontSize": 17,
+                    "maxWidth": "70%",
+                    "paddingLeft": 8,
+                    "textAlign": "right",
+                    "textAlignVertical": "center",
+                  }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#888888",
-                      "fontSize": 17,
-                      "textAlign": "right",
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行
-                </Text>
-              </View>
+                文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行
+              </Text>
               <Text
                 style={
                   Array [
@@ -1043,41 +943,35 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
+                底部对齐
+              </Text>
+              <View
+                style={
+                  Array [
                     Object {
-                      "color": "#000000",
+                      "color": "#888888",
                       "fontSize": 17,
+                      "maxWidth": "70%",
+                      "paddingLeft": 8,
+                      "textAlign": "right",
                       "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  底部对齐
-                </Text>
-              </View>
-              <View>
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
-                >
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text>
                   内容内容
                 </Text>
                 <View
@@ -1114,11 +1008,9 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -1127,29 +1019,35 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          带缩略图
-        </Text>
-      </View>
+        }
+      >
+        带缩略图
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -1213,27 +1111,19 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  thumb
-                </Text>
-              </View>
+                thumb
+              </Text>
             </View>
           </View>
         </View>
@@ -1297,27 +1187,19 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  thumb
-                </Text>
-              </View>
+                thumb
+              </Text>
               <Text
                 style={
                   Array [
@@ -1383,40 +1265,56 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                numberOfLines={1}
                 style={
                   Object {
+                    "color": "#000000",
                     "flex": 1,
-                    "flexDirection": "column",
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
                   }
                 }
               >
-                <Text
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "#000000",
-                      "fontSize": 17,
-                      "textAlignVertical": "center",
-                    }
-                  }
-                >
-                  extra为Image
-                </Text>
-              </View>
-              <Image
+                extra为Image
+              </Text>
+              <View
                 source={
                   Object {
                     "uri": "https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png",
                   }
                 }
                 style={
-                  Object {
-                    "height": 29,
-                    "width": 29,
-                  }
+                  Array [
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "maxWidth": "70%",
+                      "paddingLeft": 8,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    },
+                    Object {
+                      "height": 29,
+                      "width": 29,
+                    },
+                  ]
                 }
-              />
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": 29,
+                      "width": 29,
+                    }
+                  }
+                />
+              </View>
               <Text
                 style={
                   Array [
@@ -1442,11 +1340,9 @@ exports[`renders ./components/list/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,

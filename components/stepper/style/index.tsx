@@ -19,7 +19,7 @@ export default (theme: Theme) =>
       fontSize: theme.font_size_base,
       color: theme.color_text_base,
       textAlign: 'center',
-      backgroundColor: theme.fill_body,
+      backgroundColor: theme.fill_grey,
     },
     prefix: {
       flexShrink: 0,
@@ -39,7 +39,7 @@ export default (theme: Theme) =>
       flex: 1,
       justifyContent: 'center',
       borderRadius: theme.radius_xs,
-      backgroundColor: theme.fill_body,
+      backgroundColor: theme.fill_grey,
     },
     stepText: {
       textAlign: 'center',

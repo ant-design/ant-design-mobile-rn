@@ -2,7 +2,7 @@
 category: Components
 type: Data Display
 title: Collapse
-version: 5.2.0
+version: 5.2.1
 ---
 
 A content area that can be collapsed/expanded.

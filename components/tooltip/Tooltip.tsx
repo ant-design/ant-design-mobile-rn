@@ -130,13 +130,14 @@ const InternalTooltip: React.ForwardRefRenderFunction<
       left: arrowX || undefined,
       top: arrowY || undefined,
       [arrowSide]: -theme.tooltip_arrow_size * 2,
-      [arrowBorder]: mode === 'dark' ? theme.tooltip_dark : '#ffffff',
+      [arrowBorder]: mode === 'dark' ? theme.tooltip_dark : theme.fill_base,
     }
   }, [
     arrowX,
     arrowY,
     mode,
     realPlacement,
+    theme.fill_base,
     theme.tooltip_arrow_size,
     theme.tooltip_dark,
   ])
@@ -174,7 +175,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
                 ref={arrowRef}
                 collapsable={false}
               />
-              <AntmView style={ss.content}>{content}</AntmView>
+              <AntmView style={ss.tooltipText}>{content}</AntmView>
             </View>
           </View>
         </Portal>

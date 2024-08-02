@@ -5,7 +5,7 @@ title: Accordion
 subtitle: (archived)
 ---
 
-> This package has been deprecated in `5.2.0`, recommend [components/Collapse](/components/collapse)
+> This package has been deprecated in `5.2.1`, recommend [components/Collapse](/components/collapse)
 
 You can collapse / expand the content area.
 

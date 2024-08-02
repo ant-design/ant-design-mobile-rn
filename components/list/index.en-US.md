@@ -20,7 +20,7 @@ Properties | Descrition | Type | Default | Version |
 -----------|------------|------|---------|---------|
 | renderHeader       | list heder  | (): void |    | |
 | renderFooter       | list footer  | (): void |    | |
-| styles | Semantic DOM style | [ListStyle](#liststyle-interface) | - | `5.2.0` |
+| styles | Semantic DOM style | [ListStyle](#liststyle-interface) | - | `5.2.1` |
 
 ### List.Item
 
@@ -33,11 +33,11 @@ Properties | Descrition | Type | Default | Version |
 | onPress  | callback is called when  list is clicked | Same as [TouchableHighlightProps['onPress']](#touchablehighlightprops) | | |
 | multipleLine | multiple line | Boolean  | `false`  | |
 | wrap     | Whether to wrap long texts, otherwise it will be hidden by default. | Boolean  | `false` | |
-| styles   | Semantic DOM style | [ListItemStyle](#listitemstyle-interface) | - | `5.2.0` |
+| styles   | Semantic DOM style | [ListItemStyle](#listitemstyle-interface) | - | `5.2.1` |
 
 ### TouchableHighlightProps
 
-New in `5.2.0`. In addition, all properties of [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) are supported; 
+New in `5.2.1`. In addition, all properties of [TouchableHighlightProps](https://reactnative.dev/docs/touchablehighlight) are supported; 
 when setting `onPress` props, it has a default touch style:
 <br/> `{ underlayColor:'#dddddd', activeOpacity: 0.5 }`
 
@@ -48,12 +48,13 @@ Brief infomation
 Properties | Descrition | Type | Default | Version |
 -----------|------------|------|---------|---------|
 | wrap     | Whether to wrap long texts, otherwise it will be hidden by default. | Boolean  | `false` | |
-| styles   | Semantic DOM style | [BriefStyle](#briefstyle-interface) | - | `5.2.0` |
+| styles   | Semantic DOM style | [BriefStyle](#briefstyle-interface) | - | `5.2.1` |
 
 ### ListStyle interface
 
 ```typescript
 interface ListStyle {
+  List: ViewStyle
   Header: TextStyle
   Footer: TextStyle
   Body: ViewStyle
@@ -64,17 +65,19 @@ interface ListStyle {
 
 ```typescript
 interface ListItemStyle {
-  underlayColor: ViewStyle
-  Item: ViewStyle
-  Line: ViewStyle
+  underlayColor: ViewStyle // ListItem is a TouchableHighlight
+  
+  Item: ViewStyle // ListItem wrap
+  Line: ViewStyle // borderBottom
+
   Thumb: ImageStyle
   Content: TextStyle
   Extra: TextStyle
-  Arrow: TextStyle
-  ArrowV: TextStyle
+  
+  Arrow: TextStyle  // horizontal arrow
+  ArrowV: TextStyle // up/down arrow
   multipleLine: ViewStyle
   multipleThumb: ImageStyle
-  column: ViewStyle
 }
 ```
 ### BriefStyle interface

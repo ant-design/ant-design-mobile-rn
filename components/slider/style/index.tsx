@@ -43,7 +43,7 @@ export default (theme: Theme) =>
       zIndex: 1,
       height: 3,
       borderRadius: 3,
-      backgroundColor: theme.fill_body,
+      backgroundColor: theme.fill_grey,
     },
     fill: {
       position: 'absolute',
@@ -55,19 +55,6 @@ export default (theme: Theme) =>
 
     thumb: {
       zIndex: 2,
-      width: 32,
-      height: 32,
-      borderRadius: 32,
-      marginLeft: -16,
-      backgroundColor: theme.fill_base,
-      shadowColor: theme.color_text_base,
-      shadowOffset: {
-        width: 0,
-        height: 1,
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 3,
-      elevation: 3,
     },
 
     ticks: {
@@ -82,7 +69,7 @@ export default (theme: Theme) =>
       width: 7,
       height: 7,
       marginLeft: -3,
-      backgroundColor: theme.fill_body,
+      backgroundColor: theme.fill_grey,
       borderRadius: 7,
     },
     tickActive: {

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Text, TextInput, TextStyle, View } from 'react-native'
-import { WithTheme, WithThemeStyles } from '../style'
 import { getComponentLocale } from '../_util/getLocale'
-import zh_CN from './locale/zh_CN'
+import { LocaleContext } from '../locale-provider'
+import { WithTheme, WithThemeStyles } from '../style'
 import Modal from './Modal'
 import { CallbackOnBackHandler, CallbackOrActions } from './PropsType'
+import zh_CN from './locale/zh_CN'
 import promptStyles, { PromptStyle } from './style/prompt'
-import { LocaleContext } from '../locale-provider'
 
 export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
   title: React.ReactNode
@@ -126,7 +126,7 @@ export default class PropmptContainer extends React.Component<
 
     return (
       <WithTheme styles={this.props.styles} themeStyles={promptStyles}>
-        {(styles) => {
+        {(styles, theme) => {
           const firstStyle = [styles.inputWrapper]
           const lastStyle = [styles.inputWrapper]
 
@@ -162,6 +162,7 @@ export default class PropmptContainer extends React.Component<
                       style={styles.input}
                       underlineColorAndroid="transparent"
                       placeholder={placeholders![0]}
+                      placeholderTextColor={theme.color_text_placeholder}
                     />
                   </View>
                 )}
@@ -177,6 +178,7 @@ export default class PropmptContainer extends React.Component<
                       style={styles.input}
                       underlineColorAndroid="transparent"
                       placeholder={placeholders![1]}
+                      placeholderTextColor={theme.color_text_placeholder}
                     />
                   </View>
                 )}

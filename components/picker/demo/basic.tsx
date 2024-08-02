@@ -32,7 +32,6 @@ function BasicDemo() {
       style={{
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#fff',
         paddingVertical: 5,
         paddingLeft: 16,
       }}>
@@ -91,8 +90,7 @@ export default class PopupExample extends React.Component<any, any> {
   render() {
     return (
       <View>
-        <Text style={{ margin: 16 }}>List Children</Text>
-        <List>
+        <List renderHeader={'List Children'}>
           <Picker
             visible={this.state.visible}
             data={data}
@@ -120,8 +118,9 @@ export default class PopupExample extends React.Component<any, any> {
             <CustomChildren>Customized children</CustomChildren>
           </Picker>
         </List>
-        <Text style={{ margin: 16 }}>visible 控制显示/隐藏</Text>
-        <BasicDemo />
+        <List renderHeader={'visible 控制显示/隐藏'}>
+          <BasicDemo />
+        </List>
       </View>
     )
   }

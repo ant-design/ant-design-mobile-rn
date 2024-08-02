@@ -5,7 +5,7 @@ title: Popover
 subtitle: 气泡(归档)
 ---
 
-> `5.2.0`已停止更新，推荐使用 [components/Tooltip](/components/tooltip-cn)
+> `5.2.1`已停止更新，推荐使用 [components/Tooltip](/components/tooltip-cn)
 
 在点击控件或者某个区域后，浮出一个气泡菜单来做更多的操作。
 如果设置了遮罩层，建议通过点击遮罩层的任一位置，进行退出。

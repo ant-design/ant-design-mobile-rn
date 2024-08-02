@@ -42,20 +42,22 @@ const Thumb: FC<ThumbProps> = (props) => {
     styles,
   } = props
 
-  const animatedStyles = useAnimatedStyle(() => {
-    return {
-      transform: [
-        {
-          translateX: ((value - min) / (max - min)) * (trackLayout?.width || 0),
-        },
-      ],
-    }
-  }, [max, min, trackLayout?.width, value])
-
   const [thumbLayout, setThumbLayout] = useState<LayoutRectangle | undefined>()
   const handleLayout = (e: LayoutChangeEvent) => {
     setThumbLayout(e.nativeEvent.layout)
   }
+
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          translateX:
+            ((value - min) / (max - min)) * (trackLayout?.width || 0) -
+            (thumbLayout?.width || 0) / 2,
+        },
+      ],
+    }
+  }, [max, min, thumbLayout?.width, trackLayout?.width, value])
 
   const [dragging, setDragging] = useState(false)
   const onHaptics = useContext(HapticsContext)

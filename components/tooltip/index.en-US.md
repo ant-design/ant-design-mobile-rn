@@ -2,7 +2,7 @@
 category: Components
 type: Navigation
 title: Tooltip
-version: 5.2.0
+version: 5.2.1
 ---
 
 After clicking on a control or an area, a Tooltip menu appears for doing more.
@@ -20,6 +20,7 @@ If set mask prop, it is recommended to exit by clicking on any of the mask layer
 | mode | Set bright color mode or black mode | `'light' | 'dark'` | `'light'` |
 | onVisibleChange | Callback when the visible prop is changed | `(visible: boolean) => void` | - |
 | placement | The position of the Tooltip | `'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end'` | `'top'` |
+| styles | Semantic DOM style | [TooltipStyle](#tooltipstyle-interface) | - |
 | trigger | Event to trigger | `'onPress'` | - |
 | visible | Whether to display pop-up content in controlled mode | `boolean` | - |
 
@@ -68,10 +69,19 @@ Except for `content`, all other attributes are inherited from `Tooltip`, the uni
 | onPress | Triggered on click | `() => void` | - |
 | text | Menu list, used when the pop-up content is a standard menu | `ReactNode` | - |
 
+### TooltipStyle interface
+
+```typescript
+interface TooltipStyle extends ListItemStyle {
+  tooltip: ViewStyle
+  tooltipText: TextStyle
+  arrow: ViewStyle
+}
+```
+
 ### Ref
 
 Same as Tooltip.
-
 
 ## FAQ
 

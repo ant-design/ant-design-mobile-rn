@@ -13,6 +13,10 @@ export interface InputStyle {
 export default (theme: Theme) =>
   StyleSheet.create<InputStyle>({
     container: {
+      width: '100%',
+      maxWidth: '100%',
+      maxHeight: '100%',
+      minHeight: 24,
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
@@ -21,7 +25,12 @@ export default (theme: Theme) =>
     input: {
       flex: 1,
       overflow: 'hidden',
+      width: '100%',
+      maxWidth: '100%',
+      maxHeight: '100%',
+      minHeight: 24,
       fontSize: theme.font_size_heading,
+      color: theme.color_text_base,
       paddingVertical: theme.prefix_padding,
       textAlignVertical: 'center',
       includeFontPadding: true,
@@ -34,6 +43,7 @@ export default (theme: Theme) =>
     },
     prefix: {
       fontSize: theme.font_size_heading,
+      color: theme.color_text_base,
       marginRight: theme.prefix_padding,
     },
     showCount: {
@@ -43,6 +53,7 @@ export default (theme: Theme) =>
     },
     suffix: {
       fontSize: theme.font_size_heading,
+      color: theme.color_text_base,
       marginLeft: theme.prefix_padding,
     },
     warning: {

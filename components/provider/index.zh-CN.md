@@ -26,8 +26,8 @@ version: update
 | -----|-----|-----|-------|------|
 | locale | 语言包配置（`默认语言是中文`）。可通过[`@ant-design/react-native/lib/locale-provider/{lan}`](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/locale-provider)引入 | [Locale](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/locale-provider/index.tsx#L4) | - | |
 | theme  | 主题样式配置，可根据需要覆盖部分或者全部变量 | [Theme](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx) | - | |
-| onHaptics | 设置震动引擎，内置组件需要震动反馈时会触发该方法 | `(componentName: 'picker' | 'stepper' | 'slider' | 'switch') => void` | - | `5.2.0` |
-| isRTL | 是否使用从右到左（RTL）语言。<br/>目前只应用于`<SwipeAction/>`组件 | `Boolean` | `I18nManager.isRTL` | `5.2.0` |
+| onHaptics | 设置震动引擎，内置组件需要震动反馈时会触发该方法 | `(componentName: 'picker' | 'stepper' | 'slider' | 'switch') => void` | - | `5.2.1` |
+| isRTL | 是否使用从右到左（RTL）语言。<br/>目前只应用于`<SwipeAction/>`组件 | `Boolean` | `I18nManager.isRTL` | `5.2.1` |
 
 ## FAQ
 
@@ -44,6 +44,20 @@ version: update
 }}>
 ...
 </Provider>
+```
+
+### 暗黑模式
+```json
+{
+    "fill_body": "#262629",
+    "fill_base": "#1a1a1a",
+    "fill_tap": "#2b2b2b",
+    "fill_grey": "#0a0a0a",
+    "color_text_base": "#e6e6e6",
+    "color_text_placeholder": "#4d4d4d",
+    "border_color_base": "#2b2b2b",
+    "border_color_thin": "#2b2b2b",
+}
 ```
 
 ### 如何启动组件震动？

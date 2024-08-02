@@ -21,15 +21,16 @@ export default (theme: Theme) =>
     },
     container: {},
     header: {
-      height: theme.option_height,
+      height: theme.picker_header_height,
       alignItems: 'center',
       flexDirection: 'row',
       justifyContent: 'center',
       borderBottomWidth: StyleSheet.hairlineWidth,
       borderBottomColor: theme.border_color_thin,
+      backgroundColor: theme.fill_base,
     },
     headerItem: {
-      height: theme.option_height,
+      height: theme.picker_header_height,
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',

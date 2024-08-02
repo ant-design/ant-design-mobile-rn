@@ -1,6 +1,6 @@
 import React from 'react'
-import { ScrollView, Text } from 'react-native'
-import { PickerView } from '../../'
+import { ScrollView } from 'react-native'
+import { List, PickerView } from '../../'
 
 const basicColumns = [
   [
@@ -28,31 +28,30 @@ export default class PickerViewExample extends React.Component {
   render() {
     return (
       <ScrollView
-        nestedScrollEnabled //  Enables nested scrolling for Android API level 21+. Nested scrolling is supported by default on iOS.
+        nestedScrollEnabled // 🚩 Enables nested scrolling for Android API level 21+. Nested scrolling is supported by default on iOS.
       >
-        <Text style={{ margin: 16 }}>基础用法</Text>
-        <PickerView data={basicColumns} cascade={false} />
-
-        <Text style={{ margin: 16 }}>自定义高度</Text>
-        <PickerView
-          data={basicColumns}
-          cascade={false}
-          style={{ height: 450 }}
-          itemHeight={55}
-          itemStyle={{
-            padding: 0,
-          }}
-        />
-
-        <Text style={{ margin: 16 }}>受控模式</Text>
-        <PickerView
-          onChange={this.onChange}
-          value={this.state.value}
-          data={basicColumns}
-          cascade={false}
-        />
-
-        <Text style={{ margin: 16 }} />
+        <List renderHeader={'基础用法'}>
+          <PickerView data={basicColumns} cascade={false} />
+        </List>
+        <List renderHeader={'自定义高度'}>
+          <PickerView
+            data={basicColumns}
+            cascade={false}
+            style={{ height: 450 }}
+            itemHeight={55}
+            itemStyle={{
+              padding: 0,
+            }}
+          />
+        </List>
+        <List renderHeader={'受控模式'}>
+          <PickerView
+            onChange={this.onChange}
+            value={this.state.value}
+            data={basicColumns}
+            cascade={false}
+          />
+        </List>
       </ScrollView>
     )
   }

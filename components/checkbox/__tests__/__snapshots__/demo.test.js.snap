@@ -3,29 +3,35 @@
 exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
 <RCTScrollView>
   <View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          基本用法
-        </Text>
-      </View>
+        }
+      >
+        基本用法
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -155,6 +161,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -181,17 +188,26 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -200,29 +216,35 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          不可用
-        </Text>
-      </View>
+        }
+      >
+        不可用
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -356,6 +378,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -383,7 +406,18 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
         <View
@@ -519,6 +553,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -546,17 +581,26 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -565,29 +609,35 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          受控的Checkbox
-        </Text>
-      </View>
+        }
+      >
+        受控的Checkbox
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -721,6 +771,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -747,17 +798,26 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   false,
                 ]
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "color": "#000000",
+                    "flex": 1,
+                    "fontSize": 17,
+                    "textAlignVertical": "center",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -765,202 +825,206 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
           }
         />
       </View>
-      <View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "justifyContent": "flex-start",
+            },
+            undefined,
+          ]
+        }
+      >
         <View
           style={
             Array [
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "flexWrap": "nowrap",
-                "justifyContent": "flex-start",
+                "flex": 1,
               },
-              undefined,
+              Object {
+                "margin": 10,
+              },
             ]
           }
         >
           <View
+            accessibilityRole="button"
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
-                  "flex": 1,
+                  "alignItems": "center",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "justifyContent": "center",
                 },
                 Object {
-                  "margin": 10,
+                  "height": 23,
+                  "paddingLeft": 5,
+                  "paddingRight": 5,
                 },
+                Object {
+                  "backgroundColor": "#108ee9",
+                  "borderColor": "#108ee9",
+                },
+                false,
+                false,
+                undefined,
+                undefined,
               ]
             }
           >
             <View
-              accessibilityRole="button"
-              accessibilityState={
-                Object {
-                  "disabled": false,
-                }
-              }
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 5,
-                    "borderWidth": 1,
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "height": 23,
-                    "paddingLeft": 5,
-                    "paddingRight": 5,
-                  },
-                  Object {
-                    "backgroundColor": "#108ee9",
-                    "borderColor": "#108ee9",
-                  },
-                  false,
-                  false,
-                  undefined,
-                  undefined,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              <View
+              <Text
                 style={
-                  Object {
-                    "flexDirection": "row",
-                  }
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": "#ffffff",
+                    },
+                    false,
+                    false,
+                  ]
                 }
               >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 12,
-                      },
-                      Object {
-                        "color": "#ffffff",
-                      },
-                      false,
-                      false,
-                    ]
-                  }
-                >
-                  Uncheck
-                </Text>
-              </View>
+                Uncheck
+              </Text>
             </View>
           </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Object {
+                "margin": 10,
+              },
+            ]
+          }
+        >
           <View
+            accessibilityRole="button"
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
-                  "flex": 1,
+                  "alignItems": "center",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "justifyContent": "center",
                 },
                 Object {
-                  "margin": 10,
+                  "height": 23,
+                  "paddingLeft": 5,
+                  "paddingRight": 5,
                 },
+                Object {
+                  "backgroundColor": "#108ee9",
+                  "borderColor": "#108ee9",
+                },
+                false,
+                false,
+                undefined,
+                undefined,
               ]
             }
           >
             <View
-              accessibilityRole="button"
-              accessibilityState={
-                Object {
-                  "disabled": false,
-                }
-              }
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 5,
-                    "borderWidth": 1,
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "height": 23,
-                    "paddingLeft": 5,
-                    "paddingRight": 5,
-                  },
-                  Object {
-                    "backgroundColor": "#108ee9",
-                    "borderColor": "#108ee9",
-                  },
-                  false,
-                  false,
-                  undefined,
-                  undefined,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              <View
+              <Text
                 style={
-                  Object {
-                    "flexDirection": "row",
-                  }
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": "#ffffff",
+                    },
+                    false,
+                    false,
+                  ]
                 }
               >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 12,
-                      },
-                      Object {
-                        "color": "#ffffff",
-                      },
-                      false,
-                      false,
-                    ]
-                  }
-                >
-                  Disable
-                </Text>
-              </View>
+                Disable
+              </Text>
             </View>
           </View>
         </View>
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          AgreeItem
-        </Text>
-      </View>
+        }
+      >
+        AgreeItem
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -1065,6 +1129,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               Array [
                 Object {
                   "backgroundColor": "transparent",
+                  "color": "#000000",
                   "marginLeft": 8,
                   "marginRight": 8,
                 },
@@ -1077,11 +1142,9 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -1090,29 +1153,35 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          CheckboxItem
-        </Text>
-      </View>
+        }
+      >
+        CheckboxItem
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -1253,6 +1322,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -1280,10 +1350,14 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
                 }
               >
                 <Text
@@ -1292,6 +1366,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -1437,6 +1512,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -1464,10 +1540,14 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
                 }
               >
                 <Text
@@ -1476,6 +1556,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -1621,6 +1702,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -1648,10 +1730,14 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
                 }
               >
                 <Text
@@ -1660,6 +1746,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -1727,10 +1814,14 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
                 }
               >
                 <Text
@@ -1739,6 +1830,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -1752,116 +1844,135 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityRole="checkbox"
-                accessibilityState={
-                  Object {
-                    "checked": true,
-                    "disabled": false,
-                  }
-                }
-                accessible={true}
                 checked={true}
-                collapsable={false}
-                focusable={true}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+                prefixCls="checkbox"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "display": "flex",
-                      "flexDirection": "row",
-                      "margin": 0,
-                      "padding": 0,
-                      "position": "relative",
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "maxWidth": "70%",
+                      "paddingLeft": 8,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
                     },
                     undefined,
                   ]
                 }
               >
                 <View
-                  style={
+                  accessibilityRole="checkbox"
+                  accessibilityState={
                     Object {
-                      "height": 20,
-                      "overflow": "hidden",
-                      "padding": 2,
-                      "width": 20,
+                      "checked": true,
+                      "disabled": false,
                     }
+                  }
+                  accessible={true}
+                  checked={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "margin": 0,
+                        "padding": 0,
+                        "position": "relative",
+                      },
+                      undefined,
+                    ]
                   }
                 >
                   <View
                     style={
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "borderColor": "#d9d9d9",
-                          "borderRadius": 2,
-                          "borderStyle": "solid",
-                          "borderWidth": 1,
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "position": "relative",
-                          "width": "100%",
-                        },
-                        Object {
-                          "borderColor": "#108ee9",
-                        },
-                      ]
+                      Object {
+                        "height": 20,
+                        "overflow": "hidden",
+                        "padding": 2,
+                        "width": 20,
+                      }
                     }
                   >
                     <View
                       style={
-                        Object {
-                          "backgroundColor": "#108ee9",
-                          "height": "103%",
-                          "opacity": 0,
-                          "width": "103%",
-                        }
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "borderColor": "#d9d9d9",
+                            "borderRadius": 2,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "position": "relative",
+                            "width": "100%",
+                          },
+                          Object {
+                            "borderColor": "#108ee9",
+                          },
+                        ]
                       }
-                    />
-                    <View
-                      style={
-                        Object {
-                          "borderColor": "#ffffff",
-                          "borderLeftWidth": 0,
-                          "borderTopWidth": 0,
-                          "borderWidth": 2,
-                          "bottom": "20%",
-                          "height": 9,
-                          "position": "absolute",
-                          "transform": Array [
-                            Object {
-                              "rotate": "45deg",
-                            },
-                            Object {
-                              "scale": 0,
-                            },
-                          ],
-                          "width": 6,
+                    >
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "#108ee9",
+                            "height": "103%",
+                            "opacity": 0,
+                            "width": "103%",
+                          }
                         }
-                      }
-                    />
+                      />
+                      <View
+                        style={
+                          Object {
+                            "borderColor": "#ffffff",
+                            "borderLeftWidth": 0,
+                            "borderTopWidth": 0,
+                            "borderWidth": 2,
+                            "bottom": "20%",
+                            "height": 9,
+                            "position": "absolute",
+                            "transform": Array [
+                              Object {
+                                "rotate": "45deg",
+                              },
+                              Object {
+                                "scale": 0,
+                              },
+                            ],
+                            "width": 6,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "color": "#000000",
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                        },
+                      ]
+                    }
+                  />
                 </View>
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                        "marginLeft": 8,
-                        "marginRight": 8,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -1869,11 +1980,9 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -1882,30 +1991,36 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          全选
+        }
+      >
+        全选
 在实现全选效果时，你可能会用到 indeterminate 属性。
-        </Text>
-      </View>
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -2036,6 +2151,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "color": "#000000",
                       "marginLeft": 8,
                       "marginRight": 8,
                     },
@@ -2063,10 +2179,14 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                  ]
                 }
               >
                 <Text
@@ -2075,6 +2195,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -2235,6 +2356,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -2262,10 +2384,14 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    }
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "flex": 1,
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
+                      },
+                    ]
                   }
                 >
                   <Text
@@ -2274,6 +2400,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "color": "#000000",
                           "marginLeft": 8,
                           "marginRight": 8,
                         },
@@ -2420,6 +2547,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -2447,10 +2575,14 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    }
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "flex": 1,
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
+                      },
+                    ]
                   }
                 >
                   <Text
@@ -2459,6 +2591,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "color": "#000000",
                           "marginLeft": 8,
                           "marginRight": 8,
                         },
@@ -2608,6 +2741,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "transparent",
+                        "color": "#000000",
                         "marginLeft": 8,
                         "marginRight": 8,
                       },
@@ -2635,10 +2769,14 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
               >
                 <View
                   style={
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "column",
-                    }
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "flex": 1,
+                        "fontSize": 17,
+                        "textAlignVertical": "center",
+                      },
+                    ]
                   }
                 >
                   <Text
@@ -2647,6 +2785,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "color": "#000000",
                           "marginLeft": 8,
                           "marginRight": 8,
                         },
@@ -2663,11 +2802,9 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,

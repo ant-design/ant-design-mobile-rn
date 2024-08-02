@@ -111,6 +111,7 @@ Array [
             Array [
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#ffffff",
                 "borderBottomColor": "#eeeeee",
                 "borderBottomWidth": 0.5,
                 "flexDirection": "row",
@@ -212,9 +213,13 @@ Array [
             style={
               Array [
                 Object {
-                  "height": "auto",
                   "justifyContent": "center",
+                  "minHeight": 34,
                   "overflow": "hidden",
+                  "paddingHorizontal": 5,
+                },
+                Object {
+                  "height": "auto",
                 },
               ]
             }
@@ -224,10 +229,9 @@ Array [
               style={
                 Array [
                   Object {
-                    "color": "#333",
+                    "color": "#000000",
                     "fontSize": 16,
                     "includeFontPadding": false,
-                    "padding": 8,
                     "textAlign": "center",
                   },
                   undefined,

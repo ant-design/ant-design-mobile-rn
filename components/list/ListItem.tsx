@@ -12,6 +12,7 @@ import {
 import Icon from '../icon'
 import DisabledContext from '../provider/DisabledContext'
 import { useTheme } from '../style'
+import AntmView from '../view'
 import { ListItemPropsType } from './PropsType'
 import ListStyles, { ListItemStyle } from './style/index'
 
@@ -97,72 +98,81 @@ const InternalListItem: React.ForwardRefRenderFunction<
 
   // ================  children  ================
   const contentDom = useMemo(() => {
-    if (Array.isArray(children)) {
-      const tempContentDom: any[] = []
-      children.forEach((el, index) => {
-        if (React.isValidElement(el)) {
-          tempContentDom.push(el)
-        } else {
-          tempContentDom.push(
-            <Text
-              style={[itemStyles.Content]}
-              {...numberOfLines}
-              key={`${index}-children`}>
-              {el}
-            </Text>,
-          )
-        }
-      })
-      return <View style={itemStyles.column}>{tempContentDom}</View>
-    }
-    if (React.isValidElement(children)) {
-      return <View style={itemStyles.column}>{children}</View>
-    }
     if (typeof children === 'string') {
       return (
-        <View style={itemStyles.column}>
-          <Text style={itemStyles.Content} {...numberOfLines}>
-            {children}
-          </Text>
+        <Text style={itemStyles.Content} {...numberOfLines}>
+          {children}
+        </Text>
+      )
+    }
+    if (React.isValidElement(children)) {
+      if (typeof children.props.children === 'function') {
+        return <AntmView style={[itemStyles.Content]}>{children}</AntmView>
+      }
+      return (
+        <AntmView
+          children={children}
+          {...children.props}
+          style={[itemStyles.Content, children.props.style]}
+        />
+      )
+    }
+    if (Array.isArray(children)) {
+      return (
+        <View style={itemStyles.Content}>
+          {React.Children.map(children, (child) =>
+            typeof child === 'string' ? (
+              <Text style={itemStyles.Content} {...numberOfLines}>
+                {child}
+              </Text>
+            ) : (
+              child
+            ),
+          )}
         </View>
       )
     }
-  }, [children, itemStyles.Content, itemStyles.column, numberOfLines])
+
+    return <View style={itemStyles.Content} />
+  }, [children, itemStyles.Content, numberOfLines])
 
   // ====================  extra  ========================
   const extraDom = useMemo(() => {
-    if (React.isValidElement(extra)) {
-      const extraChildren = extra.props.children
-      if (Array.isArray(extraChildren)) {
-        return React.cloneElement(extra, {
-          // @ts-ignore
-          children: extraChildren.map((el, index) => {
-            if (typeof el === 'string') {
-              return (
-                <Text
-                  {...numberOfLines}
-                  style={[itemStyles.Extra]}
-                  key={`${index}-children`}>
-                  {el}
-                </Text>
-              )
-            }
-            return el
-          }),
-        })
-      }
-      return extra
-    }
     if (typeof extra === 'string') {
       return (
-        <View style={[itemStyles.column]}>
-          <Text style={itemStyles.Extra} {...numberOfLines}>
-            {extra}
-          </Text>
+        <Text style={itemStyles.Extra} {...numberOfLines}>
+          {extra}
+        </Text>
+      )
+    }
+    if (React.isValidElement(extra)) {
+      if (typeof extra.props.children === 'function') {
+        return <AntmView style={[itemStyles.Extra]}>{extra}</AntmView>
+      }
+      return (
+        <AntmView
+          children={extra}
+          {...extra.props}
+          style={[itemStyles.Extra, extra.props.style]}
+        />
+      )
+    }
+    if (Array.isArray(extra)) {
+      return (
+        <View style={itemStyles.Extra}>
+          {React.Children.map(extra, (child) =>
+            typeof child === 'string' ? (
+              <Text style={itemStyles.Extra} {...numberOfLines}>
+                {child}
+              </Text>
+            ) : (
+              child
+            ),
+          )}
         </View>
       )
     }
-  }, [extra, itemStyles.Extra, itemStyles.column, numberOfLines])
+  }, [extra, itemStyles.Extra, numberOfLines])
 
   // ====================  arrow  ========================
   const arrowDom = useMemo(() => {

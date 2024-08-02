@@ -81,7 +81,7 @@ Picker's children is best to [List.Item](/components/list/#List.Item), if not, n
 
 Properties | Descrition | Type | Default | Version |
 -----------|------------|------|--------|--------
-| children| usually `List.Item` | `ReactNode`/`({extra, value, toggle})=>ReactNode` | -  | `5.2.0` add function as Children |
+| children| usually `List.Item` | `ReactNode`/`({extra, value, toggle})=>ReactNode` | -  | `5.2.1` add function as Children |
 | extra   | Picker's children `extra` prop, display when no `value` | String |  `please select`  |  |
 | format  | a function that formats the selected value	  | (labels: string[]): any | `(labels) => { return labels.join(','); } ` |  |
 | triggerType  | Press event name | String | `onPress` |  |

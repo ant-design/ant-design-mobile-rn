@@ -2,7 +2,7 @@
 category: Components
 type: Data Entry
 title: Input
-version: 5.2.0
+version: 5.2.1
 ---
 
 Entering content through the keyboard is the most basic form field wrapper.

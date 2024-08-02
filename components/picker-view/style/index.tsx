@@ -1,9 +1,11 @@
-import { StyleSheet, ViewStyle } from 'react-native'
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 
 export interface PickerViewStyle {
   wrappper: ViewStyle
   wheelWrapper: ViewStyle
+  itemWrap: ViewStyle
+  itemStyle: TextStyle
   mask: ViewStyle
   maskTop: ViewStyle
   maskMiddle: ViewStyle
@@ -24,6 +26,20 @@ export default (theme: Theme) =>
       display: 'flex',
       flexDirection: 'row',
     },
+
+    itemWrap: {
+      overflow: 'hidden',
+      justifyContent: 'center',
+      minHeight: theme.picker_item_height,
+      paddingHorizontal: theme.h_spacing_sm,
+    },
+    itemStyle: {
+      fontSize: theme.font_size_caption,
+      color: theme.color_text_base,
+      textAlign: 'center',
+      includeFontPadding: false,
+    },
+
     mask: {
       position: 'absolute',
       zIndex: 2,
@@ -34,18 +50,15 @@ export default (theme: Theme) =>
       display: 'flex',
       flexDirection: 'column',
     },
-
     maskTop: {
       flex: 1,
       overflow: 'hidden',
     },
-
     maskMiddle: {
       borderColor: theme.border_color_thin,
-      borderTopWidth: 1,
-      borderBottomWidth: 1,
+      borderTopWidth: StyleSheet.hairlineWidth,
+      borderBottomWidth: StyleSheet.hairlineWidth,
     },
-
     maskBottom: {
       flex: 1,
       overflow: 'hidden',
