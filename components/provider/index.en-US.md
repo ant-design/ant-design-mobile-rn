@@ -26,8 +26,8 @@ To use these components, you must wrap your root component (usually in App.js) w
 | -----|-----|-----|-------|------|
 | locale | Language package setting(`The default language is Chinese`), <br/>you can find the packages in this path: [`@ant-design/react-native/lib/locale-provider/`](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/locale-provider) | [Locale](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/locale-provider/index.tsx#L4) | - | |
 | theme  | Theme customization, you can override some or all variables as needed | [Theme](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/style/themes/default.tsx) | - | |
-| onHaptics | Set the vibration engine. This method will be triggered when the built-in component needs vibration feedback. | `(componentName: 'picker' | 'stepper' | 'slider' | 'switch') => void` | - | `5.2.0` |
-| isRTL | Whether use Right-to-Left (RTL) languages. <br/>Currently only applies to `<SwipeAction/>` | `Boolean` | `I18nManager.isRTL` | `5.2.0` |
+| onHaptics | Set the vibration engine. This method will be triggered when the built-in component needs vibration feedback. | `(componentName: 'picker' | 'stepper' | 'slider' | 'switch') => void` | - | `5.2.1` |
+| isRTL | Whether use Right-to-Left (RTL) languages. <br/>Currently only applies to `<SwipeAction/>` | `Boolean` | `I18nManager.isRTL` | `5.2.1` |
 
 ## FAQ
 
@@ -44,6 +44,20 @@ For example: Modifying the following theme variables has a relatively large impa
 }}>
 ...
 </Provider>
+```
+
+### Dark Mode
+```json
+{
+    "fill_body": "#262629",
+    "fill_base": "#1a1a1a",
+    "fill_tap": "#2b2b2b",
+    "fill_grey": "#0a0a0a",
+    "color_text_base": "#e6e6e6",
+    "color_text_placeholder": "#4d4d4d",
+    "border_color_base": "#2b2b2b",
+    "border_color_thin": "#2b2b2b",
+}
 ```
 
 ### How to activate component vibration?

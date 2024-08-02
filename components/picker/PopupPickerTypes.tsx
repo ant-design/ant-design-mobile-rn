@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { TouchableHighlightProps } from 'react-native'
+import { PickerStyle } from './style'
 
 export type PopupPickerProps = {
   onOk?: () => void
@@ -12,5 +13,5 @@ export type PopupPickerProps = {
   okButtonProps?: TouchableHighlightProps
   dismissButtonProps?: TouchableHighlightProps
   children?: ReactNode
-  styles: any
+  styles: Partial<PickerStyle>
 }

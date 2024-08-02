@@ -21,11 +21,11 @@ version: update
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 |-----|-----|------|-------|------|
-| closeOnAction | 点击按钮后自动隐藏按钮   | `boolean` | `true` | `5.2.0` |
-| closeOnTouchOutside | 是否在点击其他区域时自动归位 | `boolean` | `false` | `5.2.0` |
+| closeOnAction | 点击按钮后自动隐藏按钮   | `boolean` | `true` | `5.2.1` |
+| closeOnTouchOutside | 是否在点击其他区域时自动归位 | `boolean` | `false` | `5.2.1` |
 | left          | 左侧按钮组      | [SwipeoutButtonProps](/components/swipe-action-cn#swipeoutbuttonprops)[] | `[]` | |
 | right         | 右侧按钮组      | [SwipeoutButtonProps](/components/swipe-action-cn#swipeoutbuttonprops)[] | `[]` | |
-| styles        | 语义化结构 style | [SwipeActionStyle](/components/swipe-action-cn#swipeactionstyle-语义化样式) | - | `5.2.0` |
+| styles        | 语义化结构 style | [SwipeActionStyle](/components/swipe-action-cn#swipeactionstyle-语义化样式) | - | `5.2.1` |
 
 SwipeAction 剩余其他属性和 [react-native-gesture-handler/Swipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/) 一致，
 
@@ -41,10 +41,10 @@ SwipeAction 剩余其他属性和 [react-native-gesture-handler/Swipeable](https
 | backgroundColor | 背景色 | `string` | - | |
 | color | 字体颜色 | `string` | - | |
 | disabled | 是否禁用 | `boolean` | - | |
-| onPress | 按钮点击事件 | `() => void | Promise<any>` | - | `5.2.0`支持异步 |
+| onPress | 按钮点击事件 | `() => void | Promise<any>` | - | `5.2.1`支持异步 |
 | style | 按钮样式，当`text`为`string`时生效 | `StyleProp<TextStyle>` | - | |
 | text | 按钮文案 | `string | ReactNode` | - | |
-| actionButtonProps | 其他额外props | [RectButtonProps](https://docs.swmansion.com/react-native-gesture-handler/docs/components/buttons/#rectbutton) | - | `5.2.0` |
+| actionButtonProps | 其他额外props | [RectButtonProps](https://docs.swmansion.com/react-native-gesture-handler/docs/components/buttons/#rectbutton) | - | `5.2.1` |
 
 ### SwipeActionStyle 语义化样式
 
@@ -57,7 +57,7 @@ export interface SwipeActionStyle {
 
 ### Ref
 
-`5.2.0`新增。 指向 Swipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
+`5.2.1`新增。 指向 Swipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
 
 | 参数 | 说明 | 类型 |
 |-----|------|------|

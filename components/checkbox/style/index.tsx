@@ -96,6 +96,7 @@ export default (theme: Theme) =>
       backgroundColor: 'transparent',
       marginRight: theme.h_spacing_md,
       marginLeft: theme.h_spacing_md,
+      color: theme.color_text_base,
     },
     checkbox_label_disabled: {
       color: theme.color_text_disabled,

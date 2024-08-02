@@ -13,29 +13,35 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
   }
 >
   <View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          基本
-        </Text>
-      </View>
+        }
+      >
+        基本
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -587,91 +593,39 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
                 ]
               }
             >
-              <View
+              <Text
+                disabled={false}
+                loading={false}
+                onHideUnderlay={[Function]}
+                onPress={[Function]}
+                onPressIn={[Function]}
+                onPressOut={[Function]}
+                onShowUnderlay={[Function]}
+                pressIn={false}
                 style={
-                  Object {
-                    "flex": 1,
-                    "flexDirection": "column",
-                  }
-                }
-              >
-                <View
-                  accessibilityRole="button"
-                  accessibilityState={
+                  Array [
                     Object {
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "borderRadius": 5,
-                        "borderWidth": 1,
-                        "justifyContent": "center",
-                      },
-                      Object {
-                        "height": 47,
-                        "paddingLeft": 15,
-                        "paddingRight": 15,
-                      },
-                      Object {
-                        "backgroundColor": "#108ee9",
-                        "borderColor": "#108ee9",
-                      },
-                      false,
-                      false,
-                      undefined,
-                      undefined,
-                    ]
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "row",
-                      }
-                    }
-                  >
-                    <Text
-                      style={
-                        Array [
-                          Object {
-                            "fontSize": 18,
-                          },
-                          Object {
-                            "color": "#ffffff",
-                          },
-                          false,
-                          false,
-                        ]
-                      }
-                    >
-                      点击获取光标
-                    </Text>
-                  </View>
-                </View>
-              </View>
+                      "color": "#000000",
+                      "flex": 1,
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
+                    },
+                    undefined,
+                  ]
+                }
+                type="primary"
+              >
+                点击获取光标
+              </Text>
             </View>
           </View>
         </View>
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -680,29 +634,35 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          固定标签字数
-        </Text>
-      </View>
+        }
+      >
+        固定标签字数
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -919,11 +879,9 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,
@@ -932,29 +890,35 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
         />
       </View>
     </View>
-    <View>
-      <View>
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#f5f5f9",
-              "color": "#888888",
-              "fontSize": 14,
-              "paddingBottom": 9,
-              "paddingHorizontal": 15,
-              "paddingTop": 15,
-            }
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f5f5f9",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#888888",
+            "fontSize": 14,
+            "paddingBottom": 9,
+            "paddingHorizontal": 15,
+            "paddingTop": 15,
           }
-        >
-          格式
-        </Text>
-      </View>
+        }
+      >
+        格式
+      </Text>
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "#eeeeee",
             "borderTopWidth": 0.5,
+            "position": "relative",
           }
         }
       >
@@ -1352,11 +1316,9 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#ffffff",
-              "borderBottomColor": "#dddddd",
-              "borderBottomWidth": 0.5,
+              "backgroundColor": "#eeeeee",
               "bottom": 0,
-              "height": 1,
+              "height": 0.5,
               "left": 0,
               "position": "absolute",
               "right": 0,

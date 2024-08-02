@@ -21,11 +21,11 @@ Call out operations from one side of screen with gesture.
 
 | Properties | Descrition | Type | Default | Version |
 |-----|-----|------|-------|------|
-| closeOnAction | Whether to return to the position automatically when the operation button is clicked | `boolean` | `true` | `5.2.0` |
-| closeOnTouchOutside | Whether to return to the position automatically when other areas is clicked | `boolean` | `false` | `5.2.0` |
+| closeOnAction | Whether to return to the position automatically when the operation button is clicked | `boolean` | `true` | `5.2.1` |
+| closeOnTouchOutside | Whether to return to the position automatically when other areas is clicked | `boolean` | `false` | `5.2.1` |
 | left          | List of operation buttons on the left | [SwipeoutButtonProps](/components/swipe-action#swipeoutbuttonprops)[] | `[]` | |
 | right         | List of operation buttons on the right | [SwipeoutButtonProps](/components/swipe-action#swipeoutbuttonprops)[] | `[]` | |
-| styles        | Semantic DOM style | [SwipeActionStyle](/components/swipe-action#swipeactionstyle-interface) | - | `5.2.0` |
+| styles        | Semantic DOM style | [SwipeActionStyle](/components/swipe-action#swipeactionstyle-interface) | - | `5.2.1` |
 
 The rest of the props of `SwipeAction` are exactly the same as [react-native-gesture-handler/Swipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/),
 
@@ -42,10 +42,10 @@ when you set `renderRightActions` prop, it will override `right` prop.
 | backgroundColor | background color | `string` | - | |
 | color | font color | `string` | - | |
 | disabled | Whether disabled | `boolean` | - | |
-| onPress | Trigger when clicked | `() => void | Promise<any>` | - | `5.2.0` support async |
+| onPress | Trigger when clicked | `() => void | Promise<any>` | - | `5.2.1` support async |
 | style | Aaction button style, effective when `text` is `string` | `StyleProp<TextStyle>` | - | |
 | text | Text | `string | ReactNode` | - | |
-| actionButtonProps | Rest props | [RectButtonProps](https://docs.swmansion.com/react-native-gesture-handler/docs/components/buttons/#rectbutton) | - | `5.2.0` |
+| actionButtonProps | Rest props | [RectButtonProps](https://docs.swmansion.com/react-native-gesture-handler/docs/components/buttons/#rectbutton) | - | `5.2.1` |
 
 ### SwipeActionStyle interface
 
@@ -58,7 +58,7 @@ export interface SwipeActionStyle {
 
 ### Ref
 
-New in `5.2.0`. Ref to Swipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
+New in `5.2.1`. Ref to Swipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
 
 | Properties | Descrition | Type|
 |-----|------|------|

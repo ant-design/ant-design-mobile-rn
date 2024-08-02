@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 import Modal from '../modal/ModalView'
 import { WithTheme, WithThemeStyles } from '../style'
+import AntmView from '../view'
 import ActionSheetStyles, { ActionSheetStyle } from './style/index'
 
 export interface ActionSheetNativeProps
@@ -99,9 +100,9 @@ class ActionSheetAndroid extends React.PureComponent<
                 <View>
                   {titleMsg}
                   {!!message && (
-                    <View style={styles.message} key="1">
-                      <Text>{message}</Text>
-                    </View>
+                    <AntmView style={styles.message} key="1">
+                      {message}
+                    </AntmView>
                   )}
                   <View>{content}</View>
                 </View>

@@ -8,13 +8,22 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
     }
   }
 >
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#f5f5f9",
+        },
+        undefined,
+      ]
+    }
+  >
     <View
       style={
         Object {
-          "backgroundColor": "#ffffff",
-          "borderTopColor": "#dddddd",
+          "borderTopColor": "#eeeeee",
           "borderTopWidth": 0.5,
+          "position": "relative",
         }
       }
     >
@@ -445,51 +454,34 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                <View
+                <Text
+                  numberOfLines={1}
                   style={
                     Object {
+                      "color": "#000000",
                       "flex": 1,
-                      "flexDirection": "column",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
                     }
                   }
                 >
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      }
-                    }
-                  >
-                    Simple example: left and right buttons
-                  </Text>
-                </View>
-                <View
+                  Simple example: left and right buttons
+                </Text>
+                <Text
+                  numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "maxWidth": "70%",
+                      "paddingLeft": 8,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      }
-                    }
-                  >
-                    extra content
-                  </Text>
-                </View>
+                  extra content
+                </Text>
               </View>
             </View>
           </View>
@@ -498,11 +490,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderBottomColor": "#dddddd",
-            "borderBottomWidth": 0.5,
+            "backgroundColor": "#eeeeee",
             "bottom": 0,
-            "height": 1,
+            "height": 0.5,
             "left": 0,
             "position": "absolute",
             "right": 0,
@@ -511,13 +501,22 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
       />
     </View>
   </View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#f5f5f9",
+        },
+        undefined,
+      ]
+    }
+  >
     <View
       style={
         Object {
-          "backgroundColor": "#ffffff",
-          "borderTopColor": "#dddddd",
+          "borderTopColor": "#eeeeee",
           "borderTopWidth": 0.5,
+          "position": "relative",
         }
       }
     >
@@ -948,51 +947,34 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                   ]
                 }
               >
-                <View
+                <Text
+                  numberOfLines={1}
                   style={
                     Object {
+                      "color": "#000000",
                       "flex": 1,
-                      "flexDirection": "column",
+                      "fontSize": 17,
+                      "textAlignVertical": "center",
                     }
                   }
                 >
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "#000000",
-                        "fontSize": 17,
-                        "textAlignVertical": "center",
-                      }
-                    }
-                  >
-                    Simple example: left and right buttons
-                  </Text>
-                </View>
-                <View
+                  Simple example: left and right buttons
+                </Text>
+                <Text
+                  numberOfLines={1}
                   style={
-                    Array [
-                      Object {
-                        "flex": 1,
-                        "flexDirection": "column",
-                      },
-                    ]
+                    Object {
+                      "color": "#888888",
+                      "fontSize": 17,
+                      "maxWidth": "70%",
+                      "paddingLeft": 8,
+                      "textAlign": "right",
+                      "textAlignVertical": "center",
+                    }
                   }
                 >
-                  <Text
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "#888888",
-                        "fontSize": 17,
-                        "textAlign": "right",
-                        "textAlignVertical": "center",
-                      }
-                    }
-                  >
-                    extra content
-                  </Text>
-                </View>
+                  extra content
+                </Text>
               </View>
             </View>
           </View>
@@ -1001,11 +983,9 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#ffffff",
-            "borderBottomColor": "#dddddd",
-            "borderBottomWidth": 0.5,
+            "backgroundColor": "#eeeeee",
             "bottom": 0,
-            "height": 1,
+            "height": 0.5,
             "left": 0,
             "position": "absolute",
             "right": 0,

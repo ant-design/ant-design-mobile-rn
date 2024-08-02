@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { StyleProp, Text, TextStyle, ViewStyle } from 'react-native'
-import View from '../view'
+import { StyleProp, Text, TextStyle, View, ViewStyle } from 'react-native'
+import AntdView from '../view'
 
 import useLocale from '../locale-provider/useLocale'
 import type { RequiredMark } from './Form'
@@ -38,7 +38,9 @@ const FormItemLabel: React.FC<FormItemLabelProps & { required?: boolean }> = ({
   const mergedLabelStyle = labelStyle || contextLabelStyle || {}
 
   let labelChildren: React.ReactNode = (
-    <View style={[styles.formItemLabelText, mergedLabelStyle]}>{label}</View>
+    <AntdView style={[styles.formItemLabelText, mergedLabelStyle]}>
+      {label}
+    </AntdView>
   )
 
   // Required Mark

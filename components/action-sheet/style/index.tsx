@@ -56,6 +56,8 @@ export default (theme: Theme) =>
       flex: 1,
       alignItems: 'center',
       marginBottom: theme.h_spacing_lg,
+      color: theme.color_text_base,
+      textAlign: 'center',
     },
     btn: {
       alignItems: 'center',

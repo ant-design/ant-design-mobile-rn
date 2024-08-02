@@ -12,20 +12,19 @@ export default {
   // 文字色
   color_text_base: '#000000', // 基本
   color_text_base_inverse: '#ffffff', // 基本 _ 反色
-  // color_text_secondary: '#a4a9b0', // 辅助色
   color_text_placeholder: '#bbbbbb', // 文本框提示
   color_text_disabled: '#bbbbbb', // 失效
   color_text_caption: '#888888', // 辅助描述
   color_text_paragraph: '#333333', // 段落
   color_link: brandPrimary, // 链接
+  color_icon_base: '#cccccc', // 许多小图标的背景，比如一些小圆点，加减号
 
   // 背景色
-  fill_base: '#ffffff', // 组件默认背景
   fill_body: '#f5f5f9', // 页面背景
+  fill_base: '#ffffff', // 组件默认背景
   fill_tap: '#dddddd', // 组件默认背景 _ 按下
   fill_disabled: '#dddddd', // 通用失效背景
   fill_mask: 'rgba(0, 0, 0, .4)', // 遮罩背景
-  color_icon_base: '#cccccc', // 许多小图标的背景，比如一些小圆点，加减号
   fill_grey: '#f7f7f7',
 
   // 全局/品牌色
@@ -118,7 +117,6 @@ export default {
   list_item_height: 44,
 
   // tabs
-  // tabs_fill: brandPrimary,
   tabs_height: 42,
   tabs_font_size_heading: 15,
 
@@ -141,14 +139,11 @@ export default {
   notice_bar_height: 36,
 
   // checkbox
-  // checkbox_fill: brandPrimary,
   checkbox_fill_disabled: '#f5f5f5',
   checkbox_border: '#d9d9d9',
   checkbox_border_disabled: '#b9b9b9',
 
   // switch
-  // switch_fill: brandPrimary,
-  // switch_checked_disabled: `${brandPrimary}66`
   switch_unchecked: '#cccccc',
   switch_unchecked_disabled: '#cccccc66', // switch_fill的40%透明度
 
@@ -157,12 +152,13 @@ export default {
   tag_small_height: 15,
 
   // picker
-  option_height: 44, // item选项的高度
+  picker_header_height: 44, // picker标题的高度
+  picker_item_height: 34, // picker item最低高度
 
   // form
   prefix_width: 65, // 水平布局时，表单项的标签宽度
-  prefix_padding: 6, // form item 上下内边距
-  extra_max_width: '50%',
+  prefix_padding: 6, // input item 上下内边距
+  extra_max_width: '70%', // list extra宽度
 
   // tooltip
   tooltip_dark: 'rgba(0, 0, 0, 0.9)',

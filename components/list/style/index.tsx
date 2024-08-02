@@ -1,6 +1,7 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 export interface ListStyle {
+  List: ViewStyle
   Header: TextStyle
   Footer: TextStyle
   Body: ViewStyle
@@ -18,7 +19,6 @@ export interface ListItemStyle {
   ArrowV: TextStyle
   multipleLine: ViewStyle
   multipleThumb: ImageStyle
-  column: ViewStyle
 }
 
 export interface BriefStyle {
@@ -28,8 +28,8 @@ export interface BriefStyle {
 
 export default (variables: Theme) =>
   StyleSheet.create<ListStyle & ListItemStyle & BriefStyle>({
-    underlayColor: {
-      backgroundColor: variables.fill_tap,
+    List: {
+      backgroundColor: variables.fill_body,
     },
     Header: {
       fontSize: variables.font_size_base,
@@ -37,29 +37,29 @@ export default (variables: Theme) =>
       paddingHorizontal: variables.h_spacing_lg,
       paddingTop: variables.v_spacing_lg,
       paddingBottom: variables.v_spacing_md,
-      backgroundColor: variables.fill_body,
     },
     Footer: {
       fontSize: variables.font_size_base,
       color: variables.color_text_caption,
       paddingHorizontal: variables.h_spacing_lg,
       paddingVertical: variables.v_spacing_md,
-      backgroundColor: variables.fill_body,
     },
     Body: {
-      backgroundColor: variables.fill_base,
+      position: 'relative',
       borderTopWidth: StyleSheet.hairlineWidth,
-      borderTopColor: variables.border_color_base,
+      borderTopColor: variables.border_color_thin,
     },
     BodyBottomLine: {
       position: 'absolute',
       bottom: 0,
       left: 0,
       right: 0,
-      height: 1,
-      backgroundColor: variables.fill_base,
-      borderBottomWidth: StyleSheet.hairlineWidth,
-      borderBottomColor: variables.border_color_base,
+      height: StyleSheet.hairlineWidth,
+      backgroundColor: variables.border_color_thin,
+    },
+
+    underlayColor: {
+      backgroundColor: variables.fill_tap,
     },
     Item: {
       flexGrow: 1,
@@ -87,12 +87,15 @@ export default (variables: Theme) =>
       color: variables.color_text_base,
       fontSize: variables.font_size_heading,
       textAlignVertical: 'center',
+      flex: 1,
     },
     Extra: {
       color: variables.color_text_caption,
       fontSize: variables.font_size_heading,
       textAlign: 'right',
       textAlignVertical: 'center',
+      paddingLeft: variables.h_spacing_md,
+      maxWidth: variables.extra_max_width,
     },
     Brief: {
       minHeight: variables.font_size_icontext,
@@ -116,9 +119,5 @@ export default (variables: Theme) =>
     multipleThumb: {
       width: variables.icon_size_lg,
       height: variables.icon_size_lg,
-    },
-    column: {
-      flex: 1,
-      flexDirection: 'column',
     },
   })

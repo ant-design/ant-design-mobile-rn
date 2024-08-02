@@ -2,7 +2,7 @@
 category: Components
 type: Data Entry
 title: Form
-version: 5.2.0
+version: 5.2.1
 ---
 
 High-performance form component with data domain management. Includes data entry, validation, and corresponding styles. Base on [rc-field-form](https://www.npmjs.com/package/rc-field-form).
@@ -292,14 +292,17 @@ validateFields()
 
 ```typescript
 interface FormItemStyle extends ListItemStyle {
-  formitemRow: ViewStyle
-  formitemColumn: ViewStyle
-  formItemExtra: ViewStyle | TextStyle  // default: { maxWidth: 50% } as ListItem['extra']
-  formItemLabel: ViewStyle              // default: { minWidth: 65 }
+  // label prop
+  formItemLabel: ViewStyle // { minWidth: 65 }
   formItemLabelText: ViewStyle | TextStyle
-  formItemControl: ViewStyle            // children style
-  asterisk: TextStyle                   // required={true}
-  optional: TextStyle                   // requiredMark="optional"
+
+  // children style
+  formItemControl: ViewStyle
+
+  // required={true}
+  asterisk: TextStyle    
+  // requiredMark="optional"               
+  optional: TextStyle   
 }
 ```
 
