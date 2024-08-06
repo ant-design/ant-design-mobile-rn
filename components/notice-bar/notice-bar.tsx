@@ -6,7 +6,7 @@ import { Marquee } from './Marquee'
 import { NoticeBarProps } from './PropsType'
 import NoticeBarStyle from './style'
 
-export function InnerNoticeBar(props: NoticeBarProps) {
+export function InnerNoticeBar(props: NoticeBarProps, ref) {
   const ss = useTheme({
     styles: props.styles,
     themeStyles: NoticeBarStyle,
