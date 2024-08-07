@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 import { Text, TouchableWithoutFeedback, View } from 'react-native'
 import Icon from '../icon'
 import { useTheme } from '../style'
@@ -6,7 +6,7 @@ import { Marquee } from './Marquee'
 import { NoticeBarProps } from './PropsType'
 import NoticeBarStyle from './style'
 
-export function InnerNoticeBar(props: NoticeBarProps, ref) {
+export function InnerNoticeBar(props: NoticeBarProps) {
   const ss = useTheme({
     styles: props.styles,
     themeStyles: NoticeBarStyle,
@@ -75,4 +75,4 @@ export function InnerNoticeBar(props: NoticeBarProps, ref) {
   )
 }
 
-export const NoticeBar = forwardRef(InnerNoticeBar)
+export const NoticeBar = memo(InnerNoticeBar)
