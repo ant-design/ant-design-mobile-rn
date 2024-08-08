@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 import { Text, TouchableWithoutFeedback, View } from 'react-native'
 import Icon from '../icon'
 import { useTheme } from '../style'
@@ -75,4 +75,4 @@ export function InnerNoticeBar(props: NoticeBarProps) {
   )
 }
 
-export const NoticeBar = forwardRef(InnerNoticeBar)
+export const NoticeBar = memo(InnerNoticeBar)
