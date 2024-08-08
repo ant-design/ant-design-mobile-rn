@@ -10,30 +10,30 @@ PickerView's functions like Picker, but it is rendered directly in the area inst
 
 ### Props
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| data     | data source     | `PickerColumn` / `PickerColumn[]` | -   |
-| value    | Selected options	  | `PickerValue[]`  | -   |
-| defaultValue  | Default selected options  | `PickerValue[]`  | -   |
-| cascade  | whether cascade <br/>child cascade get from `data[].children`   | Boolean | `true` |
-| cols     | col numbers    | Number | `3` |
-| onChange | selected callback function, can use [rc-form](https://github.com/react-component/form) | `(value: PickerValue[], extend: PickerValueExtend) => void`      | -   |
-| renderLabel | 	The function to custom rendering the label shown on a column  |   `(item: PickerColumnItem, index: number) => ReactNode`   | `(item) => item.label`  |
-| loading  | Should the Picker displays as loading state	  | Boolean | -  |
-| loadingContent  | The loading content displayed in loading state	  | ReactNode | `<ActivityIndicator/>`  |
-| indicatorStyle  | style of default Indicator  | Object | -  |
+Properties | Descrition | Type | Default | Version
+-----------|------------|------|---------|---------
+| data     | data source     | `PickerColumn` / `PickerColumn[]` | -   | |
+| value    | Selected options	  | `PickerValue[]`  | -   | |
+| defaultValue  | Default selected options  | `PickerValue[]`  | -   | |
+| cascade  | whether cascade <br/>child cascade get from `data[].children`   | Boolean | `true` | |
+| cols     | col numbers    | Number | `3` | |
+| onChange | selected callback function, can use [Form](/components/form) | `(value: PickerValue[], extend: PickerValueExtend) => void`      | -   | |
+| renderLabel | 	The function to custom rendering the label shown on a column  |   `(item: PickerColumnItem, itemIndex: number, colIndex: number) => ReactNode`   | `(item) => item.label`  | `5.2.2` |
+| loading  | Should the Picker displays as loading state	  | Boolean | -  | `5.1.0` |
+| loadingContent  | The loading content displayed in loading state	  | ReactNode | `<ActivityIndicator/>`  | `5.1.0` |
+| indicatorStyle  | style of default Indicator  | Object | -  | |
 
 For the type definition of  `PickerColumnItem` `PickerColumn` `PickerValue` `PickerValueExtend`, please refer to the document of [Picker](/components/picker/).
 
 ### Custom Style
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| style    | style   | `StyleProp<ViewStyle>` | -   |
-| styles   | Semantic DOM style   | [PickerViewStyle](#pickerviewstyle-interface) | -   |
-| itemStyle| style to apply to each of the item labels   | `StyleProp<TextStyle>` | -   |
-| itemHeight | Height of option item, calculated by `numberOfLines` when without value; `itemStyle` was not allowed to set `{height}`  |   Number   | -  |
-| numberOfLines | Used to truncate the text with an ellipsis after computing the text layout, including line wrapping, such that the total number of lines does not exceed this number  |   Number   | `1`  |
+Properties | Descrition | Type | Default | Version
+-----------|------------|------|---------|---------
+| style    | style   | `StyleProp<ViewStyle>` | -   | |
+| styles   | Semantic DOM style   | [PickerViewStyle](#pickerviewstyle-interface) | -   | `5.1.0`refactored |
+| itemStyle| style to apply to each of the item labels   | `StyleProp<TextStyle>` | -   | |
+| itemHeight | Height of option item, calculated by `numberOfLines` when without value; `itemStyle` was not allowed to set `{height}`  |   Number   | -  | |
+| numberOfLines | Used to truncate the text with an ellipsis after computing the text layout, including line wrapping, such that the total number of lines does not exceed this number  |   Number   | `1`  | |
 
 #### PickerViewStyle interface
 
@@ -45,6 +45,7 @@ interface PickerViewStyle {
   // item style
   itemWrap: ViewStyle
   itemStyle: TextStyle
+  itemActiveStyle: TextStyle // New in `5.2.2`
 
   // mask view
   mask: ViewStyle
@@ -56,7 +57,7 @@ interface PickerViewStyle {
 
 #### Mask View
 
-Support custom mask style, such as using the gradient component `<LinearGradient />`. Default is white translucency.
+New in `5.1.0`. Support custom mask style, such as using the gradient component `<LinearGradient />`. Default is white translucency.
 
 Properties | Descrition | Type | Default
 -----------|------------|------|--------

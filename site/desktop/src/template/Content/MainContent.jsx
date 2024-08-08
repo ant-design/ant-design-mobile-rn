@@ -23,9 +23,11 @@ function getModuleData(props) {
   const moduleData =
     moduleName === 'components' ||
     moduleName === 'docs/react' ||
+    moduleName === 'docs/blog' ||
     moduleName === 'changelog' ||
     moduleName === 'changelog-cn'
       ? [
+          ...props.picked['docs/blog'],
           ...props.picked.components,
           ...props.picked['docs/react'],
           ...props.picked.changelog,
@@ -163,8 +165,10 @@ export default class MainContent extends React.Component {
     const moduleData =
       moduleName === 'components' ||
       moduleName.includes('changelog') ||
-      moduleName === 'docs/react'
+      moduleName === 'docs/react' ||
+      moduleName === 'docs/blog'
         ? [
+            ...props.picked['docs/blog'],
             ...props.picked.components,
             ...props.picked['docs/react'],
             ...props.picked.changelog,

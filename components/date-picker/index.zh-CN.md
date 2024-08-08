@@ -47,7 +47,7 @@ type DatePickerFilter = Partial<
 | onChange   | 时间发生变化的回调函数  | `(value: Date) => void` | - ||
 | onValueChange | 每列 picker 改变时的回调 | `(value: Date, index: number) => void` | - ||
 | renderLabel | 自定义渲染每列展示的内容。其中 `type` 参数为 `precision` 中的任意值或 `now`，`data` 参数为默认渲染的数字 | `(type:Precision / 'now', data: number) => ReactNode` | - ||
-| locale | 国际化，可覆盖全局[LocaleProvider](/components/locale-provider-cn)的配置 | Object: {okText, dismissText, extra, `DatePickerLocale:{ year,month,day,hour,minute,am,pm }`} | - |
+| locale | 国际化，可覆盖全局[Provider](/components/provider-cn)的`locale`配置 | Object: {okText, dismissText, extra, `DatePickerLocale:{ year,month,day,hour,minute,am,pm }`} | - |
 | filter  | 过滤可供选择的时间 | `DatePickerFilter` | - | `5.1.0` |
 
 
