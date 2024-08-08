@@ -53,6 +53,7 @@ module.exports = {
     },
     /* eslint-enable consistent-return */
     'docs/react': pickerGenerator('react'),
+    'docs/blog': pickerGenerator('blog'),
   },
   plugins: [
     'bisheng-plugin-description',
@@ -79,6 +80,10 @@ module.exports = {
       },
       {
         path: '/docs/react/:children',
+        component: contentTmpl,
+      },
+      {
+        path: '/docs/blog/:children',
         component: contentTmpl,
       },
       {
