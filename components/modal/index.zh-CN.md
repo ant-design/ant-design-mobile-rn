@@ -30,6 +30,7 @@ subtitle: 对话框
 | footer | 底部内容 | Array [{text, onPress}] | [] |
 | onRequestClose | `onRequestClose`回调会在用户按下 Android 设备上的后退按键或是 Apple TV 上的菜单键时触发。返回true时会在 modal 处于开启状态时阻止`BackHandler`事件。| (): boolean | false | 
 
+## 静态方法
 ### Modal.alert(title, message, actions?, platform?)
 
 属性 | 说明 | 类型 | 默认值
@@ -38,7 +39,6 @@ subtitle: 对话框
 | message  | 提示信息  | String 或 React.Element  | 无  |
 | actions | 按钮组, [{text, onPress, style}] | Array | 无  |
 | onBackHandler | 返回键的回调(非必须)，返回true则关闭modal，false阻止modal关闭| (): boolean | 无 | 
-`Modal.alert(title, message, actions?, platform?).close()` 可以在外部关闭 Alert
 
 ### Modal.prompt(title, message, callbackOrActions, type?, defaultValue?, placeholders?, platform?)
 
@@ -52,8 +52,6 @@ subtitle: 对话框
 | placeholders | ['', '']  | String[] | -  |
 | onBackHandler | 返回键的回调(非必须)，返回true则关闭modal，false阻止modal关闭| (): boolean | 无 | 
 
-`Modal.prompt(title, message, callbackOrActions, type?, defaultValue?, placeholders?, platform?).close()` 可以在外部关闭 prompt`
-
 ### Modal.operation(actions?, onBackHandler?)
 
 属性 | 说明 | 类型 | 默认值
@@ -61,4 +59,25 @@ subtitle: 对话框
 | actions | 按钮组, [{text, onPress, style}] | Array | 无  |
 | onBackHandler | 返回键的回调(非必须)，返回true则关闭modal，false阻止modal关闭| (): boolean | 无 | 
 
-`Modal.operation(actions?, platform?).close()` 可以在外部关闭 operation`
+## FAQ
+
+### 静态方法Modal如何关闭？
+
+需要借助`Portal.remove(key)`方法； 以下 `Modal.alert` 为例
+```jsx
+import { Modal, Portal } from '@ant-design/react-native'
+import { useRef } from 'react'
+
+function App() {
+  const key = useRef()
+
+  const onOpen = () => {
+    key.current = Modal.alert({})
+  }
+
+  const onClose = () => {
+    // 关闭Modal.alert
+    Portal.remove(key)
+  }
+}
+```

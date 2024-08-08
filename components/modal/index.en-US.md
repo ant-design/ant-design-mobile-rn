@@ -38,8 +38,6 @@ Properties | Descrition | Type | Default
 | actions | button group, [{text, onPress, style}]  | Array | -  |
 | onBackHandler | Callback of the back key (not required), returns true to close modal, false to prevent modal from closing| (): boolean | 无 |
 
-call `Modal.alert(title, message, actions?).close()`  can close Alert Modal outside anywhere as you wish.
-
 ### Modal.prompt(title, message, callbackOrActions, type?, defaultValue?)
 
 Properties | Descrition | Type | Default
@@ -52,8 +50,6 @@ Properties | Descrition | Type | Default
 | placeholders  | ['', '']  | String[] | -  |
 | onBackHandler | Callback of the back key (not required), returns true to close modal, false to prevent modal from closing| (): boolean | 无 |
 
-call Modal.prompt(title, message, callbackOrActions, type?, defaultValue?, placeholders?).close()` can close prompt Modal outside anywhere as you wish.
-
 ### Modal.operation(actions?, onBackHandler?)
 
 Properties | Descrition | Type | Default
@@ -61,4 +57,25 @@ Properties | Descrition | Type | Default
 | actions | button group, [{text, onPress, style}]  | Array | -  |
 | onBackHandler | Callback of the back key (not required), returns true to close modal, false to prevent modal from closing| (): boolean | 无 |
 
-call Modal.operation(actions?).close()` can close Operation Modal outside anywhere as you wish.
+## FAQ
+
+### How to close the static Modal.method()?
+
+You need to use `Portal.remove(key)` method; Take `Modal.alert` as an example
+```jsx
+import { Modal, Portal } from '@ant-design/react-native'
+import { useRef } from 'react'
+
+function App() {
+  const key = useRef()
+
+  const onOpen = () => {
+    key.current = Modal.alert({})
+  }
+
+  const onClose = () => {
+    // close the Modal.alert
+    Portal.remove(key)
+  }
+}
+```
