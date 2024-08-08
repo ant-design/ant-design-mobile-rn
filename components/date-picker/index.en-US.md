@@ -46,7 +46,7 @@ Properties | Descrition | Type | Default | Version
 | onChange  | change handler | `(value: Date) => void` |  -  ||
 | onValueChange | fire when picker col change | `(value: Date, index: number) => void` | - ||
 | renderLabel | The function to custom rendering the label shown on a column. `type` means any value in `precision`, `data` means the default number | `(type:Precision / 'now', data: number) => ReactNode` | - ||
-| locale | international, can override the configuration of the global [LocaleProvider](/components/locale-provider) | Object: Object: {okText, dismissText, extra, `DatePickerLocale:{ year,month,day,hour,minute,am,pm }`} | - |
+| locale | international, can override the configuration of the global [Provider](/components/provider)'s `locale` | Object: Object: {okText, dismissText, extra, `DatePickerLocale:{ year,month,day,hour,minute,am,pm }`} | - |
 | filter  | Filter available time	 | `DatePickerFilter` | - | `5.1.0` |
 
 

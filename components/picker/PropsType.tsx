@@ -5,14 +5,11 @@ import {
   PickerValueExtend,
   PickerViewPropsType,
 } from '../picker-view/PropsType'
-import { PickerViewStyle } from '../picker-view/style'
-import { WithThemeStyles } from '../style'
 import { PopupPickerProps } from './PopupPickerTypes'
 import { PickerStyle } from './style'
 
 export interface PickerPropsType
   extends PickerViewPropsType,
-    WithThemeStyles<PickerViewStyle & PickerStyle>,
     Omit<PopupPickerProps, 'onOk' | 'styles'> {
   onOk?: (value: PickerValue[], extend: PickerValueExtend) => void
   onPickerChange?: (value: PickerValue[], index: number) => void
@@ -21,6 +18,14 @@ export interface PickerPropsType
   extra?: string
   triggerType?: string
   disabled?: boolean
-  children?: ReactNode
+  children?:
+    | ReactNode
+    | ((props: {
+        disabled?: boolean
+        extra: string
+        value?: PickerValue[]
+        toggle: () => void
+      }) => ReactNode)
   locale?: { okText?: string; dismissText?: string; extra?: string }
+  styles?: Partial<PickerStyle>
 }

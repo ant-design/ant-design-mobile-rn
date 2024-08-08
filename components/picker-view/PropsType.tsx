@@ -31,7 +31,11 @@ export interface PickerViewPropsType {
   itemHeight?: number
   indicatorStyle?: StyleProp<ViewStyle>
   onChange?: (value: PickerValue[], extend: PickerValueExtend) => void
-  renderLabel?: (item: PickerColumnItem, index: number) => ReactNode
+  renderLabel?: (
+    item: PickerColumnItem,
+    itemIndex: number,
+    colIndex: number,
+  ) => ReactNode
   renderMaskTop?: () => ReactNode
   renderMaskBottom?: () => ReactNode
 }

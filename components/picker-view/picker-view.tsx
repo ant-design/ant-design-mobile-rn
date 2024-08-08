@@ -57,16 +57,19 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
   const theme = useContext(ThemeContext)
 
   const renderLabel = useCallback(
-    (item: PickerColumnItem, index: number) => {
+    (item: PickerColumnItem, itemIndex: number, colIndex: number) => {
       return (
         <View
           key={item.key || item.value}
           style={[ss.itemWrap, { height: itemHeight || 'auto' }]}>
-          {p.renderLabel?.(item, index) || (
+          {p.renderLabel?.(item, itemIndex, colIndex) || (
             <Text
               style={[
                 ss.itemStyle,
                 p.itemStyle,
+                item.value ===
+                  (p.value[colIndex] ?? (itemIndex === 0 && item.value)) &&
+                  ss.itemActiveStyle,
                 { height: 'auto' }, // itemStyle was not allowed to set height
               ]}
               numberOfLines={p.numberOfLines}>
@@ -76,7 +79,7 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
         </View>
       )
     },
-    [itemHeight, p, ss.itemStyle, ss.itemWrap],
+    [itemHeight, p, ss.itemActiveStyle, ss.itemStyle, ss.itemWrap],
   )
 
   const onHaptics = useContext(HapticsContext)
@@ -97,6 +100,7 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
             label: <>{Array(p.numberOfLines).join('\n')}&#12288;</>,
           },
           0,
+          0,
         )}
       </View>
     )
@@ -115,16 +119,18 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
             )
           : itemHeight > 0 &&
             wheelHeight > 0 &&
-            p.columns.map((column, index) => (
+            p.columns.map((column, colIndex) => (
               <Wheel
-                key={index}
-                index={index}
+                key={colIndex}
+                index={colIndex}
                 column={column}
-                value={p.value?.[index]}
+                value={p.value?.[colIndex]}
                 onSelect={handleSelect}
                 itemHeight={itemHeight}
                 wheelHeight={wheelHeight}
-                renderLabel={renderLabel}
+                renderLabel={(item, itemIndex) =>
+                  renderLabel(item, itemIndex, colIndex)
+                }
               />
             ))}
       </View>

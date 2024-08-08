@@ -6,6 +6,7 @@ export interface PickerViewStyle {
   wheelWrapper: ViewStyle
   itemWrap: ViewStyle
   itemStyle: TextStyle
+  itemActiveStyle: TextStyle
   mask: ViewStyle
   maskTop: ViewStyle
   maskMiddle: ViewStyle
@@ -39,6 +40,7 @@ export default (theme: Theme) =>
       textAlign: 'center',
       includeFontPadding: false,
     },
+    itemActiveStyle: {},
 
     mask: {
       position: 'absolute',

@@ -1,7 +1,8 @@
 import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { PickerViewStyle } from '../../picker-view/style'
 import { Theme } from '../../style'
 
-export interface PickerStyle {
+export interface PickerStyle extends Partial<PickerViewStyle> {
   modal: ViewStyle
   container: ViewStyle
   header: ViewStyle

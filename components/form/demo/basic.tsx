@@ -59,7 +59,7 @@ const FormExample: React.FC = () => {
               pickerRef.current.toggle()
             }}>
             <Picker data={data} cols={3} ref={pickerRef}>
-              {({ extra, value, toggle }: any) => (
+              {({ extra, value, toggle }) => (
                 <Input
                   value={value?.length ? extra : undefined}
                   onFocus={toggle}
