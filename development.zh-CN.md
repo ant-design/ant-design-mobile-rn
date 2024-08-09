@@ -3,8 +3,8 @@
 ## 环境
 
 ```
-node = 10+
-npm = 3+
+node = 16.20.0+
+npm = 8.19.4+
 ```
 
 ## 代码风格
@@ -18,13 +18,13 @@ $ npm run lint
 ### 目录结构
 
 ```
-├── AUTHORS.txt             作者
 ├── CHANGELOG.xxx.md        变更记录文档
 ├── LICENSE                 许可证
 ├── README.md               自述文档
 ├── components              组件代码
 ├── development.xxx.md      开发说明文档
 ├── docs                    其他文档
+├── example                 Expo示例工程代码
 ├── rn-kitchen-sink         RN示例工程代码
 ├── scripts                 辅助脚本
 ├── site                    官网代码
@@ -101,20 +101,38 @@ exports.demo = BasicButtonExample;
 
 ## 开发流程
 
+ - **使用 expo-cli 运行**
+ 
+> node >= 18
+
 ```bash
+# go to expo example folder
+cd example
+
+# install dependencies
+npx expo install
+
+# start expo
+npm start
+```
+
+ - **使用 react-native-cli 运行**
+
+```bash
+# clone
 $ npm install
 
-# In one terminal tab
-$ npm run rn-start
+# start ios
+cd rn-kitchen-sink/ios && pod install
+$ npm run ios
 
-# Open one ios/android simulator
-# Open another terminal tab
-$ npm run ios / android
+# start android
+$ npm run android
 ```
 
 demo app 代码地址：https://github.com/ant-design/ant-design-mobile-rn/tree/master/rn-kitchen-sink
 
-If you need to add a new component, then modify `rn-kitchen-sink/demoList.js` and `./index.js`.
+如果需要添加新组件，则修改`rn​​-kitchen-sink/demoList.js`和`./index.js`。
 
 ### 提交代码
 
