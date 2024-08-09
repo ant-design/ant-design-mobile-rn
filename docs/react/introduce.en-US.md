@@ -40,117 +40,56 @@ title: Ant Design Mobile RN of React
 - Multi-terminal applications based on react / preact / react-native.
 - Custom UI-style applications.
 
-## Getting Started
+## Version
 
-> Before delving into Ant Design React, a good knowledge of [React](http://facebook.github.io/react/) and [ES2015](http://babeljs.io/docs/learn-es2015/) is needed.
->
-> Make sure that you had installed [Node.js](https://nodejs.org/en/)(> v4.x) correctly.
+- Stable: [![npm package](http://img.shields.io/npm/v/@ant-design/react-native.svg?style=flat-square)](http://npmjs.com/package/@ant-design/react-native)
+- Next: [![npm package](https://img.shields.io/npm/v/@ant-design/react-native/next.svg)](http://npmjs.com/package/@ant-design/react-native)
 
-### 1. Create a New Project
-
-Can be an existing project, or a newly created empty project with create-react-native-app, you can also copy and modify from the official example [scaffolding](https://github.com/ant-design/antd-mobile-samples/tree/master/rn-web).
-
-> More official [examples](https://github.com/ant-design/antd-mobile-samples).
-> Also, you can use any [scaffold](https://github.com/enaqx/awesome-react#boilerplates) available in React ecosystem.
-
-The complete procedure please check the document here: [antd-mobile-sample/create-react-native-app](https://github.com/ant-design/antd-mobile-samples/tree/master/create-react-native-app)
-
-### 2. Installation
+## Installation
 
 ```bash
-$ npm install @ant-design/react-native --save
+$ npm install @ant-design/react-native @ant-design/icons-react-native
 ```
 
-or
+### Installing peer dependencies
+We manage the following dependencies through `peerDependencies` to allow you to choose versions more flexibly and reduce repeated installation of dependencies:
 
-```bash
-$ yarn add @ant-design/react-native
-```
+ - If you have an Expo managed project, install the dependencies with `expo`:
+   ```bash
+   npx expo install react-native-gesture-handler react-native-reanimated
+   ```
+
+ - If you have a bare React Native project, install the dependencies with `npm`:
+   ```bash
+   npm install react-native-gesture-handler react-native-reanimated
+   ```
 
 ### Link icon fonts
 
+ - Add assets to your `react-native.config.js` ( If not exist, please create in project’s root directory ):
 
-```bash
-$ npm install @ant-design/icons-react-native --save
-```
+   ```js
+   module.exports = {
+     assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+   };
+   ```
 
-or
+ - Run the [react-native-asset](https://github.com/unimonkiez/react-native-asset)'s command and linking + unlinking is automatic:
 
-```bash
-$ yarn add @ant-design/icons-react-native
-```
+   ```bash
+   npx react-native-asset
+   ```
 
-<br/>
-Add assets to your `react-native.config.js` ( If not exist, please create in project’s root directory )
+ - If you have an Expo managed project, skip the previous two steps and use [expo-font](https://docs.expo.dev/versions/latest/sdk/font/) to load the font directly:
+   ```jsx
+   import { useFonts } from 'expo-font';
 
-```js
-module.exports = {
-  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
-};
-```
+   const [fontsLoaded] = useFonts({
+    antoutline: require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
+  })
+   ```
 
-Run the [`react-native-asset`](https://github.com/unimonkiez/react-native-asset)'s command and linking + unlinking is automatic
-
-```bash
-npx react-native-asset
-```
-<br/>
-
-> If you are using expo please make sure fonts has been loaded
-
-```jsx
-import { AppLoading, Font } from 'expo';
-...
-...
-class App extends React.Component {
-  state = {
-    theme: null,
-    currentTheme: null,
-    isReady: false,
-  };
-  changeTheme = (theme, currentTheme) => {
-    this.setState({ theme, currentTheme });
-  };
-  async componentDidMount() {
-    await Font.loadAsync(
-      'antoutline',
-      // eslint-disable-next-line
-      require('@ant-design/icons-react-native/fonts/antoutline.ttf')
-    );
-
-    await Font.loadAsync(
-      'antfill',
-      // eslint-disable-next-line
-      require('@ant-design/icons-react-native/fonts/antfill.ttf')
-    );
-    // eslint-disable-next-line
-    this.setState({ isReady: true });
-  }
-  render() {
-    const { theme, currentTheme, isReady } = this.state;
-    if (!isReady) {
-      return <AppLoading />;
-    }
-    return (
-      <Provider theme={theme}>
-        <RootNavigator
-          screenProps={{ changeTheme: this.changeTheme, currentTheme }}
-        />
-      </Provider>
-    );
-  }
-}
-```
-This is not the way you would write it if you were using expo sdk32 or above
-```jsx
-import { Font } from 'expo';
-```
-Instead, use a separate name
-```jsx
-import * as Font from 'expo-font';
-```
-
-### 3. Usage
+## Usage
 
 Example of usage:
 
@@ -222,16 +161,10 @@ The following two ways used to load the **only components you used**, select one
 > [Custom theme and single component style](https://github.com/ant-design/antd-mobile-samples/tree/master/rn-custom-ui#antd-mobile-with-rn-custom-ui)
 > Like [#1853](https://github.com/ant-design/ant-design-mobile/issues/1853)
 
-## Version
-
-- Stable: [![npm package](http://img.shields.io/npm/v/@ant-design/react-native.svg?style=flat-square)](http://npmjs.com/package/@ant-design/react-native)
-- Next: [![npm package](https://img.shields.io/npm/v/@ant-design/react-native/next.svg)](http://npmjs.com/package/@ant-design/react-native)
-
 ## Links
 
 - [Home Page](https://rn.mobile.ant.design/)
 - [Developer Instruction](http://github.com/ant-design/ant-design-mobile-rn/blob/master/development.en-US.md)
-- [React components](http://github.com/react-component)
 
 ## Contributing
 

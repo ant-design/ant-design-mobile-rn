@@ -40,118 +40,57 @@ title: Ant Design Mobile RN of React
 - 适合于基于 react-native 的多终端应用
 - 适合不同 UI 风格的高度定制需求的应用
 
-## 快速上手
+## 版本
 
-> 在开始之前，推荐先学习 [React](http://facebook.github.io/react/) 和 [ES2015](http://babeljs.io/docs/learn-es2015/)。我们使用了 `babel`，试试用 [ES2015](http://babeljs.io/blog/2015/06/07/react-on-es6-plus) 的写法来提升编码的愉悦感。
->
-> 确认 [Node.js](https://nodejs.org/en/) 已经升级到 v4.x 或以上。
+- 稳定版：[![npm package](http://img.shields.io/npm/v/@ant-design/react-native.svg?style=flat-square)](http://npmjs.com/package/@ant-design/react-native)
+- 开发版：[![npm package](https://img.shields.io/npm/v/@ant-design/react-native/next.svg)](http://npmjs.com/package/@ant-design/react-native)
 
-### 1. 创建一个项目
+## 安装
 
-可以是已有项目，或者是使用 create-react-native-app 新创建的空项目，你也可以从 [官方示例](https://github.com/ant-design/antd-mobile-samples/tree/master/rn-web) 脚手架里拷贝并修改
-
-> 参考更多[官方示例集](https://github.com/ant-design/antd-mobile-samples)
-> 或者你可以利用 React 生态圈中的 [各种脚手架](https://github.com/enaqx/awesome-react#boilerplates)
-
-完整步骤请查看此处文档： [antd-mobile-sample/create-react-native-app](https://github.com/ant-design/antd-mobile-samples/tree/master/create-react-native-app)
-
-### 2. 安装
-
+首先，您需要将它们安装到您的项目中：
 ```bash
-$ npm install @ant-design/react-native --save
+$ npm install @ant-design/react-native @ant-design/icons-react-native
 ```
 
-or
+### 安装 peerDependencies
+我们将以下依赖通过 `peerDependencies` 进行管理，目的是为了让您可以更灵活地选择版本，减少重复安装依赖：
 
-```bash
-$ yarn add @ant-design/react-native
-```
+ - 如果使用Expo来构建项目的，请使用 `expo`（**推荐，这能安装到最合适的版本**）：
+   ```bash
+   npx expo install react-native-gesture-handler react-native-reanimated
+   ```
+
+ - 如果使用React Native CLI原生构建项目的，请使用 `npm` ：
+   ```bash
+   npm install react-native-gesture-handler react-native-reanimated
+   ```
 
 ### 链接字体图标
 
+ - 将字体资源路径配置到根目录下的 `react-native.config.js` 文件中 ( 如果没有，请创建 )：
 
-```bash
-$ npm install @ant-design/icons-react-native --save
-```
+   ```js
+   module.exports = {
+     assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+   };
+   ```
 
-or
+ - 然后执行 [react-native-asset](https://github.com/unimonkiez/react-native-asset) 的命令，字体文件将会自动复制到`ios` 和 `android` 资源文件中：
 
-```bash
-$ yarn add @ant-design/icons-react-native
-```
+   ```bash
+   npx react-native-asset
+   ```
 
-<br/>
+ - 如果使用Expo来构建项目，省略上两步，直接使用 [expo-font](https://docs.expo.dev/versions/latest/sdk/font/) 加载字体：
+   ```jsx
+   import { useFonts } from 'expo-font';
 
-将字体资源路径配置到根目录下的 `react-native.config.js` 文件中 ( 如果没有，请创建 )
+   const [fontsLoaded] = useFonts({
+    antoutline: require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
+  })
+   ```
 
-```js
-module.exports = {
-  assets: ['node_modules/@ant-design/icons-react-native/fonts'],
-};
-```
-
-然后执行[`react-native-asset`](https://github.com/unimonkiez/react-native-asset)的命令
-
-```bash
-npx react-native-asset
-```
-<br/>
-
-> 如果你用的是 expo 请确保字体已经加载完成再初始化 app
-
-```jsx
-import { AppLoading, Font } from 'expo';
-...
-...
-class App extends React.Component {
-  state = {
-    theme: null,
-    currentTheme: null,
-    isReady: false,
-  };
-  changeTheme = (theme, currentTheme) => {
-    this.setState({ theme, currentTheme });
-  };
-  async componentDidMount() {
-    await Font.loadAsync(
-      'antoutline',
-      // eslint-disable-next-line
-      require('@ant-design/icons-react-native/fonts/antoutline.ttf')
-    );
-
-    await Font.loadAsync(
-      'antfill',
-      // eslint-disable-next-line
-      require('@ant-design/icons-react-native/fonts/antfill.ttf')
-    );
-    // eslint-disable-next-line
-    this.setState({ isReady: true });
-  }
-  render() {
-    const { theme, currentTheme, isReady } = this.state;
-    if (!isReady) {
-      return <AppLoading />;
-    }
-    return (
-      <Provider theme={theme}>
-        <RootNavigator
-          screenProps={{ changeTheme: this.changeTheme, currentTheme }}
-        />
-      </Provider>
-    );
-  }
-}
-```
-当你使用expo sdk32以上版本时已经弃用了下面这种写法
-
-```jsx
-import { Font } from 'expo';
-```
-转而使用单独命名的
-```jsx
-import * as Font from 'expo-font';
-```
-### 3. 使用
+## 示例
 
 组件使用实例：
 
@@ -223,16 +162,11 @@ class HelloWorldApp extends Component {
 > [自定义 RN 主题和单个组件样式](https://github.com/ant-design/antd-mobile-samples/tree/master/rn-custom-ui#antd-mobile-with-rn-custom-ui)
 > 比如 [#1853](https://github.com/ant-design/ant-design-mobile/issues/1853)
 
-## 版本
-
-- 稳定版：[![npm package](http://img.shields.io/npm/v/@ant-design/react-native.svg?style=flat-square)](http://npmjs.com/package/@ant-design/react-native)
-- 开发版：[![npm package](https://img.shields.io/npm/v/@ant-design/react-native/next.svg)](http://npmjs.com/package/@ant-design/react-native)
 
 ## 链接
 
 - [首页](https://rn.mobile.ant.design/)
 - [开发者文档](http://github.com/ant-design/ant-design-mobile-rn/blob/master/development.zh-CN.md)
-- [React 模块](http://github.com/react-component)
 
 ## 如何贡献
 
