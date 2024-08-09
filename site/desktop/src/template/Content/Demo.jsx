@@ -132,9 +132,12 @@ export default class Demo extends React.Component {
     ) {
       dependencies +=
         ',@ant-design/icons-react-native/lib/outline,' +
-        '@ant-design/icons-react-native/fonts/antfill.ttf,' +
         '@ant-design/icons-react-native/fonts/antoutline.ttf,' +
-        'expo-font@12.0.8'
+        'expo-font'
+    }
+
+    if (componentName === 'icon') {
+      dependencies += ',expo-clipboard'
     }
 
     if (componentName === 'form') {
