@@ -7,23 +7,30 @@ subtitle: 图标
 
 ## 如何使用
 
-从`3.0.0` 开始使用 `ant-design-icons` 字体图标不需要单独安装但是需要`link`
-
-更多信息请查看https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native
-
-安装完成后需要link字体文件（如果你的RN版本支持auto-link的话可以省略这一步）
+### 安装依赖
 
 ```bash
-react-native link @ant-design/icons-react-native
+npm install @ant-design/icons-react-native@latest
 ```
 
-使用方式：
 
-```jsx
-<Icon name="account-book" size="md" color="red" />
-```
+### Linking
 
-> 注： 默认现在Icon使用了 `ant-design-icons` 里面的`outline` 图标
+ - 将字体资源路径配置到根目录下的 `react-native.config.js` 文件中 ( 如果没有，请创建 )
+
+   ```js
+   module.exports = {
+     assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+   };
+   ```
+
+ - 然后执行 [react-native-asset](https://github.com/unimonkiez/react-native-asset) 的命令
+
+   ```bash
+   npx react-native-asset
+   ```
+   字体文件将会自动复制到`ios` 和 `android` 资源文件中。
+
 
 ## API
 
@@ -32,3 +39,6 @@ react-native link @ant-design/icons-react-native
 | name  | OutlineGlyphMapType | string                             |
 | size  | 图标大小            | 'xxs'/'xs'/'sm'/'md'/'lg' / number | `md`   |
 | color | 图标颜色            | Color                              | '#000' |
+
+ - 注1：Demo中点击图标可自动复制`<Icon />`代码。
+ - 注2：关于`OutlineGlyphMapType`，默认现在Icon使用了 `ant-design-icons` 里面的`outline` 图标。

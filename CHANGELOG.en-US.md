@@ -62,7 +62,7 @@ toc: false
 - Refactor **DatePicker** & **DatePickerView**
   - 💄 **Style** 和 **Base Props** extends by Picker & PickerView
   - 🆕 Support (`precision` `filter` ) new props
-  - ⚡️ Deprecated (<del>`mode`</del>）prop; date format by [Day.js](https://day.js.org/docs/en/parse/string-format)
+  - ⚡️ Deprecated (`mode`）prop; date format by [Day.js](https://day.js.org/docs/en/parse/string-format)
 - ❗️Delete **ImagePicker** and remove dependence `@react-native-camera-roll/camera-roll`
 - **Switch**
   - fix: `checked` prop support controlled mode [#1325](https://github.com/ant-design/ant-design-mobile-rn/issues/1325)

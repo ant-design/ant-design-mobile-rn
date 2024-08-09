@@ -62,7 +62,7 @@ toc: false
 - 重构 **DatePicker** & **DatePickerView**
   - 💄 **样式** 和 **基础属性** 继承 Picker & PickerView
   - 🆕 新增 (`precision` `filter` ) 属性支持
-  - ⚡️ 废弃（<del>`mode`</del>）属性；时间格式引用[Day.js](https://day.js.org/docs/zh-CN/parse/string-format)
+  - ⚡️ 废弃（`mode`）属性；时间格式引用[Day.js](https://day.js.org/docs/zh-CN/parse/string-format)
 - ❗️删除 **ImagePicker** 并移除 `@react-native-camera-roll/camera-roll` 依赖
 - **Switch**
   - fix: `checked`属性支持全受控模式 [#1325](https://github.com/ant-design/ant-design-mobile-rn/issues/1325)

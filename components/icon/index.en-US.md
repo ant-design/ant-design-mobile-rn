@@ -6,27 +6,38 @@ title: Icon
 
 ## How to Use
 
-Starting with `3.0.0` The `ant-design-icons` font icon does not need to be installed separately but requires `link` or `auto-link` it.
-
-For more informations please checkout
-https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native
+### 安装依赖
 
 ```bash
-react-native link @ant-design/icons-react-native
+npm install @ant-design/icons-react-native@latest
 ```
 
-example:
 
-```html
-<Icon name="account-book" size="md" color="red" />
-```
+### Linking
 
-> Note： By default, Icon uses the `outline` icon in `ant-design-icons`
+ - Add assets to your `react-native.config.js` ( If not exist, please create in project’s root directory )
+
+   ```js
+   module.exports = {
+     assets: ['node_modules/@ant-design/icons-react-native/fonts'],
+   };
+   ```
+
+ - Run the [`react-native-asset`](https://github.com/unimonkiez/react-native-asset)'s command and linking + unlinking is automatic
+
+   ```bash
+   npx react-native-asset
+   ```
+   will copy fonts to `ios` and `android` assets folder.
+
 
 ## API
 
 | Properties | Description         | Type                               | Default |
 | ---------- | ------------------- | ---------------------------------- | ------- |
-| name       | OutlineGlyphMapType | string                             |
+| name       | `OutlineGlyphMapType` | string                             |
 | size       | icon size           | 'xxs'/'xs'/'sm'/'md'/'lg' / number | `md`    |
 | color      | icon color          | Color                              | '#000'  |
+
+ - Tips1: Clicking the icon in the demo will automatically copy the code to the `<Icon />`.
+ - Tips2: By default, Icon uses the `outline` icon in `ant-design-icons`
