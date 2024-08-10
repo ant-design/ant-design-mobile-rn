@@ -243,6 +243,7 @@ export default class MainContent extends React.Component {
     const menuItems = this.getMenuItems()
     const { prev, next } = this.getFooterNav(menuItems, activeMenuItem)
 
+    const locale = utils.isZhCN(props.location.pathname) ? 'zh-CN' : 'en-US'
     const localizedPageData = props.localizedPageData
     const demos = props.demos
     const DemoEl = demos ? (
@@ -266,6 +267,20 @@ export default class MainContent extends React.Component {
           </Col>
           <Col lg={19} md={18} sm={24} xs={24} className="main-container">
             {DemoEl}
+            <br />
+            {locale === 'zh-CN' ? (
+              <>
+                不满足业务? 需要定制，
+                <a href="mailto:luokun199503@qq.com">联系我，</a>低至 $99 /天
+              </>
+            ) : (
+              <>
+                If you need customization, please
+                <a href="mailto:luokun199503@gmail.com"> contact me</a>, as low
+                as $99/day
+              </>
+            )}{' '}
+            <a href="https://github.com/1uokun">@1uokun</a>
           </Col>
         </Row>
         <Row>
