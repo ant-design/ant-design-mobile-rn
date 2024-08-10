@@ -34,7 +34,7 @@ Component to display a system message, event notice and etc. Which is under the 
 | Properties | Descrition | Type | Default | Version |
 |------------|------------|------|---------|---------|
 | autoFill | Whether to automatically fill blank space in the marquee with copies of the children or not | `Boolean` | false | `5.2.1` |
-| direction | The direction the marquee slides | `"left"` \| `"right"` | "left" | `5.2.1` |
+| direction | The direction the marquee slides | `'left'` \| `'right'` \| `'up'` \| `'down'` | `'left'` | `5.2.2` add `'up'`&`'down'`  |
 | fps | Speed calculated as pixels/second | `Number` |  40  | |
 | leading | Duration to delay the animation after first render, in millisecond | `Number` | 500 | |
 | loop | The number of times the marquee should loop, `true/0` is equivalent to infinite |  `Boolean` \| `Number` | false | |
@@ -51,8 +51,8 @@ Component to display a system message, event notice and etc. Which is under the 
 
 ```ts
 interface NoticeBarStyle {
-    container: ViewStyle,   // Outermost container style
-    font: TextStyle,        // Font style, default: {color: theme.brand_error}
+    container: ViewStyle,   // Outermost container style, default: {minHeight: 36(theme.notice_bar_height)}
+    font: TextStyle,        // Font style, default: {color: #f4333c(theme.brand_error)}
     background: ViewStyle,  // Background color, default: {backgroundColor: #fffada}
 
     marquee: TextStyle,     // marquee font style

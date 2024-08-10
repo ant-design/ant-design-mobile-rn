@@ -35,7 +35,7 @@ version: update
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 |-----|------|-----|-------|-----|
 | autoFill | 是否自动用children的副本填充字幕框中的空白区域 | `Boolean` | `false` | `5.2.1` |
-| direction | 字幕滑动的方向 | `'left'` \| `'right'` | `'left'` | `5.2.1` |
+| direction | 字幕滑动的方向 | `'left'` \| `'right'` \| `'up'` \| `'down'` | `'left'` | `5.2.2`新增`'up'`&`'down'`  |
 | fps | 滚动速度，单位 `pixels/second` | `Number` |  40  | |
 | leading | 渲染后动画延迟的时间（以毫秒为单位） | `Number` | 500 | |
 | loop | 字幕循环的次数, `true`或`0`表示无限次 |  `Boolean` \| `Number` | `false` | |
@@ -52,8 +52,8 @@ version: update
 
 ```ts
 interface NoticeBarStyle {
-    container: ViewStyle,   // 最外层容器样式
-    font: TextStyle,        // 字体样式，默认:{color: theme.brand_error}
+    container: ViewStyle,   // 最外层容器样式，默认:{minHeight: 36(theme.notice_bar_height)}
+    font: TextStyle,        // 字体样式，默认:{color: #f4333c(theme.brand_error)}
     background: ViewStyle,  // 背景颜色，默认:{backgroundColor: #fffada}
 
     marquee: TextStyle,     // 滚动字幕字体样式

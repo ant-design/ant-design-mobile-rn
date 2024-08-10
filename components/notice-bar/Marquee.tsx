@@ -10,7 +10,6 @@ import { MarqueeProps } from './PropsType'
 
 export const Marquee: React.FC<MarqueeProps> = (props) => {
   const {
-    autoFill,
     children,
     direction = 'left',
     fps = 40,
@@ -22,17 +21,37 @@ export const Marquee: React.FC<MarqueeProps> = (props) => {
     spacing,
     style,
     trailing = 800,
+    wrapStyle,
   } = props
 
-  const [parentWidth, setParentWidth] = useState(0)
-  const [childrenWidth, setChildrenWidth] = useState(0)
+  const isVertical = useMemo(
+    () => ['up', 'down'].includes(direction),
+    [direction],
+  )
+  const autoFill = isVertical || props.autoFill
 
+  // =========== parent & children onLayout ==============
+  const [parentLayout, setParentLayout] = useState({ width: 0, height: 0 })
+  const [childrenLayout, setChildrenLayout] = useState({ width: 0, height: 0 })
   const onLayoutContainer = (e: LayoutChangeEvent) => {
-    setParentWidth(e.nativeEvent.layout.width)
+    setParentLayout(e.nativeEvent.layout)
   }
   const onLayoutContent = useCallback((e: LayoutChangeEvent) => {
-    setChildrenWidth(e.nativeEvent.layout.width)
+    setChildrenLayout(e.nativeEvent.layout)
   }, [])
+
+  const parentWidth = useMemo(() => {
+    if (isVertical) {
+      return childrenLayout.height
+    }
+    return parentLayout.width
+  }, [childrenLayout.height, isVertical, parentLayout.width])
+  const childrenWidth = useMemo(() => {
+    if (isVertical) {
+      return childrenLayout.height
+    }
+    return childrenLayout.width
+  }, [isVertical, childrenLayout.width, childrenLayout.height])
 
   // =========== fps & direction ==============
   const duration = useMemo(() => {
@@ -40,7 +59,7 @@ export const Marquee: React.FC<MarqueeProps> = (props) => {
   }, [fps, childrenWidth])
 
   const coeff = useMemo(() => {
-    return direction === 'left' ? 1 : -1
+    return ['left', 'up'].includes(direction) ? 1 : -1
   }, [direction])
 
   // =========== loop & onCycleComplete & onFinish ==============
@@ -97,7 +116,9 @@ export const Marquee: React.FC<MarqueeProps> = (props) => {
 
   // =========== initialPosition & useEffect ==============
   const initialPosition = useMemo(() => {
-    return direction === 'right' && autoFill ? -childrenWidth : 0
+    return ['right', 'down'].includes(direction) && autoFill
+      ? -childrenWidth
+      : 0
   }, [autoFill, childrenWidth, direction])
 
   useEffect(() => {
@@ -117,11 +138,12 @@ export const Marquee: React.FC<MarqueeProps> = (props) => {
     return {
       transform: [
         {
-          translateX: -offset.value + initialPosition,
+          [isVertical ? 'translateY' : 'translateX']:
+            -offset.value + initialPosition,
         },
       ],
-    }
-  }, [initialPosition])
+    } as any
+  }, [initialPosition, direction])
 
   const renderChild = useMemo(() => {
     // autoFill multiples
@@ -134,8 +156,13 @@ export const Marquee: React.FC<MarqueeProps> = (props) => {
         return (
           <Text
             key={index}
-            style={[spacing ? { paddingRight: spacing } : {}, style]}
-            numberOfLines={1}
+            style={[
+              spacing
+                ? { [isVertical ? 'paddingBottom' : 'paddingRight']: spacing }
+                : {},
+              style,
+            ]}
+            numberOfLines={isVertical ? undefined : 1}
             ellipsizeMode="tail"
             onLayout={index ? undefined : onLayoutContent}>
             {children}
@@ -146,7 +173,13 @@ export const Marquee: React.FC<MarqueeProps> = (props) => {
           <View
             key={index}
             onLayout={index ? undefined : onLayoutContent}
-            style={spacing ? { paddingRight: spacing } : undefined}>
+            style={
+              spacing
+                ? {
+                    [isVertical ? 'paddingBottom' : 'paddingRight']: spacing,
+                  }
+                : undefined
+            }>
             {children}
           </View>
         )
@@ -156,6 +189,7 @@ export const Marquee: React.FC<MarqueeProps> = (props) => {
     autoFill,
     children,
     childrenWidth,
+    isVertical,
     onLayoutContent,
     parentWidth,
     spacing,
@@ -165,10 +199,18 @@ export const Marquee: React.FC<MarqueeProps> = (props) => {
   return (
     <ScrollView
       showsHorizontalScrollIndicator={false}
-      horizontal
+      horizontal={!isVertical}
+      scrollEnabled={false}
       onLayout={onLayoutContainer}>
       <Animated.View
-        style={[{ flexDirection: 'row', alignItems: 'center' }, animatedStyle]}>
+        style={[
+          wrapStyle,
+          {
+            maxHeight: childrenLayout.height || 'auto',
+            flexDirection: isVertical ? 'column' : 'row',
+          },
+          animatedStyle,
+        ]}>
         {renderChild}
       </Animated.View>
     </ScrollView>
