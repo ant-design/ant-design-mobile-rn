@@ -10,6 +10,7 @@ version: update
 
 ### 规则
 - 需要引起用户关注时使用，重要级别低于 Modal ，高于 Toast。
+- 亦可实现轻量级的跑马灯效果。
 
 ## API
 
@@ -30,8 +31,6 @@ version: update
 
 ### MarqueeProps
 
-> 设计参考 https://github.com/justin-chu/react-fast-marquee
-
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 |-----|------|-----|-------|-----|
 | autoFill | 是否自动用children的副本填充字幕框中的空白区域 | `Boolean` | `false` | `5.2.1` |
@@ -45,10 +44,18 @@ version: update
 | spacing | 重复字幕之间的间距。仅当`autoFill={true}`时有效 | `Number` | 0 | `5.2.1` |
 | style | 字幕样式 | `TextStyle` | - | |
 | trailing | 上一次循环后到下一次动画的延迟时间（以毫秒为单位） | `Number` | 800 | |
+| wrapStyle | Marquee组件外部style | `ViewStyle` | - | |
+
+> 设计参考：[https://github.com/justin-chu/react-fast-marquee](https://github.com/justin-chu/react-fast-marquee)，可作为跑马灯组件单独使用
+
+```jsx
+// 5.2.2 新增
+import { Marquee } from '@ant-design/react-native'
+```
 
 ## NoticeBarStyle 语义化样式
 
-> `5.2.1`新增
+`5.2.1`重构了样式
 
 ```ts
 interface NoticeBarStyle {
@@ -64,3 +71,13 @@ interface NoticeBarStyle {
     link: ViewStyle         // mode="link" icon
 }
 ```
+
+## Ref
+
+`5.2.2`新增。 指向 MarqueeActions。
+
+| 参数 | 说明 | 类型 |
+|-----|------|------|
+| play | 让字幕开始滚动 | `() => void` |
+| pause | 让字幕暂停滚动 | `() => void` |
+| stop | 让字幕归位初始位置 | `() => void` |

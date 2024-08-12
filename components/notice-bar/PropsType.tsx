@@ -6,7 +6,7 @@ export interface NoticeBarProps {
   action?: React.ReactElement<any>
   children?: React.ReactNode
   icon?: React.ReactElement<any>
-  marqueeProps?: MarqueeProps
+  marqueeProps?: Omit<MarqueeProps, 'children'>
   mode?: 'closable' | 'link'
   onClose?: () => void
   onPress?: () => void
@@ -16,6 +16,7 @@ export interface NoticeBarProps {
 
 export interface MarqueeProps {
   autoFill?: boolean
+  children: React.ReactNode
   direction?: 'left' | 'right' | 'up' | 'down'
   fps?: number
   leading?: number
@@ -28,4 +29,10 @@ export interface MarqueeProps {
   style?: StyleProp<TextStyle>
   wrapStyle?: StyleProp<ViewStyle>
   trailing?: number
+}
+
+export interface MarqueeActions {
+  play: () => void
+  pause: () => void
+  stop: () => void
 }
