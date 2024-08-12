@@ -161,15 +161,23 @@ export const Marquee = forwardRef<MarqueeActions, MarqueeProps>(
     }, [actions, autoFill, childrenWidth, parentWidth, play, ufc])
 
     const animatedStyle = useAnimatedStyle(() => {
+      if (isVertical) {
+        return {
+          transform: [
+            {
+              translateY: -offset.value + initialPosition,
+            },
+          ],
+        }
+      }
       return {
         transform: [
           {
-            [isVertical ? 'translateY' : 'translateX']:
-              -offset.value + initialPosition,
+            translateX: -offset.value + initialPosition,
           },
         ],
-      } as any
-    }, [initialPosition, direction])
+      }
+    }, [initialPosition, isVertical])
 
     const renderChild = useMemo(() => {
       // autoFill multiples
@@ -189,7 +197,6 @@ export const Marquee = forwardRef<MarqueeActions, MarqueeProps>(
                 style,
               ]}
               numberOfLines={isVertical ? undefined : 1}
-              ellipsizeMode="tail"
               onLayout={index ? undefined : onLayoutContent}>
               {children}
             </Text>
@@ -227,14 +234,14 @@ export const Marquee = forwardRef<MarqueeActions, MarqueeProps>(
         showsHorizontalScrollIndicator={false}
         horizontal={!isVertical}
         scrollEnabled={false}
-        onLayout={onLayoutContainer}>
+        onLayout={onLayoutContainer}
+        style={{
+          maxHeight: childrenLayout.height || 'auto',
+        }}>
         <Animated.View
           style={[
             wrapStyle,
-            {
-              maxHeight: childrenLayout.height || 'auto',
-              flexDirection: isVertical ? 'column' : 'row',
-            },
+            { flexDirection: isVertical ? 'column' : 'row' },
             animatedStyle,
           ]}>
           {renderChild}
