@@ -14,6 +14,19 @@ toc: false
 
 ---
 
+### 5.2.2
+`2024-08-12`
+- 🔥 **NoticeBar**
+  - 🆕 `direction` 属性新增`'up'`和`'down'`两个方向。
+  - 🆕 支持ref操作，支持`<Marquee/>`组件直接导出。
+  - fix: forwardRef warning on InnerNoticeBar component. [#1364](https://github.com/ant-design/ant-design-mobile-rn/pull/1364)
+- **Picker**
+  - feat: styles 添加 `itemActiveStyle` 傀儡样式名。
+- **List**
+  - fix: ListItem children 作为 `string[]` 类型。 [~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/b18237703df734e251aec0a9629a2f64491ba3c2)
+- **Form**
+  - fix: Form `labelStyle` works. [#1371](https://github.com/ant-design/ant-design-mobile-rn/pull/1371)
+
 ### 5.2.1
 `2024-08-02`
 - 🔥 新增组件

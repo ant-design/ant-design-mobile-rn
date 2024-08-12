@@ -14,6 +14,19 @@ toc: false
 
 ---
 
+### 5.2.2
+`2024-08-12`
+- 🔥 **NoticeBar**
+  - 🆕 `direction` prop add `'up'` & `'down'` direction.
+  - 🆕 add `ref` actions, export `<Marquee/>` component.
+  - fix: forwardRef warning on InnerNoticeBar component. [#1364](https://github.com/ant-design/ant-design-mobile-rn/pull/1364)
+- **Picker**
+  - feat: Picker styles add `itemActiveStyle`
+- **List**
+  - fix: ListItem children as `string[]` [~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/b18237703df734e251aec0a9629a2f64491ba3c2)
+- **Form**
+  - fix: Form `labelStyle` works. [#1371](https://github.com/ant-design/ant-design-mobile-rn/pull/1371)
+
 ### 5.2.1
 `2024-08-02`
 - 🔥 New Components
