@@ -34,7 +34,7 @@ A configurable Mobile UI specification and React-based implementation.
 
 |SDK 49+|
 |--|
-| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=dac4c647-3eab-4762-b4d3-0dfb355e9e5b" />](https://expo.dev/preview/update?message=5.2.1&updateRuntimeVersion=5.2.1&createdAt=2024-08-02T13%3A37%3A46.271Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=dac4c647-3eab-4762-b4d3-0dfb355e9e5b) |
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=bbf0a647-4ff2-46bd-9aad-dfd81bc6ba08" />](https://expo.dev/preview/update?message=5.2.2&updateRuntimeVersion=5.2.2&createdAt=2024-08-12T13%3A33%3A56.096Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=bbf0a647-4ff2-46bd-9aad-dfd81bc6ba08) |
 
 Open the camera app on your device and scan the code above, <br>
 need install expo app: https://expo.io/tools
