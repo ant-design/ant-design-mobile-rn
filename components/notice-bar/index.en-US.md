@@ -10,6 +10,7 @@ Component to display a system message, event notice and etc. Which is under the 
 ### Rules
 
 - Be used to attract user's attension, the importance level is lower than `Modal` and higher than `Toast`.
+- It can also achieve a lightweight marquee effect.
 
 ## API
 
@@ -29,12 +30,10 @@ Component to display a system message, event notice and etc. Which is under the 
 
 ### Marquee props
 
-> Design Reference https://github.com/justin-chu/react-fast-marquee
-
 | Properties | Descrition | Type | Default | Version |
 |------------|------------|------|---------|---------|
 | autoFill | Whether to automatically fill blank space in the marquee with copies of the children or not | `Boolean` | false | `5.2.1` |
-| direction | The direction the marquee slides | `"left"` \| `"right"` | "left" | `5.2.1` |
+| direction | The direction the marquee slides | `'left'` \| `'right'` \| `'up'` \| `'down'` | `'left'` | `5.2.2` add `'up'`&`'down'`  |
 | fps | Speed calculated as pixels/second | `Number` |  40  | |
 | leading | Duration to delay the animation after first render, in millisecond | `Number` | 500 | |
 | loop | The number of times the marquee should loop, `true/0` is equivalent to infinite |  `Boolean` \| `Number` | false | |
@@ -44,15 +43,23 @@ Component to display a system message, event notice and etc. Which is under the 
 | spacing | Spacing between repeting elements, valid when `autoFill={true}` | `Number` | 0 | `5.2.1` |
 | style | The marquee Text style | `TextStyle` | - | |
 | trailing | Duration to delay the animation after previous loop, valid when `autoFill={false}`, in millisecond | `Number` | 800 | |
+| wrapStyle | Marquee wrap view style | `ViewStyle` | - | |
+
+> Design Reference: [https://github.com/justin-chu/react-fast-marquee](https://github.com/justin-chu/react-fast-marquee), can be used as a marquee component alone
+
+```jsx
+// New in 5.2.2
+import { Marquee } from '@ant-design/react-native'
+```
 
 ## NoticeBarStyle interface
 
-> New in `5.2.1`
+`5.2.1`refactored the styles
 
 ```ts
 interface NoticeBarStyle {
-    container: ViewStyle,   // Outermost container style
-    font: TextStyle,        // Font style, default: {color: theme.brand_error}
+    container: ViewStyle,   // Outermost container style, default: {minHeight: 36(theme.notice_bar_height)}
+    font: TextStyle,        // Font style, default: {color: #f4333c(theme.brand_error)}
     background: ViewStyle,  // Background color, default: {backgroundColor: #fffada}
 
     marquee: TextStyle,     // marquee font style
@@ -63,3 +70,13 @@ interface NoticeBarStyle {
     link: ViewStyle         // mode="link" icon
 }
 ```
+
+## Ref
+
+New in `5.2.1`. Ref to MarqueeActions.
+
+| Properties | Descrition | Type|
+|-----|------|------|
+| play | Start the marquee text rolling | `() => void` |
+| pause | Pause the marquee text | `() => void` |
+| stop | Return the marquee text to the original position | `() => void` |

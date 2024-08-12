@@ -118,19 +118,29 @@ const InternalListItem: React.ForwardRefRenderFunction<
       )
     }
     if (Array.isArray(children)) {
-      return (
-        <View style={itemStyles.Content}>
-          {React.Children.map(children, (child) =>
-            typeof child === 'string' ? (
-              <Text style={itemStyles.Content} {...numberOfLines}>
-                {child}
-              </Text>
-            ) : (
-              child
-            ),
-          )}
-        </View>
-      )
+      if (children.some(React.isValidElement)) {
+        return (
+          <View style={itemStyles.Content}>
+            {React.Children.map(children, (child) =>
+              typeof child === 'string' ? (
+                <Text style={itemStyles.Content} {...numberOfLines}>
+                  {child}
+                </Text>
+              ) : (
+                child
+              ),
+            )}
+          </View>
+        )
+      } else {
+        return (
+          <Text
+            style={itemStyles.Content}
+            {...numberOfLines}
+            children={children.reduce((a, b) => (a || '') + '' + (b || ''))}
+          />
+        )
+      }
     }
 
     return <View style={itemStyles.Content} />

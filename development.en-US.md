@@ -3,8 +3,8 @@
 ## Environment
 
 ```
-node = 10+
-npm = 3+
+node = 16.20.0+
+npm = 8.19.4+
 ```
 
 ## Code convention for @ant-design/react-native
@@ -18,13 +18,13 @@ $ npm run lint
 ### Directory Structure
 
 ```
-├── AUTHORS.txt             authors
 ├── CHANGELOG.xxx.md        changelog document
 ├── LICENSE                 license
 ├── README.md               readme document
 ├── components              components source code
 ├── development.xxx.md      development document
 ├── docs                    other docs
+├── example                 Expo demo project source code
 ├── rn-kitchen-sink         RN demo project source code
 ├── scripts                 scripts for development
 ├── site                    offical website source code
@@ -101,15 +101,33 @@ exports.demo = BasicButtonExample;
 
 ## Development
 
+ - **Running On Expo**
+
+> node >= 18
+
 ```bash
+# go to expo example folder
+cd example
+
+# install dependencies
+npx expo install
+
+# start expo
+npm start
+```
+
+ - **Running On react-native-cli**
+
+```bash
+# clone
 $ npm install
 
-# In one terminal tab
-$ npm run rn-start
+# start ios
+cd rn-kitchen-sink/ios && pod install
+$ npm run ios
 
-# Open one ios/android simulator
-# Open another terminal tab
-$ npm run ios / android
+# start android
+$ npm run android
 ```
 
 The code of demo app: https://github.com/ant-design/ant-design-mobile-rn/tree/master/rn-kitchen-sink
