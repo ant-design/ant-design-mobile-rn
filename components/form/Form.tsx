@@ -47,6 +47,7 @@ const InternalForm: React.ForwardRefRenderFunction<FormInstance, FormProps> = (
   const {
     disabled = contextDisabled,
     form,
+    labelStyle,
     layout = 'horizontal',
     requiredMark,
     name,
@@ -77,6 +78,7 @@ const InternalForm: React.ForwardRefRenderFunction<FormInstance, FormProps> = (
   const formContextValue = useMemo<FormContextProps>(
     () => ({
       name,
+      labelStyle,
       layout,
       requiredMark: mergedRequiredMark,
       itemRef: __INTERNAL__.itemRef,

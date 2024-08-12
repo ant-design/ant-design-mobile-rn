@@ -21,7 +21,7 @@ export default (variables: Theme) =>
       backgroundColor: variables.notice_bar_fill,
     },
     container: {
-      height: variables.notice_bar_height,
+      minHeight: variables.notice_bar_height,
       overflow: 'hidden',
       flexDirection: 'row',
       alignItems: 'center',
@@ -34,7 +34,6 @@ export default (variables: Theme) =>
       marginRight: variables.h_spacing_sm,
     },
     actionWrap: {
-      height: '100%',
       justifyContent: 'center',
       paddingRight: variables.h_spacing_lg,
       paddingLeft: variables.h_spacing_sm,
@@ -46,7 +45,6 @@ export default (variables: Theme) =>
     },
     link: {
       transform: [{ rotate: '225deg' }],
-      fontSize: variables.font_size_icontext,
       fontWeight: '500',
       textAlign: 'left',
     },

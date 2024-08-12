@@ -25,7 +25,7 @@ export default (props: ButtonWaveProps) => {
       accessibilityRole="button"
       accessibilityState={accessibilityState}
       background={
-        Platform.Version >= 21
+        +Platform.Version >= 21
           ? TouchableNativeFeedback.Ripple(Color || '', true, 13)
           : TouchableNativeFeedback.SelectableBackground()
       }

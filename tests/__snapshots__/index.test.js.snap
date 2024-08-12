@@ -23,6 +23,7 @@ Array [
   "ListView",
   "List",
   "Modal",
+  "Marquee",
   "NoticeBar",
   "Pagination",
   "PickerView",

@@ -6,7 +6,7 @@ export interface NoticeBarProps {
   action?: React.ReactElement<any>
   children?: React.ReactNode
   icon?: React.ReactElement<any>
-  marqueeProps?: MarqueeProps
+  marqueeProps?: Omit<MarqueeProps, 'children'>
   mode?: 'closable' | 'link'
   onClose?: () => void
   onPress?: () => void
@@ -15,8 +15,9 @@ export interface NoticeBarProps {
 }
 
 export interface MarqueeProps {
-  autoFill?: boolean // 实现方式：first动画结束后跟上second 参考： announcement/index
-  direction?: 'left' | 'right'
+  autoFill?: boolean
+  children: React.ReactNode
+  direction?: 'left' | 'right' | 'up' | 'down'
   fps?: number
   leading?: number
   loop?: boolean | number
@@ -28,4 +29,10 @@ export interface MarqueeProps {
   style?: StyleProp<TextStyle>
   wrapStyle?: StyleProp<ViewStyle>
   trailing?: number
+}
+
+export interface MarqueeActions {
+  play: () => void
+  pause: () => void
+  stop: () => void
 }

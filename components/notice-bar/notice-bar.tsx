@@ -1,12 +1,15 @@
-import React, { memo, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { Text, TouchableWithoutFeedback, View } from 'react-native'
 import Icon from '../icon'
 import { useTheme } from '../style'
 import { Marquee } from './Marquee'
-import { NoticeBarProps } from './PropsType'
+import { MarqueeActions, NoticeBarProps } from './PropsType'
 import NoticeBarStyle from './style'
 
-export function InnerNoticeBar(props: NoticeBarProps) {
+const InnerNoticeBar: React.ForwardRefRenderFunction<
+  MarqueeActions,
+  NoticeBarProps
+> = (props, ref) => {
   const ss = useTheme({
     styles: props.styles,
     themeStyles: NoticeBarStyle,
@@ -58,7 +61,8 @@ export function InnerNoticeBar(props: NoticeBarProps) {
       {Boolean(icon) && <View style={ss.iconWrap}>{icon}</View>}
       <Marquee
         {...marqueeProps}
-        style={[ss.font, ss.marquee, marqueeProps?.style]}>
+        style={[ss.font, ss.marquee, marqueeProps?.style]}
+        ref={ref}>
         {children}
       </Marquee>
       {operationDom}
@@ -75,4 +79,14 @@ export function InnerNoticeBar(props: NoticeBarProps) {
   )
 }
 
-export const NoticeBar = memo(InnerNoticeBar)
+const NoticeBar = React.forwardRef<MarqueeActions, NoticeBarProps>(
+  InnerNoticeBar,
+) as ((
+  props: React.PropsWithChildren<NoticeBarProps> &
+    React.RefAttributes<MarqueeActions>,
+) => React.ReactElement) &
+  Pick<React.FC, 'displayName'>
+
+NoticeBar.displayName = 'NoticeBar'
+
+export default React.memo(NoticeBar)
