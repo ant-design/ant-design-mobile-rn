@@ -126,3 +126,11 @@ yarn android
 ## 欢迎贡献
 
 有任何建议或意见您可以进行 [提问](http://github.com/ant-design/ant-design-mobile-rn/issues)。
+
+---
+
+感谢@ant-design/react-native的所有贡献者：
+
+<a href="https://github.com/ant-design/ant-design-mobile-rn/graphs/contributors">
+  <img src="https://opencollective.com/ant-design-mobile-rn/contributors.svg?width=960&button=false" alt="contributors" />
+</a>
