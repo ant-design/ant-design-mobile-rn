@@ -5,13 +5,13 @@ import {
   GestureResponderEvent,
   StyleProp,
   StyleSheet,
-  Text,
   TouchableHighlight,
   TouchableHighlightProps,
   View,
   ViewStyle,
 } from 'react-native'
 import { WithTheme, WithThemeStyles } from '../style'
+import AntmView from '../view'
 import { ButtonPropsType } from './PropsType'
 import buttonStyles, { ButtonStyles } from './style/index'
 
@@ -140,11 +140,7 @@ export default class Button extends React.Component<ButtonProps, any> {
                     size="small"
                   />
                 ) : null}
-                {typeof this.props.children === 'string' ? (
-                  <Text style={textStyle}>{this.props.children}</Text>
-                ) : (
-                  <>{this.props.children}</>
-                )}
+                <AntmView style={textStyle}>{this.props.children}</AntmView>
               </View>
             </TouchableHighlight>
           )
