@@ -7,7 +7,7 @@ export interface CarouselProps extends ScrollViewProps {
   autoplay?: boolean
   autoplayInterval?: number
   afterChange?: (index: number) => void
-  children: ReactNode
+  children?: ReactNode
   dots?: boolean
   dotActiveStyle?: StyleProp<ViewStyle>
   dotStyle?: StyleProp<ViewStyle>

@@ -12,6 +12,8 @@ import devWarning from '../_util/devWarning'
 import { WithTheme } from '../style'
 import { CarouselProps, PaginationProps } from './PropsType'
 import CarouselStyles from './style/index'
+// fix: Compatible History
+export { CarouselProps, PaginationProps } from './PropsType'
 
 interface NativeScrollPoint {
   x: number

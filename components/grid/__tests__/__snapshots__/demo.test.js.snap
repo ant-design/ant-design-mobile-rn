@@ -926,19 +926,22 @@ exports[`renders ./components/grid/demo/basic.tsx correctly 1`] = `
           }
         }
         directionalLockEnabled={true}
+        disableIntervalMomentum={false}
         dotActiveStyle={Object {}}
         dotStyle={Object {}}
         dots={true}
         horizontal={true}
         infinite={false}
         nestedScrollEnabled={true}
-        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
         onScrollBeginDrag={[Function]}
         onScrollEndDrag={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
         pageStyle={Object {}}
         pagination={[Function]}
         pagingEnabled={true}
-        removeClippedSubviews={false}
+        scrollEventThrottle={16}
         selectedIndex={0}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
