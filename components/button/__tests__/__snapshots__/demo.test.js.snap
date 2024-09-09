@@ -984,22 +984,37 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
         }
       }
     >
-      <Text
+      <View
         style={
           Array [
             Object {
-              "color": "#cccccc",
-              "fontFamily": "antoutline",
-              "fontSize": 22,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
+              "fontSize": 18,
             },
-            undefined,
+            Object {
+              "color": "#ffffff",
+            },
+            false,
+            false,
           ]
         }
       >
-        
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#cccccc",
+                "fontFamily": "antoutline",
+                "fontSize": 22,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              undefined,
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
     </View>
   </View>
 </View>

@@ -1,303 +1,447 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
-<View
+<RCTScrollView
   style={
     Object {
-      "marginTop": 30,
+      "paddingTop": 30,
     }
   }
 >
-  <View
-    style={
-      Object {
-        "paddingHorizontal": 15,
-      }
-    }
-  >
-    <Text>
-      horizontal
-    </Text>
+  <View>
     <View
-      onLayout={[Function]}
+      style={
+        Object {
+          "paddingHorizontal": 15,
+        }
+      }
     >
-      <RCTScrollView
-        accessibilityLabel="Carousel"
-        afterChange={[Function]}
-        automaticallyAdjustContentInsets={false}
-        autoplay={true}
-        autoplayInterval={3000}
-        contentOffset={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        directionalLockEnabled={true}
-        dotActiveStyle={Object {}}
-        dotStyle={Object {}}
-        dots={true}
-        horizontal={true}
-        infinite={true}
-        nestedScrollEnabled={true}
-        onMomentumScrollEnd={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        pageStyle={Object {}}
-        pagination={[Function]}
-        pagingEnabled={true}
-        removeClippedSubviews={false}
-        selectedIndex={2}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "height": 150,
-            "width": "100%",
-          }
-        }
-        vertical={false}
+      <Text>
+        horizontal
+      </Text>
+      <View
+        onLayout={[Function]}
       >
-        <View>
-          <View
-            accessibilityLabel="Carousel_0"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
+        <RCTScrollView
+          accessibilityLabel="Carousel"
+          afterChange={[Function]}
+          automaticallyAdjustContentInsets={false}
+          autoplay={true}
+          autoplayInterval={3000}
+          contentOffset={
+            Object {
+              "x": 0,
+              "y": 0,
             }
-          >
+          }
+          directionalLockEnabled={true}
+          disableIntervalMomentum={false}
+          dotActiveStyle={Object {}}
+          dotStyle={Object {}}
+          dots={true}
+          horizontal={true}
+          infinite={true}
+          nestedScrollEnabled={true}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          pageStyle={Object {}}
+          pagination={[Function]}
+          pagingEnabled={true}
+          scrollEventThrottle={16}
+          selectedIndex={2}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "height": 150,
+              "width": "100%",
+            }
+          }
+          vertical={false}
+        >
+          <View>
             <View
+              accessibilityLabel="Carousel_0"
               style={
                 Array [
+                  Object {},
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "backgroundColor": "fuchsia",
+                    "height": 0,
+                    "width": 0,
                   },
                 ]
               }
             >
-              <Text>
-                Carousel 5
-              </Text>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "fuchsia",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 5
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_1"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "red",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 1
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_2"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "blue",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 2
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_3"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "yellow",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 3
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_4"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "aqua",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 4
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_5"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "fuchsia",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 5
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_6"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "red",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 1
+                </Text>
+              </View>
             </View>
           </View>
+        </RCTScrollView>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "position": "absolute",
+              },
+              Object {
+                "bottom": 10,
+                "left": 0,
+                "right": 0,
+              },
+            ]
+          }
+        >
           <View
-            accessibilityLabel="Carousel_1"
             style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
+              Object {
+                "flexDirection": "row",
+              }
             }
           >
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "red",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  false,
+                  false,
                 ]
               }
-            >
-              <Text>
-                Carousel 1
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_2"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
+            />
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "blue",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  false,
+                  false,
                 ]
               }
-            >
-              <Text>
-                Carousel 2
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_3"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
+            />
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "yellow",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  Object {
+                    "backgroundColor": "#888",
+                  },
+                  Object {},
                 ]
               }
-            >
-              <Text>
-                Carousel 3
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_4"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
+            />
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "aqua",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  false,
+                  false,
                 ]
               }
-            >
-              <Text>
-                Carousel 4
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_5"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
+            />
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "fuchsia",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  false,
+                  false,
                 ]
               }
-            >
-              <Text>
-                Carousel 5
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_6"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "backgroundColor": "red",
-                  },
-                ]
-              }
-            >
-              <Text>
-                Carousel 1
-              </Text>
-            </View>
+            />
           </View>
         </View>
-      </RCTScrollView>
+      </View>
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Array [
             Object {
               "alignItems": "center",
-              "position": "absolute",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
             Object {
-              "bottom": 10,
-              "left": 0,
-              "right": 0,
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
             },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            undefined,
+            undefined,
           ]
         }
       >
@@ -308,637 +452,487 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
             }
           }
         >
-          <View
+          <Text
             style={
               Array [
                 Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
+                  "fontSize": 18,
                 },
                 Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
+                  "color": "#000000",
                 },
-                Object {},
                 false,
                 false,
               ]
             }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                false,
-                false,
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                Object {
-                  "backgroundColor": "#888",
-                },
-                Object {},
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                false,
-                false,
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                false,
-                false,
-              ]
-            }
-          />
+          >
+            Go to 0
+          </Text>
         </View>
       </View>
     </View>
     <View
-      accessibilityRole="button"
-      accessibilityState={
-        Object {
-          "disabled": false,
-        }
-      }
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "justifyContent": "center",
-          },
-          Object {
-            "height": 47,
-            "paddingLeft": 15,
-            "paddingRight": 15,
-          },
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderColor": "#dddddd",
-          },
-          false,
-          false,
-          undefined,
-          undefined,
-        ]
+        Object {
+          "paddingHorizontal": 15,
+        }
       }
     >
+      <Text>
+        vertical
+      </Text>
       <View
-        style={
-          Object {
-            "flexDirection": "row",
-          }
-        }
+        onLayout={[Function]}
       >
-        <Text
+        <RCTScrollView
+          accessibilityLabel="Carousel"
+          afterChange={[Function]}
+          automaticallyAdjustContentInsets={false}
+          autoplay={true}
+          autoplayInterval={3000}
+          contentOffset={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          directionalLockEnabled={true}
+          disableIntervalMomentum={false}
+          dotActiveStyle={Object {}}
+          dotStyle={Object {}}
+          dots={true}
+          horizontal={false}
+          infinite={true}
+          nestedScrollEnabled={true}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          pageStyle={Object {}}
+          pagination={[Function]}
+          pagingEnabled={true}
+          scrollEventThrottle={16}
+          selectedIndex={1}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "height": 150,
+              "width": "100%",
+            }
+          }
+          vertical={true}
+        >
+          <View>
+            <View
+              accessibilityLabel="Carousel_0"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "fuchsia",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 5
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_1"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "red",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 1
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_2"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "blue",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 2
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_3"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "yellow",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 3
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_4"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "aqua",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 4
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_5"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "fuchsia",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 5
+                </Text>
+              </View>
+            </View>
+            <View
+              accessibilityLabel="Carousel_6"
+              style={
+                Array [
+                  Object {},
+                  Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexGrow": 1,
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "backgroundColor": "red",
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  Carousel 1
+                </Text>
+              </View>
+            </View>
+          </View>
+        </RCTScrollView>
+        <View
           style={
             Array [
               Object {
-                "fontSize": 18,
+                "alignItems": "center",
+                "position": "absolute",
               },
               Object {
-                "color": "#000000",
+                "bottom": 0,
+                "right": 10,
+                "top": 0,
               },
-              false,
-              false,
             ]
           }
         >
-          Go to 0
-        </Text>
-      </View>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "paddingHorizontal": 15,
-      }
-    }
-  >
-    <Text>
-      vertical
-    </Text>
-    <View
-      onLayout={[Function]}
-    >
-      <RCTScrollView
-        accessibilityLabel="Carousel"
-        afterChange={[Function]}
-        automaticallyAdjustContentInsets={false}
-        autoplay={true}
-        autoplayInterval={3000}
-        contentOffset={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        directionalLockEnabled={true}
-        dotActiveStyle={Object {}}
-        dotStyle={Object {}}
-        dots={true}
-        horizontal={false}
-        infinite={true}
-        nestedScrollEnabled={true}
-        onMomentumScrollEnd={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        pageStyle={Object {}}
-        pagination={[Function]}
-        pagingEnabled={true}
-        removeClippedSubviews={false}
-        selectedIndex={1}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "height": 150,
-            "width": "100%",
-          }
-        }
-        vertical={true}
-      >
-        <View>
           <View
-            accessibilityLabel="Carousel_0"
             style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
+              Object {
+                "flexDirection": "column",
+              }
             }
           >
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "fuchsia",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  false,
+                  false,
                 ]
               }
-            >
-              <Text>
-                Carousel 5
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_1"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
+            />
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "red",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  Object {
+                    "backgroundColor": "#888",
+                  },
+                  Object {},
                 ]
               }
-            >
-              <Text>
-                Carousel 1
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_2"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
+            />
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "blue",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  false,
+                  false,
                 ]
               }
-            >
-              <Text>
-                Carousel 2
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_3"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
+            />
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "yellow",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  false,
+                  false,
                 ]
               }
-            >
-              <Text>
-                Carousel 3
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_4"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
+            />
             <View
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
+                    "backgroundColor": "#cccccc",
+                    "borderRadius": 8,
+                    "height": 8,
+                    "width": 8,
                   },
                   Object {
-                    "backgroundColor": "aqua",
+                    "marginHorizontal": 2.5,
+                    "marginVertical": 3,
                   },
+                  Object {},
+                  false,
+                  false,
                 ]
               }
-            >
-              <Text>
-                Carousel 4
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_5"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "backgroundColor": "fuchsia",
-                  },
-                ]
-              }
-            >
-              <Text>
-                Carousel 5
-              </Text>
-            </View>
-          </View>
-          <View
-            accessibilityLabel="Carousel_6"
-            style={
-              Array [
-                Object {},
-                Object {
-                  "height": 0,
-                  "width": 0,
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexGrow": 1,
-                    "height": 150,
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "backgroundColor": "red",
-                  },
-                ]
-              }
-            >
-              <Text>
-                Carousel 1
-              </Text>
-            </View>
+            />
           </View>
         </View>
-      </RCTScrollView>
+      </View>
       <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Array [
             Object {
               "alignItems": "center",
-              "position": "absolute",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "justifyContent": "center",
             },
             Object {
-              "bottom": 0,
-              "right": 10,
-              "top": 0,
+              "height": 47,
+              "paddingLeft": 15,
+              "paddingRight": 15,
             },
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#dddddd",
+            },
+            false,
+            false,
+            undefined,
+            undefined,
           ]
         }
       >
         <View
           style={
             Object {
-              "flexDirection": "column",
+              "flexDirection": "row",
             }
           }
         >
-          <View
+          <Text
             style={
               Array [
                 Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
+                  "fontSize": 18,
                 },
                 Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
+                  "color": "#000000",
                 },
-                Object {},
                 false,
                 false,
               ]
             }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                Object {
-                  "backgroundColor": "#888",
-                },
-                Object {},
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                false,
-                false,
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                false,
-                false,
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#cccccc",
-                  "borderRadius": 8,
-                  "height": 8,
-                  "width": 8,
-                },
-                Object {
-                  "marginHorizontal": 2.5,
-                  "marginVertical": 3,
-                },
-                Object {},
-                false,
-                false,
-              ]
-            }
-          />
+          >
+            Toggle autoplay true
+          </Text>
         </View>
       </View>
     </View>
-    <View
-      accessibilityRole="button"
-      accessibilityState={
-        Object {
-          "disabled": false,
-        }
-      }
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "justifyContent": "center",
-          },
-          Object {
-            "height": 47,
-            "paddingLeft": 15,
-            "paddingRight": 15,
-          },
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderColor": "#dddddd",
-          },
-          false,
-          false,
-          undefined,
-          undefined,
-        ]
-      }
-    >
-      <View
-        style={
-          Object {
-            "flexDirection": "row",
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "fontSize": 18,
-              },
-              Object {
-                "color": "#000000",
-              },
-              false,
-              false,
-            ]
-          }
-        >
-          Toggle autoplay true
-        </Text>
-      </View>
-    </View>
   </View>
-</View>
+</RCTScrollView>
 `;
