@@ -1,48 +1,21 @@
 import React from 'react'
 import {
-  LayoutRectangle,
+  GestureResponderEvent,
+  LayoutChangeEvent,
   NativeScrollEvent,
   NativeSyntheticEvent,
   Platform,
   ScrollView,
-  ScrollViewProps,
-  StyleProp,
   View,
-  ViewStyle,
 } from 'react-native'
 import devWarning from '../_util/devWarning'
-import { WithTheme, WithThemeStyles } from '../style'
-import CarouselStyles, { CarouselStyle } from './style/index'
-
-export interface CarouselPropsType
-  extends WithThemeStyles<CarouselStyle>,
-    ScrollViewProps {
-  accessibilityLabel?: string
-  pageStyle?: ViewStyle
-  children?: React.ReactNode
-
-  selectedIndex?: number
-  dots?: boolean
-  vertical?: boolean
-  autoplay?: boolean
-  autoplayInterval?: number
-  infinite?: boolean
-}
-
-export interface CarouselProps extends CarouselPropsType {
-  style?: StyleProp<ViewStyle>
-  dotStyle?: StyleProp<ViewStyle>
-  dotActiveStyle?: StyleProp<ViewStyle>
-  pagination?: (props: PaginationProps) => React.ReactNode
-  afterChange?: (index: number) => void
-}
+import { WithTheme } from '../style'
+import { CarouselProps, PaginationProps } from './PropsType'
+import CarouselStyles from './style/index'
 
 interface NativeScrollPoint {
   x: number
   y: number
-}
-interface TargetedEvent {
-  target: number
 }
 
 export interface CarouselState {
@@ -50,17 +23,7 @@ export interface CarouselState {
   height: number
   selectedIndex: number
   afterSelectedIndex: number
-  isScrolling: boolean
   offset: NativeScrollPoint
-}
-
-export interface PaginationProps {
-  vertical?: boolean
-  current: number
-  count: number
-  styles: ReturnType<typeof CarouselStyles>
-  dotStyle?: StyleProp<ViewStyle>
-  dotActiveStyle?: StyleProp<ViewStyle>
 }
 
 const defaultPagination = (props: PaginationProps) => {
@@ -89,7 +52,7 @@ const defaultPagination = (props: PaginationProps) => {
   )
 }
 class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
-  static defaultProps: CarouselProps = {
+  static defaultProps = {
     accessibilityLabel: 'Carousel',
     pageStyle: {},
 
@@ -116,7 +79,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     this.state = {
       width: 0,
       height: 0,
-      isScrolling: false,
       selectedIndex: index,
       afterSelectedIndex: -1,
       offset: { x: 0, y: 0 },
@@ -132,13 +94,11 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     const { width, height } = this.state
     if (autoplay !== this.props.autoplay) {
       if (autoplay) {
-        this.autoplay()
+        this.autoplay(autoplay)
       } else {
-        this.autoplayTimer && clearTimeout(this.autoplayTimer)
+        this.clearTimeout()
       }
     }
-    // selectedIndex only take effect once
-    // ...
 
     if (
       children &&
@@ -153,7 +113,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       : { x: width * (infinite ? 1 : 0), y: 0 }
     this.setState(
       {
-        isScrolling: false,
         afterSelectedIndex: -1,
         selectedIndex: 0,
         offset: offset,
@@ -165,84 +124,108 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     )
   }
 
-  private autoplayTimer: ReturnType<typeof setTimeout>
-  private scrollEndTimter: ReturnType<typeof setTimeout>
+  private autoplayTimer: ReturnType<typeof setTimeout> | undefined
+  private isScrolling: boolean | undefined
 
   componentWillUnmount() {
-    this.autoplayTimer && clearTimeout(this.autoplayTimer)
-    this.scrollEndTimter && clearTimeout(this.scrollEndTimter)
+    this.clearTimeout()
   }
 
-  onScrollBegin = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    this.setState(
-      {
-        isScrolling: true,
-      },
-      () => {
-        if (this.props.onScrollBeginDrag) {
-          this.props.onScrollBeginDrag(e)
-        }
-      },
+  /**
+   * Plathform: iOS & android
+   * 手势介入时: onScrollBeginDrag -> onScrollEndDrag
+   * **/
+  private onScrollBeginDrag = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    this.isScrolling = true
+
+    if (this.props.onScrollBeginDrag) {
+      this.props.onScrollBeginDrag(e)
+    }
+  }
+  private onScrollEndDrag = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    this.isScrolling = false
+    // fix: drag page in Perfect fit
+    this.onScrollAnimationEnd(
+      JSON.parse(JSON.stringify(e.nativeEvent.contentOffset)),
     )
-  }
 
-  onScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    e.persist?.()
-    // android/web hack
-    if (!e.nativeEvent.contentOffset) {
-      //@ts-ignore
-      const { position } = e.nativeEvent
-      e.nativeEvent.contentOffset = {
-        x: this.props.vertical ? 0 : position * this.state.width,
-        y: this.props.vertical ? position * this.state.height : 0,
-      }
-    }
-    this.autoplay()
-    clearTimeout(this.scrollEndTimter)
-    this.scrollEndTimter = setTimeout(() => {
-      this.updateIndex(e.nativeEvent.contentOffset)
-
-      if (this.props.onMomentumScrollEnd) {
-        this.props.onMomentumScrollEnd(e)
-      }
-    }, 50) //idle time
-  }
-
-  onScrollEndDrag = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    e.persist?.()
-    const { offset, selectedIndex } = this.state
-    const previousOffset = offset
-    const newOffset = e.nativeEvent.contentOffset
-    if (
-      (this.props.vertical
-        ? previousOffset.y === newOffset.y
-        : previousOffset.x === newOffset.x) &&
-      (selectedIndex === 0 || selectedIndex === this.count - 1)
-    ) {
-      this.setState({
-        isScrolling: false,
-      })
-    }
     if (this.props.onScrollEndDrag) {
       this.props.onScrollEndDrag(e)
     }
   }
 
-  onTouchStartForWeb = () => {
-    this.setState({ isScrolling: true })
+  /**
+   * Plathform: web
+   * 手势介入时: onTouchStart -> onScroll…onScroll(只要动了就会触发) -> onTouchEnd -> onScroll(动画结束时触发)
+   * autoplay: [onScroll...onScroll] -> onScroll(动画结束时触发)
+   * **/
+  private onTouchStartForWeb = (e: GestureResponderEvent) => {
+    this.isScrolling = true
+    if (this.props.onTouchStart) {
+      this.props.onTouchStart(e)
+    }
+  }
+  private onTouchEndForWeb = (e: GestureResponderEvent) => {
+    this.isScrolling = false
+    if (this.props.onTouchEnd) {
+      this.props.onTouchEnd(e)
+    }
   }
 
-  onTouchEndForWeb = () => {
-    this.autoplay()
+  private onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    // Simulate infinite pages
+    if (this.props.infinite) {
+      const contentOffset = JSON.parse(
+        JSON.stringify(e.nativeEvent.contentOffset),
+      )
+      const { width, height } = this.state
+
+      const offset = this.props.vertical ? 'y' : 'x'
+      const maxOffset =
+        (this.props.vertical ? height : width) * (this.count + 1)
+
+      if (contentOffset[offset] <= 0) {
+        contentOffset[offset] = 0
+        this.updateIndex(contentOffset)
+      } else if (contentOffset[offset] >= maxOffset) {
+        contentOffset[offset] = maxOffset
+        this.updateIndex(contentOffset)
+      }
+    }
+
+    this.onScrollAnimationEnd(
+      JSON.parse(JSON.stringify(e.nativeEvent.contentOffset)),
+    )
+
+    if (this.props.onScroll) {
+      this.props.onScroll(e)
+    }
+  }
+  /**
+   * 所有scroll事件结束时触发
+   * **/
+  private onScrollAnimationEnd = (currentOffset: NativeScrollPoint) => {
+    const { x, y } = currentOffset
+    const { width, height } = this.state
+    // 🌟 fix: `onMomentumScrollEnd` & `onScrollAnimationEnd` not support for web & android 🌟
+    const isScrollAnimationEnd =
+      !this.isScrolling &&
+      (this.props.vertical ? y / height : x / width) % 1 === 0
+
+    if (isScrollAnimationEnd) {
+      this.updateIndex(currentOffset)
+      this.autoplay()
+    }
   }
 
-  onScrollForWeb = (e: any) => {
-    this.onScrollEnd(JSON.parse(JSON.stringify(e)))
+  private clearTimeout = () => {
+    if (this.autoplayTimer) {
+      clearTimeout(this.autoplayTimer)
+      this.autoplayTimer = undefined
+    }
   }
 
-  onLayout = (
-    e: NativeSyntheticEvent<TargetedEvent & { layout: LayoutRectangle }>,
-  ) => {
+  private onLayout = (e: LayoutChangeEvent) => {
     const { selectedIndex, infinite, vertical } = this.props
     const scrollIndex =
       (this.count > 1 && Math.min(selectedIndex as number, this.count - 1)) || 0
@@ -263,8 +246,8 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
         offset,
       },
       () => {
-        // web
-        this.scrollview?.current?.scrollTo({ ...offset, animated: false })
+        // web & android
+        this.scrollview?.current?.scrollTo({ ...offset, animated: true })
         this.autoplay()
       },
     )
@@ -351,8 +334,8 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   }
 
   scrollNextPage = () => {
-    const { selectedIndex, isScrolling, width, height } = this.state
-    if (isScrolling || this.count < 2) {
+    const { selectedIndex, width, height } = this.state
+    if (this.isScrolling || this.count < 2) {
       return
     }
     const diff = selectedIndex + 1 + (this.props.infinite ? 1 : 0)
@@ -360,22 +343,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       this.props.vertical
         ? { x: 0, y: diff * height }
         : { x: diff * width, y: 0 },
-    )
-
-    this.setState(
-      {
-        isScrolling: true,
-      },
-      () => {
-        if (Platform.OS !== 'ios') {
-          this.onScrollEnd({
-            nativeEvent: {
-              // @ts-ignore
-              position: diff,
-            },
-          })
-        }
-      },
     )
   }
 
@@ -441,48 +408,37 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     )
   }
 
-  private autoplay = () => {
-    this.setState({ isScrolling: false }, () => {
-      const { children, autoplay, autoplayInterval, infinite } = this.props
-      const { selectedIndex } = this.state
-      if (!Array.isArray(children) || !autoplay) {
-        return
-      }
-      clearTimeout(this.autoplayTimer)
-      this.autoplayTimer = setTimeout(() => {
-        if (!infinite && selectedIndex + 1 === this.count - 1) {
-          return
-        }
-        this.scrollNextPage()
-      }, autoplayInterval)
-    })
+  private autoplay = (autoplay = this.props.autoplay) => {
+    const { children, autoplayInterval } = this.props
+    if (!Array.isArray(children) || !autoplay) {
+      return
+    }
+    this.clearTimeout()
+    this.autoplayTimer = setTimeout(() => {
+      this.scrollNextPage()
+    }, autoplayInterval)
   }
 
   private renderScroll = (pages: React.ReactNode) => {
     return (
       <ScrollView
-        nestedScrollEnabled
-        {...this.props}
-        horizontal={!this.props.vertical}
-        ref={this.scrollview as any}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        pagingEnabled={true}
-        removeClippedSubviews={false}
         automaticallyAdjustContentInsets={false}
         directionalLockEnabled={true}
+        disableIntervalMomentum={false}
+        nestedScrollEnabled
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        scrollEventThrottle={Platform.OS === 'web' ? 0 : 16}
+        {...this.props}
+        ref={this.scrollview as any}
+        horizontal={!this.props.vertical}
+        pagingEnabled={true}
         contentOffset={this.state.offset}
-        onScrollBeginDrag={this.onScrollBegin}
-        onMomentumScrollEnd={this.onScrollEnd}
+        onScrollBeginDrag={this.onScrollBeginDrag}
         onScrollEndDrag={this.onScrollEndDrag}
-        {...(Platform.OS === 'web'
-          ? {
-              onTouchStart: this.onTouchStartForWeb,
-              onTouchEnd: this.onTouchEndForWeb,
-              onScroll: this.onScrollForWeb,
-              scrollEventThrottle: 0,
-            }
-          : {})}>
+        onScroll={this.onScroll}
+        onTouchStart={this.onTouchStartForWeb}
+        onTouchEnd={this.onTouchEndForWeb}>
         {pages}
       </ScrollView>
     )
