@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 5.2.3
+`2024-09-09`
+- 🔥 **Carousel**
+  - fix: Carousel自动切换和手动切换冲突。[#1259](https://github.com/ant-design/ant-design-mobile-rn/issues/1259)
+- fix: **Button** `children` 支持 `string[]` 类型。[~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/ce08b346cd1f53c39ea9cd861626247880720af4)
+
 ### 5.2.2
 `2024-08-12`
 - 🔥 **NoticeBar**
