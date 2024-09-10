@@ -30,17 +30,17 @@ Ant Design 移动端设计规范。`@ant-design/react-native` 是 Ant Design 的
 > HTML5 预览: [ant-design-mobile-rn/index.html](https://1uokun.github.io/ant-design-mobile-rn/index.html)
 
 
-|SDK 49+|
+|SDK 51|
 |--|
-| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=bbf0a647-4ff2-46bd-9aad-dfd81bc6ba08" />](https://expo.dev/preview/update?message=5.2.2&updateRuntimeVersion=5.2.2&createdAt=2024-08-12T13%3A33%3A56.096Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=bbf0a647-4ff2-46bd-9aad-dfd81bc6ba08) |
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=2e623b22-08d9-4ab2-92f2-017c7a92d5aa" />](https://expo.dev/preview/update?message=5.2.3&updateRuntimeVersion=5.2.3&createdAt=2024-09-09T09%3A01%3A36.394Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=2e623b22-08d9-4ab2-92f2-017c7a92d5aa) |
 
 提示：使用本地原相机扫瞄上面的二维码, 需要下载 Expo App: https://expo.io/tools
 
-<details><summary>Expo SDK历史版本</summary>
+<details><summary>Expo SDK(44, 47, 49, 50) 历史版本</summary>
 
-|Expo SDK 44|SDK 47 iOS|SDK 47 Android|
-|--|--|--|
-| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=38b3a547-ab2b-4066-95ed-400f1707dcc6&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=05f0e308-2dd5-4cb9-9e6b-1ae31561bfee&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) |
+|Expo SDK 44|SDK 47 iOS|SDK 47 Android|SDK 49,50|
+|--|--|--|--|
+| [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/expo-go?owner=1uokun&slug=ant-design-mobile-rn&releaseChannel=default&host=exp.host" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=38b3a547-ab2b-4066-95ed-400f1707dcc6&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?updateId=05f0e308-2dd5-4cb9-9e6b-1ae31561bfee&appScheme=exp&host=u.expo.dev" />](https://expo.dev/@1uokun/ant-design-mobile-rn) | [<img width="250" alt="expo/ant-design-mobile-rn" src="https://qr.expo.dev/eas-update?slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&groupId=bbf0a647-4ff2-46bd-9aad-dfd81bc6ba08" />](https://expo.dev/preview/update?message=5.2.2&updateRuntimeVersion=5.2.2&createdAt=2024-08-12T13%3A33%3A56.096Z&slug=exp&projectId=7729a68b-f881-4294-89f5-5ae751bfb2b2&group=bbf0a647-4ff2-46bd-9aad-dfd81bc6ba08) |
 </details>
 
 ## 安装 & 使用
@@ -126,3 +126,11 @@ yarn android
 ## 欢迎贡献
 
 有任何建议或意见您可以进行 [提问](http://github.com/ant-design/ant-design-mobile-rn/issues)。
+
+---
+
+感谢@ant-design/react-native的所有贡献者：
+
+<a href="https://github.com/ant-design/ant-design-mobile-rn/graphs/contributors">
+  <img src="https://opencollective.com/ant-design-mobile-rn/contributors.svg?width=960&button=false" alt="contributors" />
+</a>

@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 5.2.3
+`2024-09-09`
+- 🔥 **Carousel**
+  - fix: Carousel autoplay and manual conflict. [#1259](https://github.com/ant-design/ant-design-mobile-rn/issues/1259)
+- fix: **Button** `children` support `string[]` type. [~commit](https://github.com/ant-design/ant-design-mobile-rn/commit/ce08b346cd1f53c39ea9cd861626247880720af4)
+
 ### 5.2.2
 `2024-08-12`
 - 🔥 **NoticeBar**
