@@ -37,7 +37,7 @@ Properties | Descrition | Type | Default
 interface ModalStyle {
   container: ViewStyle      // Set `z-index`
   wrap: ViewStyle           // Set modal `flex center`
-  innerContainer: ViewStyle // modal content view
+  innerContainer: ViewStyle // modal content view, default: `{ widh:286 }`
   
   // modal content fields
   footer: ViewStyle

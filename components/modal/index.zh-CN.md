@@ -38,7 +38,7 @@ subtitle: 对话框
 interface ModalStyle {
   container: ViewStyle      // 设置了`z-index`
   wrap: ViewStyle           // 设置了modal的 垂直居中&水平居中
-  innerContainer: ViewStyle // modal主要内容区域
+  innerContainer: ViewStyle // modal主要内容区域, 默认：`{ width:286 }`
 
   // modal内容组成的各个元素样式
   footer: ViewStyle
