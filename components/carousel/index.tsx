@@ -249,7 +249,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       },
       () => {
         // web & android
-        this.scrollview?.current?.scrollTo({ ...offset, animated: true })
+        this.scrollview?.current?.scrollTo({ ...offset, animated: false })
         this.autoplay()
       },
     )
