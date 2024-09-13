@@ -28,7 +28,41 @@ subtitle: 对话框
 | animationType | 可选: 'fade' / 'slide' | String | fade |
 | title | 标题 | React.Element | 无 |
 | footer | 底部内容 | Array [{text, onPress}] | [] |
-| onRequestClose | `onRequestClose`回调会在用户按下 Android 设备上的后退按键或是 Apple TV 上的菜单键时触发。返回true时会在 modal 处于开启状态时阻止`BackHandler`事件。| (): boolean | false | 
+| onRequestClose | `onRequestClose`回调会在用户按下 Android 设备上的后退按键或是 Apple TV 上的菜单键时触发。返回true时会在 modal 处于开启状态时阻止`BackHandler`事件。| (): boolean | false |
+| style | 样式，同`styles.innerContainer` | `ViewStyle` | - |
+| styles | 语义化结构 style | [ModalStyle](#modalstyle-语义化样式) | - |
+
+### ModalStyle 语义化样式
+
+```typescript
+interface ModalStyle {
+  container: ViewStyle      // 设置了`z-index`
+  wrap: ViewStyle           // 设置了modal的 垂直居中&水平居中
+  innerContainer: ViewStyle // modal主要内容区域
+
+  // modal内容组成的各个元素样式
+  footer: ViewStyle
+  header: TextStyle
+  body: ViewStyle
+  closeWrap: ViewStyle
+  close: TextStyle
+  buttonGroupH: ViewStyle
+  buttonGroupV: ViewStyle
+  buttonWrapH: ViewStyle
+  buttonWrapV: ViewStyle
+  buttonText: TextStyle
+
+  // popup
+  popupContainer: ViewStyle
+  popupSlideUp: ViewStyle
+  popupSlideDown: ViewStyle
+
+  // operation
+  operationContainer: ViewStyle
+  operationBody: ViewStyle
+  buttonTextOperation: TextStyle
+}
+```
 
 ## 静态方法
 ### Modal.alert(title, message, actions?, platform?)

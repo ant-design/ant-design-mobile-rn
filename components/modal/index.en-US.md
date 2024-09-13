@@ -28,6 +28,39 @@ Properties | Descrition | Type | Default
 | title | title | React.Element | - |
 | footer | footer content | Array [{text, onPress}] | [] |
 | onRequestClose | The `onRequestClose` callback is called when the user taps the hardware back button on Android or the menu button on Apple TV. Returns `true` to prevent `BackHandler` events when modal is open.| (): boolean | false |
+| style | style same as `styles.innerContainer` | `ViewStyle` | - |
+| styles | Semantic DOM style | [ModalStyle](#modalstyle-interface) | - |
+
+### ModalStyle interface
+
+```typescript
+interface ModalStyle {
+  container: ViewStyle      // Set `z-index`
+  wrap: ViewStyle           // Set modal `flex center`
+  innerContainer: ViewStyle // modal content view
+  
+  // modal content fields
+  footer: ViewStyle
+  header: TextStyle
+  body: ViewStyle
+  closeWrap: ViewStyle
+  close: TextStyle
+  buttonGroupH: ViewStyle
+  buttonGroupV: ViewStyle
+  buttonWrapH: ViewStyle
+  buttonWrapV: ViewStyle
+  buttonText: TextStyle
+
+  // popup
+  popupContainer: ViewStyle
+  popupSlideUp: ViewStyle
+  popupSlideDown: ViewStyle
+  // operation
+  operationContainer: ViewStyle
+  operationBody: ViewStyle
+  buttonTextOperation: TextStyle
+}
+```
 
 ### Modal.alert(title, message, actions?)
 
