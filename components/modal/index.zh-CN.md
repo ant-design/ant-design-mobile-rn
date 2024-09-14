@@ -37,7 +37,7 @@ subtitle: 对话框
 ```typescript
 interface ModalStyle {
   container: ViewStyle      // 设置了`z-index`
-  wrap: ViewStyle           // 设置了modal的 垂直居中&水平居中
+  wrap: ViewStyle           // 设置了modal的flex布局，默认： `{justifyContent: 'center',alignItems: 'center'}`
   innerContainer: ViewStyle // modal主要内容区域, 默认：`{ width:286 }`
 
   // modal内容组成的各个元素样式
