@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native'
 
-import { List, Slider, Toast } from '../../'
+import { List, Slider, Switch, Toast } from '../../'
 
 export default function StepperExample() {
+  useEffect(() => {
+    Toast.config({ stackable: false })
+  }, [])
+
+  const [disabledStep, setDisabledStep] = useState(false)
   const marks = {
     0: 0,
-    20: 20,
+    // 20: 20,
     40: 40,
-    60: 60,
+    60: '',
     80: 80,
     100: 100,
   }
@@ -25,19 +30,54 @@ export default function StepperExample() {
 
   return (
     <ScrollView>
-      <List renderHeader={'基础用法'}>
+      <List>
+        <List.Item
+          extra={
+            <Switch
+              checked={disabledStep}
+              onChange={(val) => {
+                setDisabledStep(val)
+              }}
+            />
+          }>
+          Disabled Step
+          <List.Item.Brief>
+            是否禁用步距；禁用后`onChange`将返回带有小数点的值
+          </List.Item.Brief>
+        </List.Item>
+      </List>
+      <List
+        renderHeader={'基础用法'}
+        onStartShouldSetResponder={() => true}
+        onTouchStart={(e) => e.stopPropagation()}>
         <List.Item>
-          <Slider onAfterChange={toastValue} />
+          <Slider
+            max={1}
+            disabledStep={disabledStep}
+            onChange={toastValue}
+            onAfterChange={toastValue}
+            onSlidingStart={(val, index) =>
+              console.log('onSlidingStart', { val, index })
+            }
+            onSlidingComplete={(val, index) =>
+              console.log('onSlidingComplete', { val, index })
+            }
+          />
         </List.Item>
       </List>
       <List renderHeader={'显示刻度(ticks)并指定步距(step)'}>
         <List.Item>
-          <Slider ticks step={10} defaultValue={40} />
+          <Slider
+            ticks
+            step={10}
+            defaultValue={40}
+            disabledStep={disabledStep}
+          />
         </List.Item>
       </List>
       <List renderHeader={'传入刻度标记(marks)'}>
         <List.Item>
-          <Slider marks={marks} ticks step={20} />
+          <Slider marks={marks} ticks disabledStep={disabledStep} />
         </List.Item>
       </List>
       <List renderHeader={'最大(max)/最小值(min)'}>

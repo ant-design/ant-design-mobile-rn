@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react'
-import React, { useContext, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import {
   LayoutChangeEvent,
   LayoutRectangle,
@@ -9,7 +9,6 @@ import {
 } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
 import Animated, { runOnJS, useAnimatedStyle } from 'react-native-reanimated'
-import HapticsContext from '../provider/HapticsContext'
 import Tooltip from '../tooltip'
 import { SliderStyle } from './style'
 import { ThumbIcon } from './thumb-icon'
@@ -19,8 +18,10 @@ type ThumbProps = {
   min: number
   max: number
   disabled: boolean
+  isSliding: boolean
   trackLayout?: LayoutRectangle
   onDrag: (value: number, last?: boolean) => void
+  onSlidingStart: () => void
   icon?: ReactNode
   popover: boolean | ((value: number) => ReactNode)
   residentPopover: boolean
@@ -38,8 +39,10 @@ const Thumb: FC<ThumbProps> = (props) => {
     icon,
     residentPopover,
     onDrag,
+    onSlidingStart,
     style,
     styles,
+    isSliding,
   } = props
 
   const [thumbLayout, setThumbLayout] = useState<LayoutRectangle | undefined>()
@@ -60,21 +63,22 @@ const Thumb: FC<ThumbProps> = (props) => {
   }, [max, min, thumbLayout?.width, trackLayout?.width, value])
 
   const [dragging, setDragging] = useState(false)
-  const onHaptics = useContext(HapticsContext)
 
-  const gesture = Gesture.Pan()
-    .enabled(!disabled)
-    .onBegin(() => runOnJS(onHaptics)('slider'))
-    .onUpdate((e) => {
-      !dragging && runOnJS(setDragging)(true)
-      runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))
-    })
-    .onEnd((e) => {
-      runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0), true)
-    })
-    .onFinalize(() => {
-      runOnJS(setDragging)(false)
-    })
+  const gesture = useMemo(
+    () =>
+      Gesture.Pan()
+        .enabled(!disabled)
+        .onBegin(() => runOnJS(onSlidingStart)())
+        .onUpdate((e) => {
+          !dragging && runOnJS(setDragging)(true)
+          runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))
+        })
+        .onFinalize((e) => {
+          runOnJS(setDragging)(false)
+          runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0), true)
+        }),
+    [disabled, dragging, onDrag, onSlidingStart, thumbLayout?.width],
+  )
 
   const renderPopoverContent =
     typeof props.popover === 'function'
@@ -95,7 +99,7 @@ const Thumb: FC<ThumbProps> = (props) => {
           <Tooltip
             content={renderPopoverContent(value)}
             placement="top"
-            visible={residentPopover || dragging}
+            visible={residentPopover || dragging || isSliding}
             mode="dark">
             <View style={{ flex: 1 }}>{thumbElement}</View>
           </Tooltip>
