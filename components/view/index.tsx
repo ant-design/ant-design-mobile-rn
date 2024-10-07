@@ -9,7 +9,7 @@ import {
   ViewStyle,
 } from 'react-native'
 
-interface ViewInterface extends ViewProps, TextProps {
+export interface ViewInterface extends ViewProps, TextProps {
   children?: React.ReactNode | React.ReactText
   style?: StyleProp<ViewStyle> | StyleProp<TextStyle>
 }

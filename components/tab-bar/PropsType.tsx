@@ -1,5 +1,13 @@
 import React from 'react'
-import { ImageRequireSource, ImageURISource } from 'react-native'
+import {
+  ImageRequireSource,
+  ImageStyle,
+  ImageURISource,
+  StyleProp,
+  ViewStyle,
+} from 'react-native'
+import TabBarItem from './TabBarItem'
+import { TabBarStyle } from './style'
 
 export interface TabBarProps {
   barTintColor?: string
@@ -7,6 +15,8 @@ export interface TabBarProps {
   unselectedTintColor?: string
   animated?: boolean
   swipeable?: boolean
+  styles?: TabBarStyle
+  children: React.ReactElement<TabBarItem>[] | React.ReactElement<TabBarItem>
 }
 export type TabBarIcon =
   | ImageURISource
@@ -20,4 +30,11 @@ export interface TabBarItemProps {
   icon?: TabBarIcon
   selectedIcon?: TabBarIcon
   title: string
+  tintColor?: string
+  unselectedTintColor?: string
+  iconStyle?: StyleProp<ImageStyle>
+  renderAsOriginal?: boolean
+  style?: StyleProp<ViewStyle>
+  styles?: TabBarStyle
+  children?: React.ReactNode
 }
