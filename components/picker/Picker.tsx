@@ -59,6 +59,7 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
     innerValue,
     columns,
     handleSelect,
+    modalType,
     ...restProps
   } = props
 
@@ -190,7 +191,8 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
         onDismiss={handleDismiss}
         onClose={actions.close}
         okButtonProps={okButtonProps}
-        dismissButtonProps={dismissButtonProps}>
+        dismissButtonProps={dismissButtonProps}
+        modalType={modalType}>
         {/* TODO: 组件卸载是在visible更新fasle之后,需要前置 */}
         {/* 否则会无效执行onPickerChange */}
         {innerVisible && (
