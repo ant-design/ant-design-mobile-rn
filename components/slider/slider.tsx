@@ -50,6 +50,7 @@ export function Slider<SliderValue extends number | [number, number]>(
     range,
     style,
     styles,
+    tapToSeek = true,
     ticks,
   } = props as BaseSliderProps<SliderValue> & { range: boolean }
 
@@ -324,37 +325,38 @@ export function Slider<SliderValue extends number | [number, number]>(
   }
 
   const gesture = React.useMemo(() => {
-    const pan = Gesture.Pan()
+    const horizontalPan = Gesture.Pan()
       .enabled(!disabled && !range)
-      .onBegin(() => runOnJS(onSlidingStartI)())
+      .failOffsetY([-1, 1]) // must horizontal
+      .onStart(() => runOnJS(onSlidingStartI)())
       .onUpdate((e) => {
-        // 这里的e.x和e.absoluteX是指手势点的位置，而不是thumb的位置
         runOnJS(onSlide)(e.translationX, false)
       })
       .onEnd((e) => {
         runOnJS(onSlide)(e.translationX, true)
       })
-      .onFinalize((_e, success) => {
-        !success && runOnJS(onAfterChangeRange)(sliderValue)
+
+    // long press in 350ms
+    const longPan = Gesture.Pan()
+      .enabled(!disabled && !range)
+      .activateAfterLongPress(350)
+      .onStart(() => runOnJS(onSlidingStartI)())
+      .onUpdate((e) => {
+        runOnJS(onSlide)(e.translationX, false)
+      })
+      .onEnd((e) => {
+        runOnJS(onSlide)(e.translationX, true)
       })
 
-    // 点击
     const tap = Gesture.Tap()
-      .enabled(!disabled)
+      .enabled(!disabled && tapToSeek)
+      .maxDistance(0)
       .onFinalize((e, success) => {
         success && runOnJS(onTrackClick)(e)
       })
 
-    return Gesture.Race(pan, tap)
-  }, [
-    disabled,
-    onAfterChangeRange,
-    onSlide,
-    onSlidingStartI,
-    onTrackClick,
-    range,
-    sliderValue,
-  ])
+    return Gesture.Simultaneous(horizontalPan, longPan, tap)
+  }, [disabled, onSlide, onSlidingStartI, onTrackClick, range, tapToSeek])
 
   return (
     <GestureDetector gesture={gesture}>
