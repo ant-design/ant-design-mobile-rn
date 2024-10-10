@@ -1,10 +1,11 @@
+import useMergedState from 'rc-util/lib/hooks/useMergedState'
+import useState from 'rc-util/lib/hooks/useState'
 import React, {
   forwardRef,
   useCallback,
   useEffect,
   useImperativeHandle,
   useMemo,
-  useState,
 } from 'react'
 import { mergeProps } from '../_util/with-default-props'
 import {
@@ -29,14 +30,21 @@ const defaultProps = {
 const Picker = forwardRef<PickerRef, PickerProps>((props, ref) => {
   const p = mergeProps(defaultProps, props)
 
-  const [innerValue, setInnerValue] = useState<PickerValue[]>(
-    p.value === undefined ? p.defaultValue : p.value,
-  )
+  // ============ Effect ===========
+  const [valueProp, setValueProp] = useMergedState<PickerValue[]>([], {
+    value: p.value,
+    defaultValue: p.defaultValue,
+  })
+  const [innerValue, setInnerValue] = useState<PickerValue[]>(valueProp)
+  useEffect(() => {
+    setInnerValue(valueProp)
+  }, [valueProp])
 
+  // ============ Ref ===========
   const pickerRef = React.useRef<PickerRef>(null)
-
   useImperativeHandle(ref, () => pickerRef.current as PickerRef)
 
+  // ============ Columns ===========
   const columns = useMemo(
     () => getColumns(p.data, innerValue, p.cols, p.cascade),
     [p.data, innerValue, p.cols, p.cascade],
@@ -56,25 +64,27 @@ const Picker = forwardRef<PickerRef, PickerProps>((props, ref) => {
   const onVisibleChange = useCallback(
     (visible) => {
       p.onVisibleChange?.(visible)
-      if (!visible && p.value !== innerValue) {
-        // 关闭时，如果选中值不同步，恢复为原选中值
-        setInnerValue(p.value || [])
-      }
+      valueProp && setInnerValue(valueProp)
     },
-    [innerValue, p],
+    [p, valueProp],
   )
 
-  useEffect(() => {
-    setInnerValue(p.value || [])
-  }, [p.value])
+  const onOk = useCallback(
+    (value: PickerValue[], extend: PickerValueExtend) => {
+      p.onOk?.(value, extend)
+      setValueProp(value)
+    },
+    [p, setValueProp],
+  )
 
   return (
     <RMCPicker
       {...p}
-      innerValue={innerValue}
+      value={innerValue}
       columns={columns}
       handleSelect={handleSelect}
       onVisibleChange={onVisibleChange}
+      onOk={onOk}
       ref={pickerRef}
     />
   )
