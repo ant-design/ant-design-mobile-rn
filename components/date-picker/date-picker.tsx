@@ -26,7 +26,6 @@ export type DatePickerRef = any
 export interface DatePickerProps extends DatePickerPropsType {}
 
 const defaultProps = {
-  defaultDate: new Date(),
   minDate: new Date('2000-1-1'),
   maxDate: new Date('2030-1-1'),
   precision: 'day',
@@ -155,7 +154,11 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
   const onVisibleChange = useCallback(
     (visible) => {
       p.onVisibleChange?.(visible)
-      valueProp && setInnerValue(valueProp)
+      if (visible && !valueProp) {
+        setInnerValue(new Date())
+      } else {
+        setInnerValue(valueProp)
+      }
     },
     [p, valueProp],
   )
