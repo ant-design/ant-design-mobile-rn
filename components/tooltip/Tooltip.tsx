@@ -151,6 +151,13 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     themeStyles: TooltipStylesMemo,
   })
 
+  const safeFloatingStyles = useMemo(() => {
+    if (isNaN(floatingStyles.left) || isNaN(floatingStyles.top)) {
+      return { display: 'none' } as const
+    }
+    return floatingStyles
+  }, [floatingStyles])
+
   return (
     <>
       <Wrapper
@@ -169,7 +176,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
               ref={refs.setFloating}
               onLayout={update}
               collapsable={false}
-              style={[ss.tooltip, floatingStyles, style]}>
+              style={[ss.tooltip, safeFloatingStyles, style]}>
               <View
                 style={[ss.arrow, arrowPosition]}
                 ref={arrowRef}

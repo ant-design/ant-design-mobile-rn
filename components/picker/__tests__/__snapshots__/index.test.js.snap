@@ -18,6 +18,7 @@ Array [
       extra="请选择"
       onPress={[Function]}
       testID="button"
+      value={Array []}
     >
       省市选择
     </Text>

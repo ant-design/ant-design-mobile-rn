@@ -4,11 +4,17 @@ import { getComponentLocale } from '../_util/getLocale'
 import { LocaleContext } from '../locale-provider'
 import { WithTheme, WithThemeStyles } from '../style'
 import Modal from './Modal'
-import { CallbackOnBackHandler, CallbackOrActions } from './PropsType'
+import {
+  CallbackOnBackHandler,
+  CallbackOrActions,
+  ModalPropsType,
+} from './PropsType'
 import zh_CN from './locale/zh_CN'
 import promptStyles, { PromptStyle } from './style/prompt'
 
-export interface PropmptContainerProps extends WithThemeStyles<PromptStyle> {
+export interface PropmptContainerProps
+  extends WithThemeStyles<PromptStyle>,
+    Pick<ModalPropsType, 'modalType'> {
   title: React.ReactNode
   message?: React.ReactNode
   type?: 'default' | 'login-password' | 'secure-text'
@@ -147,6 +153,7 @@ export default class PropmptContainer extends React.Component<
               title={title}
               visible={this.state.visible}
               footer={footer}
+              modalType={this.props.modalType}
               onAnimationEnd={onAnimationEnd}
               onRequestClose={this.onBackAndroid}>
               {message ? <Text style={styles.message}>{message}</Text> : null}

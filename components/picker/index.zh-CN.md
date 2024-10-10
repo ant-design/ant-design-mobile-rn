@@ -98,7 +98,7 @@ interface PickerStyle extends Partial<PickerViewStyle> {
 属性 | 说明 | 类型 | 默认值 | 版本
 ----|-----|------|------|------
 | children| Picker占位组件，通常是`List.Item` | `ReactNode` / `({disabled, extra, value, toggle})=>ReactNode`  |  -  | `5.2.1`新增函数作为Children |
-| extra   | Picker children的`extra`属性，无选中项时展示 | String |  `请选择`  |  |
+| extra   | Picker children的`extra`属性，无选中项时展示（可理解为placeholder使用） | String |  `请选择`  |  |
 | format  | 格式化选中值的函数，用于回显在`extra`属性上  | (labels: string[]): any | `(labels) => { return labels.join(','); } ` |  |
 | triggerType  | 按钮事件名称 | String | `onPress` |  |
 | disabled  | 是否不可用 | Boolean | `false` |  |
@@ -112,3 +112,29 @@ interface PickerStyle extends Partial<PickerViewStyle> {
 
 ### Ref
 同 PickerActions
+
+
+## FAQ
+
+### 为什么在原生 Modal 中弹出 Picker 会被遮住？
+
+默认情况下，`<Picker />`是通过 `Portal.add` 动态插入到 `<Provider>` 根节点的，而原生 Modal 的zIndex层级高于一切，包括它的根节点。
+
+所以如果一定要在原生 Modal 中同时使用 `<Picker />` 组件，可以通过设置 `modalType='modal'` 来保持和原生 Modal 同一层级。 
+
+```tsx
+import {Modal} from 'react-native';
+import {Picker} from '@ant-design/react-native';
+
+<Modal>
+  ...
+  
+  <Picker
+    modalType="modal" // add here
+    visible={visible}
+    data={data}>
+    <List.Item arrow="horizontal">省市选择</List.Item>
+  </Picker>
+
+</Modal>
+```

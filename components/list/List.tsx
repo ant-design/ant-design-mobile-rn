@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { StyleProp, Text, View, ViewStyle } from 'react-native'
+import { StyleProp, Text, View, ViewProps, ViewStyle } from 'react-native'
 import { useTheme } from '../style'
 import { ListPropsType } from './PropsType'
 import listStyles, { ListStyle } from './style/index'
@@ -9,10 +9,10 @@ export interface ListProps extends ListPropsType {
   style?: StyleProp<ViewStyle>
 }
 
-const InternalList: React.ForwardRefRenderFunction<View, ListProps> = (
-  props,
-  ref,
-) => {
+const InternalList: React.ForwardRefRenderFunction<
+  View,
+  ListProps & ViewProps
+> = (props, ref) => {
   const { children, style, renderHeader, renderFooter, styles, ...restProps } =
     props
 
@@ -55,8 +55,9 @@ const InternalList: React.ForwardRefRenderFunction<View, ListProps> = (
   )
 }
 
-const List = React.forwardRef<View, ListProps>(InternalList) as ((
-  props: React.PropsWithChildren<ListProps> & React.RefAttributes<View>,
+const List = React.forwardRef<View, ListProps & ViewProps>(InternalList) as ((
+  props: React.PropsWithChildren<ListProps & ViewProps> &
+    React.RefAttributes<View>,
 ) => React.ReactElement) &
   Pick<React.FC, 'displayName'>
 

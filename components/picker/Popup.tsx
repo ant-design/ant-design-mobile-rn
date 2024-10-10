@@ -15,6 +15,7 @@ const PopupPicker = memo((props: PopupPickerProps) => {
     onOk,
     onClose,
     children,
+    modalType,
   } = props
 
   const titleEl =
@@ -41,6 +42,7 @@ const PopupPicker = memo((props: PopupPickerProps) => {
   return (
     <Modal
       animationType="slide-up"
+      modalType={modalType}
       wrapStyle={styles.modal}
       style={styles.container}
       visible={visible}

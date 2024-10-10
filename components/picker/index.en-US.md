@@ -98,7 +98,7 @@ Picker's children is best to [List.Item](/components/list/#List.Item), if not, n
 Properties | Descrition | Type | Default | Version |
 -----------|------------|------|--------|--------
 | children| usually `List.Item` | `ReactNode`/`({disabled, extra, value, toggle})=>ReactNode` | -  | `5.2.1` add function as Children |
-| extra   | Picker's children `extra` prop, display when no `value` | String |  `please select`  |  |
+| extra   | Picker's children `extra` prop, display when no `value`(Similar to a placeholder) | String |  `please select`  |  |
 | format  | a function that formats the selected value	  | (labels: string[]): any | `(labels) => { return labels.join(','); } ` |  |
 | triggerType  | Press event name | String | `onPress` |  |
 | disabled  | set disabled	 | Boolean | `false` |  |
@@ -112,3 +112,29 @@ Properties | Descrition | Type
 
 ### Ref
 Same as PickerActions
+
+
+## FAQ
+
+### Why is the Picker hidden when it popup in the native Modal?
+
+By default, `<Picker />` is dynamically inserted into the `<Provider>` root node via `Portal.add`, and the zIndex level of the native Modal is above everything, including its root node.
+
+So if you must use the `<Picker />` component in the native Modal, you can set `modalType='modal'` to keep it at the same level as the native Modal.
+
+```tsx
+import {Modal} from 'react-native';
+import {Picker} from '@ant-design/react-native';
+
+<Modal>
+  ...
+  
+  <Picker
+    modalType="modal" // add here
+    visible={visible}
+    data={data}>
+    <List.Item arrow="horizontal">省市选择</List.Item>
+  </Picker>
+
+</Modal>
+```

@@ -2,10 +2,11 @@ import React from 'react'
 import { TextStyle } from 'react-native'
 import { WithTheme } from '../style'
 import Modal from './Modal'
-import { Action, CallbackOnBackHandler } from './PropsType'
+import { Action, CallbackOnBackHandler, ModalPropsType } from './PropsType'
 import modalStyle from './style/index'
 
-export interface OperationContainerProps {
+export interface OperationContainerProps
+  extends Pick<ModalPropsType, 'modalType'> {
   actions: Action<TextStyle>[]
   onAnimationEnd?: (visible: boolean) => void
   onBackHandler?: CallbackOnBackHandler
@@ -69,6 +70,7 @@ export default class OperationContainer extends React.Component<
             transparent
             maskClosable
             visible={this.state.visible}
+            modalType={this.props.modalType}
             onClose={this.onClose}
             onAnimationEnd={onAnimationEnd}
             onRequestClose={this.onBackAndroid}

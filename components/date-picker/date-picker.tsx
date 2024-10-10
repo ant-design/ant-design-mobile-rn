@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import React, {
   forwardRef,
   useCallback,
@@ -25,7 +26,6 @@ export type DatePickerRef = any
 export interface DatePickerProps extends DatePickerPropsType {}
 
 const defaultProps = {
-  defaultDate: new Date(),
   minDate: new Date('2000-1-1'),
   maxDate: new Date('2030-1-1'),
   precision: 'day',
@@ -48,10 +48,28 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
 
   const _precision = precision || (mode === 'date' ? 'day' : mode) || 'day'
 
-  const [innerValue, setInnerValue] = useState<Date | undefined>(
-    value === undefined ? defaultValue || defaultDate : value,
+  // ============ Effect ===========
+  const [valueProp, setValueProp] = useMergedState<Date | undefined>(
+    undefined,
+    {
+      value,
+      defaultValue: defaultValue || defaultDate,
+    },
+  )
+  const [innerValue, setInnerValue] = useState<Date | undefined>(valueProp)
+  useEffect(() => {
+    setInnerValue(valueProp)
+  }, [valueProp])
+
+  // innerValue => pickerInnerValue
+  const pickerInnerValue = usePickerValue(
+    innerValue,
+    minDate,
+    maxDate,
+    _precision,
   )
 
+  // ============ Locale ===========
   const _locale = getComponentLocale(
     p,
     useContext(LocaleContext),
@@ -64,19 +82,11 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
     _locale.DatePickerLocale,
   )
 
+  // ============ Ref ===========
   const pickerRef = React.useRef<PickerRef>(null)
   useImperativeHandle(ref, () => pickerRef.current as PickerRef)
 
-  // innerValue
-  const pickerInnerValue = usePickerValue(
-    innerValue,
-    minDate,
-    maxDate,
-    _precision,
-  )
-  // value prop
-  const pickerValue = usePickerValue(value, minDate, maxDate, _precision)
-
+  // ============ Columns ===========
   const columns = useMemo(() => {
     return generateDatePickerColumns(
       pickerInnerValue,
@@ -110,8 +120,9 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
   const handleOk = useCallback(
     (val, ext) => {
       p.onOk?.(convertStringArrayToDate(val, _precision), ext)
+      setValueProp(val)
     },
-    [_precision, p],
+    [_precision, p, setValueProp],
   )
 
   const handleChange = useCallback(
@@ -143,24 +154,20 @@ const DatePicker = forwardRef<DatePickerRef, DatePickerProps>((props, ref) => {
   const onVisibleChange = useCallback(
     (visible) => {
       p.onVisibleChange?.(visible)
-      if (!visible && value !== innerValue) {
-        // 关闭时，如果选中值不同步，恢复为原选中值
-        setInnerValue(value)
+      if (visible && !valueProp) {
+        setInnerValue(new Date())
+      } else {
+        setInnerValue(valueProp)
       }
     },
-    [innerValue, p, value],
+    [p, valueProp],
   )
-
-  useEffect(() => {
-    setInnerValue(value)
-  }, [value])
 
   return (
     <RMCPicker
       {...restProps}
       locale={_locale}
-      value={pickerValue}
-      innerValue={pickerInnerValue}
+      value={pickerInnerValue}
       columns={columns}
       handleSelect={handleSelect}
       onVisibleChange={onVisibleChange}

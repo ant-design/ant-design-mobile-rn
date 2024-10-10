@@ -1,7 +1,15 @@
 /* tslint:disable:no-console */
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
-import { Button, Modal, Toast, WhiteSpace, WingBlank } from '../../'
+import {
+  Button,
+  List,
+  Modal,
+  Switch,
+  Toast,
+  WhiteSpace,
+  WingBlank,
+} from '../../'
 
 export default class BasicModalExample extends React.Component<any, any> {
   constructor(props: any) {
@@ -10,6 +18,7 @@ export default class BasicModalExample extends React.Component<any, any> {
       visible: false,
       visible1: false,
       visible2: false,
+      modalType: 'portal',
     }
   }
 
@@ -121,6 +130,25 @@ export default class BasicModalExample extends React.Component<any, any> {
     ]
     return (
       <ScrollView style={{ marginTop: 20 }}>
+        <List>
+          <List.Item
+            extra={
+              <Switch
+                style={{ width: 70 }}
+                checked={this.state.modalType === 'modal'}
+                onChange={(val) => {
+                  this.setState({ modalType: val ? 'modal' : 'portal' })
+                }}
+                checkedChildren="modal"
+                unCheckedChildren="portal"
+              />
+            }>
+            切换modalType
+            <List.Item.Brief>
+              `modalType='modal'`时将调用原生Modal{' '}
+            </List.Item.Brief>
+          </List.Item>
+        </List>
         <WingBlank>
           <Button onPress={() => this.setState({ visible: true })}>
             showModal
@@ -159,6 +187,7 @@ export default class BasicModalExample extends React.Component<any, any> {
         <Modal
           title="Title"
           transparent
+          modalType={this.state.modalType}
           onClose={this.onClose}
           maskClosable
           visible={this.state.visible}
@@ -174,6 +203,7 @@ export default class BasicModalExample extends React.Component<any, any> {
         </Modal>
         <Modal
           transparent={false}
+          modalType={this.state.modalType}
           visible={this.state.visible1}
           animationType="slide-up"
           onClose={this.onClose1}>
@@ -183,8 +213,11 @@ export default class BasicModalExample extends React.Component<any, any> {
           </View>
           <Button
             type="primary"
+            style={{ marginBottom: 10 }}
             onPress={() => Toast.info('Hello Toast in Modal now works')}>
-            Hello Toast in Modal now works
+            {this.state.modalType === 'portal'
+              ? 'Hello Toast in Modal now works'
+              : "Hello Toast not works when modalType='portal'"}
           </Button>
           <Button type="primary" onPress={this.onClose1}>
             close modal
@@ -192,6 +225,7 @@ export default class BasicModalExample extends React.Component<any, any> {
         </Modal>
         <Modal
           popup
+          modalType={this.state.modalType}
           visible={this.state.visible2}
           animationType="slide-up"
           onClose={this.onClose2}>

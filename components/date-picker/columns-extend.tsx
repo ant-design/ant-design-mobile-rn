@@ -33,7 +33,10 @@ export function usePickerValue(
   mode: Precision,
 ) {
   return useMemo(() => {
-    let value = new Date(val || '')
+    if (!val) {
+      return []
+    }
+    let value = new Date(val)
     if (isNaN(value.getTime()) || value.getTime() < minDate.getTime()) {
       value = minDate
     } else if (value.getTime() > maxDate.getTime()) {

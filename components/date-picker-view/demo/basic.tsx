@@ -11,7 +11,7 @@ export default () => {
   return (
     <ScrollView nestedScrollEnabled>
       <Text style={{ margin: 16 }}>基础用法</Text>
-      <DatePickerView defaultValue={now} />
+      <DatePickerView />
 
       <Text style={{ margin: 16 }}>受控模式</Text>
       <DatePickerView

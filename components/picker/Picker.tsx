@@ -30,9 +30,7 @@ export type PickerActions = {
 export type PickerRef = PickerActions
 
 export interface RMCPickerProps
-  extends Omit<PickerPropsType, 'value' | 'data' | 'cols' | 'cascade'> {
-  value?: PickerValue[]
-  innerValue: PickerValue[]
+  extends Omit<PickerPropsType, 'data' | 'cols' | 'cascade'> {
   columns: PickerColumn[]
   handleSelect: (value: PickerValue, index: number) => void
 }
@@ -56,9 +54,9 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
     disabled = contextDisabled,
     format,
     value,
-    innerValue,
     columns,
     handleSelect,
+    modalType,
     ...restProps
   } = props
 
@@ -91,22 +89,22 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
         setInnerVisible(false)
         onClose?.()
       },
-      value: innerValue,
+      value,
     }),
-    [innerValue, innerVisible, onClose, setInnerVisible],
+    [innerVisible, onClose, setInnerVisible, value],
   )
   useImperativeHandle(ref, () => actions)
 
   const handleOk = useCallback(() => {
     const extend = columns.map(
       (column, index) =>
-        column.find((item) => item.value === innerValue?.[index]) ?? column[0],
+        column.find((item) => item.value === value?.[index]) ?? column[0],
     )
     const nextValue = extend.map((item) => item.value)
     onOk?.(nextValue, { items: extend, columns })
     onChange?.(nextValue, { items: extend, columns })
     actions.close()
-  }, [actions, columns, onChange, onOk, innerValue])
+  }, [actions, columns, onChange, onOk, value])
 
   const handleDismiss = useCallback(() => {
     onDismiss?.()
@@ -141,7 +139,7 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
         }, []),
       ),
     )
-  }, [value, columns, innerVisible, format, children, extra, _locale.extra])
+  }, [_locale.extra, children, columns, extra, format, innerVisible, value])
 
   const renderChildren = () => {
     if (!children) {
@@ -190,13 +188,14 @@ const RMCPicker = forwardRef<PickerRef, RMCPickerProps>((props, ref) => {
         onDismiss={handleDismiss}
         onClose={actions.close}
         okButtonProps={okButtonProps}
-        dismissButtonProps={dismissButtonProps}>
+        dismissButtonProps={dismissButtonProps}
+        modalType={modalType}>
         {/* TODO: 组件卸载是在visible更新fasle之后,需要前置 */}
         {/* 否则会无效执行onPickerChange */}
         {innerVisible && (
           <RMCPickerView
             {...restProps}
-            value={innerValue}
+            value={value}
             columns={columns}
             handleSelect={handleSelect}
           />

@@ -1,9 +1,9 @@
 import React, { isValidElement } from 'react'
 import { ScrollView, Text, TextStyle } from 'react-native'
 import Modal from './Modal'
-import { Action, CallbackOnBackHandler } from './PropsType'
+import { Action, CallbackOnBackHandler, ModalPropsType } from './PropsType'
 
-export interface AlertContainerProps {
+export interface AlertContainerProps extends Pick<ModalPropsType, 'modalType'> {
   title: React.ReactNode
   content: React.ReactNode
   actions: Action<TextStyle>[]
@@ -68,6 +68,7 @@ export default class AlertContainer extends React.Component<
         title={title}
         visible={this.state.visible}
         footer={footer}
+        modalType={this.props.modalType}
         onAnimationEnd={onAnimationEnd}
         onRequestClose={this.onBackAndroid}
         bodyStyle={{

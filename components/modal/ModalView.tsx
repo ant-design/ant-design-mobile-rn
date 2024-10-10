@@ -4,6 +4,7 @@ import {
   BackHandler,
   Dimensions,
   Easing,
+  Modal as NativeModal,
   StyleProp,
   StyleSheet,
   TouchableWithoutFeedback,
@@ -11,7 +12,7 @@ import {
   ViewStyle,
 } from 'react-native'
 import Portal from '../portal'
-import { CallbackOnBackHandler } from './PropsType'
+import { ModalPropsType } from './PropsType'
 
 const styles = StyleSheet.create({
   wrap: {
@@ -36,19 +37,23 @@ const styles = StyleSheet.create({
 
 const screen = Dimensions.get('window')
 
-export interface IModalPropTypes {
-  wrapStyle?: StyleProp<ViewStyle>
+export interface IModalPropTypes
+  extends Pick<
+    ModalPropsType,
+    | 'animateAppear'
+    | 'children'
+    | 'maskClosable'
+    | 'modalType'
+    | 'onAnimationEnd'
+    | 'onClose'
+    | 'onRequestClose'
+    | 'visible'
+  > {
+  animationDuration?: number
+  animationType: 'none' | 'fade' | 'slide-up' | 'slide-down'
   maskStyle?: StyleProp<ViewStyle>
   style?: {}
-  children?: React.ReactNode
-  animationType: 'none' | 'fade' | 'slide-up' | 'slide-down'
-  animationDuration?: number
-  visible: boolean
-  maskClosable?: boolean
-  animateAppear?: boolean
-  onClose?: () => void // onDismiss
-  onAnimationEnd?: (visible: boolean) => void // onShow
-  onRequestClose?: CallbackOnBackHandler
+  wrapStyle?: StyleProp<ViewStyle>
 }
 
 export default class RCModal extends React.Component<IModalPropTypes, any> {
@@ -62,6 +67,7 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
     maskClosable: true,
     onClose() {},
     onAnimationEnd(_visible: boolean) {},
+    modalType: 'portal',
   } as IModalPropTypes
 
   animMask: any
@@ -234,8 +240,26 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
       },
     }
 
+    let Modal = Portal as React.ElementType
+    switch (props.modalType) {
+      case 'modal':
+        Modal = (p) =>
+          React.createElement(NativeModal, {
+            visible: true,
+            transparent: true,
+            ...p,
+          })
+        break
+      case 'view':
+        Modal = (p) =>
+          React.createElement(View, {
+            style: StyleSheet.absoluteFill,
+            ...p,
+          })
+    }
+
     return (
-      <Portal>
+      <Modal>
         <View style={[styles.wrap, props.wrapStyle]}>
           <TouchableWithoutFeedback onPress={this.onMaskClose}>
             <Animated.View
@@ -252,7 +276,7 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
             {this.props.children}
           </Animated.View>
         </View>
-      </Portal>
+      </Modal>
     )
   }
 }
