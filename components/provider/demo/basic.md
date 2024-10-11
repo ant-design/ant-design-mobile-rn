@@ -5,7 +5,7 @@ title:
   en-US: Basic
 ---
 
-[Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/locale-provider/demo/basic.tsx)
+[Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/provider/demo/basic.tsx)
 
 ```jsx
 import React from 'react';
