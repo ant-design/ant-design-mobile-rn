@@ -8,7 +8,7 @@ import {
   ViewStyle,
 } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
-import Animated, { runOnJS, useAnimatedStyle } from 'react-native-reanimated'
+import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import Tooltip from '../tooltip'
 import { SliderStyle } from './style'
 import { ThumbIcon } from './thumb-icon'
@@ -20,7 +20,7 @@ type ThumbProps = {
   disabled: boolean
   isSliding: boolean
   trackLayout?: LayoutRectangle
-  onDrag: (value: number, last?: boolean) => void
+  onDrag: (value: number) => void
   onSlidingStart: () => void
   icon?: ReactNode
   popover: boolean | ((value: number) => ReactNode)
@@ -62,22 +62,16 @@ const Thumb: FC<ThumbProps> = (props) => {
     }
   }, [max, min, thumbLayout?.width, trackLayout?.width, value])
 
-  const [dragging, setDragging] = useState(false)
-
   const gesture = useMemo(
     () =>
       Gesture.Pan()
+        .runOnJS(true)
         .enabled(!disabled)
-        .onBegin(() => runOnJS(onSlidingStart)())
-        .onUpdate((e) => {
-          !dragging && runOnJS(setDragging)(true)
-          runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))
-        })
-        .onFinalize((e) => {
-          runOnJS(setDragging)(false)
-          runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0), true)
+        .onStart(() => onSlidingStart())
+        .onChange((e) => {
+          onDrag(e.changeX)
         }),
-    [disabled, dragging, onDrag, onSlidingStart, thumbLayout?.width],
+    [disabled, onDrag, onSlidingStart],
   )
 
   const renderPopoverContent =
@@ -99,7 +93,7 @@ const Thumb: FC<ThumbProps> = (props) => {
           <Tooltip
             content={renderPopoverContent(value)}
             placement="top"
-            visible={residentPopover || dragging || isSliding}
+            visible={residentPopover || isSliding}
             mode="dark">
             <View style={{ flex: 1 }}>{thumbElement}</View>
           </Tooltip>

@@ -14,7 +14,6 @@ import {
   GestureStateChangeEvent,
   TapGestureHandlerEventPayload,
 } from 'react-native-gesture-handler'
-import { runOnJS } from 'react-native-reanimated'
 import devWarning from '../_util/devWarning'
 import HapticsContext from '../provider/HapticsContext'
 import { useTheme } from '../style'
@@ -104,10 +103,26 @@ export function Slider<SliderValue extends number | [number, number]>(
     )
     propsValue = [0, props.value] as SliderValue
   }
+  // const rawValue = useSharedValue<SliderValue>(
+  //   (defaultValue ?? (range ? [min, min] : min)) as SliderValue,
+  // )
+  // const setRawValue = useCallback(
+  //   (value) => {
+  //     rawValue.value = value
+  //     onChange?.(value)
+  //   },
+  //   [onChange, rawValue],
+  // )
+  // useEffect(() => {
+  //   rawValue.value = propsValue
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [propsValue])
   const [rawValue, setRawValue] = useMergedState<SliderValue>(
     (defaultValue ?? (range ? [min, min] : min)) as SliderValue,
     { value: propsValue, onChange },
   )
+
+  // console.log(rawValue.value, '===rawValue===')
 
   const sliderValue = sortValue(convertValue(rawValue))
   const setSliderValue = useCallback(
@@ -249,58 +264,50 @@ export function Slider<SliderValue extends number | [number, number]>(
   // on thumb pan gesture
   const valueBeforeDragRef = useRef<[number, number]>()
   const onDrag = useCallback(
-    (index: number, locationX: number, last: boolean) => {
+    (index: number, changeX: number) => {
       if (!trackLayout) {
         return
       }
-      // 是百分比位置，而非x坐标
-      const position =
-        (locationX / Math.ceil(trackLayout.width)) * (max - min) + min
+      // offset.value =
+      //   Math.abs(offset.value) <= MAX_VALUE
+      //     ? offset.value + event.changeX <= 0
+      //       ? 0
+      //       : offset.value + event.changeX >= MAX_VALUE
+      //       ? MAX_VALUE
+      //       : offset.value + event.changeX
+      //     : offset.value
 
-      const val = getValueByPosition(position, last)
-      if (!valueBeforeDragRef.current) {
-        valueBeforeDragRef.current = [...sliderValue]
-      }
-      valueBeforeDragRef.current[index] = val
-      const next = sortValue([...valueBeforeDragRef.current])
+      // const newWidth = INITIAL_BOX_SIZE + offset.value
+      // boxWidth.value = newWidth
+      sliderValue[index] = changeX
+      const next = sortValue(sliderValue)
       setSliderValue(next)
-      if (last) {
-        valueBeforeDragRef.current = undefined
-        onAfterChangeRange(next, index)
-      }
+      // 是百分比位置，而非x坐标
+      // const position =
+      //   (locationX / Math.ceil(trackLayout.width)) * (max - min) + min
+
+      // const val = getValueByPosition(position, last)
+      // if (!valueBeforeDragRef.current) {
+      //   valueBeforeDragRef.current = [...sliderValue]
+      // }
+      // valueBeforeDragRef.current[index] = val
+      // const next = sortValue([...valueBeforeDragRef.current])
+      // setSliderValue(next)
+      // if (last) {
+      //   valueBeforeDragRef.current = undefined
+      //   onAfterChangeRange(next, index)
+      // }
     },
-    [
-      getValueByPosition,
-      max,
-      min,
-      onAfterChangeRange,
-      setSliderValue,
-      sliderValue,
-      trackLayout,
-    ],
+    [setSliderValue, sliderValue, trackLayout],
   )
 
   // on trackContainer pan gesture
-  const valueBeforeSlideRef = useRef<number>()
   const onSlide = useCallback(
-    (translationX: number, last: boolean) => {
-      if (!trackLayout) {
-        return
-      }
-
-      if (typeof valueBeforeSlideRef.current === 'undefined') {
-        valueBeforeSlideRef.current =
-          ((rawValue as number) / max) * trackLayout.width
-      }
-
+    (changeX: number) => {
       // 复用
-      onDrag(1, translationX + valueBeforeSlideRef.current, last)
-
-      if (last) {
-        valueBeforeSlideRef.current = undefined
-      }
+      onDrag(1, changeX)
     },
-    [max, onDrag, rawValue, trackLayout],
+    [onDrag],
   )
 
   const renderThumb = (index: number) => {
@@ -329,36 +336,33 @@ export function Slider<SliderValue extends number | [number, number]>(
    */
   const gesture = React.useMemo(() => {
     const horizontalPan = Gesture.Pan()
+      .runOnJS(true)
       .enabled(!disabled && !range)
       .failOffsetY([-1, 1]) // must horizontal
-      .onStart(() => runOnJS(onSlidingStartI)())
-      .onUpdate((e) => {
-        runOnJS(onSlide)(e.translationX, false)
-      })
-      .onEnd((e) => {
-        runOnJS(onSlide)(e.translationX, true)
+      .onStart(() => onSlidingStartI(0))
+      .onChange((e) => {
+        onSlide(e.changeX)
       })
 
     // long press in 350ms
     const longPan = Gesture.Pan()
+      .runOnJS(true)
       .enabled(!disabled && !range)
-      .activateAfterLongPress(300)
-      .onStart(() => runOnJS(onSlidingStartI)())
-      .onUpdate((e) => {
-        runOnJS(onSlide)(e.translationX, false)
-      })
-      .onEnd((e) => {
-        runOnJS(onSlide)(e.translationX, true)
+      .activateAfterLongPress(350)
+      .onStart(() => onSlidingStartI(0))
+      .onChange((e) => {
+        onSlide(e.changeX)
       })
 
     const tap = Gesture.Tap()
+      .runOnJS(true)
       .enabled(!disabled && tapToSeek)
       .maxDistance(0)
       .onFinalize((e, success) => {
-        success && runOnJS(onTrackClick)(e)
+        success && onTrackClick(e)
       })
 
-    return Gesture.Simultaneous(horizontalPan, longPan, tap)
+    return Gesture.Race(horizontalPan, longPan, tap)
   }, [disabled, onSlide, onSlidingStartI, onTrackClick, range, tapToSeek])
 
   return (

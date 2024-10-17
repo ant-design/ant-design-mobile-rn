@@ -26,6 +26,7 @@ export interface UseThemeContextProps {
 }
 
 function customizer(objValue: any, srcValue: any) {
+  console.log('===lk===')
   if (Array.isArray(objValue)) {
     return objValue.concat(srcValue)
   } else {
@@ -43,11 +44,11 @@ export function useTheme<T>(props: {
   const theme = useContext(ThemeContext)
 
   const themeStylesMemo = useMemo(
-    () => themeStyles(theme),
-    [theme, themeStyles],
+    () => mergeWith(themeStyles(theme), styles, customizer),
+    [styles, theme, themeStyles],
   )
 
-  return mergeWith(themeStylesMemo, styles, customizer)
+  return themeStylesMemo
 }
 
 export interface WithThemeProps<T, S> {
