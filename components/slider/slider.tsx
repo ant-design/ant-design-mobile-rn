@@ -324,6 +324,9 @@ export function Slider<SliderValue extends number | [number, number]>(
     )
   }
 
+  /**
+   * Performance issues moved to @link https://github.com/software-mansion/react-native-reanimated/issues/6247
+   */
   const gesture = React.useMemo(() => {
     const horizontalPan = Gesture.Pan()
       .enabled(!disabled && !range)
@@ -339,7 +342,7 @@ export function Slider<SliderValue extends number | [number, number]>(
     // long press in 350ms
     const longPan = Gesture.Pan()
       .enabled(!disabled && !range)
-      .activateAfterLongPress(350)
+      .activateAfterLongPress(300)
       .onStart(() => runOnJS(onSlidingStartI)())
       .onUpdate((e) => {
         runOnJS(onSlide)(e.translationX, false)
