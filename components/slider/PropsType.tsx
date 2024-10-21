@@ -6,6 +6,7 @@ import { SliderStyle } from './style'
 export type SliderMarks = {
   [key: number]: React.ReactNode
 }
+export type SliderValueType = number | [number, number]
 
 export type BaseSliderProps<SliderValue> = {
   min?: number

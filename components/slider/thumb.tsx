@@ -8,20 +8,24 @@ import {
   ViewStyle,
 } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
-import Animated, { runOnJS, useAnimatedStyle } from 'react-native-reanimated'
+import Animated, {
+  SharedValue,
+  useAnimatedStyle,
+} from 'react-native-reanimated'
 import Tooltip from '../tooltip'
+import { SliderValueType } from './PropsType'
 import { SliderStyle } from './style'
 import { ThumbIcon } from './thumb-icon'
 
 type ThumbProps = {
-  value: number
-  min: number
-  max: number
+  sliderValue: SharedValue<SliderValueType>
   disabled: boolean
+  getPositionByValue: (value?: SliderValueType, index?: number) => number
+  index: number
   isSliding: boolean
-  trackLayout?: LayoutRectangle
-  onDrag: (value: number, last?: boolean) => void
+  onDrag: (value: number) => void
   onSlidingStart: () => void
+  onSlidingComplete: () => void
   icon?: ReactNode
   popover: boolean | ((value: number) => ReactNode)
   residentPopover: boolean
@@ -31,18 +35,18 @@ type ThumbProps = {
 
 const Thumb: FC<ThumbProps> = (props) => {
   const {
-    value,
-    min,
-    max,
-    trackLayout,
+    sliderValue,
     disabled,
+    getPositionByValue,
+    index,
+    isSliding,
     icon,
     residentPopover,
     onDrag,
     onSlidingStart,
+    onSlidingComplete,
     style,
     styles,
-    isSliding,
   } = props
 
   const [thumbLayout, setThumbLayout] = useState<LayoutRectangle | undefined>()
@@ -55,29 +59,24 @@ const Thumb: FC<ThumbProps> = (props) => {
       transform: [
         {
           translateX:
-            ((value - min) / (max - min)) * (trackLayout?.width || 0) -
+            getPositionByValue(sliderValue.value, index) -
             (thumbLayout?.width || 0) / 2,
         },
       ],
     }
-  }, [max, min, thumbLayout?.width, trackLayout?.width, value])
-
-  const [dragging, setDragging] = useState(false)
+  }, [thumbLayout])
 
   const gesture = useMemo(
     () =>
       Gesture.Pan()
+        .runOnJS(true)
         .enabled(!disabled)
-        .onBegin(() => runOnJS(onSlidingStart)())
-        .onUpdate((e) => {
-          !dragging && runOnJS(setDragging)(true)
-          runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))
+        .onStart(onSlidingStart)
+        .onChange((e) => {
+          onDrag(e.absoluteX - (thumbLayout?.width || 0))
         })
-        .onFinalize((e) => {
-          runOnJS(setDragging)(false)
-          runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0), true)
-        }),
-    [disabled, dragging, onDrag, onSlidingStart, thumbLayout?.width],
+        .onEnd(onSlidingComplete),
+    [disabled, onDrag, onSlidingComplete, onSlidingStart, thumbLayout?.width],
   )
 
   const renderPopoverContent =
@@ -97,9 +96,9 @@ const Thumb: FC<ThumbProps> = (props) => {
         onLayout={handleLayout}>
         {renderPopoverContent ? (
           <Tooltip
-            content={renderPopoverContent(value)}
+            content={renderPopoverContent(10)} // TODO-luokun
             placement="top"
-            visible={residentPopover || dragging || isSliding}
+            visible={residentPopover || isSliding}
             mode="dark">
             <View style={{ flex: 1 }}>{thumbElement}</View>
           </Tooltip>
