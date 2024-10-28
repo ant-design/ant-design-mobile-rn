@@ -1,8 +1,10 @@
 import type { FC } from 'react'
-import React, { useContext, useEffect, useMemo } from 'react'
-import { View, ViewStyle } from 'react-native'
+import React, { memo, useCallback, useContext, useMemo } from 'react'
+import { StyleSheet, View, ViewStyle } from 'react-native'
 import Animated, {
+  runOnJS,
   SharedValue,
+  useAnimatedReaction,
   useAnimatedStyle,
 } from 'react-native-reanimated'
 import HapticsContext from '../provider/HapticsContext'
@@ -10,6 +12,7 @@ import { SliderValueType } from './PropsType'
 import { SliderStyle } from './style'
 
 type TicksProps = {
+  isSliding: boolean
   points: number[]
   max: number
   min: number
@@ -17,18 +20,14 @@ type TicksProps = {
   styles: Pick<SliderStyle, 'ticks' | 'tickActive' | 'tick'>
 }
 
-const Ticks: FC<TicksProps> = ({ points, max, min, sliderValue, styles }) => {
-  const onHaptics = useContext(HapticsContext)
-  useEffect(() => {
-    const handleHaptics = () => {
-      onHaptics('slider')
-    }
-    sliderValue.addListener(2, handleHaptics)
-    return () => {
-      sliderValue.removeListener(2)
-    }
-  }, [sliderValue, onHaptics])
-
+const Ticks: FC<TicksProps> = ({
+  isSliding,
+  points,
+  max,
+  min,
+  sliderValue,
+  styles,
+}) => {
   const range = max - min
   const elements = useMemo(
     () =>
@@ -36,15 +35,16 @@ const Ticks: FC<TicksProps> = ({ points, max, min, sliderValue, styles }) => {
         const style = { left: `${(Math.abs(point - min) / range) * 100}%` }
         return (
           <Tick
+            key={point}
+            isSliding={isSliding}
             styles={styles}
             style={style}
             point={point}
             sliderValue={sliderValue}
-            key={point}
           />
         )
       }),
-    [min, sliderValue, points, range, styles],
+    [points, min, range, isSliding, styles, sliderValue],
   )
 
   return <View style={styles.ticks}>{elements}</View>
@@ -53,20 +53,37 @@ const Ticks: FC<TicksProps> = ({ points, max, min, sliderValue, styles }) => {
 export default Ticks
 
 const Tick: FC<
-  Pick<TicksProps, 'sliderValue' | 'styles'> & {
+  Pick<TicksProps, 'isSliding' | 'sliderValue' | 'styles'> & {
     style: ViewStyle
     point: number
   }
-> = ({ style, styles, sliderValue, point }) => {
+> = memo(({ isSliding, style, styles, sliderValue, point }) => {
+  const tickActive = useMemo(
+    () => StyleSheet.flatten(styles.tickActive),
+    [styles.tickActive],
+  )
   const active = useAnimatedStyle(() => {
     return (
       Array.isArray(sliderValue.value)
         ? point <= sliderValue.value[0] && point >= sliderValue.value[1]
         : point <= (sliderValue.value || 0)
     )
-      ? styles.tickActive
+      ? tickActive
       : { backgroundColor: 'transparent' }
-  }, [point])
+  }, [point, tickActive])
+
+  const onHaptics = useContext(HapticsContext)
+  const handleHaptics = useCallback(() => {
+    if (isSliding) {
+      onHaptics('slider')
+    }
+  }, [onHaptics, isSliding])
+
+  useAnimatedReaction(
+    () => active,
+    () => runOnJS(handleHaptics)(),
+    [handleHaptics],
+  )
 
   return <Animated.View style={[styles.tick, active, style]} />
-}
+})

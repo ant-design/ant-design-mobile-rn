@@ -61,6 +61,5 @@ interface SliderStyle {
   // 刻度下的标记
   mark: ViewStyle
   markText: TextStyle
-  markTextActive: TextStyle
 }
 ```

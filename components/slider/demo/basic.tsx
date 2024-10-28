@@ -28,8 +28,6 @@ export default function StepperExample() {
     Toast.show({ content: `当前选中值为：${text}`, position: 'top' })
   }
 
-  const [val, setVal] = useState()
-
   return (
     <ScrollView>
       <List>
@@ -72,13 +70,7 @@ export default function StepperExample() {
           <Slider
             ticks
             step={10}
-            min={20}
-            // range
-            // value={[0, 40]}
-            value={40}
-            onChange={(e) => {
-              console.log(e, 'e')
-            }}
+            defaultValue={40}
             disabledStep={disabledStep}
           />
         </List.Item>
@@ -102,19 +94,7 @@ export default function StepperExample() {
       </List>
       <List renderHeader={'双滑块(range)'}>
         <List.Item>
-          <Slider
-            marks={marks}
-            ticks
-            range
-            min={40}
-            defaultValue={[60, 40]}
-            value={val}
-            onChange={(e) => {
-              setVal(e)
-              console.log('range', e)
-            }}
-            disabledStep={disabledStep}
-          />
+          <Slider marks={marks} ticks range defaultValue={[60, 40]} />
         </List.Item>
       </List>
       <List renderHeader={'在拖动时显示悬浮提示'}>

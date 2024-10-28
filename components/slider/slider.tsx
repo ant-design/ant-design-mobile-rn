@@ -1,28 +1,35 @@
 import getMiniDecimal from '@rc-component/mini-decimal'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { LayoutChangeEvent, LayoutRectangle, View } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
 import Animated, {
+  runOnJS,
+  useAnimatedReaction,
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated'
+import HapticsContext from '../provider/HapticsContext'
 import { useTheme } from '../style'
+import Marks from './marks'
 import { BaseSliderProps, SliderProps, SliderValueType } from './PropsType'
 import SliderStyles from './style'
 import Thumb from './thumb'
 import Ticks from './ticks'
 
+function sortValue(val: [number, number]) {
+  return val.sort((a, b) => a - b)
+}
 function nearest(arr: number[], target: number) {
   return arr.reduce((pre, cur) => {
     return Math.abs(pre - target) < Math.abs(cur - target) ? pre : cur
   })
-}
-
-function sortValue(val: [number, number]) {
-  if (Array.isArray(val)) {
-    return [...val].sort((a, b) => a - b)
-  }
-  return val
 }
 
 export function Slider<SliderValue extends SliderValueType>(
@@ -63,7 +70,32 @@ export function Slider<SliderValue extends SliderValueType>(
   }
   const MAX_VALUE = useMemo(() => trackLayout?.width || 0, [trackLayout?.width])
 
-  // ================= step & ticks ===================
+  const convertValue = useCallback(
+    (value: SliderValue) => {
+      if (Array.isArray(value)) {
+        return sortValue([value[0], value[1]])
+      }
+      return [min, value] as [number, number]
+    },
+    [min],
+  )
+
+  const getSafeValue = useCallback(
+    (value: SliderValue) => {
+      if (range) {
+        return convertValue(value ?? min) as SliderValue
+      }
+      return (isNaN(Number(value)) ? min : value) as SliderValue
+    },
+    [convertValue, min, range],
+  )
+
+  // ================= 🌟 sliderValue 🌟 ===================
+  const sliderValue = useSharedValue<SliderValue>(
+    (range ? [min, min] : min) as SliderValue,
+  )
+
+  // ================= step & ticks prop ===================
   // 计算要显示的点
   const pointList = useMemo(() => {
     if (marks) {
@@ -85,7 +117,6 @@ export function Slider<SliderValue extends SliderValueType>(
     return []
   }, [marks, ticks, step, min, max])
 
-  // ================= 🌟 getValueByPosition 🌟 ===================
   const getValueByPosition = useCallback(
     (offsetPosition: number) => {
       const position =
@@ -112,87 +143,17 @@ export function Slider<SliderValue extends SliderValueType>(
     [MAX_VALUE, disabledStep, max, min, pointList, step],
   )
 
-  // ================= 🌟 getPositionByValue 🌟 ===================
   const getPositionByValue = useCallback(
-    (value?: SliderValue, index = 0) => {
-      let val = min
-      if (Array.isArray(value)) {
-        val = value[index]
-      } else if (index === 0 && value && !isNaN(Number(value))) {
-        val = value
-      }
-      val = Math.max(min, Math.min(val, max))
-
-      return ((val - min) / (max - min)) * Math.ceil(MAX_VALUE)
+    (value: SliderValue, index: number) => {
+      return (
+        ((convertValue(value)[index] - min) / (max - min)) *
+        Math.ceil(MAX_VALUE)
+      )
     },
-    [MAX_VALUE, max, min],
+    [MAX_VALUE, convertValue, max, min],
   )
 
-  // ================= 🌟 sliderValue 🌟 ===================
-  const sliderValue = useSharedValue<SliderValue>(
-    (range ? [min, min] : min) as SliderValue,
-  )
-  const firstMount = useRef(false)
-  useEffect(() => {
-    sliderValue.value =
-      propsValue ??
-      (firstMount.current ? undefined : defaultValue) ??
-      sliderValue.value
-
-    if (firstMount.current === false) {
-      firstMount.current = true
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [propsValue, sliderValue])
-
-  // ================= onChange ======================
-  useEffect(() => {
-    if (onChange) {
-      sliderValue.addListener(1, onChange)
-      return () => {
-        sliderValue.removeListener(1)
-      }
-    }
-  }, [onChange, sliderValue])
-
-  // ================= onSlide ======================
-  const offsetTemp = useRef<number | undefined>(undefined)
-  const onSlide = useCallback(
-    (changeX: number) => {
-      if (offsetTemp.current === undefined) {
-        offsetTemp.current = getPositionByValue(sliderValue.value)
-      }
-      offsetTemp.current =
-        Math.abs(offsetTemp.current) <= MAX_VALUE
-          ? offsetTemp.current + changeX <= 0
-            ? 0
-            : offsetTemp.current + changeX >= MAX_VALUE
-            ? MAX_VALUE
-            : offsetTemp.current + changeX
-          : offsetTemp.current
-
-      sliderValue.value = getValueByPosition(offsetTemp.current) as SliderValue
-    },
-    [MAX_VALUE, getPositionByValue, getValueByPosition, sliderValue],
-  )
-
-  // ================= onDrag ======================
-  const valueBeforeDragRef = useRef<[number, number]>()
-  const onDrag = useCallback(
-    (index = 0, absoluteX: number) => {
-      if (Array.isArray(sliderValue.value)) {
-        if (!valueBeforeDragRef.current) {
-          valueBeforeDragRef.current = sliderValue.value
-        }
-        const targetValue = getValueByPosition(absoluteX)
-        valueBeforeDragRef.current[index] = targetValue
-        sliderValue.value = sortValue(valueBeforeDragRef.current) as SliderValue
-      }
-    },
-    [getValueByPosition, sliderValue],
-  )
-
-  // ================= onSlidingStart & onSlidingComplete ===================
+  // ================= onSlidingStart & onSlidingComplete prop ===================
   const [isSliding, setSliding] = useState(false)
   const onSlidingStartI = useCallback(
     (index = 0) => {
@@ -209,27 +170,170 @@ export function Slider<SliderValue extends SliderValueType>(
       onSlidingComplete?.(sliderValue.value, index)
       setSliding(false)
     },
-    [onAfterChange, onSlidingComplete, sliderValue],
+    [onAfterChange, onSlidingComplete, sliderValue.value],
   )
 
-  // ================= reset sliderValue ======================
+  // ================= useEffect ======================
+  const firstMount = useRef(false)
   useEffect(() => {
     if (isSliding === false) {
-      if (propsValue !== undefined) {
-        sliderValue.value = propsValue
-      }
+      sliderValue.value = getSafeValue(
+        propsValue ??
+          (firstMount.current ? undefined : defaultValue) ??
+          sliderValue.value,
+      )
       offsetTemp.current = undefined
-      valueBeforeDragRef.current = undefined
     }
-  }, [isSliding, propsValue, sliderValue])
+
+    if (firstMount.current === false) {
+      firstMount.current = true
+    }
+  }, [defaultValue, getSafeValue, isSliding, propsValue, sliderValue])
+
+  // ================= onChange ======================
+  const offset1 = useSharedValue(0)
+  const offset2 = useSharedValue(0)
+
+  const handleChange = useCallback(
+    (value: SliderValue) => {
+      const safeValue = getSafeValue(value)
+      offset1.value = getPositionByValue(safeValue, 0)
+      offset2.value = getPositionByValue(safeValue, 1)
+      if (isSliding && onChange) {
+        onChange(safeValue)
+      }
+    },
+    [getPositionByValue, getSafeValue, isSliding, offset1, offset2, onChange],
+  )
+  useAnimatedReaction(
+    () => sliderValue.value,
+    (value) => runOnJS(handleChange)(value),
+    [handleChange],
+  )
+
+  // ================= onTrackClick gesture ======================
+  const onHaptics = useContext(HapticsContext)
+  const onTrackClick = useCallback(
+    (x: number) => {
+      onSlidingStartI()
+      const targetValue = getValueByPosition(x)
+      if (range) {
+        // 双滑块采用就近原则移动
+        sliderValue.modify((value: any) => {
+          'worklet'
+          if (
+            Math.abs(targetValue - value[0]) > Math.abs(targetValue - value[1])
+          ) {
+            value[1] = targetValue
+          } else {
+            value[0] = targetValue
+          }
+          return value
+        })
+      } else {
+        sliderValue.value = targetValue as SliderValue
+      }
+      if (!ticks) {
+        onHaptics('slider')
+      }
+      setTimeout(() => {
+        onSlidingCompleteI()
+      }, 100)
+    },
+    [
+      getValueByPosition,
+      onHaptics,
+      onSlidingCompleteI,
+      onSlidingStartI,
+      range,
+      sliderValue,
+      ticks,
+    ],
+  )
+
+  // ================= onSlide gesture ======================
+  const offsetTemp = useRef<number | undefined>(undefined)
+  const onSlide = useCallback(
+    (changeX: number) => {
+      if (offsetTemp.current === undefined) {
+        offsetTemp.current = offset2.value
+      }
+      offsetTemp.current =
+        Math.abs(offsetTemp.current) <= MAX_VALUE
+          ? offsetTemp.current + changeX <= 0
+            ? 0
+            : offsetTemp.current + changeX >= MAX_VALUE
+            ? MAX_VALUE
+            : offsetTemp.current + changeX
+          : offsetTemp.current
+
+      sliderValue.value = getValueByPosition(offsetTemp.current) as SliderValue
+    },
+    [MAX_VALUE, getValueByPosition, offset2, sliderValue],
+  )
+
+  // ================= onDrag gesture ======================
+  const onDrag = useCallback(
+    (index: number, absoluteX: number) => {
+      const newValue = getValueByPosition(absoluteX)
+      sliderValue.modify((value: any) => {
+        'worklet'
+        value[index] = newValue
+        return value
+      })
+    },
+    [getValueByPosition, sliderValue],
+  )
+
+  const gesture = React.useMemo(() => {
+    const horizontalPan = Gesture.Pan()
+      .enabled(!disabled && !range)
+      .activeOffsetX([-10, 10])
+      .failOffsetY([-1, 1]) // must horizontal
+      .onStart(() => runOnJS(onSlidingStartI)())
+      .onChange((e) => {
+        runOnJS(onSlide)(e.changeX)
+      })
+      .onEnd(() => runOnJS(onSlidingCompleteI)())
+
+    // long press in 350ms
+    const longPan = Gesture.Pan()
+      .enabled(!disabled && !range)
+      .activateAfterLongPress(350)
+      .onStart(() => runOnJS(onSlidingStartI)())
+      .onChange((e) => {
+        runOnJS(onSlide)(e.changeX)
+      })
+      .onEnd(() => runOnJS(onSlidingCompleteI)())
+
+    // 点击
+    const tap = Gesture.Tap()
+      .enabled(!disabled)
+      .onEnd((e) => runOnJS(onTrackClick)(e.x))
+
+    return Gesture.Race(horizontalPan, longPan, tap)
+  }, [
+    disabled,
+    onSlide,
+    onSlidingCompleteI,
+    onSlidingStartI,
+    onTrackClick,
+    range,
+  ])
+
+  // ================= Animated fillStyle ======================
+  const fillStyle = useAnimatedStyle(() => {
+    return {
+      left: offset1.value,
+      width: Math.abs(offset2.value - offset1.value),
+    }
+  }, [offset1, offset2])
 
   const renderThumb = (index: number) => {
     return (
       <Thumb
         key={index}
-        sliderValue={sliderValue}
-        index={index}
-        getPositionByValue={getPositionByValue}
+        offset={index ? offset2 : offset1} // TODO-luokun: 需要优化
         disabled={disabled || !range}
         isSliding={isSliding}
         icon={icon}
@@ -238,55 +342,11 @@ export function Slider<SliderValue extends SliderValueType>(
         onDrag={onDrag.bind(this, index)}
         onSlidingStart={onSlidingStartI.bind(this, index)}
         onSlidingComplete={onSlidingCompleteI.bind(this, index)}
-        style={index === 1 ? { position: 'absolute' } : {}}
+        style={index === 0 ? { position: 'absolute' } : {}}
         styles={ss}
       />
     )
   }
-
-  /**
-   * Performance issues moved to @link https://github.com/software-mansion/react-native-reanimated/issues/6247
-   */
-  const gesture = React.useMemo(() => {
-    const horizontalPan = Gesture.Pan()
-      .runOnJS(true)
-      .enabled(!disabled && !range)
-      .activeOffsetX([-10, 10])
-      .failOffsetY([-1, 1]) // must horizontal
-      .onStart(onSlidingStartI)
-      .onChange((e) => {
-        onSlide(e.changeX)
-      })
-      .onEnd(onSlidingCompleteI)
-
-    // long press in 350ms
-    const longPan = Gesture.Pan()
-      .runOnJS(true)
-      .enabled(!disabled && !range)
-      .activateAfterLongPress(350)
-      .onStart(onSlidingStartI)
-      .onChange((e) => {
-        onSlide(e.changeX)
-      })
-      .onEnd(onSlidingCompleteI)
-
-    return Gesture.Race(horizontalPan, longPan)
-  }, [disabled, onSlide, onSlidingCompleteI, onSlidingStartI, range])
-
-  const fillStyle = useAnimatedStyle(() => {
-    const fillStart = range
-      ? getPositionByValue(sliderValue.value, 0)
-      : getPositionByValue(min as SliderValue)
-    const fillSize =
-      (range
-        ? getPositionByValue(sliderValue.value, 1)
-        : getPositionByValue(sliderValue.value)) - fillStart
-
-    return {
-      left: fillStart,
-      width: Math.abs(fillSize),
-    }
-  }, [getPositionByValue, range])
 
   return (
     <GestureDetector gesture={gesture}>
@@ -297,6 +357,7 @@ export function Slider<SliderValue extends SliderValueType>(
           {/* 刻度 */}
           {ticks && (
             <Ticks
+              isSliding={isSliding}
               points={pointList}
               min={min}
               max={max}
@@ -304,9 +365,11 @@ export function Slider<SliderValue extends SliderValueType>(
               styles={ss}
             />
           )}
-          {renderThumb(0)}
-          {range && renderThumb(1)}
+          {renderThumb(1)}
+          {range && renderThumb(0)}
         </View>
+        {/* 刻度下的标记 */}
+        {marks && <Marks marks={marks} min={min} max={max} styles={ss} />}
       </View>
     </GestureDetector>
   )
