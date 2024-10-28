@@ -4,6 +4,7 @@ import { ModalStyle } from './style/index'
 
 export interface ModalPropsType {
   animateAppear?: boolean
+  animationDuration?: number
   animated?: boolean
   animationType?: 'none' | 'fade' | 'slide-up' | 'slide-down' | 'slide'
   bodyStyle?: StyleProp<ViewStyle>

@@ -25,6 +25,7 @@ subtitle: 对话框
 | onClose | 点击 x 或 mask 回调 | (): void | 无 | |
 | transparent | 是否背景透明 | Boolean | false | |
 | popup | 是否弹窗模式 | Boolean | false | |
+| animationDuration | 动画持续时间，单位ms | Number | 300 | `5.2.4` |
 | animationType | 可选: 'fade' / 'slide' | String | fade | |
 | modalType | 弹窗的类型，<br/>为`'portal'`时则从`<Provider />`根节点插入(默认)，<br/>为`'modal'`时则同[`react-native/Modal`](https://reactnative.dev/docs/modal)(用于获取当前context)，<br/>为`'view'`时则同`react-native/View`(用于弹窗中嵌套弹窗) | `'portal'` | `'modal'` | `'view'` | `'portal'` | `5.2.4` |
 | title | 标题 | React.Element | 无 | |

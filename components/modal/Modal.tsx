@@ -51,6 +51,7 @@ class AntmModal extends React.Component<ModalProps, any> {
       children,
       style,
       animateAppear,
+      animationDuration,
       maskClosable,
       popup,
       transparent,
@@ -161,6 +162,7 @@ class AntmModal extends React.Component<ModalProps, any> {
                 onAnimationEnd={onAnimationEnd}
                 onRequestClose={onRequestClose}
                 animateAppear={animateAppear}
+                animationDuration={animationDuration}
                 maskClosable={maskClosable}>
                 <KeyboardAvoidingView
                   behavior="padding"
@@ -200,6 +202,7 @@ class AntmModal extends React.Component<ModalProps, any> {
                 onAnimationEnd={onAnimationEnd}
                 onRequestClose={onRequestClose}
                 animateAppear={animateAppear}
+                animationDuration={animationDuration}
                 maskClosable={maskClosable}>
                 <View style={bodyStyle}>{children}</View>
               </RCModal>
@@ -213,6 +216,7 @@ class AntmModal extends React.Component<ModalProps, any> {
               modalType={modalType}
               visible={visible}
               animationType={animType}
+              animationDuration={animationDuration}
               onRequestClose={onRequestClose}
               onClose={onClose}>
               <View style={style}>{children}</View>
