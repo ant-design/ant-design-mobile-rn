@@ -10,7 +10,7 @@ import prompt from '../prompt'
 const StaticMethod = { alert, prompt, operation }
 export type HookAPI = typeof StaticMethod & { remove: (key: number) => void }
 
-let nextKey = 20000
+let nextKey = 200000
 
 function useModal(): readonly [
   instance: HookAPI,
