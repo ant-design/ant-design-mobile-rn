@@ -56,6 +56,7 @@ const Thumb: FC<ThumbProps> = (props) => {
     return offset.value - (thumbLayout?.width || 0) / 2
   }, [offset, thumbLayout])
 
+  // TODO-luokun: 性能优化
   const animatedStyles = useAnimatedStyle(() => {
     return {
       transform: [

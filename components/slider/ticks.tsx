@@ -1,18 +1,14 @@
 import type { FC } from 'react'
-import React, { memo, useCallback, useContext, useMemo } from 'react'
+import React, { memo, useMemo } from 'react'
 import { StyleSheet, View, ViewStyle } from 'react-native'
 import Animated, {
-  runOnJS,
   SharedValue,
-  useAnimatedReaction,
   useAnimatedStyle,
 } from 'react-native-reanimated'
-import HapticsContext from '../provider/HapticsContext'
 import { SliderValueType } from './PropsType'
 import { SliderStyle } from './style'
 
 type TicksProps = {
-  isSliding: boolean
   points: number[]
   max: number
   min: number
@@ -20,14 +16,7 @@ type TicksProps = {
   styles: Pick<SliderStyle, 'ticks' | 'tickActive' | 'tick'>
 }
 
-const Ticks: FC<TicksProps> = ({
-  isSliding,
-  points,
-  max,
-  min,
-  sliderValue,
-  styles,
-}) => {
+const Ticks: FC<TicksProps> = ({ points, max, min, sliderValue, styles }) => {
   const range = max - min
   const elements = useMemo(
     () =>
@@ -36,7 +25,6 @@ const Ticks: FC<TicksProps> = ({
         return (
           <Tick
             key={point}
-            isSliding={isSliding}
             styles={styles}
             style={style}
             point={point}
@@ -44,7 +32,7 @@ const Ticks: FC<TicksProps> = ({
           />
         )
       }),
-    [points, min, range, isSliding, styles, sliderValue],
+    [points, min, range, styles, sliderValue],
   )
 
   return <View style={styles.ticks}>{elements}</View>
@@ -53,11 +41,11 @@ const Ticks: FC<TicksProps> = ({
 export default Ticks
 
 const Tick: FC<
-  Pick<TicksProps, 'isSliding' | 'sliderValue' | 'styles'> & {
+  Pick<TicksProps, 'sliderValue' | 'styles'> & {
     style: ViewStyle
     point: number
   }
-> = memo(({ isSliding, style, styles, sliderValue, point }) => {
+> = memo(({ style, styles, sliderValue, point }) => {
   const tickActive = useMemo(
     () => StyleSheet.flatten(styles.tickActive),
     [styles.tickActive],
@@ -71,19 +59,6 @@ const Tick: FC<
       ? tickActive
       : { backgroundColor: 'transparent' }
   }, [point, tickActive])
-
-  const onHaptics = useContext(HapticsContext)
-  const handleHaptics = useCallback(() => {
-    if (isSliding) {
-      onHaptics('slider')
-    }
-  }, [onHaptics, isSliding])
-
-  useAnimatedReaction(
-    () => active,
-    () => runOnJS(handleHaptics)(),
-    [handleHaptics],
-  )
 
   return <Animated.View style={[styles.tick, active, style]} />
 })

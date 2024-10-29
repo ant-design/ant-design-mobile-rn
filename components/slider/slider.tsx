@@ -28,6 +28,7 @@ function sortValue(val: [number, number]) {
 }
 function nearest(arr: number[], target: number) {
   return arr.reduce((pre, cur) => {
+    // return target > cur ? cur : pre
     return Math.abs(pre - target) < Math.abs(cur - target) ? pre : cur
   })
 }
@@ -63,6 +64,8 @@ export function Slider<SliderValue extends SliderValueType>(
     styles,
     themeStyles: SliderStyles,
   })
+
+  const onHaptics = useContext(HapticsContext)
 
   const [trackLayout, setTrackLayout] = useState<LayoutRectangle | undefined>()
   const onTrackLayout = (e: LayoutChangeEvent) => {
@@ -197,13 +200,27 @@ export function Slider<SliderValue extends SliderValueType>(
   const handleChange = useCallback(
     (value: SliderValue) => {
       const safeValue = getSafeValue(value)
-      offset1.value = getPositionByValue(safeValue, 0)
-      offset2.value = getPositionByValue(safeValue, 1)
-      if (isSliding && onChange) {
-        onChange(safeValue)
+      if (isSliding) {
+        onChange?.(safeValue)
+        ticks && !disabledStep && onHaptics('slider')
+      }
+      if (!isSliding || range) {
+        offset1.value = getPositionByValue(safeValue, 0)
+        offset2.value = getPositionByValue(safeValue, 1)
       }
     },
-    [getPositionByValue, getSafeValue, isSliding, offset1, offset2, onChange],
+    [
+      disabledStep,
+      getPositionByValue,
+      getSafeValue,
+      isSliding,
+      offset1,
+      offset2,
+      onChange,
+      onHaptics,
+      range,
+      ticks,
+    ],
   )
   useAnimatedReaction(
     () => sliderValue.value,
@@ -212,7 +229,6 @@ export function Slider<SliderValue extends SliderValueType>(
   )
 
   // ================= onTrackClick gesture ======================
-  const onHaptics = useContext(HapticsContext)
   const onTrackClick = useCallback(
     (x: number) => {
       onSlidingStartI()
@@ -267,6 +283,7 @@ export function Slider<SliderValue extends SliderValueType>(
             : offsetTemp.current + changeX
           : offsetTemp.current
 
+      offset2.value = offsetTemp.current
       sliderValue.value = getValueByPosition(offsetTemp.current) as SliderValue
     },
     [MAX_VALUE, getValueByPosition, offset2, sliderValue],
@@ -276,6 +293,9 @@ export function Slider<SliderValue extends SliderValueType>(
   const onDrag = useCallback(
     (index: number, absoluteX: number) => {
       const newValue = getValueByPosition(absoluteX)
+      if ((sliderValue.value as number[])[index] === newValue) {
+        return
+      }
       sliderValue.modify((value: any) => {
         'worklet'
         value[index] = newValue
@@ -358,7 +378,6 @@ export function Slider<SliderValue extends SliderValueType>(
           {/* 刻度 */}
           {ticks && (
             <Ticks
-              isSliding={isSliding}
               points={pointList}
               min={min}
               max={max}
