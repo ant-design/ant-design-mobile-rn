@@ -4,7 +4,6 @@ import {
   LayoutChangeEvent,
   LayoutRectangle,
   StyleProp,
-  View,
   ViewStyle,
 } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
@@ -14,12 +13,13 @@ import Animated, {
   useAnimatedStyle,
   useDerivedValue,
 } from 'react-native-reanimated'
-import Tooltip from '../tooltip'
 import { SliderStyle } from './style'
 import { ThumbIcon } from './thumb-icon'
+import { ThumbPopover } from './thumb-popover'
 
 export type ThumbProps = {
   offset: SharedValue<number>
+  getValueByPosition: (position: number) => number
   disabled: boolean
   isSliding: boolean
   onDrag: (value: number) => void
@@ -35,6 +35,7 @@ export type ThumbProps = {
 const Thumb: FC<ThumbProps> = (props) => {
   const {
     offset,
+    getValueByPosition,
     disabled,
     isSliding,
     icon,
@@ -77,13 +78,6 @@ const Thumb: FC<ThumbProps> = (props) => {
     [disabled, onDrag, onSlidingComplete, onSlidingStart, thumbLayout?.width],
   )
 
-  const renderPopoverContent =
-    typeof popover === 'function'
-      ? popover
-      : popover
-      ? (val: number) => val.toString()
-      : null
-
   const thumbElement = icon ? icon : <ThumbIcon />
 
   return (
@@ -92,17 +86,14 @@ const Thumb: FC<ThumbProps> = (props) => {
         onStartShouldSetResponder={() => true}
         style={[styles.thumb, animatedStyles, style]}
         onLayout={handleLayout}>
-        {renderPopoverContent ? (
-          <Tooltip
-            content={renderPopoverContent(offset.value)} // TODO-luokun: popover
-            placement="top"
-            visible={residentPopover || isSliding}
-            mode="dark">
-            <View style={{ flex: 1 }}>{thumbElement}</View>
-          </Tooltip>
-        ) : (
-          thumbElement
-        )}
+        <ThumbPopover
+          offset={offset}
+          getValueByPosition={getValueByPosition}
+          isSliding={isSliding}
+          popover={popover}
+          residentPopover={residentPopover}>
+          {thumbElement}
+        </ThumbPopover>
       </Animated.View>
     </GestureDetector>
   )

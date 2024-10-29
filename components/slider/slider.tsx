@@ -334,6 +334,7 @@ export function Slider<SliderValue extends SliderValueType>(
       <Thumb
         key={index}
         offset={index ? offset2 : offset1} // TODO-luokun: 需要优化
+        getValueByPosition={getValueByPosition}
         disabled={disabled || !range}
         isSliding={isSliding}
         icon={icon}
