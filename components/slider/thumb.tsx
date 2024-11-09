@@ -1,27 +1,30 @@
 import type { FC, ReactNode } from 'react'
-import React, { useMemo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 import {
   LayoutChangeEvent,
   LayoutRectangle,
   StyleProp,
-  View,
   ViewStyle,
 } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
-import Animated, { useAnimatedStyle } from 'react-native-reanimated'
-import Tooltip from '../tooltip'
+import Animated, {
+  runOnJS,
+  SharedValue,
+  useAnimatedStyle,
+  useDerivedValue,
+} from 'react-native-reanimated'
 import { SliderStyle } from './style'
 import { ThumbIcon } from './thumb-icon'
+import { ThumbPopover } from './thumb-popover'
 
-type ThumbProps = {
-  value: number
-  min: number
-  max: number
+export type ThumbProps = {
+  offset: SharedValue<number>
+  getValueByPosition: (position: number) => number
   disabled: boolean
   isSliding: boolean
-  trackLayout?: LayoutRectangle
   onDrag: (value: number) => void
   onSlidingStart: () => void
+  onSlidingComplete: () => void
   icon?: ReactNode
   popover: boolean | ((value: number) => ReactNode)
   residentPopover: boolean
@@ -31,55 +34,49 @@ type ThumbProps = {
 
 const Thumb: FC<ThumbProps> = (props) => {
   const {
-    value,
-    min,
-    max,
-    trackLayout,
+    offset,
+    getValueByPosition,
     disabled,
+    isSliding,
     icon,
-    residentPopover,
     onDrag,
     onSlidingStart,
+    onSlidingComplete,
+    popover,
+    residentPopover,
     style,
     styles,
-    isSliding,
   } = props
 
   const [thumbLayout, setThumbLayout] = useState<LayoutRectangle | undefined>()
   const handleLayout = (e: LayoutChangeEvent) => {
     setThumbLayout(e.nativeEvent.layout)
   }
+  const translateX = useDerivedValue(() => {
+    return offset.value - (thumbLayout?.width || 0) / 2
+  }, [offset, thumbLayout])
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
       transform: [
         {
-          translateX:
-            ((value - min) / (max - min)) * (trackLayout?.width || 0) -
-            (thumbLayout?.width || 0) / 2,
+          translateX: translateX.value,
         },
       ],
     }
-  }, [max, min, thumbLayout?.width, trackLayout?.width, value])
+  }, [translateX])
 
   const gesture = useMemo(
     () =>
       Gesture.Pan()
-        .runOnJS(true)
         .enabled(!disabled)
-        .onStart(() => onSlidingStart())
+        .onStart(() => runOnJS(onSlidingStart)())
         .onChange((e) => {
-          onDrag(e.changeX)
-        }),
-    [disabled, onDrag, onSlidingStart],
+          runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))
+        })
+        .onEnd(() => runOnJS(onSlidingComplete)()),
+    [disabled, onDrag, onSlidingComplete, onSlidingStart, thumbLayout?.width],
   )
-
-  const renderPopoverContent =
-    typeof props.popover === 'function'
-      ? props.popover
-      : props.popover
-      ? (val: number) => val.toString()
-      : null
 
   const thumbElement = icon ? icon : <ThumbIcon />
 
@@ -89,20 +86,17 @@ const Thumb: FC<ThumbProps> = (props) => {
         onStartShouldSetResponder={() => true}
         style={[styles.thumb, animatedStyles, style]}
         onLayout={handleLayout}>
-        {renderPopoverContent ? (
-          <Tooltip
-            content={renderPopoverContent(value)}
-            placement="top"
-            visible={residentPopover || isSliding}
-            mode="dark">
-            <View style={{ flex: 1 }}>{thumbElement}</View>
-          </Tooltip>
-        ) : (
-          thumbElement
-        )}
+        <ThumbPopover
+          offset={offset}
+          getValueByPosition={getValueByPosition}
+          isSliding={isSliding}
+          popover={popover}
+          residentPopover={residentPopover}>
+          {thumbElement}
+        </ThumbPopover>
       </Animated.View>
     </GestureDetector>
   )
 }
 
-export default Thumb
+export default memo(Thumb)

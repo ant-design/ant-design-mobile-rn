@@ -1,8 +1,7 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native'
 
 import { List, Slider, Switch, Toast } from '../../'
-import { Slider2 } from './slider2'
 
 export default function StepperExample() {
   useEffect(() => {
@@ -30,19 +29,6 @@ export default function StepperExample() {
     Toast.show({ content: `当前选中值为：${text}`, position: 'top' })
   }
 
-  const styles = useMemo(
-    () => ({
-      slider: { height: 100 },
-      trackContianer: { padding: 0, backgroundColor: 'transparent' },
-      track: { backgroundColor: '#343434', height: 4 },
-      fill: { backgroundColor: '#fefefe', height: 4 },
-      tick: { backgroundColor: '#343434' },
-      tickActive: { backgroundColor: '#fefefe' },
-      mark: { height: 0, zIndex: 0 },
-    }),
-    [],
-  )
-
   return (
     <ScrollView>
       <List>
@@ -55,7 +41,7 @@ export default function StepperExample() {
               }}
             />
           }>
-          disabledStep
+          Disabled Step
           <List.Item.Brief>
             是否禁用步距；禁用后`onChange`将返回带有小数点的值
           </List.Item.Brief>
@@ -69,10 +55,8 @@ export default function StepperExample() {
               }}
             />
           }>
-          tapToSeek
-          <List.Item.Brief>
-            是否允许点击轨道来设置thumb icon位置
-          </List.Item.Brief>
+          Tap To Seek
+          <List.Item.Brief>是否允许点击滑块轨道来设置slider值</List.Item.Brief>
         </List.Item>
       </List>
       <List
@@ -80,34 +64,18 @@ export default function StepperExample() {
         onStartShouldSetResponder={() => true}
         onTouchStart={(e) => e.stopPropagation()}>
         <List.Item>
-          <Slider2 />
-        </List.Item>
-        <List.Item>
           <Slider
-            // max={1}
-            // icon={
-            //   <View
-            //     style={{
-            //       width: 6,
-            //       height: 6,
-            //       borderRadius: 6,
-            //       backgroundColor: 'red',
-            //     }}
-            //   />
-            // }
+            max={1}
             disabledStep={disabledStep}
             tapToSeek={tapToSeek}
             onChange={toastValue}
             onAfterChange={toastValue}
-            // onSlidingStart={(val, index) =>
-            //   console.log('onSlidingStart', { val, index })
-            // }
-            // onSlidingComplete={(val, index) =>
-            //   console.log('onSlidingComplete', { val, index })
-            // }
-            marks={marks}
-            ticks
-            styles={styles}
+            onSlidingStart={(val, index) =>
+              console.log('onSlidingStart', { val, index })
+            }
+            onSlidingComplete={(val, index) =>
+              console.log('onSlidingComplete', { val, index })
+            }
           />
         </List.Item>
       </List>
@@ -140,6 +108,7 @@ export default function StepperExample() {
             max={1000}
             ticks
             onAfterChange={toastValue}
+            disabledStep={disabledStep}
             tapToSeek={tapToSeek}
           />
         </List.Item>
@@ -147,17 +116,18 @@ export default function StepperExample() {
       <List renderHeader={'双滑块(range)'}>
         <List.Item>
           <Slider
-            // marks={marks}
-            // ticks
+            marks={marks}
+            ticks
             range
             defaultValue={[60, 40]}
+            disabledStep={disabledStep}
             tapToSeek={tapToSeek}
           />
         </List.Item>
       </List>
-      <List renderHeader={'在拖动时显示悬浮提示'} style={{ marginBottom: 70 }}>
+      <List renderHeader={'在拖动时显示悬浮提示'}>
         <List.Item>
-          <Slider popover tapToSeek={tapToSeek} />
+          <Slider popover disabledStep={disabledStep} tapToSeek={tapToSeek} />
         </List.Item>
       </List>
     </ScrollView>

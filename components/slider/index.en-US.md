@@ -62,6 +62,5 @@ interface SliderStyle {
   // Mark within the tick
   mark: ViewStyle
   markText: TextStyle
-  markTextActive: TextStyle
 }
 ```

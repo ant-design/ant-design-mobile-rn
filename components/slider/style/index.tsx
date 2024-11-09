@@ -21,7 +21,6 @@ export interface SliderStyle {
   // 刻度下的标记
   mark: ViewStyle
   markText: TextStyle
-  markTextActive: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -85,9 +84,8 @@ export default (theme: Theme) =>
       height: 11,
     },
     markText: {
-      marginLeft: '-50%',
+      transform: [{ translateX: -theme.font_size_caption_sm / 2 }],
       fontSize: theme.font_size_caption_sm,
       color: theme.color_text_paragraph,
     },
-    markTextActive: {},
   })
