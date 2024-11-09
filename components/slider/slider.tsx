@@ -343,7 +343,7 @@ export function Slider<SliderValue extends SliderValueType>(
     return (
       <Thumb
         key={index}
-        offset={index ? offset2 : offset1} // TODO-luokun: 需要优化
+        offset={index ? offset2 : offset1}
         getValueByPosition={getValueByPosition}
         disabled={disabled || !range}
         isSliding={isSliding}

@@ -98,7 +98,7 @@ interface PickerStyle extends Partial<PickerViewStyle> {
 属性 | 说明 | 类型 | 默认值 | 版本
 ----|-----|------|------|------
 | children| Picker占位组件，通常是`List.Item` | `ReactNode` / `({disabled, extra, value, toggle})=>ReactNode`  |  -  | `5.2.1`新增函数作为Children |
-| extra   | Picker children的`extra`属性，无选中项时展示 | String |  `请选择`  |  |
+| extra   | Picker children的`extra`属性，无选中项时展示（可理解为placeholder使用） | String |  `请选择`  |  |
 | format  | 格式化选中值的函数，用于回显在`extra`属性上  | (labels: string[]): any | `(labels) => { return labels.join(','); } ` |  |
 | triggerType  | 按钮事件名称 | String | `onPress` |  |
 | disabled  | 是否不可用 | Boolean | `false` |  |

@@ -61,4 +61,4 @@ export class ImagePicker {}
  */
 export class SegmentedControl {}
 
-export type * from './types.ts'
+export type * from './types'

@@ -4,7 +4,7 @@ import { useTheme } from '../style'
 import { ListPropsType } from './PropsType'
 import listStyles, { ListStyle } from './style/index'
 
-export interface ListProps extends ListPropsType, ViewProps {
+export interface ListProps extends ListPropsType {
   styles?: Partial<ListStyle>
   style?: StyleProp<ViewStyle>
 }
