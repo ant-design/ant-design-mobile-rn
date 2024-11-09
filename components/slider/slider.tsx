@@ -54,6 +54,7 @@ export function Slider<SliderValue extends SliderValueType>(
     range,
     style,
     styles,
+    tapToSeek = true,
     ticks,
   } = props as BaseSliderProps<SliderValue> & { range: boolean }
 
@@ -316,7 +317,7 @@ export function Slider<SliderValue extends SliderValueType>(
 
     // 点击
     const tap = Gesture.Tap()
-      .enabled(!disabled)
+      .enabled(!disabled && tapToSeek)
       .onEnd((e) => runOnJS(onTrackClick)(e.x))
 
     return Gesture.Race(horizontalPan, longPan, tap)
@@ -327,6 +328,7 @@ export function Slider<SliderValue extends SliderValueType>(
     onSlidingStartI,
     onTrackClick,
     range,
+    tapToSeek,
   ])
 
   // ================= Animated fillStyle ======================

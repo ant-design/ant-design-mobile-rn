@@ -21,6 +21,7 @@ export type BaseSliderProps<SliderValue> = {
   icon?: ReactNode
   popover?: boolean | ((value: number) => ReactNode)
   residentPopover?: boolean
+  tapToSeek?: boolean
   onChange?: (value: SliderValue) => void
   onAfterChange?: (value: SliderValue, index: number) => void
   onSlidingStart?: (value: SliderValue, index: number) => void

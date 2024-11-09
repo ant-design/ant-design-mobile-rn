@@ -32,6 +32,7 @@ A Slider component for selecting particular value in range, eg: controls the dis
 | step | Step distance, the value must be greater than `0`, and `(max-min)` can be divisible by `step`. When `marks` is not null, the configuration of `step` is invalid | `number` | `1` | `5.2.1` |
 | style  | Container style | `StyleProp<ViewStyle>` | - | |
 | styles | Semantic DOM style | [SliderStyle](#sliderstyle-interface) | - | `5.2.1` |
+| tapToSeek | Permits tapping on the slider track to set the thumb position. | `boolean` | `true` | `5.2.4` |
 | ticks | Whether to display the scale | `boolean` | `false` | `5.2.1` |
 | value | Current value | `number` \|<br/> `[number, number]` | - | |
 

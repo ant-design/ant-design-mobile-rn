@@ -33,6 +33,7 @@ version: update
 | step | 步距，取值必须大于 `0`，并且 `(max - min)` 可被 `step` 整除。当 `marks` 不为空对象时，`step` 的配置失效 | `number` | `1` | `5.2.1` |
 | style  | 最外层容器样式 | `StyleProp<ViewStyle>` | - | |
 | styles | 语义化结构 style | [SliderStyle](#sliderstyle-语义化样式) | - | `5.2.1` |
+| tapToSeek | 允许点击滑块轨道来设置slider值 | `boolean` | `true` | `5.2.4` |
 | ticks | 是否显示刻度 | `boolean` | `false` | `5.2.1` |
 | value | 当前值 | `number` \|<br/> `[number, number]` | - | |
 

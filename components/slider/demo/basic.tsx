@@ -9,6 +9,7 @@ export default function StepperExample() {
   }, [])
 
   const [disabledStep, setDisabledStep] = useState(false)
+  const [tapToSeek, setTapToSeek] = useState(true)
   const marks = {
     0: 0,
     // 20: 20,
@@ -45,6 +46,18 @@ export default function StepperExample() {
             是否禁用步距；禁用后`onChange`将返回带有小数点的值
           </List.Item.Brief>
         </List.Item>
+        <List.Item
+          extra={
+            <Switch
+              checked={tapToSeek}
+              onChange={(val) => {
+                setTapToSeek(val)
+              }}
+            />
+          }>
+          Tap To Seek
+          <List.Item.Brief>是否允许点击滑块轨道来设置slider值</List.Item.Brief>
+        </List.Item>
       </List>
       <List
         renderHeader={'基础用法'}
@@ -54,6 +67,7 @@ export default function StepperExample() {
           <Slider
             max={1}
             disabledStep={disabledStep}
+            tapToSeek={tapToSeek}
             onChange={toastValue}
             onAfterChange={toastValue}
             onSlidingStart={(val, index) =>
@@ -72,12 +86,18 @@ export default function StepperExample() {
             step={10}
             defaultValue={40}
             disabledStep={disabledStep}
+            tapToSeek={tapToSeek}
           />
         </List.Item>
       </List>
       <List renderHeader={'传入刻度标记(marks)'}>
         <List.Item>
-          <Slider marks={marks} ticks disabledStep={disabledStep} />
+          <Slider
+            marks={marks}
+            ticks
+            disabledStep={disabledStep}
+            tapToSeek={tapToSeek}
+          />
         </List.Item>
       </List>
       <List renderHeader={'最大(max)/最小值(min)'}>
@@ -89,17 +109,25 @@ export default function StepperExample() {
             ticks
             onAfterChange={toastValue}
             disabledStep={disabledStep}
+            tapToSeek={tapToSeek}
           />
         </List.Item>
       </List>
       <List renderHeader={'双滑块(range)'}>
         <List.Item>
-          <Slider marks={marks} ticks range defaultValue={[60, 40]} />
+          <Slider
+            marks={marks}
+            ticks
+            range
+            defaultValue={[60, 40]}
+            disabledStep={disabledStep}
+            tapToSeek={tapToSeek}
+          />
         </List.Item>
       </List>
       <List renderHeader={'在拖动时显示悬浮提示'}>
         <List.Item>
-          <Slider popover disabledStep={disabledStep} />
+          <Slider popover disabledStep={disabledStep} tapToSeek={tapToSeek} />
         </List.Item>
       </List>
     </ScrollView>
