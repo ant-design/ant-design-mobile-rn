@@ -53,7 +53,8 @@ const Tick: FC<
   const active = useAnimatedStyle(() => {
     return (
       Array.isArray(sliderValue.value)
-        ? point <= sliderValue.value[0] && point >= sliderValue.value[1]
+        ? point <= Math.max(sliderValue.value[0], sliderValue.value[1]) &&
+          point >= Math.min(sliderValue.value[1], sliderValue.value[0])
         : point <= (sliderValue.value || 0)
     )
       ? tickActive

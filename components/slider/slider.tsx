@@ -231,7 +231,6 @@ export function Slider<SliderValue extends SliderValueType>(
   // ================= onTrackClick gesture ======================
   const onTrackClick = useCallback(
     (x: number) => {
-      onSlidingStartI()
       const targetValue = getValueByPosition(x)
       if (range) {
         // 双滑块采用就近原则移动
@@ -252,19 +251,8 @@ export function Slider<SliderValue extends SliderValueType>(
       if (!ticks) {
         onHaptics('slider')
       }
-      setTimeout(() => {
-        onSlidingCompleteI()
-      }, 100)
     },
-    [
-      getValueByPosition,
-      onHaptics,
-      onSlidingCompleteI,
-      onSlidingStartI,
-      range,
-      sliderValue,
-      ticks,
-    ],
+    [getValueByPosition, onHaptics, range, sliderValue, ticks],
   )
 
   // ================= onSlide gesture ======================
