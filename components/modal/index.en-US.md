@@ -24,9 +24,9 @@ Properties | Descrition | Type | Default | Version
 | onClose | Callback for clicking close icon x or mask | (): void | - | |
 | transparent | transparent mode or full screen mode | Boolean | false | |
 | popup | popup mode | Boolean | false | |
-| animationDuration | Animation duration, in ms | Number | 300 | `5.2.4` |
+| animationDuration | Animation duration, in ms | Number | 300 | `5.3.0` |
 | animationType | Options: 'fade' / 'slide' | String |  |fade |
-| modalType | The type of the popup. <br/>When it is `'portal'`, it is inserted from the `<Provider />` root node (default). <br/>When it is `'modal'`, it is the same as [`react-native/Modal`](https://reactnative.dev/docs/modal) (used to get the current context). <br/>When it is `'view'`, it is the same as `react-native/View` (used to nest popups in popups). | `'portal'` | `'modal'` | `'view'` | `'portal'` | `5.2.4` |
+| modalType | The type of the popup. <br/>When it is `'portal'`, it is inserted from the `<Provider />` root node (default). <br/>When it is `'modal'`, it is the same as [`react-native/Modal`](https://reactnative.dev/docs/modal) (used to get the current context). <br/>When it is `'view'`, it is the same as `react-native/View` (used to nest popups in popups). | `'portal'` | `'modal'` | `'view'` | `'portal'` | `5.3.0` |
 | title | title | React.Element | - | |
 | footer | footer content | Array [{text, onPress}] | [] | |
 | onRequestClose | The `onRequestClose` callback is called when the user taps the hardware back button on Android or the menu button on Apple TV. Returns `true` to prevent `BackHandler` events when modal is open.| (): boolean | false | |

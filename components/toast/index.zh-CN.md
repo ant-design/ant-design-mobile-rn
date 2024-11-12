@@ -67,7 +67,7 @@ Toast.getConfig()
 
 ### Toast.useToast()
 
-`5.2.4`新增。直接调用 Toast 方法，antd-mobile-rn 会通过 `Portal.add` 插入到 `<Provider>` 根节点下。其 context 与当前代码所在 context 并不相同，因而无法获取 context 信息。
+`5.3.0`新增。直接调用 Toast 方法，antd-mobile-rn 会通过 `Portal.add` 插入到 `<Provider>` 根节点下。其 context 与当前代码所在 context 并不相同，因而无法获取 context 信息。
 <br/>
 当你需要 context 信息（例如 Modal 配置的内容）时，可以通过 `toast.useToast` 方法会返回 `toastApi` 实体以及 `contextHolder` 节点。将其插入到你需要获取 context 位置即可：
 

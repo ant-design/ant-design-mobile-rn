@@ -25,9 +25,9 @@ subtitle: 对话框
 | onClose | 点击 x 或 mask 回调 | (): void | 无 | |
 | transparent | 是否背景透明 | Boolean | false | |
 | popup | 是否弹窗模式 | Boolean | false | |
-| animationDuration | 动画持续时间，单位ms | Number | 300 | `5.2.4` |
+| animationDuration | 动画持续时间，单位ms | Number | 300 | `5.3.0` |
 | animationType | 可选: 'fade' / 'slide' | String | fade | |
-| modalType | 弹窗的类型，<br/>为`'portal'`时则从`<Provider />`根节点插入(默认)，<br/>为`'modal'`时则同[`react-native/Modal`](https://reactnative.dev/docs/modal)(用于获取当前context)，<br/>为`'view'`时则同`react-native/View`(用于弹窗中嵌套弹窗) | `'portal'` | `'modal'` | `'view'` | `'portal'` | `5.2.4` |
+| modalType | 弹窗的类型，<br/>为`'portal'`时则从`<Provider />`根节点插入(默认)，<br/>为`'modal'`时则同[`react-native/Modal`](https://reactnative.dev/docs/modal)(用于获取当前context)，<br/>为`'view'`时则同`react-native/View`(用于弹窗中嵌套弹窗) | `'portal'` | `'modal'` | `'view'` | `'portal'` | `5.3.0` |
 | title | 标题 | React.Element | 无 | |
 | footer | 底部内容 | Array [{text, onPress}] | [] | |
 | onRequestClose | `onRequestClose`回调会在用户按下 Android 设备上的后退按键或是 Apple TV 上的菜单键时触发。返回true时会在 modal 处于开启状态时阻止`BackHandler`事件。| (): boolean | false | |
@@ -68,7 +68,7 @@ interface ModalStyle {
 
 ### Modal.useModal()
 
-`5.2.4`新增。当你需要使用 Context 时，可以通过 `Modal.useModal` 创建一个 `contextHolder` 插入子节点中。通过 hooks 创建的临时 Modal 将会得到 `contextHolder` 所在位置的所有上下文。创建的 `modal` 对象拥有与 [`Modal.method`](#静态方法) 静态方法相同的创建通知方法。
+`5.3.0`新增。当你需要使用 Context 时，可以通过 `Modal.useModal` 创建一个 `contextHolder` 插入子节点中。通过 hooks 创建的临时 Modal 将会得到 `contextHolder` 所在位置的所有上下文。创建的 `modal` 对象拥有与 [`Modal.method`](#静态方法) 静态方法相同的创建通知方法。
 
 ```jsx
 const [modal, contextHolder] = Modal.useModal();

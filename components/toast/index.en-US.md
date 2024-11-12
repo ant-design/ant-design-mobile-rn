@@ -66,7 +66,7 @@ Toast.getConfig()
 
 ### Toast.useToast()
 
-New in `5.2.4`.  antd-mobile-rn will inserted into the root node of `<Provider>` through `Portal.add` when call toast methods. Whose context is different with origin code located context.
+New in `5.3.0`.  antd-mobile-rn will inserted into the root node of `<Provider>` through `Portal.add` when call toast methods. Whose context is different with origin code located context.
 <br/>
 When you need context info (like **Modal** context), you can use `toast.useToast` to get `toastApi` instance and `contextHolder` node. And put it in your children:
 

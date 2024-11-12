@@ -26,7 +26,6 @@ export interface UseThemeContextProps {
 }
 
 function customizer(objValue: any, srcValue: any) {
-  console.log('===lk===')
   if (Array.isArray(objValue)) {
     return objValue.concat(srcValue)
   } else {

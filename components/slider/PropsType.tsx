@@ -26,7 +26,6 @@ export type BaseSliderProps<SliderValue> = {
   onAfterChange?: (value: SliderValue, index: number) => void
   onSlidingStart?: (value: SliderValue, index: number) => void
   onSlidingComplete?: (value: SliderValue, index: number) => void
-  tapToSeek?: boolean
   style?: StyleProp<ViewStyle>
   styles?: Partial<SliderStyle>
 }

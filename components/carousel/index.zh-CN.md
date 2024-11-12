@@ -23,7 +23,7 @@ subtitle: 走马灯
 | selectedIndex |  手动设置当前显示的索引  |  number  |  0  | |
 | style | 轮播容器样式<br/>(建议设置，整体轮播大小由容器决定非页内决定) | ViewStyle | 无 | |
 | vertical | 垂直显示 | Boolean   | false | |
-| onScrollAnimationEnd | 当滚动动画结束时调用 | ()=>void   | 无 | `5.2.4` |
+| onScrollAnimationEnd | 当滚动动画结束时调用 | ()=>void   | 无 | `5.3.0` |
 
 
 Carousel 的其他属性和 react-native 内置组件[ScrollView](https://reactnative.dev/docs/scrollview.html) 一致;<br/>

@@ -20,7 +20,7 @@ Properties | Descrition | Type | Default | Version
 | selectedIndex |  current selected index  |  number  |  0  | |
 | style | ScrollView style<br/>(`tips: Recommended setting, the overall carousel size is determined by the container scrollview and not the inner page`) | ViewStyle | | |
 | vertical | controls the pagination display direction. | Boolean   | false | |
-| onScrollAnimationEnd | Called when a scrolling animation ends. | ()=>void   | | `5.2.4` |
+| onScrollAnimationEnd | Called when a scrolling animation ends. | ()=>void   | | `5.3.0` |
 
 The rest of the props of Carousel are exactly the same as the react-native [ScrollView](https://reactnative.dev/docs/scrollview.html);
 
