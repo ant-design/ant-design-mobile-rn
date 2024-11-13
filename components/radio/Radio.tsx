@@ -27,7 +27,9 @@ const InternalRadio: React.ForwardRefRenderFunction<
     )
   }
 
-  const [innerChecked, setInnerChecked] = useState<boolean>(false)
+  const [innerChecked, setInnerChecked] = useState<boolean | undefined>(
+    undefined,
+  )
 
   const restCheckboxProps = useMemo<RadioProps>(() => {
     if (context) {
