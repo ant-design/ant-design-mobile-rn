@@ -16,6 +16,7 @@ const InternalRadio: React.ForwardRefRenderFunction<
     checked,
     onChange,
     value,
+    defaultChecked,
     disabled = context?.disabled,
     ...restProps
   } = props
@@ -27,7 +28,9 @@ const InternalRadio: React.ForwardRefRenderFunction<
     )
   }
 
-  const [innerChecked, setInnerChecked] = useState<boolean>(false)
+  const [innerChecked, setInnerChecked] = useState<boolean | undefined>(
+    checked ?? defaultChecked,
+  )
 
   const restCheckboxProps = useMemo<RadioProps>(() => {
     if (context) {
@@ -41,19 +44,14 @@ const InternalRadio: React.ForwardRefRenderFunction<
         },
       }
     }
-    if (checked === undefined) {
-      return {
-        checked: innerChecked,
-        onChange: (e) => {
-          if (e.target.checked) {
-            setInnerChecked(true)
-          }
-        },
-      }
-    }
     return {
-      checked,
-      onChange,
+      checked: innerChecked,
+      onChange: (e) => {
+        if (e.target.checked && checked === undefined) {
+          onChange?.(e)
+          setInnerChecked(true)
+        }
+      },
     }
   }, [checked, context, innerChecked, onChange, value])
 

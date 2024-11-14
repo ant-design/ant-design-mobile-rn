@@ -1,20 +1,29 @@
 import React from 'react'
-import { TextStyle } from 'react-native'
-export interface ModalPropsType<T> {
-  title?: React.ReactNode
-  visible: boolean
-  maskClosable?: boolean
-  closable?: boolean
-  footer?: Action<T>[]
-  onClose?: () => void
-  transparent?: boolean
-  popup?: boolean
-  animated?: boolean
-  locale?: object
-  animationType?: any
-  onAnimationEnd?: (visible: boolean) => void
+import { StyleProp, TextStyle, ViewStyle } from 'react-native'
+import { ModalStyle } from './style/index'
+
+export interface ModalPropsType {
   animateAppear?: boolean
+  animationDuration?: number
+  animated?: boolean
+  animationType?: 'none' | 'fade' | 'slide-up' | 'slide-down' | 'slide'
+  bodyStyle?: StyleProp<ViewStyle>
+  children?: React.ReactNode
+  closable?: boolean
+  footer?: Action<TextStyle>[]
+  locale?: object
+  maskClosable?: boolean
+  modalType?: 'portal' | 'modal' | 'view'
+  onAnimationEnd?: (visible: boolean) => void
+  onClose?: () => void
   operation?: boolean
+  onRequestClose?: CallbackOnBackHandler
+  popup?: boolean
+  style?: StyleProp<ViewStyle>
+  styles?: Partial<ModalStyle>
+  title?: React.ReactNode
+  transparent?: boolean
+  visible: boolean
 }
 
 export interface Action<T = TextStyle> {

@@ -222,8 +222,9 @@ You can use the [React Developer Tools](https://chrome.google.com/webstore/detai
 
 Step 2: Set the `styles` property
 ```jsx
-<Picker 
-  styles={{
+// It is recommended to use useMemo to cache variables
+const styles = useMemo(
+  () => ({
     itemActiveStyle: {
       color: '#108ee9',
       fontWeight: 'bold',
@@ -235,7 +236,12 @@ Step 2: Set the `styles` property
       backgroundColor: 'rgba(51,51,51,0.1)',
       borderRadius: 10,
     },
-  }}
+  }),
+  [],
+)
+
+<Picker 
+  styles={styles}
 >
 ...
 </Picker>

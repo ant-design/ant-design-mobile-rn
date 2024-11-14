@@ -16,18 +16,71 @@ Use to show important information for the system, and ask for user feedback. eg:
 
 ### Modal
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| visible | Determine whether a modal dialog is visible or not | Boolean | false |
-| closable | Determine whether a close (x) button is visible or not | Boolean | false |
-| maskClosable | Determine whether to close the modal dialog when clicked mask of it | Boolean | true |
-| onClose | Callback for clicking close icon x or mask | (): void | - |
-| transparent | transparent mode or full screen mode | Boolean | false |
-| popup | popup mode | Boolean | false |
-| animationType | Options: 'fade' / 'slide' | String | fade |
-| title | title | React.Element | - |
-| footer | footer content | Array [{text, onPress}] | [] |
-| onRequestClose | The `onRequestClose` callback is called when the user taps the hardware back button on Android or the menu button on Apple TV. Returns `true` to prevent `BackHandler` events when modal is open.| (): boolean | false |
+Properties | Descrition | Type | Default | Version
+-----------|------------|------|---------|---------|
+| visible | Determine whether a modal dialog is visible or not | Boolean | false | |
+| closable | Determine whether a close (x) button is visible or not | Boolean | false | |
+| maskClosable | Determine whether to close the modal dialog when clicked mask of it | Boolean | true | |
+| onClose | Callback for clicking close icon x or mask | (): void | - | |
+| transparent | transparent mode or full screen mode | Boolean | false | |
+| popup | popup mode | Boolean | false | |
+| animationDuration | Animation duration, in ms | Number | 300 | `5.3.0` |
+| animationType | Options: 'fade' / 'slide' | String |  |fade |
+| modalType | The type of the popup. <br/>When it is `'portal'`, it is inserted from the `<Provider />` root node (default). <br/>When it is `'modal'`, it is the same as [`react-native/Modal`](https://reactnative.dev/docs/modal) (used to get the current context). <br/>When it is `'view'`, it is the same as `react-native/View` (used to nest popups in popups). | `'portal'` | `'modal'` | `'view'` | `'portal'` | `5.3.0` |
+| title | title | React.Element | - | |
+| footer | footer content | Array [{text, onPress}] | [] | |
+| onRequestClose | The `onRequestClose` callback is called when the user taps the hardware back button on Android or the menu button on Apple TV. Returns `true` to prevent `BackHandler` events when modal is open.| (): boolean | false | |
+| style | style same as `styles.innerContainer` | `ViewStyle` | - | |
+| styles | Semantic DOM style | [ModalStyle](#modalstyle-interface) | - | |
+
+### ModalStyle interface
+
+```typescript
+interface ModalStyle {
+  container: ViewStyle      // Set `z-index`
+  wrap: ViewStyle           // Set modal flex layout: `{justifyContent: 'center',alignItems: 'center'}`
+  innerContainer: ViewStyle // modal content view, default: `{ widh:286 }`
+  
+  // modal content fields
+  footer: ViewStyle
+  header: TextStyle
+  body: ViewStyle
+  closeWrap: ViewStyle
+  close: TextStyle
+  buttonGroupH: ViewStyle
+  buttonGroupV: ViewStyle
+  buttonWrapH: ViewStyle
+  buttonWrapV: ViewStyle
+  buttonText: TextStyle
+
+  // popup
+  popupContainer: ViewStyle
+  popupSlideUp: ViewStyle
+  popupSlideDown: ViewStyle
+  // operation
+  operationContainer: ViewStyle
+  operationBody: ViewStyle
+  buttonTextOperation: TextStyle
+}
+```
+
+### Modal.useModal()
+
+When you need using Context, you can use `contextHolder` which created by `Modal.useModal` to insert into children. Modal created by hooks will get all the context where `contextHolder` are. Created `modal` has the same creating function with [`Modal.method`](#static-method)(Static method).
+
+```jsx
+const [modal, contextHolder] = Modal.useModal();
+
+React.useEffect(() => {
+  modal.alert(
+    // ...
+  );
+}, []);
+
+return <View>{contextHolder}</View>;
+```
+
+## Static method
 
 ### Modal.alert(title, message, actions?)
 
@@ -78,4 +131,61 @@ function App() {
     Portal.remove(key)
   }
 }
+```
+When using `Modal.useModal`, use the `modal.remove(key)` method:
+```jsx
+import { Modal, Portal } from '@ant-design/react-native'
+import { useRef } from 'react'
+
+function App() {
+  const [modal, contextHolder] = Modal.useModal();
+   const key = useRef()
+
+  const onOpen = () => {
+    key.current = modal.alert({})
+  }
+
+  const onClose = () => {
+    // close the modal.alert
+    modal.remove(key)
+  }
+
+  return (
+    <>
+     ...
+     {contextHolder}
+    </>
+  )
+}
+```
+
+### Why I can not access context,redux,useRouter in `<Modal />` or `Modal.xxx`?
+
+Rendering `<Modal>` or calling Modal methods directly is dynamically inserted into the `<Provider>` root node through `Portal.add` by default. At this time, its context is different from the context of the current code, so the context information cannot be obtained.
+
+When you need context info, <br/>
+**1.** you can use `Modal.useModal` to get `modal` instance and `contextHolder` node. And put it in your children:
+```tsx
+const [modal, contextHolder] = Modal.useModal();
+
+// then call modal.confirm instead of Modal.confirm
+
+return (
+  <Context1.Provider value="Ant">
+    {/* contextHolder is in Context1, which means modal will get context of Context1 */}
+    {contextHolder}
+    <Context2.Provider value="Design">
+      {/* contextHolder is out of Context2, which means modal will not get context of Context2 */}
+    </Context2.Provider>
+  </Context1.Provider>
+);
+```
+
+**Note**: You must insert `contextHolder` into your children with hooks. You can use origin method if you do not need context connection.
+
+**2.** When using `<Modal />`, by setting `modalType='modal'`, the **native Modal component** will be used internally to maintain the context:
+```tsx
+<Modal modelType="modal" ...>
+ ...
+</Modal>
 ```

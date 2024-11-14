@@ -7,6 +7,7 @@ import {
   remove,
   removeAll,
 } from './methods'
+import useToast from './useToast'
 
 export type { ToastProps, ToastShowProps } from './PropsType'
 
@@ -24,6 +25,7 @@ const Toast = {
   loading: methods.loading,
   remove,
   removeAll,
+  useToast,
 }
 
 export default Toast

@@ -9,20 +9,21 @@ subtitle: 走马灯
 
 ## API
 
-属性 | 说明 | 类型 | 默认值
-----|-----|------|------
-| afterChange  | 切换面板后的回调函数 | (current: number) => void  | 无 |
-| autoplay | 是否自动切换 | Boolean   | false |
-| autoplayInterval | 自动切换的时间间隔 | Number | 3000 |
-| dots | 是否显示面板指示点 | Boolean   | true |
-| dotStyle  | 指示点样式 | ViewStyle | 无 |
-| dotActiveStyle  | 当前激活的指示点样式 | ViewStyle | 无 |
-| infinite | 是否循环播放 | Boolean   | false |
-| pageStyle | 轮播页内样式 | ViewStyle | 无 |
-| pagination | 自定义 pagination | (props) => ReactNode  |  |
-| selectedIndex |  手动设置当前显示的索引  |  number  |  0  |
-| style | 轮播容器样式<br/>(建议设置，整体轮播大小由容器决定非页内决定) | ViewStyle | 无 |
-| vertical | 垂直显示 | Boolean   | false |
+属性 | 说明 | 类型 | 默认值 | 版本
+----|-----|------|-------|-----
+| afterChange  | 切换面板后的回调函数 | (current: number) => void  | 无 | |
+| autoplay | 是否自动切换 | Boolean   | false | |
+| autoplayInterval | 自动切换的时间间隔 | Number | 3000 | |
+| dots | 是否显示面板指示点 | Boolean   | true | |
+| dotStyle  | 指示点样式 | ViewStyle | 无 | |
+| dotActiveStyle  | 当前激活的指示点样式 | ViewStyle | 无 | |
+| infinite | 是否循环播放 | Boolean   | false | |
+| pageStyle | 轮播页内样式 | ViewStyle | 无 | |
+| pagination | 自定义 pagination | (props) => ReactNode  |  | |
+| selectedIndex |  手动设置当前显示的索引  |  number  |  0  | |
+| style | 轮播容器样式<br/>(建议设置，整体轮播大小由容器决定非页内决定) | ViewStyle | 无 | |
+| vertical | 垂直显示 | Boolean   | false | |
+| onScrollAnimationEnd | 当滚动动画结束时调用 | ()=>void   | 无 | `5.3.0` |
 
 
 Carousel 的其他属性和 react-native 内置组件[ScrollView](https://reactnative.dev/docs/scrollview.html) 一致;<br/>

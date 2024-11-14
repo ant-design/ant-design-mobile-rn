@@ -89,6 +89,14 @@ const AntmSwitch = (props: SwitchProps) => {
   //animate2
   const [animatedValue2, animate2] = useAnimatedTiming()
   const transitionWidth = {
+    borderRadius: itemHeight - BORDER_WIDTH * 2,
+    height: animatedValue2.interpolate({
+      inputRange: [0, 1],
+      outputRange: [
+        itemHeight - BORDER_WIDTH * 2,
+        itemHeight - BORDER_WIDTH * 2,
+      ],
+    }),
     width: animatedValue2.interpolate({
       inputRange: [0, 1],
       outputRange: [
@@ -184,13 +192,6 @@ const AntmSwitch = (props: SwitchProps) => {
         })
           .split(' ')
           .map((a) => styles[a])
-          .concat([
-            {
-              width: itemHeight - BORDER_WIDTH * 2,
-              height: itemHeight - BORDER_WIDTH * 2,
-              borderRadius: itemHeight - BORDER_WIDTH * 2,
-            },
-          ])
 
         // color props
         const Color = innerChecked

@@ -6,6 +6,7 @@ import { SliderStyle } from './style'
 export type SliderMarks = {
   [key: number]: React.ReactNode
 }
+export type SliderValueType = number | [number, number]
 
 export type BaseSliderProps<SliderValue> = {
   min?: number
@@ -16,11 +17,15 @@ export type BaseSliderProps<SliderValue> = {
   marks?: SliderMarks
   ticks?: boolean
   disabled?: boolean
+  disabledStep?: boolean
   icon?: ReactNode
   popover?: boolean | ((value: number) => ReactNode)
   residentPopover?: boolean
+  tapToSeek?: boolean
   onChange?: (value: SliderValue) => void
-  onAfterChange?: (value: SliderValue) => void
+  onAfterChange?: (value: SliderValue, index: number) => void
+  onSlidingStart?: (value: SliderValue, index: number) => void
+  onSlidingComplete?: (value: SliderValue, index: number) => void
   style?: StyleProp<ViewStyle>
   styles?: Partial<SliderStyle>
 }

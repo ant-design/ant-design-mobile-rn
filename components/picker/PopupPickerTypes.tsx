@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { TouchableHighlightProps } from 'react-native'
+import { ModalPropsType } from '../modal/PropsType'
 import { PickerStyle } from './style'
 
 export type PopupPickerProps = {
@@ -14,4 +15,4 @@ export type PopupPickerProps = {
   dismissButtonProps?: TouchableHighlightProps
   children?: ReactNode
   styles: Partial<PickerStyle>
-}
+} & Pick<ModalPropsType, 'modalType'>

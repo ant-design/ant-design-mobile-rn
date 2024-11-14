@@ -3,11 +3,12 @@ import {
   StyleProp,
   TouchableWithoutFeedback,
   View,
+  ViewProps,
   ViewStyle,
 } from 'react-native'
 import { FlexPropsType } from './PropsType'
 
-export interface FlexProps extends FlexPropsType {
+export interface FlexProps extends FlexPropsType, ViewProps {
   onPress?: () => void
   onLongPress?: () => void
   onPressIn?: () => void

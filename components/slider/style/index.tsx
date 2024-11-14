@@ -4,6 +4,8 @@ import { Theme } from '../../style'
 export interface SliderStyle {
   slider: ViewStyle
   disabled: ViewStyle
+
+  // 轨道
   trackContianer: ViewStyle
   track: ViewStyle
   fill: ViewStyle
@@ -19,7 +21,6 @@ export interface SliderStyle {
   // 刻度下的标记
   mark: ViewStyle
   markText: TextStyle
-  markTextActive: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -54,7 +55,7 @@ export default (theme: Theme) =>
     },
 
     thumb: {
-      zIndex: 2,
+      zIndex: 3,
     },
 
     ticks: {
@@ -62,6 +63,7 @@ export default (theme: Theme) =>
       width: '100%',
       height: 3,
       backgroundColor: 'transparent',
+      zIndex: 2,
     },
     tick: {
       position: 'absolute',
@@ -82,9 +84,8 @@ export default (theme: Theme) =>
       height: 11,
     },
     markText: {
-      marginLeft: '-50%',
+      transform: [{ translateX: -theme.font_size_caption_sm / 2 }],
       fontSize: theme.font_size_caption_sm,
       color: theme.color_text_paragraph,
     },
-    markTextActive: {},
   })

@@ -64,6 +64,34 @@ Toast.config({ duration: 1, position: 'top' })
 Toast.getConfig()
 ```
 
+### Toast.useToast()
+
+New in `5.3.0`.  antd-mobile-rn will inserted into the root node of `<Provider>` through `Portal.add` when call toast methods. Whose context is different with origin code located context.
+<br/>
+When you need context info (like **Modal** context), you can use `toast.useToast` to get `toastApi` instance and `contextHolder` node. And put it in your children:
+
+```jsx
+import { Modal } from 'react-native'
+import { Toast } from '@ant-design/react-native'
+
+const [toastApi, contextHolder] = Toast.useToast();
+
+const showLoading = () => {
+  toastApi.loading(
+    // ...
+  );
+}
+
+return (
+  <Modal>
+    {contextHolder}
+    <View>
+      ...
+    </View>
+  </Modal>
+);
+```
+
 ### InputStyle interface
 
 ```typescript
