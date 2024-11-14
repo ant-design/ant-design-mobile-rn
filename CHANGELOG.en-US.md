@@ -14,7 +14,7 @@ toc: false
 
 ---
 ### 5.3.0
-`2024-11-13`
+`2024-11-14`
  - 🌟 **Typescript**: export all component props types. 
    (To support for [nativewind](https://github.com/nativewind/nativewind))
  - **Toast**: 
@@ -26,9 +26,14 @@ toc: false
     - feat: add `onScrollAnimationEnd` prop
 - **Slider**
     - feat: add `disabledStep`、`onSlidingStart`、`onSlidingComplete`、`tapToSeek` prop
-- fix
+- 🔥 Upgrade react-native@0.75+
+   - fix: [Switch] `style` props works [#1389](https://github.com/ant-design/ant-design-mobile-rn/issues/1398)
+   - fix: [Pagination] Remove `flex: 1` to avoid height collapse
+- other fix
     - fix: [Form] fix Require cycle
     - fix: [Tooltip] safe floatingStyles
+    - fix: [Picker] `defaultValue` prop works [#1311](https://github.com/ant-design/ant-design-mobile-rn/issues/1311)
+    - fix: [Radio] `defaultChecked` prop works [#1380](https://github.com/ant-design/ant-design-mobile-rn/issues/1380)
 
 ### 5.2.3
 `2024-09-09`

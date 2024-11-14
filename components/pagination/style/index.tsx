@@ -15,7 +15,8 @@ export interface PaginationStyle {
 export default (theme: Theme) =>
   StyleSheet.create<PaginationStyle>({
     container: {
-      flex: 1,
+      // fix: 高度坍塌 in react-native@0.75+
+      // flex: 1,
       justifyContent: 'center',
     },
     numberStyle: {

@@ -174,7 +174,7 @@ export function Slider<SliderValue extends SliderValueType>(
       onSlidingComplete?.(sliderValue.value, index)
       setSliding(false)
     },
-    [onAfterChange, onSlidingComplete, sliderValue.value],
+    [onAfterChange, onSlidingComplete, sliderValue],
   )
 
   // ================= useEffect ======================

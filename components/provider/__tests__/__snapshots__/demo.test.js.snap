@@ -131,7 +131,6 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
         style={
           Array [
             Object {
-              "flex": 1,
               "justifyContent": "center",
             },
             undefined,
