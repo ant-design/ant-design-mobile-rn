@@ -9,15 +9,14 @@ interface HapticsContextProps {
   children?: React.ReactNode
 }
 
-const onHapticsDefault = () => {}
-const HapticsContext = React.createContext<HapticsFunc>(onHapticsDefault)
+const HapticsContext = React.createContext<HapticsFunc | undefined>(undefined)
 
 export const HapticsContextProvider: React.FC<HapticsContextProps> = ({
   children,
   onHaptics,
 }) => {
   return (
-    <HapticsContext.Provider value={onHaptics || onHapticsDefault}>
+    <HapticsContext.Provider value={onHaptics}>
       {children}
     </HapticsContext.Provider>
   )
