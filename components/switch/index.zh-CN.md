@@ -22,3 +22,23 @@ subtitle: 滑动开关
 | color | 开关打开后的颜色 | String | `#4dd865` |
 | checkedChildren | 选中时的内容 | ReactNode   |   无     |
 | unCheckedChildren | 非选中时的内容 | ReactNode   |   无     |
+| styles     | 语义化结构 style | [SwitchStyle](#switchStyle-语义化样式) | - |
+
+### SwitchStyle 语义化样式
+
+```typescript
+interface SwitchStyle {
+  switch: ViewStyle
+  switch_inner: ViewStyle
+  switch_handle: ViewStyle
+  switch_checked: ViewStyle
+  switch_unchecked: ViewStyle
+  switch_inner_checked: ViewStyle
+  switch_inner_unchecked: ViewStyle
+  switch_handle_checked: ViewStyle
+  switch_handle_unchecked: ViewStyle
+  switch_checked_disabled: ViewStyle
+  switch_unchecked_disabled: ViewStyle
+  switch_handle_disabled: ViewStyle
+}
+```

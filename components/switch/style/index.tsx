@@ -1,9 +1,9 @@
-import { StyleSheet, ViewStyle } from 'react-native'
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 
 export interface SwitchStyle {
   switch: ViewStyle
-  switch_inner: ViewStyle
+  switch_inner: ViewStyle | TextStyle
   switch_handle: ViewStyle
   switch_checked: ViewStyle
   switch_unchecked: ViewStyle

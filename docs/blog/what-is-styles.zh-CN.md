@@ -220,9 +220,9 @@ interface PickerStyle extends Partial<PickerViewStyle> {
 
 第二步，设置`styles`属性
 ```jsx
-
-<Picker 
-  styles={{
+// 建议使用 useMemo 缓存变量
+const styles = useMemo(
+  () => ({
     itemActiveStyle: {
       color: '#108ee9',
       fontWeight: 'bold',
@@ -234,7 +234,12 @@ interface PickerStyle extends Partial<PickerViewStyle> {
       backgroundColor: 'rgba(51,51,51,0.1)',
       borderRadius: 10,
     },
-  }}
+  }),
+  [],
+)
+
+<Picker 
+  styles={styles}
 >
 ...
 </Picker>

@@ -2,33 +2,24 @@ import React from 'react'
 import {
   KeyboardAvoidingView,
   Platform,
-  StyleProp,
   Text,
-  TextStyle,
   TouchableHighlight,
   TouchableWithoutFeedback,
   View,
-  ViewStyle,
 } from 'react-native'
 import { getComponentLocale } from '../_util/getLocale'
 import { LocaleContext } from '../locale-provider'
-import { WithTheme, WithThemeStyles } from '../style'
+import { WithTheme } from '../style'
 import RCModal from './ModalView'
-import { CallbackOnBackHandler, ModalPropsType } from './PropsType'
+import { ModalPropsType } from './PropsType'
 import alert from './alert'
 import zh_CN from './locale/zh_CN'
 import operation from './operation'
 import prompt from './prompt'
-import modalStyles, { ModalStyle } from './style/index'
+import modalStyles from './style/index'
+import useModal from './useModal'
 
-export interface ModalProps
-  extends ModalPropsType<TextStyle>,
-    WithThemeStyles<ModalStyle> {
-  style?: StyleProp<ViewStyle>
-  bodyStyle?: StyleProp<ViewStyle>
-  onRequestClose?: CallbackOnBackHandler
-  children?: React.ReactNode
-}
+export interface ModalProps extends ModalPropsType {}
 
 class AntmModal extends React.Component<ModalProps, any> {
   static defaultProps = {
@@ -48,6 +39,7 @@ class AntmModal extends React.Component<ModalProps, any> {
   static alert: typeof alert
   static operation: typeof operation
   static prompt: typeof prompt
+  static useModal: typeof useModal
 
   static contextType = LocaleContext
 
@@ -59,6 +51,7 @@ class AntmModal extends React.Component<ModalProps, any> {
       children,
       style,
       animateAppear,
+      animationDuration,
       maskClosable,
       popup,
       transparent,
@@ -67,6 +60,7 @@ class AntmModal extends React.Component<ModalProps, any> {
       bodyStyle,
       onAnimationEnd,
       onRequestClose,
+      modalType,
     } = this.props
 
     // tslint:disable-next-line:variable-name
@@ -158,31 +152,31 @@ class AntmModal extends React.Component<ModalProps, any> {
               </View>
             ) : null
             return (
-              <View style={styles.container}>
-                <RCModal
-                  onClose={onClose}
-                  animationType={animType}
-                  wrapStyle={transparent ? styles.wrap : undefined}
-                  style={styles.wrap}
-                  visible={visible}
-                  onAnimationEnd={onAnimationEnd}
-                  onRequestClose={onRequestClose}
-                  animateAppear={animateAppear}
-                  maskClosable={maskClosable}>
-                  <KeyboardAvoidingView
-                    behavior="padding"
-                    enabled={Platform.OS === 'ios'}>
-                    <View style={[styles.innerContainer, style]}>
-                      {title ? (
-                        <Text style={[styles.header]}>{title}</Text>
-                      ) : null}
-                      <View style={[styles.body, bodyStyle]}>{children}</View>
-                      {footerDom}
-                      {closableDom}
-                    </View>
-                  </KeyboardAvoidingView>
-                </RCModal>
-              </View>
+              <RCModal
+                modalType={modalType}
+                onClose={onClose}
+                animationType={animType}
+                wrapStyle={transparent ? styles.wrap : undefined}
+                style={styles.wrap}
+                visible={visible}
+                onAnimationEnd={onAnimationEnd}
+                onRequestClose={onRequestClose}
+                animateAppear={animateAppear}
+                animationDuration={animationDuration}
+                maskClosable={maskClosable}>
+                <KeyboardAvoidingView
+                  behavior="padding"
+                  enabled={Platform.OS === 'ios'}>
+                  <View style={[styles.innerContainer, style]}>
+                    {title ? (
+                      <Text style={[styles.header]}>{title}</Text>
+                    ) : null}
+                    <View style={[styles.body, bodyStyle]}>{children}</View>
+                    {footerDom}
+                    {closableDom}
+                  </View>
+                </KeyboardAvoidingView>
+              </RCModal>
             )
           }
           if (popup) {
@@ -194,39 +188,39 @@ class AntmModal extends React.Component<ModalProps, any> {
               animType = 'slide-down'
             }
             return (
-              <View style={styles.container}>
-                <RCModal
-                  onClose={onClose}
-                  animationType={animType}
-                  // tslint:disable-next-line:jsx-no-multiline-js
-                  style={[
-                    styles.popupContainer,
-                    (styles as any)[`popup${aType}`],
-                    style,
-                  ]}
-                  visible={visible}
-                  onAnimationEnd={onAnimationEnd}
-                  onRequestClose={onRequestClose}
-                  animateAppear={animateAppear}
-                  maskClosable={maskClosable}>
-                  <View style={bodyStyle}>{children}</View>
-                </RCModal>
-              </View>
+              <RCModal
+                modalType={modalType}
+                onClose={onClose}
+                animationType={animType}
+                // tslint:disable-next-line:jsx-no-multiline-js
+                style={[
+                  styles.popupContainer,
+                  (styles as any)[`popup${aType}`],
+                  style,
+                ]}
+                visible={visible}
+                onAnimationEnd={onAnimationEnd}
+                onRequestClose={onRequestClose}
+                animateAppear={animateAppear}
+                animationDuration={animationDuration}
+                maskClosable={maskClosable}>
+                <View style={bodyStyle}>{children}</View>
+              </RCModal>
             )
           }
           if (animType === 'slide') {
             animType = undefined
           }
           return (
-            <View style={styles.container}>
-              <RCModal
-                visible={visible}
-                animationType={animType}
-                onRequestClose={onRequestClose}
-                onClose={onClose}>
-                <View style={style}>{children}</View>
-              </RCModal>
-            </View>
+            <RCModal
+              modalType={modalType}
+              visible={visible}
+              animationType={animType}
+              animationDuration={animationDuration}
+              onRequestClose={onRequestClose}
+              onClose={onClose}>
+              <View style={style}>{children}</View>
+            </RCModal>
           )
         }}
       </WithTheme>

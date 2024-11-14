@@ -3,7 +3,6 @@ import React, { useEffect, useMemo } from 'react'
 import {
   ActivityIndicator,
   Animated,
-  Dimensions,
   Text,
   View,
   ViewStyle,
@@ -125,19 +124,16 @@ const ToastContainer: FC<ToastProps> = (p) => {
   }, [icon, styles.centering, styles.image, type])
 
   const positionStyle: ViewStyle = useMemo(() => {
-    const { height } = Dimensions.get('window')
-    const offset = height * 0.2
-
     switch (position) {
       case 'top':
         return {
           justifyContent: 'flex-start',
-          marginTop: offset,
+          marginTop: '20%',
         }
       case 'bottom':
         return {
           justifyContent: 'flex-end',
-          marginBottom: offset,
+          marginBottom: '20%',
         }
       default:
         return {

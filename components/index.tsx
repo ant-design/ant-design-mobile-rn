@@ -60,3 +60,5 @@ export class ImagePicker {}
  * @deprecated
  */
 export class SegmentedControl {}
+
+export type * from './types'

@@ -217,6 +217,9 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     if (isScrollAnimationEnd) {
       this.updateIndex(currentOffset)
       this.autoplay()
+      if (this.props.onScrollAnimationEnd) {
+        this.props.onScrollAnimationEnd()
+      }
     }
   }
 
@@ -440,7 +443,8 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
         onScrollEndDrag={this.onScrollEndDrag}
         onScroll={this.onScroll}
         onTouchStart={this.onTouchStartForWeb}
-        onTouchEnd={this.onTouchEndForWeb}>
+        onTouchEnd={this.onTouchEndForWeb}
+        onScrollAnimationEnd={undefined}>
         {pages}
       </ScrollView>
     )
