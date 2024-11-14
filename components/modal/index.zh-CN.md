@@ -27,7 +27,7 @@ subtitle: 对话框
 | popup | 是否弹窗模式 | Boolean | false | |
 | animationDuration | 动画持续时间，单位ms | Number | 300 | `5.3.0` |
 | animationType | 可选: 'fade' / 'slide' | String | fade | |
-| modalType | 弹窗的类型，<br/>为`'portal'`时则从`<Provider />`根节点插入(默认)，<br/>为`'modal'`时则同[`react-native/Modal`](https://reactnative.dev/docs/modal)(用于获取当前context)，<br/>为`'view'`时则同`react-native/View`(用于弹窗中嵌套弹窗) | `'portal'` | `'modal'` | `'view'` | `'portal'` | `5.3.0` |
+| modalType | 弹窗的类型，<br/>为`'portal'`时则从`<Provider />`根节点插入(默认)，<br/>为`'modal'`时则同[`react-native/Modal`](https://reactnative.dev/docs/modal)(用于获取当前context)，<br/>为`'view'`时则同`react-native/View`(用于弹窗中嵌套弹窗) | `'portal'`\| `'modal'` \| `'view'` | `'portal'` | `5.3.0` |
 | title | 标题 | React.Element | 无 | |
 | footer | 底部内容 | Array [{text, onPress}] | [] | |
 | onRequestClose | `onRequestClose`回调会在用户按下 Android 设备上的后退按键或是 Apple TV 上的菜单键时触发。返回true时会在 modal 处于开启状态时阻止`BackHandler`事件。| (): boolean | false | |
