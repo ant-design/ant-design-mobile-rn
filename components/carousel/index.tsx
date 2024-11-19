@@ -379,6 +379,28 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     })
   }
 
+  lazyLoad(child: React.ReactNode, index: number) {
+    const { infinite, lazy, renderLazyPlaceholder } = this.props
+    const { selectedIndex } = this.state
+    console.log(selectedIndex, index + (infinite ? 1 : 0), '9')
+    if (!lazy) {
+      return child
+    }
+    if (
+      lazy &&
+      typeof lazy === 'boolean' &&
+      selectedIndex === index - (infinite ? 1 : 0)
+    ) {
+      return child
+    }
+
+    if (lazy && typeof lazy === 'function' && lazy(index)) {
+      return child
+    }
+
+    return renderLazyPlaceholder
+  }
+
   render() {
     const { children, dots, infinite, accessibilityLabel, pageStyle } =
       this.props
@@ -399,14 +421,14 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
           key={`carousel_${index}`}
           accessibilityLabel={`${accessibilityLabel}_${index}`}
           style={pageWidth}>
-          {child}
+          {this.lazyLoad(child, index)}
         </View>
       ))
     } else {
       pages = <View style={pageWidth}>{children}</View>
     }
     return (
-      <View onLayout={this.onLayout}>
+      <View onLayout={this.onLayout} style={this.props.style}>
         {this.renderScroll(pages)}
         {dots && this.renderDots(selectedIndex)}
       </View>
@@ -435,6 +457,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
         showsVerticalScrollIndicator={false}
         scrollEventThrottle={Platform.OS === 'web' ? 0 : 16}
         {...this.props}
+        style={undefined}
         ref={this.scrollview as any}
         horizontal={!this.props.vertical}
         pagingEnabled={true}
