@@ -144,7 +144,7 @@ const AntmSwitch = (props: SwitchProps) => {
           throw e
         }
       }
-      onHaptics('switch')
+      onHaptics?.('switch')
       return newChecked
     }
 

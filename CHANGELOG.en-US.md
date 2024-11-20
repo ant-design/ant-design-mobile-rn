@@ -13,6 +13,16 @@ toc: false
 - Major version release is not included in this schedule for breadking change and new features.
 
 ---
+
+### 5.3.1
+`2024-11-20`
+ - **Carousel**
+    - feat: add `lazy` & `renderLazyPlaceholder` prop
+    - fix: react-native@0.75+ avoid height collapse [#1372](https://github.com/ant-design/ant-design-mobile-rn/issues/1372)
+ - **Provider**
+    - fix: `onHaptics` not works bug
+ - fix: `lodash.mergewith` dependencie [#1397](https://github.com/ant-design/ant-design-mobile-rn/issues/1397)
+
 ### 5.3.0
 `2024-11-14`
  - 🌟 **Typescript**: export all component props types. 

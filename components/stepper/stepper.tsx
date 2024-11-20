@@ -167,7 +167,7 @@ function InnerStepper<ValueType extends number | string>(
       return state
     }
 
-    onHaptics('stepper')
+    onHaptics?.('stepper')
 
     let stepValue = getMiniDecimal(step)
     if (action.type === 'minus') {

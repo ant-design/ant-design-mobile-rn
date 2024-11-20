@@ -18,6 +18,8 @@ subtitle: 走马灯
 | dotStyle  | 指示点样式 | ViewStyle | 无 | |
 | dotActiveStyle  | 当前激活的指示点样式 | ViewStyle | 无 | |
 | infinite | 是否循环播放 | Boolean   | false | |
+| lazy | 是否懒加载。支持布尔值或函数返回 | Boolean \| `(index:number) => boolean` | false | `5.3.1` |
+| renderLazyPlaceholder | 返回自定义 React 元素以呈现尚未呈现的页面的回调。以`索引`作为参数的对象。需要启用 `lazy` 属性。 | `(index:number) => ReactNode` | - | `5.3.1` |
 | pageStyle | 轮播页内样式 | ViewStyle | 无 | |
 | pagination | 自定义 pagination | (props) => ReactNode  |  | |
 | selectedIndex |  手动设置当前显示的索引  |  number  |  0  | |
@@ -49,7 +51,23 @@ Carousel 的其他属性和 react-native 内置组件[ScrollView](https://reactn
 </ScrollView>
 ```
 
-### 2. Carousel和 `react-native-pager-view` 有什么区别（或优势）？
+### 2. 使用 lazy 和 renderLazyPlaceholder 属性懒加载提高性能
+
+`5.3.1`新增支持。
+```jsx
+// lazy={true} 表示只渲染当前page
+<Carousel 
+  lazy
+  renderLazyPlaceholder={()=> <Loading /> }
+/>
+
+// 渲染相邻的page，总共3个page
+<Carousel 
+  lazy={(i) => Math.abs(selectedIndex - i) < 2}
+>
+```
+
+### 3. Carousel和 `react-native-pager-view` 有什么区别（或优势）？
 
 首先，Carousel支持`infinite`属性，即🌟真正的无限循环🌟。 <br/>
 其次，Carousel是完全基于`ScrollView`实现，不仅更轻量，且更具有兼容性。
