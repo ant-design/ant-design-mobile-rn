@@ -152,6 +152,9 @@ const InternalTooltip: React.ForwardRefRenderFunction<
   })
 
   const safeFloatingStyles = useMemo(() => {
+    if (floatingStyles.left === 0 && floatingStyles.top === 0) {
+      return { display: 'none' } as const
+    }
     if (isNaN(floatingStyles.left) || isNaN(floatingStyles.top)) {
       return { display: 'none' } as const
     }
@@ -171,7 +174,8 @@ const InternalTooltip: React.ForwardRefRenderFunction<
         <Portal>
           <View
             ref={refs.offsetParent}
-            style={{ marginTop: StatusBar.currentHeight }}>
+            style={{ marginTop: StatusBar.currentHeight }}
+            collapsable={false}>
             <View
               ref={refs.setFloating}
               onLayout={update}
