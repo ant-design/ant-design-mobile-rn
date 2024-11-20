@@ -203,7 +203,7 @@ export function Slider<SliderValue extends SliderValueType>(
       const safeValue = getSafeValue(value)
       if (isSliding) {
         onChange?.(safeValue)
-        ticks && !disabledStep && onHaptics('slider')
+        ticks && !disabledStep && onHaptics?.('slider')
       }
       if (!isSliding || range) {
         offset1.value = getPositionByValue(safeValue, 0)
@@ -250,7 +250,7 @@ export function Slider<SliderValue extends SliderValueType>(
         sliderValue.value = targetValue as SliderValue
       }
       if (!ticks) {
-        onHaptics('slider')
+        onHaptics?.('slider')
       }
     },
     [getValueByPosition, onHaptics, range, sliderValue, ticks],

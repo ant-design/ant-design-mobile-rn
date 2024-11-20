@@ -382,7 +382,6 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   lazyLoad(child: React.ReactNode, index: number) {
     const { infinite, lazy, renderLazyPlaceholder } = this.props
     const { selectedIndex } = this.state
-    console.log(selectedIndex, index + (infinite ? 1 : 0), '9')
     if (!lazy) {
       return child
     }
@@ -394,11 +393,15 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       return child
     }
 
-    if (lazy && typeof lazy === 'function' && lazy(index)) {
+    if (
+      lazy &&
+      typeof lazy === 'function' &&
+      lazy(index - (infinite ? 1 : 0))
+    ) {
       return child
     }
 
-    return renderLazyPlaceholder
+    return renderLazyPlaceholder?.(index)
   }
 
   render() {

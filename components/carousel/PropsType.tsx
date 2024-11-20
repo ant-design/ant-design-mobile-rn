@@ -13,7 +13,7 @@ export interface CarouselProps extends ScrollViewProps {
   dotStyle?: StyleProp<ViewStyle>
   infinite?: boolean
   lazy?: boolean | ((index: number) => boolean)
-  renderLazyPlaceholder?: ReactNode
+  renderLazyPlaceholder?: (index: number) => ReactNode
   pageStyle?: StyleProp<ViewStyle>
   pagination?: (props: PaginationProps) => ReactNode
   selectedIndex?: number
