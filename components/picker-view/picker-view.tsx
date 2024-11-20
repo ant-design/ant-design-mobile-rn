@@ -86,7 +86,7 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
   const handleSelect = useCallback(
     (...args) => {
       p.handleSelect.apply(undefined, args)
-      onHaptics('picker')
+      onHaptics?.('picker')
     },
     [onHaptics, p.handleSelect],
   )

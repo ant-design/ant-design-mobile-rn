@@ -15,6 +15,8 @@ Properties | Descrition | Type | Default | Version
 | dotStyle  | style of dots | ViewStyle | | |
 | dotActiveStyle  | style of active dot | ViewStyle  | | |
 | infinite | whether is infinite loop | Boolean   | false | |
+| lazy | Function which takes an object with the current page and returns a boolean to indicate whether to lazily render the scenes. | Boolean \| `(index:number) => boolean` | false | `5.3.1` |
+| renderLazyPlaceholder | A callback that returns a custom React Element to render for pages not yet rendered. Requires the `lazy` prop to be enabled. | `(index:number) => ReactNode` | - | `5.3.1` |
 | pageStyle | style of the carousel page | ViewStyle |  | |
 | pagination | A generator function which could be used to customized pagination. | (props) => ReactNode  | | |
 | selectedIndex |  current selected index  |  number  |  0  | |
@@ -35,7 +37,7 @@ Properties | Descrition | Type
 
 ## FAQ
 
-### On the Android platform, when using `Carousel` nested in `ScrollView`, the Carousel Item cannot slide. What should I do?
+### 1. On the Android platform, when using `Carousel` nested in `ScrollView`, the Carousel Item cannot slide. What should I do?
 
 Support in `5.1.3`. Set the `nestedScrollEnabled` property of `ScrollView` to `true`.
 
@@ -46,7 +48,23 @@ Support in `5.1.3`. Set the `nestedScrollEnabled` property of `ScrollView` to `t
 </ScrollView>
 ```
 
-### Why choose Carousel instead of `react-native-pager-view` ?
+### 2. Use `lazy` and `renderLazyPlaceholder` props to render routes as needed
+
+Support in `5.3.1`.
+```jsx
+// `lazy={true}` only the current page is rendered
+<Carousel 
+  lazy
+  renderLazyPlaceholder={()=> <Loading /> }
+/>
+
+// eg: Render the sibling pages, a total of 3 pages
+<Carousel 
+  lazy={(i) => Math.abs(selectedIndex - i) < 2}
+>
+```
+
+### 3. Why choose Carousel instead of `react-native-pager-view` ?
 
 First, Carousel supports the `infinite` property, which means 🌟a true infinite loop🌟. <br/>
 Second, Carousel is completely based on `ScrollView`, which is not only lighter but also more compatible.

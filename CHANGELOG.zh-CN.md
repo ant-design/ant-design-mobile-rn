@@ -14,6 +14,15 @@ toc: false
 
 ---
 
+### 5.3.1
+`2024-11-20`
+ - **Carousel**
+    - feat: 新增 `lazy` & `renderLazyPlaceholder` 属性
+    - fix: react-native@0.75+ 高度坍塌 [#1372](https://github.com/ant-design/ant-design-mobile-rn/issues/1372)
+ - **Provider**
+    - fix: `onHaptics` 不工作bug
+ - fix: `lodash.mergewith` dependencie [#1397](https://github.com/ant-design/ant-design-mobile-rn/issues/1397)
+
 ### 5.3.0
 `2024-11-14`
  - 🌟 **Typescript**: 导出所有 component 的 props types。 
