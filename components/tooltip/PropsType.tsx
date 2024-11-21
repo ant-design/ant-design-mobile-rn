@@ -39,6 +39,7 @@ export type TooltipProps = {
   content: ReactNode
   style?: StyleProp<ViewStyle>
   styles?: Partial<TooltipStyle>
+  crossOffset?: CrossOffset
 }
 
 export type TooltipRef = {
@@ -60,4 +61,9 @@ export type TooltipMenuProps = Omit<TooltipProps, 'content'> & {
   actions: Action[]
   maxCount?: number
   onAction?: (item: Action) => void
+}
+
+export type CrossOffset = {
+  top: number
+  left: number
 }
