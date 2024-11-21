@@ -13,17 +13,18 @@ version: 5.2.1
 
 ### Tooltip
 
-| 属性 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| children | 触发 `Tooltip` 的元素 | `React.ReactElement` | - |
-| content | 弹出内容 | `React.ReactNode` | - |
-| defaultVisible | 默认是否显隐 | `boolean` | `false` |
-| mode | 设置亮色模式或者黑色模式 | `'light' | 'dark'` | `'light'` |
-| onVisibleChange | 显示隐藏的回调 | `(visible: boolean) => void` | - |
-| placement | 气泡框位置 | `'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end'` | `'top'` |
-| styles | 语义化结构 style | [TooltipStyle](/#tooltipstyle-语义化样式) | - |
-| trigger | 触发方式 | `'onPress'` | - |
-| visible | 受控模式下，是否展示弹出内容 | `boolean` | - |
+| 属性 | 说明               | 类型                                   | 默认值 |
+| --- |------------------|--------------------------------------| --- |
+| children | 触发 `Tooltip` 的元素 | `React.ReactElement`                 | - |
+| content | 弹出内容             | `React.ReactNode`                    | - |
+| defaultVisible | 默认是否显隐           | `boolean`                            | `false` |
+| mode | 设置亮色模式或者黑色模式     | `'light'                             | 'dark'` | `'light'` |
+| crossOffset | 设置弹窗位置的偏移量；top: 沿元素和其触发元素之间的主轴应用的附加偏移。left: 沿元素和其触发元素之间的横轴应用的附加偏移。      | `{ top: number, left: number }`      | `'{ top: StatusBar.currentHeight, left: 0 } '` |
+| onVisibleChange | 显示隐藏的回调          | `(visible: boolean) => void`         | - |
+| placement | 气泡框位置            | `'top'                               | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end'` | `'top'` |
+| styles | 语义化结构 style      | [TooltipStyle](/#tooltipstyle-语义化样式) | - |
+| trigger | 触发方式             | `'onPress'`                          | - |
+| visible | 受控模式下，是否展示弹出内容   | `boolean`                            | - |
 
 ### Ref
 
@@ -96,7 +97,7 @@ const element = <Button>press</Button>
 <Tooltip
   content="Hello World"
   defaultVisible>
-  {element} // ❌ DO NOT USE       
+  {element} // ❌ DO NOT USE
   <Button>press</Button> // ✅ YES
 </Tooltip>
 ```
