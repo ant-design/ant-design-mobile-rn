@@ -1,5 +1,6 @@
 import getMiniDecimal from '@rc-component/mini-decimal'
 import React, {
+  ForwardedRef,
   useCallback,
   useContext,
   useEffect,
@@ -41,7 +42,7 @@ function nearest(arr: number[], target: number) {
 
 function InternalSlider<SliderValue extends SliderValueType>(
   props: SliderProps,
-  ref,
+  ref: ForwardedRef<SliderRef>,
 ) {
   const {
     value: propsValue,
@@ -402,7 +403,7 @@ function InternalSlider<SliderValue extends SliderValueType>(
 }
 
 const Slider = React.forwardRef<SliderRef, SliderProps>(InternalSlider) as ((
-  props: React.PropsWithChildren<SliderProps>,
+  props: React.PropsWithChildren<SliderProps> & React.RefAttributes<SliderRef>,
 ) => React.ReactElement) &
   Pick<React.FC, 'displayName'>
 
