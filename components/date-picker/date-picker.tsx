@@ -26,8 +26,8 @@ export type DatePickerRef = any
 export interface DatePickerProps extends DatePickerPropsType {}
 
 const defaultProps = {
-  minDate: new Date('2000-1-1'),
-  maxDate: new Date('2030-1-1'),
+  minDate: dayjs('2000-1-1').toDate(),
+  maxDate: dayjs('2030-1-1').toDate(),
   precision: 'day',
 }
 
