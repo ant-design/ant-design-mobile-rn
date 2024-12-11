@@ -97,9 +97,9 @@ export default class Demo extends React.Component {
     const localizedTitle = meta.title[locale] || meta.title
     const componentName = this.state.componentName
     let dependencies =
-      'react-native-gesture-handler/DrawerLayout,' +
-      'react-native-gesture-handler/Swipeable,' +
-      'react-native-gesture-handler,' +
+      'react-native-gesture-handler/DrawerLayout@~2.16.1,' +
+      'react-native-gesture-handler/Swipeable@~2.16.1,' +
+      'react-native-gesture-handler@~2.16.1,' +
       'react-native-reanimated,' +
       '@ant-design/icons-react-native@2.3.2,' +
       `@ant-design/react-native@${antdVersion}`
