@@ -8,6 +8,10 @@ export type SliderMarks = {
 }
 export type SliderValueType = number | [number, number]
 
+export interface SliderRef {
+  onSlide: (changeX: number) => void
+}
+
 export type BaseSliderProps<SliderValue> = {
   min?: number
   max?: number

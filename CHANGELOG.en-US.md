@@ -14,6 +14,14 @@ toc: false
 
 ---
 
+### 5.3.2
+`2024-12-11`
+ - **Tooltip**
+    - feat: Add offset settings to tooltip [#1398](https://github.com/ant-design/ant-design-mobile-rn/pull/1398)
+    - fix: Tooltip flash style [#1391](https://github.com/ant-design/ant-design-mobile-rn/issues/1391)
+ - feat: Slider ref
+ - fix: new Date not adhering to ISO 8601 [#1401](https://github.com/ant-design/ant-design-mobile-rn/pull/1401)
+
 ### 5.3.1
 `2024-11-20`
  - **Carousel**
