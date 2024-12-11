@@ -153,6 +153,9 @@ const InternalTooltip: React.ForwardRefRenderFunction<
   })
 
   const safeFloatingStyles = useMemo(() => {
+    if (floatingStyles.left === 0 && floatingStyles.top === 0) {
+      return { display: 'none' } as const
+    }
     if (isNaN(floatingStyles.left) || isNaN(floatingStyles.top)) {
       return { display: 'none' } as const
     }
@@ -175,7 +178,8 @@ const InternalTooltip: React.ForwardRefRenderFunction<
             style={{
               marginTop: crossOffset.top,
               marginLeft: crossOffset.left,
-            }}>
+            }}
+            collapsable={false}>
             <View
               ref={refs.setFloating}
               onLayout={update}
