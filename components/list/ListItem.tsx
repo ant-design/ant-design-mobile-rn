@@ -137,7 +137,7 @@ const InternalListItem: React.ForwardRefRenderFunction<
           <Text
             style={itemStyles.Content}
             {...numberOfLines}
-            children={children.reduce((a, b) => (a || '') + '' + (b || ''))}
+            children={children.reduce((a, b) => (a || '') + '' + (b || ''), '')}
           />
         )
       }

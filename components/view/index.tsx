@@ -37,7 +37,7 @@ class AntmView extends React.PureComponent<ViewInterface> {
         return (
           <Text
             {...restProps}
-            children={children.reduce((a, b) => (a || '') + '' + (b || ''))}
+            children={children.reduce((a, b) => (a || '') + '' + (b || ''), '')}
           />
         )
       }
