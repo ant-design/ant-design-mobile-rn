@@ -14,6 +14,7 @@ export interface DatePickerPropsType
     | 'style'
     | 'styles'
     | 'itemStyle'
+    | 'itemHeight'
     | 'numberOfLines'
     | 'title'
     | 'okText'

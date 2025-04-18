@@ -23,7 +23,6 @@ export type RMCPickerViewProps = Omit<
 
 const defaultProps = {
   value: [],
-  itemHeight: 0,
   numberOfLines: 1,
   renderMaskTop: (theme: Theme) => (
     <View style={{ flex: 1, opacity: 0.8, backgroundColor: theme.fill_base }} />
@@ -37,7 +36,7 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
   const p = mergeProps(defaultProps, props)
 
   const [wheelHeight, setWheelHeight] = useState(0)
-  const [stateItemHeight, setItemHeight] = useState(0)
+  const [stateItemHeight, setItemHeight] = useState<undefined | number>()
   const itemHeight = p.itemHeight || stateItemHeight
 
   const wrapperMeasure = (e: LayoutChangeEvent) => {
@@ -61,7 +60,10 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
       return (
         <View
           key={item.key || item.value}
-          style={[ss.itemWrap, { height: itemHeight || 'auto' }]}>
+          style={[
+            ss.itemWrap,
+            itemHeight === undefined ? {} : { height: itemHeight },
+          ]}>
           {p.renderLabel?.(item, itemIndex, colIndex) || (
             <Text
               style={[
@@ -91,7 +93,7 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
     [onHaptics, p.handleSelect],
   )
 
-  if (itemHeight === 0) {
+  if (itemHeight === undefined) {
     return (
       <View onLayout={itemHeightMeasure}>
         {renderLabel(
@@ -108,7 +110,11 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
 
   return (
     <View
-      style={[{ height: 7 * itemHeight }, ss.wrappper, p.style]}
+      style={[
+        itemHeight === undefined ? {} : { height: 7 * itemHeight },
+        ss.wrappper,
+        p.style,
+      ]}
       onLayout={wrapperMeasure}>
       <View style={[ss.wheelWrapper, { height: wheelHeight }]}>
         {(p.loading || p.columns?.length === 0) && p.loading !== false
@@ -137,7 +143,7 @@ const RMCPickerView: React.FC<RMCPickerViewProps> = (props) => {
       {/* mask */}
       <View style={ss.mask} pointerEvents="none">
         <View style={ss.maskTop}>{p.renderMaskTop?.(theme)}</View>
-        <View style={[ss.maskMiddle, { height: itemHeight }]} />
+        <View style={[ss.maskMiddle, { height: itemHeight || 0 }]} />
         <View style={ss.maskBottom}>{p.renderMaskBottom?.(theme)}</View>
       </View>
     </View>

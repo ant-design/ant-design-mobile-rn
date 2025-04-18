@@ -13,6 +13,7 @@ export interface DatePickerViewPropsType
     PickerViewPropsType,
     | 'style'
     | 'itemStyle'
+    | 'itemHeight'
     | 'numberOfLines'
     | 'renderMaskTop'
     | 'renderMaskBottom'
