@@ -44,6 +44,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -158,6 +163,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -198,14 +208,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -304,6 +312,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -349,6 +362,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -463,6 +481,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -503,14 +526,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -609,6 +630,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -654,6 +680,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -768,6 +799,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -808,14 +844,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -914,6 +948,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -959,6 +998,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -1072,6 +1116,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -1112,14 +1161,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -1218,6 +1265,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -1263,6 +1315,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -1379,6 +1436,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -1419,14 +1481,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -1525,6 +1585,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -1616,6 +1681,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -1729,6 +1799,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": true,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -1773,14 +1848,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={false}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -1881,6 +1954,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": true,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -1930,6 +2008,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -2043,6 +2126,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -2083,14 +2171,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={false}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -2189,6 +2275,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -2234,6 +2325,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -2348,6 +2444,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -2388,14 +2489,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -2494,6 +2593,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -2539,6 +2643,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -2655,6 +2764,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": true,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -2699,14 +2813,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -2805,6 +2917,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -2850,6 +2967,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -2964,6 +3086,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -3004,14 +3131,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -3110,6 +3235,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -3201,6 +3331,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -3306,6 +3441,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -3346,14 +3486,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       </View>
                     </View>
                     <TextInput
-                      allowFontScaling={true}
                       editable={true}
                       onBlur={[Function]}
                       onChangeText={[Function]}
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      rejectResponderTermination={true}
                       secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
@@ -3452,6 +3590,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                       }
                     >
                       <View
+                        accessibilityState={
+                          Object {
+                            "disabled": false,
+                          }
+                        }
                         accessible={true}
                         focusable={true}
                         onClick={[Function]}
@@ -3529,6 +3672,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": true,
+                  }
+                }
                 accessible={false}
                 focusable={false}
                 onClick={[Function]}
@@ -3634,6 +3782,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           }
                         >
                           <View
+                            accessibilityState={
+                              Object {
+                                "disabled": false,
+                              }
+                            }
                             accessible={true}
                             focusable={true}
                             onClick={[Function]}
@@ -3674,14 +3827,12 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           </View>
                         </View>
                         <TextInput
-                          allowFontScaling={true}
                           editable={true}
                           onBlur={[Function]}
                           onChangeText={[Function]}
                           onFocus={[Function]}
                           onSubmitEditing={[Function]}
                           placeholderTextColor="#bbbbbb"
-                          rejectResponderTermination={true}
                           secureTextEntry={false}
                           selectTextOnFocus={true}
                           style={
@@ -3780,6 +3931,11 @@ exports[`renders ./components/stepper/demo/basic.tsx correctly 1`] = `
                           }
                         >
                           <View
+                            accessibilityState={
+                              Object {
+                                "disabled": false,
+                              }
+                            }
                             accessible={true}
                             focusable={true}
                             onClick={[Function]}

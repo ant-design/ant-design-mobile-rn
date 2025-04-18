@@ -58,6 +58,7 @@ Array [
     >
       <View
         accessible={true}
+        collapsable={false}
         focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
@@ -96,6 +97,7 @@ Array [
         />
       </View>
       <View
+        collapsable={false}
         style={
           Object {
             "backgroundColor": "white",

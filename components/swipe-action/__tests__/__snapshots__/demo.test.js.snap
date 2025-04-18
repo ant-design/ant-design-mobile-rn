@@ -42,6 +42,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
+          collapsable={false}
           style={
             Object {
               "bottom": 0,
@@ -67,6 +68,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             }
           >
             <View
+              collapsable={false}
               onLayout={[Function]}
               onTouchEnd={[Function]}
               style={
@@ -102,6 +104,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 underlayColor="black"
               >
                 <View
+                  collapsable={false}
                   style={
                     Object {
                       "backgroundColor": "black",
@@ -140,6 +143,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               </RNGestureHandlerButton>
             </View>
             <View
+              collapsable={false}
               onLayout={[Function]}
               onTouchEnd={[Function]}
               style={
@@ -175,6 +179,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 underlayColor="black"
               >
                 <View
+                  collapsable={false}
                   style={
                     Object {
                       "backgroundColor": "black",
@@ -218,6 +223,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
           />
         </View>
         <View
+          collapsable={false}
           style={
             Object {
               "bottom": 0,
@@ -243,6 +249,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             }
           >
             <View
+              collapsable={false}
               onLayout={[Function]}
               onTouchEnd={[Function]}
               style={
@@ -278,6 +285,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 underlayColor="black"
               >
                 <View
+                  collapsable={false}
                   style={
                     Object {
                       "backgroundColor": "black",
@@ -316,6 +324,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               </RNGestureHandlerButton>
             </View>
             <View
+              collapsable={false}
               onLayout={[Function]}
               onTouchEnd={[Function]}
               style={
@@ -351,6 +360,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 underlayColor="black"
               >
                 <View
+                  collapsable={false}
                   style={
                     Object {
                       "backgroundColor": "black",
@@ -412,6 +422,11 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}
@@ -535,6 +550,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
+          collapsable={false}
           style={
             Object {
               "bottom": 0,
@@ -560,6 +576,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             }
           >
             <View
+              collapsable={false}
               onLayout={[Function]}
               onTouchEnd={[Function]}
               style={
@@ -595,6 +612,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 underlayColor="black"
               >
                 <View
+                  collapsable={false}
                   style={
                     Object {
                       "backgroundColor": "black",
@@ -633,6 +651,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               </RNGestureHandlerButton>
             </View>
             <View
+              collapsable={false}
               onLayout={[Function]}
               onTouchEnd={[Function]}
               style={
@@ -668,6 +687,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 underlayColor="black"
               >
                 <View
+                  collapsable={false}
                   style={
                     Object {
                       "backgroundColor": "black",
@@ -711,6 +731,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
           />
         </View>
         <View
+          collapsable={false}
           style={
             Object {
               "bottom": 0,
@@ -736,6 +757,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
             }
           >
             <View
+              collapsable={false}
               onLayout={[Function]}
               onTouchEnd={[Function]}
               style={
@@ -771,6 +793,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 underlayColor="black"
               >
                 <View
+                  collapsable={false}
                   style={
                     Object {
                       "backgroundColor": "black",
@@ -809,6 +832,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
               </RNGestureHandlerButton>
             </View>
             <View
+              collapsable={false}
               onLayout={[Function]}
               onTouchEnd={[Function]}
               style={
@@ -844,6 +868,7 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
                 underlayColor="black"
               >
                 <View
+                  collapsable={false}
                   style={
                     Object {
                       "backgroundColor": "black",
@@ -905,6 +930,11 @@ exports[`renders ./components/swipe-action/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
             accessible={false}
             focusable={false}
             onClick={[Function]}

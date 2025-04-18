@@ -13,6 +13,11 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
   }
 >
   <View
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -388,6 +393,11 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
           }
         >
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -481,6 +491,11 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -604,7 +619,6 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
               }
             >
               <TextInput
-                allowFontScaling={true}
                 clearButtonMode="always"
                 editable={true}
                 onBlur={[Function]}
@@ -615,7 +629,6 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
                 onSubmitEditing={[Function]}
                 placeholder="Search"
                 placeholderTextColor="#bbbbbb"
-                rejectResponderTermination={true}
                 style={
                   Array [
                     Object {
