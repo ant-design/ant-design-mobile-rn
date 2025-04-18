@@ -14,6 +14,14 @@ toc: false
 
 ---
 
+### 5.4.0
+`2025-04-18`
+ - upgrade: 🚩 `react-native`最低版本升至`0.67.5`  [#1420](https://github.com/ant-design/ant-design-mobile-rn/pull/1420) [@MuNitCat](https://github.com/MuNitCat)
+   - feat: **Modal** 安卓端改用 `BackHandler` 监听返回键
+ - fix: **DatePicker** `itemHeight` 样式偏移bug [#1413](https://github.com/ant-design/ant-design-mobile-rn/issues/1413)
+ - fix: **Slider** `tapToSeek` 通过点击无法触发 `onChange` [#1417](https://github.com/ant-design/ant-design-mobile-rn/issues/1417)
+ - fix: **Tooltip** `styles` arrow 设置borderColor无效bug [#1419](https://github.com/ant-design/ant-design-mobile-rn/pull/1419)
+
 ### 5.3.2
 `2024-12-11`
  - **Tooltip**

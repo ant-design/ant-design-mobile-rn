@@ -216,14 +216,12 @@ Array [
             style={
               Array [
                 Object {
+                  "height": 34,
                   "justifyContent": "center",
-                  "minHeight": 34,
                   "overflow": "hidden",
                   "paddingHorizontal": 5,
                 },
-                Object {
-                  "height": "auto",
-                },
+                Object {},
               ]
             }
           >
