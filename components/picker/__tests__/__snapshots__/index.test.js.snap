@@ -58,6 +58,7 @@ Array [
     >
       <View
         accessible={true}
+        collapsable={false}
         focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
@@ -96,6 +97,7 @@ Array [
         />
       </View>
       <View
+        collapsable={false}
         style={
           Object {
             "backgroundColor": "white",
@@ -214,14 +216,12 @@ Array [
             style={
               Array [
                 Object {
+                  "height": 34,
                   "justifyContent": "center",
-                  "minHeight": 34,
                   "overflow": "hidden",
                   "paddingHorizontal": 5,
                 },
-                Object {
-                  "height": "auto",
-                },
+                Object {},
               ]
             }
           >

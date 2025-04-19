@@ -76,7 +76,6 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
               }
             >
               <TextInput
-                allowFontScaling={true}
                 clearButtonMode="always"
                 editable={true}
                 onBlur={[Function]}
@@ -87,7 +86,6 @@ exports[`renders ./components/tab-bar/demo/basic.tsx correctly 1`] = `
                 onSubmitEditing={[Function]}
                 placeholder="Search"
                 placeholderTextColor="#bbbbbb"
-                rejectResponderTermination={true}
                 style={
                   Array [
                     Object {

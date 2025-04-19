@@ -31,7 +31,7 @@ export default (theme: Theme) =>
     itemWrap: {
       overflow: 'hidden',
       justifyContent: 'center',
-      minHeight: theme.picker_item_height,
+      height: theme.picker_item_height,
       paddingHorizontal: theme.h_spacing_sm,
     },
     itemStyle: {

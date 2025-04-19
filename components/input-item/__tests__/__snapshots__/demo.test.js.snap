@@ -83,7 +83,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             输入框
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
@@ -92,7 +91,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="有标签"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -222,7 +220,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             输入框
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={false}
             keyboardType="default"
@@ -231,7 +228,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="不可编辑"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -307,7 +303,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             输入框
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={false}
             keyboardType="default"
@@ -316,7 +311,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="disabled"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -378,7 +372,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
           }
         >
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
@@ -387,7 +380,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="无标签"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -448,7 +440,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             标题
           </Text>
           <TextInput
-            allowFontScaling={true}
             autoFocus={false}
             clearButtonMode="while-editing"
             defaultValue="xx"
@@ -459,7 +450,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="自动获取光标"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -519,7 +509,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             标题
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
@@ -528,7 +517,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="点击下方按钮该输入框会获取光标"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -551,6 +539,11 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
           />
         </View>
         <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
           accessible={false}
           focusable={false}
           onClick={[Function]}
@@ -704,7 +697,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             姓名
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
@@ -713,7 +705,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="两个字标签"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -774,7 +765,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             校验码
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
@@ -783,7 +773,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="三个字标签"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -844,7 +833,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             四字标签
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
@@ -853,7 +841,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="四个字标签（默认）"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -960,7 +947,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             文本输入
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
@@ -969,7 +955,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="text"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -1071,7 +1056,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             银行卡
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="number-pad"
@@ -1080,7 +1064,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="bankCard"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -1141,7 +1124,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             手机号
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="phone-pad"
@@ -1150,7 +1132,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="phone"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [
@@ -1211,7 +1192,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             密码
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="default"
@@ -1220,7 +1200,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="password"
-            rejectResponderTermination={true}
             secureTextEntry={true}
             style={
               Array [
@@ -1281,7 +1260,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             数字
           </Text>
           <TextInput
-            allowFontScaling={true}
             clearButtonMode="while-editing"
             editable={true}
             keyboardType="numeric"
@@ -1290,7 +1268,6 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             placeholder="number"
-            rejectResponderTermination={true}
             secureTextEntry={false}
             style={
               Array [

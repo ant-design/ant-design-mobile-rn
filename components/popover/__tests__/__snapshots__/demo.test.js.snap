@@ -22,6 +22,11 @@ Array [
       }
     >
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={false}
         focusable={false}
         onClick={[Function]}
@@ -164,6 +169,11 @@ Array [
         </View>
       </View>
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={false}
         focusable={false}
         onClick={[Function]}
@@ -306,6 +316,11 @@ Array [
         </View>
       </View>
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={false}
         focusable={false}
         onClick={[Function]}
@@ -448,6 +463,11 @@ Array [
         </View>
       </View>
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={false}
         focusable={false}
         onClick={[Function]}
@@ -590,6 +610,11 @@ Array [
         </View>
       </View>
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={false}
         focusable={false}
         onClick={[Function]}
@@ -732,6 +757,11 @@ Array [
         </View>
       </View>
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={false}
         focusable={false}
         onClick={[Function]}
@@ -874,6 +904,11 @@ Array [
         </View>
       </View>
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={false}
         focusable={false}
         onClick={[Function]}
@@ -1016,6 +1051,11 @@ Array [
         </View>
       </View>
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={false}
         focusable={false}
         onClick={[Function]}
@@ -1174,6 +1214,7 @@ Array [
   <View>
     <View
       accessible={true}
+      collapsable={false}
       focusable={true}
       forwardedRef={[Function]}
       onClick={[Function]}
@@ -1212,156 +1253,12 @@ Array [
       }
       transparent={true}
       visible={false}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "bottom": 0,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            false,
-          ]
-        }
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "bottom": 0,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-        <View
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "left": 0,
-              "position": "absolute",
-              "shadowColor": "black",
-              "shadowOffset": Object {
-                "height": 2,
-                "width": 0,
-              },
-              "shadowOpacity": 0.4,
-              "shadowRadius": 2,
-              "top": 0,
-            }
-          }
-        >
-          <View
-            onLayout={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderRadius": 3,
-                "elevation": 3,
-                "flexDirection": "column",
-                "padding": 0,
-                "position": "absolute",
-                "transform": Array [
-                  Object {
-                    "translateX": 0,
-                  },
-                  Object {
-                    "translateY": 0,
-                  },
-                  Object {
-                    "scale": 0,
-                  },
-                ],
-              }
-            }
-          >
-            <View>
-              <Text
-                style={
-                  Object {
-                    "color": "#2b2b2b",
-                    "fontWeight": "bold",
-                    "paddingHorizontal": 9,
-                    "paddingTop": 16,
-                  }
-                }
-              >
-                我是自定义组件title
-              </Text>
-              <View
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "padding": 9,
-                  }
-                }
-              >
-                <Text>
-                  自定义组件 x
-                </Text>
-              </View>
-            </View>
-          </View>
-          <View
-            style={
-              Object {
-                "borderBottomColor": "transparent",
-                "borderBottomWidth": 9,
-                "borderEndWidth": 9,
-                "borderLeftColor": "transparent",
-                "borderRightColor": "transparent",
-                "borderStartWidth": 9,
-                "borderTopColor": "transparent",
-                "borderTopWidth": 9,
-                "height": 18,
-                "left": -9,
-                "position": "absolute",
-                "top": -9,
-                "transform": Array [
-                  Object {
-                    "rotate": "0deg",
-                  },
-                  Object {
-                    "scale": 0,
-                  },
-                ],
-                "width": 18,
-              }
-            }
-          />
-        </View>
-      </View>
-    </Modal>
+    />
   </View>,
   <View>
     <View
       accessible={true}
+      collapsable={false}
       focusable={true}
       forwardedRef={[Function]}
       onClick={[Function]}
@@ -1400,236 +1297,7 @@ Array [
       }
       transparent={true}
       visible={false}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "bottom": 0,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            false,
-          ]
-        }
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "bottom": 0,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-        <View
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "left": 0,
-              "position": "absolute",
-              "shadowColor": "black",
-              "shadowOffset": Object {
-                "height": 2,
-                "width": 0,
-              },
-              "shadowOpacity": 0.4,
-              "shadowRadius": 2,
-              "top": 0,
-            }
-          }
-        >
-          <View
-            onLayout={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderRadius": 3,
-                "elevation": 3,
-                "flexDirection": "column",
-                "padding": 0,
-                "position": "absolute",
-                "transform": Array [
-                  Object {
-                    "translateX": 0,
-                  },
-                  Object {
-                    "translateY": 0,
-                  },
-                  Object {
-                    "scale": 0,
-                  },
-                ],
-              }
-            }
-          >
-            <RCTScrollView>
-              <View>
-                <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                      "padding": 9,
-                    }
-                  }
-                >
-                  <Text>
-                    option 
-                    1
-                  </Text>
-                </View>
-                <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                      "padding": 9,
-                    }
-                  }
-                >
-                  <Text>
-                    option 
-                    2
-                  </Text>
-                </View>
-                <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                      "padding": 9,
-                    }
-                  }
-                >
-                  <Text>
-                    option 
-                    3
-                  </Text>
-                </View>
-                <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "opacity": 1,
-                      "padding": 9,
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#ddd",
-                      }
-                    }
-                  >
-                    disabled opt
-                  </Text>
-                </View>
-                <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#efeff4",
-                      "opacity": 1,
-                      "padding": 9,
-                    }
-                  }
-                >
-                  <Text>
-                    关闭
-                  </Text>
-                </View>
-              </View>
-            </RCTScrollView>
-          </View>
-          <View
-            style={
-              Object {
-                "borderBottomColor": "transparent",
-                "borderBottomWidth": 9,
-                "borderEndWidth": 9,
-                "borderLeftColor": "transparent",
-                "borderRightColor": "transparent",
-                "borderStartWidth": 9,
-                "borderTopColor": "transparent",
-                "borderTopWidth": 9,
-                "height": 18,
-                "left": -9,
-                "position": "absolute",
-                "top": -9,
-                "transform": Array [
-                  Object {
-                    "rotate": "0deg",
-                  },
-                  Object {
-                    "scale": 0,
-                  },
-                ],
-                "width": 18,
-              }
-            }
-          />
-        </View>
-      </View>
-    </Modal>
+    />
   </View>,
   <View
     style={
@@ -1651,6 +1319,7 @@ Array [
     <View>
       <View
         accessible={true}
+        collapsable={false}
         focusable={true}
         forwardedRef={[Function]}
         onClick={[Function]}
@@ -1689,147 +1358,12 @@ Array [
         }
         transparent={true}
         visible={false}
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              },
-              false,
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          />
-          <View
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "left": 0,
-                "position": "absolute",
-                "shadowColor": "black",
-                "shadowOffset": Object {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.4,
-                "shadowRadius": 2,
-                "top": 0,
-              }
-            }
-          >
-            <View
-              onLayout={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#ffffff",
-                  "borderRadius": 3,
-                  "elevation": 3,
-                  "flexDirection": "column",
-                  "padding": 0,
-                  "position": "absolute",
-                  "transform": Array [
-                    Object {
-                      "translateX": 0,
-                    },
-                    Object {
-                      "translateY": 0,
-                    },
-                    Object {
-                      "scale": 0,
-                    },
-                  ],
-                }
-              }
-            >
-              <RCTScrollView>
-                <View>
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "opacity": 1,
-                        "padding": 9,
-                      }
-                    }
-                  >
-                    <Text>
-                      自定义组件 
-                      left
-                    </Text>
-                  </View>
-                </View>
-              </RCTScrollView>
-            </View>
-            <View
-              style={
-                Object {
-                  "borderBottomColor": "transparent",
-                  "borderBottomWidth": 9,
-                  "borderEndWidth": 9,
-                  "borderLeftColor": "transparent",
-                  "borderRightColor": "transparent",
-                  "borderStartWidth": 9,
-                  "borderTopColor": "transparent",
-                  "borderTopWidth": 9,
-                  "height": 18,
-                  "left": -9,
-                  "position": "absolute",
-                  "top": -9,
-                  "transform": Array [
-                    Object {
-                      "rotate": undefined,
-                    },
-                    Object {
-                      "scale": 0,
-                    },
-                  ],
-                  "width": 18,
-                }
-              }
-            />
-          </View>
-        </View>
-      </Modal>
+      />
     </View>
     <View>
       <View
         accessible={true}
+        collapsable={false}
         focusable={true}
         forwardedRef={[Function]}
         onClick={[Function]}
@@ -1868,147 +1402,12 @@ Array [
         }
         transparent={true}
         visible={false}
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              },
-              false,
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          />
-          <View
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "left": 0,
-                "position": "absolute",
-                "shadowColor": "black",
-                "shadowOffset": Object {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.4,
-                "shadowRadius": 2,
-                "top": 0,
-              }
-            }
-          >
-            <View
-              onLayout={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#ffffff",
-                  "borderRadius": 3,
-                  "elevation": 3,
-                  "flexDirection": "column",
-                  "padding": 0,
-                  "position": "absolute",
-                  "transform": Array [
-                    Object {
-                      "translateX": 0,
-                    },
-                    Object {
-                      "translateY": 0,
-                    },
-                    Object {
-                      "scale": 0,
-                    },
-                  ],
-                }
-              }
-            >
-              <RCTScrollView>
-                <View>
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "opacity": 1,
-                        "padding": 9,
-                      }
-                    }
-                  >
-                    <Text>
-                      自定义组件 
-                      right
-                    </Text>
-                  </View>
-                </View>
-              </RCTScrollView>
-            </View>
-            <View
-              style={
-                Object {
-                  "borderBottomColor": "transparent",
-                  "borderBottomWidth": 9,
-                  "borderEndWidth": 9,
-                  "borderLeftColor": "transparent",
-                  "borderRightColor": "transparent",
-                  "borderStartWidth": 9,
-                  "borderTopColor": "transparent",
-                  "borderTopWidth": 9,
-                  "height": 18,
-                  "left": -9,
-                  "position": "absolute",
-                  "top": -9,
-                  "transform": Array [
-                    Object {
-                      "rotate": undefined,
-                    },
-                    Object {
-                      "scale": 0,
-                    },
-                  ],
-                  "width": 18,
-                }
-              }
-            />
-          </View>
-        </View>
-      </Modal>
+      />
     </View>
     <View>
       <View
         accessible={true}
+        collapsable={false}
         focusable={true}
         forwardedRef={[Function]}
         onClick={[Function]}
@@ -2047,147 +1446,12 @@ Array [
         }
         transparent={true}
         visible={false}
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              },
-              false,
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          />
-          <View
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "left": 0,
-                "position": "absolute",
-                "shadowColor": "black",
-                "shadowOffset": Object {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.4,
-                "shadowRadius": 2,
-                "top": 0,
-              }
-            }
-          >
-            <View
-              onLayout={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#ffffff",
-                  "borderRadius": 3,
-                  "elevation": 3,
-                  "flexDirection": "column",
-                  "padding": 0,
-                  "position": "absolute",
-                  "transform": Array [
-                    Object {
-                      "translateX": 0,
-                    },
-                    Object {
-                      "translateY": 0,
-                    },
-                    Object {
-                      "scale": 0,
-                    },
-                  ],
-                }
-              }
-            >
-              <RCTScrollView>
-                <View>
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "opacity": 1,
-                        "padding": 9,
-                      }
-                    }
-                  >
-                    <Text>
-                      自定义组件 
-                      top
-                    </Text>
-                  </View>
-                </View>
-              </RCTScrollView>
-            </View>
-            <View
-              style={
-                Object {
-                  "borderBottomColor": "transparent",
-                  "borderBottomWidth": 9,
-                  "borderEndWidth": 9,
-                  "borderLeftColor": "transparent",
-                  "borderRightColor": "transparent",
-                  "borderStartWidth": 9,
-                  "borderTopColor": "transparent",
-                  "borderTopWidth": 9,
-                  "height": 18,
-                  "left": -9,
-                  "position": "absolute",
-                  "top": -9,
-                  "transform": Array [
-                    Object {
-                      "rotate": "0deg",
-                    },
-                    Object {
-                      "scale": 0,
-                    },
-                  ],
-                  "width": 18,
-                }
-              }
-            />
-          </View>
-        </View>
-      </Modal>
+      />
     </View>
     <View>
       <View
         accessible={true}
+        collapsable={false}
         focusable={true}
         forwardedRef={[Function]}
         onClick={[Function]}
@@ -2226,143 +1490,7 @@ Array [
         }
         transparent={true}
         visible={false}
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              },
-              false,
-            ]
-          }
-        >
-          <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "bottom": 0,
-                "left": 0,
-                "opacity": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          />
-          <View
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "left": 0,
-                "position": "absolute",
-                "shadowColor": "black",
-                "shadowOffset": Object {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.4,
-                "shadowRadius": 2,
-                "top": 0,
-              }
-            }
-          >
-            <View
-              onLayout={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#ffffff",
-                  "borderRadius": 3,
-                  "elevation": 3,
-                  "flexDirection": "column",
-                  "padding": 0,
-                  "position": "absolute",
-                  "transform": Array [
-                    Object {
-                      "translateX": 0,
-                    },
-                    Object {
-                      "translateY": 0,
-                    },
-                    Object {
-                      "scale": 0,
-                    },
-                  ],
-                }
-              }
-            >
-              <RCTScrollView>
-                <View>
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "opacity": 1,
-                        "padding": 9,
-                      }
-                    }
-                  >
-                    <Text>
-                      自定义组件 
-                      bottom
-                    </Text>
-                  </View>
-                </View>
-              </RCTScrollView>
-            </View>
-            <View
-              style={
-                Object {
-                  "borderBottomColor": "transparent",
-                  "borderBottomWidth": 9,
-                  "borderEndWidth": 9,
-                  "borderLeftColor": "transparent",
-                  "borderRightColor": "transparent",
-                  "borderStartWidth": 9,
-                  "borderTopColor": "transparent",
-                  "borderTopWidth": 9,
-                  "height": 18,
-                  "left": -9,
-                  "position": "absolute",
-                  "top": -9,
-                  "transform": Array [
-                    Object {
-                      "rotate": "-180deg",
-                    },
-                    Object {
-                      "scale": 0,
-                    },
-                  ],
-                  "width": 18,
-                }
-              }
-            />
-          </View>
-        </View>
-      </Modal>
+      />
     </View>
   </View>,
 ]

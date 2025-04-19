@@ -35,6 +35,11 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
       }
     >
       <View
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -128,6 +133,11 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
         </View>
       </View>
       <View
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -222,6 +232,7 @@ exports[`renders ./components/picker/demo/basic.tsx correctly 1`] = `
       </View>
       <View
         accessible={true}
+        collapsable={false}
         focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}

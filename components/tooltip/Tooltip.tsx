@@ -186,7 +186,7 @@ const InternalTooltip: React.ForwardRefRenderFunction<
               collapsable={false}
               style={[ss.tooltip, safeFloatingStyles, style]}>
               <View
-                style={[ss.arrow, arrowPosition]}
+                style={[arrowPosition, ss.arrow]}
                 ref={arrowRef}
                 collapsable={false}
               />

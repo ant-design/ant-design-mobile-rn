@@ -23,6 +23,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
           accessible={false}
           focusable={false}
           onClick={[Function]}
@@ -137,6 +142,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                     Object {
                       "busy": false,
                       "checked": true,
+                      "disabled": false,
                       "mergedDisabled": false,
                     }
                   }
@@ -182,6 +188,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                     }
                   >
                     <View
+                      collapsable={false}
                       style={
                         Object {
                           "alignItems": "center",
@@ -206,6 +213,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                       }
                     />
                     <View
+                      collapsable={false}
                       style={
                         Object {
                           "alignItems": "center",
@@ -226,6 +234,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
           </View>
         </View>
         <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
           accessible={false}
           focusable={false}
           onClick={[Function]}
@@ -340,6 +353,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                     Object {
                       "busy": false,
                       "checked": true,
+                      "disabled": false,
                       "mergedDisabled": false,
                     }
                   }
@@ -385,6 +399,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                     }
                   >
                     <View
+                      collapsable={false}
                       style={
                         Object {
                           "alignItems": "center",
@@ -409,6 +424,7 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
                       }
                     />
                     <View
+                      collapsable={false}
                       style={
                         Object {
                           "alignItems": "center",

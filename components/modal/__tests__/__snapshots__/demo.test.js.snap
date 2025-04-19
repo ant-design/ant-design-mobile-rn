@@ -29,6 +29,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
         }
       >
         <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
           accessible={false}
           focusable={false}
           onClick={[Function]}
@@ -148,6 +153,7 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
                     Object {
                       "busy": false,
                       "checked": false,
+                      "disabled": false,
                       "mergedDisabled": false,
                     }
                   }
@@ -195,6 +201,7 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
                     }
                   >
                     <View
+                      collapsable={false}
                       style={
                         Object {
                           "alignItems": "center",
@@ -219,6 +226,7 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
                       }
                     />
                     <Text
+                      collapsable={false}
                       style={
                         Object {
                           "alignItems": "center",

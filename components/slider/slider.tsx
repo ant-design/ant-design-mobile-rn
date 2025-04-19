@@ -257,11 +257,14 @@ function InternalSlider<SliderValue extends SliderValueType>(
       } else {
         sliderValue.value = targetValue as SliderValue
       }
+      setTimeout(() => {
+        onChange?.(sliderValue.value)
+      })
       if (!ticks) {
         onHaptics?.('slider')
       }
     },
-    [getValueByPosition, onHaptics, range, sliderValue, ticks],
+    [getValueByPosition, onChange, onHaptics, range, sliderValue, ticks],
   )
 
   // ================= onSlide gesture ======================

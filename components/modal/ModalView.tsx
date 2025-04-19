@@ -4,6 +4,7 @@ import {
   BackHandler,
   Dimensions,
   Easing,
+  NativeEventSubscription,
   Modal as NativeModal,
   StyleProp,
   StyleSheet,
@@ -72,6 +73,8 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
 
   animMask: any
   animDialog: any
+  /** 支持0.67 react-native BackHandler新接口，移除removeEventListener接口使用 */
+  backHandlerSubscription: NativeEventSubscription | null = null
   constructor(props: IModalPropTypes) {
     super(props)
     const { visible } = props
@@ -102,7 +105,10 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
   }
   componentDidMount() {
     if (this.props.animateAppear && this.props.animationType !== 'none') {
-      BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid)
+      this.backHandlerSubscription = BackHandler.addEventListener(
+        'hardwareBackPress',
+        this.onBackAndroid,
+      )
       this.componentDidUpdate({} as IModalPropTypes)
     }
   }
@@ -113,7 +119,7 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
     }
   }
   componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid)
+    this.backHandlerSubscription?.remove()
     this.stopDialogAnim()
   }
   onBackAndroid = () => {
@@ -184,10 +190,7 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
           this.setState({
             modalVisible: false,
           })
-          BackHandler.removeEventListener(
-            'hardwareBackPress',
-            this.onBackAndroid,
-          )
+          this.backHandlerSubscription?.remove()
         }
         if (this.props.onAnimationEnd) {
           this.props.onAnimationEnd(visible)
@@ -198,7 +201,7 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
         this.setState({
           modalVisible: false,
         })
-        BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid)
+        this.backHandlerSubscription?.remove()
       }
     }
   }
@@ -208,7 +211,7 @@ export default class RCModal extends React.Component<IModalPropTypes, any> {
   onMaskClose = () => {
     if (this.props.maskClosable && this.props.onClose) {
       this.props.onClose()
-      BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid)
+      this.backHandlerSubscription?.remove()
     }
   }
   getPosition = (visible: boolean) => {

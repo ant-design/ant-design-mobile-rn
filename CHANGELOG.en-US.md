@@ -14,6 +14,14 @@ toc: false
 
 ---
 
+### 5.4.0
+`2025-04-18`
+ - upgrade: 🚩`react-native` minimum version increased to `0.67.5`  [#1420](https://github.com/ant-design/ant-design-mobile-rn/pull/1420) [@MuNitCat](https://github.com/MuNitCat)
+   - feat: **Modal** Android uses `BackHandler` to listen to the back key
+ - fix: **DatePicker** `itemHeight` style offset bug [#1413](https://github.com/ant-design/ant-design-mobile-rn/issues/1413)
+ - fix: **Slider** `tapToSeek` cannot trigger `onChange` by click [#1417](https://github.com/ant-design/ant-design-mobile-rn/issues/1417)
+ - fix: **Tooltip** `styles` arrow setting borderColor not work bug [#1419](https://github.com/ant-design/ant-design-mobile-rn/pull/1419)
+
 ### 5.3.2
 `2024-12-11`
  - **Tooltip**

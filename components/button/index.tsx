@@ -21,6 +21,8 @@ export interface ButtonProps
     TouchableHighlightProps {
   activeStyle?: StyleProp<ViewStyle>
   children?: React.ReactNode
+  /** 解决ts类型冲突 */
+  disabled?: boolean
 }
 
 export default class Button extends React.Component<ButtonProps, any> {
