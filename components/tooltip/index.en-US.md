@@ -76,7 +76,7 @@ Except for `content`, all other attributes are inherited from `Tooltip`, the uni
 interface TooltipStyle extends ListItemStyle {
   tooltip: ViewStyle
   tooltipText: TextStyle
-  arrow: ViewStyle
+  arrow: ViewStyle // `borderTopColor` sets the arrow bg color
 }
 ```
 

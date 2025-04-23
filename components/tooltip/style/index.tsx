@@ -32,7 +32,7 @@ export default (theme: Theme, mode?: 'dark' | 'light') =>
     arrow: {
       width: 0,
       height: 0,
-      borderTopColor: 'transparent',
+      // borderTopColor: 'transparent',
       borderRightColor: 'transparent',
       borderBottomColor: 'transparent',
       borderLeftColor: 'transparent',

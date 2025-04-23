@@ -115,23 +115,24 @@ const InternalTooltip: React.ForwardRefRenderFunction<
 
   const arrowPosition = useMemo(() => {
     const side = realPlacement.split('-')[0] as string
-    const arrowBorder = {
-      top: 'borderTopColor',
-      right: 'borderRightColor',
-      bottom: 'borderBottomColor',
-      left: 'borderLeftColor',
-    }[side] as string
     const arrowSide = {
       top: 'bottom',
       right: 'left',
       bottom: 'top',
       left: 'right',
     }[side] as string
+    const arrowRotate = {
+      top: '0deg',
+      bottom: '180deg',
+      left: '270deg',
+      right: '90deg',
+    }[side] as string
     return {
       left: arrowX || undefined,
       top: arrowY || undefined,
       [arrowSide]: -theme.tooltip_arrow_size * 2,
-      [arrowBorder]: mode === 'dark' ? theme.tooltip_dark : theme.fill_base,
+      borderTopColor: mode === 'dark' ? theme.tooltip_dark : theme.fill_base,
+      transform: [{ rotate: arrowRotate }],
     }
   }, [
     arrowX,
