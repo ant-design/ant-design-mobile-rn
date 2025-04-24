@@ -32,7 +32,10 @@ export default (theme: Theme, mode?: 'dark' | 'light') =>
     arrow: {
       width: 0,
       height: 0,
-      borderColor: 'transparent',
+      // borderTopColor: 'transparent',
+      borderRightColor: 'transparent',
+      borderBottomColor: 'transparent',
+      borderLeftColor: 'transparent',
       borderStyle: 'solid',
       borderWidth: theme.tooltip_arrow_size,
       position: 'absolute',

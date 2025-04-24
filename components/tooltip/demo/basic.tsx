@@ -59,6 +59,7 @@ export default function TooltipExample() {
               <Text>Content</Text>
             </View>
           }
+          styles={{ arrow: { borderTopColor: 'yellow' } }}
           placement={placement}>
           <Button style={{ alignSelf: 'center', margin: 10 }}>
             {placement}

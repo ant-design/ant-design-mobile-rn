@@ -77,7 +77,7 @@ import { Tooltip } from '@ant-design/react-native'
 interface TooltipStyle extends ListItemStyle {
   tooltip: ViewStyle
   tooltipText: TextStyle
-  arrow: ViewStyle
+  arrow: ViewStyle // `borderTopColor` 设置箭头颜色
 }
 ```
 
