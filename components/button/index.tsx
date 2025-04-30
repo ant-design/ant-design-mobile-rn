@@ -1,5 +1,5 @@
 // tslint:disable:no-empty
-import React from 'react'
+import React, { useState } from 'react'
 import {
   ActivityIndicator,
   GestureResponderEvent,
@@ -25,129 +25,122 @@ export interface ButtonProps
   disabled?: boolean
 }
 
-export default class Button extends React.Component<ButtonProps, any> {
-  static defaultProps = {
-    pressIn: false,
-    disabled: false,
-    loading: false,
+const Button: React.FC<ButtonProps> = (props) => {
+  const [pressIn, setPressIn] = useState(false)
+  const [touchIt, setTouchIt] = useState(false)
 
-    onPress: (_?: any) => {},
-    onPressIn: (_?: any) => {},
-    onPressOut: (_?: any) => {},
-    onShowUnderlay: (_?: any) => {},
-    onHideUnderlay: (_?: any) => {},
+  const {
+    size = 'large',
+    type = 'default',
+    disabled = false,
+    loading = false,
+    activeStyle,
+    onPress = (_?: any) => {},
+    onPressIn = (_?: any) => {},
+    onPressOut = (_?: any) => {},
+    onShowUnderlay = (_?: any) => {},
+    onHideUnderlay = (_?: any) => {},
+    style,
+    styles,
+    children,
+    ...restProps
+  } = props
+
+  const handlePressIn = (event: GestureResponderEvent) => {
+    setPressIn(true)
+    onPressIn(event)
   }
 
-  constructor(props: ButtonProps) {
-    super(props)
-    this.state = {
-      pressIn: false,
-      touchIt: false,
-    }
+  const handlePressOut = (event: GestureResponderEvent) => {
+    setPressIn(false)
+    onPressOut(event)
   }
 
-  onPressIn = (event: GestureResponderEvent) => {
-    this.setState({ pressIn: true })
-    if (this.props.onPressIn) {
-      this.props.onPressIn(event)
-    }
-  }
-  onPressOut = (event: GestureResponderEvent) => {
-    this.setState({ pressIn: false })
-    if (this.props.onPressOut) {
-      this.props.onPressOut(event)
-    }
-  }
-  onShowUnderlay = () => {
-    this.setState({ touchIt: true })
-    if (this.props.onShowUnderlay) {
-      this.props.onShowUnderlay()
-    }
-  }
-  onHideUnderlay = () => {
-    this.setState({ touchIt: false })
-    if (this.props.onHideUnderlay) {
-      this.props.onHideUnderlay()
-    }
+  const handleShowUnderlay = () => {
+    setTouchIt(true)
+    onShowUnderlay()
   }
 
-  render() {
-    // for using setNativeProps to improve performance
-    const {
-      size = 'large',
-      type = 'default',
-      disabled,
-      activeStyle,
-      onPress,
-      style,
-      styles,
-      loading,
-      ...restProps
-    } = this.props
-    return (
-      <WithTheme themeStyles={buttonStyles} styles={styles}>
-        {(_styles) => {
-          const textStyle = [
-            _styles[`${size}RawText`],
-            _styles[`${type}RawText`],
-            disabled && _styles[`${type}DisabledRawText`],
-            this.state.pressIn && _styles[`${type}HighlightText`],
-          ]
-
-          const wrapperStyle = [
-            _styles.wrapperStyle,
-            _styles[`${size}Raw`],
-            _styles[`${type}Raw`],
-            disabled && _styles[`${type}DisabledRaw`],
-            this.state.pressIn && activeStyle && _styles[`${type}Highlight`],
-            activeStyle && this.state.touchIt && activeStyle,
-            style,
-          ]
-
-          const underlayColor = (
-            StyleSheet.flatten(
-              activeStyle ? activeStyle : _styles[`${type}Highlight`],
-            ) as any
-          ).backgroundColor
-
-          const indicatorColor = (
-            StyleSheet.flatten(
-              this.state.pressIn
-                ? _styles[`${type}HighlightText`]
-                : _styles[`${type}RawText`],
-            ) as any
-          ).color
-
-          return (
-            <TouchableHighlight
-              accessibilityRole="button"
-              accessibilityState={{ disabled: !!disabled }}
-              activeOpacity={0.4}
-              {...restProps}
-              style={wrapperStyle}
-              disabled={disabled}
-              underlayColor={underlayColor}
-              onPress={(e) => onPress && onPress(e)}
-              onPressIn={this.onPressIn}
-              onPressOut={this.onPressOut}
-              onShowUnderlay={this.onShowUnderlay}
-              onHideUnderlay={this.onHideUnderlay}>
-              <View style={_styles.container}>
-                {loading ? (
-                  // tslint:disable-next-line:jsx-no-multiline-js
-                  <ActivityIndicator
-                    style={_styles.indicator}
-                    animating
-                    color={indicatorColor}
-                    size="small"
-                  />
-                ) : null}
-                <AntmView style={textStyle}>{this.props.children}</AntmView>
-              </View>
-            </TouchableHighlight>
-          )
-        }}
-      </WithTheme>
-    )
+  const handleHideUnderlay = () => {
+    setTouchIt(false)
+    onHideUnderlay()
   }
+
+  return (
+    <WithTheme themeStyles={buttonStyles} styles={styles}>
+      {(_styles) => {
+        const textStyle = [
+          _styles[`${size}RawText`],
+          _styles[`${type}RawText`],
+          disabled && _styles[`${type}DisabledRawText`],
+          pressIn && _styles[`${type}HighlightText`],
+        ]
+
+        const wrapperStyle = [
+          _styles.wrapperStyle,
+          _styles[`${size}Raw`],
+          _styles[`${type}Raw`],
+          disabled && _styles[`${type}DisabledRaw`],
+          pressIn && activeStyle && _styles[`${type}Highlight`],
+          activeStyle && touchIt && activeStyle,
+          style,
+        ]
+
+        const underlayColor = (
+          StyleSheet.flatten(
+            activeStyle ? activeStyle : _styles[`${type}Highlight`],
+          ) as any
+        ).backgroundColor
+
+        const indicatorColor = (
+          StyleSheet.flatten(
+            pressIn
+              ? _styles[`${type}HighlightText`]
+              : _styles[`${type}RawText`],
+          ) as any
+        ).color
+
+        return (
+          <TouchableHighlight
+            accessibilityRole="button"
+            accessibilityState={{ disabled: !!disabled }}
+            activeOpacity={0.4}
+            {...restProps}
+            style={wrapperStyle}
+            disabled={disabled}
+            underlayColor={underlayColor}
+            onPress={(e) => onPress && onPress(e)}
+            onPressIn={handlePressIn}
+            onPressOut={handlePressOut}
+            onShowUnderlay={handleShowUnderlay}
+            onHideUnderlay={handleHideUnderlay}>
+            <View style={_styles.container}>
+              {loading ? (
+                // tslint:disable-next-line:jsx-no-multiline-js
+                <ActivityIndicator
+                  style={_styles.indicator}
+                  animating
+                  color={indicatorColor}
+                  size="small"
+                />
+              ) : null}
+              <AntmView style={textStyle}>{children}</AntmView>
+            </View>
+          </TouchableHighlight>
+        )
+      }}
+    </WithTheme>
+  )
 }
+
+Button.defaultProps = {
+  disabled: false,
+  loading: false,
+  onPress: (_?: any) => {},
+  onPressIn: (_?: any) => {},
+  onPressOut: (_?: any) => {},
+  onShowUnderlay: (_?: any) => {},
+  onHideUnderlay: (_?: any) => {},
+}
+
+export default Button
