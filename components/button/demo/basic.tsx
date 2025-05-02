@@ -30,10 +30,19 @@ export default () => (
 
     <Button activeStyle={false}>无点击反馈</Button>
     <WhiteSpace />
+    <Button underlayColor={'blue'}>Custom Underlay</Button>
     <Button activeStyle={{ backgroundColor: 'red' }}>
       custom feedback style
     </Button>
     <WhiteSpace />
+
+    <Button
+      textStyle={{ color: 'white' }}
+      style={{
+        backgroundColor: 'red',
+      }}>
+      custon background color
+    </Button>
 
     <WingBlank
       style={{

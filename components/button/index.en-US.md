@@ -17,6 +17,7 @@ Properties | Descrition | Type | Default
 | activeClassName  | the feedback's custom class name | string |  |
 | disabled   | set disabled   | boolean |  false  |
 | onPress    | set the handler to handle `click` event | (e: Object): void |  -  |
+| textStyle | set the text's custom style |   Object  | - |
 | style    | custom style |   Object  | - |
 | onPressIn  | same as RN TouchableHighlight onPressIn | (e: Object): void |   - |
 | onPressOut | same as RN TouchableHighlight onPressOut | (e: Object): void |  - |
