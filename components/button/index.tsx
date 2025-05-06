@@ -5,7 +5,6 @@ import {
   Pressable,
   PressableProps,
   StyleProp,
-  TextStyle,
   View,
   ViewStyle,
 } from 'react-native'
@@ -16,18 +15,7 @@ import buttonStyles, { ButtonStyles } from './style/index'
 
 export interface ButtonProps
   extends ButtonPropsType,
-    WithThemeStyles<ButtonStyles>,
-    Omit<PressableProps, 'style'> {
-  activeStyle?: StyleProp<ViewStyle> | false
-  textStyle?: TextStyle
-  children?: React.ReactNode
-  /** 解决ts类型冲突 */
-  disabled?: boolean
-  onShowUnderlay?: () => void
-  onHideUnderlay?: () => void
-  underlayColor?: string
-  style?: ViewStyle
-}
+    WithThemeStyles<ButtonStyles> {}
 
 type OnPressInType = PressableProps['onPressIn']
 type OnPressOutType = PressableProps['onPressOut']
