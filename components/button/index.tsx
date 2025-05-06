@@ -25,21 +25,21 @@ const Button: React.FC<ButtonProps> = (props) => {
   const [touchIt, setTouchIt] = useState(false)
 
   const {
-    size = 'large',
     type = 'default',
-    disabled = false,
+    size = 'large',
     loading = false,
+    disabled = false,
+    children,
+    style,
+    textStyle = {},
     activeStyle,
+    underlayColor,
+    styles,
     onPress = () => {},
     onPressIn = () => {},
     onPressOut = () => {},
     onShowUnderlay = () => {},
     onHideUnderlay = () => {},
-    style,
-    textStyle = {},
-    styles,
-    children,
-    underlayColor,
     ...restProps
   } = props
 

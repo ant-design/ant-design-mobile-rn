@@ -5,16 +5,16 @@ export interface ButtonPropsType {
   type?: 'primary' | 'warning' | 'ghost'
   size?: 'large' | 'small'
   loading?: boolean
-  activeStyle?: ViewStyle | false
-  textStyle?: TextStyle
-  children?: React.ReactNode
   /** 解决ts类型冲突 */
   disabled?: boolean
-  onShowUnderlay?: () => void
-  onHideUnderlay?: () => void
-  underlayColor?: string
+  children?: React.ReactNode
   style?: ViewStyle
+  textStyle?: TextStyle
+  activeStyle?: ViewStyle | false
+  underlayColor?: string
   onPress?: PressableProps['onPress']
   onPressIn?: PressableProps['onPressIn']
   onPressOut?: PressableProps['onPressOut']
+  onShowUnderlay?: () => void
+  onHideUnderlay?: () => void
 }
