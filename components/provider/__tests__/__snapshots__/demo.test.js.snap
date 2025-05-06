@@ -173,8 +173,11 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
                 }
               }
               accessible={true}
+              collapsable={false}
               focusable={true}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
@@ -191,8 +194,6 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
                   },
                   Object {
                     "height": 47,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
                   },
                   Object {
                     "backgroundColor": "#ffffff",
@@ -202,37 +203,52 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
                     "backgroundColor": "#dddddd",
                     "borderColor": "#dddddd",
                   },
-                  false,
-                  undefined,
-                  undefined,
                 ]
               }
             >
               <View
                 style={
-                  Object {
-                    "flexDirection": "row",
-                  }
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "height": "100%",
+                      "justifyContent": "center",
+                      "width": "100%",
+                    },
+                    Object {
+                      "paddingLeft": 15,
+                      "paddingRight": 15,
+                    },
+                    Object {},
+                  ]
                 }
               >
-                <Text
+                <View
                   style={
-                    Array [
-                      Object {
-                        "fontSize": 18,
-                      },
-                      Object {
-                        "color": "#000000",
-                      },
-                      Object {
-                        "color": "#0000004D",
-                      },
-                      false,
-                    ]
+                    Object {
+                      "flexDirection": "row",
+                    }
                   }
                 >
-                  Prev
-                </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 18,
+                        },
+                        Object {
+                          "color": "#000000",
+                        },
+                        Object {
+                          "color": "#0000004D",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    Prev
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
@@ -301,8 +317,11 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
                 }
               }
               accessible={true}
+              collapsable={false}
               focusable={true}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
@@ -319,43 +338,54 @@ exports[`renders ./components/provider/demo/basic.tsx correctly 1`] = `
                   },
                   Object {
                     "height": 47,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
                   },
                   Object {
                     "backgroundColor": "#ffffff",
                     "borderColor": "#dddddd",
                   },
-                  false,
-                  false,
-                  undefined,
-                  undefined,
                 ]
               }
             >
               <View
                 style={
-                  Object {
-                    "flexDirection": "row",
-                  }
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "height": "100%",
+                      "justifyContent": "center",
+                      "width": "100%",
+                    },
+                    Object {
+                      "paddingLeft": 15,
+                      "paddingRight": 15,
+                    },
+                    Object {},
+                  ]
                 }
               >
-                <Text
+                <View
                   style={
-                    Array [
-                      Object {
-                        "fontSize": 18,
-                      },
-                      Object {
-                        "color": "#000000",
-                      },
-                      false,
-                      false,
-                    ]
+                    Object {
+                      "flexDirection": "row",
+                    }
                   }
                 >
-                  Next
-                </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "fontSize": 18,
+                        },
+                        Object {
+                          "color": "#000000",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    Next
+                  </Text>
+                </View>
               </View>
             </View>
           </View>

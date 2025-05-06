@@ -587,14 +587,7 @@ exports[`renders ./components/input-item/demo/basic.tsx correctly 1`] = `
               }
             >
               <Text
-                disabled={false}
-                loading={false}
-                onHideUnderlay={[Function]}
                 onPress={[Function]}
-                onPressIn={[Function]}
-                onPressOut={[Function]}
-                onShowUnderlay={[Function]}
-                pressIn={false}
                 style={
                   Array [
                     Object {

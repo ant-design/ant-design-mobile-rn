@@ -498,8 +498,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -516,43 +519,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              成功
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                成功
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -563,8 +577,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -581,43 +598,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              失败
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                失败
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -628,8 +656,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -646,43 +677,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              网络失败
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                网络失败
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -693,8 +735,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -711,43 +756,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              加载中
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                加载中
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -758,8 +814,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -776,43 +835,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              自定义图标
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                自定义图标
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -869,8 +939,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -887,43 +960,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              顶部提示
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                顶部提示
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -934,8 +1018,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -952,43 +1039,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              底部提示
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                底部提示
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -999,8 +1097,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -1017,43 +1118,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              动态内容
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                动态内容
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -1110,8 +1222,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -1128,43 +1243,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              显示
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                显示
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -1175,8 +1301,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -1193,43 +1322,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              清除
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                清除
+              </Text>
+            </View>
           </View>
         </View>
         <View
@@ -1240,8 +1380,11 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -1258,43 +1401,54 @@ exports[`renders ./components/toast/demo/basic.tsx correctly 1`] = `
               },
               Object {
                 "height": 47,
-                "paddingLeft": 15,
-                "paddingRight": 15,
               },
               Object {
                 "backgroundColor": "#ffffff",
                 "borderColor": "#dddddd",
               },
-              false,
-              false,
-              undefined,
-              undefined,
             ]
           }
         >
           <View
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                },
+                Object {
+                  "paddingLeft": 15,
+                  "paddingRight": 15,
+                },
+                Object {},
+              ]
             }
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "fontSize": 18,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  false,
-                  false,
-                ]
+                Object {
+                  "flexDirection": "row",
+                }
               }
             >
-              关闭所有
-            </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 18,
+                    },
+                    Object {
+                      "color": "#000000",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                关闭所有
+              </Text>
+            </View>
           </View>
         </View>
         <View
