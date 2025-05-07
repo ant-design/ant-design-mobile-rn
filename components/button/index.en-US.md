@@ -19,7 +19,7 @@ Properties | Descrition | Type | Default
 | onPress    | set the handler to handle `click` event | (e: Object): void |  -  |
 | textStyle | set the text's custom style |   Object  | - |
 | style    | custom style |   Object  | - |
-| onPressIn  | same as RN TouchableHighlight onPressIn | (e: Object): void |   - |
-| onPressOut | same as RN TouchableHighlight onPressOut | (e: Object): void |  - |
-| onShowUnderlay | same as RN TouchableHighlight onShowUnderlay | (e: Object): void | - |
-| onHideUnderlay | same as RN TouchableHighlight onHideUnderlay | (e: Object): void | - |
+| onPressIn  | same as RN Pressable onPressIn | (e: Object): void |   - |
+| onPressOut | same as RN Pressable onPressOut | (e: Object): void |  - |
+| onShowUnderlay | same as RN Pressable onPressIn but only triggered if `activeStyle` is not false | (e: Object): void | - |
+| onHideUnderlay | same as RN Pressable onPressOut but only triggered if `activeStyle` is not false | (e: Object): void | - |
