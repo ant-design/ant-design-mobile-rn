@@ -15,7 +15,8 @@ import buttonStyles, { ButtonStyles } from './style/index'
 
 export interface ButtonProps
   extends ButtonPropsType,
-    WithThemeStyles<ButtonStyles> {}
+    WithThemeStyles<ButtonStyles>,
+    Omit<PressableProps, 'style'> {}
 
 type OnPressInType = PressableProps['onPressIn']
 type OnPressOutType = PressableProps['onPressOut']
