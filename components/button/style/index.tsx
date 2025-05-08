@@ -44,6 +44,10 @@ export default (theme: Theme) =>
   StyleSheet.create<ButtonStyles>({
     container: {
       flexDirection: 'row',
+      height: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
     },
     defaultHighlight: {
       backgroundColor: `${theme.fill_tap}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
