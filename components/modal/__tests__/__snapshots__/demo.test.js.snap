@@ -330,7 +330,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -419,7 +423,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -508,7 +516,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -597,7 +609,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -686,7 +702,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -775,7 +795,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -864,7 +888,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -953,7 +981,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -1042,7 +1074,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >
@@ -1131,7 +1167,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           <View
             style={
               Object {
+                "alignItems": "center",
                 "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
               }
             }
           >

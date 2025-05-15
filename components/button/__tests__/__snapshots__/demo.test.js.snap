@@ -79,7 +79,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -172,7 +176,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -185,10 +193,10 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
               Object {
                 "color": "#000000",
               },
+              Object {},
               Object {
                 "color": "#0000004D",
               },
-              Object {},
             ]
           }
         >
@@ -264,7 +272,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -356,7 +368,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -369,10 +385,10 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
               Object {
                 "color": "#ffffff",
               },
+              Object {},
               Object {
                 "color": "#ffffff99",
               },
-              Object {},
             ]
           }
         >
@@ -448,7 +464,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -540,7 +560,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -553,10 +577,10 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
               Object {
                 "color": "#ffffff",
               },
+              Object {},
               Object {
                 "color": "#ffffff99",
               },
-              Object {},
             ]
           }
         >
@@ -632,7 +656,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -721,7 +749,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -738,7 +770,7 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
             ]
           }
         >
-          无点击反馈
+          No click feedback
         </Text>
       </View>
     </View>
@@ -810,7 +842,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -889,7 +925,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -981,7 +1021,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
@@ -994,13 +1038,16 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
               Object {
                 "color": "#000000",
               },
-              Object {
-                "color": "white",
-              },
+              Array [
+                Object {},
+                Object {
+                  "color": "darkgray",
+                },
+              ],
             ]
           }
         >
-          custon background color
+          custon background and text color
         </Text>
       </View>
     </View>
@@ -1078,7 +1125,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
+              "alignItems": "center",
               "flexDirection": "row",
+              "height": "100%",
+              "justifyContent": "center",
+              "overflow": "hidden",
             }
           }
         >
@@ -1160,7 +1211,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
+              "alignItems": "center",
               "flexDirection": "row",
+              "height": "100%",
+              "justifyContent": "center",
+              "overflow": "hidden",
             }
           }
         >
@@ -1173,10 +1228,10 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
                 Object {
                   "color": "#108ee9",
                 },
+                Object {},
                 Object {
                   "color": "#0000001A",
                 },
-                Object {},
               ]
             }
           >
@@ -1242,7 +1297,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
         <View
           style={
             Object {
+              "alignItems": "center",
               "flexDirection": "row",
+              "height": "100%",
+              "justifyContent": "center",
+              "overflow": "hidden",
             }
           }
         >
@@ -1332,7 +1391,11 @@ exports[`renders ./components/button/demo/basic.tsx correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "overflow": "hidden",
           }
         }
       >
