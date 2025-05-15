@@ -87,9 +87,9 @@ const Button: React.FC<ButtonProps> = (props) => {
   const getDynamicTextStyle = useCallback(
     (pressed: boolean, _styles: ButtonStyles) => {
       const textStyles = [
-        _styles.rawText,
         _styles[`${size}RawText`] || {},
         _styles[`${type}RawText`] || _styles.defaultRawText || {},
+        _styles.rawText,
       ] as StyleProp<ViewStyle>[]
 
       if (disabled) {

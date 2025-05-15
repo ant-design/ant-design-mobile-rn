@@ -37,11 +37,13 @@ export default () => (
     <WhiteSpace />
 
     <Button
-      textStyle={{ color: 'white' }}
+      styles={{
+        rawText: { color: 'darkgray' },
+      }}
       style={{
         backgroundColor: 'red',
       }}>
-      custon background color
+      custon background and text color
     </Button>
 
     <WingBlank
