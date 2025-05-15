@@ -28,6 +28,7 @@ export interface ButtonStyles {
   primaryHighlightText: TextStyle
   ghostHighlightText: TextStyle
   warningHighlightText: TextStyle
+  rawText: TextStyle
   largeRawText: TextStyle
   smallRawText: TextStyle
   defaultRawText: TextStyle
@@ -136,6 +137,7 @@ export default (theme: Theme) =>
     warningHighlightText: {
       color: `${theme.color_text_base_inverse}4D`, // alpha 30%  https://codepen.io/chriscoyier/pen/XjbzAW
     },
+    rawText: {},
     largeRawText: {
       fontSize: theme.button_font_size,
     },

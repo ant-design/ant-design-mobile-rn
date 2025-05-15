@@ -14,9 +14,9 @@ import { ButtonPropsType } from './PropsType'
 import buttonStyles, { ButtonStyles } from './style/index'
 
 export interface ButtonProps
-  extends ButtonPropsType,
-    WithThemeStyles<ButtonStyles>,
-    Omit<PressableProps, 'style'> {}
+  extends Omit<PressableProps, 'style'>,
+    ButtonPropsType,
+    WithThemeStyles<ButtonStyles> {}
 
 type OnPressInType = PressableProps['onPressIn']
 type OnPressOutType = PressableProps['onPressOut']
@@ -32,7 +32,6 @@ const Button: React.FC<ButtonProps> = (props) => {
     disabled = false,
     children,
     style,
-    textStyle = {},
     activeStyle,
     underlayColor,
     styles,
@@ -88,6 +87,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   const getDynamicTextStyle = useCallback(
     (pressed: boolean, _styles: ButtonStyles) => {
       const textStyles = [
+        _styles.rawText,
         _styles[`${size}RawText`] || {},
         _styles[`${type}RawText`] || _styles.defaultRawText || {},
       ] as StyleProp<ViewStyle>[]
@@ -100,13 +100,9 @@ const Button: React.FC<ButtonProps> = (props) => {
         textStyles.push(activeStyle || _styles[`${type}HighlightText`] || {})
       }
 
-      if (textStyle) {
-        textStyles.push(textStyle)
-      }
-
       return textStyles.filter(Boolean)
     },
-    [activeStyle, disabled, size, textStyle, touchIt, type],
+    [activeStyle, disabled, size, touchIt, type],
   )
 
   const getDynamicIndicatorStyle = useCallback(

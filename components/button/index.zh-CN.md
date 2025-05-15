@@ -18,9 +18,57 @@ subtitle: 按钮
 | activeClassName  | 点击反馈的自定义类名 | string |  |
 | disabled   | 设置禁用  | boolean |    false  |
 | onPress    | 点击按钮的点击回调函数 | (e: Object): void |   无  |
-| textStyle | 自定义文本样式 |   Object  | 无 |
 | style    | 自定义样式 |   Object  | 无 |
+| styles | 语义化结构 style | [ButtonStyles](#buttonStyles-语义化样式) | - |
 | onPressIn   | 同 RN Pressable onPressIn | (e: Object): void |   无  |
 | onPressOut    | 同 RN Pressable onPressOut | (e: Object): void |   无  |
 | onShowUnderlay    | 同 RN Pressable onPressIn 但仅在 activeStyle 不为 false 时触发 | (e: Object): void |   无  |
 | onHideUnderlay    | 同 RN Pressable onPressOut 但仅在 activeStyle 不为 false 时触发 | (e: Object): void |   无  |
+
+
+
+### ButtonStyles 语义化样式
+
+```typescript
+interface ButtonStyles {
+  container: ViewStyle
+  defaultHighlight: ViewStyle
+  primaryHighlight: ViewStyle
+  ghostHighlight: ViewStyle
+  warningHighlight: ViewStyle
+  wrapperStyle: ViewStyle
+  underlayStyle: ViewStyle
+  largeRaw: ViewStyle
+  largeUnderlayContainerRaw: ViewStyle
+  smallRaw: ViewStyle
+  smallUnderlayContainerRaw: ViewStyle
+  defaultRaw: ViewStyle
+  defaultUnderlayContainerRaw: ViewStyle
+  primaryRaw: ViewStyle
+  primaryUnderlayContainerRaw: ViewStyle
+  ghostRaw: ViewStyle
+  ghostUnderlayContainerRaw: ViewStyle
+  warningRaw: ViewStyle
+  warningUnderlayContainerRaw: ViewStyle
+  defaultDisabledRaw: ViewStyle
+  primaryDisabledRaw: ViewStyle
+  ghostDisabledRaw: ViewStyle
+  warningDisabledRaw: ViewStyle
+  defaultHighlightText: TextStyle
+  primaryHighlightText: TextStyle
+  ghostHighlightText: TextStyle
+  warningHighlightText: TextStyle
+  rawText: TextStyle
+  largeRawText: TextStyle
+  smallRawText: TextStyle
+  defaultRawText: TextStyle
+  primaryRawText: TextStyle
+  ghostRawText: TextStyle
+  warningRawText: TextStyle
+  defaultDisabledRawText: TextStyle
+  primaryDisabledRawText: TextStyle
+  ghostDisabledRawText: TextStyle
+  warningDisabledRawText: TextStyle
+  indicator: ViewStyle
+}
+```
