@@ -413,8 +413,11 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -431,43 +434,58 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Go to 0
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Go to 0
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -875,8 +893,11 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -893,43 +914,58 @@ exports[`renders ./components/carousel/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Toggle autoplay true
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Toggle autoplay true
+            </Text>
+          </View>
         </View>
       </View>
     </View>

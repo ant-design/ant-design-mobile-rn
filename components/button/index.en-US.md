@@ -18,7 +18,55 @@ Properties | Descrition | Type | Default
 | disabled   | set disabled   | boolean |  false  |
 | onPress    | set the handler to handle `click` event | (e: Object): void |  -  |
 | style    | custom style |   Object  | - |
-| onPressIn  | same as RN TouchableHighlight onPressIn | (e: Object): void |   - |
-| onPressOut | same as RN TouchableHighlight onPressOut | (e: Object): void |  - |
-| onShowUnderlay | same as RN TouchableHighlight onShowUnderlay | (e: Object): void | - |
-| onHideUnderlay | same as RN TouchableHighlight onHideUnderlay | (e: Object): void | - |
+| styles | Semantic DOM style | [ButtonStyles](#buttonStyles-interface) | - |
+| onPressIn  | same as RN Pressable onPressIn | (e: Object): void |   - |
+| onPressOut | same as RN Pressable onPressOut | (e: Object): void |  - |
+| onShowUnderlay | same as RN Pressable onPressIn but only triggered if `activeStyle` is not false | (e: Object): void | - |
+| onHideUnderlay | same as RN Pressable onPressOut but only triggered if `activeStyle` is not false | (e: Object): void | - |
+
+
+### ButtonStyles interface
+
+```typescript
+interface ButtonStyles {
+  container: ViewStyle
+  defaultHighlight: ViewStyle
+  primaryHighlight: ViewStyle
+  ghostHighlight: ViewStyle
+  warningHighlight: ViewStyle
+  wrapperStyle: ViewStyle
+  underlayStyle: ViewStyle
+  largeRaw: ViewStyle
+  largeUnderlayContainerRaw: ViewStyle
+  smallRaw: ViewStyle
+  smallUnderlayContainerRaw: ViewStyle
+  defaultRaw: ViewStyle
+  defaultUnderlayContainerRaw: ViewStyle
+  primaryRaw: ViewStyle
+  primaryUnderlayContainerRaw: ViewStyle
+  ghostRaw: ViewStyle
+  ghostUnderlayContainerRaw: ViewStyle
+  warningRaw: ViewStyle
+  warningUnderlayContainerRaw: ViewStyle
+  defaultDisabledRaw: ViewStyle
+  primaryDisabledRaw: ViewStyle
+  ghostDisabledRaw: ViewStyle
+  warningDisabledRaw: ViewStyle
+  defaultHighlightText: TextStyle
+  primaryHighlightText: TextStyle
+  ghostHighlightText: TextStyle
+  warningHighlightText: TextStyle
+  rawText: TextStyle
+  largeRawText: TextStyle
+  smallRawText: TextStyle
+  defaultRawText: TextStyle
+  primaryRawText: TextStyle
+  ghostRawText: TextStyle
+  warningRawText: TextStyle
+  defaultDisabledRawText: TextStyle
+  primaryDisabledRawText: TextStyle
+  ghostDisabledRawText: TextStyle
+  warningDisabledRawText: TextStyle
+  indicator: ViewStyle
+}
+```

@@ -86,8 +86,11 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -104,43 +107,58 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
                 },
                 Object {
                   "height": 23,
-                  "paddingLeft": 5,
-                  "paddingRight": 5,
                 },
                 Object {
                   "backgroundColor": "#ffffff",
                   "borderColor": "#dddddd",
                 },
-                false,
-                false,
-                undefined,
-                undefined,
               ]
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  },
+                  Object {
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                  },
+                  Object {},
+                ]
               }
             >
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "#000000",
-                    },
-                    false,
-                    false,
-                  ]
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "overflow": "hidden",
+                  }
                 }
               >
-                按钮1
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "#000000",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  按钮1
+                </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -165,8 +183,11 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -183,43 +204,58 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
                 },
                 Object {
                   "height": 23,
-                  "paddingLeft": 5,
-                  "paddingRight": 5,
                 },
                 Object {
                   "backgroundColor": "#ffffff",
                   "borderColor": "#dddddd",
                 },
-                false,
-                false,
-                undefined,
-                undefined,
               ]
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  },
+                  Object {
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                  },
+                  Object {},
+                ]
               }
             >
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "#000000",
-                    },
-                    false,
-                    false,
-                  ]
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "overflow": "hidden",
+                  }
                 }
               >
-                按钮2
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "#000000",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  按钮2
+                </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -244,8 +280,11 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -262,43 +301,58 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
                 },
                 Object {
                   "height": 23,
-                  "paddingLeft": 5,
-                  "paddingRight": 5,
                 },
                 Object {
                   "backgroundColor": "#ffffff",
                   "borderColor": "#dddddd",
                 },
-                false,
-                false,
-                undefined,
-                undefined,
               ]
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  },
+                  Object {
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                  },
+                  Object {},
+                ]
               }
             >
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "#000000",
-                    },
-                    false,
-                    false,
-                  ]
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "overflow": "hidden",
+                  }
                 }
               >
-                按钮3
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "#000000",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  按钮3
+                </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -368,8 +422,11 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -386,43 +443,58 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
                 },
                 Object {
                   "height": 23,
-                  "paddingLeft": 5,
-                  "paddingRight": 5,
                 },
                 Object {
                   "backgroundColor": "#ffffff",
                   "borderColor": "#dddddd",
                 },
-                false,
-                false,
-                undefined,
-                undefined,
               ]
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  },
+                  Object {
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                  },
+                  Object {},
+                ]
               }
             >
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "#000000",
-                    },
-                    false,
-                    false,
-                  ]
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "overflow": "hidden",
+                  }
                 }
               >
-                按钮1
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "#000000",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  按钮1
+                </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -446,8 +518,11 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -464,43 +539,58 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
                 },
                 Object {
                   "height": 23,
-                  "paddingLeft": 5,
-                  "paddingRight": 5,
                 },
                 Object {
                   "backgroundColor": "#ffffff",
                   "borderColor": "#dddddd",
                 },
-                false,
-                false,
-                undefined,
-                undefined,
               ]
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  },
+                  Object {
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                  },
+                  Object {},
+                ]
               }
             >
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "#000000",
-                    },
-                    false,
-                    false,
-                  ]
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "overflow": "hidden",
+                  }
                 }
               >
-                按钮2
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "#000000",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  按钮2
+                </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -524,8 +614,11 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -542,43 +635,58 @@ exports[`renders ./components/flex/demo/basic.tsx correctly 1`] = `
                 },
                 Object {
                   "height": 23,
-                  "paddingLeft": 5,
-                  "paddingRight": 5,
                 },
                 Object {
                   "backgroundColor": "#ffffff",
                   "borderColor": "#dddddd",
                 },
-                false,
-                false,
-                undefined,
-                undefined,
               ]
             }
           >
             <View
               style={
-                Object {
-                  "flexDirection": "row",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  },
+                  Object {
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                  },
+                  Object {},
+                ]
               }
             >
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "#000000",
-                    },
-                    false,
-                    false,
-                  ]
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "overflow": "hidden",
+                  }
                 }
               >
-                按钮3
-              </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "#000000",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  按钮3
+                </Text>
+              </View>
             </View>
           </View>
         </View>

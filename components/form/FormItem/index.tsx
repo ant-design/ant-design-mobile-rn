@@ -36,7 +36,7 @@ const ValidateStatuses = [
   'validating',
   '',
 ] as const
-export type ValidateStatus = typeof ValidateStatuses[number]
+export type ValidateStatus = (typeof ValidateStatuses)[number]
 
 type RenderChildren<Values = any> = (
   form: FormInstance<Values>,
