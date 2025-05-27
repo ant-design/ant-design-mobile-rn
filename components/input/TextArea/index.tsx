@@ -26,12 +26,19 @@ const TextArea = forwardRef<TextInput, TextAreaProps>((props, ref) => {
   // ============================== onLayout ==============================
   const [lineHeight, setLineHeight] = useState(0)
   const [firstLayoutHeight, setFirstLayoutHeight] = useState(0)
+  
+  const placeholder = useMemo(() => {
+    if ([undefined, null, ''].includes(restProps.placeholder)) {
+      // fix: iOS not show when change placeholder bug
+      return ' '
+    }
+    return restProps.placeholder.toString()
+  }, [restProps.placeholder])
 
   // ============================== rest TextAreaProps ==============================
   const restTextAreaProps: TextAreaProps = useMemo(() => {
     if (lineHeight === 0 || firstLayoutHeight === 0) {
       return {
-        placeholder: ' ', // fix: iOS not show when change placeholder bug
         onLayout: (e) => {
           onLayout?.(e)
           if (firstLayoutHeight === 0) {
@@ -83,6 +90,7 @@ const TextArea = forwardRef<TextInput, TextAreaProps>((props, ref) => {
       {...restProps}
       {...restTextAreaProps}
       multiline={true}
+      placeholder={placeholder}
       ref={ref}
     />
   )
