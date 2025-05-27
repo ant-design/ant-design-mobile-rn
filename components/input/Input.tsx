@@ -52,11 +52,14 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     styles: props.styles,
     themeStyles,
   })
-
   const timer = React.useRef<any>()
+  const [focus, setFocus] = React.useState<boolean>()
+
   React.useEffect(() => {
     const keyboardHide = Keyboard.addListener('keyboardDidHide', () => {
-      Keyboard.dismiss()
+      if (focus) {
+        Keyboard.dismiss()
+      }
     })
     return () => {
       keyboardHide.remove()
@@ -64,12 +67,10 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
         clearTimeout(timer.current)
       }
     }
-  }, [])
+  }, [focus])
 
   const inputRef = React.useRef<TextInput>(null)
   React.useImperativeHandle(ref, () => inputRef.current as TextInput)
-
-  const [focus, setFocus] = React.useState<boolean>()
 
   // ========================= value prop =========================
   const [innerValue, setInnerValue] = useMergedState<string>('', {

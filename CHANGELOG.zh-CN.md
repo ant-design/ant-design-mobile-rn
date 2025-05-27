@@ -14,6 +14,20 @@ toc: false
 
 ---
 
+### 5.4.2
+`2025-05-27`
+ - **Button** [@aroldo-cittati](https://github.com/aroldo-cittati)
+   - refactor `React.Component` to `function` [#1428](https://github.com/ant-design/ant-design-mobile-rn/pull/1428) 
+   - fix: `styles` 添加 `rawText` 样式 [#1422](https://github.com/ant-design/ant-design-mobile-rn/issues/1422)
+   - fix: `activeStyle={false}` 无点击反馈 bug [#1426](https://github.com/ant-design/ant-design-mobile-rn/issues/1426)
+ - **Input** [@lqr131115](https://github.com/lqr131115)
+   - fix: Input cannot be focused on the ios emulator [#1431](https://github.com/ant-design/ant-design-mobile-rn/issues/1431)
+   - fix: Dynamic placeholders cannot be render [#1432](https://github.com/ant-design/ant-design-mobile-rn/issues/1432)
+
+### 5.4.1
+`2025-04-24`
+ - fix: [Tooltip]styles borderTopColor sets the arrow color [#1423](https://github.com/ant-design/ant-design-mobile-rn/pull/1423)
+
 ### 5.4.0
 `2025-04-18`
  - upgrade: 🚩 `react-native`最低版本升至`0.67.5`  [#1420](https://github.com/ant-design/ant-design-mobile-rn/pull/1420) [@MuNitCat](https://github.com/MuNitCat)

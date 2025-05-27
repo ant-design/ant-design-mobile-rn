@@ -281,8 +281,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -299,43 +302,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            showModal
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              showModal
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -356,8 +374,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -374,43 +395,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            transparent:false
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              transparent:false
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -431,8 +467,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -449,43 +488,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            popup
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              popup
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -506,8 +560,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -524,43 +581,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Modal.alert
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Modal.alert
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -581,8 +653,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -599,43 +674,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Modal.alert (promise)
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Modal.alert (promise)
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -656,8 +746,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -674,43 +767,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Modal.opertation
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Modal.opertation
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -731,8 +839,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -749,43 +860,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Modal.opertation (onBackHandler)
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Modal.opertation (onBackHandler)
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -806,8 +932,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -824,43 +953,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Modal.prompt (default)
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Modal.prompt (default)
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -881,8 +1025,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -899,43 +1046,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Modal.prompt (login-password)
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Modal.prompt (login-password)
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -956,8 +1118,11 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
           }
         }
         accessible={true}
+        collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -974,43 +1139,58 @@ exports[`renders ./components/modal/demo/basic.tsx correctly 1`] = `
             },
             Object {
               "height": 47,
-              "paddingLeft": 15,
-              "paddingRight": 15,
             },
             Object {
               "backgroundColor": "#ffffff",
               "borderColor": "#dddddd",
             },
-            false,
-            false,
-            undefined,
-            undefined,
           ]
         }
       >
         <View
           style={
-            Object {
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              },
+              Object {
+                "paddingLeft": 15,
+                "paddingRight": 15,
+              },
+              Object {},
+            ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "fontSize": 18,
-                },
-                Object {
-                  "color": "#000000",
-                },
-                false,
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "overflow": "hidden",
+              }
             }
           >
-            Modal.prompt (secure-text)
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              Modal.prompt (secure-text)
+            </Text>
+          </View>
         </View>
       </View>
     </View>

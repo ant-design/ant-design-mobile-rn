@@ -28,12 +28,23 @@ export default () => (
 
     <Button loading>loading button</Button>
 
-    <Button activeStyle={false}>无点击反馈</Button>
+    <Button activeStyle={false}>No click feedback</Button>
     <WhiteSpace />
+    <Button underlayColor={'blue'}>Custom Underlay</Button>
     <Button activeStyle={{ backgroundColor: 'red' }}>
       custom feedback style
     </Button>
     <WhiteSpace />
+
+    <Button
+      styles={{
+        rawText: { color: 'darkgray' },
+      }}
+      style={{
+        backgroundColor: 'red',
+      }}>
+      custon background and text color
+    </Button>
 
     <WingBlank
       style={{
