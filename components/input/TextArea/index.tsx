@@ -26,13 +26,13 @@ const TextArea = forwardRef<TextInput, TextAreaProps>((props, ref) => {
   // ============================== onLayout ==============================
   const [lineHeight, setLineHeight] = useState(0)
   const [firstLayoutHeight, setFirstLayoutHeight] = useState(0)
-  
+
   const placeholder = useMemo(() => {
     if ([undefined, null, ''].includes(restProps.placeholder)) {
       // fix: iOS not show when change placeholder bug
       return ' '
     }
-    return restProps.placeholder.toString()
+    return restProps.placeholder?.toString?.()
   }, [restProps.placeholder])
 
   // ============================== rest TextAreaProps ==============================

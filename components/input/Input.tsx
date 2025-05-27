@@ -54,10 +54,10 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
   })
   const timer = React.useRef<any>()
   const [focus, setFocus] = React.useState<boolean>()
-  
+
   React.useEffect(() => {
     const keyboardHide = Keyboard.addListener('keyboardDidHide', () => {
-      if(focus){
+      if (focus) {
         Keyboard.dismiss()
       }
     })
