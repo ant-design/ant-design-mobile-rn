@@ -152,7 +152,7 @@ const InternalCheckbox: React.ForwardRefRenderFunction<
                   style={[antd_checkbox_inner, transitionOpacity]}
                 />
                 <Animated.View
-                  style={[transitionTransform, antd_checkbox_inner_after]}
+                  style={[antd_checkbox_inner_after, transitionTransform]}
                 />
               </View>
             </View>
