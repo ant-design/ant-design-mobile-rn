@@ -2213,7 +2213,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "0deg",
+                            "rotate": "45deg",
+                          },
+                          Object {
+                            "scale": 0,
                           },
                         ],
                         "width": 8,
