@@ -54,18 +54,24 @@ const InternalCheckbox: React.ForwardRefRenderFunction<
       outputRange: [0, 1],
     }),
   }
-  const transitionTransform = {
-    transform: [
-      // hack: rotate & radius bug in android
-      ...(restProps.accessibilityRole === 'radio' ? [] : [{ rotate: '45deg' }]),
-      {
-        scale: animatedValue.interpolate({
-          inputRange: [0, 1],
-          outputRange: [0, 1],
-        }),
-      },
-    ],
-  }
+  const transitionTransform = useMemo(() => {
+    return {
+      transform: [
+        {
+          rotate: animatedValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: ['0deg', '45deg'],
+          }),
+        },
+        {
+          scale: animatedValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: indeterminate ? [1, 0] : [0, 1],
+          }),
+        },
+      ],
+    }
+  }, [animatedValue, indeterminate])
 
   //initial animate or receive props
   useEffect(() => {
@@ -121,10 +127,10 @@ const InternalCheckbox: React.ForwardRefRenderFunction<
           .split(' ')
           .map((a) => _styles[a])
 
-        const antd_checkbox_inner_after = classNames(undefined, {
-          [`${prefixCls}_inner_after`]: !indeterminate,
-          [`${prefixCls}_inner_after_indeterminate`]: indeterminate,
-          [`${prefixCls}_inner_after_disabled`]: disabled,
+        const antd_checkbox_inner_before = classNames(undefined, {
+          [`${prefixCls}_inner_before`]: !indeterminate,
+          [`${prefixCls}_inner_before_indeterminate`]: indeterminate,
+          [`${prefixCls}_inner_before_disabled`]: disabled,
         })
           .split(' ')
           .map((a) => _styles[a])
@@ -152,7 +158,7 @@ const InternalCheckbox: React.ForwardRefRenderFunction<
                   style={[antd_checkbox_inner, transitionOpacity]}
                 />
                 <Animated.View
-                  style={[antd_checkbox_inner_after, transitionTransform]}
+                  style={[antd_checkbox_inner_before, transitionTransform]}
                 />
               </View>
             </View>
