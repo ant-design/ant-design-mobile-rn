@@ -151,7 +151,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
+                            "rotate": "0deg",
                           },
                           Object {
                             "scale": 0,
@@ -375,7 +375,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
+                            "rotate": "0deg",
                           },
                           Object {
                             "scale": 0,
@@ -557,7 +557,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
+                            "rotate": "0deg",
                           },
                           Object {
                             "scale": 0,
@@ -782,7 +782,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
+                            "rotate": "0deg",
                           },
                           Object {
                             "scale": 0,
@@ -1178,7 +1178,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                     "position": "absolute",
                     "transform": Array [
                       Object {
-                        "rotate": "45deg",
+                        "rotate": "0deg",
                       },
                       Object {
                         "scale": 0,
@@ -1373,7 +1373,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
+                            "rotate": "0deg",
                           },
                           Object {
                             "scale": 0,
@@ -1565,7 +1565,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
+                            "rotate": "0deg",
                           },
                           Object {
                             "scale": 0,
@@ -1757,7 +1757,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
+                            "rotate": "0deg",
                           },
                           Object {
                             "scale": 0,
@@ -2022,7 +2022,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                             "position": "absolute",
                             "transform": Array [
                               Object {
-                                "rotate": "45deg",
+                                "rotate": "0deg",
                               },
                               Object {
                                 "scale": 0,
@@ -2213,10 +2213,10 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                         "position": "absolute",
                         "transform": Array [
                           Object {
-                            "rotate": "45deg",
+                            "rotate": "0deg",
                           },
                           Object {
-                            "scale": 0,
+                            "scale": 1,
                           },
                         ],
                         "width": 8,
@@ -2420,7 +2420,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                           "position": "absolute",
                           "transform": Array [
                             Object {
-                              "rotate": "45deg",
+                              "rotate": "0deg",
                             },
                             Object {
                               "scale": 0,
@@ -2613,7 +2613,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                           "position": "absolute",
                           "transform": Array [
                             Object {
-                              "rotate": "45deg",
+                              "rotate": "0deg",
                             },
                             Object {
                               "scale": 0,
@@ -2809,7 +2809,7 @@ exports[`renders ./components/checkbox/demo/basic.tsx correctly 1`] = `
                           "position": "absolute",
                           "transform": Array [
                             Object {
-                              "rotate": "45deg",
+                              "rotate": "0deg",
                             },
                             Object {
                               "scale": 0,
