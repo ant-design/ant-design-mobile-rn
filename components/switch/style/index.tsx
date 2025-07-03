@@ -55,7 +55,7 @@ export default (theme: Theme) =>
       textAlign: 'center',
       alignItems: 'center',
       justifyContent: 'center',
-      zIndex: theme.switch_inner_zindex
+      zIndex: theme.switch_inner_zindex,
     },
     switch_inner_checked: {
       marginLeft: 7,
