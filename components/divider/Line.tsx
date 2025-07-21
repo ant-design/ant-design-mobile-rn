@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { LayoutChangeEvent, StyleSheet, View, ViewStyle } from 'react-native'
 import { LinePropsType } from './PropsType'
 
@@ -22,6 +22,7 @@ const Line: React.FC<LinePropsType> = ({
       flex: 1,
       flexDirection,
       alignItems: 'center',
+      overflow: 'hidden',
     }
   }, [isHorizontal])
 
@@ -49,19 +50,32 @@ const Line: React.FC<LinePropsType> = ({
     return { l, g: g / 2 }
   }, [pattern])
 
-  // ================== dashedLineStyle ==================
-  const dashedLineStyle = useMemo(() => {
-    const { l, g } = dashedPattern
-    const dashStyle = isHorizontal
-      ? { height: _thickness, width: l, marginHorizontal: g }
-      : { width: _thickness, height: l, marginVertical: g }
-    return { ...dashStyle, backgroundColor }
-  }, [isHorizontal, _thickness, backgroundColor, dashedPattern])
+  // ================== getDashedLineStyle ==================
+  const getDashedLineStyle = useCallback(
+    (index: number) => {
+      const { l, g } = dashedPattern
+      const dashStyle = isHorizontal
+        ? {
+            height: _thickness,
+            width: l,
+            marginLeft: index === 0 ? 0 : g,
+            marginRight: g,
+          }
+        : {
+            width: _thickness,
+            height: l,
+            marginTop: index === 0 ? 0 : g,
+            marginBottom: g,
+          }
+      return { ...dashStyle, backgroundColor }
+    },
+    [isHorizontal, _thickness, backgroundColor, dashedPattern],
+  )
 
   // ================== dashedLineDom ==================
   const dashedLineDom = useMemo(() => {
     const { l, g } = dashedPattern
-    const count = Math.floor(lineLength / (g * 2 + l))
+    const count = Math.ceil((lineLength + g) / (g * 2 + l))
     return (
       <View
         style={orientationStyle}
@@ -71,7 +85,7 @@ const Line: React.FC<LinePropsType> = ({
           setLineLength(curLength)
         }}>
         {[...Array(count)].map((_, index) => {
-          return <View key={index} style={dashedLineStyle} />
+          return <View key={index} style={getDashedLineStyle(index)} />
         })}
       </View>
     )
@@ -80,7 +94,7 @@ const Line: React.FC<LinePropsType> = ({
     lineLength,
     isHorizontal,
     orientationStyle,
-    dashedLineStyle,
+    getDashedLineStyle,
   ])
 
   // ================== lineDom ==================
