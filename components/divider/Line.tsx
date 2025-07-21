@@ -46,7 +46,7 @@ const Line: React.FC<LinePropsType> = ({
         : [4, 2]
     const l = len >= 1 ? len : 1
     const g = gap >= 1 ? gap : 1
-    return { l, g }
+    return { l, g: g / 2 }
   }, [pattern])
 
   // ================== dashedLineStyle ==================
