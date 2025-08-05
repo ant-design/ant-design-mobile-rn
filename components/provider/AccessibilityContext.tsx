@@ -10,14 +10,15 @@ export interface AccessibilityContextProps {
   children?: React.ReactNode
 }
 
-export const AccessibilityContextProvider: React.FC<AccessibilityContextProps> =
-  ({ children, isRTL }) => {
-    const originValue = React.useContext(AccessibilityContext)
-    return (
-      <AccessibilityContext.Provider value={isRTL ?? originValue}>
-        {children}
-      </AccessibilityContext.Provider>
-    )
-  }
+export const AccessibilityContextProvider: React.FC<
+  AccessibilityContextProps
+> = ({ children, isRTL }) => {
+  const originValue = React.useContext(AccessibilityContext)
+  return (
+    <AccessibilityContext.Provider value={isRTL ?? originValue}>
+      {children}
+    </AccessibilityContext.Provider>
+  )
+}
 
 export default AccessibilityContext

@@ -103,10 +103,8 @@ export default class SearchBar extends React.Component<
     const {
       showCancelButton,
       styles,
-      value: propsValue,
       cancelText,
-      onChangeText,
-      onChange,
+      onChange: _,
       disabled,
       style,
       ...restProps
