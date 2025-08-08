@@ -6,7 +6,14 @@ module.exports = {
   rules: {
     'react-native/no-inline-styles': 0,
     semi: [1, 'never'],
-    '@typescript-eslint/no-unused-vars': [1, { args: 'none' }],
+    '@typescript-eslint/no-unused-vars': [
+      1,
+      {
+        args: 'none',
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
   },
   env: {
     browser: true,

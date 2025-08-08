@@ -304,14 +304,14 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
     }
   }
 
-  renderTabBar(tabBarProps: any, DefaultTabBar: React.ComponentClass) {
+  renderTabBar(tabBarProps: any, DefaultTabBarComponent: React.ComponentClass) {
     const { renderTabBar } = this.props
     if (renderTabBar === false) {
       return null
     } else if (renderTabBar) {
       return renderTabBar(tabBarProps)
     } else {
-      return <DefaultTabBar {...tabBarProps} />
+      return <DefaultTabBarComponent {...tabBarProps} />
     }
   }
 
