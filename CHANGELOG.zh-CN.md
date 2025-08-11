@@ -14,6 +14,12 @@ toc: false
 
 ---
 
+### 5.4.3
+`2025-08-11`
+ - fix: [Switch] inner zIndex style [#1437](https://github.com/ant-design/ant-design-mobile-rn/issues/1437) [@lqr131115](https://github.com/lqr131115)
+ - fix: [Carousel] `scrollToStart` not work in infinite [#1442](https://github.com/ant-design/ant-design-mobile-rn/issues/1442)
+ - fix: [Radio] current.onPress is not a function [#1444](https://github.com/ant-design/ant-design-mobile-rn/issues/1444) [@aroldo-cittati](https://github.com/aroldo-cittati)
+
 ### 5.4.2
 `2025-05-27`
  - **Button** [@aroldo-cittati](https://github.com/aroldo-cittati)
