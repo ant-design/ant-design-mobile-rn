@@ -12,14 +12,14 @@ export default (theme: Theme) =>
     checkbox_wave: { borderRadius: 999 },
     checkbox: { borderRadius: 999 },
     checkbox_inner: { width: 0, height: 0 },
-    checkbox_inner_after: {
+    checkbox_inner_before: {
       width: 8,
       height: 8,
       borderRadius: 999,
       backgroundColor: theme.brand_primary,
       borderWidth: 0,
     },
-    checkbox_inner_after_disabled: {
+    checkbox_inner_before_disabled: {
       backgroundColor: '#0003',
     },
     radioItemContent: {

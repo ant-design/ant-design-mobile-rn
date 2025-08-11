@@ -9,12 +9,12 @@ export interface CheckboxStyle {
   checkbox_disabled: ViewStyle
   checkbox_inner: ViewStyle
   checkbox_inner_disabled: ViewStyle
-  checkbox_inner_after: ViewStyle
-  checkbox_inner_after_disabled: ViewStyle
+  checkbox_inner_before: ViewStyle
+  checkbox_inner_before_disabled: ViewStyle
   checkbox_label: ViewStyle
   checkbox_label_disabled: ViewStyle
   checkbox_inner_indeterminate: ViewStyle
-  checkbox_inner_after_indeterminate: ViewStyle
+  checkbox_inner_before_indeterminate: ViewStyle
 }
 
 export default (theme: Theme) =>
@@ -68,8 +68,8 @@ export default (theme: Theme) =>
     },
 
     // ==========inner::after============
-    checkbox_inner_after: {
-      // transform: [{ rotate: '45deg' }],
+    checkbox_inner_before: {
+      transform: [{ rotate: '45deg' }],
       position: 'absolute',
       width: 6,
       height: 9,
@@ -80,14 +80,13 @@ export default (theme: Theme) =>
       borderLeftWidth: 0,
     },
     // 半选状态样式
-    checkbox_inner_after_indeterminate: {
-      transform: [{ rotate: '0deg' }],
+    checkbox_inner_before_indeterminate: {
       position: 'absolute',
       width: 8,
       height: 8,
       backgroundColor: theme.brand_primary,
     },
-    checkbox_inner_after_disabled: {
+    checkbox_inner_before_disabled: {
       borderColor: theme.checkbox_border_disabled,
     },
 
