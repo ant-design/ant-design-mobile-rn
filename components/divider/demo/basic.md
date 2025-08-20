@@ -73,7 +73,7 @@ export default class BasicDividerExample extends React.Component<any, any> {
         </List>
         <List renderHeader="竖向分割线">
           <Item>
-            <WingBlank>
+            <WingBlank style={{ flexDirection: 'row' }}>
               <Flex direction="row">
                 <Text style={{ fontSize: 14 }}>Home</Text>
                 <Divider
