@@ -39,6 +39,26 @@ const Line: React.FC<LinePropsType> = ({
     return <View style={solidLineStyle} />
   }, [solidLineStyle])
 
+  // ================== dashedCssDom ==================
+  const dashedCssDom = useMemo(() => {
+    const wrapperStyle: ViewStyle = {
+      flex: 1,
+      overflow: 'hidden',
+      ...(isHorizontal ? { height: _thickness } : { width: _thickness }),
+    }
+    const lineStyle: ViewStyle = {
+      ...(isHorizontal ? { height: 0 } : { width: 0 }),
+      borderColor: backgroundColor,
+      borderWidth: _thickness,
+      borderStyle: 'dashed',
+    }
+    return (
+      <View style={wrapperStyle}>
+        <View style={lineStyle} />
+      </View>
+    )
+  }, [isHorizontal, _thickness, backgroundColor])
+
   // ================== dashedPattern ==================
   const dashedPattern = useMemo(() => {
     const [len, gap] =
@@ -72,8 +92,8 @@ const Line: React.FC<LinePropsType> = ({
     [isHorizontal, _thickness, backgroundColor, dashedPattern],
   )
 
-  // ================== dashedLineDom ==================
-  const dashedLineDom = useMemo(() => {
+  // ================== dashedJointDom ==================
+  const dashedJointDom = useMemo(() => {
     const { l, g } = dashedPattern
     const count = Math.ceil((lineLength + g) / (g * 2 + l))
     return (
@@ -96,6 +116,15 @@ const Line: React.FC<LinePropsType> = ({
     orientationStyle,
     getDashedLineStyle,
   ])
+
+  // ================== dashedLineDom ==================
+  const dashedLineDom = useMemo(() => {
+    if (Array.isArray(pattern)) {
+      return dashedJointDom
+    } else {
+      return dashedCssDom
+    }
+  }, [pattern, dashedCssDom, dashedJointDom])
 
   // ================== lineDom ==================
   const lineDom = useMemo(() => {
