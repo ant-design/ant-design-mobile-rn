@@ -71,7 +71,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
   }
 
   componentWillUnmount() {
-    this.props.scrollValue?.removeListener()
+    this.props.scrollValue?.removeAllListeners()
     this._initialized = false
     this._tabMeasurementsCount = 0
   }
@@ -118,7 +118,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     }
   }
 
-  updateView = (offset: any, animated: boolean = true) => {
+  updateView = (offset: { value: number }, animated: boolean = true) => {
     const position = Math.floor(offset.value)
     const pageOffset = offset.value % 1
     const tabCount = this.props.tabs.length
@@ -236,7 +236,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     tab: TabData,
     index: number,
     width: number,
-    onLayoutHandler: any,
+    onLayoutHandler: (event: LayoutChangeEvent) => void,
     styles: ReturnType<typeof TabBarStyles>,
     theme: Theme,
   ) => {
@@ -287,7 +287,7 @@ export class DefaultTabBar extends React.PureComponent<PropsType, StateType> {
     )
   }
 
-  measureTab = (page: number, event: any) => {
+  measureTab = (page: number, event: LayoutChangeEvent) => {
     const { x, width, height } = event.nativeEvent.layout
     this._tabsMeasurements[page] = { left: x, right: x + width, width, height }
     this._tabMeasurementsCount++
