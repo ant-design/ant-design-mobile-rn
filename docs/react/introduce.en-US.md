@@ -56,13 +56,27 @@ We manage the following dependencies through `peerDependencies` to allow you to 
 
  - If you have an Expo managed project, install the dependencies with `expo`:
    ```bash
-   npx expo install react-native-gesture-handler react-native-reanimated
+   npx expo install react-native-gesture-handler react-native-reanimated react-native-worklets
    ```
 
  - If you have a bare React Native project, install the dependencies with `npm`:
    ```bash
-   npm install react-native-gesture-handler react-native-reanimated
+   npm install react-native-gesture-handler react-native-reanimated react-native-worklets
    ```
+   you also need to manually add the `react-native-worklets/plugin` plugin to your `babel.config.js`
+
+   ```
+    module.exports = {
+        presets: [
+          ... // don't add it here :)
+        ],
+        plugins: [
+          ...
+          'react-native-worklets/plugin',
+        ],
+      };
+   ```
+   see more details in [react-native-reanimated installation doc](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
 
 ### Link icon fonts
 
