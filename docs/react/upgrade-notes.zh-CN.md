@@ -10,14 +10,28 @@ title: 升级指南
 > 安装 peer 依赖
 
 ```bash
-npm install @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+npm install @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated react-native-worklets
 ```
 
 or
 
 ```bash
-yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated react-native-worklets
 ```
+如果你使用的是 bare React Native 项目，你还需要在 `babel.config.js` 中手动添加 `react-native-worklets/plugin` 插件
+
+```
+module.exports = {
+    presets: [
+      ... // don't add it here :)
+    ],
+    plugins: [
+      ...
+      'react-native-worklets/plugin',
+    ],
+  };
+```
+更多细节请参见 [react-native-reanimated 安装文档](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
 
 ### 5.1.0
 
