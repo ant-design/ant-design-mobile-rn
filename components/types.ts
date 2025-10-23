@@ -46,6 +46,7 @@ export type {
   RadioItemProps,
   RadioProps,
 } from './radio/PropsType'
+export type { RateProps } from './rate/PropsType'
 export type { ResultNativeProps as ResultProps } from './result/index'
 export type { SearchBarProps } from './search-bar/index'
 export type { SliderProps, SliderRef } from './slider/PropsType'

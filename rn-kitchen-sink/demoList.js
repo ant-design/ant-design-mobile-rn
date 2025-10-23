@@ -192,6 +192,12 @@ module.exports = {
       module: require('../components/radio/demo/basic'), // 必须
     },
     {
+      title: 'Rate',
+      description: '评分',
+      icon: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+      module: require('../components/rate/demo/basic'), // 必须
+    },
+    {
       title: 'Slider',
       description: '滑动输入条',
       icon: 'https://os.alipayobjects.com/rmsportal/mCyccAjoVLFVhSH.png',
