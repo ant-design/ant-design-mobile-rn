@@ -19,7 +19,6 @@ export interface RateProps {
   color?: string
   emptyColor?: string
   iconName?: IconName
-  iconFill?: boolean
   iconType?: 'fill' | 'outline'
   iconSize?: number
   iconStyle?: ViewStyle

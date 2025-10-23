@@ -37,6 +37,9 @@ const Rate = ({
     value,
     onChange,
   })
+  const valueRef = React.useRef(internalValue)
+  valueRef.current = internalValue
+
   const prevRating = React.useRef<number>(internalValue)
 
   // ========== memoAnimationOptions ============
@@ -57,7 +60,7 @@ const Rate = ({
   const panResponder = React.useMemo(() => {
     const calculateRating = (x: number, isRTL = I18nManager.isRTL) => {
       if (!width.current) {
-        return internalValue
+        return valueRef.current
       }
 
       if (isRTL) {
@@ -75,13 +78,13 @@ const Rate = ({
       if (needHistory && newRating !== prevRating.current) {
         prevRating.current = newRating
       }
-      if (newRating !== internalValue) {
+      if (newRating !== valueRef.current) {
         setInternalValue(newRating)
       }
     }
 
     const handleClear = () => {
-      if (allowClear && internalValue > 0) {
+      if (allowClear && valueRef.current > 0) {
         prevRating.current = -1
         setInternalValue(0)
       }
@@ -147,7 +150,6 @@ const Rate = ({
     allowHalf,
     allowClear,
     allowSwiping,
-    internalValue,
     setInternalValue,
     onRatingStart,
     onRatingEnd,

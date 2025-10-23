@@ -11,7 +11,7 @@ title:
 import React from 'react'
 import { ScrollView, Text } from 'react-native'
 import { Flex, List, Rate, Toast, WhiteSpace } from '@ant-design/react-native'
-const Item = Popover.Item
+const Item = List.Item
 export default class RateExample extends React.Component<any, any> {
   onChange = (value: number) => {
     Toast.show({ content: `当前评分为：${value}`, position: 'top' })
