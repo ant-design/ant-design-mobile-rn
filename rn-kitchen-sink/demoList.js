@@ -266,6 +266,12 @@ module.exports = {
       module: require('../components/view/demo/basic'),
     },
     {
+      title: 'Divider',
+      description: '分割线',
+      icon: 'https://os.alipayobjects.com/rmsportal/DUkfOYZVcLctGot.png',
+      module: require('../components/divider/demo/basic'),
+    },
+    {
       title: 'WhiteSpace',
       description: '上下留白',
       icon: 'https://os.alipayobjects.com/rmsportal/NfomhEsOdhFxEws.png',
