@@ -90,6 +90,14 @@ const Rate = ({
       }
     }
 
+    const handleReset = () => {
+      endRating.current = -1
+      startRating.current = -1
+      setTimeout(() => {
+        setInteracting(false)
+      }, defaultAnimationConfig.delay)
+    }
+
     return PanResponder.create({
       onStartShouldSetPanResponder: () => !readOnly,
       onStartShouldSetPanResponderCapture: () => !readOnly,
@@ -128,20 +136,12 @@ const Rate = ({
           handleChange(newRating, true)
           onRatingEnd?.(newRating)
         }
-        endRating.current = -1
-        startRating.current = -1
-        setTimeout(() => {
-          setInteracting(false)
-        }, defaultAnimationConfig.delay)
+        handleReset()
       },
       onPanResponderTerminate: () => {
         // called when user drags outside of the component
         onRatingEnd?.(endRating.current)
-        endRating.current = -1
-        startRating.current = -1
-        setTimeout(() => {
-          setInteracting(false)
-        }, defaultAnimationConfig.delay)
+        handleReset()
       },
     })
   }, [

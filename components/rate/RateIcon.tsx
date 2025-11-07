@@ -1,4 +1,9 @@
-import { IconFill, IconOutline } from '@ant-design/icons-react-native'
+import {
+  IconFill,
+  IconFillProps,
+  IconOutline,
+  IconOutlineProps,
+} from '@ant-design/icons-react-native'
 import React from 'react'
 import { I18nManager, StyleSheet, View, ViewStyle } from 'react-native'
 import { RateIconProps } from './PropsType'
@@ -7,18 +12,11 @@ const Icon = ({
   size,
   name,
   color,
-  emptyColor,
   isFill,
-}: Omit<RateIconProps, 'type'>) => {
-  const IconComponent: any = isFill ? IconFill : IconOutline
-  return (
-    <IconComponent
-      size={size}
-      color={color}
-      name={name}
-      emptyColor={emptyColor}
-    />
-  )
+}: Omit<RateIconProps, 'type' | 'emptyColor'>) => {
+  const IconComponent: React.ComponentType<IconFillProps | IconOutlineProps> =
+    isFill ? IconFill : IconOutline
+  return <IconComponent size={size} color={color} name={name} />
 }
 
 const EmptyIcon = ({
