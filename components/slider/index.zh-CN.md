@@ -47,7 +47,7 @@ interface SliderStyle {
   disabled: ViewStyle
 
   // 轨道
-  trackContianer: ViewStyle // 轨道容器
+  trackContainer: ViewStyle // 轨道容器
   track: ViewStyle // 轨道线
   fill: ViewStyle // 轨道填充部分
 

@@ -47,7 +47,7 @@ interface SliderStyle {
   disabled: ViewStyle
 
   // Track
-  trackContianer: ViewStyle // track container
+  trackContainer: ViewStyle // track container
   track: ViewStyle // track line
   fill: ViewStyle // Filled portion of the track line
 

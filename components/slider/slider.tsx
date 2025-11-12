@@ -382,7 +382,7 @@ function InternalSlider<SliderValue extends SliderValueType>(
   return (
     <GestureDetector gesture={gesture}>
       <View style={[ss.slider, disabled && ss.disabled, style]}>
-        <View style={ss.trackContianer} onLayout={onTrackLayout}>
+        <View style={ss.trackContainer} onLayout={onTrackLayout}>
           <View style={ss.track} />
           <Animated.View style={[ss.fill, fillStyle]} />
           {/* 刻度 */}

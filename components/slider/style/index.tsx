@@ -6,7 +6,7 @@ export interface SliderStyle {
   disabled: ViewStyle
 
   // 轨道
-  trackContianer: ViewStyle
+  trackContainer: ViewStyle
   track: ViewStyle
   fill: ViewStyle
 
@@ -30,7 +30,7 @@ export default (theme: Theme) =>
       paddingHorizontal: 14,
     },
     disabled: {},
-    trackContianer: {
+    trackContainer: {
       paddingVertical: 8,
       position: 'relative',
       width: '100%',
