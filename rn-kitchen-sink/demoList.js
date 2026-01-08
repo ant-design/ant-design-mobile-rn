@@ -192,6 +192,12 @@ module.exports = {
       module: require('../components/radio/demo/basic'), // 必须
     },
     {
+      title: 'Rate',
+      description: '评分',
+      icon: 'https://luokun.oss-cn-hangzhou.aliyuncs.com/github/rate_icon_transparent_final.png',
+      module: require('../components/rate/demo/basic'),
+    },
+    {
       title: 'Slider',
       description: '滑动输入条',
       icon: 'https://os.alipayobjects.com/rmsportal/mCyccAjoVLFVhSH.png',
@@ -264,6 +270,12 @@ module.exports = {
       description: '更安全的基础组件',
       icon: 'https://os.alipayobjects.com/rmsportal/DUkfOYZVcLctGot.png',
       module: require('../components/view/demo/basic'),
+    },
+    {
+      title: 'Divider',
+      description: '分割线',
+      icon: 'https://os.alipayobjects.com/rmsportal/DUkfOYZVcLctGot.png',
+      module: require('../components/divider/demo/basic'),
     },
     {
       title: 'WhiteSpace',
