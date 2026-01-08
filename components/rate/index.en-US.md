@@ -2,6 +2,7 @@
 category: Components
 type: Data Display
 title: Rate
+version: 5.5.0
 ---
 
 Graphical representation of the degree of rating scale.
