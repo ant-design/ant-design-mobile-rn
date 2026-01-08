@@ -3,7 +3,7 @@ category: Components
 type: Data Display
 title: Rate
 subtitle: 评分
-version: 5.5.0
+version: 5.5.0-rc.1
 ---
 
 用图形表示评分等级程度。

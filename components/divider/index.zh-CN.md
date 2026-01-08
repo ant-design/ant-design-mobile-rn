@@ -3,6 +3,7 @@ category: Components
 type: Layout
 title: Divider
 subtitle: 分割线
+version: 5.5.0-rc.1
 ---
 
 对不同章节的文本段落进行分割。

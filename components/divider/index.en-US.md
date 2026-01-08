@@ -2,6 +2,7 @@
 category: Components
 type: Layout
 title: Divider
+version: 5.5.0-rc.1
 ---
 
 Divide sections of an article.
