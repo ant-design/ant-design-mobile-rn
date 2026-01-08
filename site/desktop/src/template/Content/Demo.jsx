@@ -102,7 +102,7 @@ export default class Demo extends React.Component {
       'react-native-gesture-handler@~2.16.1,' +
       'react-native-reanimated,' +
       '@ant-design/icons-react-native@2.3.2,' +
-      `@ant-design/react-native@${antdVersion}`
+      '@ant-design/react-native@5.5.0-rc.1'
 
     if (componentName === 'picker') {
       dependencies +=
