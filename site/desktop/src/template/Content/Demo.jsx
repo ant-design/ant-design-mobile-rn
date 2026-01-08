@@ -128,11 +128,14 @@ export default class Demo extends React.Component {
       componentName === 'input' ||
       componentName === 'tooltip' ||
       componentName === 'collapse' ||
-      componentName === 'notice-bar'
+      componentName === 'notice-bar' ||
+      componentName === 'rate'
     ) {
       dependencies +=
         ',@ant-design/icons-react-native/lib/outline,' +
+        ',@ant-design/icons-react-native/lib/fill,' +
         '@ant-design/icons-react-native/fonts/antoutline.ttf,' +
+        '@ant-design/icons-react-native/fonts/antfill.ttf,' +
         'expo-font'
     }
 
