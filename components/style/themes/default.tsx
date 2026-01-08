@@ -170,4 +170,9 @@ export default {
   popup_zindex: 999,
   modal_zindex: 999,
   tooltip_zindex: 999,
+
+  // rate
+  rate_icon_size: 32,
+  color_rate_full: '#ff9f18',
+  color_rate_empty: '#e5e5e5',
 }

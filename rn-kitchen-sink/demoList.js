@@ -194,8 +194,8 @@ module.exports = {
     {
       title: 'Rate',
       description: '评分',
-      icon: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-      module: require('../components/rate/demo/basic'), // 必须
+      icon: 'https://luokun.oss-cn-hangzhou.aliyuncs.com/github/rate_icon_transparent_final.png',
+      module: require('../components/rate/demo/basic'),
     },
     {
       title: 'Slider',
