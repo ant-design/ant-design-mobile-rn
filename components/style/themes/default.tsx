@@ -147,6 +147,7 @@ export default {
   // switch
   switch_unchecked: '#cccccc',
   switch_unchecked_disabled: '#cccccc66', // switch_fill的40%透明度
+  switch_inner_zindex: -1,
 
   // tag
   tag_height: 25,
@@ -171,5 +172,9 @@ export default {
   popup_zindex: 999,
   modal_zindex: 999,
   tooltip_zindex: 999,
-  switch_inner_zindex: -1,
+
+  // rate
+  rate_icon_size: 32,
+  color_rate_full: '#ff9f18',
+  color_rate_empty: '#e5e5e5',
 }
