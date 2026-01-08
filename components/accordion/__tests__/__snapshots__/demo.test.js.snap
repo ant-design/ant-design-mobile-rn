@@ -107,12 +107,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
         <View
           collapsable={false}
           pointerEvents="auto"
-          style={
-            Object {
-              "height": 0,
-              "overflow": "hidden",
-            }
-          }
+          style={Object {}}
         >
           <View
             collapsable={false}
@@ -557,12 +552,7 @@ exports[`renders ./components/accordion/demo/basic.tsx correctly 1`] = `
         <View
           collapsable={false}
           pointerEvents="auto"
-          style={
-            Object {
-              "height": 0,
-              "overflow": "hidden",
-            }
-          }
+          style={Object {}}
         >
           <View
             collapsable={false}

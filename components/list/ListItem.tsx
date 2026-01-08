@@ -159,10 +159,16 @@ const InternalListItem: React.ForwardRefRenderFunction<
       if (typeof extra.props.children === 'function') {
         return <AntmView style={[itemStyles.Extra]}>{extra}</AntmView>
       }
+
+      const viewProps = { ...(extra.props ?? {}) } as Record<string, any>
+      if ('ref' in viewProps) {
+        delete viewProps.ref
+      }
+
       return (
         <AntmView
           children={extra}
-          {...extra.props}
+          {...viewProps}
           style={[itemStyles.Extra, extra.props.style]}
         />
       )

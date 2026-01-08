@@ -35,7 +35,7 @@ export default class Badge extends React.Component<BadgeProps, any> {
       ...restProps // todo: hot
     } = this.props
     return (
-      <WithTheme themeStyles={BadgeStyles} styles={this.props.styles}>
+      <WithTheme themeStyles={BadgeStyles} styles={styles}>
         {(s) => {
           text =
             typeof text === 'number' && text > (overflowCount as number)

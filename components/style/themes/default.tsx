@@ -26,6 +26,7 @@ export default {
   fill_disabled: '#dddddd', // 通用失效背景
   fill_mask: 'rgba(0, 0, 0, .4)', // 遮罩背景
   fill_grey: '#f7f7f7',
+  fill_divider: '#c6c6c6', // 分割线颜色
 
   // 全局/品牌色
   brand_primary: brandPrimary,
@@ -146,6 +147,7 @@ export default {
   // switch
   switch_unchecked: '#cccccc',
   switch_unchecked_disabled: '#cccccc66', // switch_fill的40%透明度
+  switch_inner_zindex: -1,
 
   // tag
   tag_height: 25,

@@ -324,16 +324,26 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
 
   scrollToStart = () => {
     this.scrollview?.current?.scrollTo({
-      x: this.props.vertical ? 0 : this.state.width,
-      y: this.props.vertical ? this.state.height : 0,
+      x: this.props.vertical ? 0 : this.props.infinite ? this.state.width : 0,
+      y: this.props.vertical
+        ? this.props.infinite
+          ? this.state.height
+          : 0
+        : 0,
       animated: false,
     })
   }
 
   scrollToEnd = () => {
     this.scrollview?.current?.scrollTo({
-      x: this.props.vertical ? 0 : this.state.width * this.count,
-      y: this.props.vertical ? this.state.height * this.count : 0,
+      x: this.props.vertical
+        ? 0
+        : this.state.width *
+          (this.props.infinite ? this.count : this.count - 1),
+      y: this.props.vertical
+        ? this.state.height *
+          (this.props.infinite ? this.count : this.count - 1)
+        : 0,
       animated: false,
     })
   }

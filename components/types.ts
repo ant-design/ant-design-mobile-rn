@@ -13,6 +13,7 @@ export type {
 export type { CollapsePanelProps, CollapseProps } from './collapse/PropsType'
 export type { DatePickerViewProps } from './date-picker-view/date-picker-view'
 export type { DatePickerProps } from './date-picker/date-picker'
+export type { DividerPropsType } from './divider/PropsType'
 export type { DrawerNativeProps as DrawerProps } from './drawer/index'
 export type { FlexProps } from './flex/Flex'
 export type { FlexItemProps } from './flex/FlexItem'
