@@ -570,7 +570,9 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                       "fontSize": 17,
                       "textAlignVertical": "center",
                     },
-                    undefined,
+                    Object {
+                      "flexDirection": "row",
+                    },
                   ]
                 }
               >
@@ -830,9 +832,22 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                         "alignItems": "center",
                         "flex": 1,
                         "flexDirection": "row",
+                        "overflow": "hidden",
                       }
                     }
-                  />
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "#d85140",
+                          "height": 0.5,
+                          "marginLeft": 0,
+                          "marginRight": 1,
+                          "width": 4,
+                        }
+                      }
+                    />
+                  </View>
                 </View>
               </View>
             </View>
@@ -1881,9 +1896,22 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                         "alignItems": "center",
                         "flex": 1,
                         "flexDirection": "row",
+                        "overflow": "hidden",
                       }
                     }
-                  />
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "#d85140",
+                          "height": 1,
+                          "marginLeft": 0,
+                          "marginRight": 1,
+                          "width": 4,
+                        }
+                      }
+                    />
+                  </View>
                 </View>
                 <View
                   style={
@@ -2813,9 +2841,22 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                         "alignItems": "center",
                         "flex": 1,
                         "flexDirection": "row",
+                        "overflow": "hidden",
                       }
                     }
-                  />
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "#c6c6c6",
+                          "height": 1,
+                          "marginLeft": 0,
+                          "marginRight": 1,
+                          "width": 4,
+                        }
+                      }
+                    />
+                  </View>
                   <View
                     style={
                       Object {
