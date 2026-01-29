@@ -1,9 +1,11 @@
-import { StyleSheet, ViewStyle } from 'react-native'
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 export interface WatermarkStyle {
   container: ViewStyle
   wmContainer: ViewStyle
   wmItem: ViewStyle
+  wmImage: ImageStyle
+  wmText: TextStyle
 }
 
 export default () =>
@@ -29,5 +31,13 @@ export default () =>
       backgroundColor: 'rgba(0,0,0,0)',
       justifyContent: 'center',
       alignItems: 'center',
+    },
+    wmImage: {
+      height: 32,
+      width: 60,
+    },
+    wmText: {
+      color: 'rgba(0,0,0,0.15)',
+      fontSize: 14,
     },
   })

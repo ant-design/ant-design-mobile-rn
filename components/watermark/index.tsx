@@ -38,8 +38,8 @@ const Watermark: React.FC<WatermarkProps> = ({
   const _width = width + gapX * 2
   const _height = height + gapY * 2
   const count =
-    parseInt(String(layout.width / _width), 10) *
-    parseInt(String(layout.height / _height), 10)
+    parseInt(String(layout.width / Math.max(_width, 1)), 10) *
+    parseInt(String(layout.height / Math.max(_height, 1)), 10)
 
   // ========== watermarkDom ============
   const watermarkDom = useMemo(() => {
@@ -52,10 +52,7 @@ const Watermark: React.FC<WatermarkProps> = ({
             return (
               <Text
                 key={'watermark_txt' + index}
-                style={[
-                  { color: 'rgba(0, 0, 0, .15)', fontSize: 14 },
-                  contentStyle,
-                ]}>
+                style={[styles.wmText, contentStyle]}>
                 {item}
               </Text>
             )
@@ -65,17 +62,14 @@ const Watermark: React.FC<WatermarkProps> = ({
     } else {
       if (typeof image === 'string') {
         innerDom = (
-          <Image
-            source={{ uri: image }}
-            style={[{ height: 32, width: 60 }, imageStyle]}
-          />
+          <Image source={{ uri: image }} style={[styles.wmImage, imageStyle]} />
         )
       } else if (React.isValidElement(image)) {
         innerDom = image
       }
     }
     return innerDom
-  }, [content, contentStyle, image, imageStyle])
+  }, [content, contentStyle, image, imageStyle, styles.wmImage, styles.wmText])
 
   // ========== renderWatermark ============
   const renderWatermark = useCallback(() => {

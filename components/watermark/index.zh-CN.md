@@ -29,3 +29,15 @@ subtitle: 水印
 | foreground    | 是否将水印显示在前景层（`true` 时水印在内容上方）         | `boolean`               | `true` |
 | children      | 需要添加水印的内容                                         | `React.ReactNode`        | -       |
 | style         | 容器样式                                                   | `ViewStyle`             | -       |
+| styles        | 内部组件样式集                                             | [Partial\<WatermarkStyle\>](#watermarkstyle-语义化样式) | -       |
+
+### WatermarkStyle 语义化样式
+```jsx
+interface WatermarkStyle {
+  container: ViewStyle
+  wmContainer: ViewStyle
+  wmItem: ViewStyle
+  wmImage: ImageStyle
+  wmText: TextStyle
+}
+```

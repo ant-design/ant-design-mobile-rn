@@ -8,7 +8,7 @@ title:
 [Demo Source Code](https://github.com/ant-design/ant-design-mobile-rn/blob/master/components/watermark/demo/basic.tsx)
 
 ```jsx
-import React, { useState } from 'react'
+import React from 'react'
 import { Dimensions, StyleSheet, View } from 'react-native'
 import { Button, Watermark, WhiteSpace } from '@ant-design/react-native'
 
@@ -48,7 +48,6 @@ export default class WatermarkExample extends React.Component {
     }
     return (
       <Watermark
-        maxCount={10}
         foreground={this.state.foreground}
         {...this.state.props}>
         <View style={styles.root}>

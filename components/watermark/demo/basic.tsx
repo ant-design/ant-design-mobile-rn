@@ -37,10 +37,7 @@ export default class WatermarkExample extends React.Component<any, any> {
       },
     }
     return (
-      <Watermark
-        maxCount={10}
-        foreground={this.state.foreground}
-        {...this.state.props}>
+      <Watermark foreground={this.state.foreground} {...this.state.props}>
         <View style={styles.root}>
           <WhiteSpace />
           <Button

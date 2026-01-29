@@ -28,3 +28,16 @@ Add watermark to pages or components for copyright identification or information
 | foreground    | Whether to display watermark in foreground layer (`true` means above content)  | `boolean`               | `true` |
 | children      | Content that needs watermark                                                    | `React.ReactNode`        | -       |
 | style         | Container style                                                                 | `ViewStyle`             | -       |
+| styles        | Internal component style set                                                    | [Partial\<WatermarkStyle\>](#watermarkstyle-semantic-styles) | -       |
+
+
+### WatermarkStyle Semantic Styles
+```jsx
+interface WatermarkStyle {
+  container: ViewStyle
+  wmContainer: ViewStyle
+  wmItem: ViewStyle
+  wmImage: ImageStyle
+  wmText: TextStyle
+}
+```
