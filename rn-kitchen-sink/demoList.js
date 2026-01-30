@@ -192,6 +192,12 @@ module.exports = {
       module: require('../components/radio/demo/basic'), // 必须
     },
     {
+      title: 'Skeleton',
+      description: '骨架屏',
+      icon: 'https://os.alipayobjects.com/rmsportal/mCyccAjoVLFVhSH.png',
+      module: require('../components/skeleton/demo/basic'),
+    },
+    {
       title: 'Slider',
       description: '滑动输入条',
       icon: 'https://os.alipayobjects.com/rmsportal/mCyccAjoVLFVhSH.png',

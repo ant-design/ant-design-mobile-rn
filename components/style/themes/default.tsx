@@ -170,4 +170,7 @@ export default {
   popup_zindex: 999,
   modal_zindex: 999,
   tooltip_zindex: 999,
+
+  // skeleton
+  skeleton_background_color: 'rgba(160, 160, 160, 0.2)',
 }

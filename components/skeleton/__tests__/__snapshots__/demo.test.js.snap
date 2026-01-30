@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ./components/skeleton/demo/basic.tsx correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "padding": 16,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <Text>
+    基础用法
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgba(160, 160, 160, 0.2)",
+        },
+        Array [
+          Object {
+            "borderRadius": 2,
+            "height": 32,
+            "marginVertical": 6,
+            "width": "45%",
+          },
+          undefined,
+        ],
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {},
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          },
+          Array [
+            Object {
+              "borderRadius": 2,
+              "height": 18,
+              "marginVertical": 6,
+            },
+            false,
+          ],
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          },
+          Array [
+            Object {
+              "borderRadius": 2,
+              "height": 18,
+              "marginVertical": 6,
+            },
+            false,
+          ],
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          },
+          Array [
+            Object {
+              "borderRadius": 2,
+              "height": 18,
+              "marginVertical": 6,
+            },
+            false,
+          ],
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          },
+          Array [
+            Object {
+              "borderRadius": 2,
+              "height": 18,
+              "marginVertical": 6,
+            },
+            Object {
+              "width": "65%",
+            },
+          ],
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <Text>
+    有动画的骨架屏
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "backgroundColor": "rgba(160, 160, 160, 0.2)",
+        "borderRadius": 2,
+        "height": 32,
+        "marginVertical": 6,
+        "opacity": 1,
+        "width": "45%",
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {},
+        undefined,
+      ]
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          "borderRadius": 2,
+          "height": 18,
+          "marginVertical": 6,
+          "opacity": 1,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          "borderRadius": 2,
+          "height": 18,
+          "marginVertical": 6,
+          "opacity": 1,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          "borderRadius": 2,
+          "height": 18,
+          "marginVertical": 6,
+          "opacity": 1,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          "borderRadius": 2,
+          "height": 18,
+          "marginVertical": 6,
+          "opacity": 1,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "backgroundColor": "rgba(160, 160, 160, 0.2)",
+          "borderRadius": 2,
+          "height": 18,
+          "marginVertical": 6,
+          "opacity": 1,
+          "width": "65%",
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <Text>
+    自定义
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "backgroundColor": "#108ee9",
+        "borderRadius": 10,
+        "height": 100,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "height": 9,
+        },
+        undefined,
+      ]
+    }
+  />
+</View>
+`;
