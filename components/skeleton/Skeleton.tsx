@@ -8,7 +8,8 @@ import SkeletonStyles from './style'
 const AnimatedSkeleton: React.FC<{
   style?: StyleProp<ViewStyle>
   animated?: boolean
-}> = ({ style, animated }) => {
+  [key: string]: any
+}> = ({ style, animated, ...restProps }) => {
   const opacityValue = useRef(new Animated.Value(0)).current
 
   useEffect(() => {
@@ -33,10 +34,10 @@ const AnimatedSkeleton: React.FC<{
       inputRange: [0, 0.5, 1],
       outputRange: [1, 0.25, 1],
     })
-    return <Animated.View style={[style, { opacity }]} />
+    return <Animated.View style={[style, { opacity }]} {...restProps} />
   }
 
-  return <View style={style} />
+  return <View style={style} {...restProps} />
 }
 
 const InternalSkeleton: React.FC<SkeletonProps> = (props) => {
