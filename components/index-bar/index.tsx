@@ -17,6 +17,7 @@ const IndexBar: React.FC<IndexBarProps> = ({
   renderSectionHeader,
   keyExtractor,
   onIndexChange,
+  sortable = true,
   animated = false,
   showIndicator = true,
   showsVerticalScrollIndicator = false,
@@ -32,29 +33,36 @@ const IndexBar: React.FC<IndexBarProps> = ({
   })
   const sectionListRef = useRef<SectionList<any, IndexBarSectionData>>(null)
 
-  const memoAvailableIndexes = useMemo<string[]>(() => {
-    if (!sections || sections.length === 0) {
-      return []
+  const { memoSections, memoAvailableIndexes } = useMemo(() => {
+    let memoSections = sections
+    if (sortable) {
+      memoSections = sections.sort((a, b) => a.key.localeCompare(b.key))
     }
-    return sections
-      .map((section) => section.key)
-      .sort((a, b) => a.localeCompare(b))
-  }, [sections])
+    const memoAvailableIndexes = memoSections.map((section) => section.key)
+    return {
+      memoSections,
+      memoAvailableIndexes,
+    }
+  }, [sections, sortable])
 
   const _showIndicator = showIndicator && memoAvailableIndexes?.length > 0
 
   const _onIndexChange = useCallback(
-    (key: string, index: number) => {
+    (key: string) => {
+      const sectionIndex = sections.findIndex((sec) => sec.key === key)
+      if (sectionIndex < 0) {
+        return
+      }
       if (typeof onIndexChange === 'function') {
-        onIndexChange(key, index)
+        onIndexChange(key)
       }
       sectionListRef.current?.scrollToLocation({
-        sectionIndex: index,
+        sectionIndex,
         itemIndex: 0,
         animated,
       })
     },
-    [onIndexChange, animated],
+    [sections, onIndexChange, animated],
   )
 
   // ========== memoRenderItem ============
@@ -113,7 +121,7 @@ const IndexBar: React.FC<IndexBarProps> = ({
     <View style={[themeStyles.container, style]}>
       <SectionList
         ref={sectionListRef}
-        sections={sections}
+        sections={memoSections}
         renderItem={memoRenderItem}
         renderSectionHeader={memoRenderSectionHeader}
         keyExtractor={memoKeyExtractor}

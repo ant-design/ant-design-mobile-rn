@@ -19,6 +19,7 @@ Used for quick index positioning in long lists, commonly used in scenarios such 
 Properties | Description | Type | Default
 -----------|------------|------|--------
 | sections | Section data, required | `SectionListData<any, IndexBarSectionData>[]` | - |
+| sortable | Whether to sort section data| `boolean` | `true` |
 | onIndexChange | Callback function when index changes | `(key: string, index: number) => void` | - |
 | animated | Whether to use animation when scrolling | `boolean` | `false` |
 | showIndicator | Whether to show index indicator | `boolean` | `true` |

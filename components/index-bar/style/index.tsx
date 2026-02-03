@@ -58,6 +58,7 @@ export default (theme: Theme) =>
       right: 0,
       top: '50%',
       // @ts-ignore
+      // 0.67 do not support
       transform: [{ translateY: '-50%' }],
       justifyContent: 'center',
       alignItems: 'center',

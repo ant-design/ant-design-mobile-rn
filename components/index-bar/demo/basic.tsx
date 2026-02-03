@@ -3,19 +3,43 @@ import IndexBar from '../index'
 
 class IndexBarExample extends React.Component {
   render() {
-    const sections = Array.from({ length: 26 }, (_, index) => {
-      const key = String.fromCharCode(65 + index)
-      const randomCount = Math.floor(Math.random() * 3) + 3
-      const data = Array.from(
-        { length: randomCount },
-        (_, index) => `Content ${key}${index}`,
-      )
-      return {
-        key,
-        title: `Title ${key}`,
-        data,
-      }
-    })
+    // lodash/shuffle
+    const shuffleLetters = [
+      'B',
+      'D',
+      'S',
+      'N',
+      'H',
+      'V',
+      'F',
+      'T',
+      'X',
+      'W',
+      'Z',
+      'J',
+      'E',
+      'L',
+      'U',
+      'A',
+      'M',
+      'G',
+      'Q',
+      'K',
+      'Y',
+      'R',
+      'P',
+      'O',
+      'I',
+      'C',
+    ]
+    const sections = shuffleLetters.map((letter) => ({
+      key: letter,
+      title: `Title ${letter}`,
+      data: Array.from(
+        { length: 3 },
+        (_, index) => `Content ${letter}${index}`,
+      ),
+    }))
     return <IndexBar sections={sections} />
   }
 }

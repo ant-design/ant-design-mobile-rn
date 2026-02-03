@@ -20,6 +20,7 @@ subtitle: 索引栏
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | sections | 分组数据，必需 | `SectionListData<any, IndexBarSectionData>[]` | - |
+| sortable | 是否排序分组数据 | `boolean` | `true` |
 | onIndexChange | 索引变化时的回调函数 | `(key: string, index: number) => void` | - |
 | animated | 滚动时是否使用动画 | `boolean` | `false` |
 | showIndicator | 是否显示索引指示器 | `boolean` | `true` |

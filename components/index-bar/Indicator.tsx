@@ -1,14 +1,22 @@
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { PanResponder, Text, View } from 'react-native'
 import { IndicatorProps } from './PropsType'
 
 const Indicator: React.FC<IndicatorProps> = ({ indexes, styles, onChange }) => {
   const height = useRef<number>(0)
-  const [activeIndex, setActiveIndex] = useState<any>(0)
+  const timeRef = useRef<number>(0)
+  const [activeIndex, setActiveIndex] = useState<number>(0)
   const [isInteracting, setInteracting] = useState(false)
 
-  const valueRef = useRef<number>(activeIndex)
-  valueRef.current = activeIndex
+  // ========== _onPanResponderFinish ============
+  const _onPanResponderFinish = useCallback(() => {
+    if (timeRef.current) {
+      clearTimeout(timeRef.current)
+    }
+    timeRef.current = setTimeout(() => {
+      setInteracting(false)
+    }, 200)
+  }, [])
 
   // ========== panResponder ============
   const panResponder = useMemo(() => {
@@ -25,7 +33,7 @@ const Indicator: React.FC<IndicatorProps> = ({ indexes, styles, onChange }) => {
     const handleChange = (newIndex: number) => {
       if (newIndex >= 0 && newIndex < indexes.length) {
         setActiveIndex(newIndex)
-        onChange?.(indexes[newIndex], newIndex)
+        onChange?.(indexes[newIndex])
       }
     }
 
@@ -44,17 +52,19 @@ const Indicator: React.FC<IndicatorProps> = ({ indexes, styles, onChange }) => {
         handleChange(newIndex)
       },
       onPanResponderRelease: () => {
-        setTimeout(() => {
-          setInteracting(false)
-        }, 200)
+        _onPanResponderFinish()
       },
       onPanResponderTerminate: () => {
-        setTimeout(() => {
-          setInteracting(false)
-        }, 200)
+        _onPanResponderFinish()
       },
     })
-  }, [indexes, onChange])
+  }, [indexes, onChange, _onPanResponderFinish])
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(timeRef.current)
+    }
+  }, [])
 
   return (
     <View
@@ -64,7 +74,7 @@ const Indicator: React.FC<IndicatorProps> = ({ indexes, styles, onChange }) => {
         height.current = e.nativeEvent.layout.height
       }}>
       {indexes.map((key, idx) => {
-        const isActive = idx === valueRef.current
+        const isActive = idx === activeIndex
         return (
           <View
             style={styles?.indicatorBox}

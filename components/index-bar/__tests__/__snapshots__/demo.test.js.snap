@@ -22,7 +22,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content A0",
             "Content A1",
             "Content A2",
-            "Content A3",
           ],
           "key": "A",
           "title": "Title A",
@@ -50,7 +49,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content D0",
             "Content D1",
             "Content D2",
-            "Content D3",
           ],
           "key": "D",
           "title": "Title D",
@@ -60,7 +58,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content E0",
             "Content E1",
             "Content E2",
-            "Content E3",
           ],
           "key": "E",
           "title": "Title E",
@@ -79,8 +76,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content G0",
             "Content G1",
             "Content G2",
-            "Content G3",
-            "Content G4",
           ],
           "key": "G",
           "title": "Title G",
@@ -99,8 +94,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content I0",
             "Content I1",
             "Content I2",
-            "Content I3",
-            "Content I4",
           ],
           "key": "I",
           "title": "Title I",
@@ -119,8 +112,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content K0",
             "Content K1",
             "Content K2",
-            "Content K3",
-            "Content K4",
           ],
           "key": "K",
           "title": "Title K",
@@ -130,8 +121,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content L0",
             "Content L1",
             "Content L2",
-            "Content L3",
-            "Content L4",
           ],
           "key": "L",
           "title": "Title L",
@@ -141,7 +130,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content M0",
             "Content M1",
             "Content M2",
-            "Content M3",
           ],
           "key": "M",
           "title": "Title M",
@@ -160,7 +148,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content O0",
             "Content O1",
             "Content O2",
-            "Content O3",
           ],
           "key": "O",
           "title": "Title O",
@@ -179,8 +166,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content Q0",
             "Content Q1",
             "Content Q2",
-            "Content Q3",
-            "Content Q4",
           ],
           "key": "Q",
           "title": "Title Q",
@@ -199,7 +184,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content S0",
             "Content S1",
             "Content S2",
-            "Content S3",
           ],
           "key": "S",
           "title": "Title S",
@@ -209,8 +193,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content T0",
             "Content T1",
             "Content T2",
-            "Content T3",
-            "Content T4",
           ],
           "key": "T",
           "title": "Title T",
@@ -256,8 +238,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content Y0",
             "Content Y1",
             "Content Y2",
-            "Content Y3",
-            "Content Y4",
           ],
           "key": "Y",
           "title": "Title Y",
@@ -267,8 +247,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
             "Content Z0",
             "Content Z1",
             "Content Z2",
-            "Content Z3",
-            "Content Z4",
           ],
           "key": "Z",
           "title": "Title Z",
@@ -393,35 +371,6 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
                 "paddingHorizontal": 8,
                 "paddingVertical": 15,
               },
-              false,
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "fontSize": 16,
-              }
-            }
-          >
-            Content A2
-          </Text>
-        </View>
-      </View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <View
-          style={
-            Array [
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderBottomColor": "#dddddd",
-                "borderBottomWidth": 0.5,
-                "paddingHorizontal": 8,
-                "paddingVertical": 15,
-              },
               Object {
                 "borderBottomColor": "transparent",
               },
@@ -435,7 +384,7 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
               }
             }
           >
-            Content A3
+            Content A2
           </Text>
         </View>
       </View>
@@ -557,6 +506,10 @@ exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
           </Text>
         </View>
       </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      />
       <View
         style={
           Object {
