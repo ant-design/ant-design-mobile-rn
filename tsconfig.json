@@ -16,8 +16,12 @@
     "types": [
       "react",
       "react-native"
-    ]
+    ],
+    "resolveJsonModule": true
   },
+  "include": [
+    ".dumirc.ts"
+  ],
   "exclude": [
     "node_modules",
     "lib",

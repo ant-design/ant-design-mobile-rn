@@ -97,7 +97,7 @@ $ npm install @ant-design/react-native @ant-design/icons-react-native
    ```
 
  - 如果使用Expo来构建项目，省略上两步，直接使用 [expo-font](https://docs.expo.dev/versions/latest/sdk/font/) 加载字体：
-   ```jsx
+   ```jsx | pure
    import { useFonts } from 'expo-font';
 
    const [fontsLoaded] = useFonts({
