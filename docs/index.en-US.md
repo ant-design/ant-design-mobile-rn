@@ -3,7 +3,7 @@ title: Ant Design Mobile RN
 order: -1
 ---
 
-<div class="home-sections">
+<div class="home-sections main-wrapper">
 
 <section class="home-s1">
   <div class="banner-wrapper">
@@ -12,7 +12,7 @@ order: -1
       <p>A UI component library based on React Native</p>
       <div class="start-button">
         <a href="/en-US/react/introduce" class="ant-btn ant-btn-primary ant-btn-lg">Get Started</a>
-        <a href="/en-US/components" class="ant-btn ant-btn-default ant-btn-lg">Components</a>
+        <iframe src="https://ghbtns.com/github-btn.html?user=ant-design&repo=ant-design-mobile-rn&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
       </div>
     </div>
   </div>

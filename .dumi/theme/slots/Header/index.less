@@ -1,69 +1,45 @@
-/* 参考 site/desktop/src/static/header.less */
+@import '~antd/lib/style/themes/default.less';
 @header-height: 64px;
 @menu-item-border: 2px;
-@primary-color: #1677ff;
 
-.dumi-desktop-header {
-  #header {
-    transition: all 0.3s;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(240, 241, 242, 0.65);
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 24px 0 0;
-    max-width: 100%;
-    height: @header-height;
-    box-sizing: border-box;
-  }
+#header {
+  transition: all 0.3s;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(240, 241, 242, 65);
+  position: relative;
+  z-index: 10;
+}
 
-  #logo {
-    overflow: hidden;
-    padding-left: 40px;
-    height: @header-height;
-    line-height: @header-height;
-    white-space: nowrap;
-    flex-shrink: 0;
-
-    .dumi-default-logo {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      img {
-        height: 32px;
-        margin-right: 16px;
-      }
-      span {
-        font-size: 16px;
-        font-family: 'Raleway', 'Hiragino Sans GB', sans-serif;
-        color: #1890ff;
-        vertical-align: middle;
-      }
-    }
-  }
-
-  .header-right {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
- min-height: @header-height;
-  }
-
-  #search-box {
-    border-left: 1px solid #ebedee;
-    height: 22px;
-    line-height: 22px;
-    padding-left: 16px;
+#logo {
+  overflow: hidden;
+  padding-left: 40px;
+  float: left;
+  height: @header-height;
+  line-height: @header-height;
+  text-decoration: none;
+  white-space: nowrap;
+  img {
+    height: 32px;
     margin-right: 16px;
-    flex-shrink: 0;
+  }
+  span {
+    font-size: 16px;
+    font-family: 'Raleway', 'Hiragino Sans GB', sans-serif;
+    color: #1890FF;
+    vertical-align: middle;
+  }
+}
 
-    .anticon,
-    [class*='search'] svg {
-      color: #ced4d9;
-    }
+#search-box {
+  border-left: 1px solid #ebedee;
+  float: left;
+  height: 22px;
+  line-height: 22px;
+  padding-left: 16px;
+  margin: 22px auto 0;
+
+  .dumi-default-search-bar {
+    display: inline-block;
     input {
       border: 0;
       box-shadow: none;
@@ -71,140 +47,74 @@
       width: 200px;
     }
   }
+}
 
-  #nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+.header-aside {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.header-lang-button,
+.version {
+  flex-shrink: 0;
+}
+
+.header-lang-button {
+  color: rgba(0, 0, 0, 0.65);
+  border-color: #d9d9d9;
+}
+
+#nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  border: 0;
+  font-size: 14px;
+  font-family: Lato, @font-family;
+
+  .dumi-default-navbar {
     margin: 0;
     padding: 0;
-    border: 0;
-    font-size: 14px;
 
-    .dumi-default-navbar {
-      border: 0;
-      margin: 0;
-      padding: 0;
+    > li {
+      min-width: 72px;
+      height: @header-height;
+      line-height: @header-height - @menu-item-border - 2px;
+      border-top: @menu-item-border solid transparent;
 
-      > li {
-        min-width: 72px;
-        height: @header-height;
-        line-height: @header-height - @menu-item-border - 2px;
-        margin-inline-end: 0;
-        border-top: @menu-item-border solid transparent;
+      > a {
+        display: block;
+        padding: 0 16px;
+        text-align: center;
+      }
+
+      &:hover {
+        border-top-color: @primary-color;
+        border-bottom: @menu-item-border solid transparent;
 
         > a {
-          display: block;
-          padding: 0 16px;
-          text-align: center;
-        }
-        &:hover > a {
           color: @primary-color;
         }
-        &:hover {
-          border-top-color: @primary-color;
-          border-bottom: @menu-item-border solid transparent;
-        }
-        > a.active,
-        > span.active {
-          color: @primary-color;
-          font-weight: normal;
-        }
-        &:has(> a.active),
-        &:has(> span.active) {
-          border-top: @menu-item-border solid @primary-color;
-          border-bottom: @menu-item-border solid transparent;
-        }
+      }
+
+      > a.active {
+        color: @primary-color;
+      }
+
+      &:has(> a.active) {
+        border-top: @menu-item-border solid @primary-color;
+        border-bottom: @menu-item-border solid transparent;
       }
     }
   }
+}
 
-  .header-aside {
-    display: flex;
-    align-items: center;
-    margin-left: 16px;
-    gap: 8px;
-
-    .dumi-default-lang-switch {
-      color: rgba(0, 0, 0, 0.65);
-      border: 1px solid #d9d9d9;
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 14px;
-      text-decoration: none;
-    }
-    .dumi-desktop-version {
-      padding: 4px 8px;
-      font-size: 14px;
-      border: 1px solid #d9d9d9;
-      border-radius: 4px;
-      color: rgba(0, 0, 0, 0.65);
-      background: #fff;
-      cursor: pointer;
-    }
-  }
-
-  .dumi-default-header-menu-btn {
-    display: none;
-  }
-
-  @media only screen and (max-width: 767px) {
-    #header {
-      padding-right: 48px;
-    }
-    .header-right {
-      position: fixed;
-      top: @header-height;
-      left: 0;
-      right: 0;
-      height: calc(100vh - @header-height);
-      min-height: auto;
-      flex-direction: column;
-      align-items: stretch;
-      padding: 24px 16px;
-      background: rgba(255, 255, 255, 0.96);
-      border-top: 1px solid #e4e9ec;
-      overflow: auto;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s, visibility 0.2s;
-    }
-    .dumi-desktop-header[data-mobile-active] .header-right {
-      opacity: 1;
-      visibility: visible;
-    }
-    #search-box {
-      margin-bottom: 16px;
-      border-left: none;
-      padding-left: 0;
-    }
-    #nav {
-      flex: none;
-      justify-content: flex-start;
-    }
-    #nav .dumi-default-navbar {
-      flex-direction: column;
-      padding-top: 24px;
-      > li {
-        height: auto;
-        line-height: 1.5;
-        padding: 12px 0;
-        border-top: none;
-      }
-    }
-    .dumi-default-header-menu-btn {
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: 24px;
-      transform: translateY(-50%);
-      padding: 0;
-      border: 0;
-      background: transparent;
-      > svg {
-        width: 20px;
-        fill: #4f5866;
-      }
-    }
-  }
+/* version Select dropdown */
+.ant-select-dropdown.component-select {
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  font-size: 14px;
 }
