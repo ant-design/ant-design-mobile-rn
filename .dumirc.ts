@@ -46,22 +46,10 @@ export default defineConfig({
     },
     deviceWidth: 375,
     nav: [
-      {
-        title: '首页',
-        link: '/',
-      },
-      {
-        title: '指南',
-        link: '/react/introduce',
-      },
-      {
-        title: 'Components',
-        link: '/components',
-      },
-      {
-        title: '更新日志',
-        link: 'https://github.com/ant-design/ant-design-mobile-rn/releases',
-      },
+      { title: '首页', link: '/' },
+      { title: '组件', link: '/react/introduce' },
+      { title: 'Web 组件', link: 'https://mobile.ant.design' },
+      { title: '支持我们', link: '/react/support' },
     ],
   },
   alias: {
