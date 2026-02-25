@@ -1,0 +1,180 @@
+/* 首页样式，参考 site/desktop/src/static/home.less */
+.main-wrapper {
+  background: #fff;
+  padding: 0;
+  position: relative;
+}
+
+/* home-s1 banner */
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  height: 456px;
+}
+.banner-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 96px;
+  right: 40px;
+  width: 591px;
+  height: 407px;
+  background: url("https://gw.alipayobjects.com/zos/rmsportal/BYcmVgqmFmqHywEgcyVH.png?x-oss-process=image/resize,w_591/format,webp") no-repeat center/cover;
+}
+
+.home-s1 .banner-text-wrapper {
+  position: absolute;
+  top: 140px;
+  color: rgba(0, 0, 0, 0.85);
+}
+.home-s1 .banner-text-wrapper h2 {
+  font-family: Avenir-Heavy, "PingFang SC", sans-serif;
+  font-size: 68px;
+  color: #0d1a26;
+  letter-spacing: 0;
+  line-height: 76px;
+  font-weight: 500;
+  margin: 0;
+}
+.home-s1 .banner-text-wrapper > p {
+  font-size: 18px;
+  color: #314659;
+  line-height: 38px;
+  margin: 16px auto 20px;
+}
+.home-s1 .banner-text-wrapper .start-button {
+  margin-bottom: 24px;
+}
+.home-s1 .banner-text-wrapper .start-button .ant-btn {
+  height: 40px;
+  margin-right: 16px;
+  font-size: 16px;
+  min-width: 114px;
+  text-align: center;
+}
+.home-s1 .banner-text-wrapper .start-button a {
+  text-decoration: none;
+}
+
+/* sections common */
+.home-s1, .home-s2, .home-s3, .home-s4 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.home-s1 .banner-wrapper,
+.home-s2 .wrapper,
+.home-s3 .wrapper,
+.home-s4 .wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.home-s2, .home-s3, .home-s4 {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.home-s2 h3, .home-s3 h3, .home-s4 h3 {
+  text-align: center;
+  font-size: 32px;
+  color: #314659;
+  margin-top: 0;
+  margin-bottom: 96px;
+}
+
+/* home-s2 */
+.home-s2 {
+  background-color: #eff3f6;
+}
+.home-s2 .s2-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -36px 80px;
+}
+.home-s2 .s2-col {
+  display: flex;
+  align-items: center;
+  flex: 0 0 50%;
+  box-sizing: border-box;
+  padding: 0 36px;
+  margin-bottom: 0;
+}
+.home-s2 .s2-row:last-of-type {
+  margin-bottom: 0;
+}
+.home-s2 img {
+  margin-right: 32px;
+  width: 120px;
+  flex-shrink: 0;
+}
+.home-s2 .divider {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: -1px;
+  width: 0;
+  height: 16px;
+  border-left: 1px solid #314659;
+  opacity: 0.25;
+}
+.home-s2 .des div {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.home-s2 .des p {
+  color: rgba(0, 0, 0, 0.43);
+  margin: 0;
+}
+
+/* home-s3 */
+.home-s3 {
+  background: url("https://gw.alipayobjects.com/zos/rmsportal/RJpGlapTtCNoDXvgrMsN.png") no-repeat center/contain;
+  background-color: #0971e0;
+  text-align: center;
+  color: #fff;
+}
+.home-s3 h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+.home-s3 h3 img {
+  margin-right: 16px;
+  width: 40px;
+}
+.home-s3 p {
+  margin-bottom: 30px;
+}
+.home-s3 .ant-btn-ghost {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+.home-s3 .ant-btn-ghost:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* home-s4 */
+.home-s4 {
+  text-align: center;
+}
+.home-s4 .s4-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.home-s4 .s4-row:last-child {
+  margin-bottom: 0;
+}
+.home-s4 img {
+  width: 164px;
+}
+
+@media (max-width: 768px) {
+  .home-s2 .s2-col {
+    flex: 0 0 100%;
+    margin-bottom: 32px;
+  }
+  .home-s4 .s4-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

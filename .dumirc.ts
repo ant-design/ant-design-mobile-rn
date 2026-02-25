@@ -36,6 +36,7 @@ export default defineConfig({
     { id: 'zh-CN', name: '中文' },
     { id: 'en-US', name: 'English' },
   ],
+  styles: [path.join(__dirname, '.dumi/global.less')],
   themeConfig: {
     name: 'Ant Design Mobile RN',
     logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
@@ -46,8 +47,12 @@ export default defineConfig({
     deviceWidth: 375,
     nav: [
       {
+        title: '首页',
+        link: '/',
+      },
+      {
         title: '指南',
-        link: '/guide',
+        link: '/react/introduce',
       },
       {
         title: 'Components',
