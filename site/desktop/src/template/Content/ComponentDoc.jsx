@@ -4,7 +4,6 @@ import { getChildren } from 'jsonml.js/lib/utils'
 import PropTypes from 'prop-types'
 import React from 'react'
 import DocumentTitle from 'react-document-title'
-import { FormattedMessage } from 'react-intl'
 import Demo from './Demo'
 
 function getDemos(props) {
@@ -153,7 +152,7 @@ export default class ComponentDoc extends React.Component {
 
             <section id="demoTitle" className="demo-title-wrapper">
               <h2 id="demoTitle" className="demo-title">
-                <FormattedMessage id="app.ComponentDoc.codeTitle" />
+                {this.context.intl ? this.context.intl.formatMessage({ id: 'app.ComponentDoc.codeTitle' }) : '代码演示'}
               </h2>
             </section>
             <div id="demo-code" className={codeContainerCls}>

@@ -1,8 +1,11 @@
+import { useIntl } from 'dumi'
 import React from 'react'
-import { FormattedMessage, injectIntl } from 'react-intl'
 import { Row, Col } from 'antd'
 
-const Footer = () => (
+function Footer() {
+  const intl = useIntl()
+  const t = (id) => intl.formatMessage({ id })
+  return (
   <footer id="footer" className="dark">
     <div className="footer-wrap">
       <Row>
@@ -54,7 +57,7 @@ const Footer = () => (
         <Col lg={6} sm={24} xs={24}>
           <div className="footer-center">
             <h2>
-              <FormattedMessage id="app.footer.links" />
+              {t('app.footer.links')}
             </h2>
             <div>
               <a
@@ -64,7 +67,7 @@ const Footer = () => (
                 Ant Motion
               </a>
               <span> - </span>
-              <FormattedMessage id="app.footer.motion" />
+              {t('app.footer.motion')}
             </div>
             <div>
               <a
@@ -74,7 +77,7 @@ const Footer = () => (
                 Ant UX
               </a>
               <span> - </span>
-              <FormattedMessage id="app.footer.antux" />
+              {t('app.footer.antux')}
             </div>
             <div>
               <a
@@ -84,21 +87,21 @@ const Footer = () => (
                 AntD Library
               </a>
               <span> - </span>
-              <FormattedMessage id="app.footer.antd-library" />
+              {t('app.footer.antd-library')}
             </div>
           </div>
         </Col>
         <Col lg={6} sm={24} xs={24}>
           <div className="footer-center">
             <h2>
-              <FormattedMessage id="app.footer.community" />
+              {t('app.footer.community')}
             </h2>
             <div>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://gitter.im/ant-design/ant-design">
-                <FormattedMessage id="app.footer.discuss" />
+                {t('app.footer.discuss')}
               </a>
             </div>
             <div>
@@ -106,7 +109,7 @@ const Footer = () => (
                 target="_blank"
                 rel="noopener noreferrer"
                 href="http://github.com/ant-design/ant-design-mobile/issues">
-                <FormattedMessage id="app.footer.bug-report" />
+                {t('app.footer.bug-report')}
               </a>
             </div>
           </div>
@@ -119,7 +122,7 @@ const Footer = () => (
                 src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg"
                 alt=""
               />
-              <FormattedMessage id="app.footer.more-product" />
+              {t('app.footer.more-product')}
             </h2>
             <div>
               <a
@@ -129,7 +132,7 @@ const Footer = () => (
                 Ant Design
               </a>
               <span> - </span>
-              <FormattedMessage id="app.footer.ant-design" />
+              {t('app.footer.ant-design')}
             </div>
             <div>
               <a
@@ -139,7 +142,7 @@ const Footer = () => (
                 AntV
               </a>
               <span> - </span>
-              <FormattedMessage id="app.footer.data-vis" />
+              {t('app.footer.data-vis')}
             </div>
             <div>
               <a
@@ -149,7 +152,7 @@ const Footer = () => (
                 Egg
               </a>
               <span> - </span>
-              <FormattedMessage id="app.footer.eggjs" />
+              {t('app.footer.eggjs')}
             </div>
           </div>
         </Col>
@@ -169,7 +172,7 @@ const Footer = () => (
             href="https://docs.alipay.com/policies/privacy/antfin"
             rel="noopener noreferrer"
             target="_blank">
-            <FormattedMessage id="app.footer.privacy" />
+            {t('app.footer.privacy')}
           </a>
         </span>
         <span style={{ marginRight: 24 }}>
@@ -177,16 +180,17 @@ const Footer = () => (
             href="https://render.alipay.com/p/f/fd-izto3cem/index.html"
             rel="noopener noreferrer"
             target="_blank">
-            <FormattedMessage id="app.footer.commitment" />
+            {t('app.footer.commitment')}
           </a>
         </span>
         <span style={{ marginRight: 12 }}>ICP 证浙 B2-2-100257</span>
         <span style={{ marginRight: 12 }}>
-          Copyright © <FormattedMessage id="app.footer.company" />
+          Copyright © {t('app.footer.company')}
         </span>
       </Col>
     </Row>
   </footer>
-)
+  )
+}
 
-export default injectIntl(Footer)
+export default Footer

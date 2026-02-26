@@ -1,9 +1,8 @@
 import 'react-github-button/assets/style.css'
 import React from 'react'
 import DocumentTitle from 'react-document-title'
-import { Link } from 'bisheng/router'
+import { Link, injectIntl } from 'dumi'
 import GitHubButton from 'react-github-button'
-import { injectIntl } from 'react-intl'
 import { /* Popover, */ Button, Row, Col } from 'antd'
 import * as utils from '../../../../utils'
 

@@ -1,4 +1,3 @@
-/* eslint react/no-danger: 0 */
 import { Link, useIntl } from 'dumi'
 import React from 'react'
 

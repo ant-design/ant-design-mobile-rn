@@ -1,46 +1,10 @@
-import { Col, Row } from 'antd'
-import { useLocale } from 'dumi'
+import { useIntl } from 'dumi'
 import React from 'react'
-import './index.less'
+import { Row, Col } from 'antd'
 
-const footerMessages: Record<string, Record<string, string>> = {
-  'zh-CN': {
-    links: '相关站点',
-    motion: '设计动效',
-    antux: '页面逻辑素材',
-    antdLibrary: 'Axure library',
-    community: '社区',
-    discuss: '在线讨论',
-    bugReport: '报告 Bug',
-    moreProduct: '蚂蚁体验云',
-    antDesign: '蚂蚁 UI 体系',
-    dataVis: '数据可视化',
-    eggjs: '企业级 Node 开发框架',
-    privacy: '隐私权政策',
-    commitment: '权益保障承诺书',
-    company: '蚂蚁金融服务集团',
-  },
-  'en-US': {
-    links: 'Links',
-    motion: 'Motion Solution',
-    antux: 'Sitemap Template',
-    antdLibrary: 'Axure library',
-    community: 'Community',
-    discuss: 'Chat Room',
-    bugReport: 'Bug Report',
-    moreProduct: 'Ant AFX',
-    antDesign: 'UI Design Language',
-    dataVis: 'Data Visualization',
-    eggjs: 'Enterprise Node Framework',
-    privacy: 'Privacy Policy',
-    commitment: 'Our Commitment to Customer Protection',
-    company: 'Ant Financial',
-  },
-}
-
-const Footer = () => {
-  const locale = useLocale()
-  const t = footerMessages[locale?.id || 'zh-CN'] || footerMessages['zh-CN']
+export default function Footer() {
+  const intl = useIntl()
+  const t = (id: string) => intl.formatMessage({ id })
 
   return (
     <footer id="footer" className="dark">
@@ -51,25 +15,28 @@ const Footer = () => {
               <h2>Ant Design</h2>
               <div>
                 <a
-                  target="_blank"
+                  target="_blank "
                   rel="noopener noreferrer"
-                  href="https://github.com/ant-design/ant-design-mobile-rn">
+                  href="https://github.com/ant-design/ant-design-mobile-rn"
+                >
                   Ant Design Mobile RN GitHub
                 </a>
               </div>
               <div>
                 <a
-                  target="_blank"
+                  target="_blank "
                   rel="noopener noreferrer"
-                  href="https://github.com/ant-design/ant-design-mobile">
+                  href="https://github.com/ant-design/ant-design-mobile"
+                >
                   Ant Design Mobile GitHub
                 </a>
               </div>
               <div>
                 <a
-                  target="_blank"
+                  target="_blank "
                   rel="noopener noreferrer"
-                  href="https://ant.design">
+                  href="https://ant.design"
+                >
                   Ant Design
                 </a>
               </div>
@@ -77,7 +44,8 @@ const Footer = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://pro.ant.design">
+                  href="https://pro.ant.design"
+                >
                   Ant Design Pro
                 </a>
               </div>
@@ -85,7 +53,8 @@ const Footer = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/react-component">
+                  href="https://github.com/react-component"
+                >
                   React Component GitHub
                 </a>
               </div>
@@ -93,56 +62,61 @@ const Footer = () => {
           </Col>
           <Col lg={6} sm={24} xs={24}>
             <div className="footer-center">
-              <h2>{t.links}</h2>
+              <h2>{t('app.footer.links')}</h2>
               <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="http://motion.ant.design">
+                  href="http://motion.ant.design"
+                >
                   Ant Motion
                 </a>
                 <span> - </span>
-                {t.motion}
+                {t('app.footer.motion')}
               </div>
               <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="http://ux.ant.design">
+                  href="http://ux.ant.design"
+                >
                   Ant UX
                 </a>
                 <span> - </span>
-                {t.antux}
+                {t('app.footer.antux')}
               </div>
               <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="http://library.ant.design/">
+                  href="http://library.ant.design/"
+                >
                   AntD Library
                 </a>
                 <span> - </span>
-                {t.antdLibrary}
+                {t('app.footer.antd-library')}
               </div>
             </div>
           </Col>
           <Col lg={6} sm={24} xs={24}>
             <div className="footer-center">
-              <h2>{t.community}</h2>
+              <h2>{t('app.footer.community')}</h2>
               <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://gitter.im/ant-design/ant-design">
-                  {t.discuss}
+                  href="https://gitter.im/ant-design/ant-design"
+                >
+                  {t('app.footer.discuss')}
                 </a>
               </div>
               <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="http://github.com/ant-design/ant-design-mobile/issues">
-                  {t.bugReport}
+                  href="http://github.com/ant-design/ant-design-mobile/issues"
+                >
+                  {t('app.footer.bug-report')}
                 </a>
               </div>
             </div>
@@ -155,37 +129,40 @@ const Footer = () => {
                   src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg"
                   alt=""
                 />
-                {t.moreProduct}
+                {t('app.footer.more-product')}
               </h2>
               <div>
                 <a
-                  target="_blank"
+                  target="_blank "
                   rel="noopener noreferrer"
-                  href="https://ant.design">
+                  href="https://ant.design"
+                >
                   Ant Design
                 </a>
                 <span> - </span>
-                {t.antDesign}
+                {t('app.footer.ant-design')}
               </div>
               <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://antv.alipay.com/">
+                  href="https://antv.alipay.com/"
+                >
                   AntV
                 </a>
                 <span> - </span>
-                {t.dataVis}
+                {t('app.footer.data-vis')}
               </div>
               <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://eggjs.org/">
+                  href="https://eggjs.org/"
+                >
                   Egg
                 </a>
                 <span> - </span>
-                {t.eggjs}
+                {t('app.footer.eggjs')}
               </div>
             </div>
           </Col>
@@ -200,28 +177,31 @@ const Footer = () => {
               paddingRight: 12,
               marginRight: 11,
               borderRight: '1px solid rgba(255, 255, 255, 0.55)',
-            }}>
+            }}
+          >
             <a
               href="https://docs.alipay.com/policies/privacy/antfin"
               rel="noopener noreferrer"
-              target="_blank">
-              {t.privacy}
+              target="_blank"
+            >
+              {t('app.footer.privacy')}
             </a>
           </span>
           <span style={{ marginRight: 24 }}>
             <a
               href="https://render.alipay.com/p/f/fd-izto3cem/index.html"
               rel="noopener noreferrer"
-              target="_blank">
-              {t.commitment}
+              target="_blank"
+            >
+              {t('app.footer.commitment')}
             </a>
           </span>
           <span style={{ marginRight: 12 }}>ICP 证浙 B2-2-100257</span>
-          <span style={{ marginRight: 12 }}>Copyright © {t.company}</span>
+          <span style={{ marginRight: 12 }}>
+            Copyright © {t('app.footer.company')}
+          </span>
         </Col>
       </Row>
     </footer>
   )
 }
-
-export default Footer

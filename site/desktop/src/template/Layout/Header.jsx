@@ -10,11 +10,10 @@ import {
   Row,
   Select,
 } from 'antd'
-import { Link } from 'bisheng/router'
+import { Link, FormattedMessage } from 'dumi'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormattedMessage } from 'react-intl'
 import * as utils from '../../../../utils'
 
 const { Option } = AutoComplete

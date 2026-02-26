@@ -4,13 +4,17 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import { FormattedMessage } from 'react-intl'
 import { ping } from '../../../../utils'
 import getSandboxParameters from './Sandbox'
 
 export default class Demo extends React.Component {
   static contextTypes = {
     intl: PropTypes.object,
+  }
+  // useIntl is used via context from dumi's IntlProvider
+  formatMessage = (id, values) => {
+    const intl = this.context.intl
+    return intl ? intl.formatMessage({ id }, values) : id
   }
 
   state = {
@@ -166,7 +170,7 @@ export default class Demo extends React.Component {
                 name="data"
                 value={JSON.stringify(riddlePrefillConfig)}
               />
-              <Tooltip title={<FormattedMessage id="app.demo.riddle" />}>
+              <Tooltip title={this.formatMessage('app.demo.riddle')}>
                 <input
                   type="submit"
                   value="Create New Riddle with Prefilled Data"
@@ -179,11 +183,7 @@ export default class Demo extends React.Component {
             text={this.state.sourceCode}
             onCopy={this.handleCodeCopied}>
             <Tooltip
-              title={
-                <FormattedMessage
-                  id={`app.demo.${this.state.copied ? 'copied' : 'copy'}`}
-                />
-              }
+              title={this.formatMessage(`app.demo.${this.state.copied ? 'copied' : 'copy'}`)}
               visible={this.state.copyTooltipVisible}
               onVisibleChange={this.onCopyTooltipVisibleChange}>
               <span
@@ -275,7 +275,7 @@ export default class Demo extends React.Component {
               type="ghost"
               size="large"
               onClick={this.handleCancel}>
-              <FormattedMessage id="app.ComponentDoc.Modal.return" />
+              {this.formatMessage('app.ComponentDoc.Modal.return')}
             </Button>,
           ]}>
           {this.renderDemoCode(highlightedCode, true)}
