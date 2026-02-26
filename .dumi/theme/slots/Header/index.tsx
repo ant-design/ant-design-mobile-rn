@@ -14,7 +14,7 @@ import { Link, history, useFullSidebarData, useIntl, useLocation, useSiteData } 
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import * as utils from '../../utils'
 
-const antdVersion = require('@ant-design/react-native/package.json').version
+const antdVersion = require('../../../../package.json').version
 const { Option } = AutoComplete
 const searchEngine = 'Google'
 const searchLink = 'https://www.google.com/#q=site:mobile.ant.design+'

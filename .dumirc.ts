@@ -87,6 +87,37 @@ export default defineConfig({
     const stubPressability = path.join(__dirname, 'scripts/dumi/stub-PressabilityDebug.js')
     // webpack 由 dumi 依赖带入，无类型声明
     const webpack = require('webpack')
+
+    // ==================== 确保 @ant-design/react-native 正确解析 ====================
+    // 在 webpack 的 resolve.alias 中显式设置 @ant-design/react-native 指向 components/index.tsx
+    config.resolve.alias.set(
+      '@ant-design/react-native',
+      path.join(__dirname, 'components/index.tsx')
+    )
+    config.resolve.alias.set(
+      '@ant-design/react-native/lib',
+      path.join(__dirname, 'components')
+    )
+
+    // ==================== React Native Reanimated Web Support ====================
+    // 参考: https://docs.swmansion.com/react-native-reanimated/docs/guides/web-support/
+
+    // 官方文档要求的两个 webpack 插件
+    config.plugin('env-jest-worker').use(webpack.EnvironmentPlugin, [
+      {
+        JEST_WORKER_ID: null,
+      },
+    ])
+
+    config.plugin('define-process-env').use(webpack.DefinePlugin, [
+      {
+        process: {
+          env: {},
+        },
+      },
+    ])
+
+    // ==================== Stub 文件替换 ====================
     // 用 NormalModuleReplacementPlugin 强制把 RN 内部路径解析到 stub（alias 可能被 react-native -> react-native-web 覆盖）
     config.plugin('replace-rn-renderer').use(webpack.NormalModuleReplacementPlugin, [
       /react-native[/\\]Libraries[/\\]Renderer[/\\]shims[/\\]ReactNative$/,
@@ -109,6 +140,7 @@ export default defineConfig({
       /[/\\]specs[/\\]NativeReanimatedModule(\.js)?$/,
       stubReanimatedModule,
     ])
+
     // 兼容 type-only 模块被 re-export 时的 "module has no exports"：为所有 PropsType.tsx 注入运行时 stub 导出
     config.module
       .rule('type-only-stub')
@@ -119,6 +151,7 @@ export default defineConfig({
       .use('type-only-stub')
       .loader(path.join(__dirname, 'scripts/dumi/type-only-stub-loader.js'))
       .end()
+
     // 排除 example 文件夹
     config.module
       .rule('tsx')
@@ -132,6 +165,7 @@ export default defineConfig({
     config.module
       .rule('js')
       .exclude.add(/example/)
+
     // 让 babel 转译 node_modules 中含 JSX 的包
     ;[
       path.join(__dirname, 'node_modules/@bang88/react-native-ultimate-listview'),
@@ -143,6 +177,7 @@ export default defineConfig({
       config.module.rule('js').include.add(pkg)
       config.module.rule('jsx').include.add(pkg)
     })
+
     // 排除 example 文件夹的 watch
     config.watchOptions = config.watchOptions || {}
     config.watchOptions.ignored = [
