@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Combination
+nav:
+  title: Components
+group:
+  title: Combination
+  order: 7
 title: Result
 ---
 

@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Data Entry
+nav:
+  title: Components
+group:
+  title: 数据录入
+  order: 3
 title: Input
 subtitle: 文本输入
 version: 5.2.1

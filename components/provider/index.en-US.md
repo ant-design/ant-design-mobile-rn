@@ -1,7 +1,10 @@
 ---
-category: Components
+nav:
+  title: Components
 title: Provider
-type: Other
+group:
+  title: Other
+  order: 8
 version: update
 ---
 

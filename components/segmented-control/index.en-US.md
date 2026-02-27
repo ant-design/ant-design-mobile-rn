@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Navigation
+nav:
+  title: Components
+group:
+  title: Navigation
+  order: 2
 title: SegmentedControl
 subtitle: (deprecated)
 ---

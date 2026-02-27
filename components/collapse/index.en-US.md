@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Data Display
+nav:
+  title: Components
+group:
+  title: Data Display
+  order: 4
 title: Collapse
 version: 5.2.1
 ---

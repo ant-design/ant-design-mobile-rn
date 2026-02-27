@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Layout
+nav:
+  title: Components
+group:
+  title: Layout
+  order: 1
 title: View
 ---
 

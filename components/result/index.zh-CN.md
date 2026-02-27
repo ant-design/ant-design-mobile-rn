@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Combination
+nav:
+  title: Components
+group:
+  title: 组合
+  order: 7
 title: Result
 subtitle: 结果页
 ---

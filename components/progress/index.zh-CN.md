@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Feedback
+nav:
+  title: Components
+group:
+  title: 反馈
+  order: 5
 title: Progress
 subtitle: 进度条
 ---

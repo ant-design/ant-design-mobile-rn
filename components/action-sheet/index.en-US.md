@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Feedback
+nav:
+  title: Components
+group:
+  title: Feedback
+  order: 5
 title: ActionSheet
 ---
 

@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Data Entry
+nav:
+  title: Components
+group:
+  title: 数据录入
+  order: 3
 title: TextareaItem
 subtitle: 多行输入(归档)
 ---

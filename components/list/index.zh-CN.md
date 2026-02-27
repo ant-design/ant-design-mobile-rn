@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Data Display
+nav:
+  title: Components
+group:
+  title: 数据展示
+  order: 4
 title: List
 subtitle: 列表
 ---

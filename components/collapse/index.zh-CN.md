@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Data Display
+nav:
+  title: Components
+group:
+  title: 数据展示
+  order: 4
 title: Collapse
 subtitle: 折叠面板
 version: 5.2.1

@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Navigation
+nav:
+  title: Components
+group:
+  title: 导航
+  order: 2
 title: Popover
 subtitle: 气泡(归档)
 ---

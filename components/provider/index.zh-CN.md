@@ -1,8 +1,11 @@
 ---
-category: Components
+nav:
+  title: Components
 title: Provider
 subtitle: 全局化配置
-type: Other
+group:
+  title: 其他
+  order: 8
 version: update
 ---
 

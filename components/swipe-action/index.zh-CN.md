@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Gesture
+nav:
+  title: Components
+group:
+  title: 手势
+  order: 6
 title: SwipeAction
 subtitle: 滑动操作
 version: update

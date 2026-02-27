@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Feedback
+nav:
+  title: Components
+group:
+  title: 反馈
+  order: 5
 title: ActionSheet
 subtitle: 动作面板
 ---

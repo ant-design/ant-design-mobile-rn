@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Data Entry
+nav:
+  title: Components
+group:
+  title: 数据录入
+  order: 3
 title: Slider
 subtitle: 滑动输入条
 version: update

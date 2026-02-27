@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Data Entry
+nav:
+  title: Components
+group:
+  title: 数据录入
+  order: 3
 title: SearchBar
 subtitle: 搜索栏
 ---

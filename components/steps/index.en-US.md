@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Data Display
+nav:
+  title: Components
+group:
+  title: Data Display
+  order: 4
 cols: 1
 title: Steps
 ---

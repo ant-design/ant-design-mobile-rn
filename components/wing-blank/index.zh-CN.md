@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Layout
+nav:
+  title: Components
+group:
+  title: 布局
+  order: 1
 title: WingBlank
 subtitle: 两翼留白
 ---

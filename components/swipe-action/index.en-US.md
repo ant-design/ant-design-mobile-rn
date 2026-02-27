@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Gesture
+nav:
+  title: Components
+group:
+  title: Gesture
+  order: 6
 title: SwipeAction
 version: update
 ---

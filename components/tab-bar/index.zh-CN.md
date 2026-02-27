@@ -1,6 +1,9 @@
 ---
-category: Components
-type: Navigation
+nav:
+  title: Components
+group:
+  title: 导航
+  order: 2
 title: TabBar
 subtitle: 标签栏
 ---
