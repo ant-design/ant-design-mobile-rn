@@ -12,6 +12,10 @@ version: update
 - 需要引起用户关注时使用，重要级别低于 Modal ，高于 Toast。
 - 亦可实现轻量级的跑马灯效果。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |

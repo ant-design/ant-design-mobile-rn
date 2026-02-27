@@ -11,6 +11,10 @@ Located at the bottom of the APP, to facilitate users to quickly switch between 
 - Even if a Tab is not available, do not disable or remove the Tab。
 - Use Badge make a hint，stay can also know that there is content update。
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### TabBar

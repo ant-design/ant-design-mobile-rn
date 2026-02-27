@@ -13,6 +13,9 @@ You can collapse / expand the content area.
 - Group and hide complex areas.
 - Typically, only a single content area is allowed to expand at a time; in special cases, multiple content areas can be expanded at the same time.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

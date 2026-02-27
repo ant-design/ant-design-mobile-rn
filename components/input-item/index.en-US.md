@@ -14,6 +14,10 @@ A foundational component for inputting text into the app via a keyboard.
 - The cursor can be moved horizontally.
 - Handle text with a specific format, eg: hide password.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 **`InputItem` must wrapped by a [List](https://mobile.ant.design/components/list)**

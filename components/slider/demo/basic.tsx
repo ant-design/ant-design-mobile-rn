@@ -1,7 +1,6 @@
+import { List, Slider, Switch, Toast } from '@ant-design/react-native'
 import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native'
-
-import { List, Slider, Switch, Toast } from '../../'
 
 export default function StepperExample() {
   useEffect(() => {

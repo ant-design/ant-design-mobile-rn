@@ -11,6 +11,10 @@ Progress Bar to indicate your task's progress.
 - When you need a accurate progress，otherwise you should use ActivityIndicator.
 - Hide the unfilled part when used with NavBar for better visual feeling.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

@@ -14,6 +14,10 @@ subtitle: 文本输入(归档)
 - 通过光标可以在水平方向进行移动。
 - 对特定格式的文本进行处理，eg：隐藏密码。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 **`InputItem` 必须用 [List](https://mobile.ant.design/components/list) 组件包裹才能正常使用**

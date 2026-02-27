@@ -11,6 +11,10 @@ Entering content through the keyboard is the most basic form field wrapper.
 - It is generally used in form pages to collect information, and provides two types of text boxes and text-area boxes.
 - The Input component is layout-independent. It can be used with the `List` component for quick layout; it also has built-in linkage interaction with the `Form` component.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Input

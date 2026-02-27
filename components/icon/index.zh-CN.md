@@ -31,6 +31,9 @@ npm install @ant-design/icons-react-native@latest
    ```
    字体文件将会自动复制到`ios` 和 `android` 资源文件中。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

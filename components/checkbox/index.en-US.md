@@ -6,6 +6,10 @@ title: Checkbox
 
 Checkbox
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Checkbox

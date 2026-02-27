@@ -10,6 +10,10 @@ Drawer is a panel that displays the app's navigation options on the left edge of
 
 - Recommended way to show navigation options on Android, it is a common pattern found in Android APPs.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

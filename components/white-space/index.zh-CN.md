@@ -7,6 +7,10 @@ subtitle: 上下留白
 
 布局控件
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 属性 | 说明 | 类型 | 默认值

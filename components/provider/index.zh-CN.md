@@ -20,6 +20,10 @@ version: update
 
 若要使用这些组件，必须使用`Provider`包裹根组件（通常在App.js）。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |

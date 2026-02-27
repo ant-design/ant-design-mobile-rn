@@ -4,6 +4,10 @@ type: Data Display
 title: Carousel
 ---
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default | Version

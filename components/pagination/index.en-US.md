@@ -10,6 +10,10 @@ A long list can be divided into several pages by `Pagination`, and only one page
 
 - When it will take a long time to load/render all items.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

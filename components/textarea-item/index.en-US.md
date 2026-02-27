@@ -13,6 +13,10 @@ A foundational component for inputting multi-line text into the app via a keyboa
 - Support text input via keyboard or clipboard.
 - The cursor can be moved horizontally.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

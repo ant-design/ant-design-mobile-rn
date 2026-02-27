@@ -12,6 +12,10 @@ version: update
 - 默认状态下，左边为最小值，右边为最大值。
 - 一般水平放置。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |

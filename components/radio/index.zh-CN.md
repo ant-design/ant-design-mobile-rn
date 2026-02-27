@@ -7,6 +7,10 @@ subtitle: 单选框
 
 单选框
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### 属性

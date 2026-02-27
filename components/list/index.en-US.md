@@ -12,6 +12,10 @@ In case you need an infinite scroll list - consider using [ListView](https://mob
 - Generally `List` consists of main infomation, main operations, secondary infomation and secondary operations.
 - The main infomation and main operations are placed on the left side of list, and secondary infomation and secondary operations are placed on the right side.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### List

@@ -11,6 +11,10 @@ The red dot at corner for notification and getting user attention.
 - Use plain dot badge when user just need to know there is something new, eg: one-to-one new messages.
 - Use numberic badge when user need to know specific number of notifications, eg: new messages from a group.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

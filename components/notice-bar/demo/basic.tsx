@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-import { ScrollView, Text } from 'react-native'
 import {
   Icon,
   List,
@@ -8,7 +6,9 @@ import {
   Slider,
   Switch,
   WhiteSpace,
-} from '../../'
+} from '@ant-design/react-native'
+import React, { useState } from 'react'
+import { ScrollView, Text } from 'react-native'
 
 export default function NoticeBarExample() {
   return (

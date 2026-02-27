@@ -10,6 +10,10 @@ Choose from a set of data, e.g. Country choice.
 - Try to use Picker to help users complete the input, to avoid the user through the keyboard directly input.
 - DatePicker is Picker's specific pattern.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Props

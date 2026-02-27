@@ -14,6 +14,10 @@ Example from https://ant.design/components/form-cn
 - When you need to create an instance or collect information.
 - When you need to validate fields in certain rules.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Form

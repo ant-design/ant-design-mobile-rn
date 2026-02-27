@@ -10,6 +10,10 @@ Tag for categorizing or markuping, can be used to make classification or mark th
 
 - The content should be displayed completely.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

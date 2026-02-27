@@ -11,6 +11,10 @@ A Slider component for selecting particular value in range, eg: controls the dis
 - By default, the minimum value in the left and maximum value in the right of `Slider` .
 - Generally `Slider` is positioned horizontally.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 | Properties | Description | Type | Default | Version |

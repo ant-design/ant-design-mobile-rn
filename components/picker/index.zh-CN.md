@@ -11,6 +11,10 @@ subtitle: 选择器
 - 尽量使用 Picker 来帮助用户完成输入，避免用户通过键盘直接输入。
 - DatePicker 是 Picker 的特定模式。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### 属性

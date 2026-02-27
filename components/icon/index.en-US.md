@@ -30,6 +30,9 @@ npm install @ant-design/icons-react-native@latest
    ```
    will copy fonts to `ios` and `android` assets folder.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

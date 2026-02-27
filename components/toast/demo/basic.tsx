@@ -1,6 +1,6 @@
+import { Button, List, Switch, Toast } from '@ant-design/react-native'
 import React, { useEffect, useRef, useState } from 'react'
 import { ActivityIndicator, ScrollView, Text } from 'react-native'
-import { Button, List, Switch, Toast } from '../../'
 
 const ToastExample = () => {
   const handler = useRef<number>()

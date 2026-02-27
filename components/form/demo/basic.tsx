@@ -1,7 +1,7 @@
+import { Button, Form, Input, Picker, Radio, Flex as Row, Switch } from '@ant-design/react-native'
 import React from 'react'
 import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
 import { FormProps } from '..'
-import { Button, Form, Input, Picker, Radio, Flex as Row, Switch } from '../../'
 
 const Col = Row.Item
 

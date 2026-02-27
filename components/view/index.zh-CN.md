@@ -11,6 +11,10 @@ subtitle: 基础组件
 
 - 支持 `string`/`number` 类型的ReactNode
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 属性 | 说明 | 类型 | 默认值

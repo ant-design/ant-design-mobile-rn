@@ -11,6 +11,10 @@ version: update
 ### 规则
 - 当想要对数值进行小幅度调整时，可以使用 Stepper，eg：将年化收益从 4.00% 调整到 4.05%。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |

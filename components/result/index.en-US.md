@@ -12,6 +12,10 @@ Result page contains feedback like illustrations, icons and text.
 - Improve brand value with beautiful illustrations.
 - Provide obvious operation point for error type result page, eg: reload page.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

@@ -8,7 +8,11 @@ subtitle: 滑动开关
 在两个互斥对象进行选择，eg：选择开或关。
 
 ### 规则
-- 这是一个“受控组件”。你必须使用`onChange`回调来更新`checked`属性以响应用户的操作。
+- 这是一个"受控组件"。你必须使用`onChange`回调来更新`checked`属性以响应用户的操作。
+
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

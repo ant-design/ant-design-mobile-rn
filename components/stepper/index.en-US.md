@@ -10,6 +10,10 @@ version: update
 ### Rule
 - When you want to make small adjustments to the value, you can use `Stepper`. eg: Adjust the annual return from 4.00% to 4.05%.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 | Name | Description | Type | Default | Version |

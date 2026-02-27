@@ -6,6 +6,10 @@ title: WhiteSpace
 
 Layout controls
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

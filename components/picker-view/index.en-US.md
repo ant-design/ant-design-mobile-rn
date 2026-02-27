@@ -6,6 +6,10 @@ title: PickerView
 
 PickerView's functions like Picker, but it is rendered directly in the area instead of the pop-up window.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Props

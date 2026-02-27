@@ -11,6 +11,10 @@ version: update
 ### 规则
 - 有 Icon 的 Toast，字数为 4-6 个；没有 Icon 的 Toast，字数不宜超过 14 个。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 `Toast`只支持指令式调用，入参类型为`string | ToastProps`。

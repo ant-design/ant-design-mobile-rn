@@ -1,6 +1,6 @@
+import { Grid } from '@ant-design/react-native'
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
-import { Grid } from '../../'
 
 const data = Array.from(new Array(9)).map((_val, i) => ({
   icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',

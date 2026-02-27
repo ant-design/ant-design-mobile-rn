@@ -11,6 +11,10 @@ subtitle: 卡片
 - 形状为矩形。
 - 可包含多种类型的元素，eg：图片、文字、按钮等。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Card

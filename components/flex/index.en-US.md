@@ -6,6 +6,10 @@ title: Flex
 
 Flex is a wrap of  Flexible Box.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Flex

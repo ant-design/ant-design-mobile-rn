@@ -7,6 +7,10 @@ subtitle: Flex布局
 
 Flex 是 CSS flex 布局的一个封装。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Flex

@@ -15,6 +15,10 @@ Call out operations from one side of screen with gesture.
 1. Only one row can be swiped at a time.
 2. Can hide operations by clicking outside of buttons or swiping the list backforwards.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### SwipeAction

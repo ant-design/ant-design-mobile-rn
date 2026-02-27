@@ -1,6 +1,6 @@
+import { List, Stepper, Toast } from '@ant-design/react-native'
 import React from 'react'
 import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
-import { List, Stepper, Toast } from '../../'
 
 export default function StepperExample() {
   return (

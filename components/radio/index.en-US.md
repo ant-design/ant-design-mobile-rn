@@ -6,6 +6,10 @@ title: Radio
 
 Radio.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Type

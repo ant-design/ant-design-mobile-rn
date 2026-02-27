@@ -10,6 +10,10 @@ Card can be used to organize information and operations, usually also as an entr
 - The shape is rectangular.
 - The content can consist of multiple elements of varying type, eg: images, texts, buttons, etc.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ### Card

@@ -1,6 +1,4 @@
 /* tslint:disable:no-console */
-import React from 'react'
-import { ScrollView, Text, View } from 'react-native'
 import {
   Button,
   List,
@@ -9,7 +7,9 @@ import {
   Toast,
   WhiteSpace,
   WingBlank,
-} from '../../'
+} from '@ant-design/react-native'
+import React from 'react'
+import { ScrollView, Text, View } from 'react-native'
 
 export default class BasicModalExample extends React.Component<any, any> {
   constructor(props: any) {

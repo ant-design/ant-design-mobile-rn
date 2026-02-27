@@ -10,6 +10,10 @@ subtitle: 标签
 ### 规则
 - 标签文字必须显示完全。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 属性 | 说明 | 类型 | 默认值

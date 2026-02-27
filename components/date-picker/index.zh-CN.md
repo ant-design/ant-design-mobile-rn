@@ -10,6 +10,9 @@ subtitle: 日期选择
 ### 规则
 - 最多精确到秒。
 
+### 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

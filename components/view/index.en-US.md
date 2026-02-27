@@ -10,6 +10,10 @@ Safe View
 
 - Support `string`/`number` ReactNode
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 Properties | Descrition | Type | Default

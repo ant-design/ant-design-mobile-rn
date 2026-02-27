@@ -1,15 +1,15 @@
-import React from 'react'
-import { View } from 'react-native'
-import Provider from '..'
 import {
   DatePicker,
   List,
   Pagination,
   Picker,
+  Provider,
   SearchBar,
   WhiteSpace,
-  WingBlank,
-} from '../../'
+  WingBlank
+} from '@ant-design/react-native'
+import React from 'react'
+import { View } from 'react-native'
 import enUS from '../../locale-provider/en_US'
 import esES from '../../locale-provider/es_ES'
 import faIR from '../../locale-provider/fa_IR'

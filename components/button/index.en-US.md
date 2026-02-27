@@ -6,6 +6,9 @@ title: Button
 
 To trigger an operation.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

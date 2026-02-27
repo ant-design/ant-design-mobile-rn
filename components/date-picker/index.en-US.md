@@ -9,6 +9,9 @@ Used to select a date or time.
 ### Rules
 - At most accurate to seconds.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

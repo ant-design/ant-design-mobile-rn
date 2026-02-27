@@ -1,7 +1,6 @@
-/* tslint:disable:no-console */
+import { DatePicker, List } from '@ant-design/react-native'
 import React from 'react'
 import { View } from 'react-native'
-import { DatePicker, List } from '../../'
 
 // const now = new Date();
 

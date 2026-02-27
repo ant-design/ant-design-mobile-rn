@@ -6,6 +6,10 @@ title: DatePickerView
 
 DatePickerView's functions like DatePicker, but it is rendered directly in the area instead of the pop-up window.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 ```ts

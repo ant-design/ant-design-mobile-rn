@@ -12,6 +12,10 @@ Component to display a system message, event notice and etc. Which is under the 
 - Be used to attract user's attension, the importance level is lower than `Modal` and higher than `Toast`.
 - It can also achieve a lightweight marquee effect.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
+
 ## API
 
 | Properties | Descrition | Type | Default | Version |
