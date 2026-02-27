@@ -1,5 +1,8 @@
 ---
-category: Blog
+nav:
+  title: Components
+group:
+  title: Blog
 title: styles是什么？
 author: 1uokun
 date: 2024-08-08
