@@ -70,6 +70,7 @@
     "concurrently": "^4.0.1",
     "cross-env": "^7.0.3",
     "dumi": "~2.4.20",
+    "dumi-plugin-color-chunk": "^2.1.0",
     "dumi-theme-mobile": "^2.3.5",
     "enquire.js": "^2.1.1",
     "eslint": "^7.28.0",

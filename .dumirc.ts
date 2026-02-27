@@ -2,11 +2,9 @@ import { defineConfig } from 'dumi'
 import path from 'node:path'
 import p from './package.json'
 
-const repo = process.env.PUBLIC_PATH || 'ant-design-mobile-rn'
-const publicPath = repo ? `/${repo}/` : '/'
-
 export default defineConfig({
-  title: 'Ant Design Mobile RN',
+  plugins: ['dumi-plugin-color-chunk'],
+  // title: 'Ant Design Mobile RN',
   favicons: [
     'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   ],
@@ -22,36 +20,88 @@ export default defineConfig({
     // React Native 全局，文档站开发/构建时需定义
     __DEV__: process.env.NODE_ENV !== 'production',
   },
-  base: `/${repo}/`,
-  publicPath,
-  outputPath: 'docs-dist',
+  // base: `/${repo}/`,
+  // publicPath,
+  runtimePublicPath: {},
+  outputPath: '_site',
   resolve: {
-    entryFile: './components/index.tsx',
-    docDirs: ['docs'],
+    docDirs: [{ type: 'doc', dir: 'docs' }],
     atomDirs: [{ type: 'component', dir: 'components' }],
-    // passive: 所有 .md 中的 ```jsx/tsx 代码块默认仅展示（不执行），需预览时在代码块加 | demo
     codeBlockMode: 'passive',
   },
   locales: [
-    { id: 'zh-CN', name: '中文' },
-    { id: 'en-US', name: 'English' },
+    { id: 'en-US', name: 'English', suffix: '' },
+    { id: 'zh-CN', name: '中文', suffix: '-cn' },
   ],
   styles: [path.join(__dirname, '.dumi/global.less')],
-  themeConfig: {
-    name: 'Ant Design Mobile RN',
-    logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-    footer: false,
-    socialLinks: {
-      github: 'https://github.com/ant-design/ant-design-mobile-rn',
-    },
-    deviceWidth: 375,
-    nav: [
-      { title: '首页', link: '/' },
-      { title: '组件', link: '/react/introduce' },
-      { title: 'Web 组件', link: 'https://mobile.ant.design' },
-      { title: '支持我们', link: '/react/support' },
-    ],
+  // themeConfig: {
+  //   // name: 'Ant Design Mobile RN',
+  //   // logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+  //   // footer: false,
+  //   socialLinks: {
+  //     github: 'https://github.com/ant-design/ant-design-mobile-rn',
+  //   },
+  //   deviceWidth: 375,
+  // },
+  analytics: {
+    ga_v2: 'UA-72788897-9',
   },
+  headScripts: [
+    `
+    (function () {
+      // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
+      const pathname = location.pathname;
+
+      function isZhCN(pathname) {
+        return /-cn\\/?$/.test(pathname);
+      }
+      function getLocalizedPathname(path, zhCN) {
+        const pathname = path.indexOf('/') === 0 ? path : '/' + path;
+        if (!zhCN) {
+          // to enUS
+          return /\\/?index(-cn)?/.test(pathname) ? '/' : pathname.replace('-cn', '');
+        } else if (pathname === '/') {
+          return '/index-cn';
+        } else if (pathname.indexOf('/') === pathname.length - 1) {
+          return pathname.replace(/\\/$/, '-cn/');
+        }
+        return pathname + '-cn';
+      }
+
+      // 兼容旧的 URL， \`?locale=...\`
+      const queryString = location.search;
+      if (queryString) {
+        const isZhCNConfig = queryString.indexOf('zh-CN') > -1;
+        if (isZhCNConfig && !isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, isZhCNConfig);
+        }
+      }
+
+      // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
+      const normalizedPathname = pathname || '/';
+      if (normalizedPathname === '/' || normalizedPathname === '/index-cn') {
+        let lang;
+        if (window.localStorage) {
+          const antLocale = localStorage.getItem('ANT_LOCAL_TYPE_KEY');
+          // 尝试解析 JSON，因为可能是被序列化后存储的 "en-US" / en-US https://github.com/ant-design/ant-design/issues/56606
+          try {
+            lang = antLocale ? JSON.parse(antLocale) : localStorage.getItem('locale');
+          } catch (e) {
+            lang = antLocale ? antLocale : localStorage.getItem('locale');
+          }
+        }
+        lang = lang || ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn'
+            ? 'zh-CN'
+            : 'en-US');
+        // safari is 'zh-cn', while other browser is 'zh-CN';
+        if ((lang === 'zh-CN') !== isZhCN(normalizedPathname)) {
+          location.pathname = getLocalizedPathname(normalizedPathname, lang === 'zh-CN');
+        }
+      }
+      document.documentElement.className += isZhCN(normalizedPathname) ? 'zh-cn' : 'en-us';
+    })();
+    `,
+  ],
   alias: {
     '@ant-design/react-native/lib': path.join(__dirname, 'components'),
     '@ant-design/react-native': __dirname,
@@ -83,8 +133,14 @@ export default defineConfig({
     path.join(__dirname, 'node_modules/react-native-reanimated'),
   ],
   chainWebpack(config: any) {
-    const stubRNRenderer = path.join(__dirname, 'scripts/dumi/stub-RNRenderer.js')
-    const stubPressability = path.join(__dirname, 'scripts/dumi/stub-PressabilityDebug.js')
+    const stubRNRenderer = path.join(
+      __dirname,
+      'scripts/dumi/stub-RNRenderer.js',
+    )
+    const stubPressability = path.join(
+      __dirname,
+      'scripts/dumi/stub-PressabilityDebug.js',
+    )
     // webpack 由 dumi 依赖带入，无类型声明
     const webpack = require('webpack')
 
@@ -92,11 +148,11 @@ export default defineConfig({
     // 在 webpack 的 resolve.alias 中显式设置 @ant-design/react-native 指向 components/index.tsx
     config.resolve.alias.set(
       '@ant-design/react-native',
-      path.join(__dirname, 'components/index.tsx')
+      path.join(__dirname, 'components/index.tsx'),
     )
     config.resolve.alias.set(
       '@ant-design/react-native/lib',
-      path.join(__dirname, 'components')
+      path.join(__dirname, 'components'),
     )
 
     // ==================== React Native Reanimated Web Support ====================
@@ -119,27 +175,38 @@ export default defineConfig({
 
     // ==================== Stub 文件替换 ====================
     // 用 NormalModuleReplacementPlugin 强制把 RN 内部路径解析到 stub（alias 可能被 react-native -> react-native-web 覆盖）
-    config.plugin('replace-rn-renderer').use(webpack.NormalModuleReplacementPlugin, [
-      /react-native[/\\]Libraries[/\\]Renderer[/\\]shims[/\\]ReactNative$/,
-      stubRNRenderer,
-    ])
-    config.plugin('replace-pressability').use(webpack.NormalModuleReplacementPlugin, [
-      /react-native[/\\]Libraries[/\\]Pressability[/\\]PressabilityDebug$/,
-      stubPressability,
-    ])
-    const stubCodegen = path.join(__dirname, 'scripts/dumi/stub-codegenNativeComponent.js')
-    config.plugin('replace-codegen').use(webpack.NormalModuleReplacementPlugin, [
-      /react-native[/\\]Libraries[/\\]Utilities[/\\]codegenNativeComponent$/,
-      stubCodegen,
-    ])
+    config
+      .plugin('replace-rn-renderer')
+      .use(webpack.NormalModuleReplacementPlugin, [
+        /react-native[/\\]Libraries[/\\]Renderer[/\\]shims[/\\]ReactNative$/,
+        stubRNRenderer,
+      ])
+    config
+      .plugin('replace-pressability')
+      .use(webpack.NormalModuleReplacementPlugin, [
+        /react-native[/\\]Libraries[/\\]Pressability[/\\]PressabilityDebug$/,
+        stubPressability,
+      ])
+    const stubCodegen = path.join(
+      __dirname,
+      'scripts/dumi/stub-codegenNativeComponent.js',
+    )
+    config
+      .plugin('replace-codegen')
+      .use(webpack.NormalModuleReplacementPlugin, [
+        /react-native[/\\]Libraries[/\\]Utilities[/\\]codegenNativeComponent$/,
+        stubCodegen,
+      ])
     const stubReanimatedModule = path.join(
       __dirname,
       'scripts/dumi/stub-NativeReanimatedModule.js',
     )
-    config.plugin('replace-reanimated-module').use(webpack.NormalModuleReplacementPlugin, [
-      /[/\\]specs[/\\]NativeReanimatedModule(\.js)?$/,
-      stubReanimatedModule,
-    ])
+    config
+      .plugin('replace-reanimated-module')
+      .use(webpack.NormalModuleReplacementPlugin, [
+        /[/\\]specs[/\\]NativeReanimatedModule(\.js)?$/,
+        stubReanimatedModule,
+      ])
 
     // 兼容 type-only 模块被 re-export 时的 "module has no exports"：为所有 PropsType.tsx 注入运行时 stub 导出
     config.module
@@ -153,22 +220,17 @@ export default defineConfig({
       .end()
 
     // 排除 example 文件夹
-    config.module
-      .rule('tsx')
-      .exclude.add(/example/)
-    config.module
-      .rule('jsx')
-      .exclude.add(/example/)
-    config.module
-      .rule('ts')
-      .exclude.add(/example/)
-    config.module
-      .rule('js')
-      .exclude.add(/example/)
+    config.module.rule('tsx').exclude.add(/example/)
+    config.module.rule('jsx').exclude.add(/example/)
+    config.module.rule('ts').exclude.add(/example/)
+    config.module.rule('js').exclude.add(/example/)
 
     // 让 babel 转译 node_modules 中含 JSX 的包
     ;[
-      path.join(__dirname, 'node_modules/@bang88/react-native-ultimate-listview'),
+      path.join(
+        __dirname,
+        'node_modules/@bang88/react-native-ultimate-listview',
+      ),
       path.join(__dirname, 'node_modules/react-native-collapsible'),
       path.join(__dirname, 'node_modules/react-native-modal-popover'),
       path.join(__dirname, 'node_modules/react-native-reanimated'),
@@ -186,3 +248,4 @@ export default defineConfig({
     ]
   },
 })
+
