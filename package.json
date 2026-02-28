@@ -41,6 +41,7 @@
     "normalize-css-color": "^1.0.2",
     "rc-field-form": "^2.0.0",
     "rc-util": "^5.39.1",
+    "react-github-button": "^0.1.11",
     "react-native-codegen": "^0.0.7",
     "react-native-collapsible": "^1.6.0",
     "react-native-modal-popover": "^2.0.1",

@@ -2,9 +2,10 @@
 title: Ant Design Mobile RN - 移动端设计规范
 ---
 
-<DemoCodeTitle></DemoCodeTitle>
+<HomeHero></HomeHero>
 
-<code src="./code.tsx" transform compact></code>
+
+<code src="./code.tsx" ></code>
 
 
 <HomeSections></HomeSections>
