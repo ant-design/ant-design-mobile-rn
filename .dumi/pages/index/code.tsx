@@ -1,3 +1,8 @@
+/**
+ * title: 在线体验
+ * description: 在浏览器中体验 Ant Design Mobile RN 的组件。
+ */
+
 import { Accordion, List } from '@ant-design/react-native'
 import React from 'react'
 import { View } from 'react-native'

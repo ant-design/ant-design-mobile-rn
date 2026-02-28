@@ -1,12 +1,4 @@
-import {
-  Button,
-  Col,
-  Icon,
-  Menu,
-  Popover,
-  Row,
-  Select,
-} from 'antd'
+import { Button, Col, Icon, Menu, Popover, Row, Select } from 'antd'
 import classNames from 'classnames'
 import { Link, useIntl, useLocation, useSiteData } from 'dumi'
 import SearchBar from 'dumi/theme-default/slots/SearchBar'
@@ -20,20 +12,19 @@ export default function Header() {
   const intl = useIntl()
   const { themeConfig } = useSiteData()
   const [menuVisible, setMenuVisible] = useState(false)
-  const [menuMode, setMenuMode] = useState<'horizontal' | 'inline'>('horizontal')
+  const [menuMode, setMenuMode] = useState<'horizontal' | 'inline'>(
+    'horizontal',
+  )
 
   const locale = intl.locale
   const isZhCN = locale === 'zh-CN'
 
   useEffect(() => {
     const enquire = require('enquire.js')
-    enquire.register(
-      'only screen and (min-width: 0) and (max-width: 992px)',
-      {
-        match: () => setMenuMode('inline'),
-        unmatch: () => setMenuMode('horizontal'),
-      }
-    )
+    enquire.register('only screen and (min-width: 0) and (max-width: 992px)', {
+      match: () => setMenuMode('inline'),
+      unmatch: () => setMenuMode('horizontal'),
+    })
   }, [])
 
   const handleLangChange = useCallback(() => {
@@ -41,31 +32,35 @@ export default function Header() {
       localStorage.setItem('locale', isZhCN ? 'en-US' : 'zh-CN')
     }
     const currentProtocol = `${window.location.protocol}//`
-    const currentHref = window.location.href.substr(currentProtocol.length)
+    const currentHref = window.location.href.slice(currentProtocol.length)
     window.location.href =
       currentProtocol +
       currentHref.replace(
         window.location.pathname,
-        utils.getLocalizedPathname(pathname, !isZhCN)
+        utils.getLocalizedPathname(pathname, !isZhCN),
       )
   }, [pathname, isZhCN])
 
   const handleVersionChange = useCallback((url: string) => {
     const currentUrl = window.location.href
-    const currentPathname = window.location.pathname
-    window.location.href = currentUrl
-      .replace(window.location.origin, url)
-      .replace(currentPathname, utils.getLocalizedPathname(currentPathname, isZhCN))
-  }, [isZhCN])
+    window.location.href = currentUrl.replace(window.location.origin, url)
+  }, [])
 
-  const docVersions = { ...(themeConfig?.docVersions || {}), [antdVersion]: antdVersion }
+  const docVersions = {
+    ...(themeConfig?.docVersions || {}),
+    [antdVersion]: antdVersion,
+  }
   const versionOptions = Object.keys(docVersions).map((version) => (
     <Select.Option value={docVersions[version]} key={version}>
       {version}
     </Select.Option>
   ))
 
-  const module = pathname.replace(/(^\/|\/$)/g, '').split('/').slice(0, -1).join('/')
+  const module = pathname
+    .replace(/(^\/|\/$)/g, '')
+    .split('/')
+    .slice(0, -1)
+    .join('/')
   let activeMenuItem = module || 'home'
   if (activeMenuItem === 'components' || pathname.includes('changelog')) {
     activeMenuItem = 'docs/react'
@@ -83,8 +78,7 @@ export default function Header() {
       size="small"
       onClick={handleLangChange}
       className="header-lang-button"
-      key="lang-button"
-    >
+      key="lang-button">
       {intl.formatMessage({ id: 'app.header.lang' })}
     </Button>,
     <Select
@@ -94,8 +88,9 @@ export default function Header() {
       dropdownMatchSelectWidth={false}
       defaultValue={antdVersion}
       onChange={handleVersionChange}
-      getPopupContainer={(trigger: HTMLElement) => trigger.parentNode as HTMLElement}
-    >
+      getPopupContainer={(trigger: HTMLElement) =>
+        trigger.parentNode as HTMLElement
+      }>
       {versionOptions}
     </Select>,
     <Menu
@@ -103,8 +98,7 @@ export default function Header() {
       mode={menuMode}
       selectedKeys={[activeMenuItem]}
       id="nav"
-      key="nav"
-    >
+      key="nav">
       <Menu.Item key="home">
         <Link to={utils.getLocalizedPathname('/', isZhCN)}>
           {intl.formatMessage({ id: 'app.header.menu.home' })}
@@ -141,8 +135,7 @@ export default function Header() {
           trigger="click"
           visible={menuVisible}
           arrowPointAtCenter
-          onVisibleChange={setMenuVisible}
-        >
+          onVisibleChange={setMenuVisible}>
           <Icon
             className="nav-phone-icon"
             type="menu"
@@ -157,7 +150,11 @@ export default function Header() {
               alt="logo"
               src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
             />
-            <span>{themeConfig?.name || themeConfig?.siteTitle || 'Ant Design Mobile RN'}</span>
+            <span>
+              {themeConfig?.name ||
+                themeConfig?.siteTitle ||
+                'Ant Design Mobile RN'}
+            </span>
           </Link>
         </Col>
         <Col xxl={20} xl={19} lg={19} md={16} sm={0} xs={0}>

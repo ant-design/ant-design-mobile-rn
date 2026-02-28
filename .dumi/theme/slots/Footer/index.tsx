@@ -1,6 +1,7 @@
+import { Col, Row } from 'antd'
 import { useIntl } from 'dumi'
 import React from 'react'
-import { Row, Col } from 'antd'
+import './index.less'
 
 export default function Footer() {
   const intl = useIntl()

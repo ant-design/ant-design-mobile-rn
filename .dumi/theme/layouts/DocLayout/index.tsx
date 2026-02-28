@@ -14,15 +14,8 @@ export default function DocLayout(props: any) {
       {!isHomePage && <DocAnchor {...props} />}
     </>
   );
-  if (pathname === '/index-cn') {
-    return (
-      <div data-hide-sidebar="true" data-homepage="true" className="dumi-doc-layout-cn-index">
-        {content}
-      </div>
-    );
-  }
   return (
-    <div data-pathname={pathname} data-homepage={isHomePage ? 'true' : undefined}>
+    <div data-homepage={isHomePage ? 'true' : undefined} data-articlepage={!isHomePage ? 'true' : undefined}>
       {content}
     </div>
   );

@@ -1,6 +1,5 @@
 import { defineConfig } from 'dumi'
 import path from 'node:path'
-import p from './package.json'
 
 export default defineConfig({
   plugins: ['dumi-plugin-color-chunk'],
@@ -8,8 +7,12 @@ export default defineConfig({
     'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   ],
   define: {
-    'process.env.VERSION': p.version,
     __DEV__: process.env.NODE_ENV !== 'production',
+  },
+  themeConfig: {
+    docVersions: {
+      '3.x': 'https://3x.rn.mobile.ant.design',
+    },
   },
   runtimePublicPath: {},
   outputPath: '_site',
@@ -194,4 +197,3 @@ export default defineConfig({
     ]
   },
 })
-
