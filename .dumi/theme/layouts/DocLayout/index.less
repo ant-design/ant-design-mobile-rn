@@ -2,6 +2,14 @@
  * 覆盖 dumi 默认主题样式，本文件在 DocLayout 中于默认 theme 的 less 之后加载，故无需 !important。
  */
 
+/* 中文首页隐藏 Sidebar（含移动端侧栏按钮） */
+[data-hide-sidebar='true'] .dumi-default-doc-layout-mobile-bar {
+  display: none;
+}
+[data-hide-sidebar='true'] .dumi-default-doc-layout > main > *:first-child {
+  display: none;
+}
+
 .dumi-default-doc-layout > main {
   margin: 0;
   padding: 0;
