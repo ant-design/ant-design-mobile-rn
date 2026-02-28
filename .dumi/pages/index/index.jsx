@@ -12,7 +12,7 @@ export default function Home() {
               <p>A UI component library based on React Native</p>
               <div className="start-button">
                 <a
-                  href="/en-US/react/introduce"
+                  href="/docs/react/introduce"
                   className="ant-btn ant-btn-primary ant-btn-lg">
                   Get Started
                 </a>

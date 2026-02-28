@@ -12,7 +12,7 @@ export default function Home() {
               <p>一个基于 React Native 的 UI 组件库</p>
               <div className="start-button">
                 <a
-                  href="/react/introduce"
+                  href="/docs/react/introduce-cn"
                   className="ant-btn ant-btn-primary ant-btn-lg">
                   开始探索
                 </a>
