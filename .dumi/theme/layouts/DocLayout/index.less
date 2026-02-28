@@ -27,3 +27,9 @@
 footer {
   box-shadow: 0 1000px 0 100px #fff
 }
+
+/* 首页不展示「最后更新时间」和「帮助改进此文档」 */
+[data-homepage='true'] .dumi-default-content-footer > dl > dd:nth-child(1),
+[data-homepage='true'] .dumi-default-content-footer > dl > dd:nth-child(2) {
+  display: none;
+}
