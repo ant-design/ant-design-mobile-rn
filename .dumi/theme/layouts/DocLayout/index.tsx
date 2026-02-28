@@ -1,6 +1,7 @@
 import { useLocation as useDumiLocation } from 'dumi';
 import DefaultDocLayout from 'dumi/theme-default/layouts/DocLayout';
 import React from 'react';
+import DocAnchor from '../../slots/Content/DocAnchor';
 import './index.less';
 
 export default function DocLayout(props: any) {
@@ -14,6 +15,9 @@ export default function DocLayout(props: any) {
     );
   }
   return (
-    <DefaultDocLayout {...props} />
-  )
+    <>
+      <DefaultDocLayout {...props} />
+      <DocAnchor {...props} />
+    </>
+  );
 }
