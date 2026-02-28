@@ -4,24 +4,13 @@ import p from './package.json'
 
 export default defineConfig({
   plugins: ['dumi-plugin-color-chunk'],
-  // title: 'Ant Design Mobile RN',
   favicons: [
     'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   ],
-  metas: [
-    { name: 'keywords', content: 'ant design,react native,组件库,mobile' },
-    {
-      name: 'description',
-      content: '基于蚂蚁金服移动设计规范的 React Native 组件库',
-    },
-  ],
   define: {
     'process.env.VERSION': p.version,
-    // React Native 全局，文档站开发/构建时需定义
     __DEV__: process.env.NODE_ENV !== 'production',
   },
-  // base: `/${repo}/`,
-  // publicPath,
   runtimePublicPath: {},
   outputPath: '_site',
   resolve: {
@@ -34,71 +23,28 @@ export default defineConfig({
     { id: 'zh-CN', name: '中文', suffix: '-cn' },
   ],
   styles: [path.join(__dirname, '.dumi/global.less')],
-  // themeConfig: {
-  //   // name: 'Ant Design Mobile RN',
-  //   // logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-  //   // footer: false,
-  //   socialLinks: {
-  //     github: 'https://github.com/ant-design/ant-design-mobile-rn',
-  //   },
-  //   deviceWidth: 375,
-  // },
   analytics: {
     ga_v2: 'UA-72788897-9',
   },
   headScripts: [
     `
     (function () {
-      // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
-      const pathname = location.pathname;
-
-      function isZhCN(pathname) {
-        return /-cn\\/?$/.test(pathname);
-      }
-      function getLocalizedPathname(path, zhCN) {
-        const pathname = path.indexOf('/') === 0 ? path : '/' + path;
-        if (!zhCN) {
-          // to enUS
-          return /\\/?index(-cn)?/.test(pathname) ? '/' : pathname.replace('-cn', '');
-        } else if (pathname === '/') {
-          return '/index-cn';
-        } else if (pathname.indexOf('/') === pathname.length - 1) {
-          return pathname.replace(/\\/$/, '-cn/');
+      var pathname = location.pathname || '/';
+      var isCN = /-cn\\/?$/.test(pathname);
+      if (pathname === '/' || pathname === '/index-cn') {
+        var lang;
+        try {
+          var antLocale = localStorage.getItem('ANT_LOCAL_TYPE_KEY');
+          lang = antLocale ? JSON.parse(antLocale) : localStorage.getItem('locale');
+        } catch (e) {
+          lang = localStorage.getItem('ANT_LOCAL_TYPE_KEY') || localStorage.getItem('locale');
         }
-        return pathname + '-cn';
-      }
-
-      // 兼容旧的 URL， \`?locale=...\`
-      const queryString = location.search;
-      if (queryString) {
-        const isZhCNConfig = queryString.indexOf('zh-CN') > -1;
-        if (isZhCNConfig && !isZhCN(pathname)) {
-          location.pathname = getLocalizedPathname(pathname, isZhCNConfig);
+        lang = lang || (navigator.language && navigator.language.toLowerCase() === 'zh-cn' ? 'zh-CN' : 'en-US');
+        if ((lang === 'zh-CN') !== isCN) {
+          location.pathname = lang === 'zh-CN' ? '/index-cn' : '/';
         }
       }
-
-      // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
-      const normalizedPathname = pathname || '/';
-      if (normalizedPathname === '/' || normalizedPathname === '/index-cn') {
-        let lang;
-        if (window.localStorage) {
-          const antLocale = localStorage.getItem('ANT_LOCAL_TYPE_KEY');
-          // 尝试解析 JSON，因为可能是被序列化后存储的 "en-US" / en-US https://github.com/ant-design/ant-design/issues/56606
-          try {
-            lang = antLocale ? JSON.parse(antLocale) : localStorage.getItem('locale');
-          } catch (e) {
-            lang = antLocale ? antLocale : localStorage.getItem('locale');
-          }
-        }
-        lang = lang || ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn'
-            ? 'zh-CN'
-            : 'en-US');
-        // safari is 'zh-cn', while other browser is 'zh-CN';
-        if ((lang === 'zh-CN') !== isZhCN(normalizedPathname)) {
-          location.pathname = getLocalizedPathname(normalizedPathname, lang === 'zh-CN');
-        }
-      }
-      document.documentElement.className += isZhCN(normalizedPathname) ? 'zh-cn' : 'en-us';
+      document.documentElement.className += isCN ? ' zh-cn' : ' en-us';
     })();
     `,
   ],
