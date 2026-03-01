@@ -17,6 +17,7 @@ export default defineConfig({
     docVersions: {
       '3.x': 'https://3x.rn.mobile.ant.design',
     },
+    deviceWidth: 390, // iphone 12
   },
   runtimePublicPath: {},
   outputPath: '_site',
