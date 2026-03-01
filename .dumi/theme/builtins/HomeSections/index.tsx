@@ -1,12 +1,16 @@
+import { useIntl } from 'dumi'
 import React from 'react'
 import './index.less'
 
 export default function HomeSections() {
+  const intl = useIntl()
+  const t = (id: string) => intl.formatMessage({ id })
+
   return (
     <>
       <section className="home-s2">
         <div className="wrapper">
-          <h3>懂你所需</h3>
+          <h3>{t('app.home.s2_title')}</h3>
 
           <div
             className="ant-row"
@@ -24,12 +28,9 @@ export default function HomeSections() {
               />
               <div className="des">
                 <div>
-                  组件丰富 <span className="divider" /> 功能全面
+                  {t('app.home.s2_des1')}
                 </div>
-                <p>
-                  提供了 40+
-                  基础组件、覆盖各类场景，组件特性丰富、满足各种功能需求。
-                </p>
+                <p>{t('app.home.s2_des10')}</p>
               </div>
             </div>
 
@@ -42,11 +43,9 @@ export default function HomeSections() {
               />
               <div className="des">
                 <div>
-                  一步上手 <span className="divider" /> 按需加载
+                  {t('app.home.s2_des2')}
                 </div>
-                <p>
-                  上手足够简单，既可以一次加载所有代码、也可以只加载用到的组件代码，避免冗余。
-                </p>
+                <p>{t('app.home.s2_des20')}</p>
               </div>
             </div>
           </div>
@@ -63,11 +62,9 @@ export default function HomeSections() {
               />
               <div className="des">
                 <div>
-                  体积小巧 <span className="divider" /> 性能出众
+                  {t('app.home.s2_des3')}
                 </div>
-                <p>
-                  在不损失功能的基础上，尽量保证单个组件体积最小、性能最优。
-                </p>
+                <p>{t('app.home.s2_des30')}</p>
               </div>
             </div>
 
@@ -80,9 +77,9 @@ export default function HomeSections() {
               />
               <div className="des">
                 <div>
-                  简易定制 <span className="divider" /> 多种风格
+                  {t('app.home.s2_des4')}
                 </div>
-                <p>支持灵活样式定制，简易生成多种风格，满足个性化需求。</p>
+                <p>{t('app.home.s2_des40')}</p>
               </div>
             </div>
           </div>
@@ -96,15 +93,15 @@ export default function HomeSections() {
               src="https://gw.alipayobjects.com/zos/rmsportal/EzhXjBHtavGDkTbewrvp.png"
               alt=""
             />
-            Sketch UI Kit
+            {t('app.home.s3_title')}
           </h3>
-          <p>我们提供丰富的 Sketch Symbol 组件资源库，帮助快速设计应用。</p>
+          <p>{t('app.home.s3_des')}</p>
 
           <a href="http://p.tb.cn/rmsportal_3436_AntDesignMobile_20Template_20V1.0.sketch">
             <button
               type="button"
               className="ant-btn ant-btn-lg ant-btn-background-ghost">
-              <span>立即下载</span>
+              <span>{t('app.home.s3_btn')}</span>
             </button>
           </a>
         </div>
@@ -112,7 +109,7 @@ export default function HomeSections() {
 
       <section className="home-s4">
         <div className="wrapper">
-          <h3>谁在使用</h3>
+          <h3>{t('app.home.s4_title')}</h3>
 
           <div className="ant-row" style={{ marginBottom: 48 }}>
             <div className="ant-col-8">

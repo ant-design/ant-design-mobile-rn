@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: Layout
   order: 1

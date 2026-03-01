@@ -100,7 +100,7 @@ We manage the following dependencies through `peerDependencies` to allow you to 
 
    const [fontsLoaded] = useFonts({
     antoutline: require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
-  })
+   })
    ```
 
 ## Usage

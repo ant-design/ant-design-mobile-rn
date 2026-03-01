@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据展示
   order: 4
@@ -13,7 +12,7 @@ subtitle: 标签
 ### 规则
 - 标签文字必须显示完全。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

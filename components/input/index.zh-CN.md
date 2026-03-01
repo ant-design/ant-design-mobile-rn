@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据录入
   order: 3
@@ -15,7 +14,7 @@ version: 5.2.1
 - 一般用在表单页进行信息的收集，提供文本框、文本域两种类型。
 - 组件是布局无关的，可以配合 `List` 组件快速布局；同时内置了 `Form` 组件的联动交互。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

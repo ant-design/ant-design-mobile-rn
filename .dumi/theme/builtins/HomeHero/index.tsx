@@ -1,25 +1,32 @@
+import { Link, useIntl } from 'dumi'
 import React from 'react'
 import GitHubButton from 'react-github-button'
 import 'react-github-button/assets/style.css'
 import './index.less'
 
 export default function HomeHero() {
+  const intl = useIntl()
+  const t = (id: string) => intl.formatMessage({ id })
+
+  const locale = intl.locale
+  const isZhCN = locale === 'zh-CN'
+
   return (
     <>
       <section className="home-s1" style={{ backgroundColor: '#ffffff' }}>
         <div className="banner-wrapper">
           <div className="banner-text-wrapper">
             <h2>Ant Design Mobile RN</h2>
-            <p>面向 React Native 与 Web 多端同构解决方案</p>
+            <p>{t('app.home.epitomize')}</p>
 
             <div className="start-button">
-              <a href="/docs/react/introduce-cn">
+              <Link to={`/docs/react/introduce${isZhCN ? '-cn' : ''}`} prefetch>
                 <button
                   type="button"
                   className="ant-btn ant-btn-primary ant-btn-lg">
-                  <span>开始探索</span>
+                  <span>{t('app.home.centerStart')}</span>
                 </button>
-              </a>
+              </Link>
 
               <GitHubButton
                 key="github-button"
@@ -34,8 +41,8 @@ export default function HomeHero() {
 
       <section className="home-code-demo">
         <div className="wrapper">
-          <h3>定制主题，随心所欲</h3>
-          <p>开放样式算法与语义化结构，让你与 AI 一起轻松定制主题</p>
+          <h3>{t('app.home.theme_title')}</h3>
+          <p>{t('app.home.theme_des')}</p>
         </div>
       </section>
     </>

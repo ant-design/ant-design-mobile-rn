@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据展示
   order: 4
@@ -10,7 +9,7 @@ subtitle: 走马灯
 
 走马灯，轮播图
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

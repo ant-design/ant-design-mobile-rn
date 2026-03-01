@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 导航
   order: 2
@@ -13,7 +12,7 @@ subtitle: 分页器
 ### 规则
 - 当加载/渲染所有数据将花费很多时间或者流量时使用
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

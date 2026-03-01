@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 布局
   order: 1
@@ -10,7 +9,7 @@ subtitle: 两翼留白
 
 布局控件
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

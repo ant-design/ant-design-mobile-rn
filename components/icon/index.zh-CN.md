@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据展示
   order: 4
@@ -33,8 +32,17 @@ npm install @ant-design/icons-react-native@latest
    npx react-native-asset
    ```
    字体文件将会自动复制到`ios` 和 `android` 资源文件中。
+   
+ - 如果使用Expo来构建项目，省略上两步，直接使用 [expo-font](https://docs.expo.dev/versions/latest/sdk/font/) 加载字体：
+   ```jsx
+   import { useFonts } from 'expo-font';
 
-### 代码演示
+   const [fontsLoaded] = useFonts({
+    antoutline: require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
+   })
+   ```
+
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

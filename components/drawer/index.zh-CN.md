@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 导航
   order: 2
@@ -14,7 +13,7 @@ subtitle: 抽屉
 
 - 是 Android 推荐的导航方式，常见于该平台应用。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

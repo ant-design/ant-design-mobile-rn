@@ -1,12 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 手势
   order: 6
 title: SwipeAction
 subtitle: 滑动操作
-version: update
 ---
 
 滑动操作组件。
@@ -18,7 +16,7 @@ version: update
 1. 一次只可滑动一行列表
 2. 点击任意按钮之外处或往回滑动该列表可隐藏操作。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

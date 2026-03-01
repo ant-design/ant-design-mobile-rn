@@ -9,6 +9,10 @@ export default defineConfig({
   define: {
     __DEV__: process.env.NODE_ENV !== 'production',
   },
+  conventionRoutes: {
+    // to avoid generate routes for .dumi/pages/index/components/xx
+    exclude: [/index\/codes\//,/index-cn\/codes\//],
+  },
   themeConfig: {
     docVersions: {
       '3.x': 'https://3x.rn.mobile.ant.design',

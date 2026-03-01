@@ -1,233 +1,231 @@
-// @ts-nocheck
-import { Tag, version } from 'antd';
-import classnames from 'classnames';
-import { Link, useFullSidebarData, useIntl, useLocation, useSidebarData } from 'dumi';
-import React, { useMemo } from 'react';
+import { Tag } from 'antd'
+import { Link, useFullSidebarData, useLocation } from 'dumi'
+import React, { useMemo } from 'react'
 
-// antd v3 Menu item type
-export interface AntdV3MenuItem {
-  key: string;
-  label?: React.ReactNode;
-  children?: AntdV3MenuItem[];
-  type?: 'group' | 'item';
+/**
+ * =============================
+ * 类型定义
+ * =============================
+ */
+
+export interface MenuNode {
+  key: string
+  label?: React.ReactNode
+  children?: MenuNode[]
+  type?: 'group'
 }
 
+interface Frontmatter {
+  tag?: string
+  version?: string
+  subtitle?: string
+}
+
+interface SidebarItem {
+  title: string
+  link: string
+  children?: SidebarItem[]
+  frontmatter?: Frontmatter
+}
+
+type FullSidebarData = Record<string, SidebarItem[]>
+
+/**
+ * =============================
+ * 工具函数
+ * =============================
+ */
+
+function normalizeKey(link: string) {
+  return link.replace(/(-cn$)/g, '')
+}
+
+function getLocale(path: string): 'cn' | 'en' {
+  return path.includes('-cn') ? 'cn' : 'en'
+}
 
 const locales = {
   cn: {
     deprecated: '废弃',
-    updated: '更新',
-    new: '新增',
+    archive: '归档',
+    update: '有更新',
   },
   en: {
     deprecated: 'DEPRECATED',
-    updated: 'UPDATED',
-    new: 'NEW',
+    archive: 'ARCHIVE',
+    update: 'UPDATE',
   },
-};
+}
 
-const getTagColor = (val?: string) => {
-  switch (val?.toUpperCase()) {
-    case 'UPDATED':
-      return 'processing';
+const getTagRender = (tag?: string, tagText?: string) => {
+  switch (tag?.toUpperCase()) {
     case 'DEPRECATED':
-      return 'red';
+      return <Tag color="red">{tagText || tag}</Tag>
+    case 'ARCHIVE':
+      return (
+        <Tag color="gold" style={{ opacity: 0.6 }}>
+          {tagText || tag}
+        </Tag>
+      )
+    case 'UPDATE':
+      return (
+        <Tag color="green" style={{ opacity: 0.6 }}>
+          {tagText || tag}
+        </Tag>
+      )
     default:
-      return 'success';
+      return undefined
   }
-};
-
-interface MenuItemLabelProps {
-  before?: React.ReactNode;
-  after?: React.ReactNode;
-  link: string;
-  title: React.ReactNode;
-  subtitle?: React.ReactNode;
-  search?: string;
-  tag?: string;
-  className?: string;
 }
 
-const MenuItemLabelWithTag: React.FC<MenuItemLabelProps> = (props) => {
-  const { before, after, link, title, subtitle, search, tag, className } = props;
-  const intl = useIntl();
+/**
+ * =============================
+ * label 渲染
+ * =============================
+ */
 
-  const getLocale = (name: string) => {
-    const localeKey = intl.locale.toLowerCase();
-    return (locales as any)[localeKey]?.[name.toLowerCase()] ?? name;
-  };
+function renderLabel(item: SidebarItem, search: string) {
+  const { version, tag, subtitle } = item.frontmatter || {}
 
-  if (!before && !after) {
-    return (
-      <Link
-        to={`${link}${search}`}
-        className={classnames(className, { 'dumi-menu-link': tag })}
-      >
-        <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-          <span>{title}</span>
-          {subtitle && <span className="dumi-menu-subtitle">{subtitle}</span>}
-        </div>
-        {tag && (
-          <Tag
-            className={classnames('dumi-menu-tag')}
-            color={getTagColor(tag)}
-          >
-            {getLocale(tag.replace(/VERSION/i, version))}
-          </Tag>
-        )}
-      </Link>
-    );
-  }
+  const locale = getLocale(item.link)
+  const tagText =
+    tag && locales[locale]?.[tag.toLowerCase() as keyof (typeof locales)['cn']]
+
   return (
-    <Link to={`${link}${search}`} className={className}>
-      {before}
-      {title}
-      {subtitle && <span className="dumi-menu-subtitle">{subtitle}</span>}
-      {after}
+    <Link to={`${item.link}${search}`}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+        <div>
+          <span>{item.title}</span>
+          {subtitle && (
+            <span style={{ marginLeft: 6, opacity: 0.6 }}>{subtitle}</span>
+          )}
+        </div>
+        <div style={{ transform: 'scale(0.9)' }}>
+          {getTagRender(tag, tagText)}
+          {version && (
+            <Tag color="green" style={{ opacity: 0.8 }}>
+              {version}
+            </Tag>
+          )}
+        </div>
+      </div>
     </Link>
-  );
-};
-
-export interface UseMenuOptions {
-  before?: React.ReactNode;
-  after?: React.ReactNode;
+  )
 }
 
-const useMenu = (options: UseMenuOptions = {}): readonly [AntdV3MenuItem[], string] => {
-  const fullData = useFullSidebarData();
-  const { pathname, search } = useLocation();
-  const sidebarData = useSidebarData();
-  const { before, after } = options;
+/**
+ * =============================
+ * 主 Hook
+ * =============================
+ */
 
-  const menuItems = useMemo<AntdV3MenuItem[]>(() => {
-    const sidebarItems = [...(sidebarData ?? [])];
+export default function useMenu() {
+  const rawFullData = useFullSidebarData()
+  const { pathname, search } = useLocation()
 
-    // 将设计文档未分类的放在最后
-    if (pathname.startsWith('/docs/spec')) {
-      const notGrouped = sidebarItems.splice(0, 1);
-      sidebarItems.push(...notGrouped);
-    }
+  const fullData = rawFullData as FullSidebarData
 
-    // 把 /changelog 拼到开发文档中
-    if (pathname.startsWith('/docs/react')) {
-      const changelogData = Object.entries(fullData).find(([key]) =>
-        key.startsWith('/changelog'),
-      )?.[1];
-      if (changelogData) {
-        sidebarItems.splice(1, 0, changelogData[0]);
+  const menuItems = useMemo<MenuNode[]>(() => {
+    const rootItems: MenuNode[] = []
+    const blogItems: MenuNode[] = []
+    const componentGroups: MenuNode[] = []
+
+    Object.entries(fullData).forEach(([path, groups]) => {
+      /**
+       * 1️⃣ Docs React → 顶层
+       */
+      if (path.startsWith('/docs/react')) {
+        groups.forEach((group) => {
+          group.children?.forEach((item) => {
+            rootItems.push({
+              key: normalizeKey(item.link),
+              label: renderLabel(item, search),
+            })
+          })
+        })
       }
-    }
-    if (pathname.startsWith('/changelog')) {
-      const reactDocData = Object.entries(fullData).find(([key]) =>
-        key.startsWith('/docs/react'),
-      )?.[1];
-      if (reactDocData) {
-        sidebarItems.unshift(reactDocData[0]);
-        sidebarItems.push(...reactDocData.slice(1));
+
+      /**
+       * 2️⃣ Blog → 子菜单
+       */
+      if (path.startsWith('/docs/blog')) {
+        groups.forEach((group) => {
+          group.children?.forEach((item) => {
+            blogItems.push({
+              key: normalizeKey(item.link),
+              label: renderLabel(item, search),
+            })
+          })
+        })
       }
+
+      /**
+       * 3️⃣ Components
+       */
+      if (path.startsWith('/components')) {
+        groups.forEach((group) => {
+          // 没 title → 直接顶层
+          if (!group.title) {
+            group.children?.forEach((item) => {
+              rootItems.push({
+                key: normalizeKey(item.link),
+                label: renderLabel(item, search),
+              })
+            })
+            return
+          }
+
+          // 有 title → group
+          componentGroups.push({
+            key: `components-${group.title}`,
+            type: 'group',
+            label: group.title,
+            children:
+              group.children?.map((item) => ({
+                key: normalizeKey(item.link),
+                label: renderLabel(item, search),
+              })) || [],
+          })
+        })
+      }
+    })
+
+    /**
+     * =============================
+     * 拼接最终结构
+     * =============================
+     */
+
+    const result: MenuNode[] = []
+
+    // 顶层
+    result.push(...rootItems)
+
+    // Blog
+    if (blogItems.length) {
+      result.push({
+        key: 'Blog',
+        label: 'Blog',
+        children: blogItems,
+      })
     }
 
-    return (
-      sidebarItems?.reduce<AntdV3MenuItem[]>((result, group) => {
-        if (group?.title) {
-          // 设计文档特殊处理二级分组
-          if (pathname.startsWith('/docs/spec')) {
-            const childrenGroup = group.children.reduce<
-              Record<string, ReturnType<typeof useSidebarData>[number]['children']>
-            >((childrenResult, child) => {
-              const type = child.frontmatter?.type ?? 'default';
-              if (!childrenResult[type]) {
-                childrenResult[type] = [];
-              }
-              childrenResult[type].push(child);
-              return childrenResult;
-            }, {});
-            const childItems: AntdV3MenuItem[] = [];
-            childItems.push(
-              ...(childrenGroup.default?.map((item) => ({
-                label: (
-                  <Link to={`${item.link}${search}`}>
-                    {before}
-                    {item?.title}
-                    {after}
-                  </Link>
-                ),
-                key: item.link.replace(/(-cn$)/g, ''),
-              })) ?? []),
-            );
-            Object.entries(childrenGroup).forEach(([type, children]) => {
-              if (type !== 'default') {
-                childItems.push({
-                  type: 'group',
-                  label: type,
-                  key: type,
-                  children: children?.map((item) => ({
-                    label: (
-                      <Link to={`${item.link}${search}`}>
-                        {before}
-                        {item?.title}
-                        {after}
-                      </Link>
-                    ),
-                    key: item.link.replace(/(-cn$)/g, ''),
-                  })),
-                });
-              }
-            });
-            result.push({
-              label: group?.title,
-              key: group?.title,
-              children: childItems,
-            });
-          } else {
-            result.push({
-              type: 'group',
-              label: group?.title,
-              key: group?.title,
-              children: group.children?.map((item) => ({
-                label: (
-                  <MenuItemLabelWithTag
-                    before={before}
-                    after={after}
-                    link={item.link}
-                    title={item?.title}
-                    subtitle={item.frontmatter?.subtitle}
-                    search={search}
-                    tag={item.frontmatter?.tag}
-                  />
-                ),
-                key: item.link.replace(/(-cn$)/g, ''),
-              })),
-            });
-          }
-        } else {
-          const list = group.children || [];
-          // 如果有 date 字段，我们就对其进行排序
-          if (list.every((info) => info?.frontmatter?.date)) {
-            list.sort((a, b) => (a.frontmatter?.date > b.frontmatter?.date ? -1 : 1));
-          }
-          result.push(
-            ...list.map((item) => ({
-              label: (
-                <MenuItemLabelWithTag
-                  before={before}
-                  after={after}
-                  link={item.link}
-                  title={item?.title}
-                  search={search}
-                  tag={item.frontmatter?.tag}
-                />
-              ),
-              key: item.link.replace(/(-cn$)/g, ''),
-            })),
-          );
-        }
-        return result;
-      }, []) ?? []
-    );
-  }, [sidebarData, pathname, fullData, search, before, after]);
+    // Components
+    if (componentGroups.length) {
+      result.push({
+        key: 'Components',
+        label: 'Components',
+        children: componentGroups,
+      })
+    }
 
-  return [menuItems, pathname] as const;
-};
+    return result
+  }, [fullData, pathname, search])
 
-export default useMenu;
+  return [menuItems, normalizeKey(pathname)] as const
+}

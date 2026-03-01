@@ -11,6 +11,8 @@
   "app.home.epitomize": "A UI component library based on React Native",
   "app.home.centerStart": "Start Exploring",
   "app.home.qrtip": "Scan QR Code",
+  "app.home.theme_title": "Flexible theme customization",
+  "app.home.theme_des": "Open style algorithms and semantic structures make it easy for you and AI to customize themes(Stay tuned✨)",
   "app.home.s2_title": "Understand what you need",
   "app.home.s2_des1": "Rich Components | Full Featured",
   "app.home.s2_des10": "Provides 40+ basic components, covering all kinds of scenarios, component features rich to meet the needs of various functional Requirements.",

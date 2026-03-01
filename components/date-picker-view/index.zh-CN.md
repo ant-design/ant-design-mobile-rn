@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据录入
   order: 3
@@ -10,7 +9,7 @@ subtitle: 日期选择器
 
 DatePickerView 的功能类似于 DatePicker ，但它是直接渲染在区域中，而不是弹出窗口。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

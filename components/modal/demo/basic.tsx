@@ -1,8 +1,8 @@
-/* tslint:disable:no-console */
 import {
   Button,
   List,
   Modal,
+  Provider,
   Switch,
   Toast,
   WhiteSpace,
@@ -129,115 +129,119 @@ export default class BasicModalExample extends React.Component<any, any> {
       { text: 'Ok', onPress: () => console.log('ok') },
     ]
     return (
-      <ScrollView style={{ marginTop: 20 }}>
-        <List>
-          <List.Item
-            extra={
-              <Switch
-                style={{ width: 70 }}
-                checked={this.state.modalType === 'modal'}
-                onChange={(val) => {
-                  this.setState({ modalType: val ? 'modal' : 'portal' })
-                }}
-                checkedChildren="modal"
-                unCheckedChildren="portal"
-              />
-            }>
-            切换modalType
-            <List.Item.Brief>
-              `modalType='modal'`时将调用原生Modal{' '}
-            </List.Item.Brief>
-          </List.Item>
-        </List>
-        <WingBlank>
-          <Button onPress={() => this.setState({ visible: true })}>
-            showModal
-          </Button>
-          <WhiteSpace />
-          <Button onPress={() => this.setState({ visible1: true })}>
-            transparent:false
-          </Button>
-          <WhiteSpace />
-          <Button onPress={() => this.setState({ visible2: true })}>
+      <Provider>
+        <ScrollView style={{ marginTop: 20 }}>
+          <List>
+            <List.Item
+              extra={
+                <Switch
+                  style={{ width: 70 }}
+                  checked={this.state.modalType === 'modal'}
+                  onChange={(val) => {
+                    this.setState({ modalType: val ? 'modal' : 'portal' })
+                  }}
+                  checkedChildren="modal"
+                  unCheckedChildren="portal"
+                />
+              }>
+              切换modalType
+              <List.Item.Brief>
+                `modalType='modal'`时将调用原生Modal{' '}
+              </List.Item.Brief>
+            </List.Item>
+          </List>
+          <WingBlank>
+            <Button onPress={() => this.setState({ visible: true })}>
+              showModal
+            </Button>
+            <WhiteSpace />
+            <Button onPress={() => this.setState({ visible1: true })}>
+              transparent:false
+            </Button>
+            <WhiteSpace />
+            <Button onPress={() => this.setState({ visible2: true })}>
+              popup
+            </Button>
+            <WhiteSpace />
+            <Button onPress={this.onButtonClick}>Modal.alert</Button>
+            <WhiteSpace />
+            <Button onPress={this.onButtonClickPromise}>
+              Modal.alert (promise)
+            </Button>
+            <WhiteSpace />
+            <Button onPress={this.onButtonClick2}>Modal.opertation</Button>
+            <WhiteSpace />
+            <Button onPress={this.onButtonClick6}>
+              Modal.opertation (onBackHandler)
+            </Button>
+            <WhiteSpace />
+            <Button onPress={this.onButtonClick5}>
+              Modal.prompt (default)
+            </Button>
+            <WhiteSpace />
+            <Button onPress={this.onButtonClick3}>
+              Modal.prompt (login-password)
+            </Button>
+            <WhiteSpace />
+            <Button onPress={this.onButtonClick4}>
+              Modal.prompt (secure-text)
+            </Button>
+          </WingBlank>
+          <Modal
+            title="Title"
+            transparent
+            modalType={this.state.modalType}
+            onClose={this.onClose}
+            maskClosable
+            visible={this.state.visible}
+            closable
+            footer={footerButtons}>
+            <View style={{ paddingVertical: 20 }}>
+              <Text style={{ textAlign: 'center' }}>Content...</Text>
+              <Text style={{ textAlign: 'center' }}>Content...</Text>
+            </View>
+            <Button type="primary" onPress={this.onClose}>
+              close modal
+            </Button>
+          </Modal>
+          <Modal
+            transparent={false}
+            modalType={this.state.modalType}
+            visible={this.state.visible1}
+            animationType="slide-up"
+            onClose={this.onClose1}>
+            <View style={{ paddingVertical: 220 }}>
+              <Text style={{ textAlign: 'center' }}>Content...</Text>
+              <Text style={{ textAlign: 'center' }}>Content...</Text>
+            </View>
+            <Button
+              type="primary"
+              style={{ marginBottom: 10 }}
+              onPress={() => Toast.info('Hello Toast in Modal now works')}>
+              {this.state.modalType === 'portal'
+                ? 'Hello Toast in Modal now works'
+                : "Hello Toast not works when modalType='portal'"}
+            </Button>
+            <Button type="primary" onPress={this.onClose1}>
+              close modal
+            </Button>
+          </Modal>
+          <Modal
             popup
-          </Button>
-          <WhiteSpace />
-          <Button onPress={this.onButtonClick}>Modal.alert</Button>
-          <WhiteSpace />
-          <Button onPress={this.onButtonClickPromise}>
-            Modal.alert (promise)
-          </Button>
-          <WhiteSpace />
-          <Button onPress={this.onButtonClick2}>Modal.opertation</Button>
-          <WhiteSpace />
-          <Button onPress={this.onButtonClick6}>
-            Modal.opertation (onBackHandler)
-          </Button>
-          <WhiteSpace />
-          <Button onPress={this.onButtonClick5}>Modal.prompt (default)</Button>
-          <WhiteSpace />
-          <Button onPress={this.onButtonClick3}>
-            Modal.prompt (login-password)
-          </Button>
-          <WhiteSpace />
-          <Button onPress={this.onButtonClick4}>
-            Modal.prompt (secure-text)
-          </Button>
-        </WingBlank>
-        <Modal
-          title="Title"
-          transparent
-          modalType={this.state.modalType}
-          onClose={this.onClose}
-          maskClosable
-          visible={this.state.visible}
-          closable
-          footer={footerButtons}>
-          <View style={{ paddingVertical: 20 }}>
-            <Text style={{ textAlign: 'center' }}>Content...</Text>
-            <Text style={{ textAlign: 'center' }}>Content...</Text>
-          </View>
-          <Button type="primary" onPress={this.onClose}>
-            close modal
-          </Button>
-        </Modal>
-        <Modal
-          transparent={false}
-          modalType={this.state.modalType}
-          visible={this.state.visible1}
-          animationType="slide-up"
-          onClose={this.onClose1}>
-          <View style={{ paddingVertical: 220 }}>
-            <Text style={{ textAlign: 'center' }}>Content...</Text>
-            <Text style={{ textAlign: 'center' }}>Content...</Text>
-          </View>
-          <Button
-            type="primary"
-            style={{ marginBottom: 10 }}
-            onPress={() => Toast.info('Hello Toast in Modal now works')}>
-            {this.state.modalType === 'portal'
-              ? 'Hello Toast in Modal now works'
-              : "Hello Toast not works when modalType='portal'"}
-          </Button>
-          <Button type="primary" onPress={this.onClose1}>
-            close modal
-          </Button>
-        </Modal>
-        <Modal
-          popup
-          modalType={this.state.modalType}
-          visible={this.state.visible2}
-          animationType="slide-up"
-          onClose={this.onClose2}>
-          <View style={{ paddingVertical: 20, paddingHorizontal: 20 }}>
-            <Text style={{ textAlign: 'center' }}>Content...</Text>
-            <Text style={{ textAlign: 'center' }}>Content...</Text>
-          </View>
-          <Button type="primary" onPress={this.onClose2}>
-            close modal
-          </Button>
-        </Modal>
-      </ScrollView>
+            modalType={this.state.modalType}
+            visible={this.state.visible2}
+            animationType="slide-up"
+            onClose={this.onClose2}>
+            <View style={{ paddingVertical: 20, paddingHorizontal: 20 }}>
+              <Text style={{ textAlign: 'center' }}>Content...</Text>
+              <Text style={{ textAlign: 'center' }}>Content...</Text>
+            </View>
+            <Button type="primary" onPress={this.onClose2}>
+              close modal
+            </Button>
+          </Modal>
+        </ScrollView>
+      </Provider>
     )
   }
 }

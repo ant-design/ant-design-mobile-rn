@@ -1,11 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: Navigation
   order: 2
 title: SegmentedControl
-subtitle: (deprecated)
+tag: DEPRECATED
 ---
 
 Deprecated since `5.2.1`.

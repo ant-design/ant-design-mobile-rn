@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 布局
   order: 1
@@ -10,7 +9,7 @@ subtitle: Flex布局
 
 Flex 是 CSS flex 布局的一个封装。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

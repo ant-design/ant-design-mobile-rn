@@ -1,11 +1,14 @@
 import { PickerColumn, PickerValue } from './PropsType'
 
 export function getColumns(
-  d: PickerColumn | PickerColumn[],
+  data: PickerColumn | PickerColumn[],
   val: PickerValue[],
   cols: number,
   cascade: boolean,
 ): PickerColumn[] {
+  // TODO-luokun: 待回归
+  const d = Array.isArray(data) ? data : Array.from(data as any)
+
   if (!d || d.length === 0) {
     return []
   }

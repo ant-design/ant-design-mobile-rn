@@ -1,12 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 title: Provider
 subtitle: 全局化配置
 group:
   title: 其他
   order: 8
-version: update
 ---
 
 为组件提供统一的全局化配置。
@@ -23,7 +21,7 @@ version: update
 
 若要使用这些组件，必须使用`Provider`包裹根组件（通常在App.js）。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

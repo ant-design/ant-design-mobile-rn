@@ -1,11 +1,9 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: Data Entry
   order: 3
 title: Stepper
-version: update
 ---
 
 `Stepper` can be used to increase or decrease value step by step.

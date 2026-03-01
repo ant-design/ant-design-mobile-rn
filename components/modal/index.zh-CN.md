@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 反馈
   order: 5
@@ -16,7 +15,7 @@ subtitle: 对话框
 - 操作按钮最多到 3 个（竖排），一般为 1-2 个（横排）；3 个以上建议使用组件 ActionSheet 来完成。
 - 一般将用户最可能点击的按钮，放在右侧。另外，取消按钮应当始终放在左侧。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

@@ -1,11 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: Navigation
   order: 2
 title: Popover
-subtitle: (archived)
+tag: ARCHIVE
 ---
 
 > This package has been deprecated in `5.2.1`, recommend [components/Tooltip](/components/tooltip)

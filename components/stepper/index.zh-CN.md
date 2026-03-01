@@ -1,12 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据录入
   order: 3
 title: Stepper
 subtitle: 步进器
-version: update
 ---
 
 用作增加或者减少当前数值。
@@ -14,7 +12,7 @@ version: update
 ### 规则
 - 当想要对数值进行小幅度调整时，可以使用 Stepper，eg：将年化收益从 4.00% 调整到 4.05%。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据录入
   order: 3
@@ -10,7 +9,7 @@ subtitle: 复选框
 
 复选框
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

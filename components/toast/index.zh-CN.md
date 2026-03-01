@@ -1,12 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 反馈
   order: 5
 title: Toast
 subtitle: 轻提示
-version: update
 ---
 
 一种轻量级反馈/提示，可以用来显示不会打断用户操作的内容，适合用于页面转场、数据交互的等场景中。
@@ -14,7 +12,7 @@ version: update
 ### 规则
 - 有 Icon 的 Toast，字数为 4-6 个；没有 Icon 的 Toast，字数不宜超过 14 个。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

@@ -1,23 +1,17 @@
-// /* Theme styles (migrated from site/desktop/src/static) */
-// @import '~antd/dist/antd.css';
-// @import './theme/static/common.less';
-// @import './theme/static/header.less';
-// @import './theme/static/footer.less';
-// @import './theme/static/home.less';
-// @import './theme/static/page-nav.less';
-// @import './theme/static/markdown.less';
-// @import './theme/static/resource.less';
-// @import './theme/static/responsive.less';
-// @import './theme/static/preview-img.less';
-// @import './theme/static/toc.less';
-// @import './theme/static/not-found.less';
-// @import './theme/static/font.less';
-// @import './theme/static/highlight.less';
-// @import './theme/static/demo.less';
-// @import './theme/static/colors.less';
-// @import './theme/static/new-version-info-modal.less';
-// @import './theme/static/motion.less';
-// @import './theme/static/nprogress.less';
+@font-face {
+  font-family: 'antoutline';
+  src: url('../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'antfill';
+  src: url('../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Make clicks pass-through */
 #nprogress {
   pointer-events: none;
@@ -20271,179 +20265,6 @@ a:focus {
   margin-left: 0.5em;
 }
 
-.markdown {
-  color: #666;
-  font-size: 14Px;
-  line-height: 1.8;
-}
-.markdown i {
-  font-weight: normal;
-}
-.highlight {
-  line-height: 1.5;
-}
-.markdown img {
-  vertical-align: middle;
-  max-width: 100%;
-}
-.markdown h1 {
-  color: #404040;
-  font-weight: bold;
-  line-height: 40Px;
-  margin-bottom: 24Px;
-  margin-top: 8Px;
-  font-family: lato, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-}
-.markdown h1 .subtitle {
-  font-weight: normal;
-  font-size: 80%;
-  margin-left: 12Px;
-}
-.markdown h2,
-.markdown h3,
-.markdown h4,
-.markdown h5,
-.markdown h6 {
-  color: #404040;
-  margin: 1.6em 0 0.6em;
-  font-weight: 500;
-  clear: both;
-}
-.markdown h1 {
-  font-size: 28Px;
-}
-.markdown h2 {
-  font-size: 22Px;
-}
-.markdown h3 {
-  font-size: 18Px;
-}
-.markdown h4 {
-  font-size: 16Px;
-}
-.markdown h5 {
-  font-size: 14Px;
-}
-.markdown h6 {
-  font-size: 12Px;
-}
-.markdown hr {
-  height: 1Px;
-  border: 0;
-  background: #e9e9e9;
-  margin: 16Px 0;
-  clear: both;
-}
-.markdown p,
-.markdown pre {
-  margin: 1em 0;
-}
-.markdown ul > li {
-  list-style: circle;
-}
-.markdown > ul li,
-.markdown blockquote ul > li {
-  margin-left: 20Px;
-  padding-left: 4Px;
-}
-.markdown > ul li > p,
-.markdown > ol li > p {
-  margin: 0.2em 0;
-}
-.markdown ol > li {
-  list-style: decimal;
-}
-.markdown > ol li,
-.markdown blockquote ol > li {
-  margin-left: 20Px;
-  padding-left: 4Px;
-}
-.markdown code {
-  margin: 0 3Px;
-  background: #f7f7f7;
-  padding: 1Px 6Px;
-  border-radius: 3Px;
-  color: #777;
-  font-size: 12.8Px;
-  border: 1Px solid #e9e9e9;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-}
-.markdown pre {
-  border-radius: 6Px;
-  background: #f7f7f7;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-}
-.markdown pre code {
-  border: none;
-  background: #f7f7f7;
-  margin: 0;
-  font-size: 13Px;
-  color: #666;
-  overflow: auto;
-}
-.markdown strong,
-.markdown b {
-  font-weight: 600;
-}
-.markdown > table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  empty-cells: show;
-  border: 1Px solid #e9e9e9;
-  width: 100%;
-  margin-bottom: 24Px;
-}
-.markdown > table th {
-  white-space: nowrap;
-  color: #5C6B77;
-  font-weight: 600;
-}
-.markdown > table th,
-.markdown > table td {
-  border: 1Px solid #e9e9e9;
-  padding: 8Px 16Px;
-  text-align: left;
-}
-.markdown > table th {
-  background: #F7F7F7;
-}
-.markdown blockquote {
-  font-size: 90%;
-  color: #999;
-  border-left: 4Px solid #e9e9e9;
-  padding-left: 0.8em;
-  margin: 1em 0;
-  font-style: italic;
-}
-.markdown blockquote p {
-  margin: 0;
-}
-.markdown .anchor {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  margin-left: 8Px;
-}
-.markdown .waiting {
-  color: #ccc;
-  cursor: not-allowed;
-}
-.markdown h1:hover .anchor,
-.markdown h2:hover .anchor,
-.markdown h3:hover .anchor,
-.markdown h4:hover .anchor,
-.markdown h5:hover .anchor,
-.markdown h6:hover .anchor {
-  opacity: 1;
-  display: inline-block;
-}
-.markdown > br,
-.markdown > p > br {
-  clear: both;
-}
-.markdown.api-container table {
-  font-family: Consolas, Menlo, Courier, monospace;
-  font-size: 13Px;
-}
 .layout-demo .demo-row,
 [id^="components-layout-demo-"] .demo-row,
 .layout-demo .code-box-demo .demo-row,
@@ -20539,24 +20360,6 @@ a:focus {
 .layout-demo .code-box-demo .height-80,
 [id^="components-layout-demo-"] .code-box-demo .height-80 {
   height: 80Px;
-}
-.markdown ul.ant-timeline li.ant-timeline-item {
-  list-style: none;
-  margin: 0;
-  padding: 0 0 30Px;
-}
-.markdown ul.ant-timeline li.ant-timeline-item .ant-timeline-item-content {
-  font-size: 14Px;
-  padding-left: 32Px;
-  position: relative;
-  top: -14Px;
-}
-.markdown ul.ant-timeline li.ant-timeline-item .ant-timeline-item-content > h2 {
-  margin-top: 0;
-  padding-top: 0.5Px;
-}
-.markdown ul.ant-timeline li.ant-timeline-item:first-child {
-  margin-top: 40Px;
 }
 
 .resource-cards {
@@ -20766,9 +20569,7 @@ a:focus {
     padding-right: 16px;
     margin-right: 0;
   }
-  .main-container > .markdown > * {
-    width: 100% !important;
-  }
+  
   footer {
     text-align: center;
   }
@@ -21247,19 +21048,7 @@ pre[class*="language-"] {
   width: 100%;
   border: 0;
 }
-.code-box-meta,
-.code-box-meta.markdown {
-  position: relative;
-  padding: 12Px 16Px;
-  border-radius: 6Px 6Px 0 0;
-  transition: background-color 0.4s ease;
-  width: 100%;
-  font-size: 12Px;
-}
-.code-box-meta h4,
-.code-box-meta.markdown p {
-  margin: 0;
-}
+
 .code-box-meta blockquote {
   margin: 0;
 }

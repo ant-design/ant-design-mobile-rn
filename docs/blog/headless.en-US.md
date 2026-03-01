@@ -1,8 +1,5 @@
 ---
-nav:
-  title: Components
-group:
-  title: Blog
+category: Blog
 title: Use Headless style to transform antd
 author: 1uokun
 date: 2024-11-19

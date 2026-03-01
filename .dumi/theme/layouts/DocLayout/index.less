@@ -11,9 +11,11 @@
 [data-homepage='true'] .dumi-default-doc-layout-mobile-bar {
   display: none;
 }
-[data-homepage='true'] .dumi-default-doc-layout > main > *:first-child {
+
+[data-homepage='true'] .dumi-sidebar-main-menu {
   display: none;
 }
+
 [data-homepage='true'] .dumi-default-content {
   padding: 0
 }
@@ -30,9 +32,12 @@
   background-color: #ffffff;
 }
 
+.dumi-default-doc-layout {
+  background-color: #ffffff;
+}
 .dumi-default-doc-layout > main {
-  margin: 0;
   padding: 0;
+  margin-top: 32px;
   max-width: none;
 }
 .dumi-default-content {
@@ -41,6 +46,9 @@
 
 /* 首页不展示「最后更新时间」和「帮助改进此文档」 */
 [data-homepage='true'] .dumi-default-content-footer > dl {
+  display: none;
+}
+[data-homepage='true'] .section-title {
   display: none;
 }
 

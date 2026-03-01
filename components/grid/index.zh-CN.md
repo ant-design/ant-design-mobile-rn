@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据展示
   order: 4
@@ -13,7 +12,7 @@ subtitle: 宫格
 ### 规则
 - 区块中的内容应该是同类元素，eg：都是图片，或者都是图标+文字。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

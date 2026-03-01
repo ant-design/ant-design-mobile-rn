@@ -1,7 +1,6 @@
 import { Button, Icon, WhiteSpace, WingBlank } from '@ant-design/react-native'
 import React from 'react'
 
-/* tslint:disable:no-console */
 export default () => (
   <WingBlank>
     <WhiteSpace />

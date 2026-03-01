@@ -1,11 +1,11 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 导航
   order: 2
 title: SegmentedControl
-subtitle: 分段器(已弃用)
+subtitle: 分段器
+tag: DEPRECATED
 ---
 
 `5.2.1`开始已弃用。

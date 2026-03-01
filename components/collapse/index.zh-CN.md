@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据展示
   order: 4
@@ -15,7 +14,7 @@ version: 5.2.1
 - 对复杂区域进行分组和隐藏，保持页面的整洁。
 - 手风琴是一种特殊的折叠面板，只允许单个内容区域展开。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

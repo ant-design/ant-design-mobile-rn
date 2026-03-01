@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 反馈
   order: 5
@@ -16,7 +15,7 @@ subtitle: 活动指示器
 - 在某些特定场景下，提供有意义的文案，帮助用户明白哪个任务正在进行中，eg：正在上传照片。
 - 如果能知道用户的等待时间，可以使用组件 Progress 来替代。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

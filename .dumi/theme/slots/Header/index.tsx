@@ -1,4 +1,4 @@
-import { Button, Col, Icon, Menu, Popover, Row, Select } from 'antd'
+import { Button, Col, Icon, Menu, Popover, Row, Select, Tooltip } from 'antd'
 import classNames from 'classnames'
 import { Link, useIntl, useLocation, useSiteData } from 'dumi'
 import SearchBar from 'dumi/theme-default/slots/SearchBar'
@@ -115,9 +115,11 @@ export default function Header() {
         </a>
       </Menu.Item>
       <Menu.Item key="docs/react/support">
-        <Link to={utils.getLocalizedPathname('/docs/react/support', isZhCN)}>
-          {intl.formatMessage({ id: 'app.header.menu.support' })}
-        </Link>
+        <Tooltip title="Coming Soon">
+          <Link to="#">
+            AI+ ✨
+          </Link>
+        </Tooltip>
       </Menu.Item>
       <Menu.Item key="pc">
         <a href="https://github.com/ant-design/ant-design-mobile-rn">github</a>

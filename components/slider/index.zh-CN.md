@@ -1,12 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据录入
   order: 3
 title: Slider
 subtitle: 滑动输入条
-version: update
 ---
 
 允许用户在一个区间中选择特定值，eg：控制屏幕的显示亮度。
@@ -15,7 +13,7 @@ version: update
 - 默认状态下，左边为最小值，右边为最大值。
 - 一般水平放置。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

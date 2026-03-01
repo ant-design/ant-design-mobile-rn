@@ -1,0 +1,90 @@
+.dumi-default-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 有 sidebar 的情况 */
+.dumi-default-content:not([data-no-sidebar]) {
+  padding: 0 164px 0 64px;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* dark 模式 */
+.dark .dumi-default-content:not([data-no-sidebar]) {
+  background-color: #151a1f; /* lighten(@c-site-bg-dark, 3%) 近似值 */
+}
+
+.dumi-default-content:not([data-no-sidebar])[data-no-footer] {
+  padding-bottom: 48px;
+}
+
+/* mobile */
+@media only screen and (max-width: 767px) {
+  .dumi-default-content:not([data-no-sidebar]) {
+    max-width: initial;
+    margin: 0 -24px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .dumi-default-content:not([data-no-sidebar])[data-no-footer] {
+    padding: 24px;
+  }
+}
+
+.dumi-default-content article {
+  flex: 1;
+}
+
+/* header + main 布局 */
+.dumi-default-header + main > .dumi-default-content,
+.dumi-default-doc-layout-mobile-bar + main > .dumi-default-content {
+  min-height: calc(100vh - 76px);
+}
+
+@media only screen and (max-width: 767px) {
+  .dumi-default-header + main > .dumi-default-content,
+  .dumi-default-doc-layout-mobile-bar + main > .dumi-default-content {
+    min-height: calc(100vh - 52px - 40px);
+  }
+}
+
+/* 无 sidebar 且无 footer */
+.dumi-default-content[data-no-sidebar][data-no-footer] {
+  margin-bottom: 48px;
+}
+
+@media only screen and (max-width: 767px) {
+  .dumi-default-content[data-no-sidebar][data-no-footer] {
+    margin-bottom: 24px;
+  }
+}
+
+.dumi-default-source-code {
+    background-color: #F7F7F7;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #404040;
+  font-weight: bold;
+  line-height: 40px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-family:
+    lato,
+    Helvetica Neue,
+    Helvetica,
+    PingFang SC,
+    Hiragino Sans GB,
+    Microsoft YaHei,
+    Arial,
+    sans-serif;
+}

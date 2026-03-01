@@ -1,12 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 数据展示
   order: 4
 title: NoticeBar
 subtitle: 通告栏
-version: update
 ---
 
 在导航栏下方，一般用作系统提醒、活动提醒等通知。
@@ -15,7 +13,7 @@ version: update
 - 需要引起用户关注时使用，重要级别低于 Modal ，高于 Toast。
 - 亦可实现轻量级的跑马灯效果。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

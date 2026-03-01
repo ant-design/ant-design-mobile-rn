@@ -1,11 +1,10 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: Data Entry
   order: 3
 title: TextareaItem
-subtitle: (archived)
+tag: ARCHIVE
 ---
 
 > This package has been deprecated in `5.2.1`, recommend [components/Input.TextArea](/components/input#inputtextarea)

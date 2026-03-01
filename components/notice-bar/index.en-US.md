@@ -1,11 +1,9 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: Data Display
   order: 4
 title: NoticeBar
-version: update
 ---
 
 Component to display a system message, event notice and etc. Which is under the navigation bar.

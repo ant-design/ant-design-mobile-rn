@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 布局
   order: 1
@@ -14,7 +13,7 @@ subtitle: 基础组件
 
 - 支持 `string`/`number` 类型的ReactNode
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

@@ -1,8 +1,5 @@
 ---
-nav:
-  title: Components
-group:
-  title: Blog
+category: Blog
 title: What is styles?
 author: 1uokun
 date: 2024-08-08

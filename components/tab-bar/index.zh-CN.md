@@ -1,6 +1,5 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: 导航
   order: 2
@@ -15,7 +14,7 @@ subtitle: 标签栏
 - 即使某个 Tab 不可用，也不要禁用或者移除该 Tab。
 - 使用 Badge 进行提示，足不出户也能知道有内容更新。
 
-### 代码演示
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 

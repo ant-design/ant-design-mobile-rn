@@ -1,11 +1,9 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: Data Entry
   order: 3
 title: Slider
-version: update
 ---
 
 A Slider component for selecting particular value in range, eg: controls the display brightness of the screen.

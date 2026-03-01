@@ -1,11 +1,9 @@
 ---
-nav:
-  title: Components
+category: Components
 group:
   title: Gesture
   order: 6
 title: SwipeAction
-version: update
 ---
 
 iOS-style swipeout buttons that appear from behind a component.

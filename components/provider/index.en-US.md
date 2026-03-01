@@ -1,11 +1,9 @@
 ---
-nav:
-  title: Components
+category: Components
 title: Provider
 group:
   title: Other
   order: 8
-version: update
 ---
 
 `Provider` provides a uniform localization support for built-in text of components.

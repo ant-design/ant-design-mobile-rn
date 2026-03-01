@@ -6,18 +6,18 @@ import {
   Provider,
   SearchBar,
   WhiteSpace,
-  WingBlank
+  WingBlank,
 } from '@ant-design/react-native'
+import enUS from '@ant-design/react-native/lib/locale-provider/en_US'
+import esES from '@ant-design/react-native/lib/locale-provider/es_ES'
+import faIR from '@ant-design/react-native/lib/locale-provider/fa_IR'
+import koKR from '@ant-design/react-native/lib/locale-provider/ko_KR'
+import ptBR from '@ant-design/react-native/lib/locale-provider/pt_BR'
+import ruRU from '@ant-design/react-native/lib/locale-provider/ru_RU'
+import svSE from '@ant-design/react-native/lib/locale-provider/sv_SE'
+import zhCN from '@ant-design/react-native/lib/locale-provider/zh_CN'
 import React from 'react'
 import { View } from 'react-native'
-import enUS from '../../locale-provider/en_US'
-import esES from '../../locale-provider/es_ES'
-import faIR from '../../locale-provider/fa_IR'
-import koKR from '../../locale-provider/ko_KR'
-import ptBR from '../../locale-provider/pt_BR'
-import ruRU from '../../locale-provider/ru_RU'
-import svSE from '../../locale-provider/sv_SE'
-import zhCN from '../../locale-provider/zh_CN'
 
 const maxDate = new Date(2018, 11, 3, 22, 0)
 const minDate = new Date(2015, 7, 6, 8, 30)
@@ -129,19 +129,19 @@ export default class LocaleProviderExample extends React.Component<any, any> {
     ).language
 
     return (
-      <WingBlank>
-        <Picker
-          data={languages}
-          onChange={this.onChange}
-          cols={1}
-          value={[locale]}>
-          <List.Item arrow="horizontal">Choose language</List.Item>
-        </Picker>
-        <WhiteSpace />
-        <Provider locale={currentLocale}>
+      <Provider locale={currentLocale}>
+        <WingBlank>
+          <Picker
+            data={languages}
+            onChange={this.onChange}
+            cols={1}
+            value={[locale]}>
+            <List.Item arrow="horizontal">Choose language</List.Item>
+          </Picker>
+          <WhiteSpace />
           <Page />
-        </Provider>
-      </WingBlank>
+        </WingBlank>
+      </Provider>
     )
   }
 }

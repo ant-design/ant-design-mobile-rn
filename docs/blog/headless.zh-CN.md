@@ -1,8 +1,5 @@
 ---
-nav:
-  title: Components
-group:
-  title: Blog
+category: Blog
 title: 使用Headless风格改造antd
 author: 1uokun
 date: 2024-11-19
