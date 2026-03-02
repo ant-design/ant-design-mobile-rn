@@ -1,8 +1,9 @@
 ---
 category: Components
 title: Provider
-type: Other
-version: update
+group:
+  title: Other
+  order: 8
 ---
 
 `Provider` provides a uniform localization support for built-in text of components.
@@ -13,6 +14,10 @@ version: update
  - You want to change the default theme color.
  - You want to add vibration feedback to built-in component.
  - You want to use the `Portal component`.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ### Portal Component
 

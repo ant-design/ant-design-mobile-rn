@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Navigation
+group:
+  title: Navigation
+  order: 2
 title: Pagination
 ---
 
@@ -9,6 +11,10 @@ A long list can be divided into several pages by `Pagination`, and only one page
 ### Rule
 
 - When it will take a long time to load/render all items.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

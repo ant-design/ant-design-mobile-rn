@@ -1,6 +1,6 @@
+import { Button, Icon, Portal } from '@ant-design/react-native'
 import React from 'react'
 import { Text, View } from 'react-native'
-import { Button, Icon, Portal } from '../..'
 
 export default class PopoverExample extends React.Component<any, any> {
   render() {

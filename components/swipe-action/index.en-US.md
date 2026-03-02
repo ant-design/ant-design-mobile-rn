@@ -1,8 +1,9 @@
 ---
 category: Components
-type: Gesture
+group:
+  title: Gesture
+  order: 6
 title: SwipeAction
-version: update
 ---
 
 iOS-style swipeout buttons that appear from behind a component.
@@ -14,6 +15,10 @@ Call out operations from one side of screen with gesture.
 ### Rules
 1. Only one row can be swiped at a time.
 2. Can hide operations by clicking outside of buttons or swiping the list backforwards.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

@@ -1,10 +1,16 @@
 ---
 category: Components
-type: Layout
+group:
+  title: Layout
+  order: 1
 title: WingBlank
 ---
 
 Layout controls
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

@@ -1,11 +1,17 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: 数据录入
+  order: 3
 title: PickerView
 subtitle: 选择器
 ---
 
 PickerView 的功能类似于 Picker ，但它是直接渲染在区域中，而不是弹出窗口。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

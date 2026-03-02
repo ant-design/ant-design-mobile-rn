@@ -1,12 +1,18 @@
 ---
 category: Components
-type: Navigation
+group:
+  title: Navigation
+  order: 2
 title: Tooltip
 version: 5.2.1
 ---
 
 After clicking on a control or an area, a Tooltip menu appears for doing more.
 If set mask prop, it is recommended to exit by clicking on any of the mask layers.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Display
+group:
+  title: Data Display
+  order: 4
 title: Tag
 ---
 
@@ -9,6 +11,10 @@ Tag for categorizing or markuping, can be used to make classification or mark th
 ### Rules
 
 - The content should be displayed completely.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

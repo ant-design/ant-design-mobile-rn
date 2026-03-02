@@ -1,0 +1,40 @@
+.doc-anchor-toc {
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+
+  .ant-anchor {
+    .ant-anchor-link-title {
+      font-size: 12px;
+    }
+  }
+}
+
+.doc-anchor-toc-wrapper {
+  position: fixed;
+  top: 92px;
+  inset-inline-end: 0;
+  width: 148px;
+  padding: 0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-inline-end: calc(8px - 100vw + 100%);
+  z-index: 10;
+
+  .toc-debug {
+    color: purple;
+
+    &:hover {
+      color: purple;
+    }
+  }
+
+  > div {
+    box-sizing: border-box;
+    width: 100%;
+    max-height: calc(100vh - 120px) !important;
+    margin: auto;
+    overflow: auto;
+    padding: 4px;
+    backdrop-filter: blur(8px);
+  }
+}

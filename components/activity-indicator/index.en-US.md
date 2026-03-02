@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Feedback
+group:
+  title: Feedback
+  order: 5
 title: ActivityIndicator
 ---
 
@@ -11,6 +13,9 @@ title: ActivityIndicator
 - By providing meaningful texts under certain circumstances can help user understand which task is in progress. eg: uploading photos.
 - If you know the user's waiting time, you can use `Progress` instead.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

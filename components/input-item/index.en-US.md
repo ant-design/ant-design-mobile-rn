@@ -1,8 +1,10 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: InputItem
-subtitle: (archived)
+tag: ARCHIVE
 ---
 
 > This package has been deprecated in `5.2.1`, recommend [components/Input](/components/input)
@@ -13,6 +15,10 @@ A foundational component for inputting text into the app via a keyboard.
 - Support text input via keyboard or clipboard.
 - The cursor can be moved horizontally.
 - Handle text with a specific format, eg: hide password.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

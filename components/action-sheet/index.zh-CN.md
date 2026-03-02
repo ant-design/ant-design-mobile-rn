@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Feedback
+group:
+  title: 反馈
+  order: 5
 title: ActionSheet
 subtitle: 动作面板
 ---
@@ -13,6 +15,9 @@ subtitle: 动作面板
 - 可高亮破坏性操作，e.g. 将『删除』处理成红色文本。
 - 不要放置过多内容，避免面板纵向滚动。
 
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 ### ActionSheet.showActionSheetWithOptions(options, callback)

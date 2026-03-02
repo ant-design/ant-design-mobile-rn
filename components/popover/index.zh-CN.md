@@ -1,14 +1,21 @@
 ---
 category: Components
-type: Navigation
+group:
+  title: 导航
+  order: 2
 title: Popover
-subtitle: 气泡(归档)
+subtitle: 气泡
+tag: ARCHIVE
 ---
 
 > `5.2.1`已停止更新，推荐使用 [components/Tooltip](/components/tooltip-cn)
 
 在点击控件或者某个区域后，浮出一个气泡菜单来做更多的操作。
 如果设置了遮罩层，建议通过点击遮罩层的任一位置，进行退出。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

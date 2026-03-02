@@ -1,11 +1,17 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: 数据录入
+  order: 3
 title: Radio
 subtitle: 单选框
 ---
 
 单选框
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

@@ -1,0 +1,123 @@
+/**
+ * 覆盖 dumi 默认主题样式，本文件在 DocLayout 中于默认 theme 的 less 之后加载，故无需 !important。
+ */
+
+/* 侧栏内不显示 TOC（目录），仅保留导航 */
+.dumi-default-sidebar .dumi-default-toc {
+  display: none;
+}
+
+.dumi-default-doc-layout-mobile-bar {
+  display: none;
+}
+
+[data-homepage='true'] .dumi-sidebar-main-menu {
+  display: none;
+}
+
+[data-homepage='true'] .dumi-default-content {
+  padding: 0
+}
+
+[data-homepage='true'] article {
+  background-color: #eff3f6;
+}
+
+[data-homepage='true'] .dumi-default-previewer {
+  margin-top: 0;
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+
+  @media only screen and (min-width: 0) and (max-width: 992px) {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+.dumi-default-doc-layout {
+  background-color: #ffffff;
+}
+.dumi-default-doc-layout > main {
+  padding: 0;
+  margin-top: 32px;
+  max-width: none;
+  position: relative;
+}
+.dumi-default-content {
+  margin-bottom: 0px !important;
+}
+
+/* 首页不展示「最后更新时间」和「帮助改进此文档」 */
+[data-homepage='true'] .dumi-default-content-footer > dl {
+  display: none;
+}
+[data-homepage='true'] .section-title {
+  display: none;
+}
+
+[data-articlepage='true'] .dumi-default-content-footer {
+  padding-bottom: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e6e6e6;
+  nav{
+    display: none;
+  }
+  
+}
+
+[data-articlepage='true'] #footer {
+  display: none;
+}
+
+.dumi-default-search-bar {
+  display: inline-flex;
+  align-items: center;
+  flex: auto;
+  margin: 0;
+  border-inline-start: 1px solid rgba(0, 0, 0, 0.06);
+
+  > svg {
+    width: 14px;
+    fill: #ced4d9;
+  }
+
+  > input {
+    height: 22px;
+    border: 0;
+    max-width: calc(100vw - 768px);
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: #ced4d9;
+    }
+  }
+
+  .dumi-default-search-shortcut {
+    color: #ced4d9;
+    background-color: rgba(150, 150, 150, 0.06);
+    border-color: rgba(100, 100, 100, 0.2);
+    border-radius: 20px;
+    position: static;
+    top: unset;
+    transform: unset;
+  }
+
+  .dumi-default-search-popover {
+    inset-inline-start: 8px;
+    inset-inline-end: unset;
+    z-index: 1;
+    &::before {
+      inset-inline-start: 100px;
+      inset-inline-end: unset;
+    }
+    & > section {
+      scrollbar-width: thin;
+      scrollbar-gutter: stable;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: Picker
 ---
 
@@ -9,6 +11,10 @@ Choose from a set of data, e.g. Country choice.
 ### Rules
 - Try to use Picker to help users complete the input, to avoid the user through the keyboard directly input.
 - DatePicker is Picker's specific pattern.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

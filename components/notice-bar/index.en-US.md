@@ -1,8 +1,9 @@
 ---
 category: Components
-type: Data Display
+group:
+  title: Data Display
+  order: 4
 title: NoticeBar
-version: update
 ---
 
 Component to display a system message, event notice and etc. Which is under the navigation bar.
@@ -11,6 +12,10 @@ Component to display a system message, event notice and etc. Which is under the 
 
 - Be used to attract user's attension, the importance level is lower than `Modal` and higher than `Toast`.
 - It can also achieve a lightweight marquee effect.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

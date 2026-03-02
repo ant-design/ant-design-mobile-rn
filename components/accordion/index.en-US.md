@@ -1,8 +1,10 @@
 ---
 category: Components
-type: Data Display
+group:
+  title: Data Display
+  order: 4
 title: Accordion
-subtitle: (archived)
+tag: ARCHIVE
 ---
 
 > This package has been deprecated in `5.2.1`, recommend [components/Collapse](/components/collapse)
@@ -13,6 +15,9 @@ You can collapse / expand the content area.
 - Group and hide complex areas.
 - Typically, only a single content area is allowed to expand at a time; in special cases, multiple content areas can be expanded at the same time.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

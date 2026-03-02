@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Feedback
+group:
+  title: Feedback
+  order: 5
 title: Modal
 ---
 
@@ -11,6 +13,10 @@ Use to show important information for the system, and ask for user feedback. eg:
 - Title should be concise, do not exceed 1 line; description should be concise and complete, generally no more than 2 lines.
 - Operation buttons are up to 3(vertical), generally 1-2(horizontal); [ActionSheet](/components/action-sheet) is preferred when there are more than 3 actions.
 - Generally put the most likely clicked button on the right side. In addition, the cancel button should always be on the left.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

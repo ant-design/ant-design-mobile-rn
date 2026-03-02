@@ -3,5 +3,8 @@
   "editor.codeActionsOnSave": [
     "source.organizeImports",
     "source.fixAll.eslint"
-  ]
+  ],
+  "[markdown]": {
+    "editor.formatOnSave": false
+  }
 }

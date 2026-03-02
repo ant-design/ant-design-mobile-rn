@@ -1,6 +1,6 @@
+import { Button, Icon, List, Switch, WhiteSpace, WingBlank } from '@ant-design/react-native'
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { Button, Icon, List, Switch, WhiteSpace, WingBlank } from '../../'
 
 export default class SwitchExample extends React.Component<any, any> {
   constructor(props: any) {

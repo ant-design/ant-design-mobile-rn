@@ -1,8 +1,9 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: Slider
-version: update
 ---
 
 A Slider component for selecting particular value in range, eg: controls the display brightness of the screen.
@@ -10,6 +11,10 @@ A Slider component for selecting particular value in range, eg: controls the dis
 ### Rule
 - By default, the minimum value in the left and maximum value in the right of `Slider` .
 - Generally `Slider` is positioned horizontally.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

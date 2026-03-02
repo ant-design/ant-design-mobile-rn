@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Display
+group:
+  title: Data Display
+  order: 4
 title: Icon
 ---
 
@@ -29,7 +31,18 @@ npm install @ant-design/icons-react-native@latest
    npx react-native-asset
    ```
    will copy fonts to `ios` and `android` assets folder.
+ - If you have an Expo managed project, skip the previous two steps and use [expo-font](https://docs.expo.dev/versions/latest/sdk/font/) to load the font directly:
+   ```jsx
+   import { useFonts } from 'expo-font';
 
+   const [fontsLoaded] = useFonts({
+    antoutline: require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
+   })
+   ```
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

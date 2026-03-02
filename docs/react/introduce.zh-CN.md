@@ -95,6 +95,7 @@ $ npm install @ant-design/react-native @ant-design/icons-react-native
    ```bash
    npx react-native-asset
    ```
+   字体文件将会自动复制到`ios` 和 `android` 资源文件中。
 
  - 如果使用Expo来构建项目，省略上两步，直接使用 [expo-font](https://docs.expo.dev/versions/latest/sdk/font/) 加载字体：
    ```jsx
@@ -102,7 +103,7 @@ $ npm install @ant-design/react-native @ant-design/icons-react-native
 
    const [fontsLoaded] = useFonts({
     antoutline: require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
-  })
+   })
    ```
 
 ## 示例

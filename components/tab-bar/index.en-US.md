@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Navigation
+group:
+  title: Navigation
+  order: 2
 title: TabBar
 ---
 
@@ -10,6 +12,10 @@ Located at the bottom of the APP, to facilitate users to quickly switch between 
 - Used as a class of APP classification, the number of tab between 3-5 is better。
 - Even if a Tab is not available, do not disable or remove the Tab。
 - Use Badge make a hint，stay can also know that there is content update。
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

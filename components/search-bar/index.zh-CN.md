@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: 数据录入
+  order: 3
 title: SearchBar
 subtitle: 搜索栏
 ---
@@ -11,6 +13,10 @@ subtitle: 搜索栏
 
 - 应该在 placeholder 里提供提示文字，提醒用户输入相关内容，比如：双11特卖。
 - 在搜索栏下方，可提供有用的标签文案，帮助用户通过点击直接完成输入，比如：列出一些最近搜索的关键词。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

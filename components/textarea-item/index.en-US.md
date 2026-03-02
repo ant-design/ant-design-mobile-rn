@@ -1,8 +1,10 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: TextareaItem
-subtitle: (archived)
+tag: ARCHIVE
 ---
 
 > This package has been deprecated in `5.2.1`, recommend [components/Input.TextArea](/components/input#inputtextarea)
@@ -12,6 +14,10 @@ A foundational component for inputting multi-line text into the app via a keyboa
 ### Rule
 - Support text input via keyboard or clipboard.
 - The cursor can be moved horizontally.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Combination
+group:
+  title: Combination
+  order: 7
 title: Result
 ---
 
@@ -11,6 +13,10 @@ Result page contains feedback like illustrations, icons and text.
 - Use for significant feedback like payment success or network failure.
 - Improve brand value with beautiful illustrations.
 - Provide obvious operation point for error type result page, eg: reload page.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

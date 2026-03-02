@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Display
+group:
+  title: 数据展示
+  order: 4
 title: List
 subtitle: 列表
 ---
@@ -12,6 +14,10 @@ subtitle: 列表
 ### 规则
 - 一般由主要信息、主要操作、次要信息、次要操作组成。
 - 主要信息和主要操作放在列表的左边，次要信息和次要操作放在列表的右边。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

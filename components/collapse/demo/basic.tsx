@@ -1,6 +1,6 @@
+import { ActivityIndicator, Collapse, Icon, List, Result } from '@ant-design/react-native'
 import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native'
-import { ActivityIndicator, Collapse, Icon, List, Result } from '../../'
 
 export default function CollapseExmple() {
   return (

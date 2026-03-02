@@ -1,94 +1,97 @@
-import React, { useState } from 'react'
-import { ScrollView, Text } from 'react-native'
 import {
   Icon,
   List,
   NoticeBar,
   Picker,
+  Provider,
   Slider,
   Switch,
   WhiteSpace,
-} from '../../'
+} from '@ant-design/react-native'
+import React, { useState } from 'react'
+import { ScrollView, Text } from 'react-native'
 
 export default function NoticeBarExample() {
   return (
-    <ScrollView style={{ marginBottom: 40 }}>
-      {true && (
-        <>
-          <List renderHeader={'自定义颜色'}>
-            <WhiteSpace />
-            <NoticeBar>默认</NoticeBar>
-            <WhiteSpace />
-            <NoticeBar
-              styles={{
-                font: { color: '#ffffff' },
-                background: { backgroundColor: '#f4333c' },
-              }}>
-              错误
-            </NoticeBar>
-            <WhiteSpace />
-            <NoticeBar
-              styles={{
-                font: { color: '#108ee9' },
-                background: { backgroundColor: '#d0e4ff' },
-              }}>
-              信息
-            </NoticeBar>
-            <WhiteSpace />
-          </List>
-          <List renderHeader={'可关闭'}>
-            <NoticeBar mode="closable">这条通知可以关闭</NoticeBar>
-          </List>
-          <List renderHeader={'超长滚动'}>
-            <WhiteSpace />
-            <NoticeBar marqueeProps={{ loop: true }}>
-              Notice: I can be a React component, multiple React components, or
-              just some text.
-            </NoticeBar>
-            <WhiteSpace />
-            <NoticeBar
-              marqueeProps={{
-                loop: true,
-                autoFill: true,
-                trailing: 0,
-                spacing: 10,
-              }}>
-              autoFill&spacing
-            </NoticeBar>
-          </List>
-          <List renderHeader={'自定义'}>
-            <WhiteSpace />
-            <NoticeBar
-              mode="link"
-              onPress={() => {
-                console.log('onPress')
-              }}>
-              mode="link"
-            </NoticeBar>
-            <WhiteSpace />
-            <NoticeBar
-              mode="closable"
-              icon={<Icon name="compass" style={{ color: '#f4333c' }} />}
-              action={
-                <Icon name="close-circle" style={{ color: '#f4333c' }} />
-              }>
-              自定义图标
-            </NoticeBar>
-            <WhiteSpace />
-            <NoticeBar
-              marqueeProps={{ loop: true, autoFill: true }}
-              mode="closable"
-              action={<Text style={{ color: '#a1a1a1' }}>不再提示</Text>}>
-              自定义右侧功能区 Closable demo for `action`.
-            </NoticeBar>
-            <WhiteSpace />
-          </List>
-        </>
-      )}
-      <List renderHeader={'方向/播放/暂停控制'}>
-        <ControlDemo />
-      </List>
-    </ScrollView>
+    <Provider>
+      <ScrollView style={{ marginBottom: 40 }}>
+        {true && (
+          <>
+            <List renderHeader={'自定义颜色'}>
+              <WhiteSpace />
+              <NoticeBar>默认</NoticeBar>
+              <WhiteSpace />
+              <NoticeBar
+                styles={{
+                  font: { color: '#ffffff' },
+                  background: { backgroundColor: '#f4333c' },
+                }}>
+                错误
+              </NoticeBar>
+              <WhiteSpace />
+              <NoticeBar
+                styles={{
+                  font: { color: '#108ee9' },
+                  background: { backgroundColor: '#d0e4ff' },
+                }}>
+                信息
+              </NoticeBar>
+              <WhiteSpace />
+            </List>
+            <List renderHeader={'可关闭'}>
+              <NoticeBar mode="closable">这条通知可以关闭</NoticeBar>
+            </List>
+            <List renderHeader={'超长滚动'}>
+              <WhiteSpace />
+              <NoticeBar marqueeProps={{ loop: true }}>
+                Notice: I can be a React component, multiple React components,
+                or just some text.
+              </NoticeBar>
+              <WhiteSpace />
+              <NoticeBar
+                marqueeProps={{
+                  loop: true,
+                  autoFill: true,
+                  trailing: 0,
+                  spacing: 10,
+                }}>
+                autoFill&spacing
+              </NoticeBar>
+            </List>
+            <List renderHeader={'自定义'}>
+              <WhiteSpace />
+              <NoticeBar
+                mode="link"
+                onPress={() => {
+                  console.log('onPress')
+                }}>
+                mode="link"
+              </NoticeBar>
+              <WhiteSpace />
+              <NoticeBar
+                mode="closable"
+                icon={<Icon name="compass" style={{ color: '#f4333c' }} />}
+                action={
+                  <Icon name="close-circle" style={{ color: '#f4333c' }} />
+                }>
+                自定义图标
+              </NoticeBar>
+              <WhiteSpace />
+              <NoticeBar
+                marqueeProps={{ loop: true, autoFill: true }}
+                mode="closable"
+                action={<Text style={{ color: '#a1a1a1' }}>不再提示</Text>}>
+                自定义右侧功能区 Closable demo for `action`.
+              </NoticeBar>
+              <WhiteSpace />
+            </List>
+          </>
+        )}
+        <List renderHeader={'方向/播放/暂停控制'}>
+          <ControlDemo />
+        </List>
+      </ScrollView>
+    </Provider>
   )
 }
 

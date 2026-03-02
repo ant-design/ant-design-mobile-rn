@@ -1,11 +1,17 @@
 ---
 category: Components
-type: Layout
+group:
+  title: 布局
+  order: 1
 title: WhiteSpace
 subtitle: 上下留白
 ---
 
 布局控件
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

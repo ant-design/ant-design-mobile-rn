@@ -1,0 +1,67 @@
+.home-s2 {
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+}
+
+.home-s2 {
+  h3 {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .ant-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .ant-col-12 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+
+    img {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 24px;
+    }
+
+    .des {
+      > div {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.45);
+        margin: 0;
+      }
+    }
+  }
+
+  // Mobile responsive: ant-col-12 在移动端小屏幕时一行一个
+  @media (max-width: 576px) {
+    .ant-col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .ant-row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .ant-col-12 {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Navigation
+group:
+  title: 导航
+  order: 2
 title: Tabs
 subtitle: 标签页
 ---
@@ -10,6 +12,10 @@ subtitle: 标签页
 ### 规则
 - 标签数量，一般 2-4 个；其中，标签中的文案需要精简，一般 2-4 个字。
 - 在 iOS 端的次级页面中，不建议使用左右滑动来切换 Tab，这个和 iOS 的左滑返回存在冲突，eg：详情页中 Tabs。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

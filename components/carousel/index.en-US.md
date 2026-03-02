@@ -1,8 +1,14 @@
 ---
 category: Components
-type: Data Display
+group:
+  title: Data Display
+  order: 4
 title: Carousel
 ---
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

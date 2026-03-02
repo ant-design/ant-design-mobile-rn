@@ -1,12 +1,17 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: 数据录入
+  order: 3
 title: Button
 subtitle: 按钮
 ---
 
 点击后会触发一个操作。
 
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 
