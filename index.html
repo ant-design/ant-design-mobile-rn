@@ -1,119 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ant Design Mobile | A Mobile Design Specification</title>
-    <link
-      rel="icon"
-      href="https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png?x-oss-process=image/resize,h_32"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" type="text/css" href="/index-cbc8c263.css"/>
-    
-    <script src="https://polyfill.alicdn.com/polyfill.min.js?features=default,es2015,Intl"></script>
-    <script async src="https://snack.expo.dev/embed.js"></script>
-    
-    <script>
-      
-
-      (function() {
-        function checkIfMobile() {
-          var ua = window.navigator.userAgent.toLowerCase();
-          if (ua.indexOf('android') !== -1 || ua.indexOf('iphone') !== -1) {
-            return true;
-          }
-          return false;
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg">
+<link rel="stylesheet" href="/umi.41679e75.css">
+<script>
+    (function () {
+      var pathname = location.pathname || '/';
+      var isCN = /-cn\/?$/.test(pathname);
+      if (pathname === '/' || pathname === '/index-cn') {
+        var lang;
+        try {
+          var antLocale = localStorage.getItem('ANT_LOCAL_TYPE_KEY');
+          lang = antLocale ? JSON.parse(antLocale) : localStorage.getItem('locale');
+        } catch (e) {
+          lang = localStorage.getItem('ANT_LOCAL_TYPE_KEY') || localStorage.getItem('locale');
         }
-        function checkIfCn() {
-          return window.navigator.language.toLowerCase() === 'zh-cn'; // wtf safari is 'zh-CN', while chrome and other is 'zh-CN'
+        lang = lang || (navigator.language && navigator.language.toLowerCase() === 'zh-cn' ? 'zh-CN' : 'en-US');
+        if ((lang === 'zh-CN') !== isCN) {
+          location.pathname = lang === 'zh-CN' ? '/index-cn' : '/';
         }
-        if (checkIfMobile()) {
-          var url = location.port
-            ? 'http://127.0.0.1:8002/'
-            : window.location.origin + '/';
-          if (checkIfCn()) {
-            url = url + '?lang=zh-CN';
-          } else {
-            url = url + '?lang=en-US';
-          }
-          return (location.href = url);
-        }
-        function isLocalStorageNameSupported() {
-          const testKey = 'test';
-          const storage = window.localStorage;
-          try {
-            storage.setItem(testKey, '1');
-            storage.removeItem(testKey);
-            return true;
-          } catch (error) {
-            return false;
-          }
-        }
-        // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
-        var pathname = location.pathname;
-        function isZhCN(pathname) {
-          return /-cn\/?$/.test(pathname);
-        }
-        function getLocalizedPathname(path, zhCN) {
-          var pathname = path.startsWith('/') ? path : '/' + path;
-          if (!zhCN) {
-            // to enUS
-            return /\/?index-cn/.test(pathname)
-              ? '/'
-              : pathname.replace('-cn', '');
-          } else if (pathname === '/') {
-            return '/index-cn';
-          } else if (pathname.endsWith('/')) {
-            return pathname.replace(/\/$/, '-cn/');
-          }
-          return pathname + '-cn';
-        }
-        // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
-        if (
-          isLocalStorageNameSupported() &&
-          (pathname === '/' || pathname === '/index-cn')
-        ) {
-          var lang =
-            (window.localStorage && localStorage.getItem('locale')) ||
-            (window.navigator.language.toLowerCase() === 'zh-cn'
-              ? 'zh-CN'
-              : 'en-US');
-          if ((lang === 'zh-CN') !== isZhCN(pathname)) {
-            location.pathname = getLocalizedPathname(
-              pathname,
-              lang === 'zh-CN'
-            );
-          }
-        }
-        document.documentElement.className += isZhCN(pathname)
-          ? 'zh-cn'
-          : 'en-us';
-      })();
-    </script>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-72788897-9"
-    ></script>
-    <script>
-      if (!location.port) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-72788897-9');
       }
+      document.documentElement.className += isCN ? ' zh-cn' : ' en-us';
+    })();
     </script>
-  </head>
-  <body>
-    <div id="react-content"></div>
-    
-    <!-- <script src="/common.js"></script> -->
-    <script src="/index-6a5085b3.js"></script>
-    
-  </body>
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-72788897-9"></script>
+<script>window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-72788897-9');</script>
+<script src="/preload_helper.23b36e8b.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script src="/umi.54cf0a47.js"></script>
+</body>
 </html>
