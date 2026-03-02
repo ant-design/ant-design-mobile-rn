@@ -1,4 +1,4 @@
-import { Button, Col, Icon, Menu, Popover, Row, Select, Tooltip } from 'antd'
+import { Button, Col, Drawer, Icon, Menu, Row, Select, Tooltip } from 'antd'
 import classNames from 'classnames'
 import { Link, useIntl, useLocation, useSiteData } from 'dumi'
 import SearchBar from 'dumi/theme-default/slots/SearchBar'
@@ -72,15 +72,7 @@ export default function Header() {
     'home-page-header': activeMenuItem === 'home',
   })
 
-  const menu = [
-    <Button
-      ghost
-      size="small"
-      onClick={handleLangChange}
-      className="header-lang-button"
-      key="lang-button">
-      {intl.formatMessage({ id: 'app.header.lang' })}
-    </Button>,
+  const langAndVersion = [
     <Select
       key="version"
       className="version"
@@ -93,6 +85,16 @@ export default function Header() {
       }>
       {versionOptions}
     </Select>,
+    <Button
+      ghost
+      size="small"
+      onClick={handleLangChange}
+      className="header-lang-button"
+      key="lang-button">
+      {intl.formatMessage({ id: 'app.header.lang' })}
+    </Button>,
+  ]
+  const menu = [
     <Menu
       className="menu-site"
       mode={menuMode}
@@ -116,9 +118,7 @@ export default function Header() {
       </Menu.Item>
       <Menu.Item key="docs/react/support">
         <Tooltip title="Coming Soon">
-          <Link to="#">
-            AI+ ✨
-          </Link>
+          <Link to="#">AI+ ✨</Link>
         </Tooltip>
       </Menu.Item>
       <Menu.Item key="pc">
@@ -130,20 +130,24 @@ export default function Header() {
   return (
     <header id="header" className={headerClassName}>
       {menuMode === 'inline' ? (
-        <Popover
-          overlayClassName="popover-menu"
-          placement="bottomRight"
-          content={menu}
-          trigger="click"
-          visible={menuVisible}
-          arrowPointAtCenter
-          onVisibleChange={setMenuVisible}>
+        <>
           <Icon
             className="nav-phone-icon"
             type="menu"
             onClick={() => setMenuVisible(true)}
           />
-        </Popover>
+          <Drawer
+            title={null}
+            placement="right"
+            closable
+            onClose={() => setMenuVisible(false)}
+            visible={menuVisible}>
+            <div style={{ padding: 16 }}>
+              {langAndVersion}
+              {menu}
+            </div>
+          </Drawer>
+        </>
       ) : null}
       <Row>
         <Col xxl={4} xl={5} lg={5} md={8} sm={24} xs={24}>
@@ -163,7 +167,18 @@ export default function Header() {
           <div id="search-box">
             <SearchBar />
           </div>
-          {menuMode === 'horizontal' ? menu : null}
+          {menuMode === 'horizontal' && (
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+              }}>
+              {menu}
+              <span style={{ width: '16px' }} />
+              {langAndVersion}
+            </div>
+          )}
         </Col>
       </Row>
     </header>

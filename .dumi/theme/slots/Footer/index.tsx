@@ -16,7 +16,7 @@ export default function Footer() {
               <h2>Ant Design</h2>
               <div>
                 <a
-                  target="_blank "
+                  target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/ant-design/ant-design-mobile-rn"
                 >
@@ -25,7 +25,7 @@ export default function Footer() {
               </div>
               <div>
                 <a
-                  target="_blank "
+                  target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/ant-design/ant-design-mobile"
                 >
@@ -34,7 +34,7 @@ export default function Footer() {
               </div>
               <div>
                 <a
-                  target="_blank "
+                  target="_blank"
                   rel="noopener noreferrer"
                   href="https://ant.design"
                 >
@@ -134,7 +134,7 @@ export default function Footer() {
               </h2>
               <div>
                 <a
-                  target="_blank "
+                  target="_blank"
                   rel="noopener noreferrer"
                   href="https://ant.design"
                 >

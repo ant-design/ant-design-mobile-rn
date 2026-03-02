@@ -24,7 +24,7 @@ export default function HomeSections() {
               style={{ paddingLeft: 36, paddingRight: 36 }}>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/KUmyjoMxFFbjEdjiIWOw.png"
-                alt=""
+                alt={t('app.home.s2_des1')}
               />
               <div className="des">
                 <div>

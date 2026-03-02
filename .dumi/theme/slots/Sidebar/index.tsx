@@ -1,4 +1,4 @@
-import { Col, Menu } from 'antd'
+import { Col, Drawer, Icon, Menu } from 'antd'
 import React, { useEffect, useMemo, useState } from 'react'
 import './index.less'
 import useMenu, { MenuNode } from './useMenu'
@@ -27,6 +27,10 @@ function renderNodes(nodes: MenuNode[]): React.ReactNode {
 }
 
 const SidebarNew: React.FC = () => {
+  const [menuVisible, setMenuVisible] = useState(false)
+  const [menuMode, setMenuMode] = useState<'horizontal' | 'inline'>(
+    'horizontal',
+  )
   const [menuItems, selectedKey] = useMenu()
 
   const rootSubmenuKeys = useMemo(
@@ -40,6 +44,45 @@ const SidebarNew: React.FC = () => {
     setOpenKeys(rootSubmenuKeys)
   }, [rootSubmenuKeys.join(',')])
 
+  useEffect(() => {
+    const enquire = require('enquire.js')
+    enquire.register('only screen and (min-width: 0) and (max-width: 992px)', {
+      match: () => setMenuMode('inline'),
+      unmatch: () => setMenuMode('horizontal'),
+    })
+  }, [])
+
+  const menu = (
+    <Menu
+        mode="inline"
+        inlineIndent={24}
+        selectedKeys={[selectedKey]}
+        openKeys={openKeys}
+        onOpenChange={(keys) => setOpenKeys(keys as string[])}>
+        {renderNodes(menuItems)}
+      </Menu>
+  )
+
+  if (menuMode === 'inline') {
+    return (
+      <>
+        <Icon
+          className="sidebar-mobile-icon"
+          type="menu"
+          onClick={() => setMenuVisible(true)}
+        />
+        <Drawer
+          title={null}
+          placement="left"
+          closable
+          onClose={() => setMenuVisible(false)}
+          visible={menuVisible}>
+          {menu}
+        </Drawer>
+      </>
+    )
+  }
+
   return (
     <Col
       xxl={4}
@@ -49,14 +92,7 @@ const SidebarNew: React.FC = () => {
       sm={24}
       xs={24}
       className="dumi-sidebar-main-menu">
-      <Menu
-        mode="inline"
-        inlineIndent={24}
-        selectedKeys={[selectedKey]}
-        openKeys={openKeys}
-        onOpenChange={(keys) => setOpenKeys(keys as string[])}>
-        {renderNodes(menuItems)}
-      </Menu>
+      {menu}
     </Col>
   )
 }
