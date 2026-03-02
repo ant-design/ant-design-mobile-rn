@@ -54,13 +54,13 @@ const SidebarNew: React.FC = () => {
 
   const menu = (
     <Menu
-        mode="inline"
-        inlineIndent={24}
-        selectedKeys={[selectedKey]}
-        openKeys={openKeys}
-        onOpenChange={(keys) => setOpenKeys(keys as string[])}>
-        {renderNodes(menuItems)}
-      </Menu>
+      mode="inline"
+      inlineIndent={24}
+      selectedKeys={[selectedKey]}
+      openKeys={openKeys}
+      onOpenChange={(keys) => setOpenKeys(keys as string[])}>
+      {renderNodes(menuItems)}
+    </Menu>
   )
 
   if (menuMode === 'inline') {
