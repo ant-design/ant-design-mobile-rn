@@ -1,155 +1,111 @@
-import { XStream } from '@ant-design/x-sdk';
-import { useRef, useState } from 'react';
+import { XStream } from '@ant-design/x-sdk'
+import { useRef, useState } from 'react'
 
 export const fetchTheme = async (
+  components: string[],
   prompt: string,
-  update, // TODO-luokun: stream回显
-  {
-    onToken,
-    onDone,
-    onError,
-  }: {
-    onToken: (component: string, token: string) => void;
-    onDone: (component: string, styles: any) => void;
-    onError?: (component: string, message: string) => void;
-  },
+  update: (fullObj: {}, count: number) => void,
   abortSignal?: AbortSignal,
 ) => {
-  console.log('prompt===luokun===', prompt);
-  const response = await fetch(
-    'http://localhost:3000/api/theme/generate',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        // components: ['picker', 'input', 'switch'],
-        components: ['input'],
-        description: '暗色主题，主色调蓝色，选中项加粗' || prompt,
-      }),
-      signal: abortSignal,
+  const response = await fetch('http://localhost:3000/api/theme/generate', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
     },
-  );
+    body: JSON.stringify({
+      components,
+      description: prompt,
+    }),
+    signal: abortSignal,
+  })
 
   if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    throw new Error(`HTTP error! status: ${response.status}`)
   }
 
   if (!response.body) {
-    throw new Error('Response body is null');
+    throw new Error('Response body is null')
   }
+
+  let fullContent = {} as any // { [component]: "\n\n styles \n\n" }
+
+  let count = 0
 
   for await (const chunk of XStream({
     readableStream: response.body,
   })) {
-    const content = JSON.parse(chunk?.data)?.choices?.[0]?.delta?.content;
-
-    console.log('content===luokun===', content,chunk);
-
-    if (!content || content === '[DONE]') continue;
-
-    let parsed;
-
-    try {
-      parsed = JSON.parse(content);
-    } catch {
-      continue;
+    const data = JSON.parse(chunk.data) as {
+      component: string
+      payload: string
     }
 
-    switch (parsed.type) {
-      case 'token':
-        update(parsed.component, parsed.token);
-        break;
-
-      case 'done':
-        onDone(parsed.component, parsed.styles);
-        break;
-
-      case 'error':
-        onError?.(parsed.component, parsed.message);
-        break;
-
-      default:
-        break;
+    if (fullContent[data.component]) {
+      fullContent[data.component] += data.payload
+    } else {
+      fullContent[data.component] = data.payload
     }
-  }
-};
 
-// Parse the JSON response
-function getJsonText(raw: string, rmComment = false): string {
-  let jsonStr = raw.trim();
-  
-  // 如果包含 markdown 代码块标记，移除它们
-  jsonStr = jsonStr.replace(/^```json\s*|\s*```$/g, '');
-  
-  if (rmComment) {
-    jsonStr = jsonStr.replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '').trim();
+    count += 1
+
+    update(fullContent, count)
   }
-  
-  return jsonStr;
 }
 
-export default function usePromptTheme(
-  onThemeChange?: (themeConfig: any) => void,
-) {
-  const [prompt, setPrompt] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [resText, setResText] = useState('');
-  const abortControllerRef = useRef<AbortController | null>(null);
+export default function usePromptTheme(components: string[]) {
+  const [prompt, setPrompt] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [resObj, setResObj] = useState({}) // {component:string}
+  const [count, setCoount] = useState(0) // {component:string}
+  const abortControllerRef = useRef<AbortController | null>(null)
 
   const submitPrompt = async (nextPrompt: string) => {
     if (!nextPrompt.trim()) {
-      return;
+      return
     }
 
-    setPrompt(nextPrompt);
+    setPrompt(nextPrompt)
 
     // Cancel previous request if it exists
     if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
+      abortControllerRef.current.abort()
     }
 
     // Create new AbortController for this request
-    const abortController = new AbortController();
-    abortControllerRef.current = abortController;
+    const abortController = new AbortController()
+    abortControllerRef.current = abortController
 
-    setLoading(true);
-    setResText('');
+    setLoading(true)
+    setResObj({})
 
     try {
-      const data = await fetchTheme(
+      await fetchTheme(
+        components,
         nextPrompt,
-        (currentContent) => {
-          setResText(currentContent);
+        (fullContentObj, count) => {
+          setResObj(fullContentObj)
+          setCoount(count)
         },
         abortController.signal,
-      );
-
-      // Handle the response
-      if (data && onThemeChange) {
-        const nextConfig = JSON.parse(getJsonText(data, true));
-        onThemeChange(nextConfig);
-      }
+      )
     } catch (error) {
       if (error instanceof Error && error.name === 'AbortError') {
-        console.warn('Request was aborted');
+        console.warn('Request was aborted')
       } else {
-        console.error('Failed to generate theme:', error);
+        console.error('Failed to generate theme:', error)
       }
     } finally {
-      setLoading(false);
-      abortControllerRef.current = null;
+      setLoading(false)
+      abortControllerRef.current = null
     }
-  };
+  }
 
   const cancelRequest = () => {
     if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-      abortControllerRef.current = null;
-      setLoading(false);
+      abortControllerRef.current.abort()
+      abortControllerRef.current = null
+      setLoading(false)
     }
-  };
+  }
 
-  return [submitPrompt, loading, prompt, getJsonText(resText), cancelRequest] as const;
+  return [submitPrompt, loading, prompt, resObj, count, cancelRequest] as const
 }
