@@ -1,5 +1,6 @@
-import React from 'react'
-import './index.less'
+import React, { useState } from 'react';
+import PromptDrawer from './ThemeSwitch/PromptDrawer';
+import './index.less';
 
 function triggerReactTextareaChange(
   textarea: HTMLTextAreaElement,
@@ -19,6 +20,7 @@ function triggerReactTextareaChange(
 }
 
 export default function AICode() {
+  const [isMarketDrawerOpen, setIsMarketDrawerOpen] = useState(false);
   // 更新代码
   const pushCode = () => {
     setTimeout(() => {
@@ -33,6 +35,26 @@ export default function AICode() {
       <button style={{ position: 'absolute' }} onClick={pushCode}>
         更新代码
       </button>
+
+      <button style={{ position: 'absolute' }} onClick={()=>setIsMarketDrawerOpen(true)}>
+        打开抽屉
+      </button>
+
+      <PromptDrawer
+        open={isMarketDrawerOpen}
+        onClose={() => setIsMarketDrawerOpen(false)}
+        onThemeChange={(nextTheme) => {
+          console.log('nextTheme', nextTheme);
+          // const updates: Parameters<typeof updateSiteConfig>[0] = { dynamicTheme: nextTheme };
+          // // Sync the site theme (and URL param) with the AI-generated algorithm
+          // if (nextTheme?.algorithm) {
+          //   const filteredTheme = theme.filter((t) => !['light', 'dark', 'auto'].includes(t));
+          //   updates.theme = [...filteredTheme, nextTheme.algorithm];
+          //   setTheme(nextTheme.algorithm);
+          // }
+          // updateSiteConfig(updates);
+        }}
+      />
     </>
   )
 }

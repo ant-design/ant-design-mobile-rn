@@ -1,28 +1,32 @@
-import { Col, Drawer, Icon, Menu } from 'antd'
+import { Col, Drawer, Menu } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
 import React, { useEffect, useMemo, useState } from 'react'
 import './index.less'
 import useMenu, { MenuNode } from './useMenu'
-const { SubMenu, ItemGroup } = Menu
 
-function renderNodes(nodes: MenuNode[]): React.ReactNode {
+function convertNodesToItems(nodes: MenuNode[]): any[] {
   return nodes.map((node) => {
     if (node.type === 'group') {
-      return (
-        <ItemGroup key={node.key} title={node.label as string}>
-          {node.children && renderNodes(node.children)}
-        </ItemGroup>
-      )
+      return {
+        type: 'group',
+        key: node.key,
+        label: node.label as string,
+        children: node.children ? convertNodesToItems(node.children) : undefined,
+      }
     }
 
     if (node.children) {
-      return (
-        <SubMenu key={node.key} title={<h4>{node.label}</h4>}>
-          {renderNodes(node.children)}
-        </SubMenu>
-      )
+      return {
+        key: node.key,
+        label: <h4>{node.label}</h4>,
+        children: convertNodesToItems(node.children),
+      }
     }
 
-    return <Menu.Item key={node.key}>{node.label}</Menu.Item>
+    return {
+      key: node.key,
+      label: node.label,
+    }
   })
 }
 
@@ -52,23 +56,24 @@ const SidebarNew: React.FC = () => {
     })
   }, [])
 
+  const convertedMenuItems = useMemo(() => convertNodesToItems(menuItems), [menuItems])
+
   const menu = (
     <Menu
       mode="inline"
       inlineIndent={24}
       selectedKeys={[selectedKey]}
       openKeys={openKeys}
-      onOpenChange={(keys) => setOpenKeys(keys as string[])}>
-      {renderNodes(menuItems)}
+      onOpenChange={(keys) => setOpenKeys(keys as string[])}
+      items={convertedMenuItems}>
     </Menu>
   )
 
   if (menuMode === 'inline') {
     return (
       <>
-        <Icon
+        <MenuOutlined
           className="sidebar-mobile-icon"
-          type="menu"
           onClick={() => setMenuVisible(true)}
         />
         <Drawer
@@ -76,7 +81,7 @@ const SidebarNew: React.FC = () => {
           placement="left"
           closable
           onClose={() => setMenuVisible(false)}
-          visible={menuVisible}>
+          open={menuVisible}>
           {menu}
         </Drawer>
       </>

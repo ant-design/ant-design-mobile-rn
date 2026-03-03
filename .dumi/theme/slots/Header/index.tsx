@@ -1,4 +1,5 @@
-import { Button, Col, Drawer, Icon, Menu, Row, Select, Tooltip } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
+import { Button, Col, Drawer, Menu, Row, Select, Tooltip } from 'antd'
 import classNames from 'classnames'
 import { Link, useIntl, useLocation, useSiteData } from 'dumi'
 import SearchBar from 'dumi/theme-default/slots/SearchBar'
@@ -50,11 +51,10 @@ export default function Header() {
     ...(themeConfig?.docVersions || {}),
     [antdVersion]: antdVersion,
   }
-  const versionOptions = Object.keys(docVersions).map((version) => (
-    <Select.Option value={docVersions[version]} key={version}>
-      {version}
-    </Select.Option>
-  ))
+  const versionOptions = Object.keys(docVersions).map((version) => ({
+    value: docVersions[version],
+    label: version,
+  }))
 
   const module = pathname
     .replace(/(^\/|\/$)/g, '')
@@ -80,13 +80,12 @@ export default function Header() {
       dropdownMatchSelectWidth={false}
       defaultValue={antdVersion}
       onChange={handleVersionChange}
+      options={versionOptions}
       getPopupContainer={(trigger: HTMLElement) =>
         trigger.parentNode as HTMLElement
-      }>
-      {versionOptions}
-    </Select>,
+      }></Select>,
     <Button
-      ghost
+      type="default"
       size="small"
       onClick={handleLangChange}
       className="header-lang-button"
@@ -94,36 +93,45 @@ export default function Header() {
       {intl.formatMessage({ id: 'app.header.lang' })}
     </Button>,
   ]
+  const menuItems = [
+    {
+      key: 'home',
+      label: <Link to={utils.getLocalizedPathname('/', isZhCN)}>
+        {intl.formatMessage({ id: 'app.header.menu.home' })}
+      </Link>,
+    },
+    {
+      key: 'docs/react',
+      label: <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN)}>
+        {intl.formatMessage({ id: 'app.header.menu.components' })}
+      </Link>,
+    },
+    {
+      key: 'web',
+      label: <a href="//mobile.ant.design">
+        {intl.formatMessage({ id: 'app.header.menu.web' })}
+      </a>,
+    },
+    {
+      key: 'docs/react/support',
+      label: <Tooltip title="Coming Soon">
+        <Link to="#">AI+ ✨</Link>
+      </Tooltip>,
+    },
+    {
+      key: 'pc',
+      label: <a href="https://github.com/ant-design/ant-design-mobile-rn">github</a>,
+    },
+  ]
+
   const menu = [
     <Menu
       className="menu-site"
       mode={menuMode}
       selectedKeys={[activeMenuItem]}
+      items={menuItems}
       id="nav"
       key="nav">
-      <Menu.Item key="home">
-        <Link to={utils.getLocalizedPathname('/', isZhCN)}>
-          {intl.formatMessage({ id: 'app.header.menu.home' })}
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="docs/react">
-        <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN)}>
-          {intl.formatMessage({ id: 'app.header.menu.components' })}
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="web">
-        <a href="//mobile.ant.design">
-          {intl.formatMessage({ id: 'app.header.menu.web' })}
-        </a>
-      </Menu.Item>
-      <Menu.Item key="docs/react/support">
-        <Tooltip title="Coming Soon">
-          <Link to="#">AI+ ✨</Link>
-        </Tooltip>
-      </Menu.Item>
-      <Menu.Item key="pc">
-        <a href="https://github.com/ant-design/ant-design-mobile-rn">github</a>
-      </Menu.Item>
     </Menu>,
   ]
 
@@ -131,9 +139,8 @@ export default function Header() {
     <header id="header" className={headerClassName}>
       {menuMode === 'inline' ? (
         <>
-          <Icon
+          <MenuOutlined
             className="nav-phone-icon"
-            type="menu"
             onClick={() => setMenuVisible(true)}
           />
           <Drawer
@@ -141,7 +148,7 @@ export default function Header() {
             placement="right"
             closable
             onClose={() => setMenuVisible(false)}
-            visible={menuVisible}>
+            open={menuVisible}>
             <div style={{ padding: 16 }}>
               {langAndVersion}
               {menu}
