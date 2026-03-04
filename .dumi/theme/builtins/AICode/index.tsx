@@ -1,60 +1,34 @@
-import React, { useState } from 'react';
-import PromptDrawer from './ThemeSwitch/PromptDrawer';
-import './index.less';
-
-function triggerReactTextareaChange(
-  textarea: HTMLTextAreaElement,
-  value: string,
-): void {
-  const prototype = Object.getPrototypeOf(textarea)
-
-  const descriptor = Object.getOwnPropertyDescriptor(prototype, 'value')
-
-  if (!descriptor || !descriptor.set) {
-    throw new Error('Unable to find value setter on textarea')
-  }
-
-  descriptor.set.call(textarea, value)
-
-  textarea.dispatchEvent(new Event('input', { bubbles: true }))
-}
+import { useIntl } from 'dumi'
+import React from 'react'
+import Previewer from './Previewer'
+import './index.less'
 
 export default function AICode() {
-  const [isMarketDrawerOpen, setIsMarketDrawerOpen] = useState(false);
-  // 更新代码
-  const pushCode = () => {
-    setTimeout(() => {
-      const textarea = document.querySelector(
-        '.dumi-default-source-code-editor-textarea',
-      )
-      triggerReactTextareaChange(textarea as HTMLTextAreaElement, '')
-    }, 500)
-  }
+  const intl = useIntl()
+  const t = (id: string) => intl.formatMessage({ id })
+
   return (
-    <>
-      <button style={{ position: 'absolute' }} onClick={pushCode}>
-        更新代码
-      </button>
+    <section className="home-code-demo">
+      <div className="wrapper">
+        <h3>{t('app.home.theme_title')}</h3>
+        <p>{t('app.home.theme_des')}</p>
+      </div>
 
-      <button style={{ position: 'absolute' }} onClick={()=>setIsMarketDrawerOpen(true)}>
-        打开抽屉
-      </button>
-
-      <PromptDrawer
-        open={isMarketDrawerOpen}
-        onClose={() => setIsMarketDrawerOpen(false)}
-        onThemeChange={(nextTheme) => {
-          console.log('nextTheme', nextTheme);
-          // const updates: Parameters<typeof updateSiteConfig>[0] = { dynamicTheme: nextTheme };
-          // // Sync the site theme (and URL param) with the AI-generated algorithm
-          // if (nextTheme?.algorithm) {
-          //   const filteredTheme = theme.filter((t) => !['light', 'dark', 'auto'].includes(t));
-          //   updates.theme = [...filteredTheme, nextTheme.algorithm];
-          //   setTheme(nextTheme.algorithm);
-          // }
-          // updateSiteConfig(updates);
+      <Previewer
+        asset={{
+          id: 'dumi-pages-index-cn-demo-code',
+          dependencies: {
+            'index.tsx': {
+              type: 'FILE',
+              value:
+                "/**\n * debug: true\n */\n\nimport React from 'react';\n\nexport default () => '我仅在开发环境下展示';",
+            },
+          },
         }}
-      />
-    </>
+        iframe
+        demoUrl="~demos/dumi-pages-index-cn-demo-code?compact=&locale=zh-CN"
+        disabledActions={['EXTERNAL']}
+        defaultShowCode={false}></Previewer>
+    </section>
   )
 }
