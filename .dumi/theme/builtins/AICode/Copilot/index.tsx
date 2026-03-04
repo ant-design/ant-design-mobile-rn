@@ -1,56 +1,56 @@
 import {
-    AppstoreAddOutlined,
-    CloudUploadOutlined,
-    CommentOutlined,
-    CopyOutlined,
-    DislikeOutlined,
-    LikeOutlined,
-    OpenAIFilled,
-    PaperClipOutlined,
-    PlusOutlined,
-    ProductOutlined,
-    ReloadOutlined,
-    ScheduleOutlined,
+  AppstoreAddOutlined,
+  CloudUploadOutlined,
+  CommentOutlined,
+  CopyOutlined,
+  DislikeOutlined,
+  LikeOutlined,
+  OpenAIFilled,
+  PaperClipOutlined,
+  PlusOutlined,
+  ProductOutlined,
+  ReloadOutlined,
+  ScheduleOutlined,
 } from '@ant-design/icons'
 import type {
-    AttachmentsProps,
-    BubbleListProps,
-    ConversationItemType,
+  AttachmentsProps,
+  BubbleListProps,
+  ConversationItemType,
 } from '@ant-design/x'
 import {
-    Attachments,
-    Bubble,
-    BubbleListRef,
-    Conversations,
-    Prompts,
-    Sender,
-    Suggestion,
-    Think,
-    Welcome,
+  Attachments,
+  Bubble,
+  BubbleListRef,
+  Conversations,
+  Prompts,
+  Sender,
+  Suggestion,
+  Think,
+  Welcome,
 } from '@ant-design/x'
 import XMarkdown, { type ComponentProps } from '@ant-design/x-markdown'
 import type {
-    DefaultMessageInfo,
-    SSEFields,
-    XModelMessage,
+  DefaultMessageInfo,
+  SSEFields,
+  XModelMessage,
 } from '@ant-design/x-sdk'
 import {
-    DeepSeekChatProvider,
-    useXChat,
-    useXConversations,
-    XModelParams,
-    XModelResponse,
-    XRequest,
+  DeepSeekChatProvider,
+  useXChat,
+  useXConversations,
+  XModelParams,
+  XModelResponse,
+  XRequest,
 } from '@ant-design/x-sdk'
 import {
-    Button,
-    Flex,
-    GetProp,
-    GetRef,
-    message,
-    Popover,
-    Space,
-    Splitter,
+  Button,
+  Flex,
+  GetProp,
+  GetRef,
+  message,
+  Popover,
+  Space,
+  Splitter,
 } from 'antd'
 import { createStyles } from 'antd-style'
 import dayjs from 'dayjs'
@@ -237,6 +237,7 @@ const useCopilotStyle = createStyles(({ token, css }) => {
       display: flex;
       height: calc(100% - 194px);
       flex-direction: column;
+      overflow: scroll;
     `,
     chatWelcome: css`
       margin-inline: ${token.margin}px;
@@ -325,10 +326,9 @@ const role: BubbleListProps['role'] = {
       </div>
     ),
     contentRender(content: string) {
-      const newContent = content.replace(/\n\n/g, '<br/><br/>')
       return (
         <XMarkdown
-          content={newContent}
+          content={content}
           components={{
             think: ThinkComponent,
           }}
@@ -336,7 +336,16 @@ const role: BubbleListProps['role'] = {
       )
     },
   },
-  user: { placement: 'end' },
+  user: {
+    placement: 'end',
+    contentRender(content: string) {
+      return (
+        <XMarkdown
+          content={content}
+        />
+      )
+    },
+  },
 }
 
 const CopilotChat = (props: any) => {
@@ -602,11 +611,15 @@ const CopilotChat = (props: any) => {
 export default function Copilot(props: any) {
   const { liveDemoNode } = props
   return (
-    <Splitter style={{height:750}}>
-      <Splitter.Panel defaultSize="50%" min="30%" max="70%">
+    <Splitter style={{ height: 800 }}>
+      <Splitter.Panel
+        defaultSize={250}
+        min="30%"
+        max="70%"
+        style={{ overflow: 'hidden', background: '#ffffff' }}>
         {props.iframe ? (
           <iframe
-            style={{ width: '100%', height: '99%', border: 'none' }}
+            style={{ width: '100%', height: '100%', border: 'none' }}
             src={props.demoUrl}></iframe>
         ) : (
           liveDemoNode || props.children

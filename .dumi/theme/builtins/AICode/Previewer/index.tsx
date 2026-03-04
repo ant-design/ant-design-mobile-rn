@@ -4,6 +4,7 @@ import { useLiveDemo, useLocation } from 'dumi'
 import PreviewerActions from 'dumi/theme/slots/PreviewerActions'
 import React, { useRef, type FC } from 'react'
 import Copilot from '../Copilot'
+import "./index.less"
 
 const Previewer: FC<any> = (props) => {
   const demoContainer = useRef<HTMLDivElement>(null)
@@ -21,16 +22,6 @@ const Previewer: FC<any> = (props) => {
   })
 
   return (
-    <>
-      <button
-        onClick={() =>
-          // setLiveDemoSource是拿来刷新页面的
-          setLiveDemoSource({
-            'index.tsx': `/**\n * debug: true\n */\n\nimport React from 'react';\n\nexport default () => '我仅在开发环境下展示2';`,
-          })
-        }>
-        asd
-      </button>
       <div
         id={props.asset.id}
         className={classnames('dumi-default-previewer', props.className)}
@@ -47,7 +38,7 @@ const Previewer: FC<any> = (props) => {
           data-loading={liveDemoLoading || undefined}
           ref={demoContainer}>
           {/* 🚩🚩🚩 自定义预览+AI对话框 🚩🚩🚩 */}
-          <Copilot liveDemoNode={liveDemoNode} {...props} />
+          <Copilot liveDemoNode={liveDemoNode} setLiveDemoSource={setLiveDemoSource} {...props} />
         </div>
         {liveDemoError && (
           <div className="dumi-default-previewer-demo-error">
@@ -84,7 +75,6 @@ const Previewer: FC<any> = (props) => {
           />
         </div>
       </div>
-    </>
   )
 }
 
