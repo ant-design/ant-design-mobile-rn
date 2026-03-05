@@ -1,84 +1,108 @@
-import { useIntl } from 'dumi'
+import { Button } from 'antd'
+import { Link, useIntl } from 'dumi'
 import React from 'react'
+import GitHubButton from 'react-github-button'
+import 'react-github-button/assets/style.css'
+import Previewer from './components/Previewer'
 import './index.less'
 
-export default function HomeSections() {
+export default function HomePage() {
   const intl = useIntl()
   const t = (id: string) => intl.formatMessage({ id })
 
+  const locale = intl.locale
+  const isZhCN = locale === 'zh-CN'
+
   return (
-    <>
-      <section className="home-s2">
-        <div className="wrapper">
+    <div>
+      {/* banner区域 */}
+      <section className="banner">
+        <div>
+          <h2>Ant Design Mobile RN</h2>
+          <p>{t('app.home.epitomize')}</p>
+
+          <div>
+            <Link to={`/docs/react/introduce${isZhCN ? '-cn' : ''}`} prefetch>
+              <Button type="primary" size="large">
+                {t('app.home.centerStart')}
+              </Button>
+            </Link>
+            <GitHubButton
+              key="github-button"
+              type="stargazers"
+              namespace="ant-design"
+              repo="ant-design-mobile-rn"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="code-demo-previewer">
+        <div>
+          <h3>{t('app.home.theme_title')}</h3>
+          <p>{t('app.home.theme_des')}</p>
+        </div>
+
+        <Previewer
+          asset={{
+            id: 'dumi-pages-index-cn-demo-code',
+            dependencies: {
+              'index.tsx': {
+                type: 'FILE',
+                value:
+                  "/**\n * debug: true\n */\n\nimport React from 'react';\n\nexport default () => '我仅在开发环境下展示';",
+              },
+            },
+          }}
+          iframe
+          demoUrl="~demos/dumi-pages-index-cn-demo-code?compact=&locale=zh-CN"
+          disabledActions={['EXTERNAL']}
+          defaultShowCode={false}></Previewer>
+      </section>
+      <section className="features">
+        <div>
           <h3>{t('app.home.s2_title')}</h3>
 
-          <div
-            className="ant-row"
-            style={{
-              marginLeft: -36,
-              marginRight: -36,
-              marginBottom: 80,
-            }}>
-            <div
-              className="ant-col-12"
-              style={{ paddingLeft: 36, paddingRight: 36 }}>
+          <div>
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/KUmyjoMxFFbjEdjiIWOw.png"
                 alt={t('app.home.s2_des1')}
               />
-              <div className="des">
-                <div>
-                  {t('app.home.s2_des1')}
-                </div>
+              <div>
+                <div>{t('app.home.s2_des1')}</div>
                 <p>{t('app.home.s2_des10')}</p>
               </div>
             </div>
-
-            <div
-              className="ant-col-12"
-              style={{ paddingLeft: 36, paddingRight: 36 }}>
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/hfFgCpcxpGjeAlXFFgyT.png"
                 alt=""
               />
-              <div className="des">
-                <div>
-                  {t('app.home.s2_des2')}
-                </div>
+              <div>
+                <div>{t('app.home.s2_des2')}</div>
                 <p>{t('app.home.s2_des20')}</p>
               </div>
             </div>
           </div>
 
-          <div
-            className="ant-row"
-            style={{ marginLeft: -24, marginRight: -24 }}>
-            <div
-              className="ant-col-12"
-              style={{ paddingLeft: 24, paddingRight: 24 }}>
+          <div>
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/nlUNcWIVLKoarLnWNaWS.png"
                 alt=""
               />
-              <div className="des">
-                <div>
-                  {t('app.home.s2_des3')}
-                </div>
+              <div>
+                <div>{t('app.home.s2_des3')}</div>
                 <p>{t('app.home.s2_des30')}</p>
               </div>
             </div>
-
-            <div
-              className="ant-col-12"
-              style={{ paddingLeft: 24, paddingRight: 24 }}>
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/JjNULDGGwgOZmsZAqvjH.png"
                 alt=""
               />
-              <div className="des">
-                <div>
-                  {t('app.home.s2_des4')}
-                </div>
+              <div>
+                <div>{t('app.home.s2_des4')}</div>
                 <p>{t('app.home.s2_des40')}</p>
               </div>
             </div>
@@ -86,8 +110,8 @@ export default function HomeSections() {
         </div>
       </section>
 
-      <section className="home-s3">
-        <div className="wrapper">
+      <section className="sketch-ui-kit">
+        <div>
           <h3>
             <img
               src="https://gw.alipayobjects.com/zos/rmsportal/EzhXjBHtavGDkTbewrvp.png"
@@ -98,33 +122,31 @@ export default function HomeSections() {
           <p>{t('app.home.s3_des')}</p>
 
           <a href="http://p.tb.cn/rmsportal_3436_AntDesignMobile_20Template_20V1.0.sketch">
-            <button
-              type="button"
-              className="ant-btn ant-btn-lg ant-btn-background-ghost">
+            <button type="button">
               <span>{t('app.home.s3_btn')}</span>
             </button>
           </a>
         </div>
       </section>
 
-      <section className="home-s4">
-        <div className="wrapper">
+      <section className="who-is-using">
+        <div>
           <h3>{t('app.home.s4_title')}</h3>
 
-          <div className="ant-row" style={{ marginBottom: 48 }}>
-            <div className="ant-col-8">
+          <div>
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/BGcxWbIWmgBlIChNOpqp.png"
                 alt=""
               />
             </div>
-            <div className="ant-col-8">
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/qTKmDWNtAZMaYarVLIZT.png"
                 alt=""
               />
             </div>
-            <div className="ant-col-8">
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/ARwKOjaDethbuHOfMWOW.png"
                 alt=""
@@ -132,20 +154,20 @@ export default function HomeSections() {
             </div>
           </div>
 
-          <div className="ant-row">
-            <div className="ant-col-8">
+          <div>
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/HinWzLTHESDKjWqvqChF.png"
                 alt=""
               />
             </div>
-            <div className="ant-col-8">
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/MHkXUADpUDavOJfLrMpy.png"
                 alt=""
               />
             </div>
-            <div className="ant-col-8">
+            <div>
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/YEiMaxUWGRExNqYAwQhy.png"
                 alt=""
@@ -154,6 +176,6 @@ export default function HomeSections() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }
