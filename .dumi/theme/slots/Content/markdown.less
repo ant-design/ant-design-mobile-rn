@@ -6,6 +6,20 @@
   i {
     font-weight: normal;
   }
+
+  a {
+    color: #1677ff;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #4096ff;
+    }
+
+    &:active {
+      color: #0958d9;
+    }
+  }
 }
 
 .highlight {
@@ -260,6 +274,64 @@
   }
   .code-box-demo .height-80 {
     height: 80Px;
+  }
+}
+
+// Dark Mode
+html[data-prefers-color='dark'] {
+  .markdown {
+    color: rgba(255, 255, 255, 0.65);
+
+    a {
+      color: #4096ff;
+
+      &:hover {
+        color: #69b1ff;
+      }
+
+      &:active {
+        color: #1677ff;
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    hr {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    code {
+      background: #2a2a2a;
+      border-color: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    pre,
+    pre code {
+      background: #1e1e1e;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    table {
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    table th {
+      background: #1f1f1f;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    table th,
+    table td {
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    blockquote {
+      color: rgba(255, 255, 255, 0.45);
+      border-left-color: rgba(255, 255, 255, 0.12);
+    }
   }
 }
 

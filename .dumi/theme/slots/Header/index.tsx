@@ -2,9 +2,11 @@ import { MenuOutlined } from '@ant-design/icons'
 import { Button, Col, Drawer, Menu, Row, Select, Tooltip } from 'antd'
 import classNames from 'classnames'
 import { Link, useIntl, useLocation, useSiteData } from 'dumi'
+import ColorSwitch from 'dumi/theme-default/slots/ColorSwitch'
 import SearchBar from 'dumi/theme-default/slots/SearchBar'
 import React, { useCallback, useEffect, useState } from 'react'
 import * as utils from '../../utils'
+import './index.less'
 
 const antdVersion = require('../../../../package.json').version
 
@@ -13,9 +15,7 @@ export default function Header() {
   const intl = useIntl()
   const { themeConfig } = useSiteData()
   const [menuVisible, setMenuVisible] = useState(false)
-  const [menuMode, setMenuMode] = useState<'horizontal' | 'inline'>(
-    'horizontal',
-  )
+  const [menuMode, setMenuMode] = useState<'horizontal' | 'inline'>('horizontal')
 
   const locale = intl.locale
   const isZhCN = locale === 'zh-CN'
@@ -68,11 +68,11 @@ export default function Header() {
 
   const headerClassName = classNames({
     clearfix: true,
-    'home-nav-white': true,
     'home-page-header': activeMenuItem === 'home',
+    'custom-header': true,
   })
 
-  const langAndVersion = [
+  const actions = [
     <Select
       key="version"
       className="version"
@@ -81,9 +81,8 @@ export default function Header() {
       defaultValue={antdVersion}
       onChange={handleVersionChange}
       options={versionOptions}
-      getPopupContainer={(trigger: HTMLElement) =>
-        trigger.parentNode as HTMLElement
-      }></Select>,
+      getPopupContainer={(trigger: HTMLElement) => trigger.parentNode as HTMLElement}
+    />,
     <Button
       type="default"
       size="small"
@@ -92,31 +91,41 @@ export default function Header() {
       key="lang-button">
       {intl.formatMessage({ id: 'app.header.lang' })}
     </Button>,
+    <ColorSwitch key="color-switch" />,
   ]
+
   const menuItems = [
     {
       key: 'home',
-      label: <Link to={utils.getLocalizedPathname('/', isZhCN)}>
-        {intl.formatMessage({ id: 'app.header.menu.home' })}
-      </Link>,
+      label: (
+        <Link to={utils.getLocalizedPathname('/', isZhCN)}>
+          {intl.formatMessage({ id: 'app.header.menu.home' })}
+        </Link>
+      ),
     },
     {
       key: 'docs/react',
-      label: <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN)}>
-        {intl.formatMessage({ id: 'app.header.menu.components' })}
-      </Link>,
+      label: (
+        <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN)}>
+          {intl.formatMessage({ id: 'app.header.menu.components' })}
+        </Link>
+      ),
     },
     {
       key: 'web',
-      label: <a href="//mobile.ant.design">
-        {intl.formatMessage({ id: 'app.header.menu.web' })}
-      </a>,
+      label: (
+        <a href="//mobile.ant.design">
+          {intl.formatMessage({ id: 'app.header.menu.web' })}
+        </a>
+      ),
     },
     {
       key: 'docs/react/support',
-      label: <Tooltip title="Coming Soon">
-        <Link to="#">AI+ ✨</Link>
-      </Tooltip>,
+      label: (
+        <Tooltip title="Coming Soon">
+          <Link to="#">AI+ ✨</Link>
+        </Tooltip>
+      ),
     },
     {
       key: 'pc',
@@ -131,42 +140,38 @@ export default function Header() {
       selectedKeys={[activeMenuItem]}
       items={menuItems}
       id="nav"
-      key="nav">
-    </Menu>,
+      key="nav"
+    />,
   ]
 
   return (
     <header id="header" className={headerClassName}>
       {menuMode === 'inline' ? (
         <>
-          <MenuOutlined
-            className="nav-phone-icon"
-            onClick={() => setMenuVisible(true)}
-          />
+          <MenuOutlined className="nav-phone-icon" onClick={() => setMenuVisible(true)} />
           <Drawer
             title={null}
             placement="right"
             closable
             onClose={() => setMenuVisible(false)}
-            open={menuVisible}>
-            <div style={{ padding: 16 }}>
-              {langAndVersion}
+            open={menuVisible}
+            className="mobile-menu-drawer">
+            <div className="mobile-menu-content">
+              <div className="mobile-menu-actions">{actions}</div>
               {menu}
             </div>
           </Drawer>
         </>
       ) : null}
-      <Row>
-        <Col xxl={4} xl={5} lg={5} md={8} sm={24} xs={24}>
+      <Row className="header-row">
+        <Col xxl={4} xl={5} lg={5} md={8} sm={20} xs={20}>
           <Link to={utils.getLocalizedPathname('/', isZhCN)} id="logo">
             <img
               alt="logo"
               src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
             />
-            <span>
-              {themeConfig?.name ||
-                themeConfig?.siteTitle ||
-                'Ant Design Mobile RN'}
+            <span className="logo-title">
+              {themeConfig?.name || themeConfig?.siteTitle || 'Ant Design Mobile RN'}
             </span>
           </Link>
         </Col>
@@ -175,15 +180,9 @@ export default function Header() {
             <SearchBar />
           </div>
           {menuMode === 'horizontal' && (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-              }}>
+            <div className="header-right">
               {menu}
-              <span style={{ width: '16px' }} />
-              {langAndVersion}
+              <div className="header-actions">{actions}</div>
             </div>
           )}
         </Col>
