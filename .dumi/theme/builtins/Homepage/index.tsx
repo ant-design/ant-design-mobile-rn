@@ -43,8 +43,12 @@ export default function HomePage() {
       {/* 保留的 Demo Previewer */}
       <section className="home-previewer">
         <div className="home-previewer-header">
-          <h3 className="section-title" style={{ textAlign: 'center' }}>{t('app.home.theme_title')}</h3>
-          <p className="section-desc" style={{ textAlign: 'center' }}>{t('app.home.theme_des')}</p>
+          <h3 className="home-section-title" style={{ textAlign: 'center' }}>
+            {t('app.home.theme_title')}
+          </h3>
+          <p className="section-desc" style={{ textAlign: 'center' }}>
+            {t('app.home.theme_des')}
+          </p>
         </div>
 
         <Row justify="center" className="home-previewer-content">
@@ -72,7 +76,7 @@ export default function HomePage() {
       {/* 2. Features */}
       <section className="home-s2">
         <div className="wrapper">
-          <h3 className="section-title">{t('app.home.s2_title')}</h3>
+          <h3 className="home-section-title">{t('app.home.s2_title')}</h3>
           <Row gutter={[72, 80]} className="feature-row">
             <Col xs={24} md={12} className="feature-col">
               <img
@@ -81,7 +85,8 @@ export default function HomePage() {
               />
               <div className="des">
                 <div className="des-title">
-                  {t('app.home.s2_des1')} <span className="divider"></span> {t('app.home.s2_des10').split('，')[0]}
+                  {t('app.home.s2_des1')} <span className="divider"></span>{' '}
+                  {t('app.home.s2_des10').split('，')[0]}
                 </div>
                 <p className="des-desc">{t('app.home.s2_des10')}</p>
               </div>
@@ -93,7 +98,8 @@ export default function HomePage() {
               />
               <div className="des">
                 <div className="des-title">
-                  {t('app.home.s2_des2')} <span className="divider"></span> {t('app.home.s2_des20').split('，')[0]}
+                  {t('app.home.s2_des2')} <span className="divider"></span>{' '}
+                  {t('app.home.s2_des20').split('，')[0]}
                 </div>
                 <p className="des-desc">{t('app.home.s2_des20')}</p>
               </div>
@@ -105,7 +111,8 @@ export default function HomePage() {
               />
               <div className="des">
                 <div className="des-title">
-                  {t('app.home.s2_des3')} <span className="divider"></span> {t('app.home.s2_des30').split('，')[0]}
+                  {t('app.home.s2_des3')} <span className="divider"></span>{' '}
+                  {t('app.home.s2_des30').split('，')[0]}
                 </div>
                 <p className="des-desc">{t('app.home.s2_des30')}</p>
               </div>
@@ -117,7 +124,8 @@ export default function HomePage() {
               />
               <div className="des">
                 <div className="des-title">
-                  {t('app.home.s2_des4')} <span className="divider"></span> {t('app.home.s2_des40').split('，')[0]}
+                  {t('app.home.s2_des4')} <span className="divider"></span>{' '}
+                  {t('app.home.s2_des40').split('，')[0]}
                 </div>
                 <p className="des-desc">{t('app.home.s2_des40')}</p>
               </div>
@@ -129,7 +137,7 @@ export default function HomePage() {
       {/* 3. Sketch UI Kit */}
       <section className="home-s3">
         <div className="wrapper">
-          <h3 className="section-title">
+          <h3 className="home-section-title">
             <img
               src="https://gw.alipayobjects.com/zos/rmsportal/EzhXjBHtavGDkTbewrvp.png"
               alt=""
@@ -148,7 +156,7 @@ export default function HomePage() {
       {/* 4. Who is Using */}
       <section className="home-s4">
         <div className="wrapper">
-          <h3 className="section-title">{t('app.home.s4_title')}</h3>
+          <h3 className="home-section-title">{t('app.home.s4_title')}</h3>
           <Row gutter={[0, 48]} justify="center" className="users-row">
             {[
               'BGcxWbIWmgBlIChNOpqp.png',
@@ -158,8 +166,18 @@ export default function HomePage() {
               'MHkXUADpUDavOJfLrMpy.png',
               'YEiMaxUWGRExNqYAwQhy.png',
             ].map((imgUrl, i) => (
-              <Col span={8} className="user-col" key={i}>
-                <img src={`https://gw.alipayobjects.com/zos/rmsportal/${imgUrl}`} alt="" />
+              <Col
+                span={8}
+                xs={24}
+                sm={12}
+                md={8}
+                lg={8}
+                className="user-col"
+                key={i}>
+                <img
+                  src={`https://gw.alipayobjects.com/zos/rmsportal/${imgUrl}`}
+                  alt=""
+                />
               </Col>
             ))}
           </Row>

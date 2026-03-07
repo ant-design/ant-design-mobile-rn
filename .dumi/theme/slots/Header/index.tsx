@@ -1,8 +1,8 @@
 import { MenuOutlined } from '@ant-design/icons'
-import { Button, Col, Drawer, Menu, Row, Select, Tooltip } from 'antd'
+import { Button, Drawer, Menu, Select, Tooltip } from 'antd'
 import classNames from 'classnames'
 import { Link, useIntl, useLocation, useSiteData } from 'dumi'
-import ColorSwitch from 'dumi/theme-default/slots/ColorSwitch'
+// import ColorSwitch from 'dumi/theme-default/slots/ColorSwitch'
 import SearchBar from 'dumi/theme-default/slots/SearchBar'
 import React, { useCallback, useEffect, useState } from 'react'
 import * as utils from '../../utils'
@@ -14,8 +14,11 @@ export default function Header() {
   const { pathname } = useLocation()
   const intl = useIntl()
   const { themeConfig } = useSiteData()
+  // const [color] = usePrefersColor()
   const [menuVisible, setMenuVisible] = useState(false)
-  const [menuMode, setMenuMode] = useState<'horizontal' | 'inline'>('horizontal')
+  const [menuMode, setMenuMode] = useState<'horizontal' | 'inline'>(
+    'horizontal',
+  )
 
   const locale = intl.locale
   const isZhCN = locale === 'zh-CN'
@@ -68,7 +71,6 @@ export default function Header() {
 
   const headerClassName = classNames({
     clearfix: true,
-    'home-page-header': activeMenuItem === 'home',
     'custom-header': true,
   })
 
@@ -81,7 +83,9 @@ export default function Header() {
       defaultValue={antdVersion}
       onChange={handleVersionChange}
       options={versionOptions}
-      getPopupContainer={(trigger: HTMLElement) => trigger.parentNode as HTMLElement}
+      getPopupContainer={(trigger: HTMLElement) =>
+        trigger.parentNode as HTMLElement
+      }
     />,
     <Button
       type="default"
@@ -91,7 +95,6 @@ export default function Header() {
       key="lang-button">
       {intl.formatMessage({ id: 'app.header.lang' })}
     </Button>,
-    <ColorSwitch key="color-switch" />,
   ]
 
   const menuItems = [
@@ -129,12 +132,15 @@ export default function Header() {
     },
     {
       key: 'pc',
-      label: <a href="https://github.com/ant-design/ant-design-mobile-rn">github</a>,
+      label: (
+        <a href="https://github.com/ant-design/ant-design-mobile-rn">github</a>
+      ),
     },
   ]
 
   const menu = [
     <Menu
+      // theme={color}
       className="menu-site"
       mode={menuMode}
       selectedKeys={[activeMenuItem]}
@@ -148,7 +154,10 @@ export default function Header() {
     <header id="header" className={headerClassName}>
       {menuMode === 'inline' ? (
         <>
-          <MenuOutlined className="nav-phone-icon" onClick={() => setMenuVisible(true)} />
+          <MenuOutlined
+            className="nav-phone-icon"
+            onClick={() => setMenuVisible(true)}
+          />
           <Drawer
             title={null}
             placement="right"
@@ -163,30 +172,26 @@ export default function Header() {
           </Drawer>
         </>
       ) : null}
-      <Row className="header-row">
-        <Col xxl={4} xl={5} lg={5} md={8} sm={20} xs={20}>
+      <div className="header-row">
+        <div className="header-left">
           <Link to={utils.getLocalizedPathname('/', isZhCN)} id="logo">
             <img
               alt="logo"
               src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
             />
-            <span className="logo-title">
-              {themeConfig?.name || themeConfig?.siteTitle || 'Ant Design Mobile RN'}
-            </span>
+            <span className="logo-title">Ant Design Mobile RN</span>
           </Link>
-        </Col>
-        <Col xxl={20} xl={19} lg={19} md={16} sm={0} xs={0}>
           <div id="search-box">
             <SearchBar />
           </div>
-          {menuMode === 'horizontal' && (
-            <div className="header-right">
-              {menu}
-              <div className="header-actions">{actions}</div>
-            </div>
-          )}
-        </Col>
-      </Row>
+        </div>
+        {menuMode === 'horizontal' && (
+          <div className="header-right">
+            {menu}
+            <div className="header-actions">{actions}</div>
+          </div>
+        )}
+      </div>
     </header>
   )
 }
