@@ -1,5 +1,7 @@
 import {
   CloudUploadOutlined,
+  CopyOutlined,
+  InfoCircleOutlined,
   PaperClipOutlined,
   SyncOutlined,
 } from '@ant-design/icons'
@@ -8,13 +10,16 @@ import { Attachments, Bubble, Sender } from '@ant-design/x'
 import XMarkdown from '@ant-design/x-markdown'
 import {
   OpenAIChatProvider,
+  XRequest,
   useXChat,
   type XModelParams,
   type XModelResponse,
-  XRequest,
 } from '@ant-design/x-sdk'
-import { Button, Flex, GetProp, GetRef, Tooltip } from 'antd'
+import { Button, Flex, GetProp, GetRef, Modal, Tooltip, message } from 'antd'
+import copy from 'antd/es/_util/copy'
 import React from 'react'
+
+import { demoPng } from './demoPng'
 import {
   humanTextPrompt,
   prefixPrompt,
@@ -36,17 +41,20 @@ const BASE_URL = 'https://api.x.ant.design/api/big_model_glm-4.5-flash'
 
 const MODEL = 'glm-4.5-flash'
 
-// 本地化钩子：根据当前语言环境返回对应的文本
-// Localization hook: return corresponding text based on current language environment
 const useLocale = () => {
   const isCN =
     typeof location !== 'undefined' ? location.pathname.endsWith('-cn') : false
   return {
+    example1: isCN
+      ? `帮我实现图中PickerView的样式`
+      : 'Please help me implement the style of the PickerView in the image.',
+    viewPresetPrompts: isCN ? '查看预设提示词' : 'View preset prompts',
+    modalTitle: isCN ? '预设提示词' : 'Preset prompts',
+    modalCopy: isCN ? '复制' : 'Copy',
+    modalClose: isCN ? '关闭' : 'Close',
+    modalCopySuccess: isCN ? '复制成功' : 'Copy success',
+    aiCopilot: isCN ? 'AI 助手' : 'AI Assistant',
     abort: isCN ? '中止' : 'abort',
-    addUserMessage: isCN ? '添加用户消息' : 'Add a user message',
-    addAIMessage: isCN ? '添加AI消息' : 'Add an AI message',
-    addSystemMessage: isCN ? '添加系统消息' : 'Add a system message',
-    editLastMessage: isCN ? '编辑最后一条消息' : 'Edit the last message',
     placeholder: isCN
       ? '请输入内容，按下 Enter 发送消息'
       : 'Please enter content and press Enter to send message',
@@ -59,16 +67,13 @@ const useLocale = () => {
       ? '暂无消息，请输入问题并发送'
       : 'No messages yet, please enter a question and send',
     requesting: isCN ? '请求中' : 'Requesting',
-    qaCompleted: isCN ? '问答完成' : 'Q&A completed',
     retry: isCN ? '重试' : 'Retry',
-    currentStatus: isCN ? '当前状态：' : 'Current status:',
     historyUserMessage: isCN
       ? '这是一条历史消息'
       : 'This is a historical message',
     historyAIResponse: isCN
       ? '这是一条历史回答消息，请发送新消息。'
       : 'This is a historical response message, please send a new message.',
-    deleteFirstMessage: isCN ? '删除第一条消息' : 'Delete the first message',
     uploadFile: isCN ? '上传文件' : 'Upload file',
     dropFileHere: isCN ? '将文件拖到此处' : 'Drop file here',
     uploadFiles: isCN ? '上传文件' : 'Upload files',
@@ -78,8 +83,6 @@ const useLocale = () => {
   }
 }
 
-// 消息角色配置：定义助手和用户消息的布局和渲染方式
-// Message role configuration: define layout and rendering for assistant and user messages
 const role: BubbleListProps['role'] = {
   assistant: {
     placement: 'start',
@@ -91,12 +94,6 @@ const role: BubbleListProps['role'] = {
     placement: 'end',
     contentRender(content: string) {
       return <XMarkdown content={content} />
-    },
-  },
-  system: {
-    placement: 'end',
-    contentRender() {
-      return null
     },
   },
 }
@@ -124,107 +121,73 @@ const App = () => {
   )
   const locale = useLocale()
 
-  // 聊天消息管理：处理消息列表、历史消息、错误处理等
-  // Chat message management: handle message list, historical messages, error handling, etc.
-  const {
-    onRequest,
-    messages,
-    removeMessage,
-    setMessages,
-    setMessage,
-    isRequesting,
-    abort,
-    onReload,
-  } = useXChat({
-    provider,
-    // 默认消息：包含历史对话作为示例
-    // Default messages: include historical conversation as examples
-    defaultMessages: [
-      {
-        id: '1',
-        message: { role: 'user', content: locale.historyUserMessage },
-        status: 'success',
-      },
-      {
-        id: '2',
-        message: { role: 'assistant', content: locale.historyAIResponse },
-        status: 'success',
-      },
-    ],
-    requestFallback: (_, { error, errorInfo, messageInfo }) => {
-      // 请求失败时的回退处理：区分中止错误和其他错误
-      // Fallback handling for request failure: distinguish between abort error and other errors
-      if (error.name === 'AbortError') {
+  const { onRequest, messages, setMessages, isRequesting, abort, onReload } =
+    useXChat({
+      provider,
+      defaultMessages: [
+        {
+          id: '1',
+          message: {
+            role: 'user',
+            content: `<img src='${demoPng}' />\n\n${locale.example1}`,
+          },
+          status: 'success',
+        },
+        {
+          id: '2',
+          message: {
+            role: 'assistant',
+            content: `根据你给的 skeleton DOM 结构
+### component
+PickerView
+
+### 样式特点
+1. 轮子区域（\`wheelWrapper\`）...
+2. 中间高亮区(\`maskMiddle\`) ...
+3. ...
+
+### styles
+<pre>
+{
+  itemActiveStyle: {
+    color: '#108ee9',
+    fontWeight: 'bold',
+  },
+  maskMiddle: {
+    backgroundColor: 'rgba(51,51,51,0.1)',
+    borderRadius: 10,
+  }
+}
+</pre>
+`,
+          },
+          status: 'success',
+        },
+      ],
+      // @ts-ignore
+      requestFallback: (_, { error, errorInfo, messageInfo }) => {
+        // 请求失败时的回退处理：区分中止错误和其他错误
+        // Fallback handling for request failure: distinguish between abort error and other errors
+        if (error.name === 'AbortError') {
+          return {
+            content: messageInfo?.message?.content || locale.requestAborted,
+            role: 'assistant',
+          }
+        }
         return {
-          content: messageInfo?.message?.content || locale.requestAborted,
+          content: errorInfo?.error?.message || locale.requestFailed,
           role: 'assistant',
         }
-      }
-      return {
-        content: errorInfo?.error?.message || locale.requestFailed,
-        role: 'assistant',
-      }
-    },
-    requestPlaceholder: () => {
-      // 请求占位符：在等待响应时显示等待消息
-      // Request placeholder: display waiting message while waiting for response
-      return {
-        content: locale.waiting,
-        role: 'assistant',
-      }
-    },
-  })
-
-  // 添加用户消息：向消息列表中添加一条用户消息
-  // Add user message: add a user message to the message list
-  const addUserMessage = () => {
-    setMessages([
-      ...messages,
-      {
-        id: Date.now(),
-        message: { role: 'user', content: locale.addUserMessage },
-        status: 'success',
       },
-    ])
-  }
-
-  // 添加AI消息：向消息列表中添加一条AI助手消息
-  // Add AI message: add an AI assistant message to the message list
-  const addAIMessage = () => {
-    setMessages([
-      ...messages,
-      {
-        id: Date.now(),
-        message: { role: 'assistant', content: locale.addAIMessage },
-        status: 'success',
-      },
-    ])
-  }
-
-  // 添加系统消息：向消息列表中添加一条系统消息
-  // Add system message: add a system message to the message list
-  const addSystemMessage = () => {
-    setMessages([
-      ...messages,
-      {
-        id: Date.now(),
-        message: { role: 'system', content: locale.addSystemMessage },
-        status: 'success',
-      },
-    ])
-  }
-
-  // 编辑最后一条消息：修改消息列表中最后一条消息的内容
-  // Edit last message: modify the content of the last message in the message list
-  const editLastMessage = () => {
-    const lastMessage = messages[messages.length - 1]
-    setMessage(lastMessage.id, {
-      message: {
-        role: lastMessage.message.role,
-        content: locale.editLastMessage,
+      requestPlaceholder: () => {
+        // 请求占位符：在等待响应时显示等待消息
+        // Request placeholder: display waiting message while waiting for response
+        return {
+          content: locale.waiting,
+          role: 'assistant',
+        }
       },
     })
-  }
 
   const onPasteFile = async (files: FileList) => {
     // @ts-ignore
@@ -273,10 +236,10 @@ const App = () => {
   }
 
   const onSubmit = async (nextContent: string) => {
-    let systemPrompt = ''
+    let aiPrompt = ''
     let fileContent = ''
     if (files.length > 0) {
-      systemPrompt =
+      aiPrompt =
         prefixPrompt +
         (await ui2stylesPrompt.format({
           humanPrompt: nextContent,
@@ -292,7 +255,7 @@ const App = () => {
         }
       }
     } else {
-      systemPrompt =
+      aiPrompt =
         prefixPrompt +
         (await humanTextPrompt.format({
           humanPrompt: nextContent,
@@ -302,8 +265,8 @@ const App = () => {
 
     const enhanceMessages = [
       {
-        role: 'system', // 🚩预设system增强prompt
-        content: systemPrompt,
+        role: 'ai', // 🚩预设ai增强prompt
+        content: aiPrompt,
       },
     ]
     if (fileContent) {
@@ -335,47 +298,71 @@ const App = () => {
     setAttachmentsOpen(false)
   }
 
-  return (
-    <Flex vertical gap="middle">
-      {/* 状态和控制区域：显示当前状态并提供操作按钮 */}
-      {/* Status and control area: display current status and provide action buttons */}
-      <Flex vertical gap="middle">
-        <div>
-          {locale.currentStatus}{' '}
-          {isRequesting
-            ? locale.requesting
-            : messages.length === 0
-              ? locale.noMessages
-              : locale.qaCompleted}
-        </div>
-        <Flex align="center" gap="middle">
-          {/* 中止按钮：仅在请求进行中时可用 */}
-          {/* Abort button: only available when request is in progress */}
-          <Button disabled={!isRequesting} onClick={abort}>
-            {locale.abort}
-          </Button>
-          <Button onClick={addUserMessage}>{locale.addUserMessage}</Button>
-          <Button onClick={addAIMessage}>{locale.addAIMessage}</Button>
-          <Button onClick={addSystemMessage}>{locale.addSystemMessage}</Button>
-          {/* 编辑按钮：仅在存在消息时可用 */}
-          {/* Edit button: only available when messages exist */}
-          <Button disabled={!messages.length} onClick={editLastMessage}>
-            {locale.editLastMessage}
-          </Button>
-          <Button
-            disabled={!messages.length}
-            onClick={() => {
-              removeMessage(messages?.[0]?.id)
-            }}>
-            {locale.deleteFirstMessage}
-          </Button>
-        </Flex>
-      </Flex>
+  // ========================== 预设提示词 ==========================
+  const PresetPrompts = ({ humanPrompt }: { humanPrompt: string }) => {
+    const [isModalOpen, setIsModalOpen] = React.useState(false)
+    const [content, setContent] = React.useState('')
+    React.useEffect(() => {
+      getContent()
+      async function getContent() {
+        setContent(
+          prefixPrompt +
+            (await ui2stylesPrompt.format({
+              humanPrompt,
+            })) +
+            suffixPrompt,
+        )
+      }
+    }, [])
+    return (
+      <>
+        <Button
+          type="link"
+          icon={<InfoCircleOutlined />}
+          style={{ float: 'right', marginTop: -20 }}
+          onClick={() => setIsModalOpen(true)}>
+          {locale.viewPresetPrompts}
+        </Button>
+        <Modal
+          title={locale.modalTitle}
+          width={1000}
+          footer={
+            <>
+              <Button
+                type="default"
+                onClick={async () => {
+                  await copy(content)
+                  message.success(locale.modalCopySuccess)
+                }}
+                icon={<CopyOutlined />}>
+                {locale.modalCopy}
+              </Button>
+              <Button type="primary" onClick={() => setIsModalOpen(false)}>
+                {locale.modalClose}
+              </Button>
+            </>
+          }
+          styles={{ body: { overflow: 'auto', maxHeight: 500 } }}
+          open={isModalOpen}
+          onCancel={() => setIsModalOpen(false)}>
+          <pre>{content}</pre>
+        </Modal>
+      </>
+    )
+  }
 
-      {/* 消息列表：显示所有聊天消息，包括历史消息 */}
-      {/* Message list: display all chat messages, including historical messages */}
+  // ========================== chatHeader ==========================
+  const chatHeader = (
+    <div className="chatHeader">
+      ✨ {locale.aiCopilot}
+    </div>
+  );
+
+  return (
+    <Flex vertical  style={{ height: '100%' }}>
+      {chatHeader}
       <Bubble.List
-        style={{ height: 500 }}
+        style={{ flex: 1, overflow: 'auto', padding: '0 15px' }}
         role={role}
         items={messages.map(({ id, message, status }) => ({
           key: id,
@@ -383,8 +370,10 @@ const App = () => {
           status: status,
           loading: status === 'loading',
           content: message.content,
-          // 为助手消息添加重试按钮
-          // Add retry button for assistant messages
+          footer:
+            message.role === 'user' ? (
+              <PresetPrompts humanPrompt={message.content} />
+            ) : undefined,
           components:
             message.role === 'assistant'
               ? {

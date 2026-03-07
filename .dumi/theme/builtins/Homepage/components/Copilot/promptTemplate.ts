@@ -7,8 +7,9 @@ export const prefixPrompt = `
 这是 @ant-design/react-native (antd-rn) 的大模型文档：
 https://rn.mobile.ant.design/llms.txt
 
-该文档遵循 https://llmstxt.org/ 格式，其中：
+文档内容包含：
 ## Components 列表包含所有组件名称。
+## semantic 文档包含所有组件的样式语义。
 
 你的角色：
 你是一个 **antd-rn 组件库专家**，非常熟悉所有组件的结构、样式语义和 semantic token。
@@ -155,6 +156,7 @@ https://rn.mobile.ant.design/components/<component>/semantic.md
 
 示例：
 
+根据你给的 skeleton DOM 结构
 ## component
 input
 
@@ -166,8 +168,10 @@ input
 5. 文本颜色较深
 
 ## styles
-{
-  "wrappper": {...},
-  "wheelWrapper": {...},
-}
+<pre>
+  {
+    "wrappper": {...},
+    "wheelWrapper": {...},
+  }
+</pre>
 `

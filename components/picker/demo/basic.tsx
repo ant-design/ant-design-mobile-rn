@@ -10,8 +10,6 @@ import { district } from 'antd-mobile-demo-data'
 import React, { useState } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 
-const data = require('./data.json')
-
 const CustomChildren = (props: any) => (
   <TouchableOpacity onPress={props.onPress}>
     <View
@@ -57,7 +55,7 @@ function BasicDemo() {
 
       {/* visible控制显示/隐藏 */}
       <Picker
-        data={data}
+        data={district}
         cols={3}
         onChange={setValue}
         onVisibleChange={(v) => {
@@ -99,7 +97,7 @@ export default class PopupExample extends React.Component<any, any> {
       <Provider>
         <List renderHeader={'List Children'}>
           <Picker
-            data={data}
+            data={district}
             cols={3}
             value={this.state.value}
             onChange={this.onChange}>
