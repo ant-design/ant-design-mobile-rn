@@ -28,7 +28,7 @@ const Content: FC<{ children: ReactNode }> = (props) => {
       <h1 className="section-title">
         {frontmatter.title} {frontmatter.subtitle}
       </h1>
-      <div className="markdown">
+      {pathname.startsWith('/components') && !pathname.startsWith('/components/changelog') && <div className="markdown">
         <blockquote style={{fontStyle: 'normal'}}>
           <p>
             {locale.llms}:
@@ -45,7 +45,7 @@ const Content: FC<{ children: ReactNode }> = (props) => {
             </a>
           </p>
         </blockquote>
-      </div>
+      </div>}
       {props.children}
     </div>
   )
