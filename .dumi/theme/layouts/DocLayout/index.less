@@ -19,21 +19,8 @@
   padding: 0
 }
 
-[data-homepage='true'] article {
-  background-color: #eff3f6;
-}
-
-[data-homepage='true'] .dumi-default-previewer {
-  margin-top: 0;
-  max-width: 992px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #ffffff;
-
-  @media only screen and (min-width: 0) and (max-width: 992px) {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
+[data-homepage='true'] .dumi-mobile-previewer {
+  display: none;
 }
 
 .dumi-default-doc-layout {
@@ -41,7 +28,6 @@
 }
 .dumi-default-doc-layout > main {
   padding: 0;
-  margin-top: 32px;
   max-width: none;
   position: relative;
 }
@@ -55,6 +41,10 @@
 }
 [data-homepage='true'] .section-title {
   display: none;
+}
+
+[data-articlepage='true'] .dumi-default-doc-layout > main {
+  margin-top: 32px;
 }
 
 [data-articlepage='true'] .dumi-default-content-footer {

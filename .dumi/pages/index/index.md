@@ -2,10 +2,6 @@
 title: Ant Design Mobile RN - Mobile Design Specification
 ---
 
-<HomeHero></HomeHero>
+<Homepage></Homepage>
 
-
-<code src="./codes/code.tsx" ></code>
-
-
-<HomeSections></HomeSections>
+<code src="./codes/code.tsx"></code>

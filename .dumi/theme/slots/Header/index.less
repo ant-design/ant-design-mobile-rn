@@ -1,0 +1,120 @@
+.custom-header {
+  height: 64px;
+  background: #fff;
+  box-shadow: 0 2px 8px #f0f1f2;
+  position: relative;
+  z-index: 10;
+  max-width: 100%;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: sticky;
+  top: 0;
+
+  .header-row {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin: 0 auto;
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 50%;
+    }
+  }
+
+  #logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      height: 32px;
+      margin-right: 16px;
+    }
+
+    .logo-title {
+      font-family:
+        Raleway,
+        'Hiragino Sans GB',
+        sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #1890ff;
+      white-space: nowrap;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #search-box {
+    margin-left: 30px;
+  }
+
+  .menu-site {
+    border-bottom: transparent;
+    font-size: 14px;
+    background: transparent;
+    min-width: 50%;
+    justify-content: flex-end;
+
+    .ant-menu-item {
+      height: 64px;
+      line-height: 64px;
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 24px;
+  }
+
+  .nav-phone-icon {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    font-size: 20px;
+    z-index: 1;
+    cursor: pointer;
+    color: #000;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+}
+
+// Mobile Drawer
+.mobile-menu-drawer {
+  .mobile-menu-content {
+    padding: 16px;
+
+    .mobile-menu-actions {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f0f0f0;
+      align-items: center;
+    }
+  }
+}

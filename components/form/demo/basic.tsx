@@ -9,12 +9,12 @@ import {
   Switch,
 } from '@ant-design/react-native'
 import type { FormProps } from '@ant-design/react-native/lib/form'
+import { district } from 'antd-mobile-demo-data'
 import React from 'react'
 import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
 
-const Col = Row.Item
 
-const data = require('../../picker/demo/data.json')
+const Col = Row.Item
 
 type FieldType = {
   username?: string
@@ -68,7 +68,7 @@ const FormExample: React.FC = () => {
               onPress={() => {
                 pickerRef.current.toggle()
               }}>
-              <Picker data={data} cols={3} ref={pickerRef}>
+              <Picker data={district} cols={3} ref={pickerRef}>
                 {({ extra, value, toggle }) => (
                   <Input
                     value={value?.length ? extra : undefined}
