@@ -2,7 +2,7 @@ import { FileTextOutlined } from '@ant-design/icons'
 import { useLocation, useRouteMeta, useSidebarData, useSiteData } from 'dumi'
 import React, { type FC, type ReactNode } from 'react'
 import './index.less'
-import './markdown.less'
+import Markdown from './Markdown'
 
 const Content: FC<{ children: ReactNode }> = (props) => {
   const sidebar = useSidebarData()
@@ -47,6 +47,7 @@ const Content: FC<{ children: ReactNode }> = (props) => {
         </blockquote>
       </div>}
       {props.children}
+      <Markdown />
     </div>
   )
 }
