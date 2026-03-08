@@ -20,12 +20,7 @@ import copy from 'antd/es/_util/copy'
 import React from 'react'
 
 import { demoPng } from './demoPng'
-import {
-  humanTextPrompt,
-  prefixPrompt,
-  suffixPrompt,
-  ui2stylesPrompt,
-} from './promptTemplate'
+import { systemPrompt, userPrompt } from './promptTemplate'
 
 /**
  * 🔔 请替换 BASE_URL、PATH、MODEL、API_KEY 为您自己的值
@@ -236,16 +231,15 @@ PickerView
   }
 
   const onSubmit = async (nextContent: string) => {
-    let aiPrompt = ''
+    const enhanceMessages = [
+      {
+        role: 'system', // 🚩预设system增强prompt
+        content: systemPrompt,
+      },
+    ]
+
     let fileContent = ''
     if (files.length > 0) {
-      aiPrompt =
-        prefixPrompt +
-        (await ui2stylesPrompt.format({
-          humanPrompt: nextContent,
-        })) +
-        suffixPrompt
-
       // 添加图片
       for (const file of files) {
         const originFile = file.originFileObj as File
@@ -254,27 +248,14 @@ PickerView
           fileContent += `<img src='data:image/png;base64,${base64}' />\n\n`
         }
       }
-    } else {
-      aiPrompt =
-        prefixPrompt +
-        (await humanTextPrompt.format({
-          humanPrompt: nextContent,
-        })) +
-        suffixPrompt
     }
-
-    const enhanceMessages = [
-      {
-        role: 'ai', // 🚩预设ai增强prompt
-        content: aiPrompt,
-      },
-    ]
-    if (fileContent) {
-      enhanceMessages.push({
-        role: 'user',
-        content: fileContent,
-      })
-    }
+    const prompt = await userPrompt.format({
+      humanPrompt: fileContent + nextContent,
+    })
+    enhanceMessages.push({
+      role: 'user',
+      content: prompt,
+    })
     // 发送增强后的内容给 AI
     onRequest({
       messages: enhanceMessages,
@@ -301,19 +282,18 @@ PickerView
   // ========================== 预设提示词 ==========================
   const PresetPrompts = ({ humanPrompt }: { humanPrompt: string }) => {
     const [isModalOpen, setIsModalOpen] = React.useState(false)
-    const [content, setContent] = React.useState('')
+    const [copyPrompt, setCopyPrompt] = React.useState('')
+
     React.useEffect(() => {
-      getContent()
       async function getContent() {
-        setContent(
-          prefixPrompt +
-            (await ui2stylesPrompt.format({
-              humanPrompt,
-            })) +
-            suffixPrompt,
-        )
+        const prompt = await userPrompt.format({
+          humanPrompt,
+        })
+        setCopyPrompt(systemPrompt + prompt)
       }
-    }, [])
+      getContent()
+    }, [humanPrompt])
+
     return (
       <>
         <Button
@@ -331,7 +311,7 @@ PickerView
               <Button
                 type="default"
                 onClick={async () => {
-                  await copy(content)
+                  await copy(copyPrompt)
                   message.success(locale.modalCopySuccess)
                 }}
                 icon={<CopyOutlined />}>
@@ -345,21 +325,17 @@ PickerView
           styles={{ body: { overflow: 'auto', maxHeight: 500 } }}
           open={isModalOpen}
           onCancel={() => setIsModalOpen(false)}>
-          <pre>{content}</pre>
+          <pre>{copyPrompt}</pre>
         </Modal>
       </>
     )
   }
 
   // ========================== chatHeader ==========================
-  const chatHeader = (
-    <div className="chatHeader">
-      ✨ {locale.aiCopilot}
-    </div>
-  );
+  const chatHeader = <div className="chatHeader">✨ {locale.aiCopilot}</div>
 
   return (
-    <Flex vertical  style={{ height: '100%' }}>
+    <Flex vertical style={{ height: '100%' }}>
       {chatHeader}
       <Bubble.List
         style={{ flex: 1, overflow: 'auto', padding: '0 15px' }}

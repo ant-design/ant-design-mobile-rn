@@ -145,6 +145,7 @@ export default function Header() {
       mode={menuMode}
       selectedKeys={[activeMenuItem]}
       items={menuItems}
+      onClick={() => setMenuVisible(false)}
       id="nav"
       key="nav"
     />,
@@ -154,10 +155,14 @@ export default function Header() {
     <header id="header" className={headerClassName}>
       {menuMode === 'inline' ? (
         <>
-          <MenuOutlined
+          <button
+            type="button"
             className="nav-phone-icon"
-            onClick={() => setMenuVisible(true)}
-          />
+            aria-label="打开导航菜单"
+            onClick={() => setMenuVisible(true)}>
+            <MenuOutlined />
+          </button>
+
           <Drawer
             title={null}
             placement="right"

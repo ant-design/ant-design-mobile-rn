@@ -11,14 +11,22 @@ export default function Copilot(props: any) {
         defaultSize={250}
         min="30%"
         max="70%"
-        style={{ overflow: 'hidden', background: '#ffffff' }}>
-          <div className="chatHeader" style={{ background: '#f8f8f8' }}>
-            <img alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" />
-            <span>Ant Design Mobile RN</span>
-          </div>
+        style={{ overflow: 'hidden' }}>
+        <div className="chatHeader" style={{ background: '#f8f8f8' }}>
+          <img
+            alt="logo"
+            src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+          />
+          <span>Ant Design Mobile RN</span>
+        </div>
         {props.iframe ? (
           <iframe
-            style={{ width: '100%', height: '100%', border: 'none' }}
+            style={{
+              width: '100%',
+              height: 745,
+              overflow: 'auto',
+              border: 'none',
+            }}
             src={props.demoUrl}></iframe>
         ) : (
           liveDemoNode || props.children

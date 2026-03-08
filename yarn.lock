@@ -3812,13 +3812,21 @@
   dependencies:
     "@types/react" "^17"
 
-"@types/react@^17", "@types/react@^17.0.85", "@types/react@16 || 17 || 18 || 19":
+"@types/react@^17":
   version "17.0.91"
   resolved "https://registry.npmjs.org/@types/react/-/react-17.0.91.tgz"
   integrity sha512-xauZca6qMeCU3Moy0KxCM9jtf1vyk6qRYK39Ryf3afUqwgNUjRIGoDdS9BcGWgAMGSg1hvP4XcmlYrM66PtqeA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "^0.16"
+    csstype "^3.2.2"
+
+"@types/react@^18.3.28", "@types/react@16 || 17 || 18 || 19":
+  version "18.3.28"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.28.tgz"
+  integrity sha512-z9VXpC7MWrhfWipitjNdgCauoMLRdIILQsAEV+ZesIzBq/oUlxk0m3ApZuMFCXdnS4U7KrI+l3WRUEGQ8K1QKw==
+  dependencies:
+    "@types/prop-types" "*"
     csstype "^3.2.2"
 
 "@types/resolve@^1.20.6":
