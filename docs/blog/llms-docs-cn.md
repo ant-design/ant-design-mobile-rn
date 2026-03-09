@@ -228,3 +228,5 @@ LLM 生成代码
 **给 AI 看的文档**
 
 `semantic.md` 正是连接组件实现与 LLM 理解之间的桥梁。
+
+> 讨论区:  https://github.com/ant-design/ant-design-mobile-rn/discussions/1470
