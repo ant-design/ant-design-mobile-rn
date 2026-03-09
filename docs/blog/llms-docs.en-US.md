@@ -244,3 +244,5 @@ but also:
 **documentation for AI**
 
 `semantic.md` serves as the bridge between component implementation and LLM understanding.
+
+> discussions:  https://github.com/ant-design/ant-design-mobile-rn/discussions/1470

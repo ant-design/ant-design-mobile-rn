@@ -113,7 +113,7 @@
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",
-    "srclint": "eslint site scripts --ext '.js,.jsx' --fix",
+    "srclint": "eslint scripts --ext '.js,.jsx' --fix",
     "tslint": "eslint components --fix && npm run compile && rm -rf lib",
     "applint": "eslint rn-kitchen-sink --ext '.js' --fix",
     "pre-publish": "npm run test:all",
@@ -126,8 +126,7 @@
     "watch-tsc": "tsc --watch",
     "clean": "antd-tools run clean",
     "start": "cross-env PORT=8003 dumi dev",
-    "site": "cross-env PUBLIC_PATH=ant-design-mobile-rn dumi build && cp CNAME _site",
-    "deploy": "npm run clean && npm run site",
+    "deploy": "dumi build && cp CNAME _site/CNAME && cp .dumi/_llms/_config.yml _site/_config.yml && gh-pages -d _site",
     "pub": "cross-env BABEL_ENV=dist antd-tools run pub",
     "rn-start": "node scripts/start.js",
     "ios": "concurrently \"npm run watch-tsc\" \"npm run _ios\"",
@@ -143,7 +142,7 @@
     "components/**/*.tsx": [
       "npm run lint-staged:ts"
     ],
-    "{tests,site,scripts,components}/**/*.{js,jsx}": [
+    "{tests,scripts,components}/**/*.{js,jsx}": [
       "npm run lint-staged:es"
     ]
   },
