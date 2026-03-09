@@ -1,0 +1,53 @@
+# WingBlank
+
+Layout controls
+
+## Examples
+
+```tsx
+import { WhiteSpace, WingBlank } from '@ant-design/react-native'
+import React from 'react'
+import { Text, View } from 'react-native'
+
+const PlaceHolder = (props: any) => (
+  <View
+    style={{
+      backgroundColor: '#fff',
+      height: 30,
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+    {...props}>
+    <Text style={{ color: '#bbb' }}>Block</Text>
+  </View>
+)
+
+export default class WingBlankExample extends React.Component<any, any> {
+  render() {
+    return (
+      <View>
+        <WhiteSpace />
+        <WingBlank>
+          <PlaceHolder />
+        </WingBlank>
+
+        <WhiteSpace size="lg" />
+        <WingBlank size="md">
+          <PlaceHolder />
+        </WingBlank>
+
+        <WhiteSpace size="lg" />
+        <WingBlank size="sm">
+          <PlaceHolder />
+        </WingBlank>
+      </View>
+    )
+  }
+}
+```
+
+## API
+
+Properties | Descrition | Type | Default
+-----------|------------|------|--------
+| size    | left and right blank space, optional values:`sm`,`md`,`lg`  | string |  `lg`  |

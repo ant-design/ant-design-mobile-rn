@@ -1,0 +1,96 @@
+# DatePicker
+
+Used to select a date or time.
+
+### Rules
+- At most accurate to seconds.
+
+## Examples
+
+```tsx
+import { DatePicker, List, Provider } from '@ant-design/react-native'
+import React from 'react'
+
+export default class PopupExample extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      value: undefined,
+    }
+  }
+
+  onChange = (value: any) => {
+    this.setState({ value })
+  }
+
+  render() {
+    return (
+      <Provider>
+        <List>
+          <DatePicker
+            value={this.state.value}
+            precision="day"
+            minDate={new Date(2015, 7, 6)}
+            maxDate={new Date(2026, 11, 3)}
+            onChange={this.onChange}
+            format="YYYY-MM-DD">
+            <List.Item arrow="horizontal">Select Date</List.Item>
+          </DatePicker>
+        </List>
+      </Provider>
+    )
+  }
+}
+```
+
+## API
+
+```ts
+type Precision =
+  | 'week'
+  | 'week-day'
+  | 'year'
+  | 'month'
+  | 'day'
+  | 'hour'
+  | 'minute'
+  | 'second'
+
+type DatePickerFilter = Partial<
+  Record<
+    Precision,
+    (
+      val: number,
+      extend: {
+        date: Date
+      }
+    ) => boolean
+  >
+>
+```
+
+Properties | Descrition | Type | Default | Version
+-----------|------------|------|--------|--------
+| precision  | Precision | `Precision` | `day` |`5.1.0`|
+| value | the currently selected value | Date | - ||
+| defaultValue | the default selected value | Date | - ||
+| minDate   | minimum date | Date  |  2000-1-1  ||
+| maxDate   | maximum date | Date  |  2030-1-1  ||
+| onChange  | change handler | `(value: Date) => void` |  -  ||
+| onValueChange | fire when picker col change | `(value: Date, index: number) => void` | - ||
+| renderLabel | The function to custom rendering the label shown on a column. `type` means any value in `precision`, `data` means the default number | `(type:Precision / 'now', data: number) => ReactNode` | - ||
+| locale | international, can override the configuration of the global [Provider](/components/provider)'s `locale` | Object: Object: {okText, dismissText, extra, `DatePickerLocale:{ year,month,day,hour,minute,am,pm }`} | - |
+| filter  | Filter available time	 | `DatePickerFilter` | - | `5.1.0` |
+
+
+In addition, the following properties of [Picker](/components/picker) are supported: `onPickerChange` `onVisibleChange` `style` `styles` `itemStyle` `itemHeight` `numberOfLines` `title` `okText` `dismissText` `okButtonProps` `dismissButtonProps` `visible` `children` `renderMaskTop` `renderMaskBottom`
+
+### Children
+Same as [Picker](/components/picker#children), except type `format` is different：
+
+Properties | Descrition | Type | Default
+----|-----|------|------
+| format  | format the selected value |`(value: Date) => date string` | import [Day.js Format](https://day.js.org/docs/en/parse/string-format), precision:`YYYY-MM-DD`,`YYYY-MM-DD HH:mm:ss`|
+
+### Ref
+Same as [Picker](/components/picker#ref)

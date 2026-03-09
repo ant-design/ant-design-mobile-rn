@@ -1,0 +1,71 @@
+# Accordion
+
+> `5.2.1`已停止更新，推荐使用 [components/Collapse](/components/collapse-cn)
+
+可以折叠/展开的内容区域。
+
+### 规则
+- 对复杂区域进行分组和隐藏。
+- 通常，一次只允许单个内容区域展开；特殊情况，多个内容区域可以同时展开。
+
+## 代码演示
+
+```tsx
+import { Accordion, List } from '@ant-design/react-native'
+import React from 'react'
+import { View } from 'react-native'
+
+export default class AccordionExmple extends React.Component<any, any> {
+  state = {
+    activeSections: [2, 0],
+  }
+  onChange = (activeSections: number[]) => {
+    this.setState({ activeSections })
+  }
+  render() {
+    return (
+      <View style={{ marginTop: 80, marginBottom: 10 }}>
+        <Accordion
+          onChange={this.onChange}
+          activeSections={this.state.activeSections}>
+          <Accordion.Panel header="Title 1">
+            <List>
+              <List.Item>Content 1</List.Item>
+              <List.Item>Content 2</List.Item>
+              <List.Item>Content 3</List.Item>
+            </List>
+          </Accordion.Panel>
+          <Accordion.Panel header="Title 2">
+            this is panel content2 or other
+          </Accordion.Panel>
+          <Accordion.Panel header="Title 3">
+            Text text text text text text text text text text text text text
+            text text
+          </Accordion.Panel>
+        </Accordion>
+      </View>
+    )
+  }
+}
+```
+
+## API
+
+### Accordion
+
+| 属性              | 说明                                    | 类型                      | 默认值 |
+| ----------------- | --------------------------------------- | ------------------------- | ------ |
+| onChange(indexes) | 当section(s)发生变化的时候执行        | (indexes: number[])=>void | -      |
+| activeSections    | 初始化选中`sections` ，留空关闭所有面板 | number[]                  | []     |
+
+更多自定义属性请参考 https://github.com/oblador/react-native-collapsible#properties-1
+
+
+### Accordion.Panel
+
+| 属性   | 说明           | 类型                    | 默认值 |
+| ------ | -------------- | ----------------------- | ------ |
+| key    | 对应 activeKey | String                  | 无     |
+| header | 面板头内容     | React.Element or String | 无     |
+
+注意: 目前暂不支持嵌套使用
