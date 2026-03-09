@@ -126,7 +126,7 @@
     "watch-tsc": "tsc --watch",
     "clean": "antd-tools run clean",
     "start": "cross-env PORT=8003 dumi dev",
-    "deploy": "dumi build && cp CNAME _site/CNAME && cp .dumi/_llms/_config.yml _site/_config.yml && gh-pages -d _site",
+    "deploy": "dumi build && cp CNAME _site/CNAME && touch _site/.nojekyll && gh-pages -d _site",
     "pub": "cross-env BABEL_ENV=dist antd-tools run pub",
     "rn-start": "node scripts/start.js",
     "ios": "concurrently \"npm run watch-tsc\" \"npm run _ios\"",
