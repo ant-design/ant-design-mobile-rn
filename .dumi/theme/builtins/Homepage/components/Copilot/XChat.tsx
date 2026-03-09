@@ -262,8 +262,14 @@ PickerView
       for (const file of files) {
         const originFile = file.originFileObj as File
         if (originFile) {
-          const dataUrl = await fileToDataUrl(originFile)
-          fileContent += `<img src='${dataUrl}' />\n\n`
+          try {
+            const dataUrl = await fileToDataUrl(originFile)
+            fileContent += `<img src='${dataUrl}' />\n\n`
+          } catch (error) {
+            console.error('文件读取失败:', error)
+            message.error(locale.requestFailed)
+            return
+          }
         }
       }
     }
@@ -287,7 +293,7 @@ PickerView
     setMessages([
       ...messages,
       {
-        id: Date.now(),
+        id: String(Date.now()),
         message: { role: 'user', content: fileContent + nextContent },
         status: 'success',
       },

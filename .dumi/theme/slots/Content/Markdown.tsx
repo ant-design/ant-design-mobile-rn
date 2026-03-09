@@ -17,60 +17,59 @@ const GlobalStyle: React.FC = () => {
   return (
     <Global
       styles={css`
-        @layer global {
-          body,
-          div,
-          dl,
-          dt,
-          dd,
-          ul,
-          ol,
-          li,
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6,
-          pre,
-          code,
-          form,
-          fieldset,
-          legend,
-          input,
-          textarea,
-          p,
-          blockquote,
-          th,
-          td,
-          hr,
-          button,
-          article,
-          aside,
-          details,
-          figcaption,
-          figure,
-          footer,
-          header,
-          hgroup,
-          menu,
-          nav,
-          section {
+       @layer global {
+         .markdown :where(
+           dl,
+           dt,
+           dd,
+           ul,
+           ol,
+           li,
+           h1,
+           h2,
+           h3,
+           h4,
+           h5,
+           h6,
+           pre,
+           code,
+           form,
+           fieldset,
+           legend,
+           input,
+           textarea,
+           p,
+           blockquote,
+           th,
+           td,
+           hr,
+           button,
+           article,
+           aside,
+           details,
+           figcaption,
+           figure,
+           footer,
+           header,
+           hgroup,
+           menu,
+           nav,
+           section
+         ) {
             margin: 0;
             padding: 0;
           }
 
-          ul,
-          ol {
+          .markdown :where(ul, ol) {
             list-style: none;
           }
 
-          img {
+          .markdown img {
             vertical-align: middle;
             border-style: none;
           }
 
-          [id] {
+          .markdown [id] {
             scroll-margin-top: 100px;
           }
 
@@ -102,13 +101,17 @@ const GlobalStyle: React.FC = () => {
           color: ${token.colorPrimary};
           text-decoration: none;
           background-color: transparent;
-          outline: none;
           cursor: pointer;
           transition: color 0.3s;
           webkit-text-decoration-skip: objects;
+
+          &:focus-visible {
+            outline: 2px solid ${token.colorPrimary};
+            outline-offset: 2px;
+          }
+
           &:hover {
             color: ${token.colorPrimaryHover};
-            outline: 0;
           }
         }
 
