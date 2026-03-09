@@ -1,5 +1,5 @@
-import { PromptTemplate } from "@langchain/core/prompts"
-import { z } from "zod"
+import { PromptTemplate } from '@langchain/core/prompts'
+import { z } from 'zod'
 
 /**
  * System Prompt
@@ -117,34 +117,42 @@ export const userPrompt = new PromptTemplate({
 - 只输出需要修改的字段
 - JSON 必须合法
 `,
-  inputVariables: ["humanPrompt"],
+  inputVariables: ['humanPrompt'],
 })
 
-export const stylesSchema = z.record(
-  z.record(z.any())
-)
+export const stylesSchema = z.record(z.record(z.any()))
 
 export const responseSchema = z.object({
   component: z.string(),
-  styles: stylesSchema
+  styles: stylesSchema,
 })
 
 export function parseStyles(content: string) {
-
   const componentMatch = content.match(/## component\s+(\w+)/)
 
   const stylesMatch = content.match(/## styles\s+([\s\S]+)/)
 
   if (!componentMatch || !stylesMatch) {
-    throw new Error("AI 输出格式错误")
+    throw new Error('AI 输出格式错误')
   }
 
   const component = componentMatch[1]
 
-  const styles = JSON.parse(stylesMatch[1])
+  let styles: Record<string, any>
+  try {
+    // 尝试提取 JSON 代码块或直接解析
+    let jsonStr = stylesMatch[1].trim()
+    const codeBlockMatch = jsonStr.match(/```(?:json)?\s*([\s\S]*?)```/)
+    if (codeBlockMatch) {
+      jsonStr = codeBlockMatch[1].trim()
+    }
+    styles = JSON.parse(jsonStr)
+  } catch (e) {
+    throw new Error(`AI 输出的 styles JSON 格式无效: ${(e as Error).message}`)
+  }
 
   return {
     component,
-    styles
+    styles,
   }
 }

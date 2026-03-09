@@ -10,7 +10,7 @@ const GlobalStyle: React.FC = () => {
     siteMarkdownCodeBgDark: '#000',
     codeFamily: `'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace`,
   }
-  const antCls = 'ant'
+  const antCls = '.ant'
 
   const demoGridColor = '#1677ff'
 

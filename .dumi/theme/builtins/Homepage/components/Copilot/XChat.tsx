@@ -20,7 +20,7 @@ import copy from 'antd/es/_util/copy'
 import React from 'react'
 
 import { demoPng } from './demoPng'
-import { systemPrompt, userPrompt } from './promptTemplate'
+import { parseStyles, systemPrompt, userPrompt } from './promptTemplate'
 
 /**
  * 🔔 请替换 BASE_URL、PATH、MODEL、API_KEY 为您自己的值
@@ -111,6 +111,22 @@ const App = () => {
           model: MODEL,
           stream: true,
         },
+        callbacks: {
+          onSuccess: (_chunks, _responseHeaders, message) => {
+            try {
+              const { component, styles } = parseStyles(
+                (message && message.message.content) || '',
+              )
+              // TODO-luokun: 根据 component 和 styles 生成样式
+              console.log(component, styles)
+            } catch (error) {
+              console.log(error)
+            }
+          },
+          onError: (error) => {
+            console.log(error)
+          },
+        },
       }),
     }),
   )
@@ -132,28 +148,31 @@ const App = () => {
           id: '2',
           message: {
             role: 'assistant',
-            content: `根据你给的 skeleton DOM 结构
-### component
+            content: `## component
 PickerView
 
-### 样式特点
-1. 轮子区域（\`wheelWrapper\`）...
-2. 中间高亮区(\`maskMiddle\`) ...
-3. ...
+## 样式特点
+- 轮子区域（wheelWrapper）采用垂直方向滚动，每个选项高度固定
+- 中间高亮区（maskMiddle）使用半透明背景突出显示选中项
+- 选中项（itemActiveStyle）文字加粗并使用主题色
+- 整体容器（container）圆角设计，视觉上更柔和
 
-### styles
-<pre>
+## styles
+\`\`\`json
 {
-  itemActiveStyle: {
-    color: '#108ee9',
-    fontWeight: 'bold',
+  "itemActiveStyle": {
+    "color": "#108ee9",
+    "fontWeight": "bold"
   },
-  maskMiddle: {
-    backgroundColor: 'rgba(51,51,51,0.1)',
-    borderRadius: 10,
+  "maskMiddle": {
+    "backgroundColor": "rgba(51,51,51,0.1)",
+    "borderRadius": 10
+  },
+  "container": {
+    "borderRadius": 8
   }
 }
-</pre>
+\`\`\`
 `,
           },
           status: 'success',
@@ -217,13 +236,12 @@ PickerView
     </Sender.Header>
   )
 
-  const fileToBase64 = (file: File): Promise<string> => {
+  const fileToDataUrl = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader()
       reader.onload = () => {
         const result = reader.result as string
-        const base64 = result.split(',')[1]
-        resolve(base64)
+        resolve(result)
       }
       reader.onerror = reject
       reader.readAsDataURL(file)
@@ -244,8 +262,8 @@ PickerView
       for (const file of files) {
         const originFile = file.originFileObj as File
         if (originFile) {
-          const base64 = await fileToBase64(originFile)
-          fileContent += `<img src='data:image/png;base64,${base64}' />\n\n`
+          const dataUrl = await fileToDataUrl(originFile)
+          fileContent += `<img src='${dataUrl}' />\n\n`
         }
       }
     }
