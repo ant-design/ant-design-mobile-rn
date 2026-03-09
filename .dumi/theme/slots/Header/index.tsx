@@ -1,9 +1,12 @@
-import { Button, Col, Drawer, Icon, Menu, Row, Select, Tooltip } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
+import { Button, Drawer, Menu, Select, Tooltip } from 'antd'
 import classNames from 'classnames'
 import { Link, useIntl, useLocation, useSiteData } from 'dumi'
+// import ColorSwitch from 'dumi/theme-default/slots/ColorSwitch'
 import SearchBar from 'dumi/theme-default/slots/SearchBar'
 import React, { useCallback, useEffect, useState } from 'react'
 import * as utils from '../../utils'
+import './index.less'
 
 const antdVersion = require('../../../../package.json').version
 
@@ -11,6 +14,7 @@ export default function Header() {
   const { pathname } = useLocation()
   const intl = useIntl()
   const { themeConfig } = useSiteData()
+  // const [color] = usePrefersColor()
   const [menuVisible, setMenuVisible] = useState(false)
   const [menuMode, setMenuMode] = useState<'horizontal' | 'inline'>(
     'horizontal',
@@ -50,11 +54,10 @@ export default function Header() {
     ...(themeConfig?.docVersions || {}),
     [antdVersion]: antdVersion,
   }
-  const versionOptions = Object.keys(docVersions).map((version) => (
-    <Select.Option value={docVersions[version]} key={version}>
-      {version}
-    </Select.Option>
-  ))
+  const versionOptions = Object.keys(docVersions).map((version) => ({
+    value: docVersions[version],
+    label: version,
+  }))
 
   const module = pathname
     .replace(/(^\/|\/$)/g, '')
@@ -68,11 +71,10 @@ export default function Header() {
 
   const headerClassName = classNames({
     clearfix: true,
-    'home-nav-white': true,
-    'home-page-header': activeMenuItem === 'home',
+    'custom-header': true,
   })
 
-  const langAndVersion = [
+  const actions = [
     <Select
       key="version"
       className="version"
@@ -80,13 +82,13 @@ export default function Header() {
       dropdownMatchSelectWidth={false}
       defaultValue={antdVersion}
       onChange={handleVersionChange}
+      options={versionOptions}
       getPopupContainer={(trigger: HTMLElement) =>
         trigger.parentNode as HTMLElement
-      }>
-      {versionOptions}
-    </Select>,
+      }
+    />,
     <Button
-      ghost
+      type="default"
       size="small"
       onClick={handleLangChange}
       className="header-lang-button"
@@ -94,93 +96,107 @@ export default function Header() {
       {intl.formatMessage({ id: 'app.header.lang' })}
     </Button>,
   ]
-  const menu = [
-    <Menu
-      className="menu-site"
-      mode={menuMode}
-      selectedKeys={[activeMenuItem]}
-      id="nav"
-      key="nav">
-      <Menu.Item key="home">
+
+  const menuItems = [
+    {
+      key: 'home',
+      label: (
         <Link to={utils.getLocalizedPathname('/', isZhCN)}>
           {intl.formatMessage({ id: 'app.header.menu.home' })}
         </Link>
-      </Menu.Item>
-      <Menu.Item key="docs/react">
+      ),
+    },
+    {
+      key: 'docs/react',
+      label: (
         <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN)}>
           {intl.formatMessage({ id: 'app.header.menu.components' })}
         </Link>
-      </Menu.Item>
-      <Menu.Item key="web">
+      ),
+    },
+    {
+      key: 'web',
+      label: (
         <a href="//mobile.ant.design">
           {intl.formatMessage({ id: 'app.header.menu.web' })}
         </a>
-      </Menu.Item>
-      <Menu.Item key="docs/react/support">
+      ),
+    },
+    {
+      key: 'docs/react/support',
+      label: (
         <Tooltip title="Coming Soon">
           <Link to="#">AI+ ✨</Link>
         </Tooltip>
-      </Menu.Item>
-      <Menu.Item key="pc">
+      ),
+    },
+    {
+      key: 'pc',
+      label: (
         <a href="https://github.com/ant-design/ant-design-mobile-rn">github</a>
-      </Menu.Item>
-    </Menu>,
+      ),
+    },
+  ]
+
+  const menu = [
+    <Menu
+      // theme={color}
+      className="menu-site"
+      mode={menuMode}
+      selectedKeys={[activeMenuItem]}
+      items={menuItems}
+      onClick={() => setMenuVisible(false)}
+      id="nav"
+      key="nav"
+    />,
   ]
 
   return (
     <header id="header" className={headerClassName}>
       {menuMode === 'inline' ? (
         <>
-          <Icon
+          <button
+            type="button"
             className="nav-phone-icon"
-            type="menu"
-            onClick={() => setMenuVisible(true)}
-          />
+            aria-label="打开导航菜单"
+            onClick={() => setMenuVisible(true)}>
+            <MenuOutlined />
+          </button>
+
           <Drawer
             title={null}
             placement="right"
             closable
             onClose={() => setMenuVisible(false)}
-            visible={menuVisible}>
-            <div style={{ padding: 16 }}>
-              {langAndVersion}
+            open={menuVisible}
+            className="mobile-menu-drawer">
+            <div className="mobile-menu-content">
+              <div className="mobile-menu-actions">{actions}</div>
               {menu}
             </div>
           </Drawer>
         </>
       ) : null}
-      <Row>
-        <Col xxl={4} xl={5} lg={5} md={8} sm={24} xs={24}>
+      <div className="header-row">
+        <div className="header-left">
           <Link to={utils.getLocalizedPathname('/', isZhCN)} id="logo">
             <img
               alt="logo"
               src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
             />
-            <span>
-              {themeConfig?.name ||
-                themeConfig?.siteTitle ||
-                'Ant Design Mobile RN'}
-            </span>
+            <span className="logo-title">Ant Design Mobile RN</span>
           </Link>
-        </Col>
-        <Col xxl={20} xl={19} lg={19} md={16} sm={0} xs={0}>
           <div id="search-box">
             <SearchBar />
           </div>
-          {menuMode === 'horizontal' && (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-              }}>
-              {menu}
-              <span style={{ width: '16px' }} />
-              {langAndVersion}
-            </div>
-          )}
-        </Col>
-      </Row>
+        </div>
+        {menuMode === 'horizontal' && (
+          <div className="header-right">
+            {menu}
+            <div className="header-actions">{actions}</div>
+          </div>
+        )}
+      </div>
     </header>
   )
 }

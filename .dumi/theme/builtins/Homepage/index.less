@@ -1,0 +1,221 @@
+.home-page-wrapper {
+  color: rgb(49, 70, 89);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', SimSun,
+    sans-serif;
+
+  .wrapper {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* 基础复用的 Section 标题规范 */
+  .home-section-title {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 500;
+  }
+
+  /* 1. Banner Section */
+  .home-s1 {
+    height: 456px;
+    margin-top: 32px;
+    padding: 0 40px;
+    background: transparent;
+
+    .banner-wrapper {
+      position: relative;
+      height: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .banner-wrapper:before {
+      content: '';
+      position: absolute;
+      top: 96px;
+      right: 40px;
+      width: 591px;
+      height: 407px;
+      background: url(https://gw.alipayobjects.com/zos/rmsportal/BYcmVgqmFmqHywEgcyVH.png?x-oss-process=image/resize,w_591/format,webp)
+        no-repeat center / cover;
+    }
+
+    .banner-text-wrapper {
+      position: absolute;
+      top: 140px; /* 原有站点在此处居中 */
+      left: 0;
+
+      .banner-title {
+        font-family: Avenir-Heavy;
+        font-size: 68px;
+        line-height: 76px;
+        color: rgb(13, 26, 38);
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .banner-desc {
+        font-family: PingFangSC-Regular;
+        font-size: 18px;
+        line-height: 38px;
+        color: rgb(49, 70, 89);
+        margin: 16px 0 20px 0;
+      }
+
+      .start-button {
+        display: flex;
+        align-items: center;
+
+        .btn-start {
+          width: 114px;
+          height: 40px;
+          font-size: 16px;
+          margin-right: 16px;
+          border-radius: 4px;
+        }
+
+        .github-btn {
+          display: inline-block;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  /* 保留的 Previewer Section */
+  .home-previewer {
+    background-color: rgb(239, 243, 246);
+    padding: 48px 40px;
+    .home-previewer-header {
+      margin-bottom: 48px;
+    }
+
+    .home-previewer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+
+  /* 2. Features Section */
+  .home-s2 {
+    background-color: #ffffff;
+    padding: 96px 40px;
+
+    .home-section-title {
+      text-align: center;
+      color: rgb(49, 70, 89);
+      margin-bottom: 96px;
+    }
+
+    .feature-col {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 120px;
+        height: 120px;
+        margin-right: 32px;
+        flex-shrink: 0;
+      }
+
+      .des {
+        .des-title {
+          font-size: 20px;
+          line-height: 30px;
+          color: rgb(49, 70, 89);
+          margin-bottom: 16px;
+          font-weight: 500;
+
+          .divider {
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background: #e9e9e9;
+            margin: 0 8px;
+            vertical-align: middle;
+          }
+        }
+
+        .des-desc {
+          font-size: 14px;
+          line-height: 21px;
+          color: rgba(0, 0, 0, 0.43);
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  /* 3. Sketch UI Kit Section */
+  .home-s3 {
+    background-color: rgb(9, 113, 224);
+    background-image: url('https://gw.alipayobjects.com/zos/rmsportal/RJpGlapTtCNoDXvgrMsN.png');
+    background-size: cover;
+    background-position: center;
+    padding: 96px 40px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+
+    .home-section-title {
+      color: rgb(255, 255, 255);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 28px;
+        height: 26px;
+        margin-right: 12px;
+      }
+    }
+
+    .section-desc {
+      font-size: 14px;
+      line-height: 21px;
+      margin-bottom: 30px;
+    }
+
+    .btn-sketch {
+      width: 110px;
+      height: 40px;
+      font-size: 16px;
+      border-radius: 4px;
+      color: #fff;
+      border-color: #fff;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: #fff;
+        color: #fff;
+      }
+    }
+  }
+
+  /* 4. Who is Using Section */
+  .home-s4 {
+    background: #fff;
+    padding: 96px 40px;
+    text-align: center;
+
+    .home-section-title {
+      color: rgb(49, 70, 89);
+      margin-bottom: 80px;
+    }
+
+    .user-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 164px;
+        height: 48px;
+        object-fit: contain;
+      }
+    }
+  }
+}

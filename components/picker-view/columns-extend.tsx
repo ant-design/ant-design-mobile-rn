@@ -1,50 +1,51 @@
 import { PickerColumn, PickerValue } from './PropsType'
 
 export function getColumns(
-  data: PickerColumn | PickerColumn[],
+  d: PickerColumn | PickerColumn[],
   val: PickerValue[],
   cols: number,
   cascade: boolean,
 ): PickerColumn[] {
-  // TODO-luokun: 待回归
-  const d = Array.isArray(data) ? data : Array.from(data as any)
+  try {
+    if (!d || d.length === 0) {
+      return []
+    }
 
-  if (!d || d.length === 0) {
+    if (!cascade) {
+      // when d is PickerColumn
+      if (!Array.isArray(d[0])) {
+        return [d as PickerColumn]
+      }
+      // when d is PickerColumn[]
+      return (d as PickerColumn[]).slice(0, cols!)
+    }
+
+    // cascade data
+    const columns = []
+    let currentOptions = (d as PickerColumn).slice()
+    let selected = val || []
+    let i = 0
+    while (i < cols!) {
+      columns.push(
+        currentOptions.map((option: any) => ({
+          label: option.label,
+          value: option.value,
+        })),
+      )
+      const x = selected[i]
+      const targetOptions =
+        currentOptions.find((option: any) => option.value === x) ||
+        currentOptions[0]
+      if (!targetOptions.children) {
+        break
+      }
+      currentOptions = targetOptions.children
+      i++
+    }
+    return columns
+  } catch (err) {
     return []
   }
-
-  if (!cascade) {
-    // when d is PickerColumn
-    if (!Array.isArray(d[0])) {
-      return [d as PickerColumn]
-    }
-    // when d is PickerColumn[]
-    return (d as PickerColumn[]).slice(0, cols!)
-  }
-
-  // cascade data
-  const columns = []
-  let currentOptions = (d as PickerColumn).slice()
-  let selected = val || []
-  let i = 0
-  while (i < cols!) {
-    columns.push(
-      currentOptions.map((option: any) => ({
-        label: option.label,
-        value: option.value,
-      })),
-    )
-    const x = selected[i]
-    const targetOptions =
-      currentOptions.find((option: any) => option.value === x) ||
-      currentOptions[0]
-    if (!targetOptions.children) {
-      break
-    }
-    currentOptions = targetOptions.children
-    i++
-  }
-  return columns
 }
 
 export function getValueExtend(
@@ -53,37 +54,43 @@ export function getValueExtend(
   cols: number,
   cascade: boolean,
 ) {
-  if (!d || d.length === 0) {
+  try {
+    if (!d || d.length === 0) {
+      return { nextValue: [], extend: [] }
+    }
+
+    if (!cascade) {
+      const columns = getColumns(d, val, cols, false).map(
+        (column: PickerColumn, index: number) =>
+          column.find((item) => item.value === val[index]) ?? column[0],
+      )
+
+      return { nextValue: columns.map((item) => item.value), extend: columns }
+    }
+
+    // cascade data
+    let currentOptions = (d as PickerColumn).slice()
+    const nextValue = []
+    const extend = []
+    let selected = val || []
+    let i = 0
+    while (i < cols!) {
+      const x = selected[i]
+      // TODO-luokun: 存在非3层结构
+      const targetOptions =
+        currentOptions.find((option: any) => option.value === x) ||
+        currentOptions[0] ||
+        {}
+      nextValue[i] = targetOptions.value
+      extend[i] = targetOptions
+      if (!targetOptions.children) {
+        break
+      }
+      currentOptions = targetOptions.children
+      i++
+    }
+    return { nextValue, extend }
+  } catch (err) {
     return { nextValue: [], extend: [] }
   }
-
-  if (!cascade) {
-    const columns = getColumns(d, val, cols, false).map(
-      (column: PickerColumn, index: number) =>
-        column.find((item) => item.value === val[index]) ?? column[0],
-    )
-
-    return { nextValue: columns.map((item) => item.value), extend: columns }
-  }
-
-  // cascade data
-  let currentOptions = (d as PickerColumn).slice()
-  const nextValue = []
-  const extend = []
-  let selected = val || []
-  let i = 0
-  while (i < cols!) {
-    const x = selected[i]
-    const targetOptions =
-      currentOptions.find((option: any) => option.value === x) ||
-      currentOptions[0]
-    nextValue[i] = targetOptions.value
-    extend[i] = targetOptions
-    if (!targetOptions.children) {
-      break
-    }
-    currentOptions = targetOptions.children
-    i++
-  }
-  return { nextValue, extend }
 }
