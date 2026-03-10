@@ -1,5 +1,5 @@
 import { MenuOutlined } from '@ant-design/icons'
-import { Button, Drawer, Menu, Select, Tooltip } from 'antd'
+import { Button, Drawer, Menu, Select } from 'antd'
 import classNames from 'classnames'
 import { Link, useIntl, useLocation, useSiteData } from 'dumi'
 // import ColorSwitch from 'dumi/theme-default/slots/ColorSwitch'
@@ -79,7 +79,7 @@ export default function Header() {
       key="version"
       className="version"
       size="small"
-      dropdownMatchSelectWidth={false}
+      popupMatchSelectWidth={false}
       defaultValue={antdVersion}
       onChange={handleVersionChange}
       options={versionOptions}
@@ -125,9 +125,9 @@ export default function Header() {
     {
       key: 'docs/react/support',
       label: (
-        <Tooltip title="Coming Soon">
-          <Link to="#">AI+ ✨</Link>
-        </Tooltip>
+        <Link to={utils.getLocalizedPathname('/docs/blog/llms-docs', isZhCN)}>
+          AI+ ✨
+        </Link>
       ),
     },
     {

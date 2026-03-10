@@ -10,7 +10,6 @@ const styles = {
 }
 import { List, PickerView } from '@ant-design/react-native'
 import React from 'react'
-import { ScrollView } from 'react-native'
 
 const basicColumns = [
   [
@@ -47,17 +46,15 @@ export default class PickerViewExample extends React.Component {
   }
   render() {
     return (
-      <ScrollView nestedScrollEnabled>
-        <List renderHeader={'选择日期'}>
-          <PickerView
-            styles={styles}
-            onChange={this.onChange}
-            value={this.state.value}
-            data={basicColumns}
-            cascade={false}
-          />
-        </List>
-      </ScrollView>
+      <List renderHeader={'选择日期'}>
+        <PickerView
+          styles={styles}
+          onChange={this.onChange}
+          value={this.state.value}
+          data={basicColumns}
+          cascade={false}
+        />
+      </List>
     )
   }
 }

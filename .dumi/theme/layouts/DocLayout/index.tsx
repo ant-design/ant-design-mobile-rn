@@ -3,6 +3,7 @@ import DefaultDocLayout from 'dumi/theme-default/layouts/DocLayout'
 import React from 'react'
 import DocAnchor from '../../slots/Content/DocAnchor'
 import './index.less'
+import './markdown.less'
 
 export default function DocLayout(props: {
   children: React.ReactNode

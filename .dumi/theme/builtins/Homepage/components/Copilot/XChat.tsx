@@ -36,6 +36,8 @@ const BASE_URL = 'https://api.x.ant.design/api/big_model_glm-4.5-flash'
 
 const MODEL = 'glm-4.5-flash'
 
+const MAX_FILE_SIZE = 100 * 1024 // 100kb
+
 const useLocale = () => {
   const isCN =
     typeof location !== 'undefined' ? location.pathname.endsWith('-cn') : false
@@ -75,6 +77,9 @@ const useLocale = () => {
     clickOrDragFilesToThisAreaToUpload: isCN
       ? '点击或将文件拖到此处上传'
       : 'Click or drag files to this area to upload',
+    fileTooLarge: isCN
+      ? `文件大小不能超过 100KB`
+      : `File size cannot exceed 100KB`,
   }
 }
 
@@ -88,7 +93,8 @@ const role: BubbleListProps['role'] = {
   user: {
     placement: 'end',
     contentRender(content: string) {
-      return <XMarkdown content={content} />
+      const match = content.match(/<UserInput>([\s\S]*?)<\/UserInput>/)
+      return <XMarkdown content={match ? match[1].trim() : content} />
     },
   },
 }
@@ -206,6 +212,10 @@ PickerView
   const onPasteFile = async (files: FileList) => {
     // @ts-ignore
     for (const file of files) {
+      if (file.size > MAX_FILE_SIZE) {
+        message.error(locale.fileTooLarge)
+        continue
+      }
       attachmentsRef.current?.upload(file)
     }
     setAttachmentsOpen(true)
@@ -220,7 +230,13 @@ PickerView
       forceRender>
       <Attachments
         ref={attachmentsRef}
-        beforeUpload={() => false}
+        beforeUpload={(file) => {
+          if (file.size > MAX_FILE_SIZE) {
+            message.error(locale.fileTooLarge)
+            return false
+          }
+          return false
+        }}
         items={files}
         onChange={({ fileList }) => setFiles(fileList)}
         placeholder={(type) =>
@@ -280,6 +296,7 @@ PickerView
       role: 'user',
       content: prompt,
     })
+    setMessages([])
     // 发送增强后的内容给 AI
     onRequest({
       messages: enhanceMessages,
@@ -289,15 +306,6 @@ PickerView
         type: 'disabled',
       },
     })
-
-    setMessages([
-      ...messages,
-      {
-        id: String(Date.now()),
-        message: { role: 'user', content: fileContent + nextContent },
-        status: 'success',
-      },
-    ])
     setContent('')
     setFiles([])
     setAttachmentsOpen(false)
@@ -306,17 +314,7 @@ PickerView
   // ========================== 预设提示词 ==========================
   const PresetPrompts = ({ humanPrompt }: { humanPrompt: string }) => {
     const [isModalOpen, setIsModalOpen] = React.useState(false)
-    const [copyPrompt, setCopyPrompt] = React.useState('')
-
-    React.useEffect(() => {
-      async function getContent() {
-        const prompt = await userPrompt.format({
-          humanPrompt,
-        })
-        setCopyPrompt(systemPrompt + prompt)
-      }
-      getContent()
-    }, [humanPrompt])
+    const copyPrompt = systemPrompt + humanPrompt
 
     return (
       <>
