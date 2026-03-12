@@ -122,6 +122,11 @@ export const responseSchema = z.object({
   styles: stylesSchema,
 })
 
+export async function fetchUrlTool(url:string):Promise<string>{
+  const response = await fetch(url)
+  return response.text()
+}
+
 export function parseStyles(content: string) {
   const componentMatch = content.match(/## component\s+(\w+)/)
 

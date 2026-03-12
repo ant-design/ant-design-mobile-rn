@@ -20,7 +20,7 @@ import copy from 'antd/es/_util/copy'
 import React from 'react'
 
 import { demoPng } from './demoPng'
-import { parseStyles, systemPrompt, userPrompt } from './promptTemplate'
+import { fetchUrlTool, parseStyles, systemPrompt, userPrompt } from './promptTemplate'
 
 /**
  * 🔔 请替换 BASE_URL、PATH、MODEL、API_KEY 为您自己的值
@@ -265,10 +265,14 @@ PickerView
   }
 
   const onSubmit = async (nextContent: string) => {
+
+    const semantic = await fetchUrlTool('https://rn.mobile.ant.design/components/switch/semantic.md')
+
+
     const enhanceMessages = [
       {
         role: 'system', // 🚩预设system增强prompt
-        content: systemPrompt,
+        content: semantic,
       },
     ]
 
