@@ -1,129 +1,124 @@
-## Accordion
+# Accordion Semantic
 
-### Usage Example
+## Component Description
 
-```jsx
-import { Accordion, List } from '@ant-design/react-native'
-import React from 'react'
-import { View } from 'react-native'
+可以折叠/展开的内容区域。
 
-export default class AccordionExmple extends React.Component<any, any> {
-  state = {
-    activeSections: [2, 0],
-  }
-  onChange = (activeSections: number[]) => {
-    this.setState({ activeSections })
-  }
-  render() {
-    return (
-      <View style={{ marginTop: 80, marginBottom: 10 }}>
-        <Accordion
-          onChange={this.onChange}
-          activeSections={this.state.activeSections}>
-          <Accordion.Panel header="Title 1">
-            <List>
-              <List.Item>Content 1</List.Item>
-              <List.Item>Content 2</List.Item>
-              <List.Item>Content 3</List.Item>
-            </List>
-          </Accordion.Panel>
-          <Accordion.Panel header="Title 2">
-            this is panel content2 or other
-          </Accordion.Panel>
-          <Accordion.Panel header="Title 3">
-            Text text text text text text text text text text text text text
-            text text
-          </Accordion.Panel>
-        </Accordion>
-      </View>
-    )
-  }
+---
+
+## DOM Structure
+
+```json
+{
+  "component": "View",
+  "style": "container",
+  "children": [
+    {
+      "component": "View",
+      "style": "header",
+      "children": [
+        {
+          "component": "View",
+          "style": "headerWrap",
+          "children": [
+            {
+              "component": "Text",
+              "style": "headerText"
+            }
+          ]
+        },
+        {
+          "component": "View",
+          "style": "arrow",
+          "children": [
+            {
+              "component": "Icon",
+              "style": "arrow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "View",
+      "style": "content",
+      "children": [
+        {
+          "component": "Text",
+          "style": "contentText"
+        }
+      ]
+    }
+  ]
 }
 ```
 
-### styles
+## Styles Schema
 
-```tsx
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
-import { Theme } from '../../style'
-
-export interface AccordionStyle {
-  container: ViewStyle
-  header: ViewStyle
-  arrow: TextStyle
-  headerWrap: ViewStyle
-  headerText: TextStyle
-  content: ViewStyle
-  contentText: TextStyle
+```json
+{
+  "container": {
+    "type": "ViewStyle",
+    "description": "容器，包裹整个折叠面板，布局外层容器",
+    "defaultValue": {
+      "borderTopWidth": 0.5,
+      "borderTopColor": "#dddddd"
+    }
+  },
+  "header": {
+    "type": "ViewStyle",
+    "description": "折叠面板头部，每个面板项的头部区域",
+    "defaultValue": {
+      "flexDirection": "row",
+      "alignItems": "center",
+      "paddingLeft": 15,
+      "paddingRight": 30,
+      "borderBottomWidth": 0.5,
+      "borderBottomColor": "#dddddd"
+    }
+  },
+  "arrow": {
+    "type": "TextStyle",
+    "description": "箭头图标容器，显示向上或向下箭头",
+    "defaultValue": {
+      "color": "#cccccc"
+    }
+  },
+  "headerWrap": {
+    "type": "ViewStyle",
+    "description": "头部内容的包裹容器，若 header 不是 React 元素，则显示文本内容用",
+    "defaultValue": {
+      "flex": 1,
+      "height": 44,
+      "alignItems": "center",
+      "flexDirection": "row"
+    }
+  },
+  "headerText": {
+    "type": "TextStyle",
+    "description": "头部文字内容",
+    "defaultValue": {
+      "color": "#000000",
+      "fontSize": 17
+    }
+  },
+  "content": {
+    "type": "ViewStyle",
+    "description": "折叠面板内容区域",
+    "defaultValue": {
+      "paddingVertical": 9,
+      "paddingHorizontal": 8,
+      "borderBottomWidth": 0.5,
+      "borderBottomColor": "#dddddd"
+    }
+  },
+  "contentText": {
+    "type": "TextStyle",
+    "description": "折叠内容文本",
+    "defaultValue": {
+      "fontSize": 15,
+      "color": "#333333"
+    }
+  }
 }
-
-export default (theme: Theme) =>
-  StyleSheet.create<AccordionStyle>({
-    container: {
-      borderTopWidth: StyleSheet.hairlineWidth,
-      borderTopColor: theme.border_color_base,
-    },
-    header: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingLeft: theme.h_spacing_lg,
-      paddingRight: 2 * theme.h_spacing_lg,
-      borderBottomWidth: StyleSheet.hairlineWidth,
-      borderBottomColor: theme.border_color_base,
-    },
-    arrow: {
-      color: theme.color_icon_base,
-    },
-    headerWrap: {
-      flex: 1,
-      height: theme.list_item_height,
-      alignItems: 'center',
-      flexDirection: 'row',
-    },
-    headerText: {
-      color: theme.color_text_base,
-      fontSize: theme.font_size_heading,
-    },
-    content: {
-      paddingVertical: theme.v_spacing_md,
-      paddingHorizontal: theme.h_spacing_md,
-      borderBottomWidth: StyleSheet.hairlineWidth,
-      borderBottomColor: theme.border_color_base,
-    },
-    contentText: {
-      fontSize: theme.font_size_subhead,
-      color: theme.color_text_paragraph,
-    },
-  })
-```
-
-### Abstract DOM Structure
-
-```html
-<!-- 容器，包裹整个折叠面板，布局外层容器 -->
-<View styles={{ container }} style={...}> 
-  <!-- 折叠面板头部，每个面板项的头部区域 -->
-  <View styles={{ header }} style={...}> 
-    <!-- 头部内容的包裹容器，若 header 不是 React 元素，则显示文本内容用 -->
-    <View styles={{ headerWrap }}> 
-      <!-- 头部文字内容 -->
-      <Text styles={{ headerText }} />
-    </View>
-    <!-- 箭头图标容器，显示向上或向下箭头 -->
-    <View styles={{ arrow }}>
-      <!-- 箭头图标，动态显示 up 或 down -->
-      <Icon styles={{ arrow }} />
-    </View>
-  </View>
-
-  <!-- 折叠面板内容区域 -->
-  <View styles={{ content }}>
-    <!-- 折叠内容文本 -->
-    <Text styles={{ contentText }} />
-  </View>
-
-  <!-- 
-  注：以上头部和内容节点为每个面板项重复渲染的结构
-  -->
-</View>
 ```
