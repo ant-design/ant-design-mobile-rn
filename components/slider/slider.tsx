@@ -40,6 +40,13 @@ function nearest(arr: number[], target: number) {
   })
 }
 
+/**
+ * 渲染一个可配置的滑块组件，支持单值或区间、刻度、标记、手势交互、可选弹出提示与触觉反馈。
+ *
+ * @param props - Slider 的属性集合（包括最小/最大值、步进、range、marks、ticks、样式、事件回调等），详见 `SliderProps` / `BaseSliderProps` 类型。
+ * @param ref - 转发的引用，用于调用组件暴露的动作（例如可调用的 `onSlide`）。
+ * @returns 渲染用于界面的滑块 React 元素，包含轨道、填充、刻度/标记（可选）以及一个或两个滑块拇指用于交互。
+ */
 function InternalSlider<SliderValue extends SliderValueType>(
   props: SliderProps,
   ref: ForwardedRef<SliderRef>,
@@ -382,7 +389,7 @@ function InternalSlider<SliderValue extends SliderValueType>(
   return (
     <GestureDetector gesture={gesture}>
       <View style={[ss.slider, disabled && ss.disabled, style]}>
-        <View style={ss.trackContianer} onLayout={onTrackLayout}>
+        <View style={ss.trackContainer} onLayout={onTrackLayout}>
           <View style={ss.track} />
           <Animated.View style={[ss.fill, fillStyle]} />
           {/* 刻度 */}
