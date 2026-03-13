@@ -2,6 +2,12 @@
 module.exports = {
   UIBARS: [
     {
+      title: 'IndexBar',
+      description: '序列',
+      icon: 'https://os.alipayobjects.com/rmsportal/EFpWULKNsectBDK.png',
+      module: require('../components/index-bar/demo/basic'),
+    },
+    {
       title: 'NoticeBar',
       description: '通告栏',
       icon: 'https://os.alipayobjects.com/rmsportal/EFpWULKNsectBDK.png',

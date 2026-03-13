@@ -1,0 +1,1556 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ./components/index-bar/demo/basic.tsx correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "position": "relative",
+      },
+      undefined,
+    ]
+  }
+>
+  <RCTScrollView
+    bounces={false}
+    data={
+      Array [
+        Object {
+          "data": Array [
+            "Content A0",
+            "Content A1",
+            "Content A2",
+          ],
+          "key": "A",
+          "title": "Title A",
+        },
+        Object {
+          "data": Array [
+            "Content B0",
+            "Content B1",
+            "Content B2",
+          ],
+          "key": "B",
+          "title": "Title B",
+        },
+        Object {
+          "data": Array [
+            "Content C0",
+            "Content C1",
+            "Content C2",
+          ],
+          "key": "C",
+          "title": "Title C",
+        },
+        Object {
+          "data": Array [
+            "Content D0",
+            "Content D1",
+            "Content D2",
+          ],
+          "key": "D",
+          "title": "Title D",
+        },
+        Object {
+          "data": Array [
+            "Content E0",
+            "Content E1",
+            "Content E2",
+          ],
+          "key": "E",
+          "title": "Title E",
+        },
+        Object {
+          "data": Array [
+            "Content F0",
+            "Content F1",
+            "Content F2",
+          ],
+          "key": "F",
+          "title": "Title F",
+        },
+        Object {
+          "data": Array [
+            "Content G0",
+            "Content G1",
+            "Content G2",
+          ],
+          "key": "G",
+          "title": "Title G",
+        },
+        Object {
+          "data": Array [
+            "Content H0",
+            "Content H1",
+            "Content H2",
+          ],
+          "key": "H",
+          "title": "Title H",
+        },
+        Object {
+          "data": Array [
+            "Content I0",
+            "Content I1",
+            "Content I2",
+          ],
+          "key": "I",
+          "title": "Title I",
+        },
+        Object {
+          "data": Array [
+            "Content J0",
+            "Content J1",
+            "Content J2",
+          ],
+          "key": "J",
+          "title": "Title J",
+        },
+        Object {
+          "data": Array [
+            "Content K0",
+            "Content K1",
+            "Content K2",
+          ],
+          "key": "K",
+          "title": "Title K",
+        },
+        Object {
+          "data": Array [
+            "Content L0",
+            "Content L1",
+            "Content L2",
+          ],
+          "key": "L",
+          "title": "Title L",
+        },
+        Object {
+          "data": Array [
+            "Content M0",
+            "Content M1",
+            "Content M2",
+          ],
+          "key": "M",
+          "title": "Title M",
+        },
+        Object {
+          "data": Array [
+            "Content N0",
+            "Content N1",
+            "Content N2",
+          ],
+          "key": "N",
+          "title": "Title N",
+        },
+        Object {
+          "data": Array [
+            "Content O0",
+            "Content O1",
+            "Content O2",
+          ],
+          "key": "O",
+          "title": "Title O",
+        },
+        Object {
+          "data": Array [
+            "Content P0",
+            "Content P1",
+            "Content P2",
+          ],
+          "key": "P",
+          "title": "Title P",
+        },
+        Object {
+          "data": Array [
+            "Content Q0",
+            "Content Q1",
+            "Content Q2",
+          ],
+          "key": "Q",
+          "title": "Title Q",
+        },
+        Object {
+          "data": Array [
+            "Content R0",
+            "Content R1",
+            "Content R2",
+          ],
+          "key": "R",
+          "title": "Title R",
+        },
+        Object {
+          "data": Array [
+            "Content S0",
+            "Content S1",
+            "Content S2",
+          ],
+          "key": "S",
+          "title": "Title S",
+        },
+        Object {
+          "data": Array [
+            "Content T0",
+            "Content T1",
+            "Content T2",
+          ],
+          "key": "T",
+          "title": "Title T",
+        },
+        Object {
+          "data": Array [
+            "Content U0",
+            "Content U1",
+            "Content U2",
+          ],
+          "key": "U",
+          "title": "Title U",
+        },
+        Object {
+          "data": Array [
+            "Content V0",
+            "Content V1",
+            "Content V2",
+          ],
+          "key": "V",
+          "title": "Title V",
+        },
+        Object {
+          "data": Array [
+            "Content W0",
+            "Content W1",
+            "Content W2",
+          ],
+          "key": "W",
+          "title": "Title W",
+        },
+        Object {
+          "data": Array [
+            "Content X0",
+            "Content X1",
+            "Content X2",
+          ],
+          "key": "X",
+          "title": "Title X",
+        },
+        Object {
+          "data": Array [
+            "Content Y0",
+            "Content Y1",
+            "Content Y2",
+          ],
+          "key": "Y",
+          "title": "Title Y",
+        },
+        Object {
+          "data": Array [
+            "Content Z0",
+            "Content Z1",
+            "Content Z2",
+          ],
+          "key": "Z",
+          "title": "Title Z",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ebeeef",
+              "paddingHorizontal": 8,
+              "paddingVertical": 9,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#333333",
+                "fontSize": 17,
+              }
+            }
+          >
+            Title A
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderBottomColor": "#dddddd",
+                "borderBottomWidth": 0.5,
+                "paddingHorizontal": 8,
+                "paddingVertical": 15,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 16,
+              }
+            }
+          >
+            Content A0
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderBottomColor": "#dddddd",
+                "borderBottomWidth": 0.5,
+                "paddingHorizontal": 8,
+                "paddingVertical": 15,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 16,
+              }
+            }
+          >
+            Content A1
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderBottomColor": "#dddddd",
+                "borderBottomWidth": 0.5,
+                "paddingHorizontal": 8,
+                "paddingVertical": 15,
+              },
+              Object {
+                "borderBottomColor": "transparent",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 16,
+              }
+            }
+          >
+            Content A2
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      />
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ebeeef",
+              "paddingHorizontal": 8,
+              "paddingVertical": 9,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#333333",
+                "fontSize": 17,
+              }
+            }
+          >
+            Title B
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderBottomColor": "#dddddd",
+                "borderBottomWidth": 0.5,
+                "paddingHorizontal": 8,
+                "paddingVertical": 15,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 16,
+              }
+            }
+          >
+            Content B0
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderBottomColor": "#dddddd",
+                "borderBottomWidth": 0.5,
+                "paddingHorizontal": 8,
+                "paddingVertical": 15,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 16,
+              }
+            }
+          >
+            Content B1
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderBottomColor": "#dddddd",
+                "borderBottomWidth": 0.5,
+                "paddingHorizontal": 8,
+                "paddingVertical": 15,
+              },
+              Object {
+                "borderBottomColor": "transparent",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 16,
+              }
+            }
+          >
+            Content B2
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      />
+      <View
+        style={
+          Object {
+            "height": 0,
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "minWidth": 40,
+        "position": "absolute",
+        "right": 0,
+        "top": "50%",
+        "transform": Array [
+          Object {
+            "translateY": "-50%",
+          },
+        ],
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      style={
+        Object {
+          "flexDirection": "column",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              Object {
+                "backgroundColor": "#108ee9",
+                "borderRadius": "50%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            A
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            B
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            C
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            D
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            E
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            F
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            G
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            H
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            I
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            J
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            K
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            L
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            M
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            N
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            O
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            P
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            Q
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            R
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            S
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            T
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            U
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            V
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            W
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            X
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            Y
+          </Text>
+        </View>
+      </View>
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "position": "relative",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "padding": 3,
+              },
+              false,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 12,
+                  "minHeight": 14,
+                  "minWidth": 14,
+                  "textAlign": "center",
+                },
+                false,
+              ]
+            }
+          >
+            Z
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
