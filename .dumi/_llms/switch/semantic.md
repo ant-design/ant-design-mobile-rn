@@ -1,45 +1,174 @@
-### Abstract DOM Structure
+# Switch Semantic
 
-```html
-<!-- Pressable 外层交互容器，支持开关功能及禁用状态 -->
-<Pressable style={undefined}>
+## Component Description
 
-  <!-- 开关主体容器，视觉为开关轨道，支持 checked/unchecked/disabled 状态
-       对应 styles.switch：开关轨道基础样式
-       对应 styles.switch_checked：开关选中状态下轨道样式
-       对应 styles.switch_unchecked：开关未选中状态下轨道样式
-       对应 styles.switch_checked_disabled：选中且禁用状态轨道样式
-       对应 styles.switch_unchecked_disabled：未选中且禁用状态轨道样式
-       对应 style 基础属性：支持最小宽度、背景色及边框色透传
-  -->
-  <View styles={{ switch, switch_checked, switch_unchecked, switch_checked_disabled, switch_unchecked_disabled }} style={...}>
+Select between two status, e.g. Select On or Off.
 
-    <!-- 可动画滑块，视觉为开关的“手柄”
-         对应 styles.switch_handle：手柄基础样式
-         对应 styles.switch_handle_checked：手柄选中状态样式
-         对应 styles.switch_handle_unchecked：手柄未选中状态样式
-         对应 styles.switch_handle_disabled：手柄禁用状态样式
-         对应 style 基础属性：支持背景色透传，动画样式动态计算宽度和位置
-    -->
-    <Animated.View styles={{ switch_handle, switch_handle_checked, switch_handle_unchecked, switch_handle_disabled }} style={...}>
+---
 
-      <!-- loading 状态下显示的指示器，条件渲染，当 loading 为 true 时显示 -->
-      <RNActivityIndicator />
+## DOM Structure
 
-    </Animated.View>
+```json
+{
+  "component": "Pressable",
+  "children": [
+    {
+      "component": "View",
+      "style": [
+        "switch",
+        "switch_checked",
+        "switch_unchecked",
+        "switch_checked_disabled",
+        "switch_unchecked_disabled"
+      ],
+      "children": [
+        {
+          "component": "Animated.View",
+          "style": [
+            "switch_handle",
+            "switch_handle_checked",
+            "switch_handle_unchecked",
+            "switch_handle_disabled"
+          ],
+          "children": [
+            {
+              "component": "RNActivityIndicator"
+            }
+          ]
+        },
+        {
+          "component": "AnimatedView",
+          "style": [
+            "switch_inner",
+            "switch_inner_checked",
+            "switch_inner_unchecked"
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
 
-    <!-- 可动画内层容器，视觉为开关轨道中的填充部分，用于显示 checked 和 unchecked 子内容
-         对应 styles.switch_inner：内层容器基础样式
-         对应 styles.switch_inner_checked：选中状态下内层变化样式
-         对应 styles.switch_inner_unchecked：未选中状态下内层变化样式
-         对应 style 基础属性：动画 marginLeft 和 marginRight 动态调整位移
-    -->
-    <AnimatedView styles={{ switch_inner, switch_inner_checked, switch_inner_unchecked }} style={...}>
-      
-      <!-- 条件渲染，已选中时显示 checkedChildren，否则显示 unCheckedChildren -->
-      <!-- 示例：选中的子内容或未选中的子内容 -->
+## Styles Schema
 
-    </AnimatedView>
-  </View>
-</Pressable>
+```json
+{
+  "switch": {
+    "type": "ViewStyle",
+    "description": "开关 track base style",
+    "defaultValue": {
+      "position": "relative",
+      "width": 55,
+      "height": 31,
+      "display": "flex",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "padding": 0,
+      "borderRadius": 31
+    }
+  },
+  "switch_inner": {
+    "type": "ViewStyle",
+    "description": "内 layer container base style",
+    "defaultValue": {
+      "color": "#fff",
+      "fontSize": 12,
+      "flex": 1,
+      "textAlign": "center",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "zIndex": -1
+    }
+  },
+  "switch_handle": {
+    "type": "ViewStyle",
+    "description": "手柄 base style",
+    "defaultValue": {
+      "position": "absolute",
+      "width": 27,
+      "height": 27,
+      "borderRadius": 27,
+      "display": "flex",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "backgroundColor": "#ffffff",
+      "shadowColor": "rgb(0, 35, 11)",
+      "shadowOffset": {
+        "width": 0,
+        "height": 2
+      },
+      "shadowOpacity": 0.2,
+      "shadowRadius": 10,
+      "elevation": 10
+    }
+  },
+  "switch_checked": {
+    "type": "ViewStyle",
+    "description": "Switch track style when active",
+    "defaultValue": {
+      "borderColor": "theme.brand_primary",
+      "backgroundColor": "theme.brand_primary"
+    }
+  },
+  "switch_unchecked": {
+    "type": "ViewStyle",
+    "description": "Switch track style when not active",
+    "defaultValue": {
+      "borderColor": "theme.switch_unchecked",
+      "backgroundColor": "theme.switch_unchecked"
+    }
+  },
+  "switch_inner_checked": {
+    "type": "ViewStyle",
+    "description": "active state 下内 layer 变化 style",
+    "defaultValue": {
+      "marginLeft": 7,
+      "marginRight": 27
+    }
+  },
+  "switch_inner_unchecked": {
+    "type": "ViewStyle",
+    "description": "未 active state 下内 layer 变化 style",
+    "defaultValue": {
+      "marginLeft": 27,
+      "marginRight": 7
+    }
+  },
+  "switch_handle_checked": {
+    "type": "ViewStyle",
+    "description": "手柄 active state style",
+    "defaultValue": {
+      "right": 0
+    }
+  },
+  "switch_handle_unchecked": {
+    "type": "ViewStyle",
+    "description": "手柄未 active state style",
+    "defaultValue": {
+      "left": 0
+    }
+  },
+  "switch_checked_disabled": {
+    "type": "ViewStyle",
+    "description": "active 且 disabled state track style",
+    "defaultValue": {
+      "borderColor": "#108ee966",
+      "backgroundColor": "#108ee966"
+    }
+  },
+  "switch_unchecked_disabled": {
+    "type": "ViewStyle",
+    "description": "未 active 且 disabled state track style",
+    "defaultValue": {
+      "borderColor": "#cccccc66",
+      "backgroundColor": "#cccccc66"
+    }
+  },
+  "switch_handle_disabled": {
+    "type": "ViewStyle",
+    "description": "手柄 disabled state style",
+    "defaultValue": {}
+  }
+}
 ```

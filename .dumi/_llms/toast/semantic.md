@@ -1,30 +1,111 @@
-### Abstract DOM Structure
+# Toast Semantic
 
-```html
-<!-- 顶层定位容器，控制弹窗位置（顶部/底部/居中）和整体容器样式 -->
-<View styles={{ container }} pointerEvents={/* mask ? undefined : 'box-none' */}>
-  <!-- 内部容器，背景层样式 -->
-  <View styles={{ innerContainer }}>
-    <!-- 动画透明度控制容器，显示/隐藏动画 -->
-    <Animated.View style={{ opacity: /* fadeAnim.current */ }}>
-      <!-- 内容包裹容器：根据是否有 icon 选择iconToast或textToast样式 -->
-      <View styles={{ innerWrap, iconToast /* 有icon时 */, textToast /* 无icon时 */ }}>
-        <!-- 图标区域，根据type和icon渲染不同icon或loading指示器 -->
-        <!-- 
-          iconDom节点
-          对应 styles.centering（loading时，内容居中）
-          对应 styles.image（普通图标样式）
-          动态：根据 type 和 icon 渲染 ActivityIndicator 或 Icon 组件或传入 ReactNode 
-        -->
-        {iconDom}
-        <!-- 文字内容 -->
-        <!-- 
-          对应 styles.content（文本样式）
-          支持自定义传入 content 为 ReactNode 或字符串（字符串则用<Text>包裹）
-        -->
-        {React.isValidElement(content) ? content : <Text styles={{ content }} />}
-      </View>
-    </Animated.View>
-  </View>
-</View>
+## Component Description
+
+A lightweight feedback or tips, used to display content that does not interrupt user operations. Suitable for page transitions, data interaction and other scenes.
+
+---
+
+## DOM Structure
+
+```json
+{
+  "component": "View",
+  "style": "container",
+  "children": [
+    {
+      "component": "View",
+      "style": "innerContainer",
+      "children": [
+        {
+          "component": "Animated.View",
+          "children": [
+            {
+              "component": "View",
+              "style": ["innerWrap", "iconToast", "textToast"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Styles Schema
+
+```json
+{
+  "container": {
+    "type": "ViewStyle",
+    "description": "Top layer positioning container, controls modal position (top/bottom/center) and overall container style",
+    "defaultValue": {
+      "position": "absolute",
+      "top": 0,
+      "left": 0,
+      "bottom": 0,
+      "right": 0,
+      "backgroundColor": "transparent",
+      "alignItems": "center",
+      "zIndex": 1999
+    }
+  },
+  "innerContainer": {
+    "type": "ViewStyle",
+    "description": "Inner container, background layer style",
+    "defaultValue": {
+      "backgroundColor": "transparent"
+    }
+  },
+  "innerWrap": {
+    "type": "ViewStyle",
+    "description": "Content wrapper container, selects iconToast or textToast style based on whether there is an icon",
+    "defaultValue": {
+      "alignItems": "center",
+      "backgroundColor": "rgba(0, 0, 0, .8)",
+      "minWidth": 100
+    }
+  },
+  "iconToast": {
+    "type": "ViewStyle",
+    "description": "Icon toast style",
+    "defaultValue": {
+      "borderRadius": 7,
+      "padding": 15
+    }
+  },
+  "textToast": {
+    "type": "ViewStyle",
+    "description": "Text toast style",
+    "defaultValue": {
+      "borderRadius": 3,
+      "paddingVertical": 9,
+      "paddingHorizontal": 15
+    }
+  },
+  "content": {
+    "type": "TextStyle",
+    "description": "Content style",
+    "defaultValue": {
+      "color": "#ffffff",
+      "fontSize": 15
+    }
+  },
+  "image": {
+    "type": "TextStyle",
+    "description": "Image style",
+    "defaultValue": {
+      "marginBottom": 3
+    }
+  },
+  "centering": {
+    "type": "ViewStyle",
+    "description": "Centering style",
+    "defaultValue": {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "padding": 9
+    }
+  }
+}
 ```

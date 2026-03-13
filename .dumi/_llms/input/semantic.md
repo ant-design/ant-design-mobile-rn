@@ -1,23 +1,123 @@
-### Abstract DOM Structure
+# Input Semantic
 
-```html
-<!-- 容器，包裹整个输入组件区域，对应 styles.container：输入框整体布局样式 -->
-<View styles={{ container, style }}>
-  <!-- 前缀元素区域（如图标或文字），对应 styles.prefix：前缀区域样式；动态状态样式 statusClassName（styles.error、styles.warning） -->
-  <AntmView styles={{ prefix, ...(statusClassName && [statusClassName]) }} />
+## Component Description
 
-  <!-- 文字输入框，主要用于用户输入，对应 styles.input：输入框基础样式；动态状态样式 statusClassName（styles.error、styles.warning）；支持外层传入 inputStyle 透传样式 -->
-  <TextInput style={styles={{ input, ...(statusClassName && [statusClassName]) }} style={inputStyle} />
+Entering content through the keyboard is the most basic form field wrapper.
 
-  <!-- 清除按钮容器，条件渲染（focus && allowClear && editable && !disabled && innerValue 存在），对应 styles.clearIcon：清除按钮样式 -->
-  <TouchableOpacity styles={{ clearIcon }} />
+---
 
-  <!-- 计数文本区域，仅在 showCount 为 true 或对象时展示，对应 styles.showCount：计数文字样式；动态状态样式 statusClassName（styles.error、styles.warning） -->
-  <Text styles={{ showCount, ...(statusClassName && [statusClassName]) }} />
+## DOM Structure
 
-  <!-- 后缀元素及状态反馈图标容器，条件渲染（hasFeedback || suffix），对应 styles.suffix：后缀区域样式；动态状态样式 statusClassName（styles.error、styles.warning） -->
-  <AntmView styles={{ suffix, ...(statusClassName && [statusClassName]) }} />
-  <!-- 反馈图标（如错误、警告图标），条件渲染（hasFeedback） -->
-  <!-- feedbackIcon -->
-</View>
+```json
+{
+  "component": "View",
+  "style": ["container", "style"],
+  "children": [
+    {
+      "component": "AntmView",
+      "style": "prefix"
+    },
+    {
+      "component": "TextInput",
+      "style": "input"
+    },
+    {
+      "component": "TouchableOpacity",
+      "style": "clearIcon"
+    },
+    {
+      "component": "Text",
+      "style": "showCount"
+    },
+    {
+      "component": "AntmView",
+      "style": "suffix"
+    }
+  ]
+}
+```
+
+## Styles Schema
+
+```json
+{
+  "container": {
+    "type": "ViewStyle",
+    "description": "input box overall layout style",
+    "defaultValue": {
+      "width": "100%",
+      "maxWidth": "100%",
+      "maxHeight": "100%",
+      "minHeight": 24,
+      "display": "flex",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "position": "relative"
+    }
+  },
+  "input": {
+    "type": "ViewStyle",
+    "description": "input box base style; dynamic state style statusClassName (styles.error, styles.warning); supports outer inputStyle pass-through",
+    "defaultValue": {
+      "flex": 1,
+      "overflow": "hidden",
+      "width": "100%",
+      "maxWidth": "100%",
+      "maxHeight": "100%",
+      "minHeight": 24,
+      "fontSize": "17",
+      "color": "#000000",
+      "paddingVertical": "6",
+      "textAlignVertical": "center",
+      "includeFontPadding": "true"
+    }
+  },
+  "clearIcon": {
+    "type": "ViewStyle",
+    "description": "clear button style",
+    "defaultValue": {
+      "backgroundColor": "rgba(0,0,0,0.2)",
+      "borderRadius": 15,
+      "padding": 2,
+      "marginLeft": "6"
+    }
+  },
+  "prefix": {
+    "type": "ViewStyle",
+    "description": "prefix area style; dynamic state style statusClassName (styles.error, styles.warning)",
+    "defaultValue": {
+      "fontSize": "17",
+      "color": "#000000",
+      "marginRight": "6"
+    }
+  },
+  "showCount": {
+    "type": "TextStyle",
+    "description": "count text style; dynamic state style statusClassName (styles.error, styles.warning)",
+    "defaultValue": {
+      "fontSize": "17",
+      "color": "#bbbbbb",
+      "paddingLeft": "6"
+    }
+  },
+  "suffix": {
+    "type": "ViewStyle",
+    "description": "suffix area style; dynamic state style statusClassName (styles.error, styles.warning)",
+    "defaultValue": {
+      "fontSize": "17",
+      "color": "#000000",
+      "marginLeft": "6"
+    }
+  },
+  "warning": {
+    "type": "TextStyle",
+    "description": "warning style",
+    "defaultValue": { "color": "#faad14" }
+  },
+  "error": {
+    "type": "TextStyle",
+    "description": "error style",
+    "defaultValue": { "color": "#f4333c" }
+  }
+}
 ```

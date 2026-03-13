@@ -1,37 +1,174 @@
-### Abstract DOM Structure
+# ActionSheet Semantic
 
-```html
-<!-- 容器区域，整体包裹 ActionSheet，负责布局 -->
-<View styles={{ container }}>
-  <!-- 弹窗内容区域，Modal 组件对应的内容样式 -->
-  <Modal styles={{ content }}>
-    <View>
-      <!-- 标题区域，显示标题文字，只在配置有 title 时渲染 -->
-      <View styles={{ title }}>
-        <!-- 标题文字 -->
-        <Text styles={{ titleText }} />
-      </View>
+## Component Description
 
-      <!-- 信息区域，显示附加文字信息，只在配置有 message 时渲染 -->
-      <AntmView styles={{ message }} />
+The modal box pops up from the bottom, providing more than two actions related to the current scene, and also support provide the title and description. Built-in fixed display style, does not support particularly flexible changes.
 
-      <!-- 选项列表容器，包含多个按钮项 -->
-      <View>
-        <!-- 以下为 options 列表中的单个项代表，循环渲染 -->
+---
 
-        <!-- 选项容器，支持取消按钮样式条件应用（cancelBtn） -->
-        <View styles={{ cancelBtn }}>
-          <!-- 按钮触摸区域，支持按钮基础样式 btn -->
-          <TouchableHighlight styles={{ btn }} />
+## DOM Structure
 
-          <!-- 按钮文字，基础样式 btnText，销毁按钮样式 destructiveBtn 条件应用 -->
-          <Text styles={{ btnText, destructiveBtn }} />
+```json
+{
+  "component": "View",
+  "style": "container",
+  "children": [
+    {
+      "component": "Modal",
+      "style": "content",
+      "children": [
+        {
+          "component": "View",
+          "children": [
+            {
+              "component": "View",
+              "style": "title",
+              "children": [
+                {
+                  "component": "Text",
+                  "style": "titleText"
+                }
+              ]
+            },
+            {
+              "component": "AntmView",
+              "style": "message"
+            },
+            {
+              "component": "View",
+              "children": [
+                {
+                  "component": "View",
+                  "style": "cancelBtn",
+                  "children": [
+                    {
+                      "component": "TouchableHighlight",
+                      "style": "btn"
+                    },
+                    {
+                      "component": "Text",
+                      "style": ["btnText", "destructiveBtn"]
+                    },
+                    {
+                      "component": "View",
+                      "style": "cancelBtnMask"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
 
-          <!-- 取消按钮遮罩层，条件渲染 -->
-          <View styles={{ cancelBtnMask }} />
-        </View>
-      </View>
-    </View>
-  </Modal>
-</View>
+## Styles Schema
+
+```json
+{
+  "container": {
+    "type": "ViewStyle",
+    "description": "Container area, overall wrapper for ActionSheet, handles layout",
+    "defaultValue": { "zIndex": 1000 }
+  },
+  "wrap": {
+    "type": "ViewStyle",
+    "description": "Wrap style",
+    "defaultValue": { "position": "absolute", "left": 0, "right": 0, "top": 0 }
+  },
+  "content": {
+    "type": "ViewStyle",
+    "description": "Content style",
+    "defaultValue": {
+      "position": "absolute",
+      "left": 0,
+      "right": 0,
+      "bottom": 0,
+      "backgroundColor": "#ffffff"
+    }
+  },
+  "mask": {
+    "type": "ViewStyle",
+    "description": "Mask style",
+    "defaultValue": {
+      "position": "absolute",
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "backgroundColor": "rgba(0, 0, 0, .4)"
+    }
+  },
+  "title": {
+    "type": "ViewStyle",
+    "description": "Title area, displays title text, only rendered when title is configured",
+    "defaultValue": {
+      "flex": 1,
+      "alignItems": "center",
+      "marginTop": 15,
+      "marginBottom": 15
+    }
+  },
+  "titleText": {
+    "type": "TextStyle",
+    "description": "Title text",
+    "defaultValue": { "fontWeight": "500", "color": "#000000" }
+  },
+  "message": {
+    "type": "ViewStyle",
+    "description": "Message area, displays extra text information, only rendered when message is configured",
+    "defaultValue": {
+      "flex": 1,
+      "alignItems": "center",
+      "marginBottom": 15,
+      "color": "#000000",
+      "textAlign": "center"
+    }
+  },
+  "btn": {
+    "type": "ViewStyle",
+    "description": "Button touch area, supports button base style btn",
+    "defaultValue": {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "height": 50,
+      "borderStyle": "solid",
+      "borderTopWidth": 1,
+      "borderTopColor": "#dddddd"
+    }
+  },
+  "btnText": {
+    "type": "TextStyle",
+    "description": "Button text, base style btnText, destructive button style destructiveBtn conditionally applied",
+    "defaultValue": { "color": "#000000" }
+  },
+  "cancelBtn": {
+    "type": "ViewStyle",
+    "description": "Option container, supports cancel button style conditionally applied (cancelBtn)",
+    "defaultValue": { "marginTop": 9, "position": "relative" }
+  },
+  "cancelBtnMask": {
+    "type": "ViewStyle",
+    "description": "Cancel button mask layer, conditionally rendered",
+    "defaultValue": {
+      "position": "absolute",
+      "top": "-theme.v_spacing_md",
+      "left": 0,
+      "right": 0,
+      "height": 9,
+      "backgroundColor": "#f7f7f7",
+      "borderStyle": "solid",
+      "borderTopWidth": 1,
+      "borderTopColor": "#dddddd"
+    }
+  },
+  "destructiveBtn": {
+    "type": "TextStyle",
+    "description": "Destructive button style",
+    "defaultValue": { "color": "#f4333c", "fontSize": 18 }
+  }
+}
 ```

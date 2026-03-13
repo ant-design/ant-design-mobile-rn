@@ -20,7 +20,7 @@ import copy from 'antd/es/_util/copy'
 import React from 'react'
 
 import { demoPng } from './demoPng'
-import { fetchUrlTool, parseStyles, systemPrompt, userPrompt } from './promptTemplate'
+import { parseStyles, systemPrompt, userPrompt } from './promptTemplate'
 
 /**
  * 🔔 请替换 BASE_URL、PATH、MODEL、API_KEY 为您自己的值
@@ -50,7 +50,7 @@ const useLocale = () => {
     modalCopy: isCN ? '复制' : 'Copy',
     modalClose: isCN ? '关闭' : 'Close',
     modalCopySuccess: isCN ? '复制成功' : 'Copy success',
-    aiCopilot: isCN ? 'AI 助手' : 'AI Assistant',
+    aiCopilot: isCN ? 'AI 助手 — 引擎来自' : 'AI Assistant — Powered by',
     abort: isCN ? '中止' : 'abort',
     placeholder: isCN
       ? '请输入内容，按下 Enter 发送消息'
@@ -265,14 +265,10 @@ PickerView
   }
 
   const onSubmit = async (nextContent: string) => {
-
-    const semantic = await fetchUrlTool('https://rn.mobile.ant.design/components/switch/semantic.md')
-
-
     const enhanceMessages = [
       {
         role: 'system', // 🚩预设system增强prompt
-        content: semantic,
+        content: systemPrompt,
       },
     ]
 
@@ -358,7 +354,7 @@ PickerView
   }
 
   // ========================== chatHeader ==========================
-  const chatHeader = <div className="chatHeader">✨ {locale.aiCopilot}</div>
+  const chatHeader = <div className="chatHeader">✨ {locale.aiCopilot} <a href="https://x.ant.design" target="_blank">x.ant.design</a></div>
 
   return (
     <Flex vertical style={{ height: '100%' }}>

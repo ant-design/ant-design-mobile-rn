@@ -1,42 +1,143 @@
-### Abstract DOM Structure
+# InputItem Semantic
 
-```html
-<!-- 输入项容器，包裹所有输入相关内容 -->
-<!-- 对应 styles.container：容器整体样式，包含边框样式 -->
-<View styles={{ container }}>
-  <!-- 左侧标签文字区域（如果 children 是字符串） -->
-  <!-- 对应 styles.text：标签文本样式，宽度可根据 labelNumber 变量调整 -->
-  <!-- 如果 children 是 ReactNode 非字符串，则用 View 包裹，支持自定义内容 -->
-  <Text styles={{ text }} />
-  <!-- 或者 -->
-  <View style={{ /* textStyle 宽度 */ }}></View>
+## Component Description
 
-  <!-- 用户输入框 -->
-  <!-- 对应 styles.input：输入框文本样式 -->
-  <!-- 可能同时叠加样式：styles.inputErrorColor (错误状态)、styles.inputDisabled (禁用状态) -->
-  <!-- 支持自定义 style 基础属性透传（由 style 传入） -->
-  <Input style={...} styles={{ input, inputErrorColor, inputDisabled }} />
+A foundational component for inputting text into the app via a keyboard.
 
-  <!-- 安卓平台下，编辑状态且有输入值时的清除按钮（条件渲染） -->
-  <!-- 对应 styles.clear：清除按钮区域样式 -->
-  <TouchableOpacity styles={{ clear }} />
+---
 
-  <!-- 右侧额外附加内容区域 -->
-  <!-- 对应 styles.extra：额外说明文字样式 -->
-  <!-- 可能内容为字符串（Text）或 JSX 节点 -->
-  <TouchableWithoutFeedback>
-    <View>
-      <Text styles={{ extra }} />
-      <!-- 或任意 ReactNode -->
-    </View>
-  </TouchableWithoutFeedback>
+## DOM Structure
 
-  <!-- 错误状态下的错误图标 -->
-  <!-- 对应 styles.errorIcon：错误图标容器样式 -->
-  <TouchableWithoutFeedback>
-    <View styles={{ errorIcon }}>
-      <Icon />
-    </View>
-  </TouchableWithoutFeedback>
-</View>
+```json
+{
+  "component": "View",
+  "style": "container",
+  "children": [
+    {
+      "component": "Text",
+      "style": "text"
+    },
+    {
+      "component": "View"
+    },
+    {
+      "component": "Input",
+      "style": ["input", "inputErrorColor", "inputDisabled"]
+    },
+    {
+      "component": "TouchableOpacity",
+      "style": "clear"
+    },
+    {
+      "component": "TouchableWithoutFeedback",
+      "children": [
+        {
+          "component": "View",
+          "children": [
+            {
+              "component": "Text",
+              "style": "extra"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "TouchableWithoutFeedback",
+      "children": [
+        {
+          "component": "View",
+          "style": "errorIcon",
+          "children": [
+            {
+              "component": "Icon"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Styles Schema
+
+```json
+{
+  "container": {
+    "type": "ViewStyle",
+    "description": "container overall style, includes border style",
+    "defaultValue": {
+      "height": "44 + 0.5",
+      "borderBottomWidth": "StyleSheet.hairlineWidth",
+      "borderBottomColor": "#dddddd",
+      "marginLeft": "15",
+      "paddingRight": "15",
+      "marginTop": 0,
+      "marginBottom": 0,
+      "flexDirection": "row",
+      "alignItems": "center"
+    }
+  },
+  "text": {
+    "type": "TextStyle",
+    "description": "label text style, width can be adjusted by labelNumber variable",
+    "defaultValue": {
+      "marginRight": "5",
+      "textAlignVertical": "center",
+      "fontSize": "17",
+      "color": "#000000"
+    }
+  },
+  "input": {
+    "type": "TextStyle",
+    "description": "input box text style",
+    "defaultValue": {
+      "flex": 1,
+      "backgroundColor": "transparent",
+      "fontSize": "17",
+      "color": "#000000"
+    }
+  },
+  "inputDisabled": {
+    "type": "TextStyle",
+    "description": "inputDisabled style",
+    "defaultValue": {
+      "backgroundColor": "#dddddd",
+      "color": "#bbbbbb"
+    }
+  },
+  "inputErrorColor": {
+    "type": "TextStyle",
+    "description": "inputErrorColor style",
+    "defaultValue": { "color": "#f50" }
+  },
+  "clear": {
+    "type": "ViewStyle",
+    "description": "clear button area style",
+    "defaultValue": {
+      "backgroundColor": "#cccccc",
+      "borderRadius": 15,
+      "padding": 2
+    }
+  },
+  "extra": {
+    "type": "TextStyle",
+    "description": "extra description text style",
+    "defaultValue": {
+      "marginLeft": "5",
+      "fontSize": "15",
+      "color": "#888888"
+    }
+  },
+  "errorIcon": {
+    "type": "ViewStyle",
+    "description": "error icon container style",
+    "defaultValue": {
+      "marginLeft": "5",
+      "width": "21",
+      "height": "21"
+    }
+  }
+}
 ```

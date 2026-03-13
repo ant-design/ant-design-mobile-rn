@@ -1,31 +1,113 @@
-### Abstract DOM Structure
+# ActivityIndicator Semantic
 
-```html
-<!-- 最外层容器：toast 模式的遮罩容器 -->
-<!-- 对应 styles.container：容器布局样式 -->
-<View styles={{ container }}>
-  <!-- 内部容器，固定高度，居中内容 -->
-  <!-- 对应 styles.innerContainer：内层容器样式 -->
-  <View styles={{ innerContainer }}>
-    <!-- 内容包装容器，水平排列加载指示器和文本 -->
-    <!-- 对应 styles.wrapper：包裹加载器和文字区域 -->
-    <View styles={{ wrapper }}>
-      <!-- RN 内置的加载指示器 -->
-      <ActivityIndicator />
-      <!-- toast 模式的提示文字 -->
-      <!-- 对应 styles.toast：toast 文字样式 -->
-      <Text styles={{ toast }} />
-    </View>
-  </View>
-</View>
+## Component Description
 
-<!-- 默认 spinner 模式结构，简化示例 -->
-<!-- 最外层容器，水平排列加载指示器和文字 -->
-<!-- 对应 styles.spinner：普通模式容器样式 -->
-<View styles={{ spinner }}>
-  <ActivityIndicator />
-  <!-- spinner 模式的提示文字 -->
-  <!-- 对应 styles.tip：spinner 文字样式 -->
-  <Text styles={{ tip }} />
-</View>
+Properties | Descrition | Type | Default -----------|------------|------|--------
+
+---
+
+## DOM Structure
+
+```json
+[
+  {
+    "component": "View",
+    "style": "container",
+    "children": [
+      {
+        "component": "View",
+        "style": "innerContainer",
+        "children": [
+          {
+            "component": "View",
+            "style": "wrapper",
+            "children": [
+              {
+                "component": "ActivityIndicator"
+              },
+              {
+                "component": "Text",
+                "style": "toast"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "component": "View",
+    "style": "spinner",
+    "children": [
+      {
+        "component": "ActivityIndicator"
+      },
+      {
+        "component": "Text",
+        "style": "tip"
+      }
+    ]
+  }
+]
+```
+
+## Styles Schema
+
+```json
+{
+  "container": {
+    "type": "ViewStyle",
+    "description": "Container layout style",
+    "defaultValue": {
+      "position": "absolute",
+      "top": 0,
+      "left": 0,
+      "bottom": 0,
+      "right": 0,
+      "backgroundColor": "transparent",
+      "zIndex": 1999
+    }
+  },
+  "innerContainer": {
+    "type": "ViewStyle",
+    "description": "Inner layer container style",
+    "defaultValue": {
+      "flex": 1,
+      "alignItems": "center",
+      "justifyContent": "center",
+      "backgroundColor": "transparent"
+    }
+  },
+  "wrapper": {
+    "type": "ViewStyle",
+    "description": "Wrapper for loading indicator and text area",
+    "defaultValue": {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "width": 89,
+      "height": 89,
+      "borderRadius": 5,
+      "backgroundColor": "rgba(0, 0, 0, .8)"
+    }
+  },
+  "tip": {
+    "type": "TextStyle",
+    "description": "Spinner text style",
+    "defaultValue": { "color": "#000000", "fontSize": 14, "marginLeft": 8 }
+  },
+  "toast": {
+    "type": "TextStyle",
+    "description": "Toast text style",
+    "defaultValue": { "color": "#ffffff", "fontSize": 14, "marginTop": 6 }
+  },
+  "spinner": {
+    "type": "ViewStyle",
+    "description": "Normal mode container style",
+    "defaultValue": {
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center"
+    }
+  }
+}
 ```

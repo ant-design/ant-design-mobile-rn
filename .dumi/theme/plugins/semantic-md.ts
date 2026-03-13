@@ -1,63 +1,23 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-function toPascalCase(kebab: string): string {
-  return kebab
-    .split('-')
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join('')
-}
-
 function readFileSafe(filePath: string): string | null {
   return fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf-8') : null
-}
-
-function buildSemanticMd(
-  componentName: string,
-  semanticTemplate: string,
-  basicTsx: string | null,
-  styleTsx: string | null,
-): string {
-  const displayName = toPascalCase(componentName)
-  const parts: string[] = []
-
-  parts.push(`## ${displayName}`)
-  parts.push('')
-
-  if (basicTsx) {
-    parts.push('### Usage Example')
-    parts.push('')
-    parts.push('```jsx')
-    parts.push(basicTsx.trim())
-    parts.push('```')
-    parts.push('')
-  }
-
-  if (styleTsx) {
-    parts.push('### styles')
-    parts.push('')
-    parts.push('```tsx')
-    parts.push(styleTsx.trim())
-    parts.push('```')
-    parts.push('')
-  }
-
-  parts.push(semanticTemplate.trim())
-  parts.push('')
-
-  return parts.join('\n')
 }
 
 /**
  * 生成每个组件的 semantic.md 文件
  *
- * 数据来源：.dumi/_llms/{component}/semantic.md（作为正文模板）
- * 向前拼接：Usage Example（components/{comp}/demo/basic.tsx）
- *           styles（components/{comp}/style/index.tsx）
+ * 数据来源：
+ *   EN 模板：.dumi/_llms/{component}/semantic.md
+ *   CN 模板：.dumi/_llms/{component}-cn/semantic.md（不存在时降级使用 EN 模板）
  *
  * 输出：
- *   _site/components/{comp}/semantic.md   （EN 路由目录）
- *   _site/components/{comp}-cn/semantic.md（CN 路由目录，同内容）
+ *   _site/components/{comp}/semantic.md    （EN 路由目录）
+ *   _site/components/{comp}-cn/semantic.md （CN 路由目录）
+ *
+ * 新格式模板已包含 Component Description、DOM Structure（JSON）和 Styles Schema（JSON），
+ * 无需再向前拼接 Usage Example 或原始 styles TypeScript。
  */
 export function generateSemanticMdFiles(api: any) {
   const cwd = api.cwd
@@ -69,27 +29,31 @@ export function generateSemanticMdFiles(api: any) {
     return
   }
 
+  // Only process base component directories (skip -cn variants)
   const components = fs
     .readdirSync(llmsDir, { withFileTypes: true })
-    .filter((e) => e.isDirectory())
+    .filter((e) => e.isDirectory() && !e.name.endsWith('-cn'))
     .map((e) => e.name)
 
   let count = 0
   for (const comp of components) {
-    const semanticSrc = path.join(llmsDir, comp, 'semantic.md')
-    if (!fs.existsSync(semanticSrc)) continue
+    const enTemplateSrc = path.join(llmsDir, comp, 'semantic.md')
+    if (!fs.existsSync(enTemplateSrc)) continue
 
-    const semanticTemplate = fs.readFileSync(semanticSrc, 'utf-8')
-    const basicTsx = readFileSafe(path.join(cwd, 'components', comp, 'demo', 'basic.tsx'))
-    const styleTsx = readFileSafe(path.join(cwd, 'components', comp, 'style', 'index.tsx'))
+    const enContent = fs.readFileSync(enTemplateSrc, 'utf-8')
 
-    const content = buildSemanticMd(comp, semanticTemplate, basicTsx, styleTsx)
+    const cnTemplateSrc = path.join(llmsDir, `${comp}-cn`, 'semantic.md')
+    const cnContent = readFileSafe(cnTemplateSrc) ?? enContent
 
-    for (const dirSuffix of ['', '-cn']) {
-      const dest = path.join(outputPath, 'components', `${comp}${dirSuffix}`, 'semantic.md')
-      fs.mkdirSync(path.dirname(dest), { recursive: true })
-      fs.writeFileSync(dest, content, 'utf-8')
-    }
+    // Write EN version
+    const enDest = path.join(outputPath, 'components', comp, 'semantic.md')
+    fs.mkdirSync(path.dirname(enDest), { recursive: true })
+    fs.writeFileSync(enDest, enContent, 'utf-8')
+
+    // Write CN version
+    const cnDest = path.join(outputPath, 'components', `${comp}-cn`, 'semantic.md')
+    fs.mkdirSync(path.dirname(cnDest), { recursive: true })
+    fs.writeFileSync(cnDest, cnContent, 'utf-8')
 
     count++
   }

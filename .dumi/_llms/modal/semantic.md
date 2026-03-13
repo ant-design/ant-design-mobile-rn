@@ -1,56 +1,274 @@
-### Abstract DOM Structure
+# Modal Semantic
 
-```html
-<!-- 遮罩层容器，屏幕全屏，悬浮遮罩 -->
-<View styles={{ container }}>
+## Component Description
 
-  <!-- 遮罩层包裹容器 -->
-  <View styles={{ wrap }}>
-  
-    <!-- 遮罩层，点击可关闭遮罩（条件展示，取决于 maskClosable） -->
-    <TouchableWithoutFeedback>
-      <Animated.View styles={{ maskClosable }}>  <!-- 动态 styles.opacity 用于遮罩显示隐藏动画 -->
-        <View styles={{ maskClosable }} />
-      </Animated.View>
-    </TouchableWithoutFeedback>
+Use to show important information for the system, and ask for user feedback. eg: When deleting an important content, pop up a Modal for secondary confirmation.
 
-    <!-- 弹窗内容容器，支持动画样式（如 slide-up, fade 等） -->
-    <Animated.View styles={{ container }}>
-    
-      <!-- 对话框内容包裹容器，对于popup模式应用：popupContainer、popupSlideUp、popupSlideDown 动态样式 -->
-      <View styles={{ innerContainer, popupContainer /* + 动态 popupSlideUp 或 popupSlideDown */ }} style={...}>
+---
 
-        <!-- 头部标题区域，显示标题文本 -->
-        <Text styles={{ header }} />
+## DOM Structure
 
-        <!-- 内容区域，包裹 children 视图，支持 body 和 bodyStyle 透传 -->
-        <View styles={{ body }} style={...}>
-          {children}
-        </View>
+```json
+{
+  "component": "View",
+  "style": "container",
+  "children": [
+    {
+      "component": "View",
+      "style": "wrap",
+      "children": [
+        {
+          "component": "TouchableWithoutFeedback",
+          "children": [
+            {
+              "component": "Animated.View",
+              "style": "maskClosable",
+              "children": [
+                {
+                  "component": "View",
+                  "style": "maskClosable"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "component": "Animated.View",
+          "style": "container",
+          "children": [
+            {
+              "component": "View",
+              "style": [
+                "innerContainer",
+                "popupContainer",
+                "popupSlideUp",
+                "popupSlideDown"
+              ],
+              "children": [
+                {
+                  "component": "Text",
+                  "style": "header"
+                },
+                {
+                  "component": "View",
+                  "style": "body"
+                },
+                {
+                  "component": "View",
+                  "style": ["footer", "buttonGroupV", "buttonGroupH"],
+                  "children": [
+                    {
+                      "component": "TouchableHighlight",
+                      "children": [
+                        {
+                          "component": "View",
+                          "style": ["buttonWrapV", "buttonWrapH"],
+                          "children": [
+                            {
+                              "component": "Text",
+                              "style": ["buttonText", "buttonTextOperation"]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "component": "View",
+                  "style": "closeWrap",
+                  "children": [
+                    {
+                      "component": "TouchableWithoutFeedback",
+                      "children": [
+                        {
+                          "component": "View",
+                          "children": [
+                            {
+                              "component": "Text",
+                              "style": "close"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
 
-        <!-- 底部按钮区域，footer区域 -->
-        <View styles={{ footer, buttonGroupV or buttonGroupH }}>
+## Styles Schema
 
-          <!-- 按钮列表（示例一个按钮，实际有多个按钮） -->
-          <TouchableHighlight>
-            <View styles={{ buttonWrapV or buttonWrapH }}>
-              <Text styles={{ buttonText or buttonTextOperation }} style={...} />
-            </View>
-          </TouchableHighlight>
-        </View>
-
-        <!-- 关闭按钮区域（条件渲染，当 closable 为 true） -->
-        <View styles={{ closeWrap }}>
-          <TouchableWithoutFeedback>
-            <View>
-              <Text styles={{ close }} />
-            </View>
-          </TouchableWithoutFeedback>
-        </View>
-
-      </View>
-    </Animated.View>
-
-  </View>
-</View>
+```json
+{
+  "container": {
+    "type": "ViewStyle",
+    "description": "mask layer container, full screen, floating mask",
+    "defaultValue": { "zIndex": "999" }
+  },
+  "wrap": {
+    "type": "ViewStyle",
+    "description": "mask layer wrapper container",
+    "defaultValue": {
+      "justifyContent": "center",
+      "alignItems": "center",
+      "backgroundColor": "transparent"
+    }
+  },
+  "popupContainer": {
+    "type": "ViewStyle",
+    "description": "popupContainer style",
+    "defaultValue": {}
+  },
+  "innerContainer": {
+    "type": "ViewStyle",
+    "description": "dialog content wrapper container, for popup mode applies popupContainer, popupSlideUp, popupSlideDown dynamic styles",
+    "defaultValue": {
+      "borderRadius": "5",
+      "width": 286,
+      "paddingTop": "21",
+      "overflow": "hidden",
+      "backgroundColor": "#ffffff"
+    }
+  },
+  "popupSlideUp": {
+    "type": "ViewStyle",
+    "description": "popupSlideUp style",
+    "defaultValue": {
+      "position": "absolute",
+      "left": 0,
+      "right": 0,
+      "bottom": 0
+    }
+  },
+  "popupSlideDown": {
+    "type": "ViewStyle",
+    "description": "popupSlideDown style",
+    "defaultValue": {}
+  },
+  "footer": {
+    "type": "ViewStyle",
+    "description": "footer button area, footer area",
+    "defaultValue": {}
+  },
+  "header": {
+    "type": "TextStyle",
+    "description": "header title area, displays title text",
+    "defaultValue": {
+      "fontSize": "18",
+      "color": "#000000",
+      "textAlign": "center",
+      "paddingHorizontal": "15"
+    }
+  },
+  "body": {
+    "type": "ViewStyle",
+    "description": "content area, wraps children view, supports body and bodyStyle pass-through",
+    "defaultValue": {
+      "paddingTop": 0,
+      "paddingBottom": "15",
+      "paddingHorizontal": "15"
+    }
+  },
+  "maskClosable": {
+    "type": "ViewStyle",
+    "description": "maskClosable style",
+    "defaultValue": {
+      "position": "absolute",
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "backgroundColor": "transparent"
+    }
+  },
+  "closeWrap": {
+    "type": "ViewStyle",
+    "description": "close button area (conditional rendering, when closable is true)",
+    "defaultValue": {
+      "position": "absolute",
+      "top": "21",
+      "left": "15"
+    }
+  },
+  "close": {
+    "type": "TextStyle",
+    "description": "close style",
+    "defaultValue": {
+      "fontSize": 40,
+      "fontWeight": "200",
+      "color": "#bcbcbc",
+      "lineHeight": 30
+    }
+  },
+  "buttonGroupH": {
+    "type": "ViewStyle",
+    "description": "buttonGroupH style",
+    "defaultValue": { "flexGrow": 1, "flexDirection": "row" }
+  },
+  "buttonGroupV": {
+    "type": "ViewStyle",
+    "description": "buttonGroupV style",
+    "defaultValue": { "flexGrow": 1, "flexDirection": "column" }
+  },
+  "buttonWrapH": {
+    "type": "ViewStyle",
+    "description": "buttonWrapH style",
+    "defaultValue": {
+      "height": "50",
+      "flexGrow": 1,
+      "justifyContent": "center",
+      "borderColor": "#dddddd",
+      "borderTopWidth": "StyleSheet.hairlineWidth",
+      "borderRightWidth": "StyleSheet.hairlineWidth",
+      "paddingVertical": 11
+    }
+  },
+  "buttonWrapV": {
+    "type": "ViewStyle",
+    "description": "buttonWrapV style",
+    "defaultValue": {
+      "flexGrow": 1,
+      "borderTopWidth": "StyleSheet.hairlineWidth",
+      "borderColor": "#dddddd",
+      "paddingVertical": 11
+    }
+  },
+  "buttonText": {
+    "type": "TextStyle",
+    "description": "buttonText style",
+    "defaultValue": {
+      "textAlign": "center",
+      "color": "#108ee9",
+      "fontSize": "18",
+      "backgroundColor": "transparent"
+    }
+  },
+  "operationContainer": {
+    "type": "ViewStyle",
+    "description": "operationContainer style",
+    "defaultValue": { "paddingTop": 0 }
+  },
+  "operationBody": {
+    "type": "ViewStyle",
+    "description": "operationBody style",
+    "defaultValue": { "paddingBottom": 0, "paddingHorizontal": 0 }
+  },
+  "buttonTextOperation": {
+    "type": "TextStyle",
+    "description": "buttonTextOperation style",
+    "defaultValue": {
+      "color": "#000000",
+      "textAlign": "left",
+      "paddingHorizontal": 15
+    }
+  }
+}
 ```

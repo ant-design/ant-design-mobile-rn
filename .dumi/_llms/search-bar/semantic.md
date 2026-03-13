@@ -1,26 +1,114 @@
-### Abstract DOM Structure
+# SearchBar Semantic
 
-```html
-<!-- 整体容器，包裹整个搜索栏区域 -->
-<View styles={{ wrapper }}>
+## Component Description
 
-  <!-- 输入框外层容器，用于输入框布局 -->
-  <View styles={{ inputWrapper }}>
+Normally located below NavBar, the activation status is exited by the Cancel button.
 
-    <!-- 文本输入框，支持 style 基础属性透传，用于输入搜索内容 -->
-    <TextInput style={...} styles={{ input }} />
+---
 
-  </View>
+## DOM Structure
 
-  <!-- 搜索图标，显示搜索放大镜图标 -->
-  <Icon styles={{ search }} />
+```json
+{
+  "component": "View",
+  "style": "wrapper",
+  "children": [
+    {
+      "component": "View",
+      "style": "inputWrapper",
+      "children": [
+        {
+          "component": "TextInput",
+          "style": "input"
+        }
+      ]
+    },
+    {
+      "component": "Icon",
+      "style": "search"
+    },
+    {
+      "component": "View",
+      "style": "cancelTextContainer",
+      "children": [
+        {
+          "component": "Text",
+          "style": "cancelText"
+        }
+      ]
+    }
+  ]
+}
+```
 
-  <!-- 取消按钮容器，条件渲染，当 showCancelButton 或输入框聚焦时显示 -->
-  <View styles={{ cancelTextContainer }}>
+## Styles Schema
 
-    <!-- 取消按钮文字，点击触发取消操作 -->
-    <Text styles={{ cancelText }} />
-
-  </View>
-</View>
+```json
+{
+  "input": {
+    "type": "TextStyle",
+    "description": "Text input box, supports style base property pass-through, used for input search content",
+    "defaultValue": {
+      "borderRadius": "theme.radius_md",
+      "backgroundColor": "theme.fill_grey",
+      "borderColor": "theme.border_color_base",
+      "borderWidth": "theme.border_width_sm",
+      "height": "theme.search_bar_input_height",
+      "color": "theme.color_text_base",
+      "fontSize": "theme.font_size_base",
+      "flex": 1,
+      "paddingTop": 0,
+      "paddingBottom": 0
+    }
+  },
+  "inputWrapper": {
+    "type": "ViewStyle",
+    "description": "Input box outer container, used for input box layout",
+    "defaultValue": {
+      "flex": 1,
+      "flexDirection": "row"
+    }
+  },
+  "wrapper": {
+    "type": "ViewStyle",
+    "description": "Overall container, wraps the entire search bar area",
+    "defaultValue": {
+      "backgroundColor": "theme.fill_base",
+      "height": "theme.search_bar_height",
+      "paddingLeft": "theme.h_spacing_md",
+      "paddingRight": "theme.h_spacing_md",
+      "flexDirection": "row",
+      "alignItems": "center"
+    }
+  },
+  "cancelTextContainer": {
+    "type": "ViewStyle",
+    "description": "Cancel button container, conditionally rendered, displayed when showCancelButton or input box is focused",
+    "defaultValue": {
+      "height": "theme.search_bar_input_height",
+      "justifyContent": "center",
+      "alignItems": "center"
+    }
+  },
+  "cancelText": {
+    "type": "TextStyle",
+    "description": "Cancel button text, click to trigger cancel action",
+    "defaultValue": {
+      "fontSize": "theme.link_button_font_size",
+      "color": "theme.color_link",
+      "paddingLeft": "theme.h_spacing_lg"
+    }
+  },
+  "search": {
+    "type": "TextStyle",
+    "description": "Search icon, displays search magnifying glass icon",
+    "defaultValue": {
+      "color": "theme.color_icon_base",
+      "position": "absolute",
+      "left": "theme.h_spacing_md + 8",
+      "top": "(theme.search_bar_height - theme.icon_size_xxs) / 2",
+      "fontSize": "theme.icon_size_xxs"
+    }
+  }
+}
 ```

@@ -1,60 +1,140 @@
-### Abstract DOM Structure
+# Picker Semantic
 
-```html
-<!-- 整体弹出层容器，包含遮罩层及内容区 -->
-<Modal
-  styles={{ modal, container }}><!-- 对应 styles.modal：弹出层包装样式（定位、背景遮罩等） -->
-                                   <!-- 对应 styles.container：弹出层内容容器（布局与背景） -->
+## Component Description
 
-  <!-- 头部区域，包含取消、标题、确定按钮 -->
-  <View styles={{ header }}><!-- 对应 styles.header：头部容器布局 -->
+Choose from a set of data, e.g. Country choice.
 
-    <!-- 取消按钮区域 -->
-    <TouchableHighlight styles={{ headerItem }}><!-- 对应 styles.headerItem：按钮位置与尺寸 -->
-      <!-- 取消按钮文字 -->
-      <Text styles={{ actionText, dismissText }}/><!-- 对应 styles.actionText：按钮文字基础样式 -->
-                                           <!-- 对应 styles.dismissText：取消按钮文字差异化样式 -->
-    </TouchableHighlight>
+---
 
-    <!-- 标题区域 -->
-    <View styles={{ headerItem }}><!-- 对应 styles.headerItem：标题位置与尺寸 -->
-      <Text styles={{ title }}/><!-- 对应 styles.title：标题文字样式 -->
-    </View>
+## DOM Structure
 
-    <!-- 确定按钮区域 -->
-    <TouchableHighlight styles={{ headerItem }}><!-- 对应 styles.headerItem：按钮位置与尺寸 -->
-      <!-- 确定按钮文字 -->
-      <Text styles={{ actionText, okText }}/><!-- 对应 styles.actionText：按钮文字基础样式 -->
-                                        <!-- 对应 styles.okText：确定按钮文字差异化样式 -->
-    </TouchableHighlight>
-  </View>
+```json
+{
+  "component": "Modal",
+  "style": ["modal", "container"],
+  "children": [
+    {
+      "component": "View",
+      "style": "header",
+      "children": [
+        {
+          "component": "TouchableHighlight",
+          "style": "headerItem",
+          "children": [
+            {
+              "component": "Text",
+              "style": ["actionText", "dismissText"]
+            }
+          ]
+        },
+        {
+          "component": "View",
+          "style": "headerItem",
+          "children": [
+            {
+              "component": "Text",
+              "style": "title"
+            }
+          ]
+        },
+        {
+          "component": "TouchableHighlight",
+          "style": "headerItem",
+          "children": [
+            {
+              "component": "Text",
+              "style": ["actionText", "okText"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "RMCPickerView",
+      "style": [
+        "wrappper",
+        "wheelWrapper",
+        "itemWrap",
+        "itemStyle",
+        "itemActiveStyle",
+        "mask",
+        "maskTop",
+        "maskMiddle",
+        "maskBottom"
+      ]
+    }
+  ]
+}
+```
 
-  <!-- 选择器视图区域，条件渲染 在弹出层显示时 -->
-  <RMCPickerView
-    styles={{
-      wrappper,
-      wheelWrapper,
-      itemWrap,
-      itemStyle,
-      itemActiveStyle,
-      mask,
-      maskTop,
-      maskMiddle,
-      maskBottom
-    }}
-    style={...}><!-- 对应 styles.wrappper：选择器最外层容器 -->
-                   <!-- 对应 styles.wheelWrapper：滚轮容器 -->
-                   <!-- 对应 styles.itemWrap：单个选择项容器 -->
-                   <!-- 对应 styles.itemStyle：普通选项文本样式 -->
-                   <!-- 对应 styles.itemActiveStyle：激活状态选项文本样式 -->
-                   <!-- 对应 styles.mask：遮罩层总样式 -->
-                   <!-- 对应 styles.maskTop：遮罩层上部区域 -->
-                   <!-- 对应 styles.maskMiddle：遮罩层中间区域 -->
-                   <!-- 对应 styles.maskBottom：遮罩层下部区域 -->
-  />
-</Modal>
+## Styles Schema
 
-<!-- 触发组件（children），支持函数或 ReactNode -->
-<!-- 该节点支持 style 基础属性透传，包含 value、extra、disabled、toggle 事件等 -->
-{children}
+```json
+{
+  "modal": {
+    "type": "ViewStyle",
+    "description": "Popup layer wrapper style (positioning, background mask, etc.)",
+    "defaultValue": {
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-end"
+    }
+  },
+  "container": {
+    "type": "ViewStyle",
+    "description": "Popup layer content container (layout and background)",
+    "defaultValue": {}
+  },
+  "header": {
+    "type": "ViewStyle",
+    "description": "Header container layout",
+    "defaultValue": {
+      "height": "theme.picker_header_height",
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "borderBottomWidth": "StyleSheet.hairlineWidth",
+      "borderBottomColor": "theme.border_color_thin",
+      "backgroundColor": "theme.fill_base"
+    }
+  },
+  "headerItem": {
+    "type": "ViewStyle",
+    "description": "Button position and size",
+    "defaultValue": {
+      "height": "theme.picker_header_height",
+      "flex": 1,
+      "alignItems": "center",
+      "justifyContent": "center"
+    }
+  },
+  "actionText": {
+    "type": "TextStyle",
+    "description": "Button text base style",
+    "defaultValue": {
+      "color": "theme.brand_primary",
+      "fontSize": "theme.font_size_heading",
+      "textAlign": "center"
+    }
+  },
+  "title": {
+    "type": "TextStyle",
+    "description": "Title text style",
+    "defaultValue": {
+      "color": "theme.color_text_caption",
+      "fontSize": "theme.font_size_heading",
+      "textAlign": "center"
+    }
+  },
+  "okText": {
+    "type": "TextStyle",
+    "description": "Confirm button text variant style",
+    "defaultValue": {}
+  },
+  "dismissText": {
+    "type": "TextStyle",
+    "description": "Cancel button text variant style",
+    "defaultValue": {}
+  }
+}
 ```

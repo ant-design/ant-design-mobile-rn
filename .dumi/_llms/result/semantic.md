@@ -1,39 +1,124 @@
-### Abstract DOM Structure
+# Result Semantic
 
-```html
-<!-- 整体结果容器，包含所有结果内容 -->
-<!-- 对应 styles.result：结果容器布局 -->
-<View style={[styles.result, style]}>
+## Component Description
 
-  <!-- 图标区域容器，包裹图片或自定义图标节点 -->
-  <!-- 对应 styles.imgWrap：图标容器定位和尺寸 -->
-  <View style={styles.imgWrap} />
+Result page contains feedback like illustrations, icons and text.
 
-  <!-- 标题区域容器 -->
-  <!-- 对应 styles.title：标题容器布局 -->
-  <View style={styles.title}>
-    <!-- 标题文本 -->
-    <!-- 对应 styles.titleText：标题文字样式 -->
-    <Text style={styles.titleText} />
-    <!-- 或自定义标题 ReactNode，支持复杂结构 -->
-  </View>
+---
 
-  <!-- 信息内容区域容器 -->
-  <!-- 对应 styles.message：信息区域布局 -->
-  <View style={styles.message}>
-    <!-- 信息文本 -->
-    <!-- 对应 styles.messageText：信息文字样式 -->
-    <Text style={styles.messageText} />
-    <!-- 或自定义信息 ReactNode，支持复杂结构 -->
-  </View>
+## DOM Structure
 
-  <!-- 按钮区域容器 -->
-  <!-- 对应 styles.buttonWrap：按钮容器布局 -->
-  <View style={styles.buttonWrap}>
-    <!-- 按钮控件，封装 antd-mobile-rn Button 组件 -->
-    <!-- 对应 styles.button：按钮样式 -->
-    <Button style={styles.button} type={buttonType}></Button>
-  </View>
+```json
+{
+  "component": "View",
+  "children": [
+    {
+      "component": "View"
+    },
+    {
+      "component": "View",
+      "children": [
+        {
+          "component": "Text"
+        }
+      ]
+    },
+    {
+      "component": "View",
+      "children": [
+        {
+          "component": "Text"
+        }
+      ]
+    },
+    {
+      "component": "View",
+      "children": [
+        {
+          "component": "Button"
+        }
+      ]
+    }
+  ]
+}
+```
 
-</View>
+## Styles Schema
+
+```json
+{
+  "result": {
+    "type": "ViewStyle",
+    "description": "Result container layout",
+    "defaultValue": {
+      "alignItems": "center",
+      "paddingVertical": "theme.v_spacing_xl",
+      "backgroundColor": "theme.fill_base",
+      "borderBottomColor": "theme.border_color_base"
+    }
+  },
+  "imgWrap": {
+    "type": "ViewStyle",
+    "description": "Icon container positioning and size",
+    "defaultValue": {
+      "margin": 0
+    }
+  },
+  "img": {
+    "type": "ImageStyle",
+    "description": "Image style",
+    "defaultValue": {
+      "width": 60,
+      "height": 60
+    }
+  },
+  "title": {
+    "type": "ViewStyle",
+    "description": "Title container layout",
+    "defaultValue": {
+      "marginTop": "theme.v_spacing_lg",
+      "paddingHorizontal": "theme.h_spacing_lg"
+    }
+  },
+  "titleText": {
+    "type": "TextStyle",
+    "description": "Title text style",
+    "defaultValue": {
+      "fontSize": 21,
+      "color": "theme.color_text_base"
+    }
+  },
+  "message": {
+    "type": "ViewStyle",
+    "description": "Information area layout",
+    "defaultValue": {
+      "marginTop": "theme.v_spacing_lg",
+      "paddingHorizontal": "theme.h_spacing_lg"
+    }
+  },
+  "messageText": {
+    "type": "TextStyle",
+    "description": "Information text style",
+    "defaultValue": {
+      "fontSize": "theme.font_size_caption",
+      "color": "theme.color_text_caption"
+    }
+  },
+  "buttonWrap": {
+    "type": "ViewStyle",
+    "description": "Button container layout",
+    "defaultValue": {
+      "flexDirection": "row",
+      "marginTop": "theme.v_spacing_lg",
+      "paddingHorizontal": "theme.h_spacing_lg"
+    }
+  },
+  "button": {
+    "type": "ViewStyle",
+    "description": "Button style",
+    "defaultValue": {
+      "flex": 1
+    }
+  }
+}
 ```
