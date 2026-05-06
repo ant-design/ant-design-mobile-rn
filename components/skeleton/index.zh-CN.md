@@ -16,41 +16,47 @@ subtitle: 骨架屏
 
 ### Skeleton
 
-属性 | 说明 | 类型 | 默认值 | 版本 |
-----|-----|------|-------|------
-| animated | 是否显示动画 | Boolean | `false` | |
-| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - | |
-| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |  |
+属性 | 说明 | 类型 | 默认值 |
+----|-----|------|-------
+| animated | 是否显示动画 | Boolean | `false` |
+| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
+| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |
+
+### Skeleton.Provider
+
+> 可选的性能优化组件。
+
+当页面中同时渲染大量开启动画的 `Skeleton` 时，每个 `Skeleton` 独立创建动画可能会带来额外开销，并且动画节奏可能不同步。使用 `Skeleton.Provider` 包裹这些组件后，内部的 `Skeleton` 会共享同一个动画实例，从而让动画表现更一致。
 
 ### Skeleton.Title
 
 标题骨架屏组件。
 
-属性 | 说明 | 类型 | 默认值 | 版本 |
-----|-----|------|-------|------
-| animated | 是否显示动画 | Boolean | `false` | |
-| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - | |
-| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |  |
+属性 | 说明 | 类型 | 默认值 |
+----|-----|------|-------
+| animated | 是否显示动画 | Boolean | `false` |
+| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
+| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |
 
 ### Skeleton.Paragraph
 
 段落骨架屏组件。
 
-属性 | 说明 | 类型 | 默认值 | 版本 |
-----|-----|------|-------|------
-| lineCount | 行数 | Number | `4` | |
-| animated | 是否显示动画 | Boolean | `false` | |
-| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - | |
-| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |  |
+属性 | 说明 | 类型 | 默认值 |
+----|-----|------|-------
+| lineCount | 行数 | Number | `3` |
+| animated | 是否显示动画 | Boolean | `false` |
+| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
+| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |
 
 ### SkeletonStyle 语义化样式
 
 ```typescript
 interface SkeletonStyle {
-  skeleton: ViewStyle
-  skeletonTitle: ViewStyle
-  skeletonParagraph: ViewStyle
-  skeletonParagraphLine: ViewStyle
-  skeletonParagraphLastLine: ViewStyle
+  skeleton: ViewStyle                   // 自定义样式类
+  skeletonTitle: ViewStyle              // 标题容器
+  skeletonParagraph: ViewStyle          // 段落容器
+  skeletonParagraphLine: ViewStyle      // 段落行
+  skeletonParagraphLastLine: ViewStyle  // 段落最后一行
 }
 ```

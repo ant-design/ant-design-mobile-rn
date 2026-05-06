@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { Animated, StyleProp, View, ViewStyle } from 'react-native'
 import { useTheme } from '../style'
 import { SkeletonProps } from './PropsType'
+import { SkeletonAnimationContext } from './SkeletonProvider'
 import SkeletonStyles from './style'
 
 // Animated skeleton component
@@ -10,14 +11,15 @@ const AnimatedSkeleton: React.FC<{
   animated?: boolean
   [key: string]: any
 }> = ({ style, animated, ...restProps }) => {
+  const sharedAnimation = React.useContext(SkeletonAnimationContext)
   const opacityValue = useRef(new Animated.Value(0)).current
 
   useEffect(() => {
-    if (animated) {
+    if (animated && !sharedAnimation) {
       const animation = Animated.loop(
         Animated.timing(opacityValue, {
           toValue: 1,
-          duration: 1500,
+          duration: 1400,
           useNativeDriver: true,
         }),
       )
@@ -27,13 +29,15 @@ const AnimatedSkeleton: React.FC<{
         opacityValue.setValue(0)
       }
     }
-  }, [animated, opacityValue])
+  }, [animated, opacityValue, sharedAnimation])
 
   if (animated) {
-    const opacity = opacityValue.interpolate({
-      inputRange: [0, 0.5, 1],
-      outputRange: [1, 0.25, 1],
-    })
+    const opacity =
+      sharedAnimation?.opacity ??
+      opacityValue.interpolate({
+        inputRange: [0, 0.5, 1],
+        outputRange: [1, 0.25, 1],
+      })
     return <Animated.View style={[style, { opacity }]} {...restProps} />
   }
 

@@ -15,41 +15,47 @@ A placeholder for loading state, which can reduce users' cognitive load and make
 
 ### Skeleton
 
-Properties | Description | Type | Default | Version |
------------|------------|------|---------|---------|
-| animated | Whether to show animation | Boolean | `false` | |
-| style | Custom style | StyleProp&lt;ViewStyle&gt; | - | |
-| styles | Semantic DOM style | [SkeletonStyle](#skeletonstyle-interface) | - |  |
+Properties | Description | Type | Default |
+-----------|------------|------|---------
+| animated | Whether to show animation | Boolean | `false` |
+| style | Custom style | StyleProp&lt;ViewStyle&gt; | - |
+| styles | Semantic DOM style | [SkeletonStyle](#skeletonstyle-interface) | - |
+
+### Skeleton.Provider
+
+> An optional performance optimization component.
+
+When many animated `Skeleton` components are rendered at the same time, creating an animation for each one can add extra overhead and may cause their animation timing to drift. Wrap them with `Skeleton.Provider` to let the inner `Skeleton` components share one animation instance, keeping the animation more consistent.
 
 ### Skeleton.Title
 
 Title skeleton component.
 
-Properties | Description | Type | Default | Version |
------------|------------|------|---------|---------|
-| animated | Whether to show animation | Boolean | `false` | |
-| style | Custom style | StyleProp&lt;ViewStyle&gt; | - | |
-| styles | Semantic DOM style | [SkeletonStyle](#skeletonstyle-interface) | - |  |
+Properties | Description | Type | Default |
+-----------|------------|------|---------
+| animated | Whether to show animation | Boolean | `false` |
+| style | Custom style | StyleProp&lt;ViewStyle&gt; | - |
+| styles | Semantic DOM style | [SkeletonStyle](#skeletonstyle-interface) | - |
 
 ### Skeleton.Paragraph
 
 Paragraph skeleton component.
 
-Properties | Description | Type | Default | Version |
------------|------------|------|---------|---------|
-| lineCount | Number of lines | Number | `4` | |
-| animated | Whether to show animation | Boolean | `false` | |
-| style | Custom style | StyleProp&lt;ViewStyle&gt; | - | |
-| styles | Semantic DOM style | [SkeletonStyle](#skeletonstyle-interface) | - |  |
+Properties | Description | Type | Default |
+-----------|------------|------|---------
+| lineCount | Number of lines | Number | `3` |
+| animated | Whether to show animation | Boolean | `false` |
+| style | Custom style | StyleProp&lt;ViewStyle&gt; | - |
+| styles | Semantic DOM style | [SkeletonStyle](#skeletonstyle-interface) | - |
 
 ### SkeletonStyle interface
 
 ```typescript
 interface SkeletonStyle {
-  skeleton: ViewStyle
-  skeletonTitle: ViewStyle
-  skeletonParagraph: ViewStyle
-  skeletonParagraphLine: ViewStyle
-  skeletonParagraphLastLine: ViewStyle
+  skeleton: ViewStyle                   // Custom style class
+  skeletonTitle: ViewStyle              // Title container
+  skeletonParagraph: ViewStyle          // Paragraph container
+  skeletonParagraphLine: ViewStyle      // Paragraph line
+  skeletonParagraphLastLine: ViewStyle  // Last paragraph line
 }
 ```

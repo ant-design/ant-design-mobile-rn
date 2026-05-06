@@ -172,5 +172,5 @@ export default {
   tooltip_zindex: 999,
 
   // skeleton
-  skeleton_background_color: 'rgba(160, 160, 160, 0.2)',
+  skeleton_background_color: 'rgba(190, 190, 190, 0.2)',
 }

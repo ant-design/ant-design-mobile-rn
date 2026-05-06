@@ -8,7 +8,7 @@ import SkeletonStyles from './style'
 const InternalSkeletonParagraph: React.FC<SkeletonParagraphProps> = (props) => {
   const {
     animated,
-    lineCount = 4,
+    lineCount = 3,
     style,
     styles: customStyles,
     ...restProps
@@ -19,7 +19,7 @@ const InternalSkeletonParagraph: React.FC<SkeletonParagraphProps> = (props) => {
     themeStyles: SkeletonStyles,
   })
 
-  const _lineCount = typeof lineCount === 'number' ? Math.max(lineCount, 1) : 4
+  const _lineCount = typeof lineCount === 'number' ? Math.max(lineCount, 1) : 3
   return (
     <View style={[themeStyles.skeletonParagraph, style]} {...restProps}>
       {Array.from({ length: _lineCount }).map((_, index) => {
