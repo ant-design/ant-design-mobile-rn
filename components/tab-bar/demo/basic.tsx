@@ -1,6 +1,6 @@
+import { Icon, SearchBar, TabBar } from '@ant-design/react-native'
 import React from 'react'
 import { Text, View } from 'react-native'
-import { Icon, SearchBar, TabBar } from '../../'
 
 export default class BasicTabBarExample extends React.Component<any, any> {
   constructor(props: any) {

@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Combination
+group:
+  title: 组合
+  order: 7
 title: Result
 subtitle: 结果页
 ---
@@ -12,6 +14,10 @@ subtitle: 结果页
 - 用作非常重要的操作反馈，如支付成功，无网络状态。
 - 个性化且优美的插画，可以提升品牌形象。
 - 对于错误类型的结果页，页面中需要提供明确的行动点，eg：重新加载。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

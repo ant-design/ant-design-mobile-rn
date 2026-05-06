@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Navigation
+group:
+  title: 导航
+  order: 2
 title: TabBar
 subtitle: 标签栏
 ---
@@ -11,6 +13,10 @@ subtitle: 标签栏
 - 用作 APP 的一级分类，数量控制在 3-5 个之间。
 - 即使某个 Tab 不可用，也不要禁用或者移除该 Tab。
 - 使用 Badge 进行提示，足不出户也能知道有内容更新。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

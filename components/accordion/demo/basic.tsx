@@ -1,7 +1,6 @@
-/* tslint:disable:no-console */
+import { Accordion, List } from '@ant-design/react-native'
 import React from 'react'
 import { View } from 'react-native'
-import { Accordion, List } from '../../'
 
 export default class AccordionExmple extends React.Component<any, any> {
   state = {

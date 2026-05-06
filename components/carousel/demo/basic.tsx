@@ -1,3 +1,4 @@
+import { Button, Carousel } from '@ant-design/react-native'
 import React from 'react'
 import {
   ScrollView,
@@ -7,7 +8,6 @@ import {
   View,
   ViewStyle,
 } from 'react-native'
-import { Button, Carousel } from '../../'
 
 export default class BasicCarouselExample extends React.Component<any, any> {
   carousel: null | Carousel

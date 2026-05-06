@@ -1,14 +1,19 @@
 ---
 category: Components
-type: Feedback
+group:
+  title: Feedback
+  order: 5
 title: Toast
-version: update
 ---
 
 A lightweight feedback or tips, used to display content that does not interrupt user operations. Suitable for page transitions, data interaction and other scenes.
 
 ### Rules
 - Toast with Icon, 4-6 words is recommended; Toast without Icon, the number of words should not exceed 14.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

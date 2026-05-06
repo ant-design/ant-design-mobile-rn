@@ -1,0 +1,149 @@
+.dumi-sidebar-aside {
+  min-height: 100%;
+  padding-top: 0;
+  padding-bottom: 48px !important;
+  font-family:
+    Avenir,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji',
+    sans-serif;
+  padding-inline: 4px;
+
+  &.ant-menu-inline {
+    .ant-menu-submenu-title h4,
+    > .ant-menu-item,
+    .ant-menu-item a {
+      overflow: hidden;
+      font-size: 14px;
+      text-overflow: ellipsis;
+    }
+
+    > .ant-menu-item-group > .ant-menu-item-group-title {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      font-size: 14px;
+
+      &::after {
+        position: relative;
+        top: 12px;
+        display: block;
+        width: calc(100% - 20px);
+        height: 1px;
+        background: var(--ant-color-split);
+        content: '';
+      }
+    }
+
+    // Nest Category > Type > Article
+    &.ant-menu-inline {
+      .ant-menu-item-group-title {
+        margin-inline-start: 4px;
+        padding-inline-start: 60px;
+
+        .ant-row-rtl & {
+          padding-inline-end: 60px;
+          padding-inline-start: 16px;
+        }
+      }
+
+      .ant-menu-item-group-list > .ant-menu-item {
+        padding-inline-start: 80px !important;
+
+        .ant-row-rtl & {
+          padding-inline-end: 80px !important;
+          padding-inline-start: 16px !important;
+        }
+      }
+    }
+
+    .ant-menu-item-group:first-child {
+      .ant-menu-item-group-title {
+        margin-top: 0;
+      }
+    }
+
+    > .ant-menu-item,
+    > .ant-menu-submenu > .ant-menu-submenu-title,
+    > .ant-menu-item-group > .ant-menu-item-group-title,
+    > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item,
+    &.ant-menu-inline
+      > .ant-menu-item-group
+      > .ant-menu-item-group-list
+      > .ant-menu-item {
+      padding-inline: 36px 12px !important;
+    }
+  }
+
+  a[disabled] {
+    color: #ccc;
+  }
+}
+
+.dumi-sidebar-main-menu {
+  z-index: 1;
+  position: sticky;
+  top: 64px;
+  // width: 100%;
+  max-height: calc(100vh - 64px);
+  overflow: hidden;
+  scrollbar-width: thin;
+  // scrollbar-gutter: stable;
+
+  &:hover {
+    overflow-y: auto;
+  }
+}
+
+.dumi-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dumi-menu-tag {
+  margin-inline-end: 0;
+}
+
+.dumi-menu-subtitle {
+  font-weight: normal;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-inline-start: 12px;
+}
+
+.chinese {
+  font-size: 12Px;
+  margin-left: 6Px;
+  font-weight: normal;
+  opacity: .67;
+}
+
+.sidebar-mobile-icon {
+  position: fixed;
+  left: 0px;
+  top: 72px;
+  z-index: 999;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow:2px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow:2px 0 8px rgba(0, 0, 0, 0.15);
+  border-radius: 0 4px 4px 0;
+}

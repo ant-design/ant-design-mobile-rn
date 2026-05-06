@@ -1,10 +1,16 @@
 ---
 category: Components
-type: Layout
+group:
+  title: Layout
+  order: 1
 title: Flex
 ---
 
 Flex is a wrap of  Flexible Box.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

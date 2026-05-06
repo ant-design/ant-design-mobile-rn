@@ -1,8 +1,11 @@
 ---
 category: Components
-type: Data Display
+group:
+  title: 数据展示
+  order: 4
 title: Accordion
-subtitle: 手风琴(归档)
+subtitle: 手风琴
+tag: ARCHIVE
 ---
 
 > `5.2.1`已停止更新，推荐使用 [components/Collapse](/components/collapse-cn)
@@ -13,6 +16,9 @@ subtitle: 手风琴(归档)
 - 对复杂区域进行分组和隐藏。
 - 通常，一次只允许单个内容区域展开；特殊情况，多个内容区域可以同时展开。
 
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

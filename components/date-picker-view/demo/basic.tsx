@@ -1,7 +1,6 @@
+import { DatePickerView, DatePickerFilter } from '@ant-design/react-native'
 import React, { useState } from 'react'
 import { ScrollView, Text } from 'react-native'
-import { DatePickerView } from '../../'
-import { DatePickerFilter } from '../../date-picker/date-picker-utils'
 
 const now = new Date()
 

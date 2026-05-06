@@ -10,14 +10,29 @@ Here list some of main incompatible changes and recommended changes in the upgra
 > Installing peer dependencies
 
 ```bash
-npm install @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+npm install @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated react-native-worklets
 ```
 
 or
 
 ```bash
-yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated
+yarn add @ant-design/icons-react-native react-native-gesture-handler react-native-reanimated react-native-worklets
 ```
+
+If you have a bare React Native project, you also need to manually add the `react-native-worklets/plugin` plugin to your `babel.config.js`
+
+   ```
+    module.exports = {
+        presets: [
+          ... // don't add it here :)
+        ],
+        plugins: [
+          ...
+          'react-native-worklets/plugin',
+        ],
+      };
+   ```
+   see more details in [react-native-reanimated installation doc](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
 
 ### 5.1.0
 

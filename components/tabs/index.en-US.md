@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Navigation
+group:
+  title: Navigation
+  order: 2
 title: Tabs
 ---
 
@@ -10,6 +12,10 @@ A `Tabs` is used to allow users to switch between different views.
 
 - Generally a `Tabs` should have 2-4 tab pane, the title of each tab pane should be concise，normally has 2-4 words..
 - In the secondary page of iOS, it is not recommended to use left and right swipe to switch tab, which conflicts with back swipe gestrue in iOS. eg:  tabs in details page.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

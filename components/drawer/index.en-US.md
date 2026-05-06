@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Navigation
+group:
+  title: Navigation
+  order: 2
 title: Drawer
 ---
 
@@ -9,6 +11,10 @@ Drawer is a panel that displays the app's navigation options on the left edge of
 ### Rules
 
 - Recommended way to show navigation options on Android, it is a common pattern found in Android APPs.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

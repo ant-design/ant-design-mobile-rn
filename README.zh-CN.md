@@ -54,14 +54,28 @@ npm install @ant-design/react-native @ant-design/icons-react-native
 
  - 如果使用Expo来构建项目的，请使用 `expo`（**推荐，这能安装到最合适的版本**）：
    ```bash
-   npx expo install react-native-gesture-handler react-native-reanimated
+   npx expo install react-native-gesture-handler react-native-reanimated react-native-worklets
    ```
 
- - 如果使用React Native CLI原生构建项目的，请使用 `npm` ：
+ - 如果使用 React Native CLI 原生构建项目的，请使用 `npm` ：
    ```bash
-   npm install react-native-gesture-handler react-native-reanimated
+   npm install react-native-gesture-handler react-native-reanimated react-native-worklets
    ```
-   
+   你还需要手动将 `react-native-worklets/plugin` 插件添加到你的 `babel.config.js` 中：
+
+   ```js
+   module.exports = {
+     presets: [
+       ... // 不要把它加在这里 :)
+     ],
+     plugins: [
+       ...
+       'react-native-worklets/plugin',
+     ],
+   };
+   ```
+   更多详情请参见 [react-native-reanimated 安装文档](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
+
  - 对于 iOS 的 React Native CLI裸项目，请确保已安装 CocoaPods。然后执行 `pods` (auto linking)，
    <br/>Android 不需要手动处理：
    ```bash

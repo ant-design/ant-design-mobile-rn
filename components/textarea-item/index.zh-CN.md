@@ -1,8 +1,11 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: 数据录入
+  order: 3
 title: TextareaItem
-subtitle: 多行输入(归档)
+subtitle: 多行输入
+tag: ARCHIVE
 ---
 
 > 已停止更新，推荐使用 [components/Input.TextArea](/components/input-cn#inputtextarea)
@@ -12,6 +15,10 @@ subtitle: 多行输入(归档)
 ### 规则
 - 支持通过键盘或者剪切板输入文本。
 - 通过光标可以在垂直或者水平方向进行移动。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

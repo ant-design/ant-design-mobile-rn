@@ -212,7 +212,7 @@ const AntmSwitch = (props: SwitchProps) => {
 
         const accessibilityState = {
           checked: innerChecked,
-          mergedDisabled,
+          disabled:mergedDisabled,
           busy: innerLoading,
         }
 

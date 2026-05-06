@@ -1,10 +1,16 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: Checkbox
 ---
 
 Checkbox
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

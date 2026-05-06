@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Display
+group:
+  title: Data Display
+  order: 4
 title: Grid
 ---
 
@@ -8,6 +10,10 @@ We divided the design area into a number of aliquots in horizontal and vertical.
 
 ### Rules
 - The contents of the blocks should have the same type. eg: they are all pictures or icons with text.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

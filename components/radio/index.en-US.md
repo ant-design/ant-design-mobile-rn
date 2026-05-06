@@ -1,10 +1,16 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: Radio
 ---
 
 Radio.
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

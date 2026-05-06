@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: 数据录入
+  order: 3
 title: Form
 subtitle: 表单
 version: 5.2.1
@@ -14,6 +16,10 @@ version: 5.2.1
 
 - 用于创建一个实体或收集信息。
 - 需要对输入的数据类型进行校验时。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

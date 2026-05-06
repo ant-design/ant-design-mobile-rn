@@ -188,6 +188,6 @@ export default class PortalHost extends React.Component<PortalHostProps> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflow: 'scroll',
+    // overflow: 'scroll', // TODO-luokun: 待回归
   },
 })

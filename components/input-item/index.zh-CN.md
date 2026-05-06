@@ -1,8 +1,11 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: 数据录入
+  order: 3
 title: InputItem
-subtitle: 文本输入(归档)
+subtitle: 文本输入
+tag: ARCHIVE
 ---
 
 > `5.2.1` 已停止更新，推荐使用 [components/Input](/components/input-cn)
@@ -13,6 +16,10 @@ subtitle: 文本输入(归档)
 - 支持通过键盘或者剪切板输入文本。
 - 通过光标可以在水平方向进行移动。
 - 对特定格式的文本进行处理，eg：隐藏密码。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

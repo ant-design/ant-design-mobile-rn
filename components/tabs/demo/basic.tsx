@@ -1,4 +1,3 @@
-/* tslint:disable:no-console */
 import React from 'react'
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import Tabs from '..'

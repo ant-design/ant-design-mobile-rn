@@ -171,6 +171,9 @@ export default {
   modal_zindex: 999,
   tooltip_zindex: 999,
 
+  // switch
+  switch_inner_zindex: -1,
+
   // skeleton
   skeleton_background_color: 'rgba(190, 190, 190, 0.2)',
 }

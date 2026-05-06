@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Layout
+group:
+  title: 布局
+  order: 1
 title: View
 subtitle: 基础组件
 ---
@@ -10,6 +12,10 @@ subtitle: 基础组件
 ## 规则
 
 - 支持 `string`/`number` 类型的ReactNode
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

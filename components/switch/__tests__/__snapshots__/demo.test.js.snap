@@ -199,6 +199,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     />
@@ -423,6 +424,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     />
@@ -747,6 +749,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     >
@@ -921,6 +924,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     >
@@ -1108,6 +1112,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     >
@@ -1370,6 +1375,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     />
@@ -1565,6 +1571,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     />
@@ -1790,6 +1797,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     />
@@ -2011,6 +2019,7 @@ exports[`renders ./components/switch/demo/basic.tsx correctly 1`] = `
                           "marginLeft": 29,
                           "marginRight": 2,
                           "textAlign": "center",
+                          "zIndex": -1,
                         }
                       }
                     />

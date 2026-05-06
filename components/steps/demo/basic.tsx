@@ -1,6 +1,6 @@
+import { Icon, Steps, WingBlank } from '@ant-design/react-native'
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
-import { Icon, Steps, WingBlank } from '../../'
 const Step = Steps.Step
 
 export default class BasicTimelineExample extends React.Component<any, any> {

@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Layout
+group:
+  title: Layout
+  order: 1
 title: View
 ---
 
@@ -9,6 +11,10 @@ Safe View
 ### Rules
 
 - Support `string`/`number` ReactNode
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

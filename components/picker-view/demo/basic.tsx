@@ -1,6 +1,6 @@
+import { List, PickerView } from '@ant-design/react-native'
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { List, PickerView } from '../../'
 
 const basicColumns = [
   [

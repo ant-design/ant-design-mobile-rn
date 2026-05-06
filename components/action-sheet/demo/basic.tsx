@@ -1,6 +1,6 @@
+import { ActionSheet, Button, Provider } from '@ant-design/react-native'
 import React from 'react'
-import { View, Text, Platform } from 'react-native'
-import { ActionSheet, Button } from '../../'
+import { Platform, Text, View } from 'react-native'
 
 export default class Test extends React.Component<any, any> {
   constructor(props: any) {
@@ -12,20 +12,22 @@ export default class Test extends React.Component<any, any> {
   }
   render() {
     return (
-      <View style={{ marginTop: 30 }}>
-        <View style={[{ padding: 8 }]}>
-          <Button onPress={this.showActionSheet}>showActionSheet</Button>
+      <Provider>
+        <View style={{ marginTop: 30 }}>
+          <View style={[{ padding: 8 }]}>
+            <Button onPress={this.showActionSheet}>showActionSheet</Button>
+          </View>
+          <Text style={[{ padding: 8 }]}>
+            clicked button: {this.state.clicked}
+          </Text>
+          <View style={[{ padding: 8 }]}>
+            <Button onPress={this.showShareActionSheet}>
+              showShareActionSheet
+            </Button>
+          </View>
+          <Text style={[{ padding: 8 }]}>{this.state.text}</Text>
         </View>
-        <Text style={[{ padding: 8 }]}>
-          clicked button: {this.state.clicked}
-        </Text>
-        <View style={[{ padding: 8 }]}>
-          <Button onPress={this.showShareActionSheet}>
-            showShareActionSheet
-          </Button>
-        </View>
-        <Text style={[{ padding: 8 }]}>{this.state.text}</Text>
-      </View>
+      </Provider>
     )
   }
   showActionSheet = () => {

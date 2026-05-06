@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Feedback
+group:
+  title: Feedback
+  order: 5
 title: ActionSheet
 ---
 
@@ -12,6 +14,9 @@ The modal box pops up from the bottom, providing more than two actions related t
 - Can highlight the destructive operation, e.g. "delete" use red text.
 - Do not place too much content to avoid vertical roll of the panel.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 ### ActionSheet.showActionSheetWithOptions(options, callback)

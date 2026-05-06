@@ -18,7 +18,7 @@ English | [简体中文](./README.zh-CN.md)
 
 A configurable Mobile UI specification and React-based implementation.
 
-> If you only care about the style you may give [[Tanjun]](https://github.com/bang88/Tanjun) a try. 
+> If you only care about the style you may give [[Tanjun]](https://github.com/bang88/Tanjun) a try.
 
 ## Features
 
@@ -64,8 +64,22 @@ Next, install the required peer dependencies. You need to run different commands
 
  - If you have a bare React Native project, install the dependencies with `npm`:
    ```bash
-   npm install react-native-gesture-handler react-native-reanimated
+   npm install react-native-gesture-handler react-native-reanimated react-native-worklets
    ```
+   you also need to manually add the `react-native-worklets/plugin` plugin to your `babel.config.js`
+
+   ```
+    module.exports = {
+        presets: [
+          ... // don't add it here :)
+        ],
+        plugins: [
+          ...
+          'react-native-worklets/plugin',
+        ],
+      };
+   ```
+   see more details in [react-native-reanimated installation doc](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
 
  - For iOS with bare React Native project, make sure you have CocoaPods installed. Then install the pods to complete the installation:
    ```bash
@@ -124,7 +138,7 @@ yarn
 
 # start ios
 cd rn-kitchen-sink/ios && pod install
-yarn ios 
+yarn ios
 
 # start android
 yarn android

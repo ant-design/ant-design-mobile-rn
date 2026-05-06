@@ -1,5 +1,5 @@
+import { View } from '@ant-design/react-native'
 import React from 'react'
-import { View } from '../../'
 
 export default class SafeViewExample extends React.Component<any, any> {
   render() {

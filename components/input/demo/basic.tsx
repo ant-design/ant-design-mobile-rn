@@ -1,6 +1,6 @@
+import { Input, List } from '@ant-design/react-native'
 import React from 'react'
 import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
-import { Input, List } from '../../'
 
 export default function InputExample() {
   const [value, setValue] = React.useState('')

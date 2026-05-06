@@ -1,11 +1,16 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: Button
 ---
 
 To trigger an operation.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

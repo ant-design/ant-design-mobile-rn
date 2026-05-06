@@ -1,6 +1,6 @@
+import { Result } from '@ant-design/react-native'
 import React from 'react'
 import { Image, ScrollView, Text } from 'react-native'
-import { Result } from '../../'
 
 export default class ResultExample extends React.Component<any, any> {
   render() {

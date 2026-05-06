@@ -1,6 +1,6 @@
+import { Button, Checkbox, Flex, List, WingBlank } from '@ant-design/react-native'
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { Button, Checkbox, Flex, List, WingBlank } from '../../'
 const AgreeItem = Checkbox.AgreeItem
 const CheckboxItem = Checkbox.CheckboxItem
 

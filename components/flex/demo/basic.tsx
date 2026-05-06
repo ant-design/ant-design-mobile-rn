@@ -1,6 +1,6 @@
+import { Button, Flex, WhiteSpace, WingBlank } from '@ant-design/react-native'
 import React from 'react'
 import { ScrollView, Text, TouchableWithoutFeedback, View } from 'react-native'
-import { Button, Flex, WhiteSpace, WingBlank } from '../../'
 
 const Circle = (props: any) => {
   const size = props.size || 20

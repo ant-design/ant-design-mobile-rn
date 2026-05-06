@@ -54,3 +54,6 @@ package-lock.json
 .jest
 .expo/
 web-build/
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production

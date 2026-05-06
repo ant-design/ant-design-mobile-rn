@@ -16,8 +16,20 @@
     "types": [
       "react",
       "react-native"
-    ]
+    ],
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ant-design/react-native": ["./components/index.tsx"],
+      "@ant-design/react-native/lib/*": ["./components/*"]
+    }
   },
+  "include": [
+    ".dumirc.ts",
+    "components/**/*",
+    "components/**/*.tsx",
+    "components/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "lib",

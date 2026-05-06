@@ -1,6 +1,6 @@
+import { Button, Flex, List, Radio, WingBlank } from '@ant-design/react-native'
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { Button, Flex, List, Radio, WingBlank } from '../../'
 const RadioItem = Radio.RadioItem
 
 type RadioValue = string | number

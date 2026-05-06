@@ -2,8 +2,9 @@
 category: Components
 title: Provider
 subtitle: 全局化配置
-type: Other
-version: update
+group:
+  title: 其他
+  order: 8
 ---
 
 为组件提供统一的全局化配置。
@@ -19,6 +20,10 @@ version: update
 `ActionSheet` `Modal` `Picker` `Toast` `ToolTip`属于Portal类组件；
 
 若要使用这些组件，必须使用`Provider`包裹根组件（通常在App.js）。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

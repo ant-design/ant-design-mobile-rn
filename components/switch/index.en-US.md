@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: Switch
 ---
 
@@ -8,6 +10,10 @@ Select between two status, e.g. Select On or Off.
 
 ### Rules
 - This is a **controlled component** that requires an `onChange` callback that updates the `checked` prop in order for the component to reflect user actions. 
+
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

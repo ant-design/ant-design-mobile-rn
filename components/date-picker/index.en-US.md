@@ -1,6 +1,8 @@
 ---
 category: Components
-type: Data Entry
+group:
+  title: Data Entry
+  order: 3
 title: DatePicker
 ---
 
@@ -9,6 +11,9 @@ Used to select a date or time.
 ### Rules
 - At most accurate to seconds.
 
+## Examples
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

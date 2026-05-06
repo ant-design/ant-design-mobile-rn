@@ -1,9 +1,14 @@
-const data = require('./data.json')
+import {
+  Button,
+  List,
+  Picker,
+  PickerValue,
+  PickerValueExtend,
+  Provider,
+} from '@ant-design/react-native'
 import { district } from 'antd-mobile-demo-data'
 import React, { useState } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
-import { Button, List, Picker } from '../../'
-import { PickerValue, PickerValueExtend } from '../../picker-view/PropsType'
 
 const CustomChildren = (props: any) => (
   <TouchableOpacity onPress={props.onPress}>
@@ -50,7 +55,7 @@ function BasicDemo() {
 
       {/* visible控制显示/隐藏 */}
       <Picker
-        data={data}
+        data={district}
         cols={3}
         onChange={setValue}
         onVisibleChange={(v) => {
@@ -89,10 +94,10 @@ export default class PopupExample extends React.Component<any, any> {
 
   render() {
     return (
-      <View>
+      <Provider>
         <List renderHeader={'List Children'}>
           <Picker
-            data={data}
+            data={district}
             cols={3}
             value={this.state.value}
             onChange={this.onChange}>
@@ -120,7 +125,7 @@ export default class PopupExample extends React.Component<any, any> {
         <List renderHeader={'visible 控制显示/隐藏'}>
           <BasicDemo />
         </List>
-      </View>
+      </Provider>
     )
   }
 }
