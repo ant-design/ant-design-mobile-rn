@@ -3,42 +3,43 @@ import { Animated } from 'react-native'
 import { SkeletonProviderProps } from './PropsType'
 
 export interface SkeletonAnimationContextValue {
-  opacity: Animated.AnimatedInterpolation
+  progress: Animated.Value
 }
 
 export const SkeletonAnimationContext =
   React.createContext<SkeletonAnimationContextValue | null>(null)
 
-const getOpacity = (opacityValue: Animated.Value) =>
-  opacityValue.interpolate({
-    inputRange: [0, 0.5, 1],
-    outputRange: [1, 0.25, 1],
-  })
-
 const SkeletonProvider: React.FC<SkeletonProviderProps> = (props) => {
   const { children } = props
-  const opacityValue = React.useRef(new Animated.Value(0)).current
-
-  const opacity = React.useMemo(() => getOpacity(opacityValue), [opacityValue])
+  const progress = React.useRef(new Animated.Value(0)).current
 
   React.useEffect(() => {
+    progress.setValue(0)
     const animation = Animated.loop(
-      Animated.timing(opacityValue, {
-        toValue: 1,
-        duration: 1400,
-        useNativeDriver: true,
-      }),
+      Animated.sequence([
+        Animated.timing(progress, {
+          toValue: 1,
+          duration: 1400,
+          useNativeDriver: true,
+        }),
+        Animated.delay(200),
+        Animated.timing(progress, {
+          toValue: 0,
+          duration: 0,
+          useNativeDriver: true,
+        }),
+      ]),
     )
 
     animation.start()
 
     return () => {
       animation.stop()
-      opacityValue.setValue(0)
+      progress.setValue(0)
     }
-  }, [opacityValue])
+  }, [progress])
 
-  const value = React.useMemo(() => ({ opacity }), [opacity])
+  const value = React.useMemo(() => ({ progress }), [progress])
 
   return (
     <SkeletonAnimationContext.Provider value={value}>

@@ -1,35 +1,28 @@
+import { List, Skeleton } from '@ant-design/react-native'
 import React from 'react'
-import { Text, View } from 'react-native'
-import { Skeleton, WhiteSpace } from '../..'
 
 class SkeletonExample extends React.Component {
   render() {
     return (
-      <View style={{ padding: 16, backgroundColor: '#fff' }}>
-        <WhiteSpace />
-        <Text>基础用法</Text>
-        <WhiteSpace />
+      <Skeleton.Provider>
+        <List renderHeader="基础用法" />
         <Skeleton.Title />
         <Skeleton.Paragraph />
-        <WhiteSpace />
-        <Text>有动画的骨架屏</Text>
-        <WhiteSpace />
+        <List renderHeader="有动画的骨架屏" />
         <Skeleton.Title animated />
         <Skeleton.Paragraph lineCount={5} animated />
-        <WhiteSpace />
-        <Text>自定义</Text>
-        <WhiteSpace />
+        <List renderHeader="自定义" />
         <Skeleton
           animated
           style={{
-            width: 200,
+            width: '70%',
             height: 100,
-            backgroundColor: '#108ee9',
-            borderRadius: 10,
+            borderRadius: 8,
+            marginTop: 16,
+            marginBottom: 8
           }}
         />
-        <WhiteSpace />
-      </View>
+      </Skeleton.Provider>
     )
   }
 }

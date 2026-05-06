@@ -1,8 +1,11 @@
 ---
 category: Components
-type: 反馈
+group:
+  title: 反馈
+  order: 5
 title: Skeleton
 subtitle: 骨架屏
+version: 5.5.0
 ---
 
 在需要等待加载内容的位置设置一个骨架屏，可以降低用户的认知负担，使加载过程更自然。
@@ -11,6 +14,10 @@ subtitle: 骨架屏
 - 骨架屏用于表示内容正在加载中。
 - 使用骨架屏可以提升感知性能，减少用户在加载过程中的焦虑感。
 - 骨架组件包含 Title 和 Paragraph，用于常见的内容结构。
+
+## 代码演示
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

@@ -1,5 +1,10 @@
 import React, { useEffect, useRef } from 'react'
-import { Animated, StyleProp, View, ViewStyle } from 'react-native'
+import {
+  Animated,
+  StyleProp,
+  View,
+  ViewStyle
+} from 'react-native'
 import { useTheme } from '../style'
 import { SkeletonProps } from './PropsType'
 import { SkeletonAnimationContext } from './SkeletonProvider'
@@ -12,33 +17,72 @@ const AnimatedSkeleton: React.FC<{
   [key: string]: any
 }> = ({ style, animated, ...restProps }) => {
   const sharedAnimation = React.useContext(SkeletonAnimationContext)
-  const opacityValue = useRef(new Animated.Value(0)).current
+  const progress = useRef(new Animated.Value(0)).current
 
   useEffect(() => {
     if (animated && !sharedAnimation) {
+      progress.setValue(0)
       const animation = Animated.loop(
-        Animated.timing(opacityValue, {
-          toValue: 1,
-          duration: 1400,
-          useNativeDriver: true,
-        }),
+        Animated.sequence([
+          Animated.timing(progress, {
+            toValue: 1,
+            duration: 1400,
+            useNativeDriver: true,
+          }),
+          Animated.delay(200),
+          Animated.timing(progress, {
+            toValue: 0,
+            duration: 0,
+            useNativeDriver: true,
+          }),
+        ]),
       )
       animation.start()
       return () => {
         animation.stop()
-        opacityValue.setValue(0)
+        progress.setValue(0)
       }
     }
-  }, [animated, opacityValue, sharedAnimation])
+  }, [animated, progress, sharedAnimation])
 
   if (animated) {
-    const opacity =
-      sharedAnimation?.opacity ??
-      opacityValue.interpolate({
-        inputRange: [0, 0.5, 1],
-        outputRange: [1, 0.25, 1],
-      })
-    return <Animated.View style={[style, { opacity }]} {...restProps} />
+    const animationProgress = sharedAnimation?.progress ?? progress
+    const scaleX = animationProgress.interpolate({
+      inputRange: [0, 1],
+      outputRange: [0.01, 1],
+    })
+    const opacity = animationProgress.interpolate({
+      inputRange: [0, 1],
+      outputRange: [0.08, 1],
+    })
+
+    return (
+      <View
+        style={[
+          style,
+          {
+            overflow: 'hidden',
+            backgroundColor: 'rgba(129, 129, 129, 0.24)',
+          },
+        ]}
+        {...restProps}
+      >
+        <Animated.View
+          pointerEvents="none"
+          style={[
+            {
+              position: 'absolute',
+              left: '-100%',
+              width: '200%',
+              height: '100%',
+              backgroundColor: 'rgb(242 242 242)',
+              opacity,
+              transform: [{ scaleX }],
+            },
+          ]}
+        />
+      </View>
+    )
   }
 
   return <View style={style} {...restProps} />

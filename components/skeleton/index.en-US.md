@@ -1,7 +1,10 @@
 ---
 category: Components
-type: Feedback
+group:
+  title: Feedback
+  order: 5
 title: Skeleton
+version: 5.5.0
 ---
 
 A placeholder for loading state, which can reduce users' cognitive load and make the loading process more natural.
@@ -10,6 +13,10 @@ A placeholder for loading state, which can reduce users' cognitive load and make
 - Skeleton screens are used to indicate that content is loading.
 - Use skeleton screens to improve perceived performance and reduce user anxiety during loading.
 - Skeleton components include Title and Paragraph for common content structures.
+
+## Demo
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

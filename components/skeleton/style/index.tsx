@@ -21,15 +21,17 @@ export default (_theme: Theme) =>
       width: '45%',
       height: 32,
       borderRadius: _theme.radius_xs,
-      marginVertical: 16,
+      marginTop: 16, // 不支持gap属性
+      marginBottom: 8,
     },
     skeletonParagraph: {},
     skeletonParagraphLine: {
       height: 18,
       borderRadius: _theme.radius_xs,
-      marginVertical: 12,
+      marginVertical: 6,
     },
     skeletonParagraphLastLine: {
       width: '65%',
+      marginBottom: 12,
     },
   })
