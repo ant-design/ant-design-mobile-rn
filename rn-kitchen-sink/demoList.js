@@ -266,6 +266,12 @@ module.exports = {
       module: require('../components/view/demo/basic'),
     },
     {
+      title: 'Watermark',
+      description: '水印',
+      icon: 'https://os.alipayobjects.com/rmsportal/daARhPjKcxlSuuZ.png',
+      module: require('../components/watermark/demo/basic'),
+    },
+    {
       title: 'WhiteSpace',
       description: '上下留白',
       icon: 'https://os.alipayobjects.com/rmsportal/NfomhEsOdhFxEws.png',

@@ -50,6 +50,7 @@ export { default as TextareaItem } from './textarea-item/index'
 export { default as Toast } from './toast/index'
 export { default as Tooltip } from './tooltip/index'
 export { default as View } from './view/index'
+export { default as Watermark } from './watermark/index'
 export { default as WhiteSpace } from './white-space/index'
 export { default as WingBlank } from './wing-blank/index'
 /**
