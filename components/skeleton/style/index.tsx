@@ -3,6 +3,7 @@ import { Theme } from '../../style'
 
 export interface SkeletonStyle {
   skeleton: ViewStyle
+  skeletonShimmer: ViewStyle
   skeletonTitle: ViewStyle
   skeletonParagraph: ViewStyle
   skeletonParagraphLine: ViewStyle
@@ -16,6 +17,10 @@ export default (_theme: Theme) =>
       width: '100%',
       height: 0,
       borderRadius: 0,
+    },
+    skeletonShimmer: {
+      width: 160,
+      backgroundColor: 'rgba(129, 129, 129, 0.14)',
     },
     skeletonTitle: {
       width: '45%',

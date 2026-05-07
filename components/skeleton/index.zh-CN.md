@@ -23,8 +23,8 @@ version: 5.5.0
 
 ### Skeleton
 
-属性 | 说明 | 类型 | 默认值 |
-----|-----|------|-------
+| 属性 | 说明 | 类型 | 默认值 |
+|----|-----|------|-------
 | animated | 是否显示动画 | Boolean | `false` |
 | style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
 | styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |
@@ -39,8 +39,8 @@ version: 5.5.0
 
 标题骨架屏组件。
 
-属性 | 说明 | 类型 | 默认值 |
-----|-----|------|-------
+|属性 | 说明 | 类型 | 默认值 |
+|----|-----|------|-------
 | animated | 是否显示动画 | Boolean | `false` |
 | style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
 | styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |
@@ -49,8 +49,8 @@ version: 5.5.0
 
 段落骨架屏组件。
 
-属性 | 说明 | 类型 | 默认值 |
-----|-----|------|-------
+|属性 | 说明 | 类型 | 默认值 |
+|----|-----|------|-------
 | lineCount | 行数 | Number | `3` |
 | animated | 是否显示动画 | Boolean | `false` |
 | style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
@@ -61,6 +61,7 @@ version: 5.5.0
 ```typescript
 interface SkeletonStyle {
   skeleton: ViewStyle                   // 自定义样式类
+  skeletonShimmer: ViewStyle            // 扫光层（animated 时）
   skeletonTitle: ViewStyle              // 标题容器
   skeletonParagraph: ViewStyle          // 段落容器
   skeletonParagraphLine: ViewStyle      // 段落行

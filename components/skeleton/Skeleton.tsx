@@ -2,90 +2,80 @@ import React, { useEffect, useRef } from 'react'
 import {
   Animated,
   StyleProp,
+  StyleSheet,
+  useWindowDimensions,
   View,
-  ViewStyle
+  ViewStyle,
 } from 'react-native'
 import { useTheme } from '../style'
 import { SkeletonProps } from './PropsType'
-import { SkeletonAnimationContext } from './SkeletonProvider'
+import {
+  SkeletonAnimationContext,
+  startSkeletonAnimation,
+} from './SkeletonProvider'
 import SkeletonStyles from './style'
 
 // Animated skeleton component
 const AnimatedSkeleton: React.FC<{
   style?: StyleProp<ViewStyle>
-  animated?: boolean
+  shimmerStyle?: StyleProp<ViewStyle>
   [key: string]: any
-}> = ({ style, animated, ...restProps }) => {
+}> = ({ style, shimmerStyle, ...restProps }) => {
+  const { width: screenWidth } = useWindowDimensions()
   const sharedAnimation = React.useContext(SkeletonAnimationContext)
   const progress = useRef(new Animated.Value(0)).current
 
   useEffect(() => {
-    if (animated && !sharedAnimation) {
-      progress.setValue(0)
-      const animation = Animated.loop(
-        Animated.sequence([
-          Animated.timing(progress, {
-            toValue: 1,
-            duration: 1400,
-            useNativeDriver: true,
-          }),
-          Animated.delay(200),
-          Animated.timing(progress, {
-            toValue: 0,
-            duration: 0,
-            useNativeDriver: true,
-          }),
-        ]),
-      )
-      animation.start()
+    if (!sharedAnimation) {
+      const animation = startSkeletonAnimation(progress)
       return () => {
         animation.stop()
         progress.setValue(0)
       }
     }
-  }, [animated, progress, sharedAnimation])
+  }, [progress, sharedAnimation])
 
-  if (animated) {
-    const animationProgress = sharedAnimation?.progress ?? progress
-    const scaleX = animationProgress.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0.01, 1],
-    })
-    const opacity = animationProgress.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0.08, 1],
-    })
+  const shimmerWidth = React.useMemo(() => {
+    const flat = StyleSheet.flatten(shimmerStyle)
+    const w = typeof flat?.width === 'number' ? flat.width : 0
+    return w || 160
+  }, [shimmerStyle])
 
-    return (
-      <View
+  const animationProgress = sharedAnimation?.progress ?? progress
+  const translateX = animationProgress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [-shimmerWidth, screenWidth + shimmerWidth],
+  })
+  const opacity = animationProgress.interpolate({
+    inputRange: [0, 0.18, 0.5, 0.82, 1],
+    outputRange: [0, 0.36, 1, 0.36, 0],
+  })
+
+  return (
+    <View
+      style={[
+        style,
+        {
+          overflow: 'hidden',
+        },
+      ]}
+      {...restProps}
+    >
+      <Animated.View
+        pointerEvents="none"
         style={[
-          style,
           {
-            overflow: 'hidden',
-            backgroundColor: 'rgba(129, 129, 129, 0.24)',
+            position: 'absolute',
+            left: 0,
+            height: '100%',
+            opacity,
+            transform: [{ translateX }],
           },
+          shimmerStyle,
         ]}
-        {...restProps}
-      >
-        <Animated.View
-          pointerEvents="none"
-          style={[
-            {
-              position: 'absolute',
-              left: '-100%',
-              width: '200%',
-              height: '100%',
-              backgroundColor: 'rgb(242 242 242)',
-              opacity,
-              transform: [{ scaleX }],
-            },
-          ]}
-        />
-      </View>
-    )
-  }
-
-  return <View style={style} {...restProps} />
+      />
+    </View>
+  )
 }
 
 const InternalSkeleton: React.FC<SkeletonProps> = (props) => {
@@ -95,10 +85,14 @@ const InternalSkeleton: React.FC<SkeletonProps> = (props) => {
     themeStyles: SkeletonStyles,
   })
 
+  if (!animated) {
+    return <View style={[themeStyles.skeleton, style]} {...restProps} />
+  }
+
   return (
     <AnimatedSkeleton
       style={[themeStyles.skeleton, style]}
-      animated={animated}
+      shimmerStyle={themeStyles.skeletonShimmer}
       {...restProps}
     />
   )

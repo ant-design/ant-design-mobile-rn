@@ -22,8 +22,8 @@ A placeholder for loading state, which can reduce users' cognitive load and make
 
 ### Skeleton
 
-Properties | Description | Type | Default |
------------|------------|------|---------
+| Properties | Description | Type | Default |
+|-----------|------------|------|---------
 | animated | Whether to show animation | Boolean | `false` |
 | style | Custom style | StyleProp&lt;ViewStyle&gt; | - |
 | styles | Semantic DOM style | [SkeletonStyle](#skeletonstyle-interface) | - |
@@ -38,8 +38,8 @@ When many animated `Skeleton` components are rendered at the same time, creating
 
 Title skeleton component.
 
-Properties | Description | Type | Default |
------------|------------|------|---------
+| Properties | Description | Type | Default |
+|-----------|------------|------|---------
 | animated | Whether to show animation | Boolean | `false` |
 | style | Custom style | StyleProp&lt;ViewStyle&gt; | - |
 | styles | Semantic DOM style | [SkeletonStyle](#skeletonstyle-interface) | - |
@@ -48,8 +48,8 @@ Properties | Description | Type | Default |
 
 Paragraph skeleton component.
 
-Properties | Description | Type | Default |
------------|------------|------|---------
+| Properties | Description | Type | Default |
+|-----------|------------|------|---------
 | lineCount | Number of lines | Number | `3` |
 | animated | Whether to show animation | Boolean | `false` |
 | style | Custom style | StyleProp&lt;ViewStyle&gt; | - |
@@ -60,6 +60,7 @@ Properties | Description | Type | Default |
 ```typescript
 interface SkeletonStyle {
   skeleton: ViewStyle                   // Custom style class
+  skeletonShimmer: ViewStyle            // Shimmer overlay when animated
   skeletonTitle: ViewStyle              // Title container
   skeletonParagraph: ViewStyle          // Paragraph container
   skeletonParagraphLine: ViewStyle      // Paragraph line

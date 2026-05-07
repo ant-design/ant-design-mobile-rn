@@ -200,7 +200,7 @@ module.exports = {
     {
       title: 'Skeleton',
       description: '骨架屏',
-      icon: 'https://os.alipayobjects.com/rmsportal/mCyccAjoVLFVhSH.png',
+      icon: 'https://luokun.oss-cn-hangzhou.aliyuncs.com/github/skeleton_icon.png',
       module: require('../components/skeleton/demo/basic'),
     },
     {
