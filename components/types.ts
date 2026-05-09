@@ -27,6 +27,11 @@ export type {
 } from './form/index'
 export type { GridProps } from './grid/index'
 export type { IconProps } from './icon/index'
+export type {
+  IndexBarProps,
+  IndexBarSectionData,
+  IndicatorProps,
+} from './index-bar/PropsType'
 export type { InputProps, TextAreaProps } from './input/PropsType'
 export type { ListViewProps } from './list-view/index'
 export type { BriefProps } from './list/Brief'
