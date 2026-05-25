@@ -2,7 +2,7 @@
 
 所有组件文档的聚合内容。
 
-> 共 47 个组件
+> 共 50 个组件
 
 ## Accordion
 
@@ -1563,6 +1563,229 @@ type DatePickerFilter = Partial<
 
 
 此外还支持 [PickerView](/components/picker-view-cn) 的以下属性：`style` `styles` `itemStyle` `itemHeight` `numberOfLines` `renderMaskTop` `renderMaskBottom`
+
+---
+
+## Divider
+
+Source: https://rn.mobile.ant.design/components/divider-cn.md
+
+# Divider
+
+对不同章节的文本段落进行分割。
+对行内文字/链接进行分割，例如表格的操作列。
+
+## 代码演示
+
+```tsx
+import { Divider, Flex, List, Stepper, WhiteSpace, WingBlank } from '@ant-design/react-native'
+import React from 'react'
+import { ScrollView, Text } from 'react-native'
+
+const Item = List.Item
+export default class BasicDividerExample extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      thickness: 1,
+      patternLen: 4,
+      patternGap: 2,
+      innerPadding: 0,
+      orientationMargin: 0,
+    }
+  }
+
+  setThickness = (value: number) => {
+    this.setState({ thickness: value })
+  }
+  setPatternLen = (value: number) => {
+    this.setState({ patternLen: value })
+  }
+  setPatternGap = (value: number) => {
+    this.setState({ patternGap: value })
+  }
+  setInnerPadding = (value: number) => {
+    this.setState({ innerPadding: value })
+  }
+  setOrientationMargin = (value: number) => {
+    this.setState({ orientationMargin: value })
+  }
+
+  render() {
+    const {
+      thickness,
+      patternLen,
+      patternGap,
+      innerPadding,
+      orientationMargin,
+    } = this.state
+    return (
+      <ScrollView
+        style={{ flex: 1, backgroundColor: '#f5f5f9' }}
+        automaticallyAdjustContentInsets={false}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}>
+        <List renderHeader="基础分割线">
+          <Item>
+            <Divider />
+          </Item>
+        </List>
+        <List renderHeader="带内容的分割线">
+          <Item>
+            <WhiteSpace />
+            <Divider content="默认内容在中间" />
+            <WhiteSpace />
+            <Divider content="左侧内容" position="left" />
+            <WhiteSpace />
+            <Divider content="右侧内容" position="right" />
+          </Item>
+        </List>
+        <List renderHeader="竖向分割线">
+          <Item>
+            <WingBlank style={{ flexDirection: 'row' }}>
+              <Flex direction="row">
+                <Text style={{ fontSize: 14 }}>Home</Text>
+                <Divider
+                  orientation="vertical"
+                  style={{ marginHorizontal: 10 }}
+                />
+                <Text style={{ fontSize: 14 }}>Guide</Text>
+                <Divider
+                  orientation="vertical"
+                  style={{ marginHorizontal: 10 }}
+                />
+                <Text style={{ fontSize: 14 }}>Contact</Text>
+              </Flex>
+            </WingBlank>
+          </Item>
+        </List>
+        <List renderHeader="自定义颜色">
+          <Item>
+            <Divider color="#5383ec" />
+            <WhiteSpace size="lg" />
+            <Divider variant="dashed" color="#d85140" />
+          </Item>
+        </List>
+        <List renderHeader="自定义厚度">
+          <Item>
+            <Flex>
+              <Text>thickness: </Text>
+              <Stepper
+                min={1}
+                max={10}
+                step={1}
+                value={thickness}
+                onChange={this.setThickness}
+              />
+            </Flex>
+            <WhiteSpace size="lg" />
+            <Divider thickness={thickness} />
+            <WhiteSpace size="lg" />
+          </Item>
+        </List>
+        <List renderHeader="自定义节段">
+          <Item>
+            <Flex>
+              <Text>pattern: </Text>
+              <Stepper
+                min={4}
+                max={30}
+                step={1}
+                value={patternLen}
+                onChange={this.setPatternLen}
+                style={{ marginRight: 20 }}
+              />
+              <Stepper
+                min={2}
+                max={20}
+                step={1}
+                value={patternGap}
+                onChange={this.setPatternGap}
+              />
+            </Flex>
+            <WhiteSpace size="lg" />
+            <Divider
+              variant="dashed"
+              color="#d85140"
+              pattern={[patternLen, patternGap]}
+              thickness={1}
+            />
+            <WhiteSpace size="lg" />
+          </Item>
+        </List>
+        <List renderHeader="innerPadding">
+          <Item>
+            <WhiteSpace size="lg" />
+            <Flex>
+              <Text>innerPadding: </Text>
+              <Stepper
+                min={0}
+                max={30}
+                step={2}
+                value={innerPadding}
+                onChange={this.setInnerPadding}
+              />
+            </Flex>
+            <WhiteSpace size="lg" />
+            <Divider
+              content="中间内容"
+              innerPadding={innerPadding}
+              thickness={1}
+            />
+            <WhiteSpace size="lg" />
+          </Item>
+        </List>
+        <List renderHeader="orientationMargin">
+          <Item>
+            <WhiteSpace size="lg" />
+            <Flex>
+              <Text>orientationMargin: </Text>
+              <Stepper
+                min={0}
+                max={30}
+                step={2}
+                value={orientationMargin}
+                onChange={this.setOrientationMargin}
+              />
+            </Flex>
+            <WhiteSpace size="lg" />
+            <Divider
+              content="左侧内容"
+              position="left"
+              orientationMargin={orientationMargin}
+              thickness={1}
+            />
+            <WhiteSpace size="lg" />
+            <Divider
+              content="右侧内容"
+              position="right"
+              variant="dashed"
+              orientationMargin={orientationMargin}
+              thickness={1}
+            />
+            <WhiteSpace size="lg" />
+          </Item>
+        </List>
+      </ScrollView>
+    )
+  }
+}
+```
+
+### Divider
+
+| 属性              | 说明                                                                                         | 类型                          | 默认值                     | 必选  |
+| ----------------- | -------------------------------------------------------------------------------------------- | ----------------------------- | -------------------------- | ----- |
+| content           | 嵌套的标题                                                                                   | `React.ReactNode` \| `string` | `false`                    | false |
+| orientation       | 水平还是垂直类型                                                                             | `horizontal` \| `vertical`    | `horizontal`               | false |
+| variant           | 分割线是实线、还是虚线                                                                       | `solid` \| `dashed`           | `solid`                    | false |
+| position          | 标题的位置                                                                                   | `left` \| `center` \|`right`  | `center`                   | false |
+| color             | 分割线颜色                                                                                   | `ColorValue`                  | `#c6c6c6`                  | false |
+| thickness         | 分割线厚度                                                                                   | `number`                      | `StyleSheet.hairlineWidth` | false |
+| pattern           | 虚线节段长度、间距。 仅`variant` 为 `dashed`时生效。                                         | `number[]`                    | `[4,2]`                    | false |
+| innerPadding      | 标题的内边距                                                                                 | `number` \| `string` \| `undefined`              | `10`                       | false |
+| orientationMargin | 标题和最近 left/right 边框之间的距离，去除了分割线，同时 `position` 必须为 `left` 或 `right` | `number` \| `string` \| `undefined`            |                            | false |
+| style             | 分割线样式对象                                                                               | `ViewStyle`                   |                            | false |
 
 ---
 
@@ -5564,6 +5787,126 @@ type Event = { target: { value: RadioValue } }
 
 ---
 
+## Rate
+
+Source: https://rn.mobile.ant.design/components/rate-cn.md
+
+# Rate
+
+用图形表示评分等级程度。
+
+### 规则
+
+- 适用于展示事物评级以及快速打分。
+
+## 代码演示
+
+```tsx
+import { Flex, List, Rate, Toast, WhiteSpace } from '@ant-design/react-native'
+import React from 'react'
+import { ScrollView, Text } from 'react-native'
+const Item = List.Item
+
+export default class RateExample extends React.Component<any, any> {
+  onChange = (value: number) => {
+    Toast.show({ content: `当前评分为：${value}`, position: 'top' })
+  }
+  render() {
+    return (
+      <ScrollView>
+        <List renderHeader="基础用法">
+          <Item>
+            <Rate onChange={this.onChange} count={5} />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="滑动">
+          <Item>
+            <Rate defaultValue={1} allowSwiping />
+          </Item>
+        </List>
+        <List renderHeader="半星">
+          <Item>
+            <Rate allowHalf={true} defaultValue={2.5} />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="只读">
+          <Item>
+            <Rate readOnly={true} defaultValue={3} />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="动画">
+          <Item>
+            <Rate animationConfig={true} defaultValue={3} />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="清除">
+          <Item>
+            <WhiteSpace />
+            <Flex>
+              <Rate defaultValue={3} allowClear />
+              <Text>可清除</Text>
+            </Flex>
+            <WhiteSpace />
+            <Flex>
+              <Rate defaultValue={3} />
+              <Text>不可清除</Text>
+            </Flex>
+            <WhiteSpace />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="自定义">
+          <Item>
+            <WhiteSpace />
+            <Rate
+              iconName="home"
+              iconType="outline"
+              color="green"
+              emptyColor="blue"
+              allowHalf
+              allowSwiping
+            />
+            <WhiteSpace />
+            <Rate iconName="apple" color="red" />
+            <WhiteSpace />
+          </Item>
+        </List>
+        <WhiteSpace />
+      </ScrollView>
+    )
+  }
+}
+```
+
+## API
+
+| 属性            | 说明                                                      | 类型                                                                                                  | 默认值           |
+| --------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------- |
+| value           | 当前数，受控值                                            | `number`                                                                                              | -                |
+| defaultValue    | 默认值                                                    | `number`                                                                                              | `0`              |
+| count           | star 总数                                                 | `number`                                                                                              | `5`              |
+| readOnly        | 只读，无法进行交互                                        | `boolean`                                                                                             | `false`          |
+| allowClear      | 是否允许再次点击后清除，仅在`allowSwiping`为`false`时生效 | `boolean`                                                                                             | `false`          |
+| allowHalf       | 是否允许半选                                              | `boolean`                                                                                             | `false`          |
+| allowSwiping    | 是否允许滑动评分                                          | `boolean`                                                                                             | `false`          |
+| style           | 样式                                                      | `ViewStyle`                                                                                           | -                |
+| color           | 填充 star 的颜色                                          | `string`                                                                                              | `#ff9f18`        |
+| emptyColor      | 空 star 的颜色                                            | `string`                                                                                              | `#eeeeee`        |
+| iconName        | 图标名称                                                  | `string`                                                                                              | `star`, 默认星星 |
+| iconType        | 图标类型                                                  | `fill ｜ outline`                                                                                     | `fill`, 实底风格 |
+| iconSize        | 图标大小                                                  | `number`                                                                                              | `32`             |
+| iconStyle       | 图标样式                                                  | `ViewStyle`                                                                                           | -                |
+| animationConfig | 动画配置                                                  | `boolean ｜ {easing?: (value: number) => number; duration?: number; delay?: number; scale?: number;}` | -                |
+| onChange        | 选择时的回调                                              | `(value: number) => void`                                                                             | -                |
+| onRatingStart   | 在交互开始时的回调，在`onChange`之前                      | `(value: number) => void`                                                                             | -                |
+| onRatingEnd     | 在交互结束时的回调，在`onChange`之后                      | `(value: number) => void`                                                                             | -                |
+
+---
+
 ## Result
 
 Source: https://rn.mobile.ant.design/components/result-cn.md
@@ -5731,6 +6074,106 @@ Source: https://rn.mobile.ant.design/components/segmented-control-cn.md
 `5.2.1`开始已弃用。
 
 请使用[@react-native-community/segmented-control](https://github.com/react-native-community/segmented-control#usage)替代。
+
+---
+
+## Skeleton
+
+Source: https://rn.mobile.ant.design/components/skeleton-cn.md
+
+# Skeleton
+
+在需要等待加载内容的位置设置一个骨架屏，可以降低用户的认知负担，使加载过程更自然。
+
+### 规则
+- 骨架屏用于表示内容正在加载中。
+- 使用骨架屏可以提升感知性能，减少用户在加载过程中的焦虑感。
+- 骨架组件包含 Title 和 Paragraph，用于常见的内容结构。
+
+## 代码演示
+
+```tsx
+import { List, Skeleton } from '@ant-design/react-native'
+import React from 'react'
+
+class SkeletonExample extends React.Component {
+  render() {
+    return (
+      <Skeleton.Provider>
+        <List renderHeader="基础用法" />
+        <Skeleton.Title />
+        <Skeleton.Paragraph />
+        <List renderHeader="有动画的骨架屏" />
+        <Skeleton.Title animated />
+        <Skeleton.Paragraph lineCount={5} animated />
+        <List renderHeader="自定义" />
+        <Skeleton
+          animated
+          style={{
+            width: '70%',
+            height: 100,
+            borderRadius: 8,
+            marginTop: 16,
+            marginBottom: 8
+          }}
+        />
+      </Skeleton.Provider>
+    )
+  }
+}
+
+export default SkeletonExample
+```
+
+## API
+
+### Skeleton
+
+| 属性 | 说明 | 类型 | 默认值 |
+|----|-----|------|-------
+| animated | 是否显示动画 | Boolean | `false` |
+| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
+| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |
+
+### Skeleton.Provider
+
+> 可选的性能优化组件。
+
+当页面中同时渲染大量开启动画的 `Skeleton` 时，每个 `Skeleton` 独立创建动画可能会带来额外开销，并且动画节奏可能不同步。使用 `Skeleton.Provider` 包裹这些组件后，内部的 `Skeleton` 会共享同一个动画实例，从而让动画表现更一致。
+
+### Skeleton.Title
+
+标题骨架屏组件。
+
+|属性 | 说明 | 类型 | 默认值 |
+|----|-----|------|-------
+| animated | 是否显示动画 | Boolean | `false` |
+| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
+| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |
+
+### Skeleton.Paragraph
+
+段落骨架屏组件。
+
+|属性 | 说明 | 类型 | 默认值 |
+|----|-----|------|-------
+| lineCount | 行数 | Number | `3` |
+| animated | 是否显示动画 | Boolean | `false` |
+| style | 自定义样式 | StyleProp&lt;ViewStyle&gt; | - |
+| styles | 语义化结构 style | [SkeletonStyle](#skeletonstyle-语义化样式) | - |
+
+### SkeletonStyle 语义化样式
+
+```typescript
+interface SkeletonStyle {
+  skeleton: ViewStyle                   // 自定义样式类
+  skeletonShimmer: ViewStyle            // 扫光层（animated 时）
+  skeletonTitle: ViewStyle              // 标题容器
+  skeletonParagraph: ViewStyle          // 段落容器
+  skeletonParagraphLine: ViewStyle      // 段落行
+  skeletonParagraphLastLine: ViewStyle  // 段落最后一行
+}
+```
 
 ---
 
