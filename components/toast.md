@@ -13,7 +13,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ActivityIndicator, ScrollView, Text } from 'react-native'
 
 const ToastExample = () => {
-  const handler = useRef<number>()
+  const handler = useRef<number | null>(null)
   const [enableMask, setEnableMask] = useState(Toast.getConfig().mask)
   const [enableStack, setEnableStack] = useState(Toast.getConfig().stackable)
 
@@ -147,7 +147,7 @@ export default ToastExample
 
 const CountDownText = () => {
   const [count, setCount] = useState(5)
-  const interval = useRef<any>()
+  const interval = useRef<any>(null)
   useEffect(() => {
     interval.current = setInterval(() => {
       setCount((x) => {

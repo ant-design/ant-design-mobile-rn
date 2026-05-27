@@ -2,7 +2,7 @@
 
 所有组件语义化描述的聚合文档。
 
-> 共 34 个组件包含语义化描述
+> 共 37 个组件包含语义化描述
 
 # accordion Semantic
 
@@ -247,7 +247,7 @@ export interface ActionSheetStyle {
   mask: ViewStyle
   title: ViewStyle
   titleText: TextStyle
-  message: ViewStyle
+  message: TextStyle
   btn: ViewStyle
   btnText: TextStyle
   cancelBtn: ViewStyle
@@ -1326,7 +1326,9 @@ export default class BasicCarouselExample extends React.Component<any, any> {
             autoplay
             infinite
             afterChange={this.onHorizontalSelectedIndexChange}
-            ref={(ref) => (this.carousel = ref)}>
+            ref={(ref) => {
+              this.carousel = ref
+            }}>
             <View
               style={[styles.containerHorizontal, { backgroundColor: 'red' }]}>
               <Text>Carousel 1</Text>
@@ -1698,7 +1700,7 @@ const CheckboxGroupExample = () => {
 ### styles
 
 ```tsx
-import { StyleSheet, ViewStyle } from 'react-native'
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 
 export interface CheckboxStyle {
@@ -1711,8 +1713,8 @@ export interface CheckboxStyle {
   checkbox_inner_disabled: ViewStyle
   checkbox_inner_before: ViewStyle
   checkbox_inner_before_disabled: ViewStyle
-  checkbox_label: ViewStyle
-  checkbox_label_disabled: ViewStyle
+  checkbox_label: TextStyle
+  checkbox_label_disabled: TextStyle
   checkbox_inner_indeterminate: ViewStyle
   checkbox_inner_before_indeterminate: ViewStyle
 }
@@ -1828,6 +1830,306 @@ export default (theme: Theme) =>
   <AntmView styles={{ checkbox_label, checkbox_label_disabled }} />
 
 </Pressable>
+```
+
+---
+
+# divider Semantic
+
+Source: https://rn.mobile.ant.design/components/divider-cn/semantic.md
+
+## Divider
+
+### Usage Example
+
+```jsx
+import { Divider, Flex, List, Stepper, WhiteSpace, WingBlank } from '@ant-design/react-native'
+import React from 'react'
+import { ScrollView, Text } from 'react-native'
+
+const Item = List.Item
+export default class BasicDividerExample extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      thickness: 1,
+      patternLen: 4,
+      patternGap: 2,
+      innerPadding: 0,
+      orientationMargin: 0,
+    }
+  }
+
+  setThickness = (value: number) => {
+    this.setState({ thickness: value })
+  }
+  setPatternLen = (value: number) => {
+    this.setState({ patternLen: value })
+  }
+  setPatternGap = (value: number) => {
+    this.setState({ patternGap: value })
+  }
+  setInnerPadding = (value: number) => {
+    this.setState({ innerPadding: value })
+  }
+  setOrientationMargin = (value: number) => {
+    this.setState({ orientationMargin: value })
+  }
+
+  render() {
+    const {
+      thickness,
+      patternLen,
+      patternGap,
+      innerPadding,
+      orientationMargin,
+    } = this.state
+    return (
+      <ScrollView
+        style={{ flex: 1, backgroundColor: '#f5f5f9' }}
+        automaticallyAdjustContentInsets={false}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}>
+        <List renderHeader="基础分割线">
+          <Item>
+            <Divider />
+          </Item>
+        </List>
+        <List renderHeader="带内容的分割线">
+          <Item>
+            <WhiteSpace />
+            <Divider content="默认内容在中间" />
+            <WhiteSpace />
+            <Divider content="左侧内容" position="left" />
+            <WhiteSpace />
+            <Divider content="右侧内容" position="right" />
+          </Item>
+        </List>
+        <List renderHeader="竖向分割线">
+          <Item>
+            <WingBlank style={{ flexDirection: 'row' }}>
+              <Flex direction="row">
+                <Text style={{ fontSize: 14 }}>Home</Text>
+                <Divider
+                  orientation="vertical"
+                  style={{ marginHorizontal: 10 }}
+                />
+                <Text style={{ fontSize: 14 }}>Guide</Text>
+                <Divider
+                  orientation="vertical"
+                  style={{ marginHorizontal: 10 }}
+                />
+                <Text style={{ fontSize: 14 }}>Contact</Text>
+              </Flex>
+            </WingBlank>
+          </Item>
+        </List>
+        <List renderHeader="自定义颜色">
+          <Item>
+            <Divider color="#5383ec" />
+            <WhiteSpace size="lg" />
+            <Divider variant="dashed" color="#d85140" />
+          </Item>
+        </List>
+        <List renderHeader="自定义厚度">
+          <Item>
+            <Flex>
+              <Text>thickness: </Text>
+              <Stepper
+                min={1}
+                max={10}
+                step={1}
+                value={thickness}
+                onChange={this.setThickness}
+              />
+            </Flex>
+            <WhiteSpace size="lg" />
+            <Divider thickness={thickness} />
+            <WhiteSpace size="lg" />
+          </Item>
+        </List>
+        <List renderHeader="自定义节段">
+          <Item>
+            <Flex>
+              <Text>pattern: </Text>
+              <Stepper
+                min={4}
+                max={30}
+                step={1}
+                value={patternLen}
+                onChange={this.setPatternLen}
+                style={{ marginRight: 20 }}
+              />
+              <Stepper
+                min={2}
+                max={20}
+                step={1}
+                value={patternGap}
+                onChange={this.setPatternGap}
+              />
+            </Flex>
+            <WhiteSpace size="lg" />
+            <Divider
+              variant="dashed"
+              color="#d85140"
+              pattern={[patternLen, patternGap]}
+              thickness={1}
+            />
+            <WhiteSpace size="lg" />
+          </Item>
+        </List>
+        <List renderHeader="innerPadding">
+          <Item>
+            <WhiteSpace size="lg" />
+            <Flex>
+              <Text>innerPadding: </Text>
+              <Stepper
+                min={0}
+                max={30}
+                step={2}
+                value={innerPadding}
+                onChange={this.setInnerPadding}
+              />
+            </Flex>
+            <WhiteSpace size="lg" />
+            <Divider
+              content="中间内容"
+              innerPadding={innerPadding}
+              thickness={1}
+            />
+            <WhiteSpace size="lg" />
+          </Item>
+        </List>
+        <List renderHeader="orientationMargin">
+          <Item>
+            <WhiteSpace size="lg" />
+            <Flex>
+              <Text>orientationMargin: </Text>
+              <Stepper
+                min={0}
+                max={30}
+                step={2}
+                value={orientationMargin}
+                onChange={this.setOrientationMargin}
+              />
+            </Flex>
+            <WhiteSpace size="lg" />
+            <Divider
+              content="左侧内容"
+              position="left"
+              orientationMargin={orientationMargin}
+              thickness={1}
+            />
+            <WhiteSpace size="lg" />
+            <Divider
+              content="右侧内容"
+              position="right"
+              variant="dashed"
+              orientationMargin={orientationMargin}
+              thickness={1}
+            />
+            <WhiteSpace size="lg" />
+          </Item>
+        </List>
+      </ScrollView>
+    )
+  }
+}
+```
+
+### styles
+
+```tsx
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
+
+export interface DividerStyles {
+  container: ViewStyle
+  horizontal: ViewStyle
+  horizontal_auto: ViewStyle
+  horizontal_short_line: ViewStyle
+  vertical: ViewStyle
+  vertical_auto: ViewStyle
+  vertical_short_line: ViewStyle
+  content: TextStyle
+  line: ViewStyle
+}
+
+export default (theme: Theme) =>
+  StyleSheet.create<DividerStyles>({
+    container: {
+      alignItems: 'center',
+    },
+    horizontal: {
+      flexDirection: 'row',
+      width: '100%',
+    },
+    horizontal_auto: {
+      height: 'auto',
+    },
+    horizontal_short_line: {
+      width: '5%',
+    },
+    vertical: {
+      flexDirection: 'column',
+      height: '100%',
+    },
+    vertical_auto: {
+      width: 'auto',
+    },
+    vertical_short_line: {
+      height: '5%',
+    },
+    content: {
+      color: theme.color_text_base,
+      fontSize: theme.font_size_base,
+    },
+    line: {
+      backgroundColor: theme.fill_divider,
+    },
+  })
+```
+
+### Abstract DOM Structure
+
+```html
+<!-- 分割线外层容器，对应 styles.container：居中布局；动态叠加 styles.horizontal（横向）/ styles.vertical（纵向） -->
+<View style={[styles.container, orientationStyle, style]}>
+
+  <!-- ══════ 纯分割线模式（无 content）：直接渲染 Line 组件 ══════ -->
+
+  <!-- 实线模式（variant='solid'）：单色填充块，flex: 1 撑满容器 -->
+  <View style={{ flex: 1, backgroundColor }} />
+
+  <!-- 原生虚线模式（variant='dashed'，无 pattern）：使用 borderStyle='dashed' 实现，性能最优 -->
+  <View style={{ flex: 1, overflow: 'hidden' }}>
+    <View style={{ borderStyle: 'dashed', borderWidth }} />
+  </View>
+
+  <!-- 自定义虚线模式（variant='dashed'，有 pattern）：JS 循环渲染分段 View，通过 onLayout 测量线长动态计算分段数（上限 500） -->
+  <View style={{ flex: 1, flexDirection: 'row' }}>
+    <View /> <!-- 单个虚线分段，按 pattern=[len, gap] 控制宽度与间距，...总计 count 个 -->
+  </View>
+
+  <!-- ══════ 带内容模式（有 content）：首尾各一段分隔线 + 中间内容区 ══════ -->
+
+  <!-- 首段 Line（position='right' 时可能为 null 由尾段替代） -->
+  <View style={lineStyle}>
+    <Line />  <!-- 实线/原生虚线/自定义虚线 -->
+  </View>
+
+  <!-- 内容区域，动态叠加 padding 和 margin（受 innerPadding、orientationMargin、position 控制） -->
+  <View style={contentStyle}>
+    <!-- 文字内容：string / number 包裹为 Text；ReactNode 直接渲染 -->
+    <!-- 对应 styles.content：文字颜色与字号 -->
+    <Text style={styles.content} />
+  </View>
+
+  <!-- 尾段 Line（position='left' 时可能为 null 由首段替代） -->
+  <View style={lineStyle}>
+    <Line />
+  </View>
+</View>
 ```
 
 ---
@@ -2338,7 +2640,7 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 export interface InputStyle {
   container: ViewStyle
-  input: ViewStyle
+  input: TextStyle
   clearIcon: ViewStyle
   prefix: ViewStyle | TextStyle
   showCount: TextStyle
@@ -2877,7 +3179,13 @@ export const description = 'List Example'
 ### styles
 
 ```tsx
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import {
+  DimensionValue,
+  ImageStyle,
+  StyleSheet,
+  TextStyle,
+  ViewStyle,
+} from 'react-native'
 import { Theme } from '../../style'
 export interface ListStyle {
   List: ViewStyle
@@ -2974,7 +3282,7 @@ export default (variables: Theme) =>
       textAlign: 'right',
       textAlignVertical: 'center',
       paddingLeft: variables.h_spacing_md,
-      maxWidth: variables.extra_max_width,
+      maxWidth: variables.extra_max_width as DimensionValue,
     },
     Brief: {
       minHeight: variables.font_size_icontext,
@@ -4966,6 +5274,144 @@ export default (theme: Theme) =>
 
 ---
 
+# rate Semantic
+
+Source: https://rn.mobile.ant.design/components/rate-cn/semantic.md
+
+## Rate
+
+### Usage Example
+
+```jsx
+import { Flex, List, Rate, Toast, WhiteSpace } from '@ant-design/react-native'
+import React from 'react'
+import { ScrollView, Text } from 'react-native'
+const Item = List.Item
+
+export default class RateExample extends React.Component<any, any> {
+  onChange = (value: number) => {
+    Toast.show({ content: `当前评分为：${value}`, position: 'top' })
+  }
+  render() {
+    return (
+      <ScrollView>
+        <List renderHeader="基础用法">
+          <Item>
+            <Rate onChange={this.onChange} count={5} />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="滑动">
+          <Item>
+            <Rate defaultValue={1} allowSwiping />
+          </Item>
+        </List>
+        <List renderHeader="半星">
+          <Item>
+            <Rate allowHalf={true} defaultValue={2.5} />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="只读">
+          <Item>
+            <Rate readOnly={true} defaultValue={3} />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="动画">
+          <Item>
+            <Rate animationConfig={true} defaultValue={3} />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="清除">
+          <Item>
+            <WhiteSpace />
+            <Flex>
+              <Rate defaultValue={3} allowClear />
+              <Text>可清除</Text>
+            </Flex>
+            <WhiteSpace />
+            <Flex>
+              <Rate defaultValue={3} />
+              <Text>不可清除</Text>
+            </Flex>
+            <WhiteSpace />
+          </Item>
+        </List>
+        <WhiteSpace />
+        <List renderHeader="自定义">
+          <Item>
+            <WhiteSpace />
+            <Rate
+              iconName="home"
+              iconType="outline"
+              color="green"
+              emptyColor="blue"
+              allowHalf
+              allowSwiping
+            />
+            <WhiteSpace />
+            <Rate iconName="apple" color="red" />
+            <WhiteSpace />
+          </Item>
+        </List>
+        <WhiteSpace />
+      </ScrollView>
+    )
+  }
+}
+```
+
+### styles
+
+```tsx
+import { StyleSheet, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
+
+export interface RateStyle {
+  rateContainer: ViewStyle
+  icon: ViewStyle
+}
+
+export default (theme: Theme) =>
+  StyleSheet.create({
+    rateContainer: {
+      flexDirection: 'row',
+      alignSelf: 'flex-start',
+    },
+    icon: {
+      marginHorizontal: theme.h_spacing_md,
+    },
+  })
+```
+
+### Abstract DOM Structure
+
+```html
+<!-- 评分组件外层容器，承载 style 透传属性 -->
+<View style={style}>
+
+  <!-- 评分图标交互区域，绑定 PanResponder 手势，响应触摸/滑动评分，对应 styles.rateContainer：横向排列布局 -->
+  <View style={styles.rateContainer} onLayout={...}>
+
+    <!-- 单个评分图标容器，支持动画缩放效果（active 时放大至 scale 倍），pointerEvents="none"，对应 styles.icon：图标间距 -->
+    <Animated.View style={[styles.icon, iconStyle]} pointerEvents="none">
+
+      <!-- 评分图标本体，根据 starType 渲染 full / half / empty 三种状态 -->
+      <!-- full：实心图标，color 着色；half：左右各半，左侧实心右侧空心，支持 RTL 翻转；empty：空心图标，emptyColor 着色 -->
+      <!-- 图标来源为 @ant-design/icons-react-native 的 IconFill / IconOutline -->
+      <IconFill /> 或 <IconOutline />
+
+    </Animated.View>
+    <!-- ... 共 count 个图标 -->
+
+  </View>
+</View>
+```
+
+---
+
 # result Semantic
 
 Source: https://rn.mobile.ant.design/components/result-cn/semantic.md
@@ -5267,6 +5713,119 @@ export default (theme: Theme) =>
 
   </View>
 </View>
+```
+
+---
+
+# skeleton Semantic
+
+Source: https://rn.mobile.ant.design/components/skeleton-cn/semantic.md
+
+## Skeleton
+
+### Usage Example
+
+```jsx
+import { List, Skeleton } from '@ant-design/react-native'
+import React from 'react'
+
+class SkeletonExample extends React.Component {
+  render() {
+    return (
+      <Skeleton.Provider>
+        <List renderHeader="基础用法" />
+        <Skeleton.Title />
+        <Skeleton.Paragraph />
+        <List renderHeader="有动画的骨架屏" />
+        <Skeleton.Title animated />
+        <Skeleton.Paragraph lineCount={5} animated />
+        <List renderHeader="自定义" />
+        <Skeleton
+          animated
+          style={{
+            width: '70%',
+            height: 100,
+            borderRadius: 8,
+            marginTop: 16,
+            marginBottom: 8
+          }}
+        />
+      </Skeleton.Provider>
+    )
+  }
+}
+
+export default SkeletonExample
+```
+
+### styles
+
+```tsx
+import { StyleSheet, ViewStyle } from 'react-native'
+import { Theme } from '../../style'
+
+export interface SkeletonStyle {
+  skeleton: ViewStyle
+  skeletonShimmer: ViewStyle
+  skeletonTitle: ViewStyle
+  skeletonParagraph: ViewStyle
+  skeletonParagraphLine: ViewStyle
+  skeletonParagraphLastLine: ViewStyle
+}
+
+export default (_theme: Theme) =>
+  StyleSheet.create<SkeletonStyle>({
+    skeleton: {
+      backgroundColor: _theme.skeleton_background_color,
+      width: '100%',
+      height: 0,
+      borderRadius: 0,
+    },
+    skeletonShimmer: {
+      width: 160,
+      backgroundColor: 'rgba(129, 129, 129, 0.14)',
+    },
+    skeletonTitle: {
+      width: '45%',
+      height: 32,
+      borderRadius: _theme.radius_xs,
+      marginTop: 16, // 不支持gap属性
+      marginBottom: 8,
+    },
+    skeletonParagraph: {},
+    skeletonParagraphLine: {
+      height: 18,
+      borderRadius: _theme.radius_xs,
+      marginVertical: 6,
+    },
+    skeletonParagraphLastLine: {
+      width: '65%',
+      marginBottom: 12,
+    },
+  })
+```
+
+### Abstract DOM Structure
+
+```html
+<!-- 非动画模式（animated=false）：静态占位块 -->
+<!-- 对应 styles.skeleton：骨架屏底色和尺寸 -->
+<View style={[styles.skeleton, style]} />
+
+<!-- 动画模式（animated=true）：带扫光 + 呼吸效果 -->
+<AnimatedSkeleton>
+
+  <!-- 骨架屏主体容器，动态叠加 opacity 呼吸动画（skeletonOpacity），overflow='hidden' 裁剪扫光溢出 -->
+  <!-- 对应 styles.skeleton：骨架屏底色和尺寸 -->
+  <!-- 呼吸动画与扫光联动：扫光亮时骨架暗（opacity≈0.3），扫光走时骨架亮（opacity≈1） -->
+  <Animated.View style={[styles.skeleton, style, { opacity: skeletonOpacity }]} onLayout={...}>
+
+    <!-- 扫光层，绝对定位覆盖在骨架上，同时执行 translateX 水平移动 + opacity 渐隐渐显 -->
+    <!-- 对应 styles.skeletonShimmer：扫光条宽度与颜色（半透明白色） -->
+    <Animated.View style={[styles.skeletonShimmer, { position: 'absolute', transform: [{ translateX }], opacity }]} pointerEvents="none" />
+
+  </Animated.View>
+</AnimatedSkeleton>
 ```
 
 ---
@@ -7195,7 +7754,7 @@ export interface TagStyle {
   activeText: TextStyle
   disabledWrap: ViewStyle
   disabledText: TextStyle
-  close: ViewStyle
+  close: TextStyle
 }
 
 export default (theme: Theme) =>
@@ -7470,7 +8029,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ActivityIndicator, ScrollView, Text } from 'react-native'
 
 const ToastExample = () => {
-  const handler = useRef<number>()
+  const handler = useRef<number | null>(null)
   const [enableMask, setEnableMask] = useState(Toast.getConfig().mask)
   const [enableStack, setEnableStack] = useState(Toast.getConfig().stackable)
 
@@ -7604,7 +8163,7 @@ export default ToastExample
 
 const CountDownText = () => {
   const [count, setCount] = useState(5)
-  const interval = useRef<any>()
+  const interval = useRef<any>(null)
   useEffect(() => {
     interval.current = setInterval(() => {
       setCount((x) => {

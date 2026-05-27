@@ -101,7 +101,7 @@ export interface ActionSheetStyle {
   mask: ViewStyle
   title: ViewStyle
   titleText: TextStyle
-  message: ViewStyle
+  message: TextStyle
   btn: ViewStyle
   btnText: TextStyle
   cancelBtn: ViewStyle

@@ -87,7 +87,7 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Theme } from '../../style'
 export interface InputStyle {
   container: ViewStyle
-  input: ViewStyle
+  input: TextStyle
   clearIcon: ViewStyle
   prefix: ViewStyle | TextStyle
   showCount: TextStyle
