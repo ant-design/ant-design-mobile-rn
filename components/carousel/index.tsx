@@ -20,6 +20,19 @@ interface NativeScrollPoint {
   y: number
 }
 
+/** RN scroll offsets are in pixels; round before compare to avoid float error. */
+function isAlignedToPage(offset: number, pageSize: number): boolean {
+  const roundedPageSize = Math.round(pageSize)
+  if (!roundedPageSize) {
+    return false
+  }
+  return Math.round(offset) % roundedPageSize === 0
+}
+
+function isNearOffset(a: number, b: number): boolean {
+  return Math.round(a) === Math.round(b)
+}
+
 export interface CarouselState {
   width: number
   height: number
@@ -209,10 +222,11 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   private onScrollAnimationEnd = (currentOffset: NativeScrollPoint) => {
     const { x, y } = currentOffset
     const { width, height } = this.state
+    const pageSize = this.props.vertical ? height : width
+    const offset = this.props.vertical ? y : x
     // 🌟 fix: `onMomentumScrollEnd` & `onScrollAnimationEnd` not support for web & android 🌟
     const isScrollAnimationEnd =
-      !this.isScrolling &&
-      (this.props.vertical ? y / height : x / width) % 1 === 0
+      !this.isScrolling && isAlignedToPage(offset, pageSize)
 
     if (isScrollAnimationEnd) {
       this.updateIndex(currentOffset)
@@ -290,15 +304,15 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       }
 
       if (this.props.vertical) {
-        if (paramOffset.y === height) {
+        if (isNearOffset(paramOffset.y, height)) {
           this.scrollToStart()
-        } else if (paramOffset.y === this.count * height) {
+        } else if (isNearOffset(paramOffset.y, this.count * height)) {
           this.scrollToEnd()
         }
       } else {
-        if (paramOffset.x === width) {
+        if (isNearOffset(paramOffset.x, width)) {
           this.scrollToStart()
-        } else if (paramOffset.x === this.count * width) {
+        } else if (isNearOffset(paramOffset.x, this.count * width)) {
           this.scrollToEnd()
         }
       }
