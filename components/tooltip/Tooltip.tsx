@@ -101,7 +101,11 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     ],
   })
 
-  useEffect(update, [update, floatingStyles, content])
+  useEffect(() => {
+    if (visible) {
+      update()
+    }
+  }, [update, floatingStyles, content, visible])
   // Replace `useLayoutEffect(update)` to improve performance
   useScroll(scrollProps.onScroll)
   const [{ stopPropagation }] = useClickAway(() => {

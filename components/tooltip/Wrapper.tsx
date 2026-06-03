@@ -1,21 +1,25 @@
-import React, { ClassAttributes, ReactElement, memo, useCallback } from 'react'
-import { LayoutChangeEvent } from 'react-native'
+import { composeRef } from 'rc-util/lib/ref'
+import React, { ClassAttributes, ReactElement, Ref, memo, useCallback } from 'react'
+import { LayoutChangeEvent, View } from 'react-native'
 
 type ChildElement = ReactElement & {
   props: {
     onLayout?: (e: LayoutChangeEvent) => void
     [key: string]: unknown
   }
+  ref?: React.Ref<View>
 }
 
 export default memo(
   (props: {
     children: ReactElement & ClassAttributes<ReactElement>
-    setReference: (el: unknown) => void
+    setReference: (el: View | null) => void
     onLayout: () => void
     trigger: string
     onTrigger: (e: unknown) => void
   }) => {
+    const { setReference, onLayout: onLayoutUpdate, onTrigger, trigger } =
+      props
     const childElement = React.Children.only(props.children) as ChildElement
 
     const onLayout = useCallback(
@@ -23,28 +27,33 @@ export default memo(
         if (typeof childElement.props.onLayout === 'function') {
           childElement.props.onLayout(e)
         }
-        props.setReference?.(
-          (e.nativeEvent as { target?: unknown }).target ?? e.nativeEvent,
-        )
-        props.onLayout()
+        onLayoutUpdate()
       },
-      [childElement.props, props],
+      [childElement.props, onLayoutUpdate],
     )
 
-    const onTrigger = useCallback(
+    const handleTrigger = useCallback(
       (e: unknown) => {
-        const triggerHandler = childElement.props[props.trigger]
+        const triggerHandler = childElement.props[trigger]
         if (typeof triggerHandler === 'function') {
           triggerHandler(e)
         }
-        props.onTrigger(e)
+        onTrigger(e)
       },
-      [childElement.props, props],
+      [childElement.props, onTrigger, trigger],
+    )
+
+    const ref = useCallback(
+      (node: View | null) => {
+        setReference(node)
+      },
+      [setReference],
     )
 
     return React.cloneElement(childElement, {
+      ref: composeRef(childElement.ref as Ref<View>, ref),
       onLayout,
-      [props.trigger]: onTrigger,
+      [trigger]: handleTrigger,
     })
   },
 )

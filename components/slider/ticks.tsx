@@ -1,10 +1,6 @@
 import type { FC } from 'react'
 import React, { memo, useMemo } from 'react'
-import { StyleSheet, View, ViewStyle } from 'react-native'
-import Animated, {
-  SharedValue,
-  useAnimatedStyle,
-} from 'react-native-reanimated'
+import { View, ViewStyle } from 'react-native'
 import { SliderValueType } from './PropsType'
 import { SliderStyle } from './style'
 
@@ -12,11 +8,21 @@ type TicksProps = {
   points: number[]
   max: number
   min: number
-  sliderValue: SharedValue<SliderValueType>
+  value: SliderValueType
   styles: Pick<SliderStyle, 'ticks' | 'tickActive' | 'tick'>
 }
 
-const Ticks: FC<TicksProps> = ({ points, max, min, sliderValue, styles }) => {
+function isTickActive(point: number, value: SliderValueType) {
+  if (Array.isArray(value)) {
+    return (
+      point <= Math.max(value[0], value[1]) &&
+      point >= Math.min(value[0], value[1])
+    )
+  }
+  return point <= (value || 0)
+}
+
+const Ticks: FC<TicksProps> = ({ points, max, min, value, styles }) => {
   const range = max - min
   const elements = useMemo(
     () =>
@@ -29,12 +35,11 @@ const Ticks: FC<TicksProps> = ({ points, max, min, sliderValue, styles }) => {
             key={point}
             styles={styles}
             style={style}
-            point={point}
-            sliderValue={sliderValue}
+            active={isTickActive(point, value)}
           />
         )
       }),
-    [points, min, range, styles, sliderValue],
+    [points, min, range, styles, value],
   )
 
   return <View style={styles.ticks}>{elements}</View>
@@ -42,26 +47,10 @@ const Ticks: FC<TicksProps> = ({ points, max, min, sliderValue, styles }) => {
 
 export default Ticks
 
-const Tick: FC<
-  Pick<TicksProps, 'sliderValue' | 'styles'> & {
-    style: ViewStyle
-    point: number
-  }
-> = memo(({ style, styles, sliderValue, point }) => {
-  const tickActive = useMemo(
-    () => StyleSheet.flatten(styles.tickActive),
-    [styles.tickActive],
-  )
-  const active = useAnimatedStyle(() => {
-    return (
-      Array.isArray(sliderValue.value)
-        ? point <= Math.max(sliderValue.value[0], sliderValue.value[1]) &&
-          point >= Math.min(sliderValue.value[1], sliderValue.value[0])
-        : point <= (sliderValue.value || 0)
-    )
-      ? tickActive
-      : { backgroundColor: 'transparent' }
-  }, [point, tickActive])
-
-  return <Animated.View style={[styles.tick, active, style]} />
+const Tick: FC<{
+  styles: Pick<SliderStyle, 'tickActive' | 'tick'>
+  style: ViewStyle
+  active: boolean
+}> = memo(({ style, styles, active }) => {
+  return <View style={[styles.tick, active && styles.tickActive, style]} />
 })

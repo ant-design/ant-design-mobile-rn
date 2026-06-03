@@ -8,7 +8,6 @@ import {
 } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
 import Animated, {
-  runOnJS,
   SharedValue,
   useAnimatedStyle,
   useDerivedValue,
@@ -22,7 +21,7 @@ export type ThumbProps = {
   getValueByPosition: (position: number) => number
   disabled: boolean
   isSliding: boolean
-  onDrag: (value: number) => void
+  onDrag: (changeX: number) => void
   onSlidingStart: () => void
   onSlidingComplete: () => void
   icon?: ReactNode
@@ -70,12 +69,11 @@ const Thumb: FC<ThumbProps> = (props) => {
     () =>
       Gesture.Pan()
         .enabled(!disabled)
-        .onStart(() => runOnJS(onSlidingStart)())
-        .onChange((e) => {
-          runOnJS(onDrag)(e.absoluteX - (thumbLayout?.width || 0))
-        })
-        .onEnd(() => runOnJS(onSlidingComplete)()),
-    [disabled, onDrag, onSlidingComplete, onSlidingStart, thumbLayout?.width],
+        .runOnJS(true)
+        .onStart(onSlidingStart)
+        .onChange((e) => onDrag(e.changeX))
+        .onEnd(onSlidingComplete),
+    [disabled, onDrag, onSlidingComplete, onSlidingStart],
   )
 
   const thumbElement = icon ? icon : <ThumbIcon />

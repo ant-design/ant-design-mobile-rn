@@ -7,6 +7,7 @@ export interface SliderStyle {
 
   // 轨道
   trackContianer: ViewStyle
+  trackGestureArea: ViewStyle
   track: ViewStyle
   fill: ViewStyle
 
@@ -37,6 +38,14 @@ export default (theme: Theme) =>
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
+    },
+    trackGestureArea: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      justifyContent: 'center',
     },
     track: {
       position: 'absolute',

@@ -9,7 +9,8 @@ export type SliderMarks = {
 export type SliderValueType = number | [number, number]
 
 export interface SliderRef {
-  onSlide: (changeX: number) => void
+  /** 以 changeX 增量驱动滑块，与 Thumb/轨道 Pan 手势一致 */
+  onPanChange: (changeX: number, thumbIndex?: 0 | 1) => void
 }
 
 export type BaseSliderProps<SliderValue> = {
