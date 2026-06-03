@@ -1,24 +1,48 @@
 import { useCallback, useEffect, useRef } from 'react'
 
+let _propagationStopped: boolean | undefined
+
 export const CustomSyntheticEvent = {
-  stopPropagation: function () {},
-  preventDefault: function () {},
+  stopPropagation() {
+    _propagationStopped = true
+  },
+  preventDefault() {
+    _propagationStopped = undefined
+  },
   isPropagationStopped() {
-    return true
+    return _propagationStopped
   },
   emit() {},
+}
+
+function isClickFromDisabledPressable(event: MouseEvent) {
+  const target = event.target
+  if (!(target instanceof Element)) {
+    return false
+  }
+  return target.closest('[aria-disabled="true"]') != null
 }
 
 export default function useClickAway(onClickAway: () => void) {
   const isDragging = useRef(false)
   const shouldRespond = useRef(true)
-  const listener = useCallback(() => {
-    if (shouldRespond.current) {
-      onClickAway()
-    } else {
-      shouldRespond.current = true
-    }
-  }, [onClickAway])
+  const listener = useCallback(
+    (event: MouseEvent) => {
+      if (CustomSyntheticEvent.isPropagationStopped()) {
+        CustomSyntheticEvent.preventDefault()
+        return
+      }
+      if (isClickFromDisabledPressable(event)) {
+        return
+      }
+      if (shouldRespond.current) {
+        onClickAway()
+      } else {
+        shouldRespond.current = true
+      }
+    },
+    [onClickAway],
+  )
 
   const onMousedown = () => {
     isDragging.current = true

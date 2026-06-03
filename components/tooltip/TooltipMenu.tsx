@@ -24,6 +24,10 @@ export const TooltipMenu = forwardRef<TooltipRef, TooltipMenuProps>(
 
     const onPress = useCallback(
       (e: Action) => {
+        if (e.disabled) {
+          return
+        }
+        e.onPress?.()
         if (onAction) {
           onAction(e)
         }
@@ -101,6 +105,7 @@ const TooltipMenuItem = (
     <List.Item
       styles={getListItemStyle}
       thumb={action.icon}
+      disabled={action.disabled}
       onPress={() => onPress(action)}>
       {action.text}
     </List.Item>

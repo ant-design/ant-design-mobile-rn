@@ -64,17 +64,19 @@ Except for `content`, all other attributes are inherited from `Tooltip`, the uni
 | --- | --- | --- | --- |
 | actions | Menu list, used when the pop-up content is a standard menu | `Action[]` | - |
 | maxCount | Maximum number of menu lists, if exceeded, hide for scrolling | `number` | - |
-| onAction | Callback of the selected menum, when the menu list is used | `(item: Action) => void` | - |
+| onAction | Triggered when a non-disabled menu item is clicked, after the item's `onPress` | `(item: Action) => void` | - |
 
 ### Action
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| disabled | Whether disabled | `boolean` | `false` |
+| disabled | Whether the menu item is disabled; when `true`, it is not clickable and neither `onPress` nor `onAction` is invoked, and the tooltip stays open | `boolean` | `false` |
 | icon | The icon of the menu item | `ReactNode` | `null` |
-| key | The unique identifier of the menu, the default is `index` | `string | number` | `actions` array's `index` |
-| onPress | Triggered on click | `() => void` | - |
-| text | Menu list, used when the pop-up content is a standard menu | `ReactNode` | - |
+| key | The unique identifier of the menu, the default is `index` | `string \| number` | `actions` array's `index` |
+| onPress | Triggered when the menu item is clicked, before `onAction` | `() => void` | - |
+| text | Menu item text | `ReactNode` | - |
+
+When a menu item is clicked and `disabled` is not set or is `false`, the item's `onPress` (if provided) and `Tooltip.Menu`'s `onAction` (if provided) run in order, then the tooltip closes.
 
 ### TooltipStyle interface
 

@@ -65,17 +65,19 @@ import { Tooltip } from '@ant-design/react-native'
 | --- | --- | --- | --- |
 | actions | 菜单列表，当弹出内容为标准菜单时使用 | `Action[]` | - |
 | maxCount | 菜单列表最大个数，超出则隐藏进行滚动 | `number` | - |
-| onAction | 当使用菜单列表时，选中菜单的回调 | `(item: Action) => void` | - |
+| onAction | 点击未禁用的菜单项时触发，在单项 `onPress` 之后执行 | `(item: Action) => void` | - |
 
 ### Action
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| disabled | 是否禁用 | `boolean` | `false` |
+| disabled | 是否禁用；为 `true` 时不可点击，不触发 `onPress`、`onAction`，且不关闭气泡 | `boolean` | `false` |
 | icon | 菜单项的图标 | `ReactNode` | `null` |
-| key | 菜单的唯一标识, 缺省时即为 `index` | `string | number` | `actions` 数组的 `index` |
-| onPress | 点击时触发 | `() => void` | - |
-| text | 菜单列表，当弹出内容为标准菜单时使用 | `ReactNode` | - |
+| key | 菜单的唯一标识, 缺省时即为 `index` | `string \| number` | `actions` 数组的 `index` |
+| onPress | 点击菜单项时触发，在 `onAction` 之前执行 | `() => void` | - |
+| text | 菜单项文案 | `ReactNode` | - |
+
+点击菜单项时，若未设置 `disabled` 或 `disabled` 为 `false`，将依次执行该项的 `onPress`（若配置）、`Tooltip.Menu` 的 `onAction`（若配置），然后关闭气泡。
 
 ### TooltipStyle 语义化样式
 
