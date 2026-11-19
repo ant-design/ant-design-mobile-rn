@@ -19,8 +19,13 @@ import { ScrollView, Text, View } from 'react-native'
 import { Action, TooltipProps } from '../PropsType'
 
 const actions: Action[] = [
-  { key: 'scan', icon: <Icon name="scan" />, text: '扫一扫' },
-  { key: 'payment', icon: <Icon name="pay-circle" />, text: '付钱/收钱' },
+  { key: 'scan', icon: <Icon name="scan" />, text: '扫一扫', disabled: true },
+  {
+    key: 'payment',
+    icon: <Icon name="pay-circle" />,
+    text: '付钱/收钱',
+    onPress: () => Toast.success('触发了 onPress'),
+  },
   { key: 'bus', icon: <Icon name="qrcode" />, text: '乘车码' },
   { key: 'assistant', icon: <Icon name="ant-design" />, text: '智能助理' },
 ]
@@ -119,6 +124,7 @@ export default function TooltipExample() {
             </Button>
           </Tooltip.Menu>
         </List>
+        <View style={{ height: 300 }} />
       </ScrollView>
     </Provider>
   )
@@ -150,7 +156,7 @@ const directionList = [
 | content | The content of the Tooltip | `React.ReactNode` | - |
 | defaultVisible | Whether to show or hide by default | `boolean` | `false` |
 | mode | Set bright color mode or black mode | `'light' | 'dark'` | `'light'` |
-| crossOffset | Set the offset of the pop-up window position; Top: Additional offset applied along the main axis between the element and its triggering element. Left: Additional offset applied along the horizontal axis between the element and its triggering element.     | `{ top: number, left: number }`      | `'{ top: StatusBar.currentHeight, left: 0 } '` |
+| crossOffset | Extra offset applied after Portal coordinate conversion. `top` / `left` are vertical / horizontal.<br/>Since `@floating-ui/react-native@0.10.7`, Android status-bar compensation is handled by the library. Default is `{ top: 0, left: 0 }` — do not also add `StatusBar.currentHeight`. | `{ top: number, left: number }` | `{ top: 0, left: 0 }` |
 | onVisibleChange | Callback when the visible prop is changed | `(visible: boolean) => void` | - |
 | placement | The position of the Tooltip | `'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end'` | `'top'` |
 | styles | Semantic DOM style | [TooltipStyle](#tooltipstyle-interface) | - |
@@ -190,17 +196,19 @@ Except for `content`, all other attributes are inherited from `Tooltip`, the uni
 | --- | --- | --- | --- |
 | actions | Menu list, used when the pop-up content is a standard menu | `Action[]` | - |
 | maxCount | Maximum number of menu lists, if exceeded, hide for scrolling | `number` | - |
-| onAction | Callback of the selected menum, when the menu list is used | `(item: Action) => void` | - |
+| onAction | Triggered when a non-disabled menu item is clicked, after the item's `onPress` | `(item: Action) => void` | - |
 
 ### Action
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| disabled | Whether disabled | `boolean` | `false` |
+| disabled | Whether the menu item is disabled; when `true`, it is not clickable and neither `onPress` nor `onAction` is invoked, and the tooltip stays open | `boolean` | `false` |
 | icon | The icon of the menu item | `ReactNode` | `null` |
-| key | The unique identifier of the menu, the default is `index` | `string | number` | `actions` array's `index` |
-| onPress | Triggered on click | `() => void` | - |
-| text | Menu list, used when the pop-up content is a standard menu | `ReactNode` | - |
+| key | The unique identifier of the menu, the default is `index` | `string \| number` | `actions` array's `index` |
+| onPress | Triggered when the menu item is clicked, before `onAction` | `() => void` | - |
+| text | Menu item text | `ReactNode` | - |
+
+When a menu item is clicked and `disabled` is not set or is `false`, the item's `onPress` (if provided) and `Tooltip.Menu`'s `onAction` (if provided) run in order, then the tooltip closes.
 
 ### TooltipStyle interface
 

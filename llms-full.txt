@@ -2302,8 +2302,7 @@ import {
 import type { FormProps } from '@ant-design/react-native/lib/form'
 import { district } from 'antd-mobile-demo-data'
 import React from 'react'
-import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
-
+import { Platform, ScrollView } from 'react-native'
 
 const Col = Row.Item
 
@@ -2335,105 +2334,109 @@ const FormExample: React.FC = () => {
 
   return (
     <Provider>
-      <KeyboardAvoidingView
-        behavior="padding"
-        keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : undefined}>
-        <ScrollView keyboardShouldPersistTaps="handled">
-          <Form
-            name="basic"
-            form={form}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            initialValues={{
-              doorNumber: '',
-              username: '',
-              phoneNumber: '',
-              isDefault: false,
-            }}
-            renderHeader="水平布局菜单">
-            <Form.Item
-              label="地址"
-              name="address"
-              rules={[{ required: true, message: '地址不能为空' }]}
-              arrow="horizontal"
-              onPress={() => {
-                pickerRef.current.toggle()
-              }}>
-              <Picker data={district} cols={3} ref={pickerRef}>
-                {({ extra, value, toggle }) => (
-                  <Input
-                    value={value?.length ? extra : undefined}
-                    onFocus={toggle}
-                    placeholder="省/市/区"
-                  />
-                )}
-              </Picker>
-            </Form.Item>
+      <ScrollView
+        style={{ flex: 1 }}
+        keyboardShouldPersistTaps="handled"
+        {...(Platform.OS === 'ios'
+          ? {
+              automaticallyAdjustKeyboardInsets: true,
+              contentInsetAdjustmentBehavior: 'automatic' as const,
+            }
+          : {})}>
+        <Form
+          name="basic"
+          form={form}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          initialValues={{
+            doorNumber: '',
+            username: '',
+            phoneNumber: '',
+            isDefault: false,
+          }}
+          renderHeader="水平布局菜单">
+          <Form.Item
+            label="地址"
+            name="address"
+            rules={[{ required: true, message: '地址不能为空' }]}
+            arrow="horizontal"
+            onPress={() => {
+              pickerRef.current.toggle()
+            }}>
+            <Picker data={district} cols={3} ref={pickerRef}>
+              {({ extra, value, toggle }) => (
+                <Input
+                  value={value?.length ? extra : undefined}
+                  onFocus={toggle}
+                  placeholder="省/市/区"
+                />
+              )}
+            </Picker>
+          </Form.Item>
 
-            <Form.Item
-              label="收货人"
-              name="username"
-              extra={
-                <Form.Item name="gender" noStyle>
-                  <Radio.Group>
-                    <Row>
-                      <Radio value={1}>先生</Radio>
-                      <Radio value={2}>女士</Radio>
-                    </Row>
-                  </Radio.Group>
-                </Form.Item>
-              }>
-              <Input placeholder="请输入收货人姓名" />
-            </Form.Item>
+          <Form.Item
+            label="收货人"
+            name="username"
+            extra={
+              <Form.Item name="gender" noStyle>
+                <Radio.Group>
+                  <Row>
+                    <Radio value={1}>先生</Radio>
+                    <Radio value={2}>女士</Radio>
+                  </Row>
+                </Radio.Group>
+              </Form.Item>
+            }>
+            <Input placeholder="请输入收货人姓名" />
+          </Form.Item>
 
-            <Form.Item
-              label="手机号"
-              name="phoneNumber"
-              hasFeedback
-              validateDebounce={500}
-              rules={[{ pattern: /^1[3456789]\d{9}$/ }, { required: true }]}>
-              <Input type="number" placeholder="请输入手机号" />
-            </Form.Item>
+          <Form.Item
+            label="手机号"
+            name="phoneNumber"
+            hasFeedback
+            validateDebounce={500}
+            rules={[{ pattern: /^1[3456789]\d{9}$/ }, { required: true }]}>
+            <Input type="number" placeholder="请输入手机号" />
+          </Form.Item>
 
-            <Form.Item
-              label="设为默认"
-              name="isDefault"
-              wrapperStyle={{ alignItems: 'flex-end' }}
-              valuePropName="checked">
-              <Switch />
-            </Form.Item>
+          <Form.Item
+            label="设为默认"
+            name="isDefault"
+            wrapperStyle={{ alignItems: 'flex-end' }}
+            valuePropName="checked">
+            <Switch />
+          </Form.Item>
 
-            <Form.Item>
-              <Row>
-                <Col style={{ marginRight: 10 }}>
-                  <Button onPress={() => form.resetFields()}>重置</Button>
-                </Col>
-                <Col>
-                  <Button type="primary" onPress={onSubmit}>
-                    保存
-                  </Button>
-                </Col>
-              </Row>
-            </Form.Item>
-          </Form>
-          <Form name="vertical" layout="vertical" renderHeader="垂直布局菜单">
-            <Form.Item label="问题描述">
-              <Input.TextArea
-                placeholder="请填写10个字以上的问题描述，以便我们提供更好的服务。"
-                maxLength={200}
-                showCount
-                rows={6}
-              />
-            </Form.Item>
-            <Form.Item
-              label="联系电话"
-              name="phone"
-              help="如您选择填写联系方式，该信息将同步至开发者">
-              <Input type="number" placeholder="选填，请填写您的手机号码" />
-            </Form.Item>
-          </Form>
-        </ScrollView>
-      </KeyboardAvoidingView>
+          <Form.Item>
+            <Row>
+              <Col style={{ marginRight: 10 }}>
+                <Button onPress={() => form.resetFields()}>重置</Button>
+              </Col>
+              <Col>
+                <Button type="primary" onPress={onSubmit}>
+                  保存
+                </Button>
+              </Col>
+            </Row>
+          </Form.Item>
+        </Form>
+        <Form name="vertical" layout="vertical" renderHeader="垂直布局菜单">
+          <Form.Item label="问题描述">
+            <Input.TextArea
+              placeholder="请填写10个字以上的问题描述，以便我们提供更好的服务。"
+              maxLength={200}
+              showCount
+              rows={6}
+            />
+          </Form.Item>
+          <Form.Item
+            label="联系电话"
+            name="phone"
+            help="如您选择填写联系方式，该信息将同步至开发者">
+            <Input type="number" placeholder="选填，请填写您的手机号码" />
+          </Form.Item>
+        </Form>
+      </ScrollView>
     </Provider>
   )
 }
@@ -3196,77 +3199,81 @@ Entering content through the keyboard is the most basic form field wrapper.
 ```tsx
 import { Input, List } from '@ant-design/react-native'
 import React from 'react'
-import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
+import { Platform, ScrollView } from 'react-native'
 
 export default function InputExample() {
   const [value, setValue] = React.useState('')
   return (
-    <KeyboardAvoidingView
-      behavior="padding"
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : undefined}>
-      <ScrollView keyboardShouldPersistTaps="handled">
-        <List renderHeader="基本用法">
-          <List.Item>
-            <Input placeholder="请输入内容" />
-          </List.Item>
-        </List>
-        <List renderHeader="受控模式">
-          <List.Item>
-            <Input
-              placeholder="请输入内容"
-              value={value}
-              onChangeText={setValue}
-            />
-          </List.Item>
-        </List>
-        <List renderHeader="带清除按钮">
-          <List.Item>
-            <Input allowClear placeholder="allowClear" />
-          </List.Item>
-        </List>
-        <List renderHeader="前缀和后缀">
-          <List.Item>
-            <Input prefix="前缀" suffix="后缀" placeholder="prefix / suffix" />
-          </List.Item>
-        </List>
-        <List renderHeader="带字数提示">
-          <List.Item>
-            <Input showCount placeholder="showCount" />
-          </List.Item>
-          <List.Item>
-            <Input
-              maxLength={5}
-              showCount={{
-                formatter: ({ count, maxLength }) => `${count}/${maxLength}`,
-              }}
-              placeholder="showCount.formatter"
-            />
-          </List.Item>
-        </List>
-        <List renderHeader="TextArea">
-          <List.Item>
-            <Input.TextArea
-              rows={4}
-              maxLength={100}
-              showCount
-              allowClear
-              placeholder="固定行数 row={4}"
-            />
-          </List.Item>
-        </List>
-        <List renderHeader="根据内容自动调整高度">
-          <List.Item>
-            <Input.TextArea autoSize placeholder="autoSize={true}" />
-          </List.Item>
-          <List.Item>
-            <Input.TextArea
-              autoSize={{ minRows: 2, maxRows: 6 }}
-              placeholder="autoSize={{ minRows: 2, maxRows: 6 }}"
-            />
-          </List.Item>
-        </List>
-      </ScrollView>
-    </KeyboardAvoidingView>
+    <ScrollView
+      style={{ flex: 1 }}
+      keyboardShouldPersistTaps="handled"
+      {...(Platform.OS === 'ios'
+        ? {
+            automaticallyAdjustKeyboardInsets: true,
+            contentInsetAdjustmentBehavior: 'automatic' as const,
+          }
+        : {})}>
+      <List renderHeader="基本用法">
+        <List.Item>
+          <Input placeholder="请输入内容" />
+        </List.Item>
+      </List>
+      <List renderHeader="受控模式">
+        <List.Item>
+          <Input
+            placeholder="请输入内容"
+            value={value}
+            onChangeText={setValue}
+          />
+        </List.Item>
+      </List>
+      <List renderHeader="带清除按钮">
+        <List.Item>
+          <Input allowClear placeholder="allowClear" />
+        </List.Item>
+      </List>
+      <List renderHeader="前缀和后缀">
+        <List.Item>
+          <Input prefix="前缀" suffix="后缀" placeholder="prefix / suffix" />
+        </List.Item>
+      </List>
+      <List renderHeader="带字数提示">
+        <List.Item>
+          <Input showCount placeholder="showCount" />
+        </List.Item>
+        <List.Item>
+          <Input
+            maxLength={5}
+            showCount={{
+              formatter: ({ count, maxLength }) => `${count}/${maxLength}`,
+            }}
+            placeholder="showCount.formatter"
+          />
+        </List.Item>
+      </List>
+      <List renderHeader="TextArea">
+        <List.Item>
+          <Input.TextArea
+            rows={4}
+            maxLength={100}
+            showCount
+            allowClear
+            placeholder="固定行数 row={4}"
+          />
+        </List.Item>
+      </List>
+      <List renderHeader="根据内容自动调整高度">
+        <List.Item>
+          <Input.TextArea autoSize placeholder="autoSize={true}" onChangeText={(e)=>console.log(e)}/>
+        </List.Item>
+        <List.Item>
+          <Input.TextArea
+            autoSize={{ minRows: 2, maxRows: 6 }}
+            placeholder="autoSize={{ minRows: 2, maxRows: 6 }}"
+          />
+        </List.Item>
+      </List>
+    </ScrollView>
   )
 }
 ```
@@ -6418,86 +6425,88 @@ Source: https://rn.mobile.ant.design/components/stepper.md
 ```tsx
 import { List, Provider, Stepper, Toast } from '@ant-design/react-native'
 import React from 'react'
-import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
+import { Platform, ScrollView } from 'react-native'
 
 export default function StepperExample() {
   return (
     <Provider>
-      <KeyboardAvoidingView
-        behavior="padding"
-        keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : undefined}>
-        <ScrollView>
-          <List renderHeader={'基础用法'}>
-            <List.Item
-              extra={
-                <Stepper
-                  defaultValue={1}
-                  onChange={(value) => {
-                    console.log(value)
-                  }}
-                />
-              }>
-              基础用法
-            </List.Item>
-            <List.Item extra={<Stepper step={10} defaultValue={10} />}>
-              步长设置
-            </List.Item>
-            <List.Item extra={<Stepper min={-5} max={5} />}>
-              限制输入范围
-            </List.Item>
-            <List.Item extra={<Stepper digits={1} />}>
-              格式化到一位小数
-            </List.Item>
-            <List.Item
-              extra={
-                <Stepper
-                  defaultValue={93}
-                  formatter={(value) => `$ ${value}`}
-                  parser={(text) => parseFloat(text.replace('$', ''))}
-                  onChange={(value) => {
-                    console.log(value, typeof value)
-                  }}
-                />
-              }>
-              自定义格式
-            </List.Item>
-          </List>
-          <List renderHeader={'状态/样式'}>
-            <List.Item extra={<Stepper disabled />}>禁用状态</List.Item>
-            <List.Item extra={<Stepper readOnly />}>输入框只读状态</List.Item>
-            <List.Item
-              extra={
-                <Stepper
-                  onFocus={() => {
-                    Toast.info('获得焦点')
-                  }}
-                  onBlur={() => {
-                    Toast.info('失去焦点')
-                  }}
-                />
-              }>
-              获得/失去焦点
-            </List.Item>
-            <List.Item
-              extra={
-                <Stepper
-                  allowEmpty={true}
-                  min={10}
-                  max={20}
-                  onChange={(value) => {
-                    console.log(value)
-                  }}
-                />
-              }>
-              允许清空
-            </List.Item>
-            <List.Item extra={<Stepper defaultValue={10000} step={10000} />}>
-              自定义样式
-            </List.Item>
-          </List>
-          <StringModeExample />
-        </ScrollView>
-      </KeyboardAvoidingView>
+      <ScrollView
+        style={{ flex: 1 }}
+        keyboardShouldPersistTaps="handled"
+        {...(Platform.OS === 'ios'
+          ? {
+              automaticallyAdjustKeyboardInsets: true,
+              contentInsetAdjustmentBehavior: 'automatic' as const,
+            }
+          : {})}>
+        <List renderHeader={'基础用法'}>
+          <List.Item
+            extra={
+              <Stepper
+                defaultValue={1}
+                onChange={(value) => {
+                  console.log(value)
+                }}
+              />
+            }>
+            基础用法
+          </List.Item>
+          <List.Item extra={<Stepper step={10} defaultValue={10} />}>
+            步长设置
+          </List.Item>
+          <List.Item extra={<Stepper min={-5} max={5} />}>
+            限制输入范围
+          </List.Item>
+          <List.Item extra={<Stepper digits={1} />}>格式化到一位小数</List.Item>
+          <List.Item
+            extra={
+              <Stepper
+                defaultValue={93}
+                formatter={(value) => `$ ${value}`}
+                parser={(text) => parseFloat(text.replace('$', ''))}
+                onChange={(value) => {
+                  console.log(value, typeof value)
+                }}
+              />
+            }>
+            自定义格式
+          </List.Item>
+        </List>
+        <List renderHeader={'状态/样式'}>
+          <List.Item extra={<Stepper disabled />}>禁用状态</List.Item>
+          <List.Item extra={<Stepper readOnly />}>输入框只读状态</List.Item>
+          <List.Item
+            extra={
+              <Stepper
+                onFocus={() => {
+                  Toast.info('获得焦点')
+                }}
+                onBlur={() => {
+                  Toast.info('失去焦点')
+                }}
+              />
+            }>
+            获得/失去焦点
+          </List.Item>
+          <List.Item
+            extra={
+              <Stepper
+                allowEmpty={true}
+                min={10}
+                max={20}
+                onChange={(value) => {
+                  console.log(value)
+                }}
+              />
+            }>
+            允许清空
+          </List.Item>
+          <List.Item extra={<Stepper defaultValue={10000} step={10000} />}>
+            自定义样式
+          </List.Item>
+        </List>
+        <StringModeExample />
+      </ScrollView>
     </Provider>
   )
 }
@@ -6974,13 +6983,16 @@ export default class BasicSwipeActionExample extends React.Component<any, any> {
 | right         | List of operation buttons on the right | [SwipeoutButtonProps](/components/swipe-action#swipeoutbuttonprops)[] | `[]` | |
 | styles        | Semantic DOM style | [SwipeActionStyle](/components/swipe-action#swipeactionstyle-interface) | - | `5.2.1` |
 
-The rest of the props of `SwipeAction` are exactly the same as [react-native-gesture-handler/Swipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/),
+The rest of the props of `SwipeAction` are exactly the same as [react-native-gesture-handler/ReanimatedSwipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/reanimated_swipeable/),
 
 **eg: `onSwipeableOpen` , `onSwipeableClose` , `renderLeftActions` , `renderRightActions`**
 
 
 When you set `renderLeftActions` prop, it will override `left` prop; <br/>
 when you set `renderRightActions` prop, it will override `right` prop.
+
+> `progress` in `renderLeftActions` / `renderRightActions` is a Reanimated `SharedValue` (the legacy `Swipeable` entry was removed in gesture-handler 3.x).
+
 
 ### SwipeoutButtonProps
 
@@ -7005,7 +7017,7 @@ export interface SwipeActionStyle {
 
 ### Ref
 
-New in `5.2.1`. Ref to Swipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
+New in `5.2.1`. Ref to ReanimatedSwipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/reanimated_swipeable/#methods)
 
 | Properties | Descrition | Type|
 |-----|------|------|
@@ -7927,8 +7939,13 @@ import { ScrollView, Text, View } from 'react-native'
 import { Action, TooltipProps } from '../PropsType'
 
 const actions: Action[] = [
-  { key: 'scan', icon: <Icon name="scan" />, text: '扫一扫' },
-  { key: 'payment', icon: <Icon name="pay-circle" />, text: '付钱/收钱' },
+  { key: 'scan', icon: <Icon name="scan" />, text: '扫一扫', disabled: true },
+  {
+    key: 'payment',
+    icon: <Icon name="pay-circle" />,
+    text: '付钱/收钱',
+    onPress: () => Toast.success('触发了 onPress'),
+  },
   { key: 'bus', icon: <Icon name="qrcode" />, text: '乘车码' },
   { key: 'assistant', icon: <Icon name="ant-design" />, text: '智能助理' },
 ]
@@ -8027,6 +8044,7 @@ export default function TooltipExample() {
             </Button>
           </Tooltip.Menu>
         </List>
+        <View style={{ height: 300 }} />
       </ScrollView>
     </Provider>
   )
@@ -8058,7 +8076,7 @@ const directionList = [
 | content | The content of the Tooltip | `React.ReactNode` | - |
 | defaultVisible | Whether to show or hide by default | `boolean` | `false` |
 | mode | Set bright color mode or black mode | `'light' | 'dark'` | `'light'` |
-| crossOffset | Set the offset of the pop-up window position; Top: Additional offset applied along the main axis between the element and its triggering element. Left: Additional offset applied along the horizontal axis between the element and its triggering element.     | `{ top: number, left: number }`      | `'{ top: StatusBar.currentHeight, left: 0 } '` |
+| crossOffset | Extra offset applied after Portal coordinate conversion. `top` / `left` are vertical / horizontal.<br/>Since `@floating-ui/react-native@0.10.7`, Android status-bar compensation is handled by the library. Default is `{ top: 0, left: 0 }` — do not also add `StatusBar.currentHeight`. | `{ top: number, left: number }` | `{ top: 0, left: 0 }` |
 | onVisibleChange | Callback when the visible prop is changed | `(visible: boolean) => void` | - |
 | placement | The position of the Tooltip | `'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end'` | `'top'` |
 | styles | Semantic DOM style | [TooltipStyle](#tooltipstyle-interface) | - |
@@ -8098,17 +8116,19 @@ Except for `content`, all other attributes are inherited from `Tooltip`, the uni
 | --- | --- | --- | --- |
 | actions | Menu list, used when the pop-up content is a standard menu | `Action[]` | - |
 | maxCount | Maximum number of menu lists, if exceeded, hide for scrolling | `number` | - |
-| onAction | Callback of the selected menum, when the menu list is used | `(item: Action) => void` | - |
+| onAction | Triggered when a non-disabled menu item is clicked, after the item's `onPress` | `(item: Action) => void` | - |
 
 ### Action
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| disabled | Whether disabled | `boolean` | `false` |
+| disabled | Whether the menu item is disabled; when `true`, it is not clickable and neither `onPress` nor `onAction` is invoked, and the tooltip stays open | `boolean` | `false` |
 | icon | The icon of the menu item | `ReactNode` | `null` |
-| key | The unique identifier of the menu, the default is `index` | `string | number` | `actions` array's `index` |
-| onPress | Triggered on click | `() => void` | - |
-| text | Menu list, used when the pop-up content is a standard menu | `ReactNode` | - |
+| key | The unique identifier of the menu, the default is `index` | `string \| number` | `actions` array's `index` |
+| onPress | Triggered when the menu item is clicked, before `onAction` | `() => void` | - |
+| text | Menu item text | `ReactNode` | - |
+
+When a menu item is clicked and `disabled` is not set or is `false`, the item's `onPress` (if provided) and `Tooltip.Menu`'s `onAction` (if provided) run in order, then the tooltip closes.
 
 ### TooltipStyle interface
 

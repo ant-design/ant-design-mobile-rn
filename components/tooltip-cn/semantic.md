@@ -16,8 +16,13 @@ import { ScrollView, Text, View } from 'react-native'
 import { Action, TooltipProps } from '../PropsType'
 
 const actions: Action[] = [
-  { key: 'scan', icon: <Icon name="scan" />, text: '扫一扫' },
-  { key: 'payment', icon: <Icon name="pay-circle" />, text: '付钱/收钱' },
+  { key: 'scan', icon: <Icon name="scan" />, text: '扫一扫', disabled: true },
+  {
+    key: 'payment',
+    icon: <Icon name="pay-circle" />,
+    text: '付钱/收钱',
+    onPress: () => Toast.success('触发了 onPress'),
+  },
   { key: 'bus', icon: <Icon name="qrcode" />, text: '乘车码' },
   { key: 'assistant', icon: <Icon name="ant-design" />, text: '智能助理' },
 ]
@@ -116,6 +121,7 @@ export default function TooltipExample() {
             </Button>
           </Tooltip.Menu>
         </List>
+        <View style={{ height: 300 }} />
       </ScrollView>
     </Provider>
   )

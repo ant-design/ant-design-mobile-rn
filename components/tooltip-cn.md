@@ -19,8 +19,13 @@ import { ScrollView, Text, View } from 'react-native'
 import { Action, TooltipProps } from '../PropsType'
 
 const actions: Action[] = [
-  { key: 'scan', icon: <Icon name="scan" />, text: '扫一扫' },
-  { key: 'payment', icon: <Icon name="pay-circle" />, text: '付钱/收钱' },
+  { key: 'scan', icon: <Icon name="scan" />, text: '扫一扫', disabled: true },
+  {
+    key: 'payment',
+    icon: <Icon name="pay-circle" />,
+    text: '付钱/收钱',
+    onPress: () => Toast.success('触发了 onPress'),
+  },
   { key: 'bus', icon: <Icon name="qrcode" />, text: '乘车码' },
   { key: 'assistant', icon: <Icon name="ant-design" />, text: '智能助理' },
 ]
@@ -119,6 +124,7 @@ export default function TooltipExample() {
             </Button>
           </Tooltip.Menu>
         </List>
+        <View style={{ height: 300 }} />
       </ScrollView>
     </Provider>
   )
@@ -150,7 +156,7 @@ const directionList = [
 | content | 弹出内容             | `React.ReactNode`                    | - |
 | defaultVisible | 默认是否显隐           | `boolean`                            | `false` |
 | mode | 设置亮色模式或者黑色模式     | `'light'                             | 'dark'` | `'light'` |
-| crossOffset | 设置弹窗位置的偏移量；top: 沿元素和其触发元素之间的主轴应用的附加偏移。left: 沿元素和其触发元素之间的横轴应用的附加偏移。      | `{ top: number, left: number }`      | `'{ top: StatusBar.currentHeight, left: 0 } '` |
+| crossOffset | 额外偏移（在 Portal 坐标系换算之后叠加）。`top` / `left` 分别为纵、横向偏移。<br/>自 `@floating-ui/react-native@0.10.7` 起 Android 状态栏由库处理，默认 `{ top: 0, left: 0 }`，请勿再手动叠加 `StatusBar.currentHeight`。 | `{ top: number, left: number }` | `{ top: 0, left: 0 }` |
 | onVisibleChange | 显示隐藏的回调          | `(visible: boolean) => void`         | - |
 | placement | 气泡框位置            | `'top'                               | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end'` | `'top'` |
 | styles | 语义化结构 style      | [TooltipStyle](/#tooltipstyle-语义化样式) | - |
@@ -190,17 +196,19 @@ import { Tooltip } from '@ant-design/react-native'
 | --- | --- | --- | --- |
 | actions | 菜单列表，当弹出内容为标准菜单时使用 | `Action[]` | - |
 | maxCount | 菜单列表最大个数，超出则隐藏进行滚动 | `number` | - |
-| onAction | 当使用菜单列表时，选中菜单的回调 | `(item: Action) => void` | - |
+| onAction | 点击未禁用的菜单项时触发，在单项 `onPress` 之后执行 | `(item: Action) => void` | - |
 
 ### Action
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| disabled | 是否禁用 | `boolean` | `false` |
+| disabled | 是否禁用；为 `true` 时不可点击，不触发 `onPress`、`onAction`，且不关闭气泡 | `boolean` | `false` |
 | icon | 菜单项的图标 | `ReactNode` | `null` |
-| key | 菜单的唯一标识, 缺省时即为 `index` | `string | number` | `actions` 数组的 `index` |
-| onPress | 点击时触发 | `() => void` | - |
-| text | 菜单列表，当弹出内容为标准菜单时使用 | `ReactNode` | - |
+| key | 菜单的唯一标识, 缺省时即为 `index` | `string \| number` | `actions` 数组的 `index` |
+| onPress | 点击菜单项时触发，在 `onAction` 之前执行 | `() => void` | - |
+| text | 菜单项文案 | `ReactNode` | - |
+
+点击菜单项时，若未设置 `disabled` 或 `disabled` 为 `false`，将依次执行该项的 `onPress`（若配置）、`Tooltip.Menu` 的 `onAction`（若配置），然后关闭气泡。
 
 ### TooltipStyle 语义化样式
 

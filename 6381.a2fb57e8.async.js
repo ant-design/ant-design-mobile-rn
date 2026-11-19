@@ -1,4 +1,4 @@
-"use strict";(self.webpackChunk_ant_design_react_native=self.webpackChunk_ant_design_react_native||[]).push([[6381],{3811:function(t,n,o){Object.defineProperty(n,"__esModule",{value:!0}),n.default=n.outlineGlyphMap=void 0;var c=g(o(67294)),f=o(24214),u=["name","style","children","size","color"];function d(a){if(typeof WeakMap!="function")return null;var i=new WeakMap,r=new WeakMap;return(d=function(s){return s?r:i})(a)}function g(a,i){if(!i&&a&&a.__esModule)return a;if(a===null||typeof a!="object"&&typeof a!="function")return{default:a};var r=d(i);if(r&&r.has(a))return r.get(a);var l={},s=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var p in a)if(p!=="default"&&Object.prototype.hasOwnProperty.call(a,p)){var v=s?Object.getOwnPropertyDescriptor(a,p):null;v&&(v.get||v.set)?Object.defineProperty(l,p,v):l[p]=a[p]}return l.default=a,r&&r.set(a,l),l}function e(){return e=Object.assign||function(a){for(var i=1;i<arguments.length;i++){var r=arguments[i];for(var l in r)Object.prototype.hasOwnProperty.call(r,l)&&(a[l]=r[l])}return a},e.apply(this,arguments)}function b(a,i){if(a==null)return{};var r=y(a,i),l,s;if(Object.getOwnPropertySymbols){var p=Object.getOwnPropertySymbols(a);for(s=0;s<p.length;s++)l=p[s],!(i.indexOf(l)>=0)&&Object.prototype.propertyIsEnumerable.call(a,l)&&(r[l]=a[l])}return r}function y(a,i){if(a==null)return{};var r={},l=Object.keys(a),s,p;for(p=0;p<l.length;p++)s=l[p],!(i.indexOf(s)>=0)&&(r[s]=a[s]);return r}function x(a,i){if(!(a instanceof i))throw new TypeError("Cannot call a class as a function")}function h(a,i){for(var r=0;r<i.length;r++){var l=i[r];l.enumerable=l.enumerable||!1,l.configurable=!0,"value"in l&&(l.writable=!0),Object.defineProperty(a,l.key,l)}}function T(a,i,r){return i&&h(a.prototype,i),r&&h(a,r),a}function w(a,i){if(typeof i!="function"&&i!==null)throw new TypeError("Super expression must either be null or a function");a.prototype=Object.create(i&&i.prototype,{constructor:{value:a,writable:!0,configurable:!0}}),i&&m(a,i)}function m(a,i){return m=Object.setPrototypeOf||function(l,s){return l.__proto__=s,l},m(a,i)}function B(a){var i=V();return function(){var l=S(a),s;if(i){var p=S(this).constructor;s=Reflect.construct(l,arguments,p)}else s=l.apply(this,arguments);return L(this,s)}}function L(a,i){return i&&(typeof i=="object"||typeof i=="function")?i:P(a)}function P(a){if(a===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return a}function V(){if(typeof Reflect=="undefined"||!Reflect.construct||Reflect.construct.sham)return!1;if(typeof Proxy=="function")return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){})),!0}catch(a){return!1}}function S(a){return S=Object.setPrototypeOf?Object.getPrototypeOf:function(r){return r.__proto__||Object.getPrototypeOf(r)},S(a)}var C={"account-book":59905,aim:59906,alert:59907,alibaba:59908,"align-center":59909,"align-left":59910,"align-right":59911,"alipay-circle":59912,alipay:59913,aliwangwang:59914,aliyun:59915,amazon:59916,android:59917,"ant-cloud":59918,"ant-design":59919,apartment:59920,api:59921,apple:59922,"appstore-add":59923,appstore:59924,"area-chart":59925,"arrow-down":59926,"arrow-left":59927,"arrow-right":59928,"arrow-up":59929,"arrows-alt":59930,"audio-muted":59931,audio:59932,audit:59933,backward:59934,bank:59935,"bar-chart":59936,barcode:59937,bars:59938,"behance-square":59939,behance:59940,bell:59941,"bg-colors":59942,block:59943,bold:59944,book:59945,"border-bottom":59946,"border-horizontal":59947,"border-inner":59948,"border-left":59949,"border-outer":59950,"border-right":59951,"border-top":59952,"border-verticle":59953,border:59954,"borderless-table":59955,"box-plot":59956,branches:59957,bug:59958,build:59959,bulb:59960,calculator:59961,calendar:59962,camera:59963,car:59964,"caret-down":59965,"caret-left":59966,"caret-right":59967,"caret-up":59968,"carry-out":59969,"check-circle":59970,"check-square":59971,check:59972,chrome:59973,"ci-circle":59974,ci:59975,clear:59976,"clock-circle":59977,"close-circle":59978,"close-square":59979,close:59980,"cloud-download":59981,"cloud-server":59982,"cloud-sync":59983,"cloud-upload":59984,cloud:59985,cluster:59986,"code-sandbox":59987,code:59988,"codepen-circle":59989,codepen:59990,coffee:59991,"column-height":59992,"column-width":59993,comment:59994,compass:59995,compress:59996,"console-sql":59997,contacts:59998,container:59999,control:6e4,copy:60001,"copyright-circle":60002,copyright:60003,"credit-card":60004,crown:60005,"customer-service":60006,dash:60007,dashboard:60008,database:60009,"delete-column":60010,"delete-row":60011,delete:60012,"delivered-procedure":60013,"deployment-unit":60014,desktop:60015,diff:60016,dingding:60017,dingtalk:60018,disconnect:60019,dislike:60020,"dollar-circle":60021,dollar:60022,"dot-chart":60023,"double-left":60024,"double-right":60025,"down-circle":60026,"down-square":60027,down:60028,download:60029,drag:60030,"dribbble-square":60031,dribbble:60032,dropbox:60033,edit:60034,ellipsis:60035,enter:60036,environment:60037,"euro-circle":60038,euro:60039,exception:60040,"exclamation-circle":60041,exclamation:60042,"expand-alt":60043,expand:60044,experiment:60045,export:60046,"eye-invisible":60047,eye:60048,facebook:60049,fall:60050,"fast-backward":60051,"fast-forward":60052,"field-binary":60053,"field-number":60054,"field-string":60055,"field-time":60056,"file-add":60057,"file-done":60058,"file-excel":60059,"file-exclamation":60060,"file-gif":60061,"file-image":60062,"file-jpg":60063,"file-markdown":60064,"file-pdf":60065,"file-ppt":60066,"file-protect":60067,"file-search":60068,"file-sync":60069,"file-text":60070,"file-unknown":60071,"file-word":60072,"file-zip":60073,file:60074,filter:60075,fire:60076,flag:60077,"folder-add":60078,"folder-open":60079,"folder-view":60080,folder:60081,"font-colors":60082,"font-size":60083,fork:60084,form:60085,"format-painter":60086,forward:60087,frown:60088,"fullscreen-exit":60089,fullscreen:60090,function:60091,"fund-projection-screen":60092,"fund-view":60093,fund:60094,"funnel-plot":60095,gateway:60096,gif:60097,gift:60098,github:60099,gitlab:60100,global:60101,gold:60102,"google-plus":60103,google:60104,group:60105,hdd:60106,heart:60107,"heat-map":60108,highlight:60109,history:60110,holder:60111,home:60112,hourglass:60113,html5:60114,idcard:60115,ie:60116,import:60117,inbox:60118,"info-circle":60119,info:60120,"insert-row-above":60121,"insert-row-below":60122,"insert-row-left":60123,"insert-row-right":60124,instagram:60125,insurance:60126,interaction:60127,"issues-close":60128,italic:60129,key:60130,laptop:60131,layout:60132,"left-circle":60133,"left-square":60134,left:60135,like:60136,"line-chart":60137,"line-height":60138,line:60139,link:60140,linkedin:60141,"loading-3-quarters":60142,loading:60143,lock:60144,login:60145,logout:60146,"mac-command":60147,mail:60148,man:60149,"medicine-box":60150,"medium-workmark":60151,medium:60152,meh:60153,"menu-fold":60154,"menu-unfold":60155,menu:60156,"merge-cells":60157,message:60158,"minus-circle":60159,"minus-square":60160,minus:60161,mobile:60162,"money-collect":60163,monitor:60164,more:60165,"node-collapse":60166,"node-expand":60167,"node-index":60168,notification:60169,number:60170,"one-to-one":60171,"ordered-list":60172,"paper-clip":60173,partition:60174,"pause-circle":60175,pause:60176,"pay-circle":60177,percentage:60178,phone:60179,"pic-center":60180,"pic-left":60181,"pic-right":60182,picture:60183,"pie-chart":60184,"play-circle":60185,"play-square":60186,"plus-circle":60187,"plus-square":60188,plus:60189,"pound-circle":60190,pound:60191,poweroff:60192,printer:60193,profile:60194,project:60195,"property-safety":60196,"pull-request":60197,pushpin:60198,qq:60199,qrcode:60200,"question-circle":60201,question:60202,"radar-chart":60203,"radius-bottomleft":60204,"radius-bottomright":60205,"radius-setting":60206,"radius-upleft":60207,"radius-upright":60208,read:60209,reconciliation:60210,"red-envelope":60211,reddit:60212,redo:60213,reload:60214,rest:60215,retweet:60216,"right-circle":60217,"right-square":60218,right:60219,rise:60220,robot:60221,rocket:60222,rollback:60223,"rotate-left":60224,"rotate-right":60225,"safety-certificate":60226,safety:60227,save:60228,scan:60229,schedule:60230,scissor:60231,search:60232,"security-scan":60233,select:60234,send:60235,setting:60236,shake:60237,"share-alt":60238,shop:60239,"shopping-cart":60240,shopping:60241,shrink:60242,sisternode:60243,sketch:60244,skin:60245,skype:60246,"slack-square":60247,slack:60248,sliders:60249,"small-dash":60250,smile:60251,snippets:60252,solution:60253,"sort-ascending":60254,"sort-descending":60255,sound:60256,"split-cells":60257,star:60258,"step-backward":60259,"step-forward":60260,stock:60261,stop:60262,strikethrough:60263,subnode:60264,"swap-left":60265,"swap-right":60266,swap:60267,switcher:60268,sync:60269,table:60270,tablet:60271,tag:60272,tags:60273,"taobao-circle":60274,taobao:60275,team:60276,thunderbolt:60277,"to-top":60278,tool:60279,"trademark-circle":60280,trademark:60281,transaction:60282,translation:60283,trophy:60284,twitter:60285,underline:60286,undo:60287,ungroup:60288,unlock:60289,"unordered-list":60290,"up-circle":60291,"up-square":60292,up:60293,upload:60294,usb:60295,"user-add":60296,"user-delete":60297,"user-switch":60298,user:60299,"usergroup-add":60300,"usergroup-delete":60301,verified:60302,"vertical-align-bottom":60303,"vertical-align-middle":60304,"vertical-align-top":60305,"vertical-left":60306,"vertical-right":60307,"video-camera-add":60308,"video-camera":60309,wallet:60310,warning:60311,wechat:60312,"weibo-circle":60313,"weibo-square":60314,weibo:60315,"whats-app":60316,wifi:60317,windows:60318,woman:60319,yahoo:60320,youtube:60321,yuque:60322,zhihu:60323,"zoom-in":60324,"zoom-out":60325};n.outlineGlyphMap=C;var R=function(a){w(r,a);var i=B(r);function r(){return x(this,r),i.apply(this,arguments)}return T(r,[{key:"render",value:function(){var s=this.props,p=s.name,v=s.style,W=s.children,_=s.size,$=_===void 0?14:_,I=s.color,z=I===void 0?"black":I,E=b(s,u),A={fontFamily:"antoutline",fontWeight:"normal",fontStyle:"normal",fontSize:$,color:z},k=p?C[p]||"?":"";return typeof k=="number"&&(k=String.fromCharCode(k)),c.createElement(f.Text,e({},E,{style:[A,v]}),k,W)}}]),r}(c.PureComponent);n.default=R},17992:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"",month:"",day:"",hour:"",minute:"",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"Ok",dismissText:"Cancel",extra:"please select"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} is not a valid ${type}",b={optional:"(optional)",defaultValidateMessages:{default:"Field validation error for ${label}",required:"Please enter ${label}",enum:"${label} must be one of [${enum}]",whitespace:"${label} cannot be a blank character",date:{format:"${label} date format is invalid",parse:"${label} cannot be converted to a date",invalid:"${label} is an invalid date"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} must be ${len} characters",min:"${label} must be at least ${min} characters",max:"${label} must be up to ${max} characters",range:"${label} must be between ${min}-${max} characters"},number:{len:"${label} must be equal to ${len}",min:"${label} must be minimum ${min}",max:"${label} must be maximum ${max}",range:"${label} must be between ${min}-${max}"},array:{len:"Must be ${len} ${label}",min:"At least ${min} ${label}",max:"At most ${max} ${label}",range:"The amount of ${label} must be between ${min}-${max}"},pattern:{mismatch:"${label} does not match the pattern ${pattern}"}}},y={confirmLabel:"Done",backspaceLabel:"Backspace",cancelKeyboardLabel:"CancelKeyboard"},x={done:"Loaded",loading:"Loading",refreshableTitlePull:"Pull down refresh",refreshableTitleRelease:"Release loading",refreshableTitleRefreshing:"Loading...",noData:"No data yet"},h={okText:"Ok",cancelText:"Cancel",buttonText:"Button"},T={prevText:"Prev",nextText:"Next"},w={cancelText:"Cancel"},m={locale:"en",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:w,ListView:x,Form:b}},87973:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"",month:"",day:"",hour:"",minute:"",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"OK",dismissText:"Cancelar",extra:"Seleccione"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} no es un ${type} v\xE1lido",b={optional:"(opcional)",defaultValidateMessages:{default:"Error de validaci\xF3n del campo ${label}",required:"Por favor ingresar ${label}",enum:"${label} debe ser uno de [${enum}]",whitespace:"${label} no puede ser un car\xE1cter en blanco",date:{format:"El formato de fecha de ${label} es inv\xE1lido",parse:"${label} no se puede convertir a una fecha",invalid:"${label} es una fecha inv\xE1lida"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} debe tener ${len} caracteres",min:"${label} debe tener al menos ${min} caracteres",max:"${label} debe tener hasta ${max} caracteres",range:"${label} debe tener entre ${min}-${max} caracteres"},number:{len:"${label} debe ser igual a ${len}",min:"${label} valor m\xEDnimo es ${min}",max:"${label} valor m\xE1ximo es ${max}",range:"${label} debe estar entre ${min}-${max}"},array:{len:"Debe ser ${len} ${label}",min:"Al menos ${min} ${label}",max:"A lo mucho ${max} ${label}",range:"El monto de ${label} debe estar entre ${min}-${max}"},pattern:{mismatch:"${label} no coincide con el patr\xF3n ${pattern}"}}},y={confirmLabel:"OK",backspaceLabel:"Retroceso",cancelKeyboardLabel:"Cancelar Teclado"},x={done:"Finalizado",loading:"Cargando",refreshableTitlePull:"Desliza para actualizar",refreshableTitleRelease:"Suelta para actualizar",refreshableTitleRefreshing:"Cargando...",noData:"A\xFAn no hay datos"},h={okText:"Ok",cancelText:"Cancelar",buttonText:"Boton"},T={prevText:"Ant",nextText:"Sig"},w={cancelText:"Cancelar"},m={locale:"es",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:w,ListView:x,Form:b}},87453:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"\u0633\u0627\u0644",month:"\u0645\u0627\u0647",day:"\u0631\u0648\u0632",hour:"\u0633\u0627\u0639\u062A",minute:"\u062F\u0642\u06CC\u0642\u0647",am:"\u0635\u0628\u062D",pm:"\u0628\u0639\u062F \u0627\u0632 \u0638\u0647\u0631"},f=o(97857),u=o.n(f),d={okText:"\u062A\u0627\u06CC\u06CC\u062F",dismissText:"\u0644\u063A\u0648",extra:"\u0644\u0637\u0641\u0627 \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\u06CC\u062F"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} \u0627\u0632 \u0646\u0648\u0639 ${type} \u0645\u0639\u062A\u0628\u0631 \u0646\u06CC\u0633\u062A",b={optional:"(\u0627\u062E\u062A\u06CC\u0627\u0631\u06CC)",defaultValidateMessages:{default:"\u062E\u0637\u0627 \u062F\u0631 ${label}",required:"\u0641\u06CC\u0644\u062F ${label} \u0627\u062C\u0628\u0627\u0631\u06CC\u0633\u062A",enum:"${label} \u0628\u0627\u06CC\u062F \u06CC\u06A9\u06CC \u0627\u0632 [${enum}] \u0628\u0627\u0634\u062F",whitespace:"${label} \u0646\u0645\u06CC\u062A\u0648\u0627\u0646\u062F \u062E\u0627\u0644\u06CC \u0628\u0627\u0634\u062F",date:{format:"\u0633\u0627\u062E\u062A\u0627\u0631 \u062A\u0627\u0631\u06CC\u062E \u062F\u0631 ${label} \u0646\u0627\u0645\u0639\u062A\u0628\u0631 \u0627\u0633\u062A",parse:"${label} \u0642\u0627\u0628\u0644 \u062A\u0628\u062F\u06CC\u0644 \u0628\u0647 \u062A\u0627\u0631\u06CC\u062E \u0646\u06CC\u0633\u062A",invalid:"${label} \u062A\u0627\u0631\u06CC\u062E\u06CC \u0646\u0627 \u0645\u0639\u062A\u0628\u0631 \u0627\u0633\u062A"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} \u0628\u0627\u06CC\u062F ${len} \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0628\u0627\u0634\u062F",min:"${label} \u0628\u0627\u06CC\u062F \u062D\u062F\u0627\u0642\u0644 ${min} \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0628\u0627\u0634\u062F",max:"${label} \u0628\u0627\u06CC\u062F \u062D\u062F\u0627\u06A9\u062B\u0631 ${max} \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0628\u0627\u0634\u062F",range:"${label} \u0628\u0627\u06CC\u062F \u0628\u06CC\u0646 ${min}-${max} \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0628\u0627\u0634\u062F"},number:{len:"${label} \u0628\u0627\u06CC\u062F \u0628\u0631\u0627\u0628\u0631 ${len}",min:"${label} \u062D\u062F\u0627\u0642\u0644 \u0645\u06CC\u062A\u0648\u0627\u0646\u062F ${min} \u0628\u0627\u0634\u062F",max:"${label} \u062D\u062F\u0627\u06A9\u062B\u0631 \u0645\u06CC\u062A\u0648\u0627\u0646\u062F ${max} \u0628\u0627\u0634\u062F",range:"${label} \u0628\u0627\u06CC\u062F \u0628\u06CC\u0646 ${min}-${max} \u0628\u0627\u0634\u062F"},array:{len:"\u062A\u0639\u062F\u0627\u062F ${label} \u0628\u0627\u06CC\u062F ${len} \u0628\u0627\u0634\u062F.",min:"\u062A\u0639\u062F\u0627\u062F ${label} \u062D\u062F\u0627\u0642\u0644 \u0628\u0627\u06CC\u062F ${min} \u0628\u0627\u0634\u062F",max:"\u062A\u0639\u062F\u0627\u062F ${label} \u062D\u062F\u0627\u06A9\u062B\u0631 \u0628\u0627\u06CC\u062F ${max} \u0628\u0627\u0634\u062F",range:"\u0645\u0642\u062F\u0627\u0631 ${label} \u0628\u0627\u06CC\u062F \u0628\u06CC\u0646 ${min}-${max} \u0628\u0627\u0634\u062F"},pattern:{mismatch:"\u0627\u0644\u06AF\u0648\u06CC ${label} \u0628\u0627 ${pattern} \u0628\u0631\u0627\u0628\u0631\u06CC \u0646\u0645\u06CC\u200C\u06A9\u0646\u062F"}}},y={confirmLabel:"\u062A\u0627\u06CC\u06CC\u062F",backspaceLabel:"\u0628\u0631\u06AF\u0634\u062A",cancelKeyboardLabel:"\u0644\u063A\u0648"},x={done:"\u0628\u0627\u0631 \u06AF\u0630\u0627\u0631\u06CC \u062A\u06A9\u0645\u06CC\u0644 \u0634\u062F",loading:"\u062F\u0631 \u062D\u0627\u0644 \u0628\u0627\u0631 \u06AF\u0630\u0627\u0631\u06CC",refreshableTitlePull:"\u0628\u0631\u0627\u06CC \u0628\u0627\u0631 \u06AF\u0630\u0627\u0631\u06CC \u0627\u0633\u06A9\u0631\u0648\u0644 \u06A9\u0646\u06CC\u062F",refreshableTitleRelease:"\u0644\u063A\u0648 \u0628\u0627\u0631\u06AF\u0630\u0627\u0631\u06CC",refreshableTitleRefreshing:"\u062F\u0631 \u062D\u0627\u0644 \u0628\u0627\u0631 \u06AF\u0630\u0627\u0631\u06CC ...",noData:"\u062F\u0627\u062F\u0647 \u0627\u06CC \u0645\u0648\u062C\u0648\u062F \u0646\u06CC\u0633\u062A"},h={okText:"\u062A\u0627\u06CC\u06CC\u062F",cancelText:"\u0644\u063A\u0648",buttonText:"\u062F\u06A9\u0645\u0647"},T={prevText:"\u0642\u0628\u0644\u06CC",nextText:"\u0628\u0639\u062F\u06CC"},w={cancelText:"\u0644\u063A\u0648"},m={locale:"fa",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:w,ListView:x,Form:b}},27055:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"\uB144",month:"\uC6D4",day:"\uC77C",hour:"\uC2DC\uAC04",minute:"\uBD84",am:"\uC624\uC804",pm:"\uC624\uD6C4"},f=o(97857),u=o.n(f),d={okText:"\uD655\uC778",dismissText:"\uCDE8\uC18C",extra:"\uC120\uD0DD\uD574\uC8FC\uC138\uC694"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} \uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 ${type}",b={optional:"(\uC120\uD0DD\uC0AC\uD56D)",defaultValidateMessages:{default:"\uD544\uB4DC \uC720\uD6A8\uC131 \uAC80\uC0AC \uC624\uB958 ${label}",required:"${label} \uC785\uB825\uD574 \uC8FC\uC138\uC694",enum:"${label} [${enum}] \uC911\uC5D0 \uD558\uB098\uC5EC\uC57C \uD569\uB2C8\uB2E4",whitespace:"${label} \uBE44\uC6CC\uB458 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4",date:{format:"${label} \uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 \uB0A0\uC9DC \uD615\uC2DD\uC785\uB2C8\uB2E4",parse:"${label} \uB0A0\uC9DC \uD615\uC2DD\uC73C\uB85C \uBCC0\uD658\uB420 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4",invalid:"${label} \uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 \uB0A0\uC9DC\uC785\uB2C8\uB2E4"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} ${len}\uAE00\uC790\uC5EC\uC57C \uD569\uB2C8\uB2E4",min:"${label} \uC801\uC5B4\uB3C4 ${min}\uAE00\uC790 \uC774\uC0C1\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4",max:"${label} ${max}\uAE00\uC790 \uC774\uD558\uC5EC\uC57C \uD569\uB2C8\uB2E4",range:"${label} ${min}-${max}\uAE00\uC790 \uC0AC\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4"},number:{len:"${label} \uAC12\uC740 ${len}\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4",min:"${label} \uCD5C\uC19F\uAC12\uC740 ${min}\uC785\uB2C8\uB2E4",max:"${label} \uCD5C\uB313\uAC12\uC740 ${max}\uC785\uB2C8\uB2E4",range:"${label} \uAC12\uC740 ${min}-${max} \uC0AC\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4"},array:{len:"${len}\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4 ${label} ",min:"\uCD5C\uC18C ${min}\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4 ${label}",max:"\uCD5C\uB300 ${max}\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4 ${label}",range:"${label} ${min}-${max} \uC0AC\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4"},pattern:{mismatch:"${label} ${pattern} \uD328\uD134\uACFC \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4"}}},y={confirmLabel:"\uD655\uC778",backspaceLabel:"\uC9C0\uC6B0\uAE30",cancelKeyboardLabel:"\uD0A4\uBCF4\uB4DC \uC228\uAE30\uAE30"},x={done:"\uC644\uB8CC",loading:"\uB85C\uB529\uC911",refreshableTitlePull:"\uB2F9\uACA8\uC11C \uC0C8\uB85C\uACE0\uCE68",refreshableTitleRelease:"\uB193\uC544\uC11C \uC0C8\uB85C\uACE0\uCE68",refreshableTitleRefreshing:"\uB85C\uB529\uC911...",noData:"\uB370\uC774\uD130 \uC5C6\uC74C"},h={okText:"\uD655\uC778",cancelText:"\uCDE8\uC18C",buttonText:"\uBC84\uD2BC"},T={prevText:"\uC774\uC804",nextText:"\uB2E4\uC74C"},w={cancelText:"\uCDE8\uC18C"},m={locale:"ko_KR",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:w,ListView:x,Form:b}},74223:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"Ano",month:"M\xEAs",day:"Dia",hour:"Hora",minute:"Minuto",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"Ok",dismissText:"Cancelar",extra:"Selecione"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} n\xE3o \xE9 um ${type} v\xE1lido",b={optional:"(opcional)",defaultValidateMessages:{default:"Erro ${label} na valida\xE7\xE3o de campo",required:"Por favor, insira ${label}",enum:"${label} deve ser um dos seguinte: [${enum}]",whitespace:"${label} n\xE3o pode ser um car\xE1cter vazio",date:{format:" O formato de data ${label} \xE9 inv\xE1lido",parse:"${label} n\xE3o pode ser convertido para uma data",invalid:"${label} \xE9 uma data inv\xE1lida"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} deve possuir ${len} caracteres",min:"${label} deve possuir ao menos ${min} caracteres",max:"${label} deve possuir no m\xE1ximo ${max} caracteres",range:"${label} deve possuir entre ${min} e ${max} caracteres"},number:{len:"${label} deve ser igual \xE0 ${len}",min:"O valor m\xEDnimo de ${label} \xE9 ${min}",max:"O valor m\xE1ximo de ${label} \xE9 ${max}",range:"${label} deve estar entre ${min} e ${max}"},array:{len:"Deve ser ${len} ${label}",min:"No m\xEDnimo ${min} ${label}",max:"No m\xE1ximo ${max} ${label}",range:"A quantidade de ${label} deve estar entre ${min} e ${max}"},pattern:{mismatch:"${label} n\xE3o se encaixa no padr\xE3o ${pattern}"}}},y={confirmLabel:"Ok",backspaceLabel:"Voltar",cancelKeyboardLabel:"Fechar Teclado"},x={done:"Carregado",loading:"Carregando",refreshableTitlePull:"Arraste para baixo para atualizar",refreshableTitleRelease:"Iniciado carregamento",refreshableTitleRefreshing:"Carregando...",noData:"Sem dados"},h={okText:"Ok",cancelText:"Cancelar",buttonText:"Bot\xE3o"},T={prevText:"Ant.",nextText:"Pr\xF3x."},w={cancelText:"Cancelar"},m={locale:"pt_BR",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:w,ListView:x,Form:b}},17481:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"",month:"",day:"",hour:"",minute:"",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"\u041E\u043A",dismissText:"\u041E\u0442\u043C\u0435\u043D\u0430",extra:""},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0442\u0438\u043F\u043E\u043C ${type}",b={optional:"(\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)",defaultValidateMessages:{default:"\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u043F\u043E\u043B\u044F ${label}",required:"\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 ${label}",enum:"${label} \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C \u043E\u0434\u043D\u0438\u043C \u0438\u0437 [${enum}]",whitespace:"${label} \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043F\u0443\u0441\u0442\u044B\u043C",date:{format:"${label} \u043D\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u0444\u043E\u0440\u043C\u0430\u0442 \u0434\u0430\u0442\u044B",parse:"${label} \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u043E \u0432 \u0434\u0430\u0442\u0443",invalid:"${label} \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u043E\u0439 \u0434\u0430\u0442\u043E\u0439"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C ${len} \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432",min:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u0430 ${min} \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432",max:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043C\u0435\u043D\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u0430 ${max} \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432",range:"\u0414\u043B\u0438\u043D\u0430 ${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043C\u0435\u0436\u0434\u0443 ${min}-${max} \u0441\u0438\u043C\u0432\u043E\u043B\u0430\u043C\u0438"},number:{len:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u0440\u0430\u0432\u043D\u0430 ${len}",min:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u0430 ${min}",max:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043C\u0435\u043D\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u0430 ${max}",range:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043C\u0435\u0436\u0434\u0443 ${min}-${max}"},array:{len:"\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 ${label} \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u0440\u0430\u0432\u043D\u043E ${len}",min:"\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 ${label} \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u043E ${min}",max:"\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 ${label} \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u043C\u0435\u043D\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u043E ${max}",range:"\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 ${label} \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u043C\u0435\u0436\u0434\u0443 ${min} \u0438 ${max}"},pattern:{mismatch:"${label} \u043D\u0435 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u0448\u0430\u0431\u043B\u043E\u043D\u0443 ${pattern}"}}},y={confirmLabel:"\u041E\u043A",backspaceLabel:"\u0432\u043E\u0437\u0432\u0440\u0430\u0442 \u043D\u0430 \u043E\u0434\u043D\u0443 \u043F\u043E\u0437\u0438\u0446\u0438\u044E",cancelKeyboardLabel:"\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0443"},x={done:"Loaded",loading:"Loading",refreshableTitlePull:"Pull down refresh",refreshableTitleRelease:"Release loading",refreshableTitleRefreshing:"Loading...",noData:"No data yet"},h={okText:"\u041E\u043A",cancelText:"\u041E\u0442\u043C\u0435\u043D\u0430",buttonText:"\u041A\u043D\u043E\u043F\u043A\u0430"},T={prevText:"\u041D\u0430\u0437\u0430\u0434",nextText:"\u0412\u043F\u0435\u0440\u0451\u0434"},w={cancelText:"\u041E\u0442\u043C\u0435\u043D\u0430"},m={locale:"ru",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:w,ListView:x,Form:b}},40232:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"",month:"",day:"",hour:"",minute:"",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"Ok",dismissText:"Avbryt",extra:"v\xE4nligen v\xE4lj"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} \xE4r inte en giltig ${type}",b={optional:"(valfritt)",defaultValidateMessages:{default:"F\xE4ltvalideringsfel f\xF6r ${label}",required:"V\xE4nligen fyll i ${label}",enum:"${label} m\xE5ste vara en av [${enum}]",whitespace:"${label} kan inte vara ett tomt tecken",date:{format:"${label} datumformatet \xE4r ogiltigt",parse:"${label} kan inte konverteras till ett datum",invalid:"${label} \xE4r ett ogiltigt datum"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} m\xE5ste vara ${len} tecken",min:"${label} m\xE5ste vara minst ${min} tecken",max:"${label} m\xE5ste vara h\xF6gst ${max} tecken",range:"${label} m\xE5ste vara mellan ${min}-${max} tecken"},number:{len:"${label} m\xE5ste vara lika med ${len}",min:"${label} m\xE5ste vara minst ${min}",max:"${label} m\xE5ste vara h\xF6gst ${max}",range:"${label} m\xE5ste vara mellan ${min}-${max}"},array:{len:"M\xE5ste vara ${len} ${label}",min:"Minst ${min} ${label}",max:"H\xF6gst ${max} ${label}",range:"Antal ${label} m\xE5ste vara mellan ${min}-${max}"},pattern:{mismatch:"${label} st\xE4mmer inte \xF6verens med m\xF6nstret ${pattern}"}}},y={confirmLabel:"Ok",backspaceLabel:"Backspace",cancelKeyboardLabel:"CancelKeyboard"},x={done:"Loaded",loading:"Loading",refreshableTitlePull:"Pull down refresh",refreshableTitleRelease:"Release loading",refreshableTitleRefreshing:"Loading...",noData:"No data yet"},h={okText:"Ok",cancelText:"Avbryt",buttonText:"Knapp"},T={prevText:"F\xF6reg",nextText:"N\xE4sta"},w={cancelText:"Avbryt"},m={locale:"sv",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:w,ListView:x,Form:b}},52392:function(t,n){n.Z=`export default (valid: boolean, component: string, message: string): void => {
+"use strict";(self.webpackChunk_ant_design_react_native=self.webpackChunk_ant_design_react_native||[]).push([[6381],{3811:function(t,n,o){Object.defineProperty(n,"__esModule",{value:!0}),n.default=n.outlineGlyphMap=void 0;var c=g(o(67294)),f=o(24214),u=["name","style","children","size","color"];function d(a){if(typeof WeakMap!="function")return null;var i=new WeakMap,r=new WeakMap;return(d=function(s){return s?r:i})(a)}function g(a,i){if(!i&&a&&a.__esModule)return a;if(a===null||typeof a!="object"&&typeof a!="function")return{default:a};var r=d(i);if(r&&r.has(a))return r.get(a);var l={},s=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var p in a)if(p!=="default"&&Object.prototype.hasOwnProperty.call(a,p)){var w=s?Object.getOwnPropertyDescriptor(a,p):null;w&&(w.get||w.set)?Object.defineProperty(l,p,w):l[p]=a[p]}return l.default=a,r&&r.set(a,l),l}function e(){return e=Object.assign||function(a){for(var i=1;i<arguments.length;i++){var r=arguments[i];for(var l in r)Object.prototype.hasOwnProperty.call(r,l)&&(a[l]=r[l])}return a},e.apply(this,arguments)}function b(a,i){if(a==null)return{};var r=y(a,i),l,s;if(Object.getOwnPropertySymbols){var p=Object.getOwnPropertySymbols(a);for(s=0;s<p.length;s++)l=p[s],!(i.indexOf(l)>=0)&&Object.prototype.propertyIsEnumerable.call(a,l)&&(r[l]=a[l])}return r}function y(a,i){if(a==null)return{};var r={},l=Object.keys(a),s,p;for(p=0;p<l.length;p++)s=l[p],!(i.indexOf(s)>=0)&&(r[s]=a[s]);return r}function x(a,i){if(!(a instanceof i))throw new TypeError("Cannot call a class as a function")}function h(a,i){for(var r=0;r<i.length;r++){var l=i[r];l.enumerable=l.enumerable||!1,l.configurable=!0,"value"in l&&(l.writable=!0),Object.defineProperty(a,l.key,l)}}function T(a,i,r){return i&&h(a.prototype,i),r&&h(a,r),a}function S(a,i){if(typeof i!="function"&&i!==null)throw new TypeError("Super expression must either be null or a function");a.prototype=Object.create(i&&i.prototype,{constructor:{value:a,writable:!0,configurable:!0}}),i&&m(a,i)}function m(a,i){return m=Object.setPrototypeOf||function(l,s){return l.__proto__=s,l},m(a,i)}function B(a){var i=V();return function(){var l=v(a),s;if(i){var p=v(this).constructor;s=Reflect.construct(l,arguments,p)}else s=l.apply(this,arguments);return L(this,s)}}function L(a,i){return i&&(typeof i=="object"||typeof i=="function")?i:P(a)}function P(a){if(a===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return a}function V(){if(typeof Reflect=="undefined"||!Reflect.construct||Reflect.construct.sham)return!1;if(typeof Proxy=="function")return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){})),!0}catch(a){return!1}}function v(a){return v=Object.setPrototypeOf?Object.getPrototypeOf:function(r){return r.__proto__||Object.getPrototypeOf(r)},v(a)}var C={"account-book":59905,aim:59906,alert:59907,alibaba:59908,"align-center":59909,"align-left":59910,"align-right":59911,"alipay-circle":59912,alipay:59913,aliwangwang:59914,aliyun:59915,amazon:59916,android:59917,"ant-cloud":59918,"ant-design":59919,apartment:59920,api:59921,apple:59922,"appstore-add":59923,appstore:59924,"area-chart":59925,"arrow-down":59926,"arrow-left":59927,"arrow-right":59928,"arrow-up":59929,"arrows-alt":59930,"audio-muted":59931,audio:59932,audit:59933,backward:59934,bank:59935,"bar-chart":59936,barcode:59937,bars:59938,"behance-square":59939,behance:59940,bell:59941,"bg-colors":59942,block:59943,bold:59944,book:59945,"border-bottom":59946,"border-horizontal":59947,"border-inner":59948,"border-left":59949,"border-outer":59950,"border-right":59951,"border-top":59952,"border-verticle":59953,border:59954,"borderless-table":59955,"box-plot":59956,branches:59957,bug:59958,build:59959,bulb:59960,calculator:59961,calendar:59962,camera:59963,car:59964,"caret-down":59965,"caret-left":59966,"caret-right":59967,"caret-up":59968,"carry-out":59969,"check-circle":59970,"check-square":59971,check:59972,chrome:59973,"ci-circle":59974,ci:59975,clear:59976,"clock-circle":59977,"close-circle":59978,"close-square":59979,close:59980,"cloud-download":59981,"cloud-server":59982,"cloud-sync":59983,"cloud-upload":59984,cloud:59985,cluster:59986,"code-sandbox":59987,code:59988,"codepen-circle":59989,codepen:59990,coffee:59991,"column-height":59992,"column-width":59993,comment:59994,compass:59995,compress:59996,"console-sql":59997,contacts:59998,container:59999,control:6e4,copy:60001,"copyright-circle":60002,copyright:60003,"credit-card":60004,crown:60005,"customer-service":60006,dash:60007,dashboard:60008,database:60009,"delete-column":60010,"delete-row":60011,delete:60012,"delivered-procedure":60013,"deployment-unit":60014,desktop:60015,diff:60016,dingding:60017,dingtalk:60018,disconnect:60019,dislike:60020,"dollar-circle":60021,dollar:60022,"dot-chart":60023,"double-left":60024,"double-right":60025,"down-circle":60026,"down-square":60027,down:60028,download:60029,drag:60030,"dribbble-square":60031,dribbble:60032,dropbox:60033,edit:60034,ellipsis:60035,enter:60036,environment:60037,"euro-circle":60038,euro:60039,exception:60040,"exclamation-circle":60041,exclamation:60042,"expand-alt":60043,expand:60044,experiment:60045,export:60046,"eye-invisible":60047,eye:60048,facebook:60049,fall:60050,"fast-backward":60051,"fast-forward":60052,"field-binary":60053,"field-number":60054,"field-string":60055,"field-time":60056,"file-add":60057,"file-done":60058,"file-excel":60059,"file-exclamation":60060,"file-gif":60061,"file-image":60062,"file-jpg":60063,"file-markdown":60064,"file-pdf":60065,"file-ppt":60066,"file-protect":60067,"file-search":60068,"file-sync":60069,"file-text":60070,"file-unknown":60071,"file-word":60072,"file-zip":60073,file:60074,filter:60075,fire:60076,flag:60077,"folder-add":60078,"folder-open":60079,"folder-view":60080,folder:60081,"font-colors":60082,"font-size":60083,fork:60084,form:60085,"format-painter":60086,forward:60087,frown:60088,"fullscreen-exit":60089,fullscreen:60090,function:60091,"fund-projection-screen":60092,"fund-view":60093,fund:60094,"funnel-plot":60095,gateway:60096,gif:60097,gift:60098,github:60099,gitlab:60100,global:60101,gold:60102,"google-plus":60103,google:60104,group:60105,hdd:60106,heart:60107,"heat-map":60108,highlight:60109,history:60110,holder:60111,home:60112,hourglass:60113,html5:60114,idcard:60115,ie:60116,import:60117,inbox:60118,"info-circle":60119,info:60120,"insert-row-above":60121,"insert-row-below":60122,"insert-row-left":60123,"insert-row-right":60124,instagram:60125,insurance:60126,interaction:60127,"issues-close":60128,italic:60129,key:60130,laptop:60131,layout:60132,"left-circle":60133,"left-square":60134,left:60135,like:60136,"line-chart":60137,"line-height":60138,line:60139,link:60140,linkedin:60141,"loading-3-quarters":60142,loading:60143,lock:60144,login:60145,logout:60146,"mac-command":60147,mail:60148,man:60149,"medicine-box":60150,"medium-workmark":60151,medium:60152,meh:60153,"menu-fold":60154,"menu-unfold":60155,menu:60156,"merge-cells":60157,message:60158,"minus-circle":60159,"minus-square":60160,minus:60161,mobile:60162,"money-collect":60163,monitor:60164,more:60165,"node-collapse":60166,"node-expand":60167,"node-index":60168,notification:60169,number:60170,"one-to-one":60171,"ordered-list":60172,"paper-clip":60173,partition:60174,"pause-circle":60175,pause:60176,"pay-circle":60177,percentage:60178,phone:60179,"pic-center":60180,"pic-left":60181,"pic-right":60182,picture:60183,"pie-chart":60184,"play-circle":60185,"play-square":60186,"plus-circle":60187,"plus-square":60188,plus:60189,"pound-circle":60190,pound:60191,poweroff:60192,printer:60193,profile:60194,project:60195,"property-safety":60196,"pull-request":60197,pushpin:60198,qq:60199,qrcode:60200,"question-circle":60201,question:60202,"radar-chart":60203,"radius-bottomleft":60204,"radius-bottomright":60205,"radius-setting":60206,"radius-upleft":60207,"radius-upright":60208,read:60209,reconciliation:60210,"red-envelope":60211,reddit:60212,redo:60213,reload:60214,rest:60215,retweet:60216,"right-circle":60217,"right-square":60218,right:60219,rise:60220,robot:60221,rocket:60222,rollback:60223,"rotate-left":60224,"rotate-right":60225,"safety-certificate":60226,safety:60227,save:60228,scan:60229,schedule:60230,scissor:60231,search:60232,"security-scan":60233,select:60234,send:60235,setting:60236,shake:60237,"share-alt":60238,shop:60239,"shopping-cart":60240,shopping:60241,shrink:60242,sisternode:60243,sketch:60244,skin:60245,skype:60246,"slack-square":60247,slack:60248,sliders:60249,"small-dash":60250,smile:60251,snippets:60252,solution:60253,"sort-ascending":60254,"sort-descending":60255,sound:60256,"split-cells":60257,star:60258,"step-backward":60259,"step-forward":60260,stock:60261,stop:60262,strikethrough:60263,subnode:60264,"swap-left":60265,"swap-right":60266,swap:60267,switcher:60268,sync:60269,table:60270,tablet:60271,tag:60272,tags:60273,"taobao-circle":60274,taobao:60275,team:60276,thunderbolt:60277,"to-top":60278,tool:60279,"trademark-circle":60280,trademark:60281,transaction:60282,translation:60283,trophy:60284,twitter:60285,underline:60286,undo:60287,ungroup:60288,unlock:60289,"unordered-list":60290,"up-circle":60291,"up-square":60292,up:60293,upload:60294,usb:60295,"user-add":60296,"user-delete":60297,"user-switch":60298,user:60299,"usergroup-add":60300,"usergroup-delete":60301,verified:60302,"vertical-align-bottom":60303,"vertical-align-middle":60304,"vertical-align-top":60305,"vertical-left":60306,"vertical-right":60307,"video-camera-add":60308,"video-camera":60309,wallet:60310,warning:60311,wechat:60312,"weibo-circle":60313,"weibo-square":60314,weibo:60315,"whats-app":60316,wifi:60317,windows:60318,woman:60319,yahoo:60320,youtube:60321,yuque:60322,zhihu:60323,"zoom-in":60324,"zoom-out":60325};n.outlineGlyphMap=C;var R=function(a){S(r,a);var i=B(r);function r(){return x(this,r),i.apply(this,arguments)}return T(r,[{key:"render",value:function(){var s=this.props,p=s.name,w=s.style,W=s.children,_=s.size,$=_===void 0?14:_,I=s.color,z=I===void 0?"black":I,E=b(s,u),O={fontFamily:"antoutline",fontWeight:"normal",fontStyle:"normal",fontSize:$,color:z},k=p?C[p]||"?":"";return typeof k=="number"&&(k=String.fromCharCode(k)),c.createElement(f.Text,e({},E,{style:[O,w]}),k,W)}}]),r}(c.PureComponent);n.default=R},17992:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"",month:"",day:"",hour:"",minute:"",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"Ok",dismissText:"Cancel",extra:"please select"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} is not a valid ${type}",b={optional:"(optional)",defaultValidateMessages:{default:"Field validation error for ${label}",required:"Please enter ${label}",enum:"${label} must be one of [${enum}]",whitespace:"${label} cannot be a blank character",date:{format:"${label} date format is invalid",parse:"${label} cannot be converted to a date",invalid:"${label} is an invalid date"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} must be ${len} characters",min:"${label} must be at least ${min} characters",max:"${label} must be up to ${max} characters",range:"${label} must be between ${min}-${max} characters"},number:{len:"${label} must be equal to ${len}",min:"${label} must be minimum ${min}",max:"${label} must be maximum ${max}",range:"${label} must be between ${min}-${max}"},array:{len:"Must be ${len} ${label}",min:"At least ${min} ${label}",max:"At most ${max} ${label}",range:"The amount of ${label} must be between ${min}-${max}"},pattern:{mismatch:"${label} does not match the pattern ${pattern}"}}},y={confirmLabel:"Done",backspaceLabel:"Backspace",cancelKeyboardLabel:"CancelKeyboard"},x={done:"Loaded",loading:"Loading",refreshableTitlePull:"Pull down refresh",refreshableTitleRelease:"Release loading",refreshableTitleRefreshing:"Loading...",noData:"No data yet"},h={okText:"Ok",cancelText:"Cancel",buttonText:"Button"},T={prevText:"Prev",nextText:"Next"},S={cancelText:"Cancel"},m={locale:"en",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:S,ListView:x,Form:b}},87973:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"",month:"",day:"",hour:"",minute:"",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"OK",dismissText:"Cancelar",extra:"Seleccione"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} no es un ${type} v\xE1lido",b={optional:"(opcional)",defaultValidateMessages:{default:"Error de validaci\xF3n del campo ${label}",required:"Por favor ingresar ${label}",enum:"${label} debe ser uno de [${enum}]",whitespace:"${label} no puede ser un car\xE1cter en blanco",date:{format:"El formato de fecha de ${label} es inv\xE1lido",parse:"${label} no se puede convertir a una fecha",invalid:"${label} es una fecha inv\xE1lida"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} debe tener ${len} caracteres",min:"${label} debe tener al menos ${min} caracteres",max:"${label} debe tener hasta ${max} caracteres",range:"${label} debe tener entre ${min}-${max} caracteres"},number:{len:"${label} debe ser igual a ${len}",min:"${label} valor m\xEDnimo es ${min}",max:"${label} valor m\xE1ximo es ${max}",range:"${label} debe estar entre ${min}-${max}"},array:{len:"Debe ser ${len} ${label}",min:"Al menos ${min} ${label}",max:"A lo mucho ${max} ${label}",range:"El monto de ${label} debe estar entre ${min}-${max}"},pattern:{mismatch:"${label} no coincide con el patr\xF3n ${pattern}"}}},y={confirmLabel:"OK",backspaceLabel:"Retroceso",cancelKeyboardLabel:"Cancelar Teclado"},x={done:"Finalizado",loading:"Cargando",refreshableTitlePull:"Desliza para actualizar",refreshableTitleRelease:"Suelta para actualizar",refreshableTitleRefreshing:"Cargando...",noData:"A\xFAn no hay datos"},h={okText:"Ok",cancelText:"Cancelar",buttonText:"Boton"},T={prevText:"Ant",nextText:"Sig"},S={cancelText:"Cancelar"},m={locale:"es",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:S,ListView:x,Form:b}},87453:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"\u0633\u0627\u0644",month:"\u0645\u0627\u0647",day:"\u0631\u0648\u0632",hour:"\u0633\u0627\u0639\u062A",minute:"\u062F\u0642\u06CC\u0642\u0647",am:"\u0635\u0628\u062D",pm:"\u0628\u0639\u062F \u0627\u0632 \u0638\u0647\u0631"},f=o(97857),u=o.n(f),d={okText:"\u062A\u0627\u06CC\u06CC\u062F",dismissText:"\u0644\u063A\u0648",extra:"\u0644\u0637\u0641\u0627 \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\u06CC\u062F"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} \u0627\u0632 \u0646\u0648\u0639 ${type} \u0645\u0639\u062A\u0628\u0631 \u0646\u06CC\u0633\u062A",b={optional:"(\u0627\u062E\u062A\u06CC\u0627\u0631\u06CC)",defaultValidateMessages:{default:"\u062E\u0637\u0627 \u062F\u0631 ${label}",required:"\u0641\u06CC\u0644\u062F ${label} \u0627\u062C\u0628\u0627\u0631\u06CC\u0633\u062A",enum:"${label} \u0628\u0627\u06CC\u062F \u06CC\u06A9\u06CC \u0627\u0632 [${enum}] \u0628\u0627\u0634\u062F",whitespace:"${label} \u0646\u0645\u06CC\u062A\u0648\u0627\u0646\u062F \u062E\u0627\u0644\u06CC \u0628\u0627\u0634\u062F",date:{format:"\u0633\u0627\u062E\u062A\u0627\u0631 \u062A\u0627\u0631\u06CC\u062E \u062F\u0631 ${label} \u0646\u0627\u0645\u0639\u062A\u0628\u0631 \u0627\u0633\u062A",parse:"${label} \u0642\u0627\u0628\u0644 \u062A\u0628\u062F\u06CC\u0644 \u0628\u0647 \u062A\u0627\u0631\u06CC\u062E \u0646\u06CC\u0633\u062A",invalid:"${label} \u062A\u0627\u0631\u06CC\u062E\u06CC \u0646\u0627 \u0645\u0639\u062A\u0628\u0631 \u0627\u0633\u062A"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} \u0628\u0627\u06CC\u062F ${len} \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0628\u0627\u0634\u062F",min:"${label} \u0628\u0627\u06CC\u062F \u062D\u062F\u0627\u0642\u0644 ${min} \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0628\u0627\u0634\u062F",max:"${label} \u0628\u0627\u06CC\u062F \u062D\u062F\u0627\u06A9\u062B\u0631 ${max} \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0628\u0627\u0634\u062F",range:"${label} \u0628\u0627\u06CC\u062F \u0628\u06CC\u0646 ${min}-${max} \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0628\u0627\u0634\u062F"},number:{len:"${label} \u0628\u0627\u06CC\u062F \u0628\u0631\u0627\u0628\u0631 ${len}",min:"${label} \u062D\u062F\u0627\u0642\u0644 \u0645\u06CC\u062A\u0648\u0627\u0646\u062F ${min} \u0628\u0627\u0634\u062F",max:"${label} \u062D\u062F\u0627\u06A9\u062B\u0631 \u0645\u06CC\u062A\u0648\u0627\u0646\u062F ${max} \u0628\u0627\u0634\u062F",range:"${label} \u0628\u0627\u06CC\u062F \u0628\u06CC\u0646 ${min}-${max} \u0628\u0627\u0634\u062F"},array:{len:"\u062A\u0639\u062F\u0627\u062F ${label} \u0628\u0627\u06CC\u062F ${len} \u0628\u0627\u0634\u062F.",min:"\u062A\u0639\u062F\u0627\u062F ${label} \u062D\u062F\u0627\u0642\u0644 \u0628\u0627\u06CC\u062F ${min} \u0628\u0627\u0634\u062F",max:"\u062A\u0639\u062F\u0627\u062F ${label} \u062D\u062F\u0627\u06A9\u062B\u0631 \u0628\u0627\u06CC\u062F ${max} \u0628\u0627\u0634\u062F",range:"\u0645\u0642\u062F\u0627\u0631 ${label} \u0628\u0627\u06CC\u062F \u0628\u06CC\u0646 ${min}-${max} \u0628\u0627\u0634\u062F"},pattern:{mismatch:"\u0627\u0644\u06AF\u0648\u06CC ${label} \u0628\u0627 ${pattern} \u0628\u0631\u0627\u0628\u0631\u06CC \u0646\u0645\u06CC\u200C\u06A9\u0646\u062F"}}},y={confirmLabel:"\u062A\u0627\u06CC\u06CC\u062F",backspaceLabel:"\u0628\u0631\u06AF\u0634\u062A",cancelKeyboardLabel:"\u0644\u063A\u0648"},x={done:"\u0628\u0627\u0631 \u06AF\u0630\u0627\u0631\u06CC \u062A\u06A9\u0645\u06CC\u0644 \u0634\u062F",loading:"\u062F\u0631 \u062D\u0627\u0644 \u0628\u0627\u0631 \u06AF\u0630\u0627\u0631\u06CC",refreshableTitlePull:"\u0628\u0631\u0627\u06CC \u0628\u0627\u0631 \u06AF\u0630\u0627\u0631\u06CC \u0627\u0633\u06A9\u0631\u0648\u0644 \u06A9\u0646\u06CC\u062F",refreshableTitleRelease:"\u0644\u063A\u0648 \u0628\u0627\u0631\u06AF\u0630\u0627\u0631\u06CC",refreshableTitleRefreshing:"\u062F\u0631 \u062D\u0627\u0644 \u0628\u0627\u0631 \u06AF\u0630\u0627\u0631\u06CC ...",noData:"\u062F\u0627\u062F\u0647 \u0627\u06CC \u0645\u0648\u062C\u0648\u062F \u0646\u06CC\u0633\u062A"},h={okText:"\u062A\u0627\u06CC\u06CC\u062F",cancelText:"\u0644\u063A\u0648",buttonText:"\u062F\u06A9\u0645\u0647"},T={prevText:"\u0642\u0628\u0644\u06CC",nextText:"\u0628\u0639\u062F\u06CC"},S={cancelText:"\u0644\u063A\u0648"},m={locale:"fa",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:S,ListView:x,Form:b}},27055:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"\uB144",month:"\uC6D4",day:"\uC77C",hour:"\uC2DC\uAC04",minute:"\uBD84",am:"\uC624\uC804",pm:"\uC624\uD6C4"},f=o(97857),u=o.n(f),d={okText:"\uD655\uC778",dismissText:"\uCDE8\uC18C",extra:"\uC120\uD0DD\uD574\uC8FC\uC138\uC694"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} \uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 ${type}",b={optional:"(\uC120\uD0DD\uC0AC\uD56D)",defaultValidateMessages:{default:"\uD544\uB4DC \uC720\uD6A8\uC131 \uAC80\uC0AC \uC624\uB958 ${label}",required:"${label} \uC785\uB825\uD574 \uC8FC\uC138\uC694",enum:"${label} [${enum}] \uC911\uC5D0 \uD558\uB098\uC5EC\uC57C \uD569\uB2C8\uB2E4",whitespace:"${label} \uBE44\uC6CC\uB458 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4",date:{format:"${label} \uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 \uB0A0\uC9DC \uD615\uC2DD\uC785\uB2C8\uB2E4",parse:"${label} \uB0A0\uC9DC \uD615\uC2DD\uC73C\uB85C \uBCC0\uD658\uB420 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4",invalid:"${label} \uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 \uB0A0\uC9DC\uC785\uB2C8\uB2E4"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} ${len}\uAE00\uC790\uC5EC\uC57C \uD569\uB2C8\uB2E4",min:"${label} \uC801\uC5B4\uB3C4 ${min}\uAE00\uC790 \uC774\uC0C1\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4",max:"${label} ${max}\uAE00\uC790 \uC774\uD558\uC5EC\uC57C \uD569\uB2C8\uB2E4",range:"${label} ${min}-${max}\uAE00\uC790 \uC0AC\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4"},number:{len:"${label} \uAC12\uC740 ${len}\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4",min:"${label} \uCD5C\uC19F\uAC12\uC740 ${min}\uC785\uB2C8\uB2E4",max:"${label} \uCD5C\uB313\uAC12\uC740 ${max}\uC785\uB2C8\uB2E4",range:"${label} \uAC12\uC740 ${min}-${max} \uC0AC\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4"},array:{len:"${len}\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4 ${label} ",min:"\uCD5C\uC18C ${min}\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4 ${label}",max:"\uCD5C\uB300 ${max}\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4 ${label}",range:"${label} ${min}-${max} \uC0AC\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4"},pattern:{mismatch:"${label} ${pattern} \uD328\uD134\uACFC \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4"}}},y={confirmLabel:"\uD655\uC778",backspaceLabel:"\uC9C0\uC6B0\uAE30",cancelKeyboardLabel:"\uD0A4\uBCF4\uB4DC \uC228\uAE30\uAE30"},x={done:"\uC644\uB8CC",loading:"\uB85C\uB529\uC911",refreshableTitlePull:"\uB2F9\uACA8\uC11C \uC0C8\uB85C\uACE0\uCE68",refreshableTitleRelease:"\uB193\uC544\uC11C \uC0C8\uB85C\uACE0\uCE68",refreshableTitleRefreshing:"\uB85C\uB529\uC911...",noData:"\uB370\uC774\uD130 \uC5C6\uC74C"},h={okText:"\uD655\uC778",cancelText:"\uCDE8\uC18C",buttonText:"\uBC84\uD2BC"},T={prevText:"\uC774\uC804",nextText:"\uB2E4\uC74C"},S={cancelText:"\uCDE8\uC18C"},m={locale:"ko_KR",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:S,ListView:x,Form:b}},74223:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"Ano",month:"M\xEAs",day:"Dia",hour:"Hora",minute:"Minuto",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"Ok",dismissText:"Cancelar",extra:"Selecione"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} n\xE3o \xE9 um ${type} v\xE1lido",b={optional:"(opcional)",defaultValidateMessages:{default:"Erro ${label} na valida\xE7\xE3o de campo",required:"Por favor, insira ${label}",enum:"${label} deve ser um dos seguinte: [${enum}]",whitespace:"${label} n\xE3o pode ser um car\xE1cter vazio",date:{format:" O formato de data ${label} \xE9 inv\xE1lido",parse:"${label} n\xE3o pode ser convertido para uma data",invalid:"${label} \xE9 uma data inv\xE1lida"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} deve possuir ${len} caracteres",min:"${label} deve possuir ao menos ${min} caracteres",max:"${label} deve possuir no m\xE1ximo ${max} caracteres",range:"${label} deve possuir entre ${min} e ${max} caracteres"},number:{len:"${label} deve ser igual \xE0 ${len}",min:"O valor m\xEDnimo de ${label} \xE9 ${min}",max:"O valor m\xE1ximo de ${label} \xE9 ${max}",range:"${label} deve estar entre ${min} e ${max}"},array:{len:"Deve ser ${len} ${label}",min:"No m\xEDnimo ${min} ${label}",max:"No m\xE1ximo ${max} ${label}",range:"A quantidade de ${label} deve estar entre ${min} e ${max}"},pattern:{mismatch:"${label} n\xE3o se encaixa no padr\xE3o ${pattern}"}}},y={confirmLabel:"Ok",backspaceLabel:"Voltar",cancelKeyboardLabel:"Fechar Teclado"},x={done:"Carregado",loading:"Carregando",refreshableTitlePull:"Arraste para baixo para atualizar",refreshableTitleRelease:"Iniciado carregamento",refreshableTitleRefreshing:"Carregando...",noData:"Sem dados"},h={okText:"Ok",cancelText:"Cancelar",buttonText:"Bot\xE3o"},T={prevText:"Ant.",nextText:"Pr\xF3x."},S={cancelText:"Cancelar"},m={locale:"pt_BR",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:S,ListView:x,Form:b}},17481:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"",month:"",day:"",hour:"",minute:"",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"\u041E\u043A",dismissText:"\u041E\u0442\u043C\u0435\u043D\u0430",extra:""},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0442\u0438\u043F\u043E\u043C ${type}",b={optional:"(\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)",defaultValidateMessages:{default:"\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u043F\u043E\u043B\u044F ${label}",required:"\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 ${label}",enum:"${label} \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C \u043E\u0434\u043D\u0438\u043C \u0438\u0437 [${enum}]",whitespace:"${label} \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043F\u0443\u0441\u0442\u044B\u043C",date:{format:"${label} \u043D\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u0444\u043E\u0440\u043C\u0430\u0442 \u0434\u0430\u0442\u044B",parse:"${label} \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u043E \u0432 \u0434\u0430\u0442\u0443",invalid:"${label} \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u043E\u0439 \u0434\u0430\u0442\u043E\u0439"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C ${len} \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432",min:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u0430 ${min} \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432",max:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043C\u0435\u043D\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u0430 ${max} \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432",range:"\u0414\u043B\u0438\u043D\u0430 ${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043C\u0435\u0436\u0434\u0443 ${min}-${max} \u0441\u0438\u043C\u0432\u043E\u043B\u0430\u043C\u0438"},number:{len:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u0440\u0430\u0432\u043D\u0430 ${len}",min:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u0430 ${min}",max:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043C\u0435\u043D\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u0430 ${max}",range:"${label} \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043C\u0435\u0436\u0434\u0443 ${min}-${max}"},array:{len:"\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 ${label} \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u0440\u0430\u0432\u043D\u043E ${len}",min:"\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 ${label} \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u043E ${min}",max:"\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 ${label} \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u043C\u0435\u043D\u044C\u0448\u0435 \u0438\u043B\u0438 \u0440\u0430\u0432\u043D\u043E ${max}",range:"\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 ${label} \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u043C\u0435\u0436\u0434\u0443 ${min} \u0438 ${max}"},pattern:{mismatch:"${label} \u043D\u0435 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u0448\u0430\u0431\u043B\u043E\u043D\u0443 ${pattern}"}}},y={confirmLabel:"\u041E\u043A",backspaceLabel:"\u0432\u043E\u0437\u0432\u0440\u0430\u0442 \u043D\u0430 \u043E\u0434\u043D\u0443 \u043F\u043E\u0437\u0438\u0446\u0438\u044E",cancelKeyboardLabel:"\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0443"},x={done:"Loaded",loading:"Loading",refreshableTitlePull:"Pull down refresh",refreshableTitleRelease:"Release loading",refreshableTitleRefreshing:"Loading...",noData:"No data yet"},h={okText:"\u041E\u043A",cancelText:"\u041E\u0442\u043C\u0435\u043D\u0430",buttonText:"\u041A\u043D\u043E\u043F\u043A\u0430"},T={prevText:"\u041D\u0430\u0437\u0430\u0434",nextText:"\u0412\u043F\u0435\u0440\u0451\u0434"},S={cancelText:"\u041E\u0442\u043C\u0435\u043D\u0430"},m={locale:"ru",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:S,ListView:x,Form:b}},40232:function(t,n,o){o.r(n),o.d(n,{default:function(){return m}});var c={year:"",month:"",day:"",hour:"",minute:"",am:"AM",pm:"PM"},f=o(97857),u=o.n(f),d={okText:"Ok",dismissText:"Avbryt",extra:"v\xE4nligen v\xE4lj"},g=u()(u()({},d),{},{DatePickerLocale:c}),e="${label} \xE4r inte en giltig ${type}",b={optional:"(valfritt)",defaultValidateMessages:{default:"F\xE4ltvalideringsfel f\xF6r ${label}",required:"V\xE4nligen fyll i ${label}",enum:"${label} m\xE5ste vara en av [${enum}]",whitespace:"${label} kan inte vara ett tomt tecken",date:{format:"${label} datumformatet \xE4r ogiltigt",parse:"${label} kan inte konverteras till ett datum",invalid:"${label} \xE4r ett ogiltigt datum"},types:{string:e,method:e,array:e,object:e,number:e,date:e,boolean:e,integer:e,float:e,regexp:e,email:e,url:e,hex:e},string:{len:"${label} m\xE5ste vara ${len} tecken",min:"${label} m\xE5ste vara minst ${min} tecken",max:"${label} m\xE5ste vara h\xF6gst ${max} tecken",range:"${label} m\xE5ste vara mellan ${min}-${max} tecken"},number:{len:"${label} m\xE5ste vara lika med ${len}",min:"${label} m\xE5ste vara minst ${min}",max:"${label} m\xE5ste vara h\xF6gst ${max}",range:"${label} m\xE5ste vara mellan ${min}-${max}"},array:{len:"M\xE5ste vara ${len} ${label}",min:"Minst ${min} ${label}",max:"H\xF6gst ${max} ${label}",range:"Antal ${label} m\xE5ste vara mellan ${min}-${max}"},pattern:{mismatch:"${label} st\xE4mmer inte \xF6verens med m\xF6nstret ${pattern}"}}},y={confirmLabel:"Ok",backspaceLabel:"Backspace",cancelKeyboardLabel:"CancelKeyboard"},x={done:"Loaded",loading:"Loading",refreshableTitlePull:"Pull down refresh",refreshableTitleRelease:"Release loading",refreshableTitleRefreshing:"Loading...",noData:"No data yet"},h={okText:"Ok",cancelText:"Avbryt",buttonText:"Knapp"},T={prevText:"F\xF6reg",nextText:"N\xE4sta"},S={cancelText:"Avbryt"},m={locale:"sv",DatePicker:g,DatePickerView:c,InputItem:y,Modal:h,Pagination:T,Picker:d,SearchBar:S,ListView:x,Form:b}},52392:function(t,n){n.Z=`export default (valid: boolean, component: string, message: string): void => {
   if (__DEV__ && !valid) {
     console.warn(\`Warning: [antd_mobile_rn: \${component}] \${message}\`)
   }
@@ -637,6 +637,19 @@ interface NativeScrollPoint {
   y: number
 }
 
+/** RN scroll offsets are in pixels; round before compare to avoid float error. */
+function isAlignedToPage(offset: number, pageSize: number): boolean {
+  const roundedPageSize = Math.round(pageSize)
+  if (!roundedPageSize) {
+    return false
+  }
+  return Math.round(offset) % roundedPageSize === 0
+}
+
+function isNearOffset(a: number, b: number): boolean {
+  return Math.round(a) === Math.round(b)
+}
+
 export interface CarouselState {
   width: number
   height: number
@@ -826,10 +839,11 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
   private onScrollAnimationEnd = (currentOffset: NativeScrollPoint) => {
     const { x, y } = currentOffset
     const { width, height } = this.state
+    const pageSize = this.props.vertical ? height : width
+    const offset = this.props.vertical ? y : x
     // \u{1F31F} fix: \`onMomentumScrollEnd\` & \`onScrollAnimationEnd\` not support for web & android \u{1F31F}
     const isScrollAnimationEnd =
-      !this.isScrolling &&
-      (this.props.vertical ? y / height : x / width) % 1 === 0
+      !this.isScrolling && isAlignedToPage(offset, pageSize)
 
     if (isScrollAnimationEnd) {
       this.updateIndex(currentOffset)
@@ -907,15 +921,15 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
       }
 
       if (this.props.vertical) {
-        if (paramOffset.y === height) {
+        if (isNearOffset(paramOffset.y, height)) {
           this.scrollToStart()
-        } else if (paramOffset.y === this.count * height) {
+        } else if (isNearOffset(paramOffset.y, this.count * height)) {
           this.scrollToEnd()
         }
       } else {
-        if (paramOffset.x === width) {
+        if (isNearOffset(paramOffset.x, width)) {
           this.scrollToStart()
-        } else if (paramOffset.x === this.count * width) {
+        } else if (isNearOffset(paramOffset.x, this.count * width)) {
           this.scrollToEnd()
         }
       }
@@ -2184,8 +2198,7 @@ export default class FlexExample extends React.Component<any, any> {
 import type { FormProps } from '@ant-design/react-native/lib/form'
 import { district } from 'antd-mobile-demo-data'
 import React from 'react'
-import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
-
+import { Platform, ScrollView } from 'react-native'
 
 const Col = Row.Item
 
@@ -2217,105 +2230,109 @@ const FormExample: React.FC = () => {
 
   return (
     <Provider>
-      <KeyboardAvoidingView
-        behavior="padding"
-        keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : undefined}>
-        <ScrollView keyboardShouldPersistTaps="handled">
-          <Form
-            name="basic"
-            form={form}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            initialValues={{
-              doorNumber: '',
-              username: '',
-              phoneNumber: '',
-              isDefault: false,
-            }}
-            renderHeader="\u6C34\u5E73\u5E03\u5C40\u83DC\u5355">
-            <Form.Item
-              label="\u5730\u5740"
-              name="address"
-              rules={[{ required: true, message: '\u5730\u5740\u4E0D\u80FD\u4E3A\u7A7A' }]}
-              arrow="horizontal"
-              onPress={() => {
-                pickerRef.current.toggle()
-              }}>
-              <Picker data={district} cols={3} ref={pickerRef}>
-                {({ extra, value, toggle }) => (
-                  <Input
-                    value={value?.length ? extra : undefined}
-                    onFocus={toggle}
-                    placeholder="\u7701/\u5E02/\u533A"
-                  />
-                )}
-              </Picker>
-            </Form.Item>
+      <ScrollView
+        style={{ flex: 1 }}
+        keyboardShouldPersistTaps="handled"
+        {...(Platform.OS === 'ios'
+          ? {
+              automaticallyAdjustKeyboardInsets: true,
+              contentInsetAdjustmentBehavior: 'automatic' as const,
+            }
+          : {})}>
+        <Form
+          name="basic"
+          form={form}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          initialValues={{
+            doorNumber: '',
+            username: '',
+            phoneNumber: '',
+            isDefault: false,
+          }}
+          renderHeader="\u6C34\u5E73\u5E03\u5C40\u83DC\u5355">
+          <Form.Item
+            label="\u5730\u5740"
+            name="address"
+            rules={[{ required: true, message: '\u5730\u5740\u4E0D\u80FD\u4E3A\u7A7A' }]}
+            arrow="horizontal"
+            onPress={() => {
+              pickerRef.current.toggle()
+            }}>
+            <Picker data={district} cols={3} ref={pickerRef}>
+              {({ extra, value, toggle }) => (
+                <Input
+                  value={value?.length ? extra : undefined}
+                  onFocus={toggle}
+                  placeholder="\u7701/\u5E02/\u533A"
+                />
+              )}
+            </Picker>
+          </Form.Item>
 
-            <Form.Item
-              label="\u6536\u8D27\u4EBA"
-              name="username"
-              extra={
-                <Form.Item name="gender" noStyle>
-                  <Radio.Group>
-                    <Row>
-                      <Radio value={1}>\u5148\u751F</Radio>
-                      <Radio value={2}>\u5973\u58EB</Radio>
-                    </Row>
-                  </Radio.Group>
-                </Form.Item>
-              }>
-              <Input placeholder="\u8BF7\u8F93\u5165\u6536\u8D27\u4EBA\u59D3\u540D" />
-            </Form.Item>
+          <Form.Item
+            label="\u6536\u8D27\u4EBA"
+            name="username"
+            extra={
+              <Form.Item name="gender" noStyle>
+                <Radio.Group>
+                  <Row>
+                    <Radio value={1}>\u5148\u751F</Radio>
+                    <Radio value={2}>\u5973\u58EB</Radio>
+                  </Row>
+                </Radio.Group>
+              </Form.Item>
+            }>
+            <Input placeholder="\u8BF7\u8F93\u5165\u6536\u8D27\u4EBA\u59D3\u540D" />
+          </Form.Item>
 
-            <Form.Item
-              label="\u624B\u673A\u53F7"
-              name="phoneNumber"
-              hasFeedback
-              validateDebounce={500}
-              rules={[{ pattern: /^1[3456789]\\d{9}$/ }, { required: true }]}>
-              <Input type="number" placeholder="\u8BF7\u8F93\u5165\u624B\u673A\u53F7" />
-            </Form.Item>
+          <Form.Item
+            label="\u624B\u673A\u53F7"
+            name="phoneNumber"
+            hasFeedback
+            validateDebounce={500}
+            rules={[{ pattern: /^1[3456789]\\d{9}$/ }, { required: true }]}>
+            <Input type="number" placeholder="\u8BF7\u8F93\u5165\u624B\u673A\u53F7" />
+          </Form.Item>
 
-            <Form.Item
-              label="\u8BBE\u4E3A\u9ED8\u8BA4"
-              name="isDefault"
-              wrapperStyle={{ alignItems: 'flex-end' }}
-              valuePropName="checked">
-              <Switch />
-            </Form.Item>
+          <Form.Item
+            label="\u8BBE\u4E3A\u9ED8\u8BA4"
+            name="isDefault"
+            wrapperStyle={{ alignItems: 'flex-end' }}
+            valuePropName="checked">
+            <Switch />
+          </Form.Item>
 
-            <Form.Item>
-              <Row>
-                <Col style={{ marginRight: 10 }}>
-                  <Button onPress={() => form.resetFields()}>\u91CD\u7F6E</Button>
-                </Col>
-                <Col>
-                  <Button type="primary" onPress={onSubmit}>
-                    \u4FDD\u5B58
-                  </Button>
-                </Col>
-              </Row>
-            </Form.Item>
-          </Form>
-          <Form name="vertical" layout="vertical" renderHeader="\u5782\u76F4\u5E03\u5C40\u83DC\u5355">
-            <Form.Item label="\u95EE\u9898\u63CF\u8FF0">
-              <Input.TextArea
-                placeholder="\u8BF7\u586B\u519910\u4E2A\u5B57\u4EE5\u4E0A\u7684\u95EE\u9898\u63CF\u8FF0\uFF0C\u4EE5\u4FBF\u6211\u4EEC\u63D0\u4F9B\u66F4\u597D\u7684\u670D\u52A1\u3002"
-                maxLength={200}
-                showCount
-                rows={6}
-              />
-            </Form.Item>
-            <Form.Item
-              label="\u8054\u7CFB\u7535\u8BDD"
-              name="phone"
-              help="\u5982\u60A8\u9009\u62E9\u586B\u5199\u8054\u7CFB\u65B9\u5F0F\uFF0C\u8BE5\u4FE1\u606F\u5C06\u540C\u6B65\u81F3\u5F00\u53D1\u8005">
-              <Input type="number" placeholder="\u9009\u586B\uFF0C\u8BF7\u586B\u5199\u60A8\u7684\u624B\u673A\u53F7\u7801" />
-            </Form.Item>
-          </Form>
-        </ScrollView>
-      </KeyboardAvoidingView>
+          <Form.Item>
+            <Row>
+              <Col style={{ marginRight: 10 }}>
+                <Button onPress={() => form.resetFields()}>\u91CD\u7F6E</Button>
+              </Col>
+              <Col>
+                <Button type="primary" onPress={onSubmit}>
+                  \u4FDD\u5B58
+                </Button>
+              </Col>
+            </Row>
+          </Form.Item>
+        </Form>
+        <Form name="vertical" layout="vertical" renderHeader="\u5782\u76F4\u5E03\u5C40\u83DC\u5355">
+          <Form.Item label="\u95EE\u9898\u63CF\u8FF0">
+            <Input.TextArea
+              placeholder="\u8BF7\u586B\u519910\u4E2A\u5B57\u4EE5\u4E0A\u7684\u95EE\u9898\u63CF\u8FF0\uFF0C\u4EE5\u4FBF\u6211\u4EEC\u63D0\u4F9B\u66F4\u597D\u7684\u670D\u52A1\u3002"
+              maxLength={200}
+              showCount
+              rows={6}
+            />
+          </Form.Item>
+          <Form.Item
+            label="\u8054\u7CFB\u7535\u8BDD"
+            name="phone"
+            help="\u5982\u60A8\u9009\u62E9\u586B\u5199\u8054\u7CFB\u65B9\u5F0F\uFF0C\u8BE5\u4FE1\u606F\u5C06\u540C\u6B65\u81F3\u5F00\u53D1\u8005">
+            <Input type="number" placeholder="\u9009\u586B\uFF0C\u8BF7\u586B\u5199\u60A8\u7684\u624B\u673A\u53F7\u7801" />
+          </Form.Item>
+        </Form>
+      </ScrollView>
     </Provider>
   )
 }
@@ -2628,77 +2645,81 @@ export default class BasicInputItemExample extends React.Component<any, any> {
 }
 `},27420:function(t,n){n.Z=`import { Input, List } from '@ant-design/react-native'
 import React from 'react'
-import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
+import { Platform, ScrollView } from 'react-native'
 
 export default function InputExample() {
   const [value, setValue] = React.useState('')
   return (
-    <KeyboardAvoidingView
-      behavior="padding"
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : undefined}>
-      <ScrollView keyboardShouldPersistTaps="handled">
-        <List renderHeader="\u57FA\u672C\u7528\u6CD5">
-          <List.Item>
-            <Input placeholder="\u8BF7\u8F93\u5165\u5185\u5BB9" />
-          </List.Item>
-        </List>
-        <List renderHeader="\u53D7\u63A7\u6A21\u5F0F">
-          <List.Item>
-            <Input
-              placeholder="\u8BF7\u8F93\u5165\u5185\u5BB9"
-              value={value}
-              onChangeText={setValue}
-            />
-          </List.Item>
-        </List>
-        <List renderHeader="\u5E26\u6E05\u9664\u6309\u94AE">
-          <List.Item>
-            <Input allowClear placeholder="allowClear" />
-          </List.Item>
-        </List>
-        <List renderHeader="\u524D\u7F00\u548C\u540E\u7F00">
-          <List.Item>
-            <Input prefix="\u524D\u7F00" suffix="\u540E\u7F00" placeholder="prefix / suffix" />
-          </List.Item>
-        </List>
-        <List renderHeader="\u5E26\u5B57\u6570\u63D0\u793A">
-          <List.Item>
-            <Input showCount placeholder="showCount" />
-          </List.Item>
-          <List.Item>
-            <Input
-              maxLength={5}
-              showCount={{
-                formatter: ({ count, maxLength }) => \`\${count}/\${maxLength}\`,
-              }}
-              placeholder="showCount.formatter"
-            />
-          </List.Item>
-        </List>
-        <List renderHeader="TextArea">
-          <List.Item>
-            <Input.TextArea
-              rows={4}
-              maxLength={100}
-              showCount
-              allowClear
-              placeholder="\u56FA\u5B9A\u884C\u6570 row={4}"
-            />
-          </List.Item>
-        </List>
-        <List renderHeader="\u6839\u636E\u5185\u5BB9\u81EA\u52A8\u8C03\u6574\u9AD8\u5EA6">
-          <List.Item>
-            <Input.TextArea autoSize placeholder="autoSize={true}" />
-          </List.Item>
-          <List.Item>
-            <Input.TextArea
-              autoSize={{ minRows: 2, maxRows: 6 }}
-              placeholder="autoSize={{ minRows: 2, maxRows: 6 }}"
-            />
-          </List.Item>
-        </List>
-      </ScrollView>
-    </KeyboardAvoidingView>
+    <ScrollView
+      style={{ flex: 1 }}
+      keyboardShouldPersistTaps="handled"
+      {...(Platform.OS === 'ios'
+        ? {
+            automaticallyAdjustKeyboardInsets: true,
+            contentInsetAdjustmentBehavior: 'automatic' as const,
+          }
+        : {})}>
+      <List renderHeader="\u57FA\u672C\u7528\u6CD5">
+        <List.Item>
+          <Input placeholder="\u8BF7\u8F93\u5165\u5185\u5BB9" />
+        </List.Item>
+      </List>
+      <List renderHeader="\u53D7\u63A7\u6A21\u5F0F">
+        <List.Item>
+          <Input
+            placeholder="\u8BF7\u8F93\u5165\u5185\u5BB9"
+            value={value}
+            onChangeText={setValue}
+          />
+        </List.Item>
+      </List>
+      <List renderHeader="\u5E26\u6E05\u9664\u6309\u94AE">
+        <List.Item>
+          <Input allowClear placeholder="allowClear" />
+        </List.Item>
+      </List>
+      <List renderHeader="\u524D\u7F00\u548C\u540E\u7F00">
+        <List.Item>
+          <Input prefix="\u524D\u7F00" suffix="\u540E\u7F00" placeholder="prefix / suffix" />
+        </List.Item>
+      </List>
+      <List renderHeader="\u5E26\u5B57\u6570\u63D0\u793A">
+        <List.Item>
+          <Input showCount placeholder="showCount" />
+        </List.Item>
+        <List.Item>
+          <Input
+            maxLength={5}
+            showCount={{
+              formatter: ({ count, maxLength }) => \`\${count}/\${maxLength}\`,
+            }}
+            placeholder="showCount.formatter"
+          />
+        </List.Item>
+      </List>
+      <List renderHeader="TextArea">
+        <List.Item>
+          <Input.TextArea
+            rows={4}
+            maxLength={100}
+            showCount
+            allowClear
+            placeholder="\u56FA\u5B9A\u884C\u6570 row={4}"
+          />
+        </List.Item>
+      </List>
+      <List renderHeader="\u6839\u636E\u5185\u5BB9\u81EA\u52A8\u8C03\u6574\u9AD8\u5EA6">
+        <List.Item>
+          <Input.TextArea autoSize placeholder="autoSize={true}" onChangeText={(e)=>console.log(e)}/>
+        </List.Item>
+        <List.Item>
+          <Input.TextArea
+            autoSize={{ minRows: 2, maxRows: 6 }}
+            placeholder="autoSize={{ minRows: 2, maxRows: 6 }}"
+          />
+        </List.Item>
+      </List>
+    </ScrollView>
   )
 }
 `},35484:function(t,n){n.Z=`import { ListView } from '@ant-design/react-native'
@@ -4343,86 +4364,88 @@ export default function StepperExample() {
 }
 `},70905:function(t,n){n.Z=`import { List, Provider, Stepper, Toast } from '@ant-design/react-native'
 import React from 'react'
-import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native'
+import { Platform, ScrollView } from 'react-native'
 
 export default function StepperExample() {
   return (
     <Provider>
-      <KeyboardAvoidingView
-        behavior="padding"
-        keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : undefined}>
-        <ScrollView>
-          <List renderHeader={'\u57FA\u7840\u7528\u6CD5'}>
-            <List.Item
-              extra={
-                <Stepper
-                  defaultValue={1}
-                  onChange={(value) => {
-                    console.log(value)
-                  }}
-                />
-              }>
-              \u57FA\u7840\u7528\u6CD5
-            </List.Item>
-            <List.Item extra={<Stepper step={10} defaultValue={10} />}>
-              \u6B65\u957F\u8BBE\u7F6E
-            </List.Item>
-            <List.Item extra={<Stepper min={-5} max={5} />}>
-              \u9650\u5236\u8F93\u5165\u8303\u56F4
-            </List.Item>
-            <List.Item extra={<Stepper digits={1} />}>
-              \u683C\u5F0F\u5316\u5230\u4E00\u4F4D\u5C0F\u6570
-            </List.Item>
-            <List.Item
-              extra={
-                <Stepper
-                  defaultValue={93}
-                  formatter={(value) => \`$ \${value}\`}
-                  parser={(text) => parseFloat(text.replace('$', ''))}
-                  onChange={(value) => {
-                    console.log(value, typeof value)
-                  }}
-                />
-              }>
-              \u81EA\u5B9A\u4E49\u683C\u5F0F
-            </List.Item>
-          </List>
-          <List renderHeader={'\u72B6\u6001/\u6837\u5F0F'}>
-            <List.Item extra={<Stepper disabled />}>\u7981\u7528\u72B6\u6001</List.Item>
-            <List.Item extra={<Stepper readOnly />}>\u8F93\u5165\u6846\u53EA\u8BFB\u72B6\u6001</List.Item>
-            <List.Item
-              extra={
-                <Stepper
-                  onFocus={() => {
-                    Toast.info('\u83B7\u5F97\u7126\u70B9')
-                  }}
-                  onBlur={() => {
-                    Toast.info('\u5931\u53BB\u7126\u70B9')
-                  }}
-                />
-              }>
-              \u83B7\u5F97/\u5931\u53BB\u7126\u70B9
-            </List.Item>
-            <List.Item
-              extra={
-                <Stepper
-                  allowEmpty={true}
-                  min={10}
-                  max={20}
-                  onChange={(value) => {
-                    console.log(value)
-                  }}
-                />
-              }>
-              \u5141\u8BB8\u6E05\u7A7A
-            </List.Item>
-            <List.Item extra={<Stepper defaultValue={10000} step={10000} />}>
-              \u81EA\u5B9A\u4E49\u6837\u5F0F
-            </List.Item>
-          </List>
-          <StringModeExample />
-        </ScrollView>
-      </KeyboardAvoidingView>
+      <ScrollView
+        style={{ flex: 1 }}
+        keyboardShouldPersistTaps="handled"
+        {...(Platform.OS === 'ios'
+          ? {
+              automaticallyAdjustKeyboardInsets: true,
+              contentInsetAdjustmentBehavior: 'automatic' as const,
+            }
+          : {})}>
+        <List renderHeader={'\u57FA\u7840\u7528\u6CD5'}>
+          <List.Item
+            extra={
+              <Stepper
+                defaultValue={1}
+                onChange={(value) => {
+                  console.log(value)
+                }}
+              />
+            }>
+            \u57FA\u7840\u7528\u6CD5
+          </List.Item>
+          <List.Item extra={<Stepper step={10} defaultValue={10} />}>
+            \u6B65\u957F\u8BBE\u7F6E
+          </List.Item>
+          <List.Item extra={<Stepper min={-5} max={5} />}>
+            \u9650\u5236\u8F93\u5165\u8303\u56F4
+          </List.Item>
+          <List.Item extra={<Stepper digits={1} />}>\u683C\u5F0F\u5316\u5230\u4E00\u4F4D\u5C0F\u6570</List.Item>
+          <List.Item
+            extra={
+              <Stepper
+                defaultValue={93}
+                formatter={(value) => \`$ \${value}\`}
+                parser={(text) => parseFloat(text.replace('$', ''))}
+                onChange={(value) => {
+                  console.log(value, typeof value)
+                }}
+              />
+            }>
+            \u81EA\u5B9A\u4E49\u683C\u5F0F
+          </List.Item>
+        </List>
+        <List renderHeader={'\u72B6\u6001/\u6837\u5F0F'}>
+          <List.Item extra={<Stepper disabled />}>\u7981\u7528\u72B6\u6001</List.Item>
+          <List.Item extra={<Stepper readOnly />}>\u8F93\u5165\u6846\u53EA\u8BFB\u72B6\u6001</List.Item>
+          <List.Item
+            extra={
+              <Stepper
+                onFocus={() => {
+                  Toast.info('\u83B7\u5F97\u7126\u70B9')
+                }}
+                onBlur={() => {
+                  Toast.info('\u5931\u53BB\u7126\u70B9')
+                }}
+              />
+            }>
+            \u83B7\u5F97/\u5931\u53BB\u7126\u70B9
+          </List.Item>
+          <List.Item
+            extra={
+              <Stepper
+                allowEmpty={true}
+                min={10}
+                max={20}
+                onChange={(value) => {
+                  console.log(value)
+                }}
+              />
+            }>
+            \u5141\u8BB8\u6E05\u7A7A
+          </List.Item>
+          <List.Item extra={<Stepper defaultValue={10000} step={10000} />}>
+            \u81EA\u5B9A\u4E49\u6837\u5F0F
+          </List.Item>
+        </List>
+        <StringModeExample />
+      </ScrollView>
     </Provider>
   )
 }
@@ -6429,8 +6452,13 @@ import { ScrollView, Text, View } from 'react-native'
 import { Action, TooltipProps } from '../PropsType'
 
 const actions: Action[] = [
-  { key: 'scan', icon: <Icon name="scan" />, text: '\u626B\u4E00\u626B' },
-  { key: 'payment', icon: <Icon name="pay-circle" />, text: '\u4ED8\u94B1/\u6536\u94B1' },
+  { key: 'scan', icon: <Icon name="scan" />, text: '\u626B\u4E00\u626B', disabled: true },
+  {
+    key: 'payment',
+    icon: <Icon name="pay-circle" />,
+    text: '\u4ED8\u94B1/\u6536\u94B1',
+    onPress: () => Toast.success('\u89E6\u53D1\u4E86 onPress'),
+  },
   { key: 'bus', icon: <Icon name="qrcode" />, text: '\u4E58\u8F66\u7801' },
   { key: 'assistant', icon: <Icon name="ant-design" />, text: '\u667A\u80FD\u52A9\u7406' },
 ]
@@ -6529,6 +6557,7 @@ export default function TooltipExample() {
             </Button>
           </Tooltip.Menu>
         </List>
+        <View style={{ height: 300 }} />
       </ScrollView>
     </Provider>
   )

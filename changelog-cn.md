@@ -8,6 +8,33 @@
 
 ---
 
+### 5.5.0
+`2026-11-19`
+
+#### 🔥 新增组件
+ - 🔥 **Rate** 评分 [#1455](https://github.com/ant-design/ant-design-mobile-rn/pull/1455)
+ - 🔥 **Divider** 分割线 [#1440](https://github.com/ant-design/ant-design-mobile-rn/pull/1440)
+ - 🔥 **Skeleton** 骨架屏 [#1465](https://github.com/ant-design/ant-design-mobile-rn/pull/1465)
+
+#### 文档 / 工程
+ - feat: 文档站点由 bisheng 迁移至 **dumi** [#1467](https://github.com/ant-design/ant-design-mobile-rn/pull/1467)
+ - docs: 新增 LLMs / semantic 文档 [#1468](https://github.com/ant-design/ant-design-mobile-rn/pull/1468)
+ - chore: 新增 `AGENTS.md` / `CLAUDE.md`；升级 TypeScript & ESLint
+ - chore: `example/` 升级至 Expo SDK 58（React Native 0.88）
+ - chore: peer `react-native-gesture-handler` 最低版本升至 `>=2.24.0`；`react-native-worklets` 放宽为 `>=0.5.0`
+ - chore: `@floating-ui/react-native` 升级至 `^0.10.10`
+
+#### 组件修复 / 优化
+ - fix: **Drawer** / **SwipeAction** 改用 `ReanimatedDrawerLayout` / `ReanimatedSwipeable`，兼容 `react-native-gesture-handler` 3.x（旧 `DrawerLayout` / `Swipeable` 入口已移除）
+ - fix: **Tooltip** Android 定位（去掉重复的 StatusBar `crossOffset`，RN≥0.86 修正双重状态栏偏移）；**Tooltip.Menu** Action 支持 `onPress` 等 props [#1461](https://github.com/ant-design/ant-design-mobile-rn/issues/1461)
+ - fix: **Input.TextArea**
+   - iOS：`autoSize` 在非受控模式下需内部转受控 [#1471](https://github.com/ant-design/ant-design-mobile-rn/issues/1471)
+   - Android：修复 New Architecture 下 `rows` / `autoSize` 高度不生效（显式按行高设高）
+ - fix: **Input** / **InputItem** / **Modal.prompt**：`type="password"` / `secure-text` / `login-password` 失焦或关闭时释放 `secureTextEntry`，避免 Android 投屏隐私层残留
+ - fix: **Slider** 优化并修复 `runOnJS` 崩溃 [#1472](https://github.com/ant-design/ant-design-mobile-rn/issues/1472)
+ - fix: **Carousel** near offset [#1457](https://github.com/ant-design/ant-design-mobile-rn/issues/1457)
+ - chore: **Tabs** 指定索引时头部 TabBar 动画优化 [#1449](https://github.com/ant-design/ant-design-mobile-rn/pull/1449)
+
 ### 5.4.3
 `2025-08-11`
  - fix: [Switch] inner zIndex style [#1437](https://github.com/ant-design/ant-design-mobile-rn/issues/1437) [@lqr131115](https://github.com/lqr131115)
