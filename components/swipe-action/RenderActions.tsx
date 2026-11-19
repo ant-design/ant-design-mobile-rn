@@ -1,6 +1,12 @@
 import React, { memo, useCallback, useContext, useState } from 'react'
-import { Animated, LayoutChangeEvent, Text, View } from 'react-native'
+import { LayoutChangeEvent, Text, View } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
+import Animated, {
+  Extrapolation,
+  SharedValue,
+  interpolate,
+  useAnimatedStyle,
+} from 'react-native-reanimated'
 import AccessibilityContext from '../provider/AccessibilityContext'
 import { useTheme } from '../style'
 import { SwipeoutButtonProps } from './PropsType'
@@ -10,7 +16,7 @@ interface RenderActionsProps {
   buttons?: SwipeoutButtonProps[]
   closeOnAction: boolean
   isLeft: boolean
-  progressAnimatedValue: Animated.AnimatedInterpolation<number>
+  progress: SharedValue<number>
   setClose: () => void
   styles?: Partial<SwipeActionStyle>
 }
@@ -62,7 +68,7 @@ const SwipeActionButton: React.FC<SwipeActionButtonProps> = memo((props) => {
     buttonWidth,
     closeOnAction,
     isLeft,
-    progressAnimatedValue,
+    progress,
     setClose,
     styles,
   } = props
@@ -98,19 +104,23 @@ const SwipeActionButton: React.FC<SwipeActionButtonProps> = memo((props) => {
     themeStyles: SwipeActionStyles,
   })
 
-  const trans = progressAnimatedValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: [isLeft ? -1 * layout.width : buttonWidth - layout.x, 0],
-    extrapolate: 'clamp',
-  })
+  const animatedStyle = useAnimatedStyle(() => {
+    const translateX = interpolate(
+      progress.value,
+      [0, 1],
+      [isLeft ? -layout.width : buttonWidth - layout.x, 0],
+      Extrapolation.CLAMP,
+    )
+    return {
+      transform: [{ translateX }],
+    }
+  }, [buttonWidth, isLeft, layout.width, layout.x, progress])
 
   return (
     <Animated.View
       onLayout={onLayout}
       onTouchEnd={(e) => e.stopPropagation()}
-      style={{
-        transform: [{ translateX: trans }],
-      }}>
+      style={animatedStyle}>
       <RectButton
         onPress={pressHandler}
         style={[

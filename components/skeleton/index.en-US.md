@@ -4,7 +4,7 @@ group:
   title: Feedback
   order: 5
 title: Skeleton
-version: 5.5.0-rc.1
+version: 5.5.0
 ---
 
 A placeholder for loading state, which can reduce users' cognitive load and make the loading process more natural.

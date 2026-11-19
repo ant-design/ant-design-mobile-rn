@@ -1,7 +1,7 @@
 ### Abstract DOM Structure
 
 ```html
-<!-- 滑动操作整体容器，来自 react-native-gesture-handler 的 Swipeable 组件，无法自定义样式 -->
+<!-- 滑动操作整体容器，来自 react-native-gesture-handler 的 ReanimatedSwipeable 组件，无法自定义样式 -->
 <Swipeable>
   <!-- children 传入的内容，UI主体，非主题样式节点，略 -->
 

@@ -1066,7 +1066,6 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
                         Array [
@@ -1477,7 +1476,6 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
                         Array [
@@ -1717,7 +1715,6 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
                         Array [
@@ -2150,7 +2147,6 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
                         Array [
@@ -2603,7 +2599,6 @@ exports[`renders ./components/divider/demo/basic.tsx correctly 1`] = `
                       onFocus={[Function]}
                       onSubmitEditing={[Function]}
                       placeholderTextColor="#bbbbbb"
-                      secureTextEntry={false}
                       selectTextOnFocus={true}
                       style={
                         Array [

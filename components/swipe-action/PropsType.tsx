@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleProp, TextStyle } from 'react-native'
 import { RectButtonProps } from 'react-native-gesture-handler'
-import { SwipeableProps } from 'react-native-gesture-handler/Swipeable'
+import type { SwipeableProps } from 'react-native-gesture-handler/ReanimatedSwipeable'
 import { SwipeActionStyle } from './style'
 
 export interface SwipeoutButtonProps {

@@ -15,8 +15,9 @@ import React, {
   useImperativeHandle,
   useMemo,
   useRef,
+  useState,
 } from 'react'
-import { StatusBar, View } from 'react-native'
+import { Platform, StatusBar, StyleSheet, View } from 'react-native'
 import { mergeProps } from '../_util/with-default-props'
 import { ThemeContext, useTheme } from '../style'
 import AntmView from '../view'
@@ -29,12 +30,31 @@ import Wrapper from './Wrapper'
 import { normalizePlacement } from './normalize-placement'
 import TooltipStyles from './style'
 
+/**
+ * @floating-ui/react-native@0.10.7+ adds `StatusBar.currentHeight` on Android
+ * when `sameScrollView` is false. On RN 0.86+, `measureInWindow` already
+ * includes that inset (facebook/react-native#56056), so cancel the duplicate
+ * (floating-ui#3543).
+ */
+function getAndroidStatusBarOvershift(): number {
+  if (Platform.OS !== 'android') {
+    return 0
+  }
+  const minor = Platform.constants?.reactNativeVersion?.minor ?? 0
+  if (minor < 86) {
+    return 0
+  }
+  return StatusBar.currentHeight ?? 0
+}
+
 const defaultProps = {
   placement: 'bottom' as Placement,
   defaultVisible: false,
   trigger: 'onPress',
   mode: 'light',
-  crossOffset: { top: StatusBar.currentHeight, left: 0 } as CrossOffset,
+  // StatusBar is handled by floating-ui / RN version logic above — do not
+  // default-crossOffset it again (that used to double-shift Android).
+  crossOffset: { top: 0, left: 0 } as CrossOffset,
 }
 
 const InternalTooltip: React.ForwardRefRenderFunction<
@@ -64,6 +84,9 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     defaultValue: defaultVisible,
     onChange: onVisibleChange,
   })
+  // Portal lives under Stack content, not the window origin.
+  // floating-ui + sameScrollView:false returns window coords; convert them.
+  const [portalOrigin, setPortalOrigin] = useState({ x: 0, y: 0 })
 
   useImperativeHandle(
     ref,
@@ -101,11 +124,39 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     ],
   })
 
+  const syncPortalOrigin = useCallback(() => {
+    const node = refs.offsetParent.current
+    if (!node) {
+      return
+    }
+    node.measureInWindow((x: number, y: number) => {
+      setPortalOrigin((prev) =>
+        prev.x === x && prev.y === y ? prev : { x, y },
+      )
+    })
+  }, [refs.offsetParent])
+
+  const setOffsetParent = useCallback(
+    (node: View | null) => {
+      // Must use the setter so floating-ui state tracks offsetParent.
+      refs.setOffsetParent(node)
+      if (node) {
+        requestAnimationFrame(() => {
+          node.measureInWindow((x: number, y: number) => {
+            setPortalOrigin({ x, y })
+          })
+        })
+      }
+    },
+    [refs],
+  )
+
   useEffect(() => {
     if (visible) {
+      syncPortalOrigin()
       update()
     }
-  }, [update, floatingStyles, content, visible])
+  }, [update, floatingStyles, content, visible, syncPortalOrigin])
   // Replace `useLayoutEffect(update)` to improve performance
   useScroll(scrollProps.onScroll)
   const [{ stopPropagation }] = useClickAway(() => {
@@ -157,6 +208,11 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     themeStyles: TooltipStylesMemo,
   })
 
+  const androidStatusBarOvershift = useMemo(
+    () => getAndroidStatusBarOvershift(),
+    [],
+  )
+
   const safeFloatingStyles = useMemo(() => {
     if (floatingStyles.left === 0 && floatingStyles.top === 0) {
       return { display: 'none' } as const
@@ -164,8 +220,26 @@ const InternalTooltip: React.ForwardRefRenderFunction<
     if (isNaN(floatingStyles.left) || isNaN(floatingStyles.top)) {
       return { display: 'none' } as const
     }
-    return floatingStyles
-  }, [floatingStyles])
+    return {
+      ...floatingStyles,
+      left:
+        floatingStyles.left -
+        portalOrigin.x +
+        (crossOffset?.left ?? 0),
+      top:
+        floatingStyles.top -
+        portalOrigin.y -
+        androidStatusBarOvershift +
+        (crossOffset?.top ?? 0),
+    }
+  }, [
+    androidStatusBarOvershift,
+    crossOffset?.left,
+    crossOffset?.top,
+    floatingStyles,
+    portalOrigin.x,
+    portalOrigin.y,
+  ])
 
   return (
     <>
@@ -179,12 +253,14 @@ const InternalTooltip: React.ForwardRefRenderFunction<
       {!!visible && (
         <Portal>
           <View
-            ref={refs.offsetParent}
-            style={{
-              marginTop: crossOffset.top,
-              marginLeft: crossOffset.left,
+            ref={setOffsetParent}
+            onLayout={() => {
+              syncPortalOrigin()
+              update()
             }}
-            collapsable={false}>
+            pointerEvents="box-none"
+            collapsable={false}
+            style={StyleSheet.absoluteFill}>
             <View
               ref={refs.setFloating}
               onLayout={update}

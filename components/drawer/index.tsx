@@ -1,16 +1,21 @@
 import React from 'react'
 import DrawerLayout, {
+  DrawerKeyboardDismissMode,
+  DrawerLayoutMethods,
   DrawerLayoutProps,
-} from 'react-native-gesture-handler/DrawerLayout'
+  DrawerPosition,
+} from 'react-native-gesture-handler/ReanimatedDrawerLayout'
 import { DrawerProps } from './PropsType'
+
 export interface DrawerNativeProps
   extends Partial<DrawerLayoutProps>,
     DrawerProps {
-  drawerRef?: (el: DrawerLayout | null) => void
+  drawerRef?: (el: DrawerLayoutMethods | null) => void
   drawerWidth?: number
   drawerBackgroundColor?: string
   children?: React.ReactNode
 }
+
 export default class Drawer extends React.Component<DrawerNativeProps, any> {
   static defaultProps = {
     position: 'left',
@@ -18,7 +23,7 @@ export default class Drawer extends React.Component<DrawerNativeProps, any> {
     drawerWidth: 300,
   }
 
-  drawer: DrawerLayout | null
+  drawer: DrawerLayoutMethods | null = null
 
   componentDidMount() {
     if (this.props.open && this.drawer) {
@@ -52,11 +57,15 @@ export default class Drawer extends React.Component<DrawerNativeProps, any> {
       'onDrawerClose',
       'drawerPosition',
       'renderNavigationView',
+      'keyboardDismissMode',
     ].forEach((prop) => {
       if (restProps.hasOwnProperty(prop)) {
         delete (restProps as any)[prop]
       }
     })
+
+    const drawerPosition =
+      position === 'right' ? DrawerPosition.RIGHT : DrawerPosition.LEFT
 
     return (
       <DrawerLayout
@@ -67,10 +76,10 @@ export default class Drawer extends React.Component<DrawerNativeProps, any> {
           this.drawer = el
         }}
         renderNavigationView={() => sidebar}
-        drawerPosition={position}
+        drawerPosition={drawerPosition}
         onDrawerOpen={() => this.onOpenChange(true)}
         onDrawerClose={() => this.onOpenChange(false)}
-        keyboardDismissMode="on-drag"
+        keyboardDismissMode={DrawerKeyboardDismissMode.ON_DRAG}
         drawerWidth={drawerWidth}
         {...restProps}
       />

@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/react-native",
-  "version": "5.4.3",
+  "version": "5.5.0",
   "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
   "keywords": [
     "ant",
@@ -31,7 +31,7 @@
   "module": "es/index.js",
   "dependencies": {
     "@bang88/react-native-ultimate-listview": "^4.1.1",
-    "@floating-ui/react-native": "^0.10.6",
+    "@floating-ui/react-native": "^0.10.10",
     "@rc-component/mini-decimal": "^1.1.0",
     "babel-runtime": "^6.x",
     "classnames": "^2.2.1",
@@ -79,9 +79,9 @@
     "enquire.js": "^2.1.1",
     "eslint": "9.25.0",
     "eslint-config-prettier": "^10.1.5",
-    "globals": "^16.0.0",
     "gh-pages": "^6.3.0",
     "glob": "^7.1.1",
+    "globals": "^16.0.0",
     "jest": "^29.7.0",
     "lint-staged": "^8.0.4",
     "mockdate": "^2.0.1",
@@ -108,10 +108,10 @@
     "@ant-design/icons-react-native": ">= 2.3.2",
     "react": ">=17.0.1",
     "react-native": ">=0.67.5",
-    "react-native-gesture-handler": ">=2.14.0",
+    "react-native-gesture-handler": ">=2.24.0",
     "react-native-reanimated": ">=3.10.1",
     "react-native-safe-area-context": ">=5.6.0",
-    "react-native-worklets": ">=0.5.0 <0.9.0"
+    "react-native-worklets": ">=0.5.0"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run applint",

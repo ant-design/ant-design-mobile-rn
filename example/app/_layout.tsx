@@ -3,14 +3,16 @@ import { useFonts } from 'expo-font'
 import * as Haptics from 'expo-haptics'
 import { Stack, usePathname, useRouter } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
-import React, { useCallback, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Platform } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import 'react-native-reanimated'
 import { HapticsContextProvider } from '../../components/provider/HapticsContext'
 import Theme from '../../rn-kitchen-sink/components/Theme'
 
-SplashScreen.preventAutoHideAsync()
+SplashScreen.preventAutoHideAsync().catch(() => {
+  // Expo Go 热重载时可能已解除 prevent，忽略即可
+})
 
 function RootNavigator() {
   const [theme, setTheme] = useState(null)
@@ -49,6 +51,12 @@ function RootNavigator() {
     )
   }
 
+  const headerRight = () => {
+    return (
+      <Theme changeTheme={changeTheme} currentTheme={currentTheme} />
+    )
+  }
+
   return (
     <Provider theme={theme ?? undefined}>
       <Stack
@@ -61,9 +69,7 @@ function RootNavigator() {
           name="index"
           options={{
             title: 'Ant Design',
-            headerRight: () => (
-              <Theme changeTheme={changeTheme} currentTheme={currentTheme} />
-            ),
+            headerRight,
           }}
         />
         <Stack.Screen name="demo/[title]" />
@@ -73,24 +79,23 @@ function RootNavigator() {
 }
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     antoutline: require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
     antfill: require('@ant-design/icons-react-native/fonts/antfill.ttf'),
   })
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync()
+  useEffect(() => {
+    if (fontsLoaded || fontError) {
+      SplashScreen.hideAsync().catch(() => {})
     }
-  }, [fontsLoaded])
+  }, [fontsLoaded, fontError])
 
-  if (!fontsLoaded) {
+  if (!fontsLoaded && !fontError) {
     return null
   }
 
   return (
     <GestureHandlerRootView
-      onLayout={onLayoutRootView}
       style={{ flex: 1, ...(Platform.OS === 'web' ? { minHeight: 0 } : null) }}>
       <HapticsContextProvider
         onHaptics={() =>

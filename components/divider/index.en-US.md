@@ -4,7 +4,7 @@ group:
   title: Layout
   order: 1
 title: Divider
-version: 5.5.0-rc.1
+version: 5.5.0
 ---
 
 Divide sections of an article.

@@ -24,7 +24,7 @@ If set mask prop, it is recommended to exit by clicking on any of the mask layer
 | content | The content of the Tooltip | `React.ReactNode` | - |
 | defaultVisible | Whether to show or hide by default | `boolean` | `false` |
 | mode | Set bright color mode or black mode | `'light' | 'dark'` | `'light'` |
-| crossOffset | Set the offset of the pop-up window position; Top: Additional offset applied along the main axis between the element and its triggering element. Left: Additional offset applied along the horizontal axis between the element and its triggering element.     | `{ top: number, left: number }`      | `'{ top: StatusBar.currentHeight, left: 0 } '` |
+| crossOffset | Extra offset applied after Portal coordinate conversion. `top` / `left` are vertical / horizontal.<br/>Since `@floating-ui/react-native@0.10.7`, Android status-bar compensation is handled by the library. Default is `{ top: 0, left: 0 }` — do not also add `StatusBar.currentHeight`. | `{ top: number, left: number }` | `{ top: 0, left: 0 }` |
 | onVisibleChange | Callback when the visible prop is changed | `(visible: boolean) => void` | - |
 | placement | The position of the Tooltip | `'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end'` | `'top'` |
 | styles | Semantic DOM style | [TooltipStyle](#tooltipstyle-interface) | - |

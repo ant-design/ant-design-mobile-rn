@@ -32,13 +32,16 @@ Call out operations from one side of screen with gesture.
 | right         | List of operation buttons on the right | [SwipeoutButtonProps](/components/swipe-action#swipeoutbuttonprops)[] | `[]` | |
 | styles        | Semantic DOM style | [SwipeActionStyle](/components/swipe-action#swipeactionstyle-interface) | - | `5.2.1` |
 
-The rest of the props of `SwipeAction` are exactly the same as [react-native-gesture-handler/Swipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/),
+The rest of the props of `SwipeAction` are exactly the same as [react-native-gesture-handler/ReanimatedSwipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/reanimated_swipeable/),
 
 **eg: `onSwipeableOpen` , `onSwipeableClose` , `renderLeftActions` , `renderRightActions`**
 
 
 When you set `renderLeftActions` prop, it will override `left` prop; <br/>
 when you set `renderRightActions` prop, it will override `right` prop.
+
+> `progress` in `renderLeftActions` / `renderRightActions` is a Reanimated `SharedValue` (the legacy `Swipeable` entry was removed in gesture-handler 3.x).
+
 
 ### SwipeoutButtonProps
 
@@ -63,7 +66,7 @@ export interface SwipeActionStyle {
 
 ### Ref
 
-New in `5.2.1`. Ref to Swipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
+New in `5.2.1`. Ref to ReanimatedSwipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/reanimated_swipeable/#methods)
 
 | Properties | Descrition | Type|
 |-----|------|------|

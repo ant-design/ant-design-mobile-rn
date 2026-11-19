@@ -1,5 +1,11 @@
 import React from 'react'
-import { Text, TextInput, TextStyle, View } from 'react-native'
+import {
+  Keyboard,
+  Text,
+  TextInput,
+  TextStyle,
+  View,
+} from 'react-native'
 import { getComponentLocale } from '../_util/getLocale'
 import { LocaleContext } from '../locale-provider'
 import { WithTheme, WithThemeStyles } from '../style'
@@ -42,6 +48,7 @@ export default class PropmptContainer extends React.Component<
       visible: true,
       text: props.defaultValue,
       password: props.type === 'secure-text' ? props.defaultValue : '',
+      secureTextEntry: true,
     }
   }
 
@@ -62,9 +69,22 @@ export default class PropmptContainer extends React.Component<
   }
 
   onClose = () => {
+    // Release password IME / secure surface before exit animation + Portal.remove.
+    // Otherwise Android screen mirroring can stay on “为保护您的隐私，请在手机端操作”.
+    Keyboard.dismiss()
     this.setState({
+      secureTextEntry: false,
       visible: false,
     })
+  }
+
+  onPasswordFocus = () => {
+    this.setState({ secureTextEntry: true })
+  }
+
+  onPasswordBlur = () => {
+    Keyboard.dismiss()
+    this.setState({ secureTextEntry: false })
   }
 
   onChangeText(type: string, value: string) {
@@ -177,7 +197,9 @@ export default class PropmptContainer extends React.Component<
                   <View style={lastStyle}>
                     <TextInput
                       autoFocus
-                      secureTextEntry
+                      secureTextEntry={this.state.secureTextEntry}
+                      onFocus={this.onPasswordFocus}
+                      onBlur={this.onPasswordBlur}
                       onChangeText={(value) => {
                         this.onChangeText('password', value)
                       }}

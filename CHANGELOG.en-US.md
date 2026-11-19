@@ -14,6 +14,33 @@ toc: false
 
 ---
 
+### 5.5.0
+`2026-11-19`
+
+#### 🔥 New Components
+ - 🔥 **Rate** [#1455](https://github.com/ant-design/ant-design-mobile-rn/pull/1455)
+ - 🔥 **Divider** [#1440](https://github.com/ant-design/ant-design-mobile-rn/pull/1440)
+ - 🔥 **Skeleton** [#1465](https://github.com/ant-design/ant-design-mobile-rn/pull/1465)
+
+#### Docs / Tooling
+ - feat: migrate docs site from bisheng to **dumi** [#1467](https://github.com/ant-design/ant-design-mobile-rn/pull/1467)
+ - docs: add LLMs / semantic docs [#1468](https://github.com/ant-design/ant-design-mobile-rn/pull/1468)
+ - chore: add `AGENTS.md` / `CLAUDE.md`; upgrade TypeScript & ESLint
+ - chore: upgrade `example/` to Expo SDK 58 (React Native 0.88)
+ - chore: bump peer `react-native-gesture-handler` to `>=2.24.0`; relax `react-native-worklets` to `>=0.5.0`
+ - chore: bump `@floating-ui/react-native` to `^0.10.10`
+
+#### Fixes / Improvements
+ - fix: **Drawer** / **SwipeAction** migrate to `ReanimatedDrawerLayout` / `ReanimatedSwipeable` for `react-native-gesture-handler` 3.x (legacy `DrawerLayout` / `Swipeable` entries removed)
+ - fix: **Tooltip** Android positioning (drop redundant StatusBar `crossOffset`, correct double status-bar shift on RN≥0.86); **Tooltip.Menu** Action supports `onPress` and related props [#1461](https://github.com/ant-design/ant-design-mobile-rn/issues/1461)
+ - fix: **Input.TextArea**
+   - iOS: `autoSize` must run in controlled mode when uncontrolled [#1471](https://github.com/ant-design/ant-design-mobile-rn/issues/1471)
+   - Android: fix `rows` / `autoSize` height under New Architecture (explicit row-based height)
+ - fix: **Input** / **InputItem** / **Modal.prompt**: release `secureTextEntry` on blur/close for `password` / `secure-text` / `login-password` so Android screen-cast privacy overlay can clear
+ - fix: **Slider** optimize and fix `runOnJS` crash [#1472](https://github.com/ant-design/ant-design-mobile-rn/issues/1472)
+ - fix: **Carousel** near offset [#1457](https://github.com/ant-design/ant-design-mobile-rn/issues/1457)
+ - chore: **Tabs** TabBar animation when jumping to an index [#1449](https://github.com/ant-design/ant-design-mobile-rn/pull/1449)
+
 ### 5.4.3
 `2025-08-11`
  - fix: [Switch] inner zIndex style [#1437](https://github.com/ant-design/ant-design-mobile-rn/issues/1437) [@lqr131115](https://github.com/lqr131115)

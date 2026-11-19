@@ -6,8 +6,8 @@ This file provides guidance to AI coding agents when working with code in this r
 
 - Node.js **22** (see `.nvmrc`). Switch with `fnm use 22` if needed.
 - Root library dev: Node 16.20+ / npm 8.19+.
-- Expo example: Node **18+** recommended.
-- **Expo HAS CHANGED.** Read the exact versioned docs at https://docs.expo.dev/versions/v54.0.0/ before writing any Expo-related code. The `example/` app uses Expo SDK 54 (`expo@~54.0.33`, React Native 0.81.x).
+- Expo example: Node **22.13+** recommended (SDK 58 minimum).
+- **Expo HAS CHANGED.** Read the exact versioned docs at https://docs.expo.dev/versions/v58.0.0/ before writing any Expo-related code. The `example/` app uses Expo SDK 58 (`expo@~58.0.26`, React Native 0.88.x).
 
 ## Commands
 
@@ -69,7 +69,7 @@ components/           # All UI components (single source of truth)
 ├── locale-provider/  # Global locale
 └── provider/         # Theme Provider
 
-example/              # Expo SDK 54 demo (expo-router)
+example/              # Expo SDK 58 demo (expo-router)
 rn-kitchen-sink/      # React Native CLI demo app
 .dumi/                # Dumi doc site theme & pages
 site/                 # Site assets

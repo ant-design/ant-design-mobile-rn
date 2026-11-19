@@ -5,7 +5,7 @@ group:
   order: 1
 title: Divider
 subtitle: 分割线
-version: 5.5.0-rc.1
+version: 5.5.0
 ---
 
 对不同章节的文本段落进行分割。

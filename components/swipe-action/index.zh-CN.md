@@ -32,12 +32,15 @@ subtitle: 滑动操作
 | right         | 右侧按钮组      | [SwipeoutButtonProps](/components/swipe-action-cn#swipeoutbuttonprops)[] | `[]` | |
 | styles        | 语义化结构 style | [SwipeActionStyle](/components/swipe-action-cn#swipeactionstyle-语义化样式) | - | `5.2.1` |
 
-SwipeAction 剩余其他属性和 [react-native-gesture-handler/Swipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/) 一致，
+SwipeAction 剩余其他属性和 [react-native-gesture-handler/ReanimatedSwipeable](https://docs.swmansion.com/react-native-gesture-handler/docs/components/reanimated_swipeable/) 一致，
 
 **例如： `onSwipeableOpen` 、`onSwipeableClose`**，
 
 
 **其中，设置 `renderLeftActions` 属性时会覆盖 `left` ，设置 `renderRightActions` 属性时会覆盖 `right`**。
+
+> `renderLeftActions` / `renderRightActions` 的 `progress` 为 Reanimated `SharedValue`（gesture-handler 3.x 已移除旧版 `Swipeable` 入口）。
+
 
 ### SwipeoutButtonProps
 
@@ -62,7 +65,7 @@ export interface SwipeActionStyle {
 
 ### Ref
 
-`5.2.1`新增。 指向 Swipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/swipeable/#methods)
+`5.2.1`新增。 指向 ReanimatedSwipeable[#Ref](https://docs.swmansion.com/react-native-gesture-handler/docs/components/reanimated_swipeable/#methods)
 
 | 参数 | 说明 | 类型 |
 |-----|------|------|

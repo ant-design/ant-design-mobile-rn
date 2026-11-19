@@ -5,7 +5,7 @@ group:
   order: 5
 title: Skeleton
 subtitle: 骨架屏
-version: 5.5.0-rc.1
+version: 5.5.0
 ---
 
 在需要等待加载内容的位置设置一个骨架屏，可以降低用户的认知负担，使加载过程更自然。

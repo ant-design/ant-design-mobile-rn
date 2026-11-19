@@ -1,11 +1,13 @@
 import React, { useCallback, useImperativeHandle } from 'react'
-import { Animated } from 'react-native'
-import Swipeable from 'react-native-gesture-handler/Swipeable'
+import Swipeable, {
+  type SwipeableMethods,
+} from 'react-native-gesture-handler/ReanimatedSwipeable'
+import type { SharedValue } from 'react-native-reanimated'
 import useClickAway from '../_util/hooks/useClickAway'
 import { SwipeActionProps } from './PropsType'
 import { RenderActions } from './RenderActions'
 
-export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
+export const SwipeAction = React.forwardRef<SwipeableMethods, SwipeActionProps>(
   (props, ref) => {
     const {
       children,
@@ -18,8 +20,8 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
       ...restProps
     } = props
 
-    const swipeActionRef = React.useRef<Swipeable>(null)
-    useImperativeHandle(ref, () => swipeActionRef.current as Swipeable)
+    const swipeActionRef = React.useRef<SwipeableMethods>(null)
+    useImperativeHandle(ref, () => swipeActionRef.current as SwipeableMethods)
 
     const close = useCallback(() => {
       swipeActionRef.current?.close?.()
@@ -27,16 +29,13 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
 
     // ======================== Swipeable renderLeftActions/renderRightActions ========================
     const renderActions = useCallback(
-      (
-        progressAnimatedValue: Animated.AnimatedInterpolation<number>,
-        isLeft = false,
-      ) => {
+      (progress: SharedValue<number>, isLeft = false) => {
         return (
           <RenderActions
             buttons={isLeft ? left : right}
             closeOnAction={closeOnAction}
             isLeft={isLeft}
-            progressAnimatedValue={progressAnimatedValue}
+            progress={progress}
             setClose={close}
             styles={styles}
           />
@@ -45,13 +44,11 @@ export const SwipeAction = React.forwardRef<Swipeable, SwipeActionProps>(
       [close, closeOnAction, left, right, styles],
     )
     const renderLeftActions = useCallback(
-      (progressAnimatedValue: Animated.AnimatedInterpolation<number>) =>
-        renderActions(progressAnimatedValue, true),
+      (progress: SharedValue<number>) => renderActions(progress, true),
       [renderActions],
     )
     const renderRightActions = useCallback(
-      (progressAnimatedValue: Animated.AnimatedInterpolation<number>) =>
-        renderActions(progressAnimatedValue, false),
+      (progress: SharedValue<number>) => renderActions(progress, false),
       [renderActions],
     )
 

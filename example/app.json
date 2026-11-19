@@ -7,15 +7,22 @@
     "version": "5.5.0",
     "description": "基于蚂蚁金服移动设计规范的 React Native 组件库",
     "icon": "../rn-kitchen-sink/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
-    "splash": {
-      "image": "../rn-kitchen-sink/ios/KitchenSink/Images.xcassets/AppIcon.appiconset/ios-marketing-1024@1x.png"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "scheme": "antd-mobile-rn",
-    "newArchEnabled": true,
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "../rn-kitchen-sink/ios/KitchenSink/Images.xcassets/AppIcon.appiconset/ios-marketing-1024@1x.png",
+          "imageWidth": 200
+        }
+      ],
+      "expo-status-bar"
+    ],
     "experiments": {
       "baseUrl": "/ant-design-mobile-rn",
       "tsconfigPaths": true
@@ -25,7 +32,6 @@
       "favicon": "./assets/favicon.png"
     },
     "ios": {
-      "bundler": "metro",
       "supportsTablet": true,
       "bundleIdentifier": "com.1uokun.antdesignmobilern"
     },

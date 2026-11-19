@@ -56,11 +56,22 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     undefined,
   )
   const [focus, setFocus] = React.useState<boolean>()
+  const isPassword = type === 'password'
+  const [secureTextEntry, setSecureTextEntry] = React.useState(isPassword)
+
+  React.useEffect(() => {
+    setSecureTextEntry(isPassword)
+  }, [isPassword])
 
   React.useEffect(() => {
     const keyboardHide = Keyboard.addListener('keyboardDidHide', () => {
       if (focus) {
         Keyboard.dismiss()
+      }
+      // Some Android OEMs dismiss IME without a reliable TextInput blur.
+      if (isPassword) {
+        setSecureTextEntry(false)
+        setFocus(false)
       }
     })
     return () => {
@@ -69,7 +80,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
         clearTimeout(timer.current)
       }
     }
-  }, [focus])
+  }, [focus, isPassword])
 
   const inputRef = React.useRef<TextInput>(null)
   React.useImperativeHandle(ref, () => inputRef.current as TextInput)
@@ -204,9 +215,12 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     }
 
     // onFocus & onBlur
-    if (allowClear || maxLengthConfig.show) {
+    if (allowClear || maxLengthConfig.show || isPassword) {
       res.onFocus = (e: any) => {
         setFocus(true)
+        if (isPassword) {
+          setSecureTextEntry(true)
+        }
         props.onFocus?.(e)
       }
       res.onBlur = (e: any) => {
@@ -216,6 +230,12 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
           maxLengthConfig.value < innerValue?.length
         ) {
           pushInputValue(innerValue.slice(0, maxLengthConfig.value))
+        }
+        if (isPassword) {
+          // Keep false while blurred. Remasking (true again) brings OEM
+          // casting privacy overlay back even without focus.
+          Keyboard.dismiss()
+          setSecureTextEntry(false)
         }
         timer.current = setTimeout(() => {
           setFocus(false)
@@ -228,6 +248,7 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
     allowClear,
     formatText,
     innerValue,
+    isPassword,
     maxLengthConfig.show,
     maxLengthConfig.value,
     props,
@@ -336,10 +357,10 @@ const InternalInput: React.ForwardRefRenderFunction<TextInput, InputProps> = (
         editable={!disabled && editable}
         placeholderTextColor={theme.color_text_placeholder}
         underlineColorAndroid="transparent"
-        secureTextEntry={type === 'password'}
         onSubmitEditing={Keyboard.dismiss}
         {...restProps}
         keyboardType={keyboardType}
+        secureTextEntry={isPassword ? secureTextEntry : rest.secureTextEntry}
         style={[styles.input, statusClassName, inputStyle]}
         ref={inputRef}
       />
